@@ -65,6 +65,10 @@ Pour exécuter un programme, Python charge le fichier **source .py** en mémoire
 
 C'est dans un mémorandum interne de Brian Kernighan, Programming in C : A tutorial, écrit en 1974 dans les laboratoires Bell, que l'on trouve la première version d'un mini-programme affichant à l'écran « Hello World! ».  
 
+???+ question "Faire ce qui est proposé"
+
+    {{ IDE() }}
+
 ## **<H2 STYLE="COLOR:BLUE;">3. Pseudo-code<a name="_page2_x40.00_y367.92"></a></h2>** 
 
 En programmation, le pseudo-code est une façon de décrire un algorithme en respectant certaines conventions, mais sans référence à un langage de programmation en particulier. L'écriture en pseudo-code permet de développer une démarche structurée. 
@@ -85,12 +89,10 @@ En 1989, le hollandais **Guido van Rossum** commence le développement du langag
 Le langage Python est gratuit, sous **licence libre**. 
 
 ### **<H3 STYLE="COLOR:GREEN;">4.3. Les<a name="_page2_x40.00_y614.92"></a> consignes</h3>** 
-- Dans la suite du cours, ouvrir l’interpréteur Python  
-- Les commandes à faire dans l’interpréteur, aussi appelée console python, seront dans le style de rectangle suivant et commenceront par un prompt >>> 
+- Dans la suite du cours, ouvrir l’interpréteur Python  (si vous êtes sur Thonny)
+
 - Taper chacune des commandes présentées et vérifier son résultat. 
-- Ouvrir un **éditeur de Python**  
-- Compléter votre script resume\_ch0X.py avec les nouvelles commandes apprises : c’est l’équivalent d’une fiche de cours, il faut donc en prendre soin 
-- Pour chaque série d’exercice (à la fin des cours) : réaliser chaque exercice dans un fichier nommé : exo\_ch0X\_01.py, exo\_ch0X\_02.py, exo\_ch0X\_03.py,…… 
+
 
 ### **<H3 STYLE="COLOR:GREEN;">4.4. Premiers<a name="_page3_x40.00_y36.92"></a> pas avec l’interpréteur de commandes Python</h3>** 
 
