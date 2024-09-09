@@ -554,28 +554,28 @@ Hum \Oh/
 Quel code est valide pour afficher le message ci-dessus **sans les tester auparavant** puis vérifier à l’aide d’une console python ? 
 
 - code 1 
-```python
+```
 print('Hello World') 
 print('Aujourd'hui') 
 print('C'est "Dommage!"') 
 print('Hum \Oh/') 
 ```
 - code 2 
-```python
+```
 print("Hello World") 
 print("Aujourd'hui") 
 print("C'est "Dommage!"") 
 print("Hum \Oh/") 
 ```
 - code 3 
-```python
+```
 print("Hello World") 
 print("Aujourd'hui") 
 print("C'est \"Dommage!\"") 
-print("Hum \Oh/") 
+print("Hum \\Oh/") 
 ```
 - code 4 
-```python
+```
 print("Hello World") 
 print("Aujourd'hui") 
 print("C'est \"Dommage!\"") 
