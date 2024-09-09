@@ -613,12 +613,11 @@ Le nombre de sachet de vanille pour 7 personnes est :…
 Généraliser la recette pour un nombre déterminer par l’utilisateur. Par exemple : 
 
 ```python
-Quel est le nombre de personne ?>? (l’utilisateur entre la valeur 10) 
-Recette de mousse au chocolat pour  10  personnes 
-Le nombre d'oeufs pour  10  personnes est : 13 
-La quantité de chocolat pour  10  personnes est : 438  g 
-Le nombre de sachet de vanille pour  10  personnes est : 4 
-```
+Quel est le nombre de personne ?>? (l’utilisateur entre la valeur 10)
+Recette de mousse au chocolat pour  10  personnes
+Le nombre d'oeufs pour  10  personnes est : 8
+La quantité de chocolat pour  10  personnes est : 250  g
+Le nombre de sachet de vanille pour  10  personnes est : 2
 
 
 **Remarque** : Vous aurez besoin de la fonction input() déjà vu en seconde
