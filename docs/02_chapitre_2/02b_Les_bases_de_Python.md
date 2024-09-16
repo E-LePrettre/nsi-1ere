@@ -514,12 +514,19 @@ exécuté… Le bloc d’instructions est exécuté une dernière fois lorsqu’
 
     {{ IDE() }}
 
-**<H3 STYLE="COLOR:red;">Activité n° 13.:</H3>** Tester le script précédent sur[ http://pythontutor.com/ ](http://pythontutor.com/)  
+**<H3 STYLE="COLOR:red;">Activité n° 13.:</H3>** Tester le script précédent sur python Tutor
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20epeler%28chaine%29%3A%20%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20affiche%20chaque%20lettre%20de%20la%20chaine%20de%20caract%C3%A8re%20appel%C3%A9e%20chaine%20%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20for%20elmt%20in%20chaine%3A%20%0A%20%20%20%20%20%20%20%20print%28elmt%29%20%0A%20%20%20%20return%20'voil%C3%A0!!'%20%0A%0Aepeler%28'Bonjour'%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+
 
 
 **<H3 STYLE="COLOR:red;">Activité n° 14.:</H3>** avec les éléments d’une liste : 
-Tester la fonction précédente avec  
+Recopier la fonction précédente et tester la fonction précédente avec  
 >  epeler(['Pierre', 67.5, 18])  
+
+???+ question "Faire ce qui est proposé"
+
+    {{ IDE() }}
 
 ### **<H3 STYLE="COLOR:GREEN;">3.2. L’instruction<a name="_page7_x40.00_y637.92"></a> for avec la fonction range()</h3>**
 
@@ -599,7 +606,8 @@ def compteur():
 
     {{ IDE() }}
 
-**<H3 STYLE="COLOR:red;">Activité n° 18.:</H3>** Tester le script précédent sur[ http://pythontutor.com/ ](http://pythontutor.com/)  
+**<H3 STYLE="COLOR:red;">Activité n° 18.:</H3>** Tester le script précédent sur python Tutor
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20compteur%28%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20affiche%20un%20compteur%0A%20%20%20%20%22%22%22%0A%20%20%20%20compt%20%3D%201%0A%20%20%20%20while%20compt%20%3C%205%3A%0A%20%20%20%20%20%20%20%20%23%20ce%20bloc%20est%20ex%C3%A9cut%C3%A9%20tant%20que%20la%20condition%20%28compteur%20%3C%205%29%20est%20vraie%0A%20%20%20%20%20%20%20%20print%28compt%29%0A%20%20%20%20%20%20%20%20compt%20%2B%3D%201%20%23%20incr%C3%A9mentation%20du%20compteur,%20compteur%20%3D%20compteur%20%2B%201%0A%20%20%20%20return%20%22le%20compteur%20vaut%20%C3%A0%20la%20fin%20de%20la%20boucle%20vaut%20%3A%20%22%2Bstr%28compt%29%0A%0Acompteur%28%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
 
 ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.065.png)Attention aux programmes qui cyclent (bouclent) : selon la condition de continuation on peut se retrouver sur une **boucle infinie.** Par exemple avec l’application précédente, avec une condition du type compteur > 0, condition qui sera toujours vrai, le programme exécute la boucle sans jamais s’arrêter.  
