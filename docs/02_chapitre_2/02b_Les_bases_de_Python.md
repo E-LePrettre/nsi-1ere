@@ -828,9 +828,10 @@ la valeur de (1+math.sqrt(5))/2 est : 1.618033988749895
 ```
 
 
-Aide : Le but est de regarder le reste de la division entre le nombre donné et nombre_en_cours qui prend à chaque boucle une valeur de 2 au nombre. Faire une boucle while avec deux conditions qui puissent l’arrêter : l’une sur l’incrémentation du nombre en cours et l’autre si le nombre_en_cours est diviseur du nombre 
+**Aide** : Le but est de regarder le reste de la division entre le nombre donné et nombre diviseur
 
-Une fois toutes les valeurs testées si le nombre_en_cours est en fait égal au nombre donné il est donc nombre premier 
+1) avec une boucle for
+2) avec une boucle while
 
 [QCM sur les boucles ](http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_python_loop)
 
