@@ -39,9 +39,7 @@ def factorielle(n):
 Tester 
 > help(factorielle)
  
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
+[ALLER SUR BASTHON](https://console.basthon.fr/)
    
 Réaliser une telle chaîne de documentation permet 
 
