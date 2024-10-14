@@ -44,13 +44,19 @@ Tester
 Réaliser une telle chaîne de documentation permet 
 
 **à l’utilisateur** de la fonction de savoir
+
 - à quoi peut servir la fonction ; 
+
 - comment il peut l’utiliser ; 
+
 - et quelles conditions il doit respecter pour l’utiliser (CU). 
 
 et **au programmeur** de la fonction de préciser 
+
 - le nombre et la nature de ses paramètres ; 
+
 - la relation entre la valeur renvoyée et celle du ou des paramètres ; 
+
 - ses idées avec quelques exemples. 
 
 ## **<H2 STYLE="COLOR:BLUE;">2. Les<a name="_page1_x40.00_y350.92"></a> tests</h2>** 
@@ -151,12 +157,10 @@ def factorielle(n):
    return resultat
 
 import doctest
-doctest.testmod()  
+doctest.testmod()
 ```
 Tester 
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
+[ALLER SUR BASTHON](https://console.basthon.fr/)
 
 La  fonction testmod du module doctest est  allée  chercher  dans  les docstring des  fonctions  du  module actuellement chargé,  tous les exemples (reconnaissables à la présence des triples chevrons >>>   **à mettre un espace après** ), et a vérifié que la fonction documentée satisfait bien ces exemples. Dans le cas présent, une seule fonction dont la documentation contient deux exemples (attempted = 2 ) a été testée, et il n’y a eu aucun échec (failed  = 0 )  
 
@@ -181,12 +185,10 @@ def factorielle(n):
       resultat = resultat * i
    return resultat
 import doctest
-doctest.testmod()  
+doctest.testmod()
 ```
 Tester 
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
+[ALLER SUR BASTHON](https://console.basthon.fr/)
 
 
 
@@ -216,10 +218,10 @@ if __name__ == '__main__':
    doctest.testmod()
 ```
 
-Tester 
-???+ question "Faire ce qui est proposé"
+Tester
 
-    {{ IDE() }}
+[ALLER SUR BASTHON](https://console.basthon.fr/)
+
 Ici il n’y a aucune erreur, on n’obtient **rien**, ce qui est parfois déconcertant 
 
 
@@ -249,9 +251,8 @@ if __name__ == '__main__':
 ```  
 
 Tester 
-???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}   
+[ALLER SUR BASTHON](https://console.basthon.fr/) 
 
  **<H3 STYLE="COLOR:red;">Activité n° 8.:</H3>**  On rend les doctests bavard même en cas de succès avec le mode verbose   
 
@@ -279,9 +280,8 @@ if __name__ == '__main__':
    doctest.testmod(verbose=True)  
 ```  
 Tester 
-???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}    
+[ALLER SUR BASTHON](https://console.basthon.fr/)   
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Les<a name="_page5_x40.00_y567.92"></a> préconditions et les postconditions</h2>** 
 
