@@ -9,7 +9,7 @@ title: 03 Mise au point des scripts et gestion des exceptions
 1. [Les bonnes pratiques : documenter les fonctions ](#_page0_x40.00_y447.92)
 2. [Les tests](#_page1_x40.00_y350.92)
 3. [Les préconditions et les postconditions](#_page5_x40.00_y567.92)
-4. [Les modules](#_page6_x40.00_y233.92)
+4. [Les bibliothèques ou modules](#_page6_x40.00_y233.92)
 5. [Gestion des exceptions](#_page9_x40.00_y401.92)
 6. [Exercices](#_page13_x40.00_y375.92)
 
@@ -39,7 +39,7 @@ def factorielle(n):
 Tester 
 > help(factorielle)
  
-[ALLER SUR BASTHON](https://console.basthon.fr/)
+TESTER [ALLER SUR BASTHON](https://console.basthon.fr/)
    
 Réaliser une telle chaîne de documentation permet 
 
@@ -250,9 +250,7 @@ if __name__ == '__main__':
    doctest.testmod()   
 ```  
 
-Tester 
-
-[ALLER SUR BASTHON](https://console.basthon.fr/) 
+Tester [ALLER SUR BASTHON](https://console.basthon.fr/) 
 
  **<H3 STYLE="COLOR:red;">Activité n° 8.:</H3>**  On rend les doctests bavard même en cas de succès avec le mode verbose   
 
@@ -279,9 +277,8 @@ if __name__ == '__main__':
    import doctest
    doctest.testmod(verbose=True)  
 ```  
-Tester 
 
-[ALLER SUR BASTHON](https://console.basthon.fr/)   
+Tester [ALLER SUR BASTHON](https://console.basthon.fr/)   
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Les<a name="_page5_x40.00_y567.92"></a> préconditions et les postconditions</h2>** 
 
@@ -319,10 +316,23 @@ Pour plus de précisions :[ https://www.youtube.com/watch?v=DRVoh5XiAZo ](https:
 
     {{ IDE() }}
 
-## **<H2 STYLE="COLOR:BLUE;">4. Les<a name="_page6_x40.00_y233.92"></a> modules</h2>** 
+## **<H2 STYLE="COLOR:BLUE;">4. Les<a name="_page6_x40.00_y233.92"></a> bibliothèques ou modules</h2>** 
 ### **<H3 STYLE="COLOR:GREEN;">4.1. Qu’est<a name="_page6_x40.00_y255.92"></a> ce que c’est ?</h3>** 
 
-Un module est un bout de code que l’on a **enfermé dans un fichier**. On emprisonne ainsi des fonctions et des variables ayant toutes un rapport entre elles. Puis si l’on veut travailler avec les fonctionnalités prévues par le module, il n’y a qu’à **importer le module** et utiliser ensuite toutes les fonctions et variables prévues. Par exemple le module math. **Rappels** : 
+Une bibliothèque en Python est un fichier contenant du **code réutilisable**. Ce code peut être sous forme de fonctions, classes ou variables. Pour utiliser une bibliothèque, on doit **l’importer** dans notre programme. 
+
+Une bibliothèque est une **collection de modules**. C'est un ensemble plus large qui peut contenir **plusieurs fichiers** Python, **chacun étant un module**.
+
+### **<H3 STYLE="COLOR:GREEN;">4.2. Importer des bibliothèques (modules) standards<a name="_page6_x40.00_y498.92"></a>r</h3>** 
+
+Voici un exemple d’utilisation d’une bibliothèque Python standard, le module ```math``` qui contient des fonctions mathématiques comme sqrt() (racine carrée) ou ```random``` qui contient randint.
+On peut noter les 2 manières d’importer le module : 
+
+- import nom_du_module 
+
+- from nom_du_module import nom_de_la_fonction
+
+
 ```
 >>> import math as m
 >>> m.sqrt(25) 
@@ -348,148 +358,9 @@ Tester
 
     {{ IDE() }} 
 
-### **<H3 STYLE="COLOR:GREEN;">4.2. Emprisonner<a name="_page6_x40.00_y498.92"></a> le code dans un fichier</h3>** 
-
-Le code doit être enregistrer dans un fichier en .py. (sous windows) 
-
-**Sous Linux**, comme les extensions ne servent à rien, il faut ajouter dans le fichier une ligne, tout au début, spécifiant le chemin de l’interpréteur Python : 
-
-```
-#!/usr/bin/python3.8
-```
-
-Il faut changer le droit d’exécution du fichier avant de l’exécuter comme un script 
-
-```
-ls -l  
-sudo chmod a+x *lefichier* 
-```
-
-### **<H3 STYLE="COLOR:GREEN;">4.3. Derniers<a name="_page6_x40.00_y664.92"></a> ajustements</h3>** 
-
-Si le programme contient des accents, il est nécessaire de préciser à Python l’encodage de ces accents. Il faut donc lui indiquer l’encodage. Ligne à placer tout en haut du fichier (juste après le chemin de python sous Linux) 
-```
-# coding: utf-8 
-```
-
-Il est probable, si vous exécutez votre activité d’un double-clic, que votre programme **se referme immédiatement** après avoir exécuté le programme. Il faut donc demander au programme **de se mettre en pause à la fin de son exécution**.  
-
-Ligne à placer dans le fichier (sous windows) 
-
-```python
-# coding: utf-8
-
-import os # On importe le module os qui dispose de variables 
-          # et de fonctions utiles pour dialoguer avec votre 
-          # système d'exploitation
-
-# Programme 
-blablabla
-
-# On met le programme en pause pour éviter qu'il ne se referme (Windows)
-os.system("pause")
-```
-
-**Sous Linux** : on peut simplement exécuter le programme dans la console. Si l’on veut faire une pause on peut utilisez input avant la fin du programme (pas très élégant mais fonctionne) 
-
-### **<H3 STYLE="COLOR:GREEN;">4.4. Utilisation<a name="_page7_x40.00_y231.92"></a> en module</h3>**
-
-**ON VA TRAVAILLER SUR THONNY**
-
- **<H3 STYLE="COLOR:red;">Activité n° 10. :</H3>**On crée un fichier multipli.py qui contiendra la fonction table : table de multiplication  
-
-```python
-# coding: utf-8
-
-"""module multipli contenant la fonction table"""
-
-def table(nb, max=10):
-    """Fonction affichant la table de multiplication par nb de
-    1 * nb jusqu'à max * nb"""
-    i = 0
-    while i < max:
-        print(i + 1, "*", nb, "=", (i + 1) * nb)
-        i += 1
-```
-
-
-Enregistrer votre fichier sous le nom multipli.py dans un dossier c:\langages\  
-Lancer l’invite de commande de windows (cmd)  
-Aller dans le dossier précédent avec la commande cd c:\langages  
-
-```
-c:\langages>python multipli.py # on lance le fichier
-```
-ou
-```
-c:\langages>python # on lance la console Python
-Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 23:03:10) [MSC v.1916 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license" for more information.
->>> from multipli import table 		# 1ere méthode pour appeler la fonction
->>> table(5)
->>> import multipli				# 2eme methode pour appeler la fonction
->>> multipli.table(4)
-```
-
-
-### **<H3 STYLE="COLOR:GREEN;">4.5. Création<a name="_page8_x40.00_y36.92"></a> de son propre module</h3>**
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°11. :</H3>**On crée deux fichiers :   
-
--  le fichier multipli.py créé précédemment  
--  Un fichier test.py qui contiendra le test d’exécution du module. Enregistrer votre fichier sous le nom test.py  dans un dossier c:\langages\ 
-
-```python
-# coding: utf-8
-
-import os
-from multipli import *
-
-# test de la fonction table
-table(3,11)
-os.system("pause") 
-```  
-
-
-Si on est dans python (console précédente) utiliser la fonction exit()  
-
-Tester dans l'invite de commande
-```
-c:\langages>python test.py
-```
-
-On peut noter la ligne os.system("pause") pour que la console ne se faire pas une fois le programme exécuté.  
-
-On a vu comment créer un module, il suffit de le mettre dans un fichier. Ici, on a utilisé un module test mais on aurait pu utiliser toute autre fonction. On peut alors l'importer depuis un autre fichier contenu dans le même répertoire en précisant le nom du fichier (sans l'extension.py). 
-
-Au moment d'importer le module, Python va lire (ou créer s’il n'existe pas) un fichier.pyc. Ce fichier se trouve dans un dossier\_\_pycache\_\_.
-
-Ce fichier est généré par Python et contient le code compilé (ou presque) du module. Il ne s'agit pas réellement de langage machine mais d'un format que Python décode un peu plus vite que le code que vous pouvez écrire. 
-
-### **<H3 STYLE="COLOR:GREEN;">4.6. Les<a name="_page8_x40.00_y616.92"></a> packages</h3>** 
-
-Les modules sont un des moyens de **regrouper plusieurs fonctions**. On peut aller encore au-delà en regroupant des modules dans des packages. Cela permet de ranger plus proprement les modules dans des emplacements séparés.  En pratique, les packages sont des répertoires. 
-
-
-
-**<H3 STYLE="COLOR:red;">Activité n°12. :</H3>**Créer un dossier package *dans* le dossier c:\langages\ y placer le fichier multipli.py. Pour importer la fonction table dans un nouveau fichier que l’on appelera multipli\_away.py : 
-
-```python
-from package.multipli import table  
-table(7) # 1ere methode appel de la fonction table  
-# OU  
-import package.multipli  
-package.multipli.table(6) # 2eme methode appel de la fonction table  
-```
-
-
-Tester dans le cmd
-```
->>> exit() 
-c:\langages>python multipli_away.py 
-```
   
 ## **<H2 STYLE="COLOR:BLUE;">5. Gestion<a name="_page9_x40.00_y401.92"></a> des exceptions</h2>** 
 
@@ -501,7 +372,7 @@ Quand Python rencontre une erreur dans le code, il lève **une exception**.
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°13. :</H3>**Tester  
+**<H3 STYLE="COLOR:red;">Activité n° 10. :</H3>**Tester  
 
 > 1/0 
   
@@ -535,12 +406,13 @@ except:
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°14. :</H3>**On suppose que l’utilisateur entre une année. Ici il peut fournir une valeur impossible à convertir en entier.  
+**<H3 STYLE="COLOR:red;">Activité n° 11. :</H3>**On suppose que l’utilisateur entre une année. Ici il peut fournir une valeur impossible à convertir en entier.  
   
 ```python
-annee = input()  
+annee = input('Entrer une année ')  
 try: # On essaye de convertir l'année en entier  
-   annee = int(annee)  
+   annee = int(annee)
+   print("Pas de problème.")  
 except:  
    print("Erreur lors de la conversion de l'année.")
 ```  
@@ -548,8 +420,11 @@ except:
 Si l'utilisateur saisit une année impossible à convertir, le système affiche certes **une erreur** mais finit par **planter** (puisque l'année, au final, n'a pas été convertie).   
 Une des solutions envisageables est d'attribuer **une valeur par défaut** à l'année, en cas d'erreur, ou de redemander à l'utilisateur de saisir l'année.  
 
-Tester
-> 2020-2021 
+Tester:
+
+- avec  => 2024
+
+- relancer le programme et tester avec => nous sommes en 2024
  
 ???+ question "Faire ce qui est proposé"
 
@@ -568,7 +443,7 @@ Ici plusieurs erreurs sont susceptibles d’intervenir, chacune levant une excep
 
 
 
- **<H3 STYLE="COLOR:red;">Activité n°15. :</H3>**On peut ainsi intercepter ces erreurs possibles à l’exécution du code  
+ **<H3 STYLE="COLOR:red;">Activité n°12. :</H3>**On peut ainsi intercepter ces erreurs possibles à l’exécution du code  
 
 ```python 
 numerateur = input('Numérateur ?')  
@@ -597,7 +472,7 @@ Tester avec
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°16. :</H3>**L’instruction else se déroule **s’il n’y a pas d’exceptions** de lever   
+**<H3 STYLE="COLOR:red;">Activité n°13. :</H3>**L’instruction else se déroule **s’il n’y a pas d’exceptions** de lever   
 
 ```python 
 numerateur = input('Numérateur ?')   
@@ -619,7 +494,7 @@ Dans les faits, on utilise assez peu else. La plupart des codeurs préfère mett
 
     {{ IDE() }}
 
-**<H3 STYLE="COLOR:red;">Activité n°17. :</H3>**L’instruction finally permet d'exécuter du code après un bloc try, **quel que soit le résultat** de l'exécution du bloc. 
+**<H3 STYLE="COLOR:red;">Activité n°14. :</H3>**L’instruction finally permet d'exécuter du code après un bloc try, **quel que soit le résultat** de l'exécution du bloc. 
 
 ```python
 numerateur = input('Numérateur ?')  
@@ -650,7 +525,7 @@ Tester avec:
 
 L’utilisation de* assert* permet de faire des tests Si le test renvoie True*,* l’exécution se poursuit normalement. Sinon, une exception AssertionError* est levée. 
 
-**<H3 STYLE="COLOR:red;">Activité n°18. :</H3>**Dans le programme testant si une année est bissextile, on pourrait vouloir s’assurer que l’utilisateur ne  saisit pas une année inférieure ou égale à 0 par exemple : 
+**<H3 STYLE="COLOR:red;">Activité n°15. :</H3>**Dans le programme testant si une année est bissextile, on pourrait vouloir s’assurer que l’utilisateur ne  saisit pas une année inférieure ou égale à 0 par exemple : 
 
 ```python
 annee = input("Saisissez une année supérieure à 0 :")   
@@ -679,7 +554,7 @@ Tester avec :
 
 L’instruction raise permet au programmeur de déclencher une exception spécifique.
 
-**<H3 STYLE="COLOR:red;">Activité n°19. :</H3>**Si l’utilisateur entre une année trop grande par exemple supérieure à 3000, on peut estimer qu’il s’agit d’une erreur 
+**<H3 STYLE="COLOR:red;">Activité n°16. :</H3>**Si l’utilisateur entre une année trop grande par exemple supérieure à 3000, on peut estimer qu’il s’agit d’une erreur 
 
 ```python
 annee = input("Saisissez une année supérieure à 0 :")   
