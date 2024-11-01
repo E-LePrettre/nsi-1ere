@@ -15,7 +15,7 @@ title: 03 Mise au point des scripts et gestion des exceptions
 
 ## **<H2 STYLE="COLOR:BLUE;">1.  Les bonnes pratiques : <a name="_page0_x40.00_y447.92"></a>documenter les fonctions</h2>** 
 
-### **<H3 STYLE="COLOR:GREEN;">1.1. Qu’est-ce qu’une docstring ?</h3>
+### **<H3 STYLE="COLOR:GREEN;">1.1. Qu’est-ce qu’une docstring ?</h3>**
 
 Une **docstring** est un texte placé juste après l’en-tête d’une fonction en Python. Elle sert à expliquer clairement :
 1. **Ce que fait la fonction** ;
@@ -24,7 +24,7 @@ Une **docstring** est un texte placé juste après l’en-tête d’une fonction
 
 C’est une façon de **documenter** le code, c’est-à-dire de rendre les fonctions plus faciles à comprendre pour les autres (et pour soi-même, si on revient sur le code plus tard !).
 
-### **<H3 STYLE="COLOR:GREEN;">1.2. Pourquoi utiliser une docstring ?</h3>
+### **<H3 STYLE="COLOR:GREEN;">1.2. Pourquoi utiliser une docstring ?</h3>**
 
 Quand on écrit une fonction, les autres utilisateurs (ou même nous plus tard) peuvent se demander : 
 - « Cette fonction fait quoi ? »
@@ -33,7 +33,7 @@ Quand on écrit une fonction, les autres utilisateurs (ou même nous plus tard) 
 
 La docstring répond à ces questions directement, **sans avoir à lire le code**. Elle est comme une fiche technique qui aide à comprendre la fonction plus vite.
 
-### **<H3 STYLE="COLOR:GREEN;">1.3. Comment écrire une docstring ?</h3>
+### **<H3 STYLE="COLOR:GREEN;">1.3. Comment écrire une docstring ?</h3>**
 
 Une docstring se met **entre triples guillemets** `"""` juste après le nom de la fonction. 
 
@@ -57,7 +57,7 @@ def factorielle(n):
       resultat = resultat * i
    return resultat
 ```
-### **<H3 STYLE="COLOR:GREEN;">1.4. Comment voir la docstring d’une fonction ?</h3>
+### **<H3 STYLE="COLOR:GREEN;">1.4. Comment voir la docstring d’une fonction ?</h3>**
 
 On peut voir la docstring en utilisant la commande **help(nom_de_la_fonction)**. Par exemple :
 
