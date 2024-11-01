@@ -102,7 +102,7 @@ Pour vérifier si un programme ne produit pas d’erreur au cours de son exécut
 
 ### **<H3 STYLE="COLOR:GREEN;">2.1. Les<a name="_page1_x40.00_y523.92"></a> tests simples avec assert</h3>**
 
-#### **<H4 STYLE="COLOR:fuchsia;">2.1.1. Qu’est-ce que `assert` ?</h4>**
+### **<H4 STYLE="COLOR:fuchsia;">2.1.1. Qu’est-ce que `assert` ?</h4>**
 
 L'instruction **`assert`** est une manière rapide de **vérifier qu’un programme fait exactement ce qu’on attend**. Elle permet de tester si une condition est vraie. Si elle est fausse, Python arrête le programme et signale une erreur. En somme, `assert` est une sorte de "gardien" : il vérifie que tout se passe comme prévu.
 
@@ -240,6 +240,8 @@ Doctest est utile car il :
 
 Prenons la fonction **factorielle** avec des exemples de tests dans la docstring :
 
+**<H3 STYLE="COLOR:red;">Activité n° 5.:</H3>** 
+
 ```python
 def factorielle(n):
    """
@@ -266,9 +268,7 @@ doctest.testmod()
 
 doctest vérifie que les valeurs données en exemple renvoient bien les résultats attendus.
 
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
+**TESTER l'activité** [ALLER SUR BASTHON](https://console.basthon.fr/)
 
 
 Lorsque tous les tests réussissent, doctest ne renvoie aucun message. Cela peut être surprenant, mais c’est un bon signe : cela signifie que tout est correct.
@@ -276,6 +276,9 @@ Lorsque tous les tests réussissent, doctest ne renvoie aucun message. Cela peut
 ### **<H4 STYLE="COLOR:fuchsia;">2.2.4. Introduire une erreur pour observer doctest</h4>**
 
 Si on introduit une erreur volontaire dans la docstring, doctest signale cette erreur. Par exemple :
+
+**<H3 STYLE="COLOR:red;">Activité n° 6.:</H3>** 
+
 ```python
 def factorielle(n):
    """
@@ -298,15 +301,15 @@ import doctest
 doctest.testmod()
 ```
 
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
+**TESTER l'activité** [ALLER SUR BASTHON](https://console.basthon.fr/)
 
 **Doctest signale l’erreur** et montre quel résultat était attendu et quel résultat a été trouvé.
 
 ### **<H4 STYLE="COLOR:fuchsia;">2.2.5. Activer le mode verbose</h4>**
 
 Par défaut, doctest ne montre rien si tous les tests réussissent. Si on veut voir les tests même en cas de succès, on peut ajouter `verbose=True` dans `testmod` :
+
+**<H3 STYLE="COLOR:red;">Activité n° 7.:</H3>** 
 
 ```python
 def factorielle(n):
@@ -331,134 +334,19 @@ import doctest
 doctest.testmod(verbose=True)
 ```
 
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
+**TESTER l'activité** [ALLER SUR BASTHON](https://console.basthon.fr/)
 
 En mode verbose, doctest affiche chaque test, qu’il réussisse ou échoue.
 
 
 
-Tester 
-[ALLER SUR BASTHON](https://console.basthon.fr/)
 
 La  fonction testmod du module doctest est  allée  chercher  dans  les docstring des  fonctions  du  module actuellement chargé,  tous les exemples (reconnaissables à la présence des triples chevrons >>>   **à mettre un espace après** ), et a vérifié que la fonction documentée satisfait bien ces exemples. Dans le cas présent, une seule fonction dont la documentation contient deux exemples (attempted = 2 ) a été testée, et il n’y a eu aucun échec (failed  = 0 )  
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n° 5.:</H3>**on introduit une erreur dans un des exemples du docstring  
-
-```python
-def factorielle(n):
-   """
-   fonction qui retourne la factorielle d'un nombre
-   :param n: int
-   :return: int
-   CU (conditions d'utilisation) : n >= 0
-   >>> factorielle(0)
-   100000000000000
-   >>> factorielle(4)
-   24
-   """
-   resultat = 1
-   for i in range(2, n+1):
-      resultat = resultat * i
-   return resultat
-import doctest
-doctest.testmod()
-```
-Tester 
-[ALLER SUR BASTHON](https://console.basthon.fr/)
 
 
-
-**<H3 STYLE="COLOR:red;">Activité n° 6.:</H3>** on peut rendre automatique les tests : 
-
-```python
-def factorielle(n):
-   """
-   fonction qui retourne la factorielle d'un nombre
-   :param n: int
-   :return: int
-   CU (conditions d'utilisation) : n >= 0
-
-   >>> factorielle(0)
-   1
-   >>> factorielle(4)
-   24
-   """
-
-   resultat = 1
-   for i in range(2, n + 1):
-      resultat = resultat * i
-   return resultat
-
-if __name__ == '__main__':
-   import doctest
-   doctest.testmod()
-```
-
-Tester
-
-[ALLER SUR BASTHON](https://console.basthon.fr/)
-
-Ici il n’y a aucune erreur, on n’obtient **rien**, ce qui est parfois déconcertant 
-
-
-
-**<H3 STYLE="COLOR:red;">Activité n° 7.:</H3>**  avec une erreur   
-
-```python
-def factorielle(n):
-   """
-   fonction qui retourne la factorielle d'un nombre
-   :param n: int
-   :return: int
-   CU (conditions d'utilisation) : n >= 0
-   >>> factorielle(0)
-   100000000000000
-   >>> factorielle(4)
-   24
-   """
-   resultat = 1
-   for i in range(2, n+1):
-      resultat = resultat * i
-   return resultat   
-   
-if __name__ == '__main__':   
-   import doctest   
-   doctest.testmod()   
-```  
-
-Tester [ALLER SUR BASTHON](https://console.basthon.fr/) 
-
- **<H3 STYLE="COLOR:red;">Activité n° 8.:</H3>**  On rend les doctests bavard même en cas de succès avec le mode verbose   
-
-```python 
-def factorielle(n):
-   """
-   fonction qui retourne la factorielle d'un nombre
-   :param n: int
-   :return: int
-   CU (conditions d'utilisation) : n >= 0
-
-   >>> factorielle(0)
-   1
-   >>> factorielle(4)
-   24
-   """
-
-   resultat = 1
-   for i in range(2, n + 1):
-      resultat = resultat * i
-   return resultat
-
-if __name__ == '__main__':
-   import doctest
-   doctest.testmod(verbose=True)  
-```  
-
-Tester [ALLER SUR BASTHON](https://console.basthon.fr/)   
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Les<a name="_page5_x40.00_y567.92"></a> préconditions et les postconditions</h2>** 
 
@@ -468,7 +356,7 @@ Mais les assertions peuvent aussi être dans le programme **pour vérifier tous 
 
 
 
- **<H3 STYLE="COLOR:red;">Activité n° 9. : Utilisation de l’assertion dans une fonction</H3>**  
+ **<H3 STYLE="COLOR:red;">Activité n° 8. : Utilisation de l’assertion dans une fonction</H3>**  
 
 ```python
 from math import sqrt
@@ -552,7 +440,7 @@ Quand Python rencontre une erreur dans le code, il lève **une exception**.
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n° 10. :</H3>**Tester  
+**<H3 STYLE="COLOR:red;">Activité n° 9. :</H3>**Tester  
 
 > 1/0 
   
@@ -586,7 +474,7 @@ except:
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n° 11. :</H3>**On suppose que l’utilisateur entre une année. Ici il peut fournir une valeur impossible à convertir en entier.  
+**<H3 STYLE="COLOR:red;">Activité n° 10. :</H3>**On suppose que l’utilisateur entre une année. Ici il peut fournir une valeur impossible à convertir en entier.  
   
 ```python
 annee = input('Entrer une année ')  
@@ -623,7 +511,7 @@ Ici plusieurs erreurs sont susceptibles d’intervenir, chacune levant une excep
 
 
 
- **<H3 STYLE="COLOR:red;">Activité n°12. :</H3>**On peut ainsi intercepter ces erreurs possibles à l’exécution du code  
+ **<H3 STYLE="COLOR:red;">Activité n°11. :</H3>**On peut ainsi intercepter ces erreurs possibles à l’exécution du code  
 
 ```python 
 numerateur = input('Numérateur ?')  
@@ -652,7 +540,7 @@ Tester avec
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°13. :</H3>**L’instruction else se déroule **s’il n’y a pas d’exceptions** de lever   
+**<H3 STYLE="COLOR:red;">Activité n°12. :</H3>**L’instruction else se déroule **s’il n’y a pas d’exceptions** de lever   
 
 ```python 
 numerateur = input('Numérateur ?')   
@@ -674,7 +562,7 @@ Dans les faits, on utilise assez peu else. La plupart des codeurs préfère mett
 
     {{ IDE() }}
 
-**<H3 STYLE="COLOR:red;">Activité n°14. :</H3>**L’instruction finally permet d'exécuter du code après un bloc try, **quel que soit le résultat** de l'exécution du bloc. 
+**<H3 STYLE="COLOR:red;">Activité n°13. :</H3>**L’instruction finally permet d'exécuter du code après un bloc try, **quel que soit le résultat** de l'exécution du bloc. 
 
 ```python
 numerateur = input('Numérateur ?')  
@@ -705,7 +593,7 @@ Tester avec:
 
 L’utilisation de* assert* permet de faire des tests Si le test renvoie True*,* l’exécution se poursuit normalement. Sinon, une exception AssertionError* est levée. 
 
-**<H3 STYLE="COLOR:red;">Activité n°15. :</H3>**Dans le programme testant si une année est bissextile, on pourrait vouloir s’assurer que l’utilisateur ne  saisit pas une année inférieure ou égale à 0 par exemple : 
+**<H3 STYLE="COLOR:red;">Activité n°14. :</H3>**Dans le programme testant si une année est bissextile, on pourrait vouloir s’assurer que l’utilisateur ne  saisit pas une année inférieure ou égale à 0 par exemple : 
 
 ```python
 annee = input("Saisissez une année supérieure à 0 :")   
@@ -734,7 +622,7 @@ Tester avec :
 
 L’instruction raise permet au programmeur de déclencher une exception spécifique.
 
-**<H3 STYLE="COLOR:red;">Activité n°16. :</H3>**Si l’utilisateur entre une année trop grande par exemple supérieure à 3000, on peut estimer qu’il s’agit d’une erreur 
+**<H3 STYLE="COLOR:red;">Activité n°15. :</H3>**Si l’utilisateur entre une année trop grande par exemple supérieure à 3000, on peut estimer qu’il s’agit d’une erreur 
 
 ```python
 annee = input("Saisissez une année supérieure à 0 :")   
@@ -762,33 +650,23 @@ N’oubliez pas : un programme bien écrit doit **gérer proprement les exceptio
 
 **<H3 STYLE="COLOR:red;">Exercice 1 :</H3>** On considère la fonction multiplier_par_deux(x) qui prend en paramètre x et qui renvoie son double. Ecrire un script de cette fonction avec : 
 
-1.Cas des assert : 
 
-- Sa documentation dans le docstring comme dans l’activité 1. Ne pas mettre d’exemples 
+- Sa documentation dans le docstring comme dans le cours. Ne pas mettre d’exemples 
 
-- 4 tests en assert (comme dans l’activité 3) : avec 0, avec -1, avec 3.2 et avec ‘a’ 
+- 4 tests en assert  : avec 0, avec -1, avec 3.2 et avec ‘a’ 
 
-2.Cas du doctest en mode verbose : 
 
-- Sa documentation dans le docstring comme dans l’activité 1. 
-
-- 4 tests dans le docstring (comme dans l’activité 10) : avec 0, avec -1,  avec 3.2 et avec ‘a’ 
 
 **<H3 STYLE="COLOR:red;">Exercice 2:</H3>** : On considère une fonction somme_carres(x) qui prend en paramètre x (entier strictement positif) et renvoie la somme des x premiers carrés non nuls.  
 
 Ecrire un script de cette fonction avec : 
 
-1.Cas des assert : 
 
 - Sa documentation dans le docstring comme dans l’activité 1. Ne pas mettre d’exemples 
 
 - 3 tests en assert (comme dans l’activité 3) : avec 1, avec 2 et avec 3 
 
-2.Cas du doctest en mode verbose : 
 
-- Sa documentation dans le docstring comme dans l’activité 1.
- 
-- 3 tests dans le docstring (comme dans l’activité 10) : avec 1, avec 2 et avec 3 
 
 **<H3 STYLE="COLOR:red;">Exercice 3:</H3>** : La fonction précédente à pour condition d’utilisation : x doit être strictement positif. Déclencher une exception et capturer là si le nombre entrée est 0 ou négatif. 
 
