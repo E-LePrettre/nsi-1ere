@@ -18,8 +18,11 @@ title: 03 Mise au point des scripts et gestion des exceptions
 ### **<H3 STYLE="COLOR:GREEN;">1.1. Qu’est-ce qu’une docstring ?</h3>**
 
 Une **docstring** est un texte placé juste après l’en-tête d’une fonction en Python. Elle sert à expliquer clairement :
+
 1. **Ce que fait la fonction** ;
+
 2. **Comment l’utiliser** (avec des informations sur les paramètres et le résultat attendu) ;
+
 3. **Les conditions à respecter pour éviter des erreurs**.
 
 C’est une façon de **documenter** le code, c’est-à-dire de rendre les fonctions plus faciles à comprendre pour les autres (et pour soi-même, si on revient sur le code plus tard !).
@@ -27,8 +30,11 @@ C’est une façon de **documenter** le code, c’est-à-dire de rendre les fonc
 ### **<H3 STYLE="COLOR:GREEN;">1.2. Pourquoi utiliser une docstring ?</h3>**
 
 Quand on écrit une fonction, les autres utilisateurs (ou même nous plus tard) peuvent se demander : 
+
 - « Cette fonction fait quoi ? »
+
 - « Qu’est-ce que je dois donner comme valeurs pour que la fonction fonctionne ? »
+
 - « Qu’est-ce que la fonction va me renvoyer comme résultat ? »
 
 La docstring répond à ces questions directement, **sans avoir à lire le code**. Elle est comme une fiche technique qui aide à comprendre la fonction plus vite.
