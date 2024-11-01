@@ -15,7 +15,28 @@ title: 03 Mise au point des scripts et gestion des exceptions
 
 ## **<H2 STYLE="COLOR:BLUE;">1.  Les bonnes pratiques : <a name="_page0_x40.00_y447.92"></a>documenter les fonctions</h2>** 
 
-Chaque fonction doit être **documentée** avec une « chaine de documentation » ou « docstring » c’est-à-dire une chaine de caractère placée immédiatement après l’en-tête de la fonction.
+### **<H3 STYLE="COLOR:GREEN;">1.1. Qu’est-ce qu’une docstring ?</h3>
+
+Une **docstring** est un texte placé juste après l’en-tête d’une fonction en Python. Elle sert à expliquer clairement :
+1. **Ce que fait la fonction** ;
+2. **Comment l’utiliser** (avec des informations sur les paramètres et le résultat attendu) ;
+3. **Les conditions à respecter pour éviter des erreurs**.
+
+C’est une façon de **documenter** le code, c’est-à-dire de rendre les fonctions plus faciles à comprendre pour les autres (et pour soi-même, si on revient sur le code plus tard !).
+
+### **<H3 STYLE="COLOR:GREEN;">1.2. Pourquoi utiliser une docstring ?</h3>
+
+Quand on écrit une fonction, les autres utilisateurs (ou même nous plus tard) peuvent se demander : 
+- « Cette fonction fait quoi ? »
+- « Qu’est-ce que je dois donner comme valeurs pour que la fonction fonctionne ? »
+- « Qu’est-ce que la fonction va me renvoyer comme résultat ? »
+
+La docstring répond à ces questions directement, **sans avoir à lire le code**. Elle est comme une fiche technique qui aide à comprendre la fonction plus vite.
+
+### **<H3 STYLE="COLOR:GREEN;">1.3. Comment écrire une docstring ?</h3>
+
+Une docstring se met **entre triples guillemets** `"""` juste après le nom de la fonction. 
+
 
 **<H3 STYLE="COLOR:red;">Activité n° 1.:</H3>** Exemple de documentation de fonctions que l’on obtient dans l’aide de la fonction 
 
@@ -36,10 +57,18 @@ def factorielle(n):
       resultat = resultat * i
    return resultat
 ```
-Tester 
-> help(factorielle)
+### **<H3 STYLE="COLOR:GREEN;">1.4. Comment voir la docstring d’une fonction ?</h3>
+
+On peut voir la docstring en utilisant la commande **help(nom_de_la_fonction)**. Par exemple :
+
+```python
+help(factorielle)
+```
+
+Cette commande affichera directement la description de la fonction, les paramètres, la valeur de retour, et les exemples si la docstring est bien écrite.
+
  
-TESTER [ALLER SUR BASTHON](https://console.basthon.fr/)
+**TESTER l'activité 1 ET help(factorielle)** [ALLER SUR BASTHON](https://console.basthon.fr/)
    
 Réaliser une telle chaîne de documentation permet 
 
