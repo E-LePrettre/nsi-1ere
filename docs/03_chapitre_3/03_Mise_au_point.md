@@ -90,15 +90,78 @@ et **au programmeur** de la fonction de préciser
 
 ## **<H2 STYLE="COLOR:BLUE;">2. Les<a name="_page1_x40.00_y350.92"></a> tests</h2>** 
 
-Pour vérifier si un programme ne produit pas d’erreur au cours de son exécution et s’il effectue réellement la tâche que l’on attend de lui, une première méthode consiste à exécuter plusieurs fois ce programme, en lui fournissant des entrées, **appelées tests**, qui servent à détecter les erreurs éventuelles.  
-
-Pour qu’elles jouent leur rôle, il faut choisir ces entrées de sorte que :  
-
-- L’on sache quelle doit être la sortie correcte du programme avec chacune de ces entrées : 
-- Chaque cas distinct d’exécution du programme soit parcouru avec au moins un choix d’entrées 
-- Les cas limites soient essayés : nombres nuls ou négatifs, liste vide etc.. 
+Pour vérifier si un programme ne produit pas d’erreur au cours de son exécution et s’il effectue réellement la tâche que l’on attend de lui, une première méthode consiste à exécuter plusieurs fois ce programme, en lui fournissant des entrées, **appelées tests**, qui servent à **détecter les erreurs éventuelles**.   
 
 ### **<H3 STYLE="COLOR:GREEN;">2.1. Les<a name="_page1_x40.00_y523.92"></a> tests simples avec assert</h3>**
+
+#### **<H4 STYLE="COLOR:fuchsia;"> Qu’est-ce que `assert` ?</h4>**
+
+L'instruction **`assert`** est une manière rapide de vérifier qu’un programme fait exactement ce qu’on attend. Elle permet de tester si une condition est vraie. Si elle est fausse, Python arrête le programme et signale une erreur. En somme, `assert` est une sorte de "gardien" : il vérifie que tout se passe comme prévu.
+
+### Pourquoi utiliser `assert` ?
+
+Lorsqu’on écrit une fonction, on veut souvent vérifier que le résultat est correct pour certaines valeurs. Par exemple :
+- Si on écrit une fonction d’addition, on veut être sûr que `addition(2, 3)` renvoie bien `5`.
+- `assert` permet de tester rapidement plusieurs cas, pour vérifier qu’il n’y a pas de problème.
+
+### Comment utiliser `assert` ?
+
+`assert` s’écrit sous la forme :
+```python
+assert condition
+```
+
+1. **Condition** : On écrit ce qu’on souhaite vérifier. Par exemple, `assert 2 + 2 == 4` vérifie que 2 + 2 fait bien 4.
+2. **Action de `assert`** : Si la condition est vraie, le programme continue comme prévu. Mais si elle est fausse, Python arrête le programme et montre une erreur.
+
+### Exemple simple avec `assert`
+
+Voici un exemple pour illustrer :
+```python
+def carre(x):
+    return x * x
+
+# Test avec assert
+assert carre(3) == 9  # Vérifie que le carré de 3 est bien 9
+assert carre(0) == 0  # Vérifie que le carré de 0 est bien 0
+assert carre(-2) == 4 # Vérifie que le carré de -2 est bien 4
+```
+
+Dans cet exemple, `assert` s’assure que le résultat de chaque test est correct :
+- **carre(3) == 9** est vrai, donc le programme continue.
+- Si on écrivait **assert carre(3) == 8**, Python s’arrêterait, car le carré de 3 n’est pas 8, et il signalerait une erreur.
+
+### Pourquoi est-ce utile ?
+
+`assert` est utile parce qu’il permet de **tester rapidement des fonctions** :
+- En testant plusieurs cas d’utilisation, on peut voir si la fonction renvoie les bonnes valeurs.
+- En cas d’erreur, `assert` aide à repérer d’où vient le problème (le programme s’arrête là où le test échoue).
+
+### Cas concret avec `division_euclidienne`
+
+Prenons l’exemple de la fonction **`division_euclidienne`** pour tester la division entière et le reste :
+
+```python
+def division_euclidienne(a, b):   
+    if a >= 0 and b > 0 and type(a) == int and type(b) == int:   
+        return a // b, a % b   # Quotient et reste
+    else:   
+        return -1   # Code d'erreur si les valeurs ne sont pas correctes
+```
+
+Et les tests avec `assert` :
+```python
+if __name__ == '__main__':
+    assert division_euclidienne(10, 2) == (5, 0)  # Test valide
+    assert division_euclidienne(-10, 7) == -1     # Test d'erreur (négatif)
+    assert division_euclidienne(10.3, 4) == -1    # Test d'erreur (nombre décimal)
+    assert division_euclidienne(3, 0) == -1       # Test d'erreur (division par zéro)
+```
+
+### Que faire si un test échoue ?
+
+Si un **assert échoue**, le programme s’arrête, et tu sais exactement où ça a échoué. Par exemple :
+- Si **`assert division_euclidienne(10, 2) == (5, 1)`** échoue, Python montre une erreur, car le reste de `10 divisé par 2` est `0` et non `1`.
 
 L’idée la plus simple à mettre en place est d’utiliser la commande assert pour vérifier que les résultats voulus correspondent à ce que renvoie la fonction désirée.  
 
