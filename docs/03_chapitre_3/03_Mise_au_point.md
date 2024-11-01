@@ -109,10 +109,12 @@ L'instruction **`assert`** est une manière rapide de **vérifier qu’un progra
 ### **<H4 STYLE="COLOR:fuchsia;">2.1.2. Pourquoi utiliser `assert` ?</h4>**
 
 Lorsqu’on écrit une fonction, on veut souvent vérifier que le résultat est correct pour certaines valeurs. Par exemple :
+
 - Si on écrit une fonction d’addition, on veut être sûr que `addition(2, 3)` renvoie bien `5`.
+
 - `assert` permet de tester rapidement plusieurs cas, pour vérifier qu’il n’y a pas de problème.
 
-### Comment utiliser `assert` ?
+### **<H4 STYLE="COLOR:fuchsia;">2.1.3. Comment utiliser `assert` ?</h4>**
 
 `assert` s’écrit sous la forme :
 ```python
@@ -120,11 +122,13 @@ assert condition
 ```
 
 1. **Condition** : On écrit ce qu’on souhaite vérifier. Par exemple, `assert 2 + 2 == 4` vérifie que 2 + 2 fait bien 4.
+
 2. **Action de `assert`** : Si la condition est vraie, le programme continue comme prévu. Mais si elle est fausse, Python arrête le programme et montre une erreur.
 
-### Exemple simple avec `assert`
+### **<H4 STYLE="COLOR:fuchsia;">2.1.4. Exemple simple avec `assert`</h4>**
 
-Voici un exemple pour illustrer :
+**<H3 STYLE="COLOR:red;">Activité n° 2.:</H3>** 
+
 ```python
 def carre(x):
     return x * x
@@ -135,19 +139,32 @@ assert carre(0) == 0  # Vérifie que le carré de 0 est bien 0
 assert carre(-2) == 4 # Vérifie que le carré de -2 est bien 4
 ```
 
+???+ question "Faire ce qui est proposé"
+
+    {{ IDE() }}
+
+En cas de réussite, il ne se passe simplement **rien**   
+
 Dans cet exemple, `assert` s’assure que le résultat de chaque test est correct :
+
 - **carre(3) == 9** est vrai, donc le programme continue.
+
 - Si on écrivait **assert carre(3) == 8**, Python s’arrêterait, car le carré de 3 n’est pas 8, et il signalerait une erreur.
 
-### Pourquoi est-ce utile ?
+
+### **<H4 STYLE="COLOR:fuchsia;">2.1.5. Pourquoi est-ce utile ?</h4>**
 
 `assert` est utile parce qu’il permet de **tester rapidement des fonctions** :
+
 - En testant plusieurs cas d’utilisation, on peut voir si la fonction renvoie les bonnes valeurs.
+
 - En cas d’erreur, `assert` aide à repérer d’où vient le problème (le programme s’arrête là où le test échoue).
 
-### Cas concret avec `division_euclidienne`
+### **<H4 STYLE="COLOR:fuchsia;">2.1.6. Cas concret avec `division_euclidienne`</h4>**
 
 Prenons l’exemple de la fonction **`division_euclidienne`** pour tester la division entière et le reste :
+
+**<H3 STYLE="COLOR:red;">Activité n° 3.:</H3>** 
 
 ```python
 def division_euclidienne(a, b):   
@@ -155,10 +172,8 @@ def division_euclidienne(a, b):
         return a // b, a % b   # Quotient et reste
     else:   
         return -1   # Code d'erreur si les valeurs ne sont pas correctes
-```
 
-Et les tests avec `assert` :
-```python
+
 if __name__ == '__main__':
     assert division_euclidienne(10, 2) == (5, 0)  # Test valide
     assert division_euclidienne(-10, 7) == -1     # Test d'erreur (négatif)
@@ -166,99 +181,164 @@ if __name__ == '__main__':
     assert division_euclidienne(3, 0) == -1       # Test d'erreur (division par zéro)
 ```
 
-### Que faire si un test échoue ?
-
-Si un **assert échoue**, le programme s’arrête, et tu sais exactement où ça a échoué. Par exemple :
-- Si **`assert division_euclidienne(10, 2) == (5, 1)`** échoue, Python montre une erreur, car le reste de `10 divisé par 2` est `0` et non `1`.
-
-L’idée la plus simple à mettre en place est d’utiliser la commande assert pour vérifier que les résultats voulus correspondent à ce que renvoie la fonction désirée.  
-
-En particulier :  
-
-- la division euclidienne de 10 par 2 doit renvoyer un quotient de 5 pour un reste nul ; 
-- celles de −10 par 7, de 10 par −7, de 10.3 par 4 ou encore de 11 par 3.5 doivent toutes renvoyer le code −1 « d’erreur »   
-- reste le cas particulier du zéro : une division par zéro doit renvoyer −1  
-
-On utilise if ```__name__ == '__main__'```: qui permet de n’exécuter les tests que lorsqu’on  travaille sur ce fichier et pas lorsque ce fichier est appelé par un autre fichier du programme.  
-
-
-
- **<H3 STYLE="COLOR:red;">Activité n° 2.:</H3>**    
-
-```python 
-def division_euclidienne(a,b):   
-   if a >=0 and b>0 and type(a)==int and type(b) == int:   
-      return a%b, a//b   # ici on a inversé le reste et le quotient
-   else:   
-      return -1   
-   
-if __name__ == '__main__':   
-   assert division_euclidienne(10, 2) == (5, 0)   
-   assert division_euclidienne(-10, 7) == -1   
-   assert division_euclidienne(10, -7) == -1   
-   assert division_euclidienne(10.3, 4) == -1   
-   assert division_euclidienne(11, 3.5) == -1   
-   assert division_euclidienne(3, 0) == -1   
-```  
-   
-L’inconvénient majeur de cette méthode est que l’on doit traiter **une assertion après l’autre** car le programme s’arrête dès le premier test qui échoue. En cas de réussite, il ne se passe simplement **rien**   
-   
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
-
-**<H3 STYLE="COLOR:red;">Activité n° 3.:</H3>**    
-
-```python  
-def division_euclidienne(a,b):   
-   if a >=0 and b>0 and type(a)==int and type(b) == int:   
-      return a//b, a%b   
-   else:   
-      return -1   
-
-if __name__ == '__main__':   
-   assert division_euclidienne(10, 2) == (5, 0)   
-   assert division_euclidienne(-10, 7) == -1   
-   assert division_euclidienne(10, -7) == -1   
-   assert division_euclidienne(10.3, 4) == -1   
-   assert division_euclidienne(10, 4.3) == -1   
-   assert division_euclidienne(3, 0) == -1   
-```   
-   
-**CE SONT LES PLUS UTILISÉS** 
+L'instruction if __name__ == '__main__': est couramment utilisée en Python pour contrôler le comportement du script lorsqu'il est exécuté directement, c'est à dire il  n'exécute les tests que lorsqu’on  travaille sur ce fichier et pas lorsque ce fichier est appelé par un autre fichier du programme. 
 
 ???+ question "Faire ce qui est proposé"
 
     {{ IDE() }}
+
+### **<H4 STYLE="COLOR:fuchsia;">2.1.7. Que faire si un test échoue ?</h4>**
+
+Si un **assert échoue**, le programme s’arrête, et tu sais exactement où ça a échoué. 
+
+**<H3 STYLE="COLOR:red;">Activité n° 4.:</H3>** 
+
+```python
+def division_euclidienne(a, b):   
+    if a >= 0 and b > 0 and type(a) == int and type(b) == int:   
+        return a // b, a % b   # Quotient et reste
+    else:   
+        return -1   # Code d'erreur si les valeurs ne sont pas correctes
+
+
+if __name__ == '__main__':
+    assert division_euclidienne(10, 2) == (5, 1)  # Test invalide
+    assert division_euclidienne(-10, 7) == -1     # Test d'erreur (négatif)
+    assert division_euclidienne(10.3, 4) == -1    # Test d'erreur (nombre décimal)
+    assert division_euclidienne(3, 0) == -1       # Test d'erreur (division par zéro)
+```
+
+???+ question "Faire ce qui est proposé"
+
+    {{ IDE() }}
+
+Si **`assert division_euclidienne(10, 2) == (5, 1)`** échoue, Python montre une erreur, car le reste de `10 divisé par 2` est `0` et non `1`.
+
+L’inconvénient majeur de cette méthode est que l’on doit traiter **une assertion après l’autre** car le programme s’arrête dès le premier test qui échoue. 
+ 
+   
+
 
 ### **<H3 STYLE="COLOR:GREEN;">2.2. Les<a name="_page2_x40.00_y650.92"></a> tests avec doctest</h3>** 
 
-Les exemples donnés dans les docstrings (chaine de documentation) peuvent être testés à l’aide du module 
 
+### **<H4 STYLE="COLOR:fuchsia;">2.2.1. Doctest : qu’est-ce que c’est ?</h4>**
 
+**Doctest** est un module Python qui permet de tester les exemples donnés dans les docstrings. Les exemples sont écrits avec les triples chevrons `>>>`, et **doctest** vérifie automatiquement que la fonction produit bien les résultats attendus.
 
-**<H3 STYLE="COLOR:red;">Activité n° 4.:</H3>**  
+### **<H4 STYLE="COLOR:fuchsia;">2.2.2. Pourquoi utiliser doctest ?</h4>**
+
+Doctest est utile car il :
+
+- **Vérifie automatiquement** que les exemples de la docstring donnent les bons résultats ;
+
+- **Aide à repérer rapidement les erreurs** dans le code ;
+
+- Permet d’**écrire des tests directement dans la docstring**, ce qui rend le code et ses tests plus faciles à lire et à comprendre.
+
+### **<H4 STYLE="COLOR:fuchsia;">2.2.3. Exemple d’utilisation de doctest</h4>**
+
+Prenons la fonction **factorielle** avec des exemples de tests dans la docstring :
 
 ```python
 def factorielle(n):
    """
-   fonction qui retourne la factorielle d'un nombre
+   Fonction qui retourne la factorielle d'un nombre.
    :param n: int
    :return: int
    CU (conditions d'utilisation) : n >= 0
+
    >>> factorielle(0)
    1
    >>> factorielle(4)
    24
    """
    resultat = 1
-   for i in range(2, n+1):
+   for i in range(2, n + 1):
+      resultat = resultat * i
+   return resultat
+
+# Pour exécuter les tests, il suffit d’écrire :
+
+import doctest
+doctest.testmod()
+```
+
+doctest vérifie que les valeurs données en exemple renvoient bien les résultats attendus.
+
+???+ question "Faire ce qui est proposé"
+
+    {{ IDE() }}
+
+
+Lorsque tous les tests réussissent, doctest ne renvoie aucun message. Cela peut être surprenant, mais c’est un bon signe : cela signifie que tout est correct.
+
+### **<H4 STYLE="COLOR:fuchsia;">2.2.4. Introduire une erreur pour observer doctest</h4>**
+
+Si on introduit une erreur volontaire dans la docstring, doctest signale cette erreur. Par exemple :
+```python
+def factorielle(n):
+   """
+   Fonction qui retourne la factorielle d'un nombre.
+   :param n: int
+   :return: int
+   CU (conditions d'utilisation) : n >= 0
+
+   >>> factorielle(0)
+   100000000000000  # Fausse valeur pour tester doctest
+   >>> factorielle(4)
+   24
+   """
+   resultat = 1
+   for i in range(2, n + 1):
       resultat = resultat * i
    return resultat
 
 import doctest
 doctest.testmod()
 ```
+
+???+ question "Faire ce qui est proposé"
+
+    {{ IDE() }}
+
+**Doctest signale l’erreur** et montre quel résultat était attendu et quel résultat a été trouvé.
+
+### **<H4 STYLE="COLOR:fuchsia;">2.2.5. Activer le mode verbose</h4>**
+
+Par défaut, doctest ne montre rien si tous les tests réussissent. Si on veut voir les tests même en cas de succès, on peut ajouter `verbose=True` dans `testmod` :
+
+```python
+def factorielle(n):
+   """
+   Fonction qui retourne la factorielle d'un nombre.
+   :param n: int
+   :return: int
+   CU (conditions d'utilisation) : n >= 0
+
+   >>> factorielle(0)
+   1
+   >>> factorielle(4)
+   24
+   """
+   resultat = 1
+   for i in range(2, n + 1):
+      resultat = resultat * i
+   return resultat
+
+
+import doctest
+doctest.testmod(verbose=True)
+```
+
+???+ question "Faire ce qui est proposé"
+
+    {{ IDE() }}
+
+En mode verbose, doctest affiche chaque test, qu’il réussisse ou échoue.
+
+
+
 Tester 
 [ALLER SUR BASTHON](https://console.basthon.fr/)
 
