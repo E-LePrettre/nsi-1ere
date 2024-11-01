@@ -181,7 +181,7 @@ if __name__ == '__main__':
     assert division_euclidienne(3, 0) == -1       # Test d'erreur (division par zéro)
 ```
 
-L'instruction if __name__ == '__main__': est couramment utilisée en Python pour contrôler le comportement du script lorsqu'il est exécuté directement, c'est à dire il  n'exécute les tests que lorsqu’on  travaille sur ce fichier et pas lorsque ce fichier est appelé par un autre fichier du programme. 
+L'instruction ```if __name__ == '__main__'```: est couramment utilisée en Python pour contrôler le comportement du script lorsqu'il est exécuté directement, c'est à dire il  n'exécute les tests que lorsqu’on  travaille sur ce fichier et pas lorsque ce fichier est appelé par un autre fichier du programme. 
 
 ???+ question "Faire ce qui est proposé"
 
