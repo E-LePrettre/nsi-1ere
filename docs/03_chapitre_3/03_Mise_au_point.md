@@ -75,7 +75,9 @@ Cette commande affichera directement la description de la fonction, les paramèt
 
  
 **TESTER l'activité 1 ET help(factorielle)** [ALLER SUR BASTHON](https://console.basthon.fr/)
-   
+
+### **<H3 STYLE="COLOR:GREEN;">1.5. Résumé</h3>**
+
 Réaliser une telle chaîne de documentation permet 
 
 **à l’utilisateur** de la fonction de savoir
@@ -100,11 +102,11 @@ Pour vérifier si un programme ne produit pas d’erreur au cours de son exécut
 
 ### **<H3 STYLE="COLOR:GREEN;">2.1. Les<a name="_page1_x40.00_y523.92"></a> tests simples avec assert</h3>**
 
-#### **<H4 STYLE="COLOR:fuchsia;"> Qu’est-ce que `assert` ?</h4>**
+#### **<H4 STYLE="COLOR:fuchsia;">2.1.1. Qu’est-ce que `assert` ?</h4>**
 
-L'instruction **`assert`** est une manière rapide de vérifier qu’un programme fait exactement ce qu’on attend. Elle permet de tester si une condition est vraie. Si elle est fausse, Python arrête le programme et signale une erreur. En somme, `assert` est une sorte de "gardien" : il vérifie que tout se passe comme prévu.
+L'instruction **`assert`** est une manière rapide de **vérifier qu’un programme fait exactement ce qu’on attend**. Elle permet de tester si une condition est vraie. Si elle est fausse, Python arrête le programme et signale une erreur. En somme, `assert` est une sorte de "gardien" : il vérifie que tout se passe comme prévu.
 
-### Pourquoi utiliser `assert` ?
+### **<H4 STYLE="COLOR:fuchsia;">2.1.2. Pourquoi utiliser `assert` ?</h4>**
 
 Lorsqu’on écrit une fonction, on veut souvent vérifier que le résultat est correct pour certaines valeurs. Par exemple :
 - Si on écrit une fonction d’addition, on veut être sûr que `addition(2, 3)` renvoie bien `5`.
