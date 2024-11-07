@@ -528,9 +528,9 @@ Tester avec
 
 - 20 et 0 
 
-- 20 et 'a'
+- relancer le programme et tester avec => 20 et 'a'
 
-- 'a' et 3
+- relancer le programme et tester avec => 'a' et 3
 
 ???+ question "Faire ce qui est proposé"
 
@@ -583,7 +583,7 @@ Tester avec:
 
 - 20 et 4
 
-- 20 et 0
+- relancer le programme et tester avec => 20 et 0
 
 ???+ question "Faire ce qui est proposé"
 
@@ -609,9 +609,9 @@ Tester avec :
 
 - 2000
 
-- 'a'
+- relancer le programme et tester avec => 'a'
 
-- -1999
+- relancer le programme et tester avec => -1999
 
 
 ???+ question "Faire ce qui est proposé"
@@ -710,11 +710,11 @@ Tester avec :
 
 - 'a'
 
-- 'salut !'
+- relancer le programme et tester avec => 'salut !'
 
-- 0
+- relancer le programme et tester avec => 0
 
-- 2
+- relancer le programme et tester avec => 2
 
 Aide : penser à une boucle infinie et au mot clé break.  
 
@@ -734,9 +734,9 @@ Tester avec :
 
 - "go"
 
-- -5.26
+- relancer le programme et tester avec => -5.26
 
-- 16
+- relancer le programme et tester avec => 16
 
 Remarquez bien qu’on demande le nombre à l’utilisateur *jusqu'à* ce qu’il convienne. 
 
