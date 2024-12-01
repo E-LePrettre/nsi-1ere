@@ -239,7 +239,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 2 Additionner les chiffres de droite à gauche :
 
    - \( F (15) + E (14) = 29 \), soit \( 1D \) (retenue \( 1 \), écrire \( D \)).
-   
+
    - \( 1 + 1 (\text{retenue}) = 2 \).
 
    **Résultat :** \( 1F_{16} + E_{16} = 2D_{16} \)
@@ -247,14 +247,18 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 ---
 
 #### **Exemple 2 : \( 3B_{16} + 27_{16} \)**
-1. Écrire les nombres alignés :
+
+1 Écrire les nombres alignés :
+
    ```
           3B
       +   27
    ```
 
-2. Additionner les chiffres de droite à gauche :
+2 Additionner les chiffres de droite à gauche :
+
    - \( B (11) + 7 = 18 \), soit \( 12 \) en hexadécimal (retenue \( 1 \), écrire \( 2 \)).
+
    - \( 3 + 2 + 1 (\text{retenue}) = 6 \).
 
    **Résultat :** \( 3B_{16} + 27_{16} = 62_{16} \)
@@ -270,11 +274,17 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 
 - **Bit de poids fort (MSB)** :
+
   - \( 0 \) → Nombre **positif**.
+
   - \( 1 \) → Nombre **négatif** (en complément à 2).
+
 - Pour un nombre signé sur 8 bits, la plage des valeurs est : \[  -128  à  127  \]
+
   - Exemple :
+
     - \( 01111111_2 = 127 \) (plus grand nombre positif),
+    
     - \( 10000000_2 = -128 \) (plus petit nombre négatif).
 
 ---
