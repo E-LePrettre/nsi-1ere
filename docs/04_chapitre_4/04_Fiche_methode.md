@@ -182,22 +182,22 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 2 Additionner colonne par colonne, en appliquant les règles :
 
-   - \( 1 + 1 = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 1 + 1 = 10 \), on écrit \( 0 \) et on retient \( 1 \).
 
-   - \( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
 
-   - \( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
 
-   - \( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient \( 1 \).
+\( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient \( 1 \).
 
-   - On place la retenue restante \( 1 \) à gauche.
+On place la retenue restante \( 1 \) à gauche.
 
    **Résultat :** \( 1011_2 + 1101_2 = 11000_2 \)
 
 ---
 
 #### **Exemple 2 : \( 11101_2 + 1011_2 \)**
-1. Écrire les nombres alignés sur la droite :
+1 Écrire les nombres alignés sur la droite :
 
    ```
           11101
@@ -206,15 +206,15 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 2 Effectuer l’addition (avec retenues) :
 
-   - \( 1 + 1 = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 1 + 1 = 10 \), on écrit \( 0 \) et on retient \( 1 \).
 
-   - \( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
 
-   - \( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
 
-   - \( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient \( 1 \).
+\( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient \( 1 \).
 
-   - \( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
 
    **Résultat :** \( 11101_2 + 1011_2 = 100000_2 \)
 
@@ -247,9 +247,9 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 2 Additionner les chiffres de droite à gauche :
 
-   - \( F (15) + E (14) = 29 \), soit \( 1D \) (retenue \( 1 \), écrire \( D \)).
+\( F (15) + E (14) = 29 \), soit \( 1D \) (retenue \( 1 \), écrire \( D \)).
 
-   - \( 1 + 1 (\text{retenue}) = 2 \).
+\( 1 + 1 (\text{retenue}) = 2 \).
 
    **Résultat :** \( 1F_{16} + E_{16} = 2D_{16} \)
 
@@ -266,9 +266,9 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 2 Additionner les chiffres de droite à gauche :
 
-   - \( B (11) + 7 = 18 \), soit \( 12 \) en hexadécimal (retenue \( 1 \), écrire \( 2 \)).
+\( B (11) + 7 = 18 \), soit \( 12 \) en hexadécimal (retenue \( 1 \), écrire \( 2 \)).
 
-   - \( 3 + 2 + 1 (\text{retenue}) = 6 \).
+\( 3 + 2 + 1 (\text{retenue}) = 6 \).
 
    **Résultat :** \( 3B_{16} + 27_{16} = 62_{16} \)
 
@@ -278,7 +278,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 
 
-### **6. Représentation des nombres binaires signés**
+### **<H3 STYLE="COLOR:red;">6. Représentation des nombres binaires signés</h3>**
 
 
 
