@@ -8,21 +8,21 @@ title: 04 Fiche Méthode : Conversion entre les bases**
 ### **1. Conversion de la base 10 vers une base \( b \)**
 
 #### **Étapes :**
-1. **Choisir la base de destination (\( b \)) :**
+1 **Choisir la base de destination (\( b \)) :**
 
 Exemples : \( b = 2 \) (binaire), \( b = 16 \) (hexadécimal), \( b = 5 \) ou \( b = 7 \) etc.
 
-2. **Diviser le nombre en base 10 par \( b \) :**
+2 **Diviser le nombre en base 10 par \( b \) :**
 
 Divisez le nombre entier par \( b \) et notez le **reste** (c'est le chiffre dans la base \( b \)).
 
-3. **Répéter la division :**
+3 **Répéter la division :**
 
 Prenez le **quotient** obtenu et divisez-le à nouveau par \( b \).
 
 Continuez jusqu’à ce que le quotient soit égal à 0.
 
-4. **Lire le résultat :**
+4 **Lire le résultat :**
 
 Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
@@ -30,7 +30,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 #### **Exemples :**
 
-1. **Conversion de \( 45_{10} \) en base \( 2 \) (binaire) :**
+1 **Conversion de \( 45_{10} \) en base \( 2 \) (binaire) :**
    - \( 45 \div 2 = 22 \), reste \( 1 \)
    - \( 22 \div 2 = 11 \), reste \( 0 \)
    - \( 11 \div 2 = 5 \), reste \( 1 \)
@@ -40,13 +40,13 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
    **Résultat :** \( 45_{10} = 101101_2 \)
 
-2. **Conversion de \( 254_{10} \) en base \( 16 \) (hexadécimal) :**
+2 **Conversion de \( 254_{10} \) en base \( 16 \) (hexadécimal) :**
    - \( 254 \div 16 = 15 \), reste \( 14 \) (\( E \) en hexadécimal)
    - \( 15 \div 16 = 0 \), reste \( 15 \) (\( F \) en hexadécimal)
 
    **Résultat :** \( 254_{10} = FE_{16} \)
 
-3. **Conversion de \( 78_{10} \) en base \( 5 \) :**
+3 **Conversion de \( 78_{10} \) en base \( 5 \) :**
    - \( 78 \div 5 = 15 \), reste \( 3 \)
    - \( 15 \div 5 = 3 \), reste \( 0 \)
    - \( 3 \div 5 = 0 \), reste \( 3 \)
