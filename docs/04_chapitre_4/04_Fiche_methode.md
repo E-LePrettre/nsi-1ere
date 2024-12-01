@@ -10,21 +10,21 @@ title: 04 Fiche Méthode : Conversion entre les bases**
 #### **Étapes :**
 1. **Choisir la base de destination (\( b \)) :**
 
-   Exemples : \( b = 2 \) (binaire), \( b = 16 \) (hexadécimal), \( b = 5 \) ou \( b = 7 \) etc.
+Exemples : \( b = 2 \) (binaire), \( b = 16 \) (hexadécimal), \( b = 5 \) ou \( b = 7 \) etc.
 
 2. **Diviser le nombre en base 10 par \( b \) :**
 
-   Divisez le nombre entier par \( b \) et notez le **reste** (c'est le chiffre dans la base \( b \)).
+Divisez le nombre entier par \( b \) et notez le **reste** (c'est le chiffre dans la base \( b \)).
 
 3. **Répéter la division :**
 
-   Prenez le **quotient** obtenu et divisez-le à nouveau par \( b \).
+Prenez le **quotient** obtenu et divisez-le à nouveau par \( b \).
 
-   Continuez jusqu’à ce que le quotient soit égal à 0.
+Continuez jusqu’à ce que le quotient soit égal à 0.
 
 4. **Lire le résultat :**
 
-   Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
+Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 ---
 
