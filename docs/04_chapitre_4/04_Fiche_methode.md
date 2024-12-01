@@ -292,13 +292,13 @@ On place la retenue restante \( 1 \) à gauche.
 
 Exemple :
 
-    - \( 01111111_2 = 127 \) (plus grand nombre positif),
+\( 01111111_2 = 127 \) (plus grand nombre positif),
 
-    - \( 10000000_2 = -128 \) (plus petit nombre négatif).
+\( 10000000_2 = -128 \) (plus petit nombre négatif).
 
 ---
 
-### **7. Conversion de binaire signé vers décimal**
+### **<H3 STYLE="COLOR:red;">7. Conversion de binaire signé vers décimal</h3>**
 
 #### **Étapes :** Vérifiez le **bit de poids fort** :
    - Si le **bit de poids fort** est \( 0 \), le nombre est positif. Convertissez directement en base 10.
