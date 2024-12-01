@@ -194,12 +194,14 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 #### **Exemple 2 : \( 11101_2 + 1011_2 \)**
 1. Écrire les nombres alignés sur la droite :
+
    ```
           11101
       +   01011
    ```
 
 2. Effectuer l’addition (avec retenues) :
+
    - \( 1 + 1 = 10 \), on écrit \( 0 \) et on retient \( 1 \).
    - \( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
    - \( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
