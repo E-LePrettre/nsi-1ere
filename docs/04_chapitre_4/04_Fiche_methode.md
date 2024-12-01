@@ -348,49 +348,70 @@ Exemple :
 
 ---
 
-### **<H3 STYLE="COLOR:red;">8. Conversion de décimal vers binaire signé**
+### **<H3 STYLE="COLOR:red;">8. Conversion de décimal vers binaire signé</h3>**
 
 #### **Étapes :**
-1. Si le nombre est **positif**, convertissez directement en binaire avec \( n \) bits.
-2. Si le nombre est **négatif** :
 
-   - Prenez la **valeur absolue** et convertissez-la en binaire sur \( n \) bits.
-   - Complément à 1 : Inversez tous les bits.
-   - Complément à 2 : Ajoutez \( 1 \).
+1 Si le nombre est **positif**, convertissez directement en binaire avec \( n \) bits.
+
+2 Si le nombre est **négatif** :
+
+Prenez la **valeur absolue** et convertissez-la en binaire sur \( n \) bits.
+
+Complément à 1 : Inversez tous les bits.
+
+Complément à 2 : Ajoutez \( 1 \).
+
 
 ---
 
 #### **Exemples  :**
 
-1. **\( 5_{10} \) :**
-   - \( 5 \) en binaire : \( 00000101 \).
-   - Résultat : \( 00000101_2 \).
+**\( 5_{10} \) :**
 
-2. **\(-5_{10}\) :**
-   - Valeur absolue : \( 5 \) en binaire → \( 00000101 \).
-   - Complément à 1 : \( 00000101 \rightarrow 11111010 \).
-   - Ajouter \( 1 \) : \( 11111010 + 1 = 11111011 \).
-   - Résultat : \( 11111011_2 \).
+\( 5 \) en binaire : \( 00000101 \).
 
-3. **\(-127_{10}\) :**
-   - Valeur absolue : \( 127 \) en binaire → \( 01111111 \).
-   - Complément à 1 : \( 01111111 \rightarrow 10000000 \).
-   - Ajouter \( 1 \) : \( 10000000 + 1 = 10000001 \).
-   - Résultat : \( 10000001_2 \).
+Résultat : \( 00000101_2 \).
 
-4. **\(-128_{10}\) :**
-   - Valeur absolue : \( 128 \) dépasse la plage possible. Sur 8 bits, le plus petit négatif est \( -128 \), soit directement \( 10000000_2 \).
+**\(-5_{10}\) :**
+
+Valeur absolue : \( 5 \) en binaire → \( 00000101 \).
+
+Complément à 1 : \( 00000101 \rightarrow 11111010 \).
+
+Ajouter \( 1 \) : \( 11111010 + 1 = 11111011 \).
+
+Résultat : \( 11111011_2 \).
+
+
+**\(-127_{10}\) :**
+
+Valeur absolue : \( 127 \) en binaire → \( 01111111 \).
+
+Complément à 1 : \( 01111111 \rightarrow 10000000 \).
+
+Ajouter \( 1 \) : \( 10000000 + 1 = 10000001 \).
+
+Résultat : \( 10000001_2 \).
+
+**\(-128_{10}\) :**
+
+Valeur absolue : \( 128 \) dépasse la plage possible. Sur 8 bits, le plus petit négatif est \( -128 \), soit directement \( 10000000_2 \).
 
 ---
 
 
 
-### **9. Méthode alternative pour calculer le complément à 2 utilisée en programmation**
+### **<H3 STYLE="COLOR:red;">9. Méthode alternative pour calculer le complément à 2 utilisée en programmation</h3>**
 
 **Étapes pour appliquer cette méthode :**
+
 1. **Calculez \( 2^n \) (la valeur correspondant à la plage maximale pour \( n \) bits)**.
+
 2. **Soustrayez la valeur absolue du nombre négatif (\( |N| \))**.
+
 3. **Convertissez le résultat en binaire**.
+
 4. **Ajoutez le bit de signe \( 1 \)** à gauche pour indiquer un nombre négatif.
 
 ---
@@ -398,17 +419,12 @@ Exemple :
 #### **Exemple : Calculer \(-88_{10}\) en binaire signé sur 8 bits**
 
 1. **Calculez \( 2^8 = 256 \).**
-2. Soustrayez \( |88| \) :
-   \[
-   256 - 88 = 168
-   \]
-3. Convertissez \( 168 \) en binaire sur 8 bits :
-   \[
-   168_{10} = 10101000_2
-   \]
-4. Ajoutez le bit de signe \( 1 \) pour indiquer que le nombre est négatif :
-   \[
-   \text{Résultat : } 10101000_2
+
+2. Soustrayez \( |88| \) :  256 - 88 = 168
+ 
+3. Convertissez \( 168 \) en binaire sur 8 bits : \( 168_{10} \) = \( 10101000_2 \)
+
+4. Ajoutez le bit de signe \( 1 \) pour indiquer que le nombre est négatif :\( 10101000_2\)
    \]
 
 ---
