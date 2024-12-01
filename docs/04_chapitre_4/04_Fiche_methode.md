@@ -343,12 +343,12 @@ Exemple :
 **\( 01111111_2 \) :**
 
    - MSB = \( 0 \) → nombre positif.
-   
+
    - \( 01111111_2 = 127_{10} \).
 
 ---
 
-### **8. Conversion de décimal vers binaire signé**
+### **<H3 STYLE="COLOR:red;">8. Conversion de décimal vers binaire signé**
 
 #### **Étapes :**
 1. Si le nombre est **positif**, convertissez directement en binaire avec \( n \) bits.
