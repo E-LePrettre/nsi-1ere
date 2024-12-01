@@ -30,7 +30,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 #### **Exemples :**
 
-1 **Conversion de \( 45_{10} \) en base \( 2 \) (binaire) :**
+**Conversion de \( 45_{10} \) en base \( 2 \) (binaire) :**
    - \( 45 \div 2 = 22 \), reste \( 1 \)
    - \( 22 \div 2 = 11 \), reste \( 0 \)
    - \( 11 \div 2 = 5 \), reste \( 1 \)
@@ -40,13 +40,13 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
    **Résultat :** \( 45_{10} = 101101_2 \)
 
-2 **Conversion de \( 254_{10} \) en base \( 16 \) (hexadécimal) :**
+**Conversion de \( 254_{10} \) en base \( 16 \) (hexadécimal) :**
    - \( 254 \div 16 = 15 \), reste \( 14 \) (\( E \) en hexadécimal)
    - \( 15 \div 16 = 0 \), reste \( 15 \) (\( F \) en hexadécimal)
 
    **Résultat :** \( 254_{10} = FE_{16} \)
 
-3 **Conversion de \( 78_{10} \) en base \( 5 \) :**
+**Conversion de \( 78_{10} \) en base \( 5 \) :**
    - \( 78 \div 5 = 15 \), reste \( 3 \)
    - \( 15 \div 5 = 3 \), reste \( 0 \)
    - \( 3 \div 5 = 0 \), reste \( 3 \)
@@ -64,17 +64,17 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 2 **Écrire les chiffres du nombre dans le tableau :**
    - Placez chaque chiffre (en base \( b \)) dans une colonne.
 
-3. **Calculer les contributions de chaque chiffre :**
+3 **Calculer les contributions de chaque chiffre :**
    - Multipliez chaque chiffre par la puissance correspondante de \( b \).
 
-4. **Additionner les résultats :**
+4 **Additionner les résultats :**
    - La somme des contributions donne le nombre en base 10.
 
 ---
 
 #### **Exemples :**
 
-1. **Conversion de \( 101101_2 \) en base \( 10 \) :**
+**Conversion de \( 101101_2 \) en base \( 10 \) :**
 
 | Puissances de \( 2 \) | \( 2^5 \) | \( 2^4 \) | \( 2^3 \) | \( 2^2 \) | \( 2^1 \) | \( 2^0 \) |
 |-----------------------|-----------|-----------|-----------|-----------|-----------|-----------|
@@ -83,7 +83,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 **Résultat :** \( 32 + 0 + 8 + 4 + 0 + 1 = 45_{10} \)
 
-2. **Conversion de \( FE_{16} \) en base \( 10 \) :**
+**Conversion de \( FE_{16} \) en base \( 10 \) :**
 
 | Puissances de \( 16 \) | \( 16^1 \) | \( 16^0 \) |
 |------------------------|------------|------------|
@@ -92,7 +92,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 **Résultat :** \( 240 + 14 = 254_{10} \)
 
-3. **Conversion de \( 303_5 \) en base \( 10 \) :**
+**Conversion de \( 303_5 \) en base \( 10 \) :**
 
 | Puissances de \( 5 \) | \( 5^2 \) | \( 5^1 \) | \( 5^0 \) |
 |-----------------------|-----------|-----------|-----------|
@@ -113,13 +113,13 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 #### **Exemples :**
 
-1. **Conversion de \( 101101_2 \) en hexadécimal :**
+**Conversion de \( 101101_2 \) en hexadécimal :**
    - Groupes de 4 bits (ajouter des zéros à gauche si nécessaire) : \( 101101 \rightarrow 0010\ 1101 \).
    - Convertir chaque groupe : \( 0010 = 2 \), \( 1101 = D \).
 
    **Résultat :** \( 101101_2 = 2D_{16} \)
 
-2. **Conversion de \( 3E_{16} \) en binaire :**
+**Conversion de \( 3E_{16} \) en binaire :**
    - Convertir chaque chiffre hexadécimal en 4 bits :
      - \( 3 = 0011 \), \( E = 1110 \).
 
