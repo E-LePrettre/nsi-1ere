@@ -425,7 +425,6 @@ Valeur absolue : \( 128 \) dépasse la plage possible. Sur 8 bits, le plus petit
 3. Convertissez \( 168 \) en binaire sur 8 bits : \( 168_{10} \) = \( 10101000_2 \)
 
 4. Ajoutez le bit de signe \( 1 \) pour indiquer que le nombre est négatif :\( 10101000_2\)
-   \]
 
 ---
 
@@ -433,26 +432,27 @@ Valeur absolue : \( 128 \) dépasse la plage possible. Sur 8 bits, le plus petit
 
 
 
-### **10. Structure de la norme IEEE 754**
+### **<H3 STYLE="COLOR:red;">10. Structure de la norme IEEE 754</h3>**
 
 | **Signe (1 bit)** | **Exposant biaisé (8 bits)** | **Mantisse (23 bits)** |
 |-------------------|-----------------------------|-------------------------|
 
 Le nombre est décomposé en :
+
 - **Signe (\( S \))** : \( S = 0 \) pour un nombre positif, \( S = 1 \) pour un nombre négatif.
+
 - **Exposant biaisé (\( E_{\text{binaire}} \))** : \( E_{\text{binaire}} = E_{\text{réel}} + 127 \), où \( E_{\text{réel}} \) est l'exposant de la puissance de 2 dans la forme normalisée.
+
 - **Mantisse (\( M \))** : Partie fractionnaire du nombre normalisé (\( 1.\text{fractionnaire} \)).
 
 ---
 
-### **11. Conversion de \(-12.0125\) en IEEE 754**
+### **<H3 STYLE="COLOR:red;">11. Conversion de \(-12.0125\) en IEEE 754</H3>**
 
 #### **Étape 1 : Déterminer le signe (\( S \))**
 
-Le nombre est **négatif**, donc :
-\[
-S = 1
-\]
+Le nombre est **négatif**, donc : S = 1
+
 
 ---
 
@@ -461,35 +461,42 @@ S = 1
 ##### **1. Séparer la partie entière et fractionnaire**
 
 Pour \( |12.0125| \) :
+
 - Partie entière : \( 12 \),
+
 - Partie fractionnaire : \( 0.0125 \).
 
 ##### **2. Convertir la partie entière (\( 12 \)) en binaire**
 
-\[
-12_{10} = 1100_2
-\]
+\(12_{10} = 1100_2 \)
 
 ##### **3. Convertir la partie fractionnaire (\( 0.0125 \)) en binaire**
 
 Pour convertir la partie fractionnaire, multipliez successivement par \( 2 \) :
 
-1. \( 0.0125 \cdot 2 = 0.025 \quad (\text{retenir } 0) \),
-2. \( 0.025 \cdot 2 = 0.05 \quad (\text{retenir } 0) \),
-3. \( 0.05 \cdot 2 = 0.1 \quad (\text{retenir } 0) \),
-4. \( 0.1 \cdot 2 = 0.2 \quad (\text{retenir } 0) \),
-5. \( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \),
-6. \( 0.4 \cdot 2 = 0.8 \quad (\text{retenir } 0) \),
-7. \( 0.8 \cdot 2 = 1.6 \quad (\text{retenir } 1) \),
-8. \( 0.6 \cdot 2 = 1.2 \quad (\text{retenir } 1) \),
-9. \( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \).
+\( 0.0125 \cdot 2 = 0.025 \quad (\text{retenir } 0) \),
+
+
+\( 0.025 \cdot 2 = 0.05 \quad (\text{retenir } 0) \),
+
+\( 0.05 \cdot 2 = 0.1 \quad (\text{retenir } 0) \),
+
+\( 0.1 \cdot 2 = 0.2 \quad (\text{retenir } 0) \),
+
+\( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \),
+
+\( 0.4 \cdot 2 = 0.8 \quad (\text{retenir } 0) \),
+
+\( 0.8 \cdot 2 = 1.6 \quad (\text{retenir } 1) \),
+
+\( 0.6 \cdot 2 = 1.2 \quad (\text{retenir } 1) \),
+
+\( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \).
 
 on voit que la partie fractionnaire devient cyclique
 
 Fractionnaire approximatif :
-\[
-0.0125_{10} \approx 0.000000110_2
-\]
+\(0.0125_{10} \approx 0.000000110_2 \)
 
 ##### **4. Combiner partie entière et fractionnaire**
 
