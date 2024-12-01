@@ -1,6 +1,6 @@
 ﻿---
 author: ELP
-title: 04 fiche méthode
+title: 04 Fiche Méthode
 ---
 
 ## **Fiche méthode : Conversion entre les bases**
@@ -160,7 +160,7 @@ title: 04 fiche méthode
 #### **Exemple 2 : \( 11101_2 + 1011_2 \)**
 1. Écrire les nombres alignés sur la droite :
    ```
-         11101
+          11101
       +   01011
    ```
 
@@ -206,7 +206,7 @@ title: 04 fiche méthode
 #### **Exemple 2 : \( 3B_{16} + 27_{16} \)**
 1. Écrire les nombres alignés :
    ```
-         3B
+          3B
       +   27
    ```
 
@@ -215,6 +215,130 @@ title: 04 fiche méthode
    - \( 3 + 2 + 1 (\text{retenue}) = 6 \).
 
    **Résultat :** \( 3B_{16} + 27_{16} = 62_{16} \)
+
+---
+
+Voici une **fiche méthode** claire et synthétique centrée sur la **conversion entre binaire et décimal pour les nombres signés**, en utilisant la méthode du complément à 2.
+
+---
+
+
+
+### **6. Représentation des nombres binaires signés**
+
+
+
+- **Bit de poids fort (MSB)** :
+  - \( 0 \) → Nombre **positif**.
+  - \( 1 \) → Nombre **négatif** (en complément à 2).
+- Pour un nombre signé sur 8 bits, la plage des valeurs est :
+  \[
+  -128 \text{ à } 127
+  \]
+  - Exemple :
+    - \( 01111111_2 = 127 \) (plus grand nombre positif),
+    - \( 10000000_2 = -128 \) (plus petit nombre négatif).
+
+---
+
+### **7. Conversion de binaire signé vers décimal**
+
+#### **Étapes :**
+1. Vérifiez le **bit de poids fort** :
+   - Si le **bit de poids fort** est \( 0 \), le nombre est positif. Convertissez directement en base 10.
+   - Si le **bit de poids fort** est \( 1 \), le nombre est négatif :
+     - Complément à 1 : Inversez tous les bits.
+     - Complément à 2 : Ajoutez \( 1 \).
+     - Convertissez en décimal et ajoutez le signe \( - \).
+
+---
+
+#### **Exemples :**
+
+1. **\( 00000101_2 \) :**
+   - MSB = \( 0 \) → nombre positif.
+   - \( 00000101_2 = 5_{10} \).
+
+2. **\( 11111011_2 \) :**
+   - MSB = \( 1 \) → nombre négatif.
+   - Complément à 1 : \( 11111011 \rightarrow 00000100 \).
+   - Ajouter \( 1 \) : \( 00000100 + 1 = 00000101 \).
+   - Résultat : \( -5_{10} \).
+
+3. **\( 10000001_2 \) :**
+   - MSB = \( 1 \) → nombre négatif.
+   - Complément à 1 : \( 10000001 \rightarrow 01111110 \).
+   - Ajouter \( 1 \) : \( 01111110 + 1 = 01111111 \).
+   - \( 01111111_2 = 127_{10} \).
+   - Résultat : \( -127_{10} \).
+
+4. **\( 01111111_2 \) :**
+   - MSB = \( 0 \) → nombre positif.
+   - \( 01111111_2 = 127_{10} \).
+
+---
+
+### **8. Conversion de décimal vers binaire signé**
+
+#### **Étapes :**
+1. Si le nombre est **positif**, convertissez directement en binaire avec \( n \) bits.
+2. Si le nombre est **négatif** :
+   - Prenez la **valeur absolue** et convertissez-la en binaire sur \( n \) bits.
+   - Complément à 1 : Inversez tous les bits.
+   - Complément à 2 : Ajoutez \( 1 \).
+
+---
+
+#### **Exemples  :**
+
+1. **\( 5_{10} \) :**
+   - \( 5 \) en binaire : \( 00000101 \).
+   - Résultat : \( 00000101_2 \).
+
+2. **\(-5_{10}\) :**
+   - Valeur absolue : \( 5 \) en binaire → \( 00000101 \).
+   - Complément à 1 : \( 00000101 \rightarrow 11111010 \).
+   - Ajouter \( 1 \) : \( 11111010 + 1 = 11111011 \).
+   - Résultat : \( 11111011_2 \).
+
+3. **\(-127_{10}\) :**
+   - Valeur absolue : \( 127 \) en binaire → \( 01111111 \).
+   - Complément à 1 : \( 01111111 \rightarrow 10000000 \).
+   - Ajouter \( 1 \) : \( 10000000 + 1 = 10000001 \).
+   - Résultat : \( 10000001_2 \).
+
+4. **\(-128_{10}\) :**
+   - Valeur absolue : \( 128 \) dépasse la plage possible. Sur 8 bits, le plus petit négatif est \( -128 \), soit directement \( 10000000_2 \).
+
+---
+
+
+
+### **9. Méthode alternative pour calculer le complément à 2 utilisée en programmation**
+
+**Étapes pour appliquer cette méthode :**
+1. **Calculez \( 2^n \) (la valeur correspondant à la plage maximale pour \( n \) bits)**.
+2. **Soustrayez la valeur absolue du nombre négatif (\( |N| \))**.
+3. **Convertissez le résultat en binaire**.
+4. **Ajoutez le bit de signe \( 1 \)** à gauche pour indiquer un nombre négatif.
+
+---
+
+#### **Exemple : Calculer \(-88_{10}\) en binaire signé sur 8 bits**
+
+1. **Calculez \( 2^8 = 256 \).**
+2. Soustrayez \( |88| \) :
+   \[
+   256 - 88 = 168
+   \]
+3. Convertissez \( 168 \) en binaire sur 8 bits :
+   \[
+   168_{10} = 10101000_2
+   \]
+4. Ajoutez le bit de signe \( 1 \) pour indiquer que le nombre est négatif :
+   \[
+   \text{Résultat : } 10101000_2
+   \]
 
 ---
 
