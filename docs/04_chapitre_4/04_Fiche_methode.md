@@ -121,7 +121,9 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 ### **3. Conversion binaire <=> hexadécimal**
 
 #### **Règle pratique :**
+
 - **Groupes de 4 bits** : Chaque chiffre hexadécimal correspond à **4 bits** en binaire.
+
 - Conversion directe entre les deux bases sans passer par la base 10.
 
 ---
@@ -129,14 +131,18 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 #### **Exemples :**
 
 **Conversion de \( 101101_2 \) en hexadécimal :**
+
    - Groupes de 4 bits (ajouter des zéros à gauche si nécessaire) : \( 101101 \rightarrow 0010\ 1101 \).
+
    - Convertir chaque groupe : \( 0010 = 2 \), \( 1101 = D \).
 
    **Résultat :** \( 101101_2 = 2D_{16} \)
 
 **Conversion de \( 3E_{16} \) en binaire :**
+
    - Convertir chaque chiffre hexadécimal en 4 bits :
-     - \( 3 = 0011 \), \( E = 1110 \).
+
+   - \( 3 = 0011 \), \( E = 1110 \).
 
    **Résultat :** \( 3E_{16} = 00111110_2 \)
 
@@ -147,26 +153,35 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 ### **4. Addition en binaire**
 
 #### **Règles :**
-1. **Addition chiffre par chiffre de droite à gauche :**
+
+1 **Addition chiffre par chiffre de droite à gauche :**
+
    - \( 0 + 0 = 0 \)
+
    - \( 0 + 1 = 1 \)
+
    - \( 1 + 0 = 1 \)
+
    - \( 1 + 1 = 10 \) (soit \( 0 \) et une retenue de \( 1 \))
+   
    - \( 1 + 1 + 1 = 11 \) (soit \( 1 \) et une retenue de \( 1 \))
 
-2. **Appliquer les retenues :**
+2 **Appliquer les retenues :**
+
    - Ajouter la retenue au chiffre suivant.
 
 ---
 
 #### **Exemple 1 : \( 1011_2 + 1101_2 \)**
 1. Écrire les nombres alignés sur la droite :
+
    ```
          1011
       +  1101
    ```
 
 2. Additionner colonne par colonne, en appliquant les règles :
+
    - \( 1 + 1 = 10 \), on écrit \( 0 \) et on retient \( 1 \).
    - \( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
    - \( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
