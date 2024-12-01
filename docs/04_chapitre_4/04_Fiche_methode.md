@@ -58,10 +58,10 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 ### **2. Conversion d’une base \( b \) vers la base 10**
 
 #### **Méthode avec tableau :**
-1. **Dessiner un tableau avec les puissances de la base \( b \) :**
+1 **Dessiner un tableau avec les puissances de la base \( b \) :**
    - Chaque colonne correspond à une puissance de la base \( b \), en commençant par \( b^0 \) (de droite à gauche).
 
-2. **Écrire les chiffres du nombre dans le tableau :**
+2 **Écrire les chiffres du nombre dans le tableau :**
    - Placez chaque chiffre (en base \( b \)) dans une colonne.
 
 3. **Calculer les contributions de chaque chiffre :**
