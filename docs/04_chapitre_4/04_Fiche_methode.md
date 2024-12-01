@@ -553,36 +553,4 @@ Résultat final (32 bits) :
 
 ---
 
-### **3. Vérification**
 
-Reconstituez le nombre à partir des composantes IEEE 754 :
-
-1. **Exposant réel** :
-   \(  E_{\text{réel}} = 130 - 127 = 3    \)
-
-2. **Mantisse** :
-   \
-   M = 1.100000000110_2 = 1 + 0.5 + 0.125 + 0.000732 = 1.625732
-   \]
-
-3. **Valeur totale** :
-   \[
-   \text{Valeur} = (-1)^S \cdot M \cdot 2^E = -1 \cdot 1.625732 \cdot 2^3 = -12.0125
-   \]
-
-Le résultat est correct.
-
----
-
-### **Résumé : Conversion de \(-12.0125\)**
-
-- **Signe** : \( S = 1 \),
-- **Exposant biaisé** : \( E = 10000010 \),
-- **Mantisse** : \( 10000000011000000000000 \).
-
-**Résultat IEEE 754 (simple précision) :**
-\[
-1\ 10000010\ 10000000011000000000000
-\]
-
----
