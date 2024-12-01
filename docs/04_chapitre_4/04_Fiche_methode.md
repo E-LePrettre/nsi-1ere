@@ -9,7 +9,7 @@ title: 04 Fiche Méthode
 
 #### **Étapes :**
 1. **Choisir la base de destination (\( b \)) :**
-   - Exemples : \( b = 2 \) (binaire), \( b = 16 \) (hexadécimal), \( b = 5 \) ou \( b = 7 \) etc.
+   Exemples : \( b = 2 \) (binaire), \( b = 16 \) (hexadécimal), \( b = 5 \) ou \( b = 7 \) etc.
 
 2. **Diviser le nombre en base 10 par \( b \) :**
    - Divisez le nombre entier par \( b \) et notez le **reste** (c'est le chiffre dans la base \( b \)).
@@ -238,8 +238,7 @@ title: 04 Fiche Méthode
 
 ### **7. Conversion de binaire signé vers décimal**
 
-#### **Étapes :**
-1. Vérifiez le **bit de poids fort** :
+#### **Étapes :** Vérifiez le **bit de poids fort** :
    - Si le **bit de poids fort** est \( 0 \), le nombre est positif. Convertissez directement en base 10.
    - Si le **bit de poids fort** est \( 1 \), le nombre est négatif :
      - Complément à 1 : Inversez tous les bits.
