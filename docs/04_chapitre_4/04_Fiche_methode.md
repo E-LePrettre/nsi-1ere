@@ -250,24 +250,24 @@ title: 04 Fiche Méthode
 
 #### **Exemples :**
 
-1. **\( 00000101_2 \) :**
+**\( 00000101_2 \) :**
    - MSB = \( 0 \) → nombre positif.
    - \( 00000101_2 = 5_{10} \).
 
-2. **\( 11111011_2 \) :**
+**\( 11111011_2 \) :**
    - MSB = \( 1 \) → nombre négatif.
    - Complément à 1 : \( 11111011 \rightarrow 00000100 \).
    - Ajouter \( 1 \) : \( 00000100 + 1 = 00000101 \).
    - Résultat : \( -5_{10} \).
 
-3. **\( 10000001_2 \) :**
+**\( 10000001_2 \) :**
    - MSB = \( 1 \) → nombre négatif.
    - Complément à 1 : \( 10000001 \rightarrow 01111110 \).
    - Ajouter \( 1 \) : \( 01111110 + 1 = 01111111 \).
    - \( 01111111_2 = 127_{10} \).
    - Résultat : \( -127_{10} \).
 
-4. **\( 01111111_2 \) :**
+**\( 01111111_2 \) :**
    - MSB = \( 0 \) → nombre positif.
    - \( 01111111_2 = 127_{10} \).
 
@@ -278,6 +278,7 @@ title: 04 Fiche Méthode
 #### **Étapes :**
 1. Si le nombre est **positif**, convertissez directement en binaire avec \( n \) bits.
 2. Si le nombre est **négatif** :
+
    - Prenez la **valeur absolue** et convertissez-la en binaire sur \( n \) bits.
    - Complément à 1 : Inversez tous les bits.
    - Complément à 2 : Ajoutez \( 1 \).
