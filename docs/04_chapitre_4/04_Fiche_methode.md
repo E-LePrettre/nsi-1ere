@@ -556,11 +556,12 @@ Résultat final (32 bits) :
 ### **3. Vérification**
 
 Reconstituez le nombre à partir des composantes IEEE 754 :
+
 1. **Exposant réel** :
    \(  E_{\text{réel}} = 130 - 127 = 3    \)
 
 2. **Mantisse** :
-   \[
+   \
    M = 1.100000000110_2 = 1 + 0.5 + 0.125 + 0.000732 = 1.625732
    \]
 
