@@ -367,11 +367,13 @@ Complément à 2 : Ajoutez \( 1 \).
 
 #### **Exemples  :**
 
-**\( 5_{10} \) :**
+**\( 5_{10} \):**
 
 \( 5 \) en binaire : \( 00000101 \).
 
 Résultat : \( 00000101_2 \).
+
+--
 
 **\(-5_{10}\) :**
 
@@ -383,6 +385,7 @@ Ajouter \( 1 \) : \( 11111010 + 1 = 11111011 \).
 
 Résultat : \( 11111011_2 \).
 
+--
 
 **\(-127_{10}\) :**
 
@@ -393,6 +396,8 @@ Complément à 1 : \( 01111111 \rightarrow 10000000 \).
 Ajouter \( 1 \) : \( 10000000 + 1 = 10000001 \).
 
 Résultat : \( 10000001_2 \).
+
+--
 
 **\(-128_{10}\) :**
 
@@ -500,20 +505,17 @@ Fractionnaire approximatif :
 
 ##### **4. Combiner partie entière et fractionnaire**
 
-\[
-12.0125_{10} \approx 1100.000000110_2
-\]
+\( 12.0125_{10} \approx 1100.000000110_2\)
 
 ---
 
 #### **Étape 3 : Normaliser le nombre binaire**
 
 Pour normaliser, placez la virgule après le premier \( 1 \) :
-\[
-1100.000000110_2 = 1.100000000110_2 \cdot 2^3
-\]
+\( 1100.000000110_2 = 1.100000000110_2 \cdot 2^3 \)
 
 - **Mantisse** : \( 1.100000000110_2 \),
+
 - **Exposant réel** (\( E_{\text{réel}} \)) : \( 3 \).
 
 ---
@@ -521,23 +523,17 @@ Pour normaliser, placez la virgule après le premier \( 1 \) :
 #### **Étape 4 : Calculer l'exposant biaisé**
 
 L’exposant biaisé est :
-\[
-E_{\text{binaire}} = E_{\text{réel}} + 127 = 3 + 127 = 130
-\]
+\( E_{\text{binaire}} = E_{\text{réel}} + 127 = 3 + 127 = 130 \)
 
 En binaire (\( 8 \) bits) :
-\[
-E_{\text{binaire}} = 10000010_2
-\]
+\( E_{\text{binaire}} = 10000010_2 \)
 
 ---
 
 #### **Étape 5 : Déterminer la mantisse**
 
 La **mantisse** correspond à la partie fractionnaire après le \( 1.\) :
-\[
-M = 10000000011000000000000
-\]
+\( M = 10000000011000000000000 \)
 (Remplissez avec des zéros jusqu’à atteindre 23 bits.)
 
 ---
@@ -545,14 +541,15 @@ M = 10000000011000000000000
 #### **Étape 6 : Construire le format IEEE 754**
 
 Assemblez les trois composantes :
+
 - **Signe (\( S \))** : \( 1 \),
+
 - **Exposant biaisé (\( E \))** : \( 10000010 \),
-- **Mantisse (\( M \))** : \( 10000000011000000000000 \).
+
+- **Mantisse (\( M \))** : \( 10000000011001100110011 \).
 
 Résultat final (32 bits) :
-\[
-\text{IEEE 754} = 1\ 10000010\ 10000000011000000000000
-\]
+\( \text{IEEE 754} = 1\ 10000010\ 10000000011001100110011 \)
 
 ---
 
@@ -560,9 +557,7 @@ Résultat final (32 bits) :
 
 Reconstituez le nombre à partir des composantes IEEE 754 :
 1. **Exposant réel** :
-   \[
-   E_{\text{réel}} = 130 - 127 = 3
-   \]
+   \(  E_{\text{réel}} = 130 - 127 = 3    \)
 
 2. **Mantisse** :
    \[
