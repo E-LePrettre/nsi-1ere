@@ -229,7 +229,7 @@ title: 04 Fiche Méthode
 - **Bit de poids fort (MSB)** :
   - \( 0 \) → Nombre **positif**.
   - \( 1 \) → Nombre **négatif** (en complément à 2).
-- Pour un nombre signé sur 8 bits, la plage des valeurs est : \[  -128 \text{ à } 127  \]
+- Pour un nombre signé sur 8 bits, la plage des valeurs est : \[  -128  à  127  \]
   - Exemple :
     - \( 01111111_2 = 127 \) (plus grand nombre positif),
     - \( 10000000_2 = -128 \) (plus petit nombre négatif).
@@ -338,3 +338,157 @@ title: 04 Fiche Méthode
 
 ---
 
+
+
+
+
+### **10. Structure de la norme IEEE 754**
+
+| **Signe (1 bit)** | **Exposant biaisé (8 bits)** | **Mantisse (23 bits)** |
+|-------------------|-----------------------------|-------------------------|
+
+Le nombre est décomposé en :
+- **Signe (\( S \))** : \( S = 0 \) pour un nombre positif, \( S = 1 \) pour un nombre négatif.
+- **Exposant biaisé (\( E_{\text{binaire}} \))** : \( E_{\text{binaire}} = E_{\text{réel}} + 127 \), où \( E_{\text{réel}} \) est l'exposant de la puissance de 2 dans la forme normalisée.
+- **Mantisse (\( M \))** : Partie fractionnaire du nombre normalisé (\( 1.\text{fractionnaire} \)).
+
+---
+
+### **11. Conversion de \(-12.0125\) en IEEE 754**
+
+#### **Étape 1 : Déterminer le signe (\( S \))**
+
+Le nombre est **négatif**, donc :
+\[
+S = 1
+\]
+
+---
+
+#### **Étape 2 : Convertir la valeur absolue en binaire**
+
+##### **1. Séparer la partie entière et fractionnaire**
+
+Pour \( |12.0125| \) :
+- Partie entière : \( 12 \),
+- Partie fractionnaire : \( 0.0125 \).
+
+##### **2. Convertir la partie entière (\( 12 \)) en binaire**
+
+\[
+12_{10} = 1100_2
+\]
+
+##### **3. Convertir la partie fractionnaire (\( 0.0125 \)) en binaire**
+
+Pour convertir la partie fractionnaire, multipliez successivement par \( 2 \) :
+
+1. \( 0.0125 \cdot 2 = 0.025 \quad (\text{retenir } 0) \),
+2. \( 0.025 \cdot 2 = 0.05 \quad (\text{retenir } 0) \),
+3. \( 0.05 \cdot 2 = 0.1 \quad (\text{retenir } 0) \),
+4. \( 0.1 \cdot 2 = 0.2 \quad (\text{retenir } 0) \),
+5. \( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \),
+6. \( 0.4 \cdot 2 = 0.8 \quad (\text{retenir } 0) \),
+7. \( 0.8 \cdot 2 = 1.6 \quad (\text{retenir } 1) \),
+8. \( 0.6 \cdot 2 = 1.2 \quad (\text{retenir } 1) \),
+9. \( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \).
+
+on voit que la partie fractionnaire devient cyclique
+
+Fractionnaire approximatif :
+\[
+0.0125_{10} \approx 0.000000110_2
+\]
+
+##### **4. Combiner partie entière et fractionnaire**
+
+\[
+12.0125_{10} \approx 1100.000000110_2
+\]
+
+---
+
+#### **Étape 3 : Normaliser le nombre binaire**
+
+Pour normaliser, placez la virgule après le premier \( 1 \) :
+\[
+1100.000000110_2 = 1.100000000110_2 \cdot 2^3
+\]
+
+- **Mantisse** : \( 1.100000000110_2 \),
+- **Exposant réel** (\( E_{\text{réel}} \)) : \( 3 \).
+
+---
+
+#### **Étape 4 : Calculer l'exposant biaisé**
+
+L’exposant biaisé est :
+\[
+E_{\text{binaire}} = E_{\text{réel}} + 127 = 3 + 127 = 130
+\]
+
+En binaire (\( 8 \) bits) :
+\[
+E_{\text{binaire}} = 10000010_2
+\]
+
+---
+
+#### **Étape 5 : Déterminer la mantisse**
+
+La **mantisse** correspond à la partie fractionnaire après le \( 1.\) :
+\[
+M = 10000000011000000000000
+\]
+(Remplissez avec des zéros jusqu’à atteindre 23 bits.)
+
+---
+
+#### **Étape 6 : Construire le format IEEE 754**
+
+Assemblez les trois composantes :
+- **Signe (\( S \))** : \( 1 \),
+- **Exposant biaisé (\( E \))** : \( 10000010 \),
+- **Mantisse (\( M \))** : \( 10000000011000000000000 \).
+
+Résultat final (32 bits) :
+\[
+\text{IEEE 754} = 1\ 10000010\ 10000000011000000000000
+\]
+
+---
+
+### **3. Vérification**
+
+Reconstituez le nombre à partir des composantes IEEE 754 :
+1. **Exposant réel** :
+   \[
+   E_{\text{réel}} = 130 - 127 = 3
+   \]
+
+2. **Mantisse** :
+   \[
+   M = 1.100000000110_2 = 1 + 0.5 + 0.125 + 0.000732 = 1.625732
+   \]
+
+3. **Valeur totale** :
+   \[
+   \text{Valeur} = (-1)^S \cdot M \cdot 2^E = -1 \cdot 1.625732 \cdot 2^3 = -12.0125
+   \]
+
+Le résultat est correct.
+
+---
+
+### **Résumé : Conversion de \(-12.0125\)**
+
+- **Signe** : \( S = 1 \),
+- **Exposant biaisé** : \( E = 10000010 \),
+- **Mantisse** : \( 10000000011000000000000 \).
+
+**Résultat IEEE 754 (simple précision) :**
+\[
+1\ 10000010\ 10000000011000000000000
+\]
+
+---
