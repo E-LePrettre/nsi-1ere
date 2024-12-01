@@ -5,7 +5,7 @@ title: 04 Fiche Méthode Conversion entre les bases
 
 
 
-### **1. Conversion de la base 10 vers une base \( b \)**
+### **<H3 STYLE="COLOR:red;">1. Conversion de la base 10 vers une base \( b \)</h3>**
 
 #### **Étapes :**
 1 **Choisir la base de destination (\( b \)) :**
@@ -284,7 +284,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
   - Exemple :
 
     - \( 01111111_2 = 127 \) (plus grand nombre positif),
-    
+
     - \( 10000000_2 = -128 \) (plus petit nombre négatif).
 
 ---
