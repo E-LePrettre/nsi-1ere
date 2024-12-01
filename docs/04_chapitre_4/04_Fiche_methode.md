@@ -1,6 +1,6 @@
 ﻿---
 author: ELP
-title: 04 Fiche Méthode : Conversion entre les bases**
+title: 04 Fiche Méthode Conversion entre les bases
 ---
 
 
@@ -215,25 +215,31 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 ### **5. Addition en hexadécimal**
 
 #### **Règles :**
-1. Additionner chiffre par chiffre de droite à gauche :
+
+1 Additionner chiffre par chiffre de droite à gauche :
+
    - Si la somme est inférieure à \( 16 \), écrivez directement le résultat.
+
    - Si la somme est \( \geq 16 \), convertissez-la en hexadécimal et placez une retenue.
 
-2. Utiliser les correspondances hexadécimales pour les chiffres \( A = 10 \), \( B = 11 \), etc.
+2 Utiliser les correspondances hexadécimales pour les chiffres \( A = 10 \), \( B = 11 \), etc.
 
-3. Ajouter les retenues comme en base 10.
+3 Ajouter les retenues comme en base 10.
 
 ---
 
 #### **Exemple 1 : \( 1F_{16} + E_{16} \)**
-1. Écrire les nombres alignés :
+1 Écrire les nombres alignés :
+
    ```
          1F
       +   E
    ```
 
-2. Additionner les chiffres de droite à gauche :
+2 Additionner les chiffres de droite à gauche :
+
    - \( F (15) + E (14) = 29 \), soit \( 1D \) (retenue \( 1 \), écrire \( D \)).
+   
    - \( 1 + 1 (\text{retenue}) = 2 \).
 
    **Résultat :** \( 1F_{16} + E_{16} = 2D_{16} \)
