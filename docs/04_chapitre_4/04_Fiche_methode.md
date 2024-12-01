@@ -218,9 +218,7 @@ title: 04 Fiche Méthode
 
 ---
 
-Voici une **fiche méthode** claire et synthétique centrée sur la **conversion entre binaire et décimal pour les nombres signés**, en utilisant la méthode du complément à 2.
 
----
 
 
 
@@ -231,10 +229,7 @@ Voici une **fiche méthode** claire et synthétique centrée sur la **conversion
 - **Bit de poids fort (MSB)** :
   - \( 0 \) → Nombre **positif**.
   - \( 1 \) → Nombre **négatif** (en complément à 2).
-- Pour un nombre signé sur 8 bits, la plage des valeurs est :
-  \[
-  -128 \text{ à } 127
-  \]
+- Pour un nombre signé sur 8 bits, la plage des valeurs est : \[  -128 \text{ à } 127  \]
   - Exemple :
     - \( 01111111_2 = 127 \) (plus grand nombre positif),
     - \( 10000000_2 = -128 \) (plus petit nombre négatif).
