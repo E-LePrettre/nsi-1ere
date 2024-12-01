@@ -66,7 +66,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 ---
 
-### **2. Conversion d’une base \( b \) vers la base 10**
+### **<H3 STYLE="COLOR:red;">2. Conversion d’une base \( b \) vers la base 10</h3>**
 
 #### **Méthode avec tableau :**
 1 **Dessiner un tableau avec les puissances de la base \( b \) :**
@@ -118,7 +118,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 ---
 
-### **3. Conversion binaire <=> hexadécimal**
+### **<H3 STYLE="COLOR:red;">3. Conversion binaire <=> hexadécimal</h3>**
 
 #### **Règle pratique :**
 
@@ -150,7 +150,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 
 
-### **4. Addition en binaire**
+### **<H3 STYLE="COLOR:red;">4. Addition en binaire</h3>**
 
 #### **Règles :**
 
@@ -173,19 +173,23 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 ---
 
 #### **Exemple 1 : \( 1011_2 + 1101_2 \)**
-1. Écrire les nombres alignés sur la droite :
+1 Écrire les nombres alignés sur la droite :
 
    ```
          1011
       +  1101
    ```
 
-2. Additionner colonne par colonne, en appliquant les règles :
+2 Additionner colonne par colonne, en appliquant les règles :
 
    - \( 1 + 1 = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+
    - \( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+
    - \( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+
    - \( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient \( 1 \).
+   
    - On place la retenue restante \( 1 \) à gauche.
 
    **Résultat :** \( 1011_2 + 1101_2 = 11000_2 \)
