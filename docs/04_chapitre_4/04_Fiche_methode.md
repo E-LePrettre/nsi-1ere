@@ -31,24 +31,35 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 #### **Exemples :**
 
 **Conversion de \( 45_{10} \) en base \( 2 \) (binaire) :**
+
    - \( 45 \div 2 = 22 \), reste \( 1 \)
+
    - \( 22 \div 2 = 11 \), reste \( 0 \)
+
    - \( 11 \div 2 = 5 \), reste \( 1 \)
+
    - \( 5 \div 2 = 2 \), reste \( 1 \)
+
    - \( 2 \div 2 = 1 \), reste \( 0 \)
+
    - \( 1 \div 2 = 0 \), reste \( 1 \)
 
    **Résultat :** \( 45_{10} = 101101_2 \)
 
 **Conversion de \( 254_{10} \) en base \( 16 \) (hexadécimal) :**
+
    - \( 254 \div 16 = 15 \), reste \( 14 \) (\( E \) en hexadécimal)
+
    - \( 15 \div 16 = 0 \), reste \( 15 \) (\( F \) en hexadécimal)
 
    **Résultat :** \( 254_{10} = FE_{16} \)
 
 **Conversion de \( 78_{10} \) en base \( 5 \) :**
+
    - \( 78 \div 5 = 15 \), reste \( 3 \)
+
    - \( 15 \div 5 = 3 \), reste \( 0 \)
+
    - \( 3 \div 5 = 0 \), reste \( 3 \)
 
    **Résultat :** \( 78_{10} = 303_5 \)
@@ -59,15 +70,19 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 #### **Méthode avec tableau :**
 1 **Dessiner un tableau avec les puissances de la base \( b \) :**
+
    - Chaque colonne correspond à une puissance de la base \( b \), en commençant par \( b^0 \) (de droite à gauche).
 
 2 **Écrire les chiffres du nombre dans le tableau :**
+
    - Placez chaque chiffre (en base \( b \)) dans une colonne.
 
 3 **Calculer les contributions de chaque chiffre :**
+
    - Multipliez chaque chiffre par la puissance correspondante de \( b \).
 
 4 **Additionner les résultats :**
+
    - La somme des contributions donne le nombre en base 10.
 
 ---
