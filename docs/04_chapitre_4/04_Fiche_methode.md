@@ -284,13 +284,13 @@ On place la retenue restante \( 1 \) à gauche.
 
 - **Bit de poids fort (MSB)** :
 
-  - \( 0 \) → Nombre **positif**.
+\( 0 \) → Nombre **positif**.
 
-  - \( 1 \) → Nombre **négatif** (en complément à 2).
+\( 1 \) → Nombre **négatif** (en complément à 2).
 
 - Pour un nombre signé sur 8 bits, la plage des valeurs est : \[  -128  à  127  \]
 
-  - Exemple :
+Exemple :
 
     - \( 01111111_2 = 127 \) (plus grand nombre positif),
 
