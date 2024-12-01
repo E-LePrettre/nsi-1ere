@@ -189,7 +189,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
    - \( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
 
    - \( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient \( 1 \).
-   
+
    - On place la retenue restante \( 1 \) à gauche.
 
    **Résultat :** \( 1011_2 + 1101_2 = 11000_2 \)
@@ -204,19 +204,23 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
       +   01011
    ```
 
-2. Effectuer l’addition (avec retenues) :
+2 Effectuer l’addition (avec retenues) :
 
    - \( 1 + 1 = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+
    - \( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+
    - \( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+
    - \( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient \( 1 \).
+
    - \( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
 
    **Résultat :** \( 11101_2 + 1011_2 = 100000_2 \)
 
 ---
 
-### **5. Addition en hexadécimal**
+### **<H3 STYLE="COLOR:red;">5. Addition en hexadécimal</h3>**
 
 #### **Règles :**
 
@@ -233,6 +237,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 ---
 
 #### **Exemple 1 : \( 1F_{16} + E_{16} \)**
+
 1 Écrire les nombres alignés :
 
    ```
