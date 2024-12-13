@@ -43,10 +43,8 @@ Tester :
 
 > a 
 
-
-???+ question "Faire ce qui est proposé"
-
-    {{ terminal() }}
+**
+**Attention** la fonction **tuple()** ne fonctionnne pour l'instant pas sur la version de python qui est sur Basthon
 
 **<H3 STYLE="COLOR:red;">Activité n°3.: Concaténation :</H3>** Il existe deux opérations de concaténation avec les opérateurs + et *. De nouveaux 
 
