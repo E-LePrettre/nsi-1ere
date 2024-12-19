@@ -600,7 +600,11 @@ L’implémentation d’un dictionnaire **optimise le coût en temps** de la rec
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:red;">Exercice 1 :</H3>** ★ **Utilisation des opérations et méthodes :**  en utilisant le code ci-dessous, compléter .   **jours_1=('lundi','mardi','mercredi','jeudi','vendredi') jours_2=('samedi','dimanche')** 
+**<H3 STYLE="COLOR:red;">Exercice 1 :</H3>** ★ **Utilisation des opérations et méthodes :**  en utilisant le code ci-dessous, compléter .   
+
+jours_1=('lundi','mardi','mercredi','jeudi','vendredi') 
+
+jours_2=('samedi','dimanche')
 
 
 - Tester si samedi est un élément de jours\_1
@@ -621,8 +625,10 @@ L’implémentation d’un dictionnaire **optimise le coût en temps** de la rec
 En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) renvoie un tuple.
  
 
-**Remarque** : on codera la fonction `est_dans(element,tple)` de 2 manière
+**Remarque** : on codera la fonction `est_dans(element,tple)` de 2 manières
+
 - classiquement
+
 - à l'aide du fonction lambda 
 
 **<H3 STYLE="COLOR:red;">Exercice 3 :** ★**Tuple et fonction :</H3>** Ecrire une fonction triangle(n) qui renvoie un tuple ou chaque élément est un tuple de longueur trois. Ces tuples sont constitués de trois entiers a, b,c tels que 0<a≤b≤c<n et le triangle de cotés a, b et c soit rectangle.  
