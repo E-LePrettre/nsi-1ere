@@ -773,7 +773,7 @@ Chacun des chiffres de 1 à 9 apparaît exactement une fois dans la grille. De p
 **Aide**
 on pourra s'aider de fonctions auxiliaires par **exemple**
 
-- somme(tab)
+- **somme(tab)**
 
 Rôle : calcule la somme des nombres contenus dans une liste.
 
@@ -783,7 +783,7 @@ Renvoie : un entier qui est la somme de tous les éléments de tab.
 
 Exemple : somme([2,7,6]) renvoie 15.
 
-- recup_colonne(tab, indice_col)
+- **recup_colonne(tab, indice_col)**
 
 Rôle : extraire la colonne numéro indice_col d’un tableau 3x3.
 
@@ -797,9 +797,9 @@ Renvoie : une liste contenant les 3 éléments de la colonne demandée.
 
 Exemple : recup_colonne([[2,7,6],[9,5,1],[4,3,8]],0) renvoie [2,9,4].
 
-- diagonale1(tab)
+- **diagonale1(tab)**
 
-Rôle : récupérer la diagonale "principale" d’un tableau 3x3, c’est-à-dire les éléments tab[0][0], tab[1][1], tab[2][2].
+Rôle : récupérer la diagonale "principale" d’un tableau 3x3, c’est-à-dire en partant de l'élément tab[0][0].
 
 Paramètre : tab, un tableau 3x3.
 
@@ -807,9 +807,9 @@ Renvoie : une liste de 3 éléments correspondant à la diagonale principale.
 
 Exemple : diagonale1([[2,7,6],[9,5,1],[4,3,8]]) renvoie [2,5,8].
 
-- diagonale2(tab)
+- **diagonale2(tab)**
 
-Rôle : récupérer la diagonale "secondaire" d’un tableau 3x3, c’est-à-dire les éléments tab[0][2], tab[1][1], tab[2][0].
+Rôle : récupérer la diagonale "secondaire" d’un tableau 3x3, c’est-à-dire en partant de l'élément tab[0][2].
 
 Paramètre : tab, un tableau 3x3.
 
@@ -817,7 +817,7 @@ Renvoie : une liste de 3 éléments correspondant à la diagonale secondaire.
 
 Exemple : diagonale2([[2,7,6],[9,5,1],[4,3,8]]) renvoie [6,5,4].
 
-- carre_magique(tab)
+- **carre_magique(tab)**
 
 Rôle : déterminer si un tableau 3x3 est un carré magique. Un carré magique est un tableau où la somme des 3 lignes, la somme des 3 colonnes et la somme des 2 diagonales sont toutes égales.
 
