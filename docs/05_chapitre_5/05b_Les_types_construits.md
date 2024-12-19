@@ -602,22 +602,28 @@ L’implémentation d’un dictionnaire **optimise le coût en temps** de la rec
 
 **<H3 STYLE="COLOR:red;">Exercice 1 :</H3>** ★ **Utilisation des opérations et méthodes :**  en utilisant le code ci-dessous, compléter .   **jours_1=('lundi','mardi','mercredi','jeudi','vendredi') jours_2=('samedi','dimanche')** 
 
-- Tester si samedi est un élément de jours_1 
-- Donner la longueur de jours_2
-- Tester si jours_1 est égal à jours_2
-- Donner le deuxième élément de jours_1** 
-- Donner la partie de jours_1 entre le deuxième élément et le quatrième élément
-- renvoyer l'indice de dimanche dans jours_2
-- Renvoyer le nombre de samedi dans jours_2
-- Créer un tuple semaine par concaténation de jours_1 et de jours_2
 
-**<H3 STYLE="COLOR:red;">Exercice 2 :** ★ **Test d’appartenance :</H3>** En utilisant un parcours de tuple avec la présence d'un indice, écrire une fonction est_dans(element,tple) qui en argument reçoit un entiers ( élément) et un tuple d'entier ( tple) qui renvoie un booleen indiquant la présence de élément dans tuple. On testera la fonction sur les scripts suivants : 
+- Tester si samedi est un élément de jours\_1
+- Donner la longueur de jours\_2 
+- Tester si jours\_1 est égal à jours\_2
+- Donner le deuxième élément de jours\_1 au sens mathématique
+- Donner la partie de jours\_1 entre le deuxième élément et le quatrième élément compris (au sens mathématique)
+- renvoyer l'indice de dimanche dans jours\_2
+- Renvoyer le nombre de samedi dans jours\_2
+- Créer un tuple semaine par concaténation de jours\_1 et de jours\_2
+
+**<H3 STYLE="COLOR:red;">Exercice 2 :** ★ **Test d’appartenance :</H3>** En utilisant un parcours de tuple avec la présence d'un indice, écrire une fonction `est_dans(element,tple)` qui en argument reçoit un entiers ( élément) et un tuple d'entier ( tple) qui renvoie un booleen indiquant la présence de élément dans tuple. On testera la fonction sur les scripts suivants : 
 
 - **est_dans(4,(1,2,3,4,5,6))** #qui devrait renvoyer True** 
 
 - **est_dans(9,(1,2,3,4,5,6))** #qui devrait renvoyer False** 
 
-En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) renvoie un tuple.  
+En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) renvoie un tuple.
+ 
+
+**Remarque** : on codera la fonction `est_dans(element,tple)` de 2 manière
+- classiquement
+- à l'aide du fonction lambda 
 
 **<H3 STYLE="COLOR:red;">Exercice 3 :** ★**Tuple et fonction :</H3>** Ecrire une fonction triangle(n) qui renvoie un tuple ou chaque élément est un tuple de longueur trois. Ces tuples sont constitués de trois entiers a, b,c tels que 0<a≤b≤c<n et le triangle de cotés a, b et c soit rectangle.  
 
@@ -632,7 +638,7 @@ Ces triplets sont appelés triplets pythagoricien
 
 Par exemple :  
 
-```assert(triangle(15)== ((3, 4, 5), (5, 12, 13), (6, 8, 10)))``` 
+```assert triangle(15)== [(3, 4, 5), (5, 12, 13), (6, 8, 10)]``` 
 
 **<H3 STYLE="COLOR:red;">Exercice 4 :** ★**  **Dictionnaire et fonction</H3>**   
 
@@ -758,6 +764,48 @@ Chacun des chiffres de 1 à 9 apparaît exactement une fois dans la grille. De p
 
 ![](Aimg020.png)
 
+**Aide**
+on pourra s'aider de fonctions auxiliaires par **exemple**
+
+- somme(tab)
+
+Rôle : calcule la somme des nombres contenus dans une liste.
+Paramètre : tab, une liste d’entiers (ex : [2,7,6])
+Renvoie : un entier qui est la somme de tous les éléments de tab.
+Exemple : somme([2,7,6]) renvoie 15.
+
+- recup_colonne(tab, indice_col)
+
+Rôle : extraire la colonne numéro indice_col d’un tableau 3x3.
+Paramètres :
+tab, un tableau 3x3 (une liste de listes, par exemple [[2,7,6],[9,5,1],[4,3,8]])
+indice_col, un entier représentant l’indice de la colonne (0, 1 ou 2)
+Renvoie : une liste contenant les 3 éléments de la colonne demandée.
+Exemple : recup_colonne([[2,7,6],[9,5,1],[4,3,8]],0) renvoie [2,9,4].
+
+- diagonale1(tab)
+
+Rôle : récupérer la diagonale "principale" d’un tableau 3x3, c’est-à-dire les éléments tab[0][0], tab[1][1], tab[2][2].
+Paramètre : tab, un tableau 3x3.
+Renvoie : une liste de 3 éléments correspondant à la diagonale principale.
+Exemple : diagonale1([[2,7,6],[9,5,1],[4,3,8]]) renvoie [2,5,8].
+
+- diagonale2(tab)
+
+Rôle : récupérer la diagonale "secondaire" d’un tableau 3x3, c’est-à-dire les éléments tab[0][2], tab[1][1], tab[2][0].
+Paramètre : tab, un tableau 3x3.
+Renvoie : une liste de 3 éléments correspondant à la diagonale secondaire.
+Exemple : diagonale2([[2,7,6],[9,5,1],[4,3,8]]) renvoie [6,5,4].
+
+- carre_magique(tab)
+
+Rôle : déterminer si un tableau 3x3 est un carré magique. Un carré magique est un tableau où la somme des 3 lignes, la somme des 3 colonnes et la somme des 2 diagonales sont toutes égales.
+Paramètre : tab, un tableau 3x3.
+Renvoie :
+True (Vrai) si c’est un carré magique
+False (Faux) sinon.
+Exemple : carre_magique([[2,7,6],[9,5,1],[4,3,8]]) renvoie True (si c’est magique) ou False (si ce ne l’est pas).
+
 **<H3 STYLE="COLOR:red;">Exercice 10:** ★ **avec les chaine de caractères  :</H3>** 
 
 Python considère une phrase comme une séquence. Vous pouvez réaliser des essais avec cette citation célèbre du philosophe Confusius : "Je ne cherche pas à connaître les réponses, je cherche à comprendre les questions." De quelle type de séquence se rapproche-t-on? De la liste et/ou du tuple ? Faire des tests à partir de vos connaissances en python. 
@@ -807,12 +855,32 @@ couleur = ("pique", "coeur", "carreau", "trèfle")
 valeur32 = ("Roi", "Dame", "Valet", 1, 10, 9, 8, 7) 
 ```
 2 Vérifier que le jeu possède 32 cartes 
+```python
+jeu32 = creation_jeu32(couleur, valeur32)
+print("Jeu de 32 cartes : ",jeu32)
+
+assert len(jeu32) == 32
+```
 
 3 On veut pouvoir mélanger le jeu de 32 cartes. Il existe une fonction shuffle(liste)  qui mélange les éléments d'une liste. Ecrire une fonction ```melange(jeu:list)->list``` qui renvoie le jeu de cartes mélangé. Penser à importer random 
+```python
+melange(jeu32)
+print("mélange",jeu32)
+```
 
-4 On veut pouvoir tirer une carte au hasard du jeu. Si le jeu est mélangé, cela peut être la première carte. Il faut penser à retirer la carte du jeu. ```carte_hasard(jeu:list)-> tuple```
+4 On veut pouvoir tirer une carte au hasard du jeu. Si le jeu est mélangé, cela peut être la première carte. Il faut penser à retirer la carte du jeu. ```carte_hasard(jeu:list)-> tuple````
+
+```python
+print("sorti au hasard d'une carte",carte_hasard(jeu32))
+print("nombre de cartes en jeu",len(jeu32))
+```
 
 5 On veut pouvoir créer une "main" d’un certain nombre de cartes. Une main signifie un ensemble de cartes. Ecrire une fonction ```main(nombre_cartes: int,jeu:list)->list:``` qui renvoie une main formée du nombre de cartes. Il faut penser à retirer la main créée du jeu de 32 cartes. 
+```python
+main5=main(5,jeu32)
+print("Main de cinq cartes :",main5)
+print("nombre de cartes en jeu",len(jeu32))
+```
 
 **Vers une autre structure de données construites**. 
 
@@ -827,11 +895,30 @@ On veut pouvoir comparer des cartes pour réaliser par exemple des jeux.
 
 6 Ecrire une fonction force(carte:tuple)->int: qui renvoie la "force" de la carte. 
 
+on supposera que le 7 -> 7, ..., V -> 11, D -> 12, R -> 13, 1 -> 14
+
+```python
+print("force du roi de pique",force(('Roi', 'pique')))
+```
+
 7 Ecrire une fonction ```jeu_force(jeu : list) -> dict:``` qui renvoie le jeu des cartes associées à leur force.
+```python
+print("jeu en fonction de la force de la carte",jeu_force(jeu32))
+```
 
 8 On  veut  comparer  deux  cartes.  Ecrire  une  fonction  en  Python ```compare(carte1:tuple,carte2:tuple,jeu_force:dict)->tuple``` qui renvoie la carte avec la force la plus élevée.
+```python
+print("compare le valet de coeur à l'as de coeur :",compare(('Valet', 'coeur'), (1, 'coeur'),jeu_force(jeu32)))
+```
 
 9 Inventer  une  notion  de  distance  entre  deux  cartes.  Ecrire  une  fonction ```distance(carte1:tuple,carte2:tuple)->int``` qui renvoie la "distance" entre deux cartes. 
+```python
+carte1 = carte_hasard(jeu32)
+carte2 = carte_hasard(jeu32)
+print("carte 1 :", carte1)
+print("carte 2 :", carte2)
+print("la distance entre les deux cartes est :", distance(carte1,carte2))
+```
 
 **<H3 STYLE="COLOR:red;">Exercice 12** ★★ **Tracé graphique</h3>**  
 
