@@ -12,8 +12,8 @@ Bienvenue en spécialité **NSI** (Numérique et Sciences Informatiques) ! Cette
 ## <span style="color:blue;">1. Les Logiciels à Utiliser</span>
 
 ### <span style="color:green;">1.1. Environnement de Développement :</span>
-- **Thonny** : IDE simple pour débutants, idéal pour Python. [**Lien de téléchargement**](https://thonny.org/) ![Thonny Logo](https://thonny.org/logo.png)
-- **Visual Studio Code (VS Code)** : Éditeur puissant et personnalisable. [**Lien de téléchargement**](https://code.visualstudio.com/) ![VS Code Logo](https://code.visualstudio.com/assets/images/code-stable.png)
+- **Thonny** : IDE simple pour débutants, idéal pour Python. [**Lien de téléchargement**](https://thonny.org/) 
+- **Visual Studio Code (VS Code)** : Éditeur puissant et personnalisable. [**Lien de téléchargement**](https://code.visualstudio.com/) 
 
 <details>
 <summary><b>En savoir plus sur les IDE</b></summary>
