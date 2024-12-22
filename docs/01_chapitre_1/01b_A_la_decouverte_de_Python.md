@@ -615,6 +615,4 @@ Alexandre Lecouturier → alecoutur
 A partir des deux variables prenom et nom, construire l’identifiant. 
 
 
-    
-QCM :[ http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_python3x_1 ](http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_python3x_1)
 
