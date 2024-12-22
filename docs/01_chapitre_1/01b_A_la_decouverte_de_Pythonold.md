@@ -19,31 +19,28 @@ title: 01b A la découverte de Python
 
 ![](Aspose.Words.7488426a-f593-4c9d-89c4-e8b91637fe20.001.png)
 
-Il existe plusieurs types de langages de programmation, mais le seul directement utilisable par le processeur est le langage machine constitué de 0 et de 1. Aujourd’hui, presque plus personne ne programme en langage machine.
+Il y a plusieurs sortes de langages de programmation, mais le seul directement  utilisable  par  le  processeur  est  le  langage  machine  constitué  de  0  et  de  1.  Aujourd’hui presque plus personne ne programme en langage machine.  
 
-On peut les classer en :
+On peut les classer en :  
 
-- **Langage machine** : binaire
-- **Langage assembleur** : le langage machine s'exécute directement par un ordinateur après conversion en code machine.
-- **Langage de haut niveau**
-    - **Langage compilé** : C, C++, Pascal, OCaml
-    - **Langage interprété** : Java, JavaScript, Ruby, Python
-
-### **<h3 style="color:green;">1.1. Les langages compilés</h3>**
+- Le **langage machine** : binaire  
+- Le **langage assembleur** : le langage machine s'exécute directement par  un ordinateur après conversion en code machine. 
+- Le **langage de haut niveau**   
+- **Langage compilé** : C, C++, Pascal et OCaml.  
+- **Langage interprété :** Java (+ JavaScool), Ruby et Python ;  
+### **<h3 style="color:green;">1.1. Les<a name="_page1_x40.00_y36.92"></a> langages compilés</h3>**  
 ![](Aspose.Words.7488426a-f593-4c9d-89c4-e8b91637fe20.002.jpeg)
 
-Dans ces langages, le code source (celui que vous écrivez) est tout d'abord **compilé** par un logiciel appelé **compilateur** en un code binaire qui est très facile à lire pour un ordinateur.
+Dans ces langages, le code source (celui que vous  écrivez) est tout d'abord **compilé**, par un logiciel le  **compilateur**, en un code binaire qui est très facile à  lire pour un ordinateur.   
 
 ![](Aspose.Words.7488426a-f593-4c9d-89c4-e8b91637fe20.003.png)
 
-Ce schéma montre les étapes entre le code source, le code assembleur et le code binaire.
-
-### **<h3 style="color:green;">1.2. Les langages interprétés</h3>**
+### **<h3 style="color:green;">1.2. Les<a name="_page1_x40.00_y402.92"></a> langages interprétés</h3>**  
 ![](Aspose.Words.7488426a-f593-4c9d-89c4-e8b91637fe20.004.png)
 
-Dans ces langages, le code source est **interprété** par un logiciel appelé **interpréteur**,qui exécute directement chaque ligne de code sans la transformer en code binaire.
+Dans ces langages, le code source est **interprété**,  par un logiciel l’**interpréteur**.   
 
-### **<h3 style="color:green;">1.3. Principales différences</h3>**
+### **<h3 style="color:green;">1.3. Principales<a name="_page1_x40.00_y504.92"></a> différences</h3>**  
 
 Dans un langage interprété, **le même code source pourra marcher directement sur tout ordinateur**. Avec un langage compilé, il faudra (en général) **tout recompiler à chaque fois** ce qui pose parfois des soucis. 
 
@@ -64,7 +61,6 @@ Pour exécuter un programme, Python charge le fichier **source .py** en mémoire
 
 ![](Aspose.Words.7488426a-f593-4c9d-89c4-e8b91637fe20.006.jpeg)
 
-Ce schéma montre l'évolution et l'interconnexion des différents langages de programmation à travers les décennies, depuis le Fortran et le COBOL jusqu'à des langages modernes comme Python et Java.
 ### **<H3 STYLE="COLOR:GREEN;">2.2. «<a name="_page2_x40.00_y316.92"></a> Hello world ! »</h3>** 
 
 C'est dans un mémorandum interne de Brian Kernighan, Programming in C : A tutorial, écrit en 1974 dans les laboratoires Bell, que l'on trouve la première version d'un mini-programme affichant à l'écran « Hello World! ».  
@@ -99,8 +95,6 @@ Le langage Python est gratuit, sous **licence libre**.
 
 
 ### **<H3 STYLE="COLOR:GREEN;">4.4. Premiers<a name="_page3_x40.00_y36.92"></a> pas avec l’interpréteur de commandes Python</h3>** 
-
-Explorez les fonctionnalités de base de l’interpréteur Python en tapant des commandes simples comme des calculs, des assignations de variables ou des manipulations de chaînes.
 
 **<H3 STYLE="COLOR:red;">Activité n°1.:Les calculs de bases :</h3>** Tester les calculs suivant :
 **ATTENTION : faire entrer à chaque ligne du scripts suivants**
@@ -156,7 +150,6 @@ On s’est arrêté car 29 est plus petit que 99 et qu’on ne souhaitait pas al
 **<H3 STYLE="COLOR:red;">Activité n°4.:** **L’exponentiation :</h3>** Tester les calculs :
 **ATTENTION : faire entrer à chaque ligne du scripts suivant**
 </H3>
-
 ```python
 3 ** 2
 2 ** 3
@@ -174,15 +167,9 @@ Une variable est un espace mémoire dans lequel il est possible de stocker une v
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.5.1. Noms<a name="_page4_x40.00_y194.92"></a> de variables</h4>**
 
-Le nom d’une variable :
+Le nom d’une variable s'écrit avec des lettres (**non accentuées**), des chiffres ou bien l’underscore \_ Le nom d’une variable ne doit pas commencer par un chiffre. 
 
-- Doit contenir des lettres (non accentuées), des chiffres ou l’underscore _.
-
-- Ne doit pas commencer par un chiffre.
-
-Exemples corrects : `age`, `mon_age`, `temperature1`.
-
-Exemples incorrects : `1age`, `âge`.
+Exemple : age, mon\_age, temperature1  A éviter : Age, AGE, monAge, Temperature1 
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.5.2. Le<a name="_page4_x40.00_y249.92"></a> type int (integer)</h4>** 
 
@@ -196,12 +183,12 @@ age = 17
 ```
 La fonction print affiche la valeur de la variable :
 ```python
-print(age) # Affiche la valeur de la variable
+print(age)
 ```
 
 La fonction type() retourne le type de la variable : 
 ```python
-print(type(age)) # Retourne le type de la variable
+print(type(age))
 ```
 
 ???+ question "Faire ce qui est proposé"
@@ -236,14 +223,13 @@ print(type(b))
 
 
 ```python
-c = 14.0 / 3.0
+c = 14.0 / 3.0 
 print(c) 
 ```
 
 
 ```python
-c = 14.0 // 3.0  # division entière 
-print(c)
+c = 14.0 // 3.0  # division entière print(c)
 ```
 
 
@@ -297,7 +283,7 @@ len("abc")
 
     {{ terminal() }}
 
-Un **slice** permet le découpage de structures de données séquentielles (comme les chaînes de caractères ou les listes). La syntaxe utilisée est : **[début:fin:pas].** 
+En Python, **un slice** permet le découpage de structures de données séquentielles (chaînes de caractères ou les listes). Les slices sont des expressions du langage Python qui permettent en une ligne de code d'extraire des éléments d'une liste ou d'une chaîne selon leurs indices **[début:fin:pas].** 
 
 NB : si pas < 0, la liste est parcourue dans le sens inverse. 
 
@@ -308,21 +294,22 @@ NB : si pas < 0, la liste est parcourue dans le sens inverse.
 
 ```python
 string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
-
-string[0]        # Renvoie l’élément à l’indice 0 : 'A'
-string[2]        # Renvoie l’élément à l’indice 2 : 'C'
-string[:3]       # Renvoie les trois premiers termes : 'ABC'
-string[:13:2]    # Renvoie les 13 premiers termes, mais 1 sur 2 : 'ACEGIKM'
-string[::-1]     # Renvoie le renversement de la chaîne : 'ZYXWVUTSRQPONMLKJIHGFEDCBA'
-string[13::-2]   # Renvoie du 13e à l’indice 0, mais 1 sur 2 et à l’envers : 'NLJHFDB'
-string[:13:-2]   # Renvoie du dernier élément au 14e, mais 1 sur 2 et à l’envers : 'ZXVTRP'
-string[-4:-2]    # Renvoie du -4 au -2 (exclu) : 'WX'
+string[0]  # Renvoie l’élément à l’indice 0 
+string[2]  # Renvoie l’élément à l’indice 2 
+string[:3]   # Renvoie les trois premiers termes 
+string[:13:2]  # Renvoie les 13 premiers termes, mais 1 sur 2 'ACEGIKM' 
+string[::-1]  # Renvoie le renversement la chaine de caractère 'ZYXWVUTSRQPONMLKJIHGFEDCBA' 
+string[13::-2]  # Renvoie du 13e à la fin, mais 1 sur 2 et à l’envers 'NLJHFDB' 
+string[:13:-2]  # Renvoie du début au 13e, mais 1 sur 2 et à l’envers 'ZXVTRP' 
+string[-1::]  # Renvoie du -1 à la fin donc le -1 
+string[-4:-2:]  # Renvoie du -4 au -2 
 ```
 ???+ question "Faire ce qui est proposé"
 
     {{ terminal() }}
 
 **<H3 STYLE="COLOR:red;">Activité n°12.:</H3>** ![](Aspose.Words.7488426a-f593-4c9d-89c4-e8b91637fe20.051.png)Attention aux apostrophes et guillemets dans les chaînes de caractères ! 
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
 
 ```python
 chaine = 'Aujourd'hui'
@@ -333,10 +320,10 @@ print(chaine)
 ```
 ???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+    {{ terminal() }}
 
 **<H3 STYLE="COLOR:red;">Activité n°13.:</H3>** La séquence d'échappement \n représente un saut ligne : 
-
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
 ```python
 chaine = 'Premiere ligne\nDeuxieme ligne' 
 print(chaine)
@@ -344,30 +331,66 @@ print(chaine)
 
 ???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+    {{ terminal() }}
 
 
 **<H3 STYLE="COLOR:red;">Activité n°14.:</H3>** On ne peut pas mélanger les serviettes et les torchons (ici type str et type int) : 
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
 
 ```python
 chaine = 'a' 
 chaine = chaine + 2
-chaine2 = chaine + str(2)
-print(chaine)  # Résultat : 'a2'
 ```
 ???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+    {{ terminal() }}
 
+#### **<H4 STYLE="COLOR:MAGENTA;">4.5.5. Le<a name="_page6_x40.00_y680.92"></a> type list (liste)</h4>**
 
-- Python **ne peut pas additionner** directement une chaîne (str) et un entier (int).
+Une liste est une structure de données. Le premier élément d’une liste possède l’indice (l’index) 0. Dans une liste, on peut avoir des éléments de plusieurs types. 
 
-- La conversion explicite avec str() ou int() permet de résoudre ce problème.
+**<H3 STYLE="COLOR:red;">Activité n°15.:</H3>**  
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
 
+```python
+liste = [5,7,8]   # Crée la liste [5,7,8] 
+liste[0]    # Affiche l'élément numéro 0  
+infoperso = ['Pierre', 'Dupont', 17, 1.75, 72.5]
+print('Prénom : ', infoperso[0])   # premier élément (indice 0) 
+print('Age : ', infoperso[2])    # le troisième élément a l'indice 2
+```
+???+ question "Faire ce qui est proposé"
 
+    {{ terminal() }}
 
+**<H3 STYLE="COLOR:red;">Activité n°16.:</H3>** Quelques fonctions utiles len() 
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
 
-**<H3 STYLE="COLOR:red;">Activité n°15.:</H3>** La méthode lower()retourne la chaîne de caractères en casse minuscule (upper() fait l’inverse): 
+```python
+liste = [5,7,8]   # Crée la liste [5,7,8]
+len(liste)   # Affiche le nombre d'éléments dans liste 3 
+```
+???+ question "Faire ce qui est proposé"
+
+    {{ terminal() }}
+
+**<H3 STYLE="COLOR:red;">Activité n°17.:</H3>** Quelques méthodes utiles : append() , pop()
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
+
+```python
+liste = [5, 8, 11] 
+liste.append(3)     #Ajoute l'élément 3 en fin de liste 
+liste 
+liste.pop(1)       #Retire l’élément à l’indice 1 
+liste 
+```
+
+???+ question "Faire ce qui est proposé"
+
+    {{ terminal() }}
+
+**<H3 STYLE="COLOR:red;">Activité n°18.:</H3>** La méthode lower()retourne la chaîne de caractères en casse minuscule (upper() fait l’inverse): 
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
 
 ```python
 chaine = "BONJOUR"  # ou bien : chaine = str("BONJOUR") 
@@ -377,47 +400,61 @@ print(chaine)
 ```
 ???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+    {{ terminal() }}
 
 
-
-
-**<H3 STYLE="COLOR:red;">Activité n°16.:</H3>** La fonction split() permet de créer une liste en indiquant le séparateur (par exemple l’espace pour obtenir une liste de mot) : 
+**<H3 STYLE="COLOR:red;">Activité n°19.:</H3>** Les opérations sur les listes 
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
 
 ```python
+x = [ 1 , 2 , 3 , 4] 
+y = [ 5 , 6 , 7 , 8] 
+x + y 
+x = [ 0 , 1] 
+[ 0 ]*10 
+```
+
+???+ question "Faire ce qui est proposé"
+
+    {{ terminal() }}
+
+**<H3 STYLE="COLOR:red;">Activité n°20.:</H3>** La fonction split() permet de créer une liste en indiquant le séparateur (par exemple l’espace pour obtenir une liste de mot) : 
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
+```python
 texte = "Il est important de construire" 
-print(texte)
 a = texte.split(' ') 
-print(a) 
+a 
 ```
 
 Cette méthode est communément appelée tuple unpacking 
 
 ???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+    {{ terminal() }}
 
-**<H3 STYLE="COLOR:red;">Activité n°17.:</H3>** La fonction ' '.join(a) fait l’inverse, elle prend une liste et renvoie un teste, entre guillemets on indique le séparateur si on ne met rien, tout sera attaché. 
+**<H3 STYLE="COLOR:red;">Activité n°21.:</H3>** La fonction ' '.join(a) fait l’inverse, elle prend une liste et renvoie un teste, entre guillemets on indique le séparateur si on ne met rien, tout sera attaché. 
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
 
 ```python
-texte = "Il est important, de construire" 
-liste1 = ' '.join(texte) 
-print(liste1) 
-liste2 = ','.join(texte) 
-print(liste2)
+texte = "Il est important de construire" 
+liste1 = ' '.join(a) 
+liste1 
+liste2 = '.'.join(a) 
+liste2
 ```
 
 C’est la méthode inverse du tuple unpacking 
 
 ???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+    {{ terminal() }}
 
-#### **<H4 STYLE="COLOR:MAGENTA;">4.5.5. Le<a name="_page8_x40.00_y323.92"></a> type bool (booléen)</h4>** 
+#### **<H4 STYLE="COLOR:MAGENTA;">4.5.6. Le<a name="_page8_x40.00_y323.92"></a> type bool (booléen)</h4>** 
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°18.:</H3>** Deux valeurs sont possibles : True et False 
+**<H3 STYLE="COLOR:red;">Activité n°22.:</H3>** Deux valeurs sont possibles : True et False 
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
 
 ```python
 choix = True 
@@ -428,10 +465,11 @@ print(type(choix))
  
 ???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+    {{ terminal() }}
 
 
-**<H3 STYLE="COLOR:red;">Activité n°19.:</H3>**  
+**<H3 STYLE="COLOR:red;">Activité n°23.:</H3>**  
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
 
 ```python
 b = 10 
@@ -442,9 +480,10 @@ print(0 <= b <= 20)
 ```
 ???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+    {{ terminal() }}
 
-**<H3 STYLE="COLOR:red;">Activité n°20.:</H3>** Les opérateurs logiques : and, or, not
+**<H3 STYLE="COLOR:red;">Activité n°24.:</H3>** Les opérateurs logiques : and, or, not
+**ATTENTION : faire entrer à chaque ligne du scripts suivants**
 
 ```python
 note = 13.0 
@@ -453,44 +492,37 @@ print(note >= 12.0 and note < 14.0 )
 
 ???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+    {{ terminal() }}
 
-**<H3 STYLE="COLOR:red;">Activité n°21.:</H3>** L’opérateur in s’utilise avec des chaînes (type str) ou des listes (type list) : 
+**<H3 STYLE="COLOR:red;">Activité n°25.:</H3>** L’opérateur in s’utilise avec des chaînes (type str) ou des listes (type list) : 
 **ATTENTION : faire entrer à chaque ligne du scripts suivants**
 
 ```python
 chaine = 'Bonsoir' 
 print('soir' in chaine) 
- 
+maliste = [4, 8, 15] 
+print(9 in maliste) 
 ```
 ???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+    {{ terminal() }}
 
 ## **<H2 STYLE="COLOR:BLUE;">5. Exercices<a name="_page10_x40.00_y36.92"></a></h2>** 
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-<H3 STYLE="COLOR:red;">Exercice n°1</H3>  ☆ 
-
-Afficher la taille en octets et en bits d’un fichier de 536 ko. 
-
-On donne : 1 ko (1 kilooctet) = 1000 octets !!! 1 octet = 1 byte = 8 bits 
+**<H3 STYLE="COLOR:red;">Exercice n°1</H3>**  ☆ Afficher la taille en octets et en bits d’un fichier de 536 ko. On donne : 1 ko (1 kilooctet) = 1000 octets !!! 1 octet = 1 byte = 8 bits 
 
 
 
-<H3 STYLE="COLOR:red;">Exercice n°2</H3>  ★ 
-
-Le numéro de sécurité sociale est constitué de 13 chiffres auquel s’ajoute la clé de contrôle (2 chiffres). 
+**<H3 STYLE="COLOR:red;">Exercice n°2</H3>**  ★ Le numéro de sécurité sociale est constitué de 13 chiffres auquel s’ajoute la clé de contrôle (2 chiffres). 
 Exemple : le numéro entier de sécurité sociale est : 1 89 11 26 108 268 91; il se compose de 1891126108268 et de 91 qui est la clé de contrôle
 
 La clé de contrôle située à la fin du numéro est calculée par la formule : 97 - (numéro de sécurité sociale modulo 97) Retrouver la clé de contrôle de votre numéro de sécurité sociale. Quel est l’intérêt de la clé de contrôle ? 
 
 
 
-<H3 STYLE="COLOR:red;">Exercice n°3</H3> ★ 
-
-Afficher la valeur numérique de √(4,63 - 15/16) Comparer avec votre calculette. 
+**<H3 STYLE="COLOR:red;">Exercice n°3</H3>** ★ Afficher la valeur numérique de √(4,63 - 15/16) Comparer avec votre calculette. 
 Aide : vous aurez besoin de la fonction racine carrée de python. Pour cela il faut l'importer en commandant par la ligne suivante:
 ```python
 from math import sqrt
@@ -498,16 +530,11 @@ from math import sqrt
 
 
 
-<H3 STYLE="COLOR:red;">Exercice n°4</H3> 
-
-★ 
-A partir des deux variables prenom et nom, afficher les initiales (par exemple LM pour Léa Martin). 
+**<H3 STYLE="COLOR:red;">Exercice n°4</H3>** ★ A partir des deux variables prenom et nom, afficher les initiales (par exemple LM pour Léa Martin). 
 
 
 
-<H3 STYLE="COLOR:red;">Exercice n°5</H3>★ 
-
-Quels résultats donnent les instructions suivantes ?  
+**<H3 STYLE="COLOR:red;">Exercice n°5</H3>**★** Quels résultats donnent les instructions suivantes ?  
 
 len("C'est facile de compter") 
 
@@ -515,9 +542,7 @@ len('123' \* 20)
 
 
 
-<H3 STYLE="COLOR:red;">Exercice n°6</H3>☆ 
-
-Supposons que je veuille imprimer les quatre lignes suivantes :  
+**<H3 STYLE="COLOR:red;">Exercice n°6</H3>**☆ Supposons que je veuille imprimer les quatre lignes suivantes :  
 
 ```txt
 Hello World 
@@ -558,9 +583,7 @@ print("Hum \\Oh\/")
 ```
 
 
-<H3 STYLE="COLOR:red;">Exercice n°7</H3> ★☆ 
-
-**PRÉPAREZ UNE MOUSSE AU CHOCOLAT !**  
+**<H3 STYLE="COLOR:red;">Exercice n°7</H3>** ★☆ **PRÉPAREZ UNE MOUSSE AU CHOCOLAT !**  
 
 La recette de la mousse au chocolat sur le site marmiton.org est la suivante : Ingrédients (pour 4 personnes) : 
 
@@ -595,24 +618,18 @@ Recette de mousse au chocolat pour  10  personnes
 Le nombre d'oeufs pour  10  personnes est : 8
 La quantité de chocolat pour  10  personnes est : 250  g
 Le nombre de sachet de vanille pour  10  personnes est : 2
-```
 
 
 **Remarque** : Vous aurez besoin de la fonction input() déjà vu en seconde
-
 ```python
 a = int(input('quel est votre âge?')) # entrer votre âge
 print(a)
 ```
 
 
-<H3 STYLE="COLOR:red;">Exercice n°8</H3> ★☆ 
+**<H3 STYLE="COLOR:red;">Exercice n°8</H3>** ★☆ L’identifiant d’accès au réseau du lycée est construit de la manière suivante : initiale du prénom puis les 8 premiers caractères du nom (le tout en minuscule). 
 
-L’identifiant d’accès au réseau du lycée est construit de la manière suivante : initiale du prénom puis les 8 premiers caractères du nom (le tout en minuscule). 
-
-Alexandre Lecouturier → alecoutur 
-
-A partir des deux variables prenom et nom, construire l’identifiant. 
+Alexandre Lecouturier → alecoutur A partir des deux variables prenom et nom, construire l’identifiant. 
 
 
     
