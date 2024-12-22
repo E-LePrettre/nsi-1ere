@@ -43,9 +43,10 @@ Un IDE (Environnement de Développement Intégré) est un logiciel regroupant de
 - **[W3Schools](https://www.w3schools.com/)** : Référence pour HTML, CSS, JavaScript, et SQL.
 - **[Stack Overflow](https://stackoverflow.com/)** : Forum pour résoudre vos problèmes de code.
 
-<blockquote>
-☑ **Tâche rapide :** Explorez le site France IOI et complétez un premier exercice interactif !
-</blockquote>
+<details>
+<summary><b>Tâche rapide</b></summary>
+Explorez le site France IOI et complétez un premier exercice interactif !
+</details>
 
 ### <span style="color:green;">2.2. Documentation :</span>
 - **[MDN Web Docs](https://developer.mozilla.org/)** : Documentation pour le développement web.
@@ -83,9 +84,10 @@ Un IDE (Environnement de Développement Intégré) est un logiciel regroupant de
 
 En suivant ces conseils et en utilisant ces outils, vous serez bien équipé pour réussir votre année en NSI. **Rappelez-vous :** la persévérance et la régularité sont les clés du succès. Bonne chance et bonne année scolaire !
 
-<blockquote>
-⭐ **Motivation :** "Chaque ligne de code que vous écrivez aujourd'hui vous rapproche de devenir un expert demain."
-</blockquote>
+<details>
+<summary><b>Motivation</b></summary>
+⭐ "Chaque ligne de code que vous écrivez aujourd'hui vous rapproche de devenir un expert demain."
+</details>
 
 ---
 
