@@ -8,13 +8,21 @@ title: 04 Fiche Méthode Conversion entre les bases
 ### **<H3 STYLE="COLOR:red;">1. Conversion de la base 10 vers une base \( b \)</h3>**
 
 #### **Étapes :**
-1 **Choisir la base de destination (\( b \)) :**
+##### 1 **Choisir la base de destination (\( b \)) :**
 
-Exemples : \( b = 2 \) (binaire), \( b = 16 \) (hexadécimal), \( b = 5 \) ou \( b = 7 \) etc.
+Exemples : 
+- \( b = 2 \) (binaire), 
+- \( b = 16 \) (hexadécimal), 
+- \( b = 5 \) 
+- \( b = 7 \) 
+- etc.
 
-2 **Diviser le nombre en base 10 par \( b \) :**
+##### 2 **Diviser le nombre en base 10 par \( b \) :**
 
-Divisez le nombre entier par \( b \) et notez le **reste** (c'est le chiffre dans la base \( b \)).
+**<span STYLE="COLOR:red;"> Divisez le nombre entier par \( b \) </span>** et notez le **<span STYLE="COLOR:red;">reste</span>** (c'est le chiffre dans la base \( b \)).
+
+Exemple : Si on veut convertir 127 en base 5 cela donne
+![](base5.png) 
 
 3 **Répéter la division :**
 
