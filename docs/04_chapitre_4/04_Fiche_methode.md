@@ -564,6 +564,7 @@ En binaire (\( 8 \) bits) :
 #### **Étape 5 : Déterminer la mantisse**
 
 La **mantisse** correspond à la partie fractionnaire après le \( 1.\) :
+
 \( M = 10000000011000000000000 \)
 (Remplissez avec des zéros jusqu’à atteindre 23 bits.)
 
