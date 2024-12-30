@@ -62,6 +62,8 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 **Conversion de \( 254_{10} \) en base \( 16 \) (hexadécimal) :**
 
+![](base16.png) 
+
    - \( 254 \div 16 = 15 \), reste \( 14 \) (\( E \) en hexadécimal)
 
    - \( 15 \div 16 = 0 \), reste \( 15 \) (\( F \) en hexadécimal)
