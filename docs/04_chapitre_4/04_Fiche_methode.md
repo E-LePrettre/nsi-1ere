@@ -46,6 +46,8 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 **Conversion de \( 45_{10} \) en base \( 2 \) (binaire) :**
 
+![](base2.png) 
+
    - \( 45 \div 2 = 22 \), reste \( 1 \)
 
    - \( 22 \div 2 = 11 \), reste \( 0 \)
@@ -70,15 +72,17 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
    **Résultat :** \( 254_{10} = FE_{16} \)
 
-**Conversion de \( 78_{10} \) en base \( 5 \) :**
+**Conversion de \( 77_{10} \) en base \( 5 \) :**
 
-   - \( 78 \div 5 = 15 \), reste \( 3 \)
+![](base51.png) 
+
+   - \( 77 \div 5 = 15 \), reste \( 2 \)
 
    - \( 15 \div 5 = 3 \), reste \( 0 \)
 
    - \( 3 \div 5 = 0 \), reste \( 3 \)
 
-   **Résultat :** \( 78_{10} = 303_5 \)
+   **Résultat :** \( 77_{10} = 302_5 \)
 
 ---
 
