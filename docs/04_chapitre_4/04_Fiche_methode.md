@@ -11,10 +11,15 @@ title: 04 Fiche Méthode Conversion entre les bases
 ##### 1 **Choisir la base de destination (\( b \)) :**
 
 Exemples : 
-- \( b = 2 \) (binaire), 
-- \( b = 16 \) (hexadécimal), 
+
+- \( b = 2 \) (binaire),
+
+- \( b = 16 \) (hexadécimal),
+
 - \( b = 5 \) 
+
 - \( b = 7 \) 
+
 - etc.
 
 ##### 2 **Diviser le nombre en base 10 par \( b \) :**
