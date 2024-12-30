@@ -177,7 +177,7 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 #### **Règles :**
 
-1 **Addition chiffre par chiffre de droite à gauche :**
+##### 1 **Addition chiffre par chiffre de droite à gauche :**
 
    - \( 0 + 0 = 0 \)
 
@@ -189,7 +189,7 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
    
    - \( 1 + 1 + 1 = 11 \) (soit \( 1 \) et une retenue de \( 1 \))
 
-2 **Appliquer les retenues :**
+##### 2 **Appliquer les retenues :**
 
    - Ajouter la retenue au chiffre suivant.
 
@@ -207,13 +207,13 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 ![](addition.png){  : .center }
 
-\( 1 + 1 = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
+- \( 1 + 1 = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
+- \( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
+- \( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
+- \( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
 On place la retenue restante **<span STYLE="COLOR:red;">\( 1 \)</span>** à gauche.
 
@@ -233,15 +233,15 @@ On place la retenue restante **<span STYLE="COLOR:red;">\( 1 \)</span>** à gauc
 
 ![](addition2.png){  : .center }
 
-\( 1 + 1 = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
+- \( 1 + 1 = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
+- \( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
+- \( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
+- \( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
+- \( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
    **Résultat :** \( 11101_2 + 1011_2 = 10\ 1000_2 \)
 
@@ -276,9 +276,9 @@ On place la retenue restante **<span STYLE="COLOR:red;">\( 1 \)</span>** à gauc
 
 ![](addition3.png){  : .center }
 
-\( F (15) + E (14) = 29 \), soit \( 1D \) (retenue \( 1 \), écrire \( D \)).
+- \( F (15) + E (14) = 29 \), soit \( 1D \) (retenue \( 1 \), écrire \( D \)).
 
-\( 1 + 1 (\text{retenue}) = 2 \).
+- \( 1 + 1 (\text{retenue}) = 2 \).
 
    **Résultat :** \( 1F_{16} + E_{16} = 2D_{16} \)
 
@@ -295,11 +295,11 @@ On place la retenue restante **<span STYLE="COLOR:red;">\( 1 \)</span>** à gauc
 
 ##### 2 Additionner les chiffres de droite à gauche :
 
-![](addition4.png){  : .center }
+![](addition4.png){  : .center } 
 
-\( B (11) + 7 = 18 \), soit \( 12 \) en hexadécimal (retenue \( 1 \), écrire \( 2 \)).
+- \( B (11) + 7 = 18 \), soit \( 12 \) en hexadécimal (retenue \( 1 \), écrire \( 2 \)).
 
-\( 3 + 2 + 1 (\text{retenue}) = 6 \).
+- \( 3 + 2 + 1 (\text{retenue}) = 6 \).
 
    **Résultat :** \( 3B_{16} + 27_{16} = 62_{16} \)
 
@@ -315,9 +315,9 @@ On place la retenue restante **<span STYLE="COLOR:red;">\( 1 \)</span>** à gauc
 
 - **Bit de poids fort (MSB)** :
 
-\( 0 \) → Nombre **positif**.
+   - \( 0 \) → Nombre **positif**.
 
-\( 1 \) → Nombre **négatif** (en complément à 2).
+   - \( 1 \) → Nombre **négatif** (en complément à 2).
 
 - Pour un nombre signé sur 8 bits, la plage des valeurs est : \[  -128\  à\  127  \]
 
@@ -510,24 +510,24 @@ Pour \( |12.0125| \) :
 
 Pour convertir la partie fractionnaire, multipliez successivement par \( 2 \) :
 
-\( 0.0125 \cdot 2 = 0.025 \quad (\text{retenir } 0) \),
+- \( 0.0125 \cdot 2 = 0.025 \quad (\text{retenir } 0) \),
 
 
-\( 0.025 \cdot 2 = 0.05 \quad (\text{retenir } 0) \),
+- \( 0.025 \cdot 2 = 0.05 \quad (\text{retenir } 0) \),
 
-\( 0.05 \cdot 2 = 0.1 \quad (\text{retenir } 0) \),
+- \( 0.05 \cdot 2 = 0.1 \quad (\text{retenir } 0) \),
 
-\( 0.1 \cdot 2 = 0.2 \quad (\text{retenir } 0) \),
+- \( 0.1 \cdot 2 = 0.2 \quad (\text{retenir } 0) \),
 
-\( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \),
+- \( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \),
 
-\( 0.4 \cdot 2 = 0.8 \quad (\text{retenir } 0) \),
+- \( 0.4 \cdot 2 = 0.8 \quad (\text{retenir } 0) \),
 
-\( 0.8 \cdot 2 = 1.6 \quad (\text{retenir } 1) \),
+- \( 0.8 \cdot 2 = 1.6 \quad (\text{retenir } 1) \),
 
-\( 0.6 \cdot 2 = 1.2 \quad (\text{retenir } 1) \),
+- \( 0.6 \cdot 2 = 1.2 \quad (\text{retenir } 1) \),
 
-\( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \).
+- \( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \).
 
 on voit que la partie fractionnaire devient cyclique
 
