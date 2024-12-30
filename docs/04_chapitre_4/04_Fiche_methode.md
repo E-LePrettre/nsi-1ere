@@ -22,17 +22,18 @@ Exemples :
 **<span STYLE="COLOR:red;"> Divisez le nombre entier par \( b \) </span>** et notez le **<span STYLE="COLOR:red;">reste</span>** (c'est le chiffre dans la base \( b \)).
 
 Exemple : Si on veut convertir 127 en base 5 cela donne
+
 ![](base5.png) 
 
-3 **Répéter la division :**
+##### 3 **Répéter la division :**
 
-Prenez le **quotient** obtenu et divisez-le à nouveau par \( b \).
+Prenez le **<span STYLE="COLOR:red;">quotient</span>** obtenu et **<span STYLE="COLOR:red;">divisez-le à nouveau par \( b \)</span>**.
 
-Continuez jusqu’à ce que le quotient soit égal à 0.
+Continuez jusqu’à ce que le quotient soit **<span STYLE="COLOR:red;">égal à 0</span>**.
 
-4 **Lire le résultat :**
+##### 4 **Lire le résultat :**
 
-Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
+Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le nombre dans la base \( b \).
 
 ---
 
@@ -77,21 +78,21 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 ### **<H3 STYLE="COLOR:red;">2. Conversion d’une base \( b \) vers la base 10</h3>**
 
 #### **Méthode avec tableau :**
-1 **Dessiner un tableau avec les puissances de la base \( b \) :**
+##### 1 **Dessiner un tableau avec les puissances de la base \( b \) :**
 
-   - Chaque colonne correspond à une puissance de la base \( b \), en commençant par \( b^0 \) (de droite à gauche).
+   - Chaque colonne correspond à une **<span STYLE="COLOR:red;">puissance de la base \( b \)</span>**, en commençant par \( b^0 \) (de droite à gauche).
 
-2 **Écrire les chiffres du nombre dans le tableau :**
+##### 2 **Écrire les chiffres du nombre dans le tableau :**
 
-   - Placez chaque chiffre (en base \( b \)) dans une colonne.
+   - Placez **<span STYLE="COLOR:red;">chaque chiffre (en base \( b \)) dans une colonne</span>**.
 
-3 **Calculer les contributions de chaque chiffre :**
+#### 3 **Calculer les contributions de chaque chiffre :**
 
-   - Multipliez chaque chiffre par la puissance correspondante de \( b \).
+   - **<span STYLE="COLOR:red;">Multipliez</span>** chaque chiffre par la puissance correspondante de \( b \).
 
-4 **Additionner les résultats :**
+##### 4 **Additionner les résultats :**
 
-   - La somme des contributions donne le nombre en base 10.
+   - La **<span STYLE="COLOR:red;">somme des contributions</span>** donne le nombre en base 10.
 
 ---
 
@@ -111,7 +112,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 | Puissances de \( 16 \) | \( 16^1 \) | \( 16^0 \) |
 |------------------------|------------|------------|
 | Chiffres              | \( F (15) \) | \( E (14) \) |
-| Contributions         | \( 15 \cdot 16 = 240 \) | \( 14 \cdot 1 = 14 \) |
+| Contributions         | \( 15 * 16 = 240 \) | \( 14 * 1 = 14 \) |
 
 **Résultat :** \( 240 + 14 = 254_{10} \)
 
@@ -120,7 +121,7 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 | Puissances de \( 5 \) | \( 5^2 \) | \( 5^1 \) | \( 5^0 \) |
 |-----------------------|-----------|-----------|-----------|
 | Chiffres             | \( 3 \)   | \( 0 \)   | \( 3 \)   |
-| Contributions        | \( 3 \cdot 25 = 75 \) | \( 0 \cdot 5 = 0 \) | \( 3 \cdot 1 = 3 \) |
+| Contributions        | \( 3 * 25 = 75 \) | \( 0 * 5 = 0 \) | \( 3 * 1 = 3 \) |
 
 **Résultat :** \( 75 + 0 + 3 = 78_{10} \)
 
@@ -130,9 +131,9 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 #### **Règle pratique :**
 
-- **Groupes de 4 bits** : Chaque chiffre hexadécimal correspond à **4 bits** en binaire.
+- **Groupes de 4 bits** : Chaque chiffre hexadécimal correspond à **<span STYLE="COLOR:red;">4 bits</span>** en binaire.
 
-- Conversion directe entre les deux bases sans passer par la base 10.
+- **<span STYLE="COLOR:red;">Conversion directe</span>** entre les deux bases sans passer par la base 10.
 
 ---
 
@@ -140,19 +141,22 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 
 **Conversion de \( 101101_2 \) en hexadécimal :**
 
-   - Groupes de 4 bits (ajouter des zéros à gauche si nécessaire) : \( 101101 \rightarrow 0010\ 1101 \).
+   - Groupes de **<span STYLE="COLOR:red;">4 bits</span>** (ajouter des zéros à gauche si nécessaire) : \( 101101 \rightarrow 0010\ 1101 \).
 
-   - Convertir chaque groupe : \( 0010 = 2 \), \( 1101 = D \).
+   - Convertir **<span STYLE="COLOR:red;">chaque groupe</span>** : 
+      - \( 0010 = 2 \), 
+      - \( 1101 = D \).
 
    **Résultat :** \( 101101_2 = 2D_{16} \)
 
 **Conversion de \( 3E_{16} \) en binaire :**
 
-   - Convertir chaque chiffre hexadécimal en 4 bits :
+   - Convertir chaque chiffre hexadécimal **<span STYLE="COLOR:red;">en 4 bits</span>** :
 
-   - \( 3 = 0011 \), \( E = 1110 \).
+      - \( 3 = 0011 \), 
+      - \( E = 1110 \).
 
-   **Résultat :** \( 3E_{16} = 00111110_2 \)
+   **Résultat :** \( 3E_{16} = 0011\ 1110_2 \)
 
 ---
 
@@ -181,50 +185,54 @@ Les restes, lus de **bas en haut**, donnent le nombre dans la base \( b \).
 ---
 
 #### **Exemple 1 : \( 1011_2 + 1101_2 \)**
-1 Écrire les nombres alignés sur la droite :
+##### 1 Écrire les nombres alignés sur la droite :
 
    ```
          1011
       +  1101
    ```
 
-2 Additionner colonne par colonne, en appliquant les règles :
+##### 2 Additionner colonne par colonne, en appliquant les règles :
 
-\( 1 + 1 = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+![](addition.png)
 
-\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 1 + 1 = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient \( 1 \).
+\( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-On place la retenue restante \( 1 \) à gauche.
+\( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
+
+On place la retenue restante **<span STYLE="COLOR:red;">\( 1 \)</span>** à gauche.
 
    **Résultat :** \( 1011_2 + 1101_2 = 11000_2 \)
 
 ---
 
 #### **Exemple 2 : \( 11101_2 + 1011_2 \)**
-1 Écrire les nombres alignés sur la droite :
+##### 1 Écrire les nombres alignés sur la droite :
 
    ```
           11101
       +   01011
    ```
 
-2 Effectuer l’addition (avec retenues) :
+##### 2 Effectuer l’addition (avec retenues) :
 
-\( 1 + 1 = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+![](addition2.png)
 
-\( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 1 + 1 = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 0 + 1 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient \( 1 \).
+\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient \( 1 \).
+\( 1 + 1 + 1 (\text{retenue}) = 11 \), on écrit \( 1 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
-   **Résultat :** \( 11101_2 + 1011_2 = 100000_2 \)
+\( 1 + 0 + 1 (\text{retenue}) = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
+
+   **Résultat :** \( 11101_2 + 1011_2 = 10\ 1000_2 \)
 
 ---
 
@@ -232,28 +240,30 @@ On place la retenue restante \( 1 \) à gauche.
 
 #### **Règles :**
 
-1 Additionner chiffre par chiffre de droite à gauche :
+##### 1 Additionner chiffre par chiffre de droite à gauche :
 
-   - Si la somme est inférieure à \( 16 \), écrivez directement le résultat.
+   - Si la somme est inférieure à \( 16 \), écrivez **<span STYLE="COLOR:red;">directement</span>** le résultat.
 
-   - Si la somme est \( \geq 16 \), convertissez-la en hexadécimal et placez une retenue.
+   - Si la somme est \( \geq 16 \), convertissez-la en hexadécimal et placez une **<span STYLE="COLOR:red;">retenue</span>**.
 
-2 Utiliser les correspondances hexadécimales pour les chiffres \( A = 10 \), \( B = 11 \), etc.
+##### 2 Utiliser les correspondances hexadécimales pour les chiffres \( A = 10 \), \( B = 11 \), etc.
 
-3 Ajouter les retenues comme en base 10.
+##### 3 Ajouter les retenues comme en base 10.
 
 ---
 
 #### **Exemple 1 : \( 1F_{16} + E_{16} \)**
 
-1 Écrire les nombres alignés :
+##### 1 Écrire les nombres alignés :
 
    ```
          1F
       +   E
    ```
 
-2 Additionner les chiffres de droite à gauche :
+##### 2 Additionner les chiffres de droite à gauche :
+
+![](addition3.png)
 
 \( F (15) + E (14) = 29 \), soit \( 1D \) (retenue \( 1 \), écrire \( D \)).
 
@@ -265,14 +275,16 @@ On place la retenue restante \( 1 \) à gauche.
 
 #### **Exemple 2 : \( 3B_{16} + 27_{16} \)**
 
-1 Écrire les nombres alignés :
+##### 1 Écrire les nombres alignés :
 
    ```
           3B
       +   27
    ```
 
-2 Additionner les chiffres de droite à gauche :
+##### 2 Additionner les chiffres de droite à gauche :
+
+![](addition4.png)
 
 \( B (11) + 7 = 18 \), soit \( 12 \) en hexadécimal (retenue \( 1 \), écrire \( 2 \)).
 
@@ -296,24 +308,25 @@ On place la retenue restante \( 1 \) à gauche.
 
 \( 1 \) → Nombre **négatif** (en complément à 2).
 
-- Pour un nombre signé sur 8 bits, la plage des valeurs est : \[  -128  à  127  \]
+- Pour un nombre signé sur 8 bits, la plage des valeurs est : \[  -128\  à\  127  \]
 
 Exemple :
 
-\( 01111111_2 = 127 \) (plus grand nombre positif),
+- \( 01111111_2 = 127 \) (plus grand nombre positif),
 
-\( 10000000_2 = -128 \) (plus petit nombre négatif).
+- \( 10000000_2 = -128 \) (plus petit nombre négatif).
 
 ---
 
 ### **<H3 STYLE="COLOR:red;">7. Conversion de binaire signé vers décimal</h3>**
 
 #### **Étapes :** Vérifiez le **bit de poids fort** :
-   - Si le **bit de poids fort** est \( 0 \), le nombre est positif. Convertissez directement en base 10.
-   - Si le **bit de poids fort** est \( 1 \), le nombre est négatif :
-     - Complément à 1 : Inversez tous les bits.
-     - Complément à 2 : Ajoutez \( 1 \).
-     - Convertissez en décimal et ajoutez le signe \( - \).
+   - Si le **<span STYLE="COLOR:red;">bit de poids fort est \( 0 \)</span>**, le nombre est **<span STYLE="COLOR:red;">positif</span>**. Convertissez directement en base 10 comme vu précédemment.
+   - Si le **<span STYLE="COLOR:red;">bit de poids fort est \( 1 \)</span>**, le nombre est **<span STYLE="COLOR:red;">négatif</span>** :
+     - Complément à 1 : **<span STYLE="COLOR:red;">Inversez tous les bits</span>**.
+     - Complément à 2 : **<span STYLE="COLOR:red;">Ajoutez \( 1 \)</span>**.
+     - **<span STYLE="COLOR:red;">Convertissez en décimal</span>** 
+     - **<span STYLE="COLOR:red;">Ajoutez le signe \( - \)</span>**.
 
 ---
 
@@ -354,21 +367,23 @@ Exemple :
 
    - \( 01111111_2 = 127_{10} \).
 
+
+
 ---
 
 ### **<H3 STYLE="COLOR:red;">8. Conversion de décimal vers binaire signé</h3>**
 
 #### **Étapes :**
 
-1 Si le nombre est **positif**, convertissez directement en binaire avec \( n \) bits.
+##### 1 Si le nombre est **<span STYLE="COLOR:red;">positif</span>**, convertissez directement en binaire avec \( n \) bits comme vu précédemment.
 
-2 Si le nombre est **négatif** :
+##### 2 Si le nombre est **<span STYLE="COLOR:red;">négatif</span>** :
 
-Prenez la **valeur absolue** et convertissez-la en binaire sur \( n \) bits.
+- Prenez la **<span STYLE="COLOR:red;">valeur absolue</span>** (la valeur positive) et **<span STYLE="COLOR:red;">convertissez-la</span>** en binaire sur \( n \) bits.
 
-Complément à 1 : Inversez tous les bits.
+- Complément à 1 : **<span STYLE="COLOR:red;">Inversez tous les bits</span>**.
 
-Complément à 2 : Ajoutez \( 1 \).
+- Complément à 2 : **<span STYLE="COLOR:red;">Ajoutez \( 1 \)</span>**.
 
 
 ---
@@ -381,35 +396,32 @@ Complément à 2 : Ajoutez \( 1 \).
 
 Résultat : \( 00000101_2 \).
 
---
+
 
 **\(-5_{10}\) :**
 
-Valeur absolue : \( 5 \) en binaire → \( 00000101 \).
+- Valeur absolue : \( 5 \) en binaire → \( 00000101 \).
 
-Complément à 1 : \( 00000101 \rightarrow 11111010 \).
+- Complément à 1 : \( 00000101 \rightarrow 11111010 \).
 
-Ajouter \( 1 \) : \( 11111010 + 1 = 11111011 \).
+- Ajouter \( 1 \) : \( 11111010 + 1 = 11111011 \).
 
 Résultat : \( 11111011_2 \).
 
---
+
 
 **\(-127_{10}\) :**
 
-Valeur absolue : \( 127 \) en binaire → \( 01111111 \).
+- Valeur absolue : \( 127 \) en binaire → \( 01111111 \).
 
-Complément à 1 : \( 01111111 \rightarrow 10000000 \).
+- Complément à 1 : \( 01111111 \rightarrow 10000000 \).
 
-Ajouter \( 1 \) : \( 10000000 + 1 = 10000001 \).
+- Ajouter \( 1 \) : \( 10000000 + 1 = 10000001 \).
 
 Résultat : \( 10000001_2 \).
 
---
 
-**\(-128_{10}\) :**
 
-Valeur absolue : \( 128 \) dépasse la plage possible. Sur 8 bits, le plus petit négatif est \( -128 \), soit directement \( 10000000_2 \).
 
 ---
 
