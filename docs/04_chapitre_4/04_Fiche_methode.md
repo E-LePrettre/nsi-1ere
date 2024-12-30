@@ -28,7 +28,7 @@ Exemples :
 
 Exemple : Si on veut convertir 127 en base 5 cela donne
 
-![](base5.png) 
+![](base5.png){  : .center }
 
 ##### 3 **Répéter la division :**
 
@@ -46,7 +46,7 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 **Conversion de \( 44_{10} \) en base \( 2 \) (binaire) :**
 
-![](base2.png) 
+![](base2.png){  : .center }
 
    - \( 44 \div 2 = 22 \), reste \( 0 \)
 
@@ -64,7 +64,7 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 **Conversion de \( 254_{10} \) en base \( 16 \) (hexadécimal) :**
 
-![](base16.png) 
+![](base16.png){  : .center } 
 
    - \( 254 \div 16 = 15 \), reste \( 14 \) (\( E \) en hexadécimal)
 
@@ -74,7 +74,7 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 **Conversion de \( 77_{10} \) en base \( 5 \) :**
 
-![](base51.png) 
+![](base51.png){  : .center } 
 
    - \( 77 \div 5 = 15 \), reste \( 2 \)
 
@@ -205,7 +205,7 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 ##### 2 Additionner colonne par colonne, en appliquant les règles :
 
-![](addition.png)
+![](addition.png){  : .center }
 
 \( 1 + 1 = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
@@ -231,7 +231,7 @@ On place la retenue restante **<span STYLE="COLOR:red;">\( 1 \)</span>** à gauc
 
 ##### 2 Effectuer l’addition (avec retenues) :
 
-![](addition2.png)
+![](addition2.png){  : .center }
 
 \( 1 + 1 = 10 \), on écrit \( 0 \) et on retient **<span STYLE="COLOR:red;">\( 1 \)</span>**.
 
@@ -274,7 +274,7 @@ On place la retenue restante **<span STYLE="COLOR:red;">\( 1 \)</span>** à gauc
 
 ##### 2 Additionner les chiffres de droite à gauche :
 
-![](addition3.png)
+![](addition3.png){  : .center }
 
 \( F (15) + E (14) = 29 \), soit \( 1D \) (retenue \( 1 \), écrire \( D \)).
 
@@ -295,7 +295,7 @@ On place la retenue restante **<span STYLE="COLOR:red;">\( 1 \)</span>** à gauc
 
 ##### 2 Additionner les chiffres de droite à gauche :
 
-![](addition4.png)
+![](addition4.png){  : .center }
 
 \( B (11) + 7 = 18 \), soit \( 12 \) en hexadécimal (retenue \( 1 \), écrire \( 2 \)).
 
