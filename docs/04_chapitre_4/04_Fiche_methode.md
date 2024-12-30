@@ -44,11 +44,11 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 #### **Exemples :**
 
-**Conversion de \( 45_{10} \) en base \( 2 \) (binaire) :**
+**Conversion de \( 44_{10} \) en base \( 2 \) (binaire) :**
 
 ![](base2.png) 
 
-   - \( 45 \div 2 = 22 \), reste \( 1 \)
+   - \( 44 \div 2 = 22 \), reste \( 0 \)
 
    - \( 22 \div 2 = 11 \), reste \( 0 \)
 
@@ -60,7 +60,7 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
    - \( 1 \div 2 = 0 \), reste \( 1 \)
 
-   **Résultat :** \( 45_{10} = 101101_2 \)
+   **Résultat :** \( 44_{10} = 101100_2 \)
 
 **Conversion de \( 254_{10} \) en base \( 16 \) (hexadécimal) :**
 
