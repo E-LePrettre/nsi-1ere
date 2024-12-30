@@ -32,9 +32,9 @@ Exemple : Si on veut convertir 127 en base 5 cela donne
 
 ##### 3 **Répéter la division :**
 
-Prenez le **<span STYLE="COLOR:red;">quotient</span>** obtenu et **<span STYLE="COLOR:red;">divisez-le à nouveau par \( b \)</span>**.
+- Prenez le **<span STYLE="COLOR:red;">quotient</span>** obtenu et **<span STYLE="COLOR:red;">divisez-le à nouveau par \( b \)</span>**.
 
-Continuez jusqu’à ce que le quotient soit **<span STYLE="COLOR:red;">égal à 0</span>**.
+- Continuez jusqu’à ce que le quotient soit **<span STYLE="COLOR:red;">égal à 0</span>**.
 
 ##### 4 **Lire le résultat :**
 
