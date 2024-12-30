@@ -403,7 +403,7 @@ Exemple :
 
 **\( 5_{10} \):**
 
-\( 5 \) en binaire : \( 00000101 \).
+- \( 5 \) en binaire : \( 00000101 \).
 
 Résultat : \( 00000101_2 \).
 
@@ -510,24 +510,24 @@ Pour \( |12.0125| \) :
 
 Pour convertir la partie fractionnaire, multipliez successivement par \( 2 \) :
 
-- \( 0.0125 \cdot 2 = 0.025 \quad (\text{retenir } 0) \),
+- \( 0.0125 * 2 = 0.025 \quad (\text{retenir } 0) \),
 
 
-- \( 0.025 \cdot 2 = 0.05 \quad (\text{retenir } 0) \),
+- \( 0.025 * 2 = 0.05 \quad (\text{retenir } 0) \),
 
-- \( 0.05 \cdot 2 = 0.1 \quad (\text{retenir } 0) \),
+- \( 0.05 * 2 = 0.1 \quad (\text{retenir } 0) \),
 
-- \( 0.1 \cdot 2 = 0.2 \quad (\text{retenir } 0) \),
+- \( 0.1 * 2 = 0.2 \quad (\text{retenir } 0) \),
 
-- \( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \),
+- \( 0.2 * 2 = 0.4 \quad (\text{retenir } 0) \),
 
-- \( 0.4 \cdot 2 = 0.8 \quad (\text{retenir } 0) \),
+- \( 0.4 * 2 = 0.8 \quad (\text{retenir } 0) \),
 
-- \( 0.8 \cdot 2 = 1.6 \quad (\text{retenir } 1) \),
+- \( 0.8 * 2 = 1.6 \quad (\text{retenir } 1) \),
 
-- \( 0.6 \cdot 2 = 1.2 \quad (\text{retenir } 1) \),
+- \( 0.6 * 2 = 1.2 \quad (\text{retenir } 1) \),
 
-- \( 0.2 \cdot 2 = 0.4 \quad (\text{retenir } 0) \).
+- \( 0.2 * 2 = 0.4 \quad (\text{retenir } 0) \).
 
 on voit que la partie fractionnaire devient cyclique
 
@@ -543,7 +543,7 @@ Fractionnaire approximatif :
 #### **Étape 3 : Normaliser le nombre binaire**
 
 Pour normaliser, placez la virgule après le premier \( 1 \) :
-\( 1100.000000110_2 = 1.100000000110_2 \cdot 2^3 \)
+\( 1100.000000110_2 = 1.100000000110_2 * 2^3 \)
 
 - **Mantisse** : \( 1.100000000110_2 \),
 
