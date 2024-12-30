@@ -109,7 +109,7 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 #### **Exemples :**
 
-**Conversion de \( 101101_2 \) en base \( 10 \) :**
+- **Conversion de \( 101101_2 \) en base \( 10 \) :**
 
 | Puissances de \( 2 \) | \( 2^5 \) | \( 2^4 \) | \( 2^3 \) | \( 2^2 \) | \( 2^1 \) | \( 2^0 \) |
 |-----------------------|-----------|-----------|-----------|-----------|-----------|-----------|
@@ -118,7 +118,7 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 **Résultat :** \( 32 + 0 + 8 + 4 + 0 + 1 = 45_{10} \)
 
-**Conversion de \( FE_{16} \) en base \( 10 \) :**
+- **Conversion de \( FE_{16} \) en base \( 10 \) :**
 
 | Puissances de \( 16 \) | \( 16^1 \) | \( 16^0 \) |
 |------------------------|------------|------------|
@@ -127,7 +127,7 @@ Les restes, lus de **<span STYLE="COLOR:red;">bas en haut</span>**, donnent le n
 
 **Résultat :** \( 240 + 14 = 254_{10} \)
 
-**Conversion de \( 303_5 \) en base \( 10 \) :**
+- **Conversion de \( 303_5 \) en base \( 10 \) :**
 
 | Puissances de \( 5 \) | \( 5^2 \) | \( 5^1 \) | \( 5^0 \) |
 |-----------------------|-----------|-----------|-----------|
