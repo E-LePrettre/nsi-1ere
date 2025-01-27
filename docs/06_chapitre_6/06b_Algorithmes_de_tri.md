@@ -173,32 +173,33 @@ Un invariant est une propriété qui est vraie **avant**, **pendant** et **aprè
 
 **Preuve par récurrence :**
 
-1. **Initialisation (cas de base)**  
+1 **Initialisation (cas de base)**  
 
-   - Avant la première itération (`i = 0`), aucun élément n’a été trié.  
+- Avant la première itération (`i = 0`), aucun élément n’a été trié.  
 
-   - On cherche le plus petit élément de `T[0:n]` et on l’échange avec `T[0]`. 
+- On cherche le plus petit élément de `T[0:n]` et on l’échange avec `T[0]`. 
 
-   - À la fin de cette itération, `T[0]` est bien le plus petit élément. 
+- À la fin de cette itération, `T[0]` est bien le plus petit élément. 
 
-   - Donc, l'invariant est vérifié pour `i = 0`.
+- Donc, l'invariant est vérifié pour `i = 0`.
 
-2. **Hérédité (passage de `i` à `i+1`)**  
+2 **Hérédité (passage de `i` à `i+1`)**  
 
-   - Supposons que l'invariant est vrai à l'itération `i`.  
+- Supposons que l'invariant est vrai à l'itération `i`.  
 
-   - À l’itération suivante, on cherche le plus petit élément de `T[i:n]` et on le place à `T[i]`.  
+- À l’itération suivante, on cherche le plus petit élément de `T[i:n]` et on le place à `T[i]`.  
 
-   - Comme `T[0:i]` était trié et que le plus petit élément restant est placé en `T[i]`, la propriété est maintenue après l’itération `i+1`. 
+- Comme `T[0:i]` était trié et que le plus petit élément restant est placé en `T[i]`, la propriété est maintenue après l’itération `i+1`. 
 
-   - L’invariant est donc conservé.
+- L’invariant est donc conservé.
 
-3. **Terminaison (état final)**  
-   - Lorsque `i = n-1`, il ne reste qu’un seul élément `T[n-1]`, qui est nécessairement bien placé.  
+3 **Terminaison (état final)**  
 
-   - L'invariant assure que `T[0:n]` est entièrement trié.  
+- Lorsque `i = n-1`, il ne reste qu’un seul élément `T[n-1]`, qui est nécessairement bien placé.  
 
-   - L'algorithme est donc correct.
+- L'invariant assure que `T[0:n]` est entièrement trié.  
+
+- L'algorithme est donc correct.
 
 
 
@@ -307,10 +308,11 @@ Le tri par insertion est un algorithme de **tri stable** et le plus rapide en pr
 **Principe de l’algorithme :** Le principe du tri par insertion est de trier les éléments du tableau comme avec des cartes:
 
 - On prend nos cartes mélangées dans notre main. 
-- On crée deux ensembles de carte, l’un correspond à l’ensemble de carte triée, l’autre contient l’ensemble des cartes restantes (non triées). 
-- On
 
- prend au fur et à mesure, une carte dans l’ensemble non trié et on l’insère à sa bonne place dans l’ensemble de carte triée. 
+- On crée deux ensembles de carte, l’un correspond à l’ensemble de carte triée, l’autre contient l’ensemble des cartes restantes (non triées). 
+
+- On prend au fur et à mesure, une carte dans l’ensemble non trié et on l’insère à sa bonne place dans l’ensemble de carte triée. 
+
 - On répète cette opération tant qu’il y a des cartes dans l’ensemble non trié. 
 
 Dans l'algorithme, on parcourt le tableau à trier du début à la fin. Au moment où on considère le i-ème élément, les éléments qui le précèdent sont déjà triés.  ![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.036.png)![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.037.png)![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.038.png)
@@ -423,29 +425,29 @@ On cherche un **invariant** qui est **vrai avant, pendant et après chaque itér
 
 On prouve que cet invariant est vérifié à chaque itération de la boucle.
 
-1. **Initialisation (cas de base, `i = 1`)**  
+1 **Initialisation (cas de base, `i = 1`)**  
 
-   - Avant la première itération, `T[0:1]` contient un seul élément, et un tableau à un seul élément est toujours trié. 
+- Avant la première itération, `T[0:1]` contient un seul élément, et un tableau à un seul élément est toujours trié. 
 
-   - Donc l’invariant est vrai avant la première itération.
+- Donc l’invariant est vrai avant la première itération.
 
-2. **Hérédité (passage de `i` à `i+1`)**  
+2 **Hérédité (passage de `i` à `i+1`)**  
 
-   - Supposons que le sous-tableau `T[0:i]` est trié après l’itération `i`.
+- Supposons que le sous-tableau `T[0:i]` est trié après l’itération `i`.
 
-   - L'algorithme insère `T[i]` dans `T[0:i]` de manière ordonnée à l’aide de la fonction `insert`.
+- L'algorithme insère `T[i]` dans `T[0:i]` de manière ordonnée à l’aide de la fonction `insert`.
 
-   - La fonction `insert` effectue des **décalages successifs** pour placer `T[i]` à la bonne position.
+- La fonction `insert` effectue des **décalages successifs** pour placer `T[i]` à la bonne position.
 
-   - Après l’insertion, le sous-tableau `T[0:i+1]` est trié.
+- Après l’insertion, le sous-tableau `T[0:i+1]` est trié.
 
-   - L’invariant est donc conservé.
+- L’invariant est donc conservé.
 
-3. **Terminaison (état final, `i = len(T)`)**  
+3 **Terminaison (état final, `i = len(T)`)**  
 
-   - Quand `i = len(T)`, l’invariant assure que `T[0:len(T)]` est trié.
+- Quand `i = len(T)`, l’invariant assure que `T[0:len(T)]` est trié.
 
-   - Le tableau entier est donc trié.
+- Le tableau entier est donc trié.
 
 ✔ **Conclusion** : L’invariant est vrai à chaque étape et à la fin du tri, garantissant que l’algorithme est **correct**.
 
@@ -463,17 +465,17 @@ L’algorithme doit satisfaire les conditions suivantes pour garantir qu’il te
 
 L’algorithme comprend :
 
-- **Une boucle principale `for i in range(1, len(T))`**  
+1 **Une boucle principale `for i in range(1, len(T))`**  
 
-  - Cette boucle parcourt `T` de `1` à `len(T)-1`, donc elle s'exécute **`len(T) - 1` fois**.
+- Cette boucle parcourt `T` de `1` à `len(T)-1`, donc elle s'exécute **`len(T) - 1` fois**.
 
-- **Une boucle `while j >= 0 and T[j] > tmp` dans `insert`**  
+2 **Une boucle `while j >= 0 and T[j] > tmp` dans `insert`**  
 
-  - Cette boucle déplace les éléments plus grands que `T[i]` vers la droite.
+- Cette boucle déplace les éléments plus grands que `T[i]` vers la droite.
 
-  - La valeur de `j` **diminue strictement à chaque itération**.
+- La valeur de `j` **diminue strictement à chaque itération**.
 
-  - Comme `j` commence à `i-1` et ne peut pas descendre en dessous de `0`, cette boucle a un **nombre fini d'itérations**.
+- Comme `j` commence à `i-1` et ne peut pas descendre en dessous de `0`, cette boucle a un **nombre fini d'itérations**.
 
 **Mesure de progrès**
 
