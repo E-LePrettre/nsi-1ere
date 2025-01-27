@@ -174,20 +174,30 @@ Un invariant est une propriété qui est vraie **avant**, **pendant** et **aprè
 **Preuve par récurrence :**
 
 1. **Initialisation (cas de base)**  
+
    - Avant la première itération (`i = 0`), aucun élément n’a été trié.  
-   - On cherche le plus petit élément de `T[0:n]` et on l’échange avec `T[0]`.  
-   - À la fin de cette itération, `T[0]` est bien le plus petit élément.  
+
+   - On cherche le plus petit élément de `T[0:n]` et on l’échange avec `T[0]`. 
+
+   - À la fin de cette itération, `T[0]` est bien le plus petit élément. 
+
    - Donc, l'invariant est vérifié pour `i = 0`.
 
 2. **Hérédité (passage de `i` à `i+1`)**  
+
    - Supposons que l'invariant est vrai à l'itération `i`.  
+
    - À l’itération suivante, on cherche le plus petit élément de `T[i:n]` et on le place à `T[i]`.  
-   - Comme `T[0:i]` était trié et que le plus petit élément restant est placé en `T[i]`, la propriété est maintenue après l’itération `i+1`.  
+
+   - Comme `T[0:i]` était trié et que le plus petit élément restant est placé en `T[i]`, la propriété est maintenue après l’itération `i+1`. 
+
    - L’invariant est donc conservé.
 
 3. **Terminaison (état final)**  
    - Lorsque `i = n-1`, il ne reste qu’un seul élément `T[n-1]`, qui est nécessairement bien placé.  
+
    - L'invariant assure que `T[0:n]` est entièrement trié.  
+
    - L'algorithme est donc correct.
 
 
@@ -199,6 +209,7 @@ Un invariant est une propriété qui est vraie **avant**, **pendant** et **aprè
 Un algorithme termine si :
 
 1. Il ne contient pas de boucle infinie.
+
 2. Chaque boucle réduit un paramètre strictement borné jusqu’à atteindre une condition d’arrêt.
 
 **Analyse de la terminaison**
@@ -206,10 +217,13 @@ Un algorithme termine si :
 L’algorithme utilise une double boucle :
 
 - Une boucle principale `for i in range(n-1)`, qui s’exécute **exactement `n-1` fois**.
+
 - Une boucle imbriquée `for j in range(i+1, n)`, qui réduit la taille de la portion de tableau examinée à chaque itération.
 
 On définit une **mesure de progrès** `m = n - i`, qui représente le nombre d'éléments restant à trier.  
+
 À chaque itération, `i` augmente de `1`, donc `m` diminue strictement jusqu'à atteindre `1`.  
+
 Quand `m = 1`, la boucle principale s'arrête, garantissant la terminaison de l’algorithme.
 
 ### <H3 STYLE="COLOR:GREEN;">2.8. Implémentation<a name="_page3_x40.00_y497.92"></a> en Python</H3>
@@ -410,18 +424,27 @@ On cherche un **invariant** qui est **vrai avant, pendant et après chaque itér
 On prouve que cet invariant est vérifié à chaque itération de la boucle.
 
 1. **Initialisation (cas de base, `i = 1`)**  
-   - Avant la première itération, `T[0:1]` contient un seul élément, et un tableau à un seul élément est toujours trié.  
+
+   - Avant la première itération, `T[0:1]` contient un seul élément, et un tableau à un seul élément est toujours trié. 
+
    - Donc l’invariant est vrai avant la première itération.
 
 2. **Hérédité (passage de `i` à `i+1`)**  
+
    - Supposons que le sous-tableau `T[0:i]` est trié après l’itération `i`.
+
    - L'algorithme insère `T[i]` dans `T[0:i]` de manière ordonnée à l’aide de la fonction `insert`.
+
    - La fonction `insert` effectue des **décalages successifs** pour placer `T[i]` à la bonne position.
+
    - Après l’insertion, le sous-tableau `T[0:i+1]` est trié.
+
    - L’invariant est donc conservé.
 
 3. **Terminaison (état final, `i = len(T)`)**  
+
    - Quand `i = len(T)`, l’invariant assure que `T[0:len(T)]` est trié.
+
    - Le tableau entier est donc trié.
 
 ✔ **Conclusion** : L’invariant est vrai à chaque étape et à la fin du tri, garantissant que l’algorithme est **correct**.
@@ -439,17 +462,25 @@ L’algorithme doit satisfaire les conditions suivantes pour garantir qu’il te
 **Analyse de la terminaison**
 
 L’algorithme comprend :
+
 - **Une boucle principale `for i in range(1, len(T))`**  
+
   - Cette boucle parcourt `T` de `1` à `len(T)-1`, donc elle s'exécute **`len(T) - 1` fois**.
+
 - **Une boucle `while j >= 0 and T[j] > tmp` dans `insert`**  
+
   - Cette boucle déplace les éléments plus grands que `T[i]` vers la droite.
+
   - La valeur de `j` **diminue strictement à chaque itération**.
+
   - Comme `j` commence à `i-1` et ne peut pas descendre en dessous de `0`, cette boucle a un **nombre fini d'itérations**.
 
 **Mesure de progrès**
 
 On définit une **mesure de progrès** `m = len(T) - i`, qui représente le nombre d'éléments restant à traiter.  
+
 - `m` diminue strictement à chaque itération de la boucle `for`.
+
 - Comme `m` atteint `0`, l'algorithme s'arrête toujours.
 
 ✔ **Conclusion** : L’algorithme ne peut pas entrer dans une boucle infinie et termine toujours après au plus **O(n²) itérations**.
