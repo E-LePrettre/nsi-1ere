@@ -238,7 +238,7 @@ _Remarque : Attention à ne pas confondre :_
 
 
 
-### <span style="color:blue;"> Exercices sur les conditions </span>
+## <span style="color:blue;"> Exercices sur les conditions </span>
 
 ???+ question "Exercice 1 : Couleur et Nombre"
 
@@ -346,5 +346,264 @@ _Remarque : Attention à ne pas confondre :_
         - `a = 3, b = 4, c = 5` : "Le triangle n'est ni équilatéral ni isocèle"
 
 
+
+## <span style="color:blue;">La boucle itérative for</span>
+
+
+
+### Boucle `for` avec `range`
+
+Une *boucle* **pour** permet de répéter un bloc d'instructions **un certain nombre de fois**.
+
+```python
+# Bloc pour
+for i in range(n):
+    # bloc d'instructions
+```
+
+Dans cette boucle, `i` prendra les valeurs de `0` à `n-1`. Toutes les instructions dans la boucle seront appliquées pour chaque valeur de `i`.
+
+Dans cette structure, on connait à l'avance le nombre de répétitions. Dans notre cas, il est égal à `n`.
+
+???+ question "Activité n°5 : ❤️ Boucle avec compteur i ❤️"
+
+    Avec l'éditeur de script, **testez le code suivant :**
+
+    
+
+    ```python
+    for i in range(11):
+        print(i)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Alors, que se passe-t-il ?**
+
+        Le programme affiche les nombres de 0 à 10. La fonction `range(11)` génère une séquence de 11 nombres, allant de 0 à 10.
+
+        **Explication :**
+        - `i` commence à 0 et augmente de 1 à chaque itération.
+        - Le bloc `print(i)` s'exécute à chaque itération.
+
+_Remarque :_ On note `range(11)` pour indiquer que la boucle `print(i)` va s'exécuter 11 fois, mais `i` prendra toutes les valeurs entières entre `0` et `10` inclus.
+
+???+ question "Activité n°6 : ❤️ Algorithme donnant une somme ❤️"
+
+    Avec l'éditeur de script, **testez le code suivant :**
+
+    
+
+    ```python
+    s = 0
+    for i in range(11):
+        s = s + i
+    print(s)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Alors, que se passe-t-il ?**
+
+        Le programme affiche la somme des nombres de 0 à 10, soit 55.
+
+        **Explication :**
+        - La variable `s` est initialisée à 0.
+        - À chaque itération, la valeur de `i` est ajoutée à `s`.
+        - Finalement, `print(s)` affiche la somme totale.
+
+_Remarque :_ Lors de l'instruction `for i in range(m, n)`, `i` prend toutes les valeurs entières entre `m` et `n-1`. Avec `for i in range(m, n, p)`, `i` prend les valeurs entre `m` et `n-1` en sautant de `p` à chaque fois.
+
+Exemple : ❤️`for i in range(2, 10, 2)` donne `2, 4, 6, 8`❤️.
+
+###  Boucle `for` avec `in`
+
+```python
+for elmt in iterable:
+    # instructions
+```
+
+Dans cette boucle, `elmt` va parcourir les éléments de `iterable`. `iterable` peut être une chaîne de caractères ou une liste.
+
+???+ question "Activité n°7 : ❤️ Boucle de parcours de chaîne ❤️.
+
+    Avec l'éditeur de script, **testez le code suivant :**
+
+
+    ```python
+    ch = "Bonjour à tou.te.s"
+    for elmt in ch:
+        print(elmt)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Que fait ce code ?**
+
+        Il affiche chaque caractère de la chaîne `ch` un par un sur des lignes séparées.
+
+        **Explication :**
+        - La boucle `for` parcourt chaque caractère de la chaîne `ch`.
+        - À chaque itération, `elmt` prend la valeur d'un caractère et l'affiche avec `print(elmt)`.
+
+_Modifiez la chaîne pour tester d'autres phrases._
+
+???+ question "A faire vous-même Activité n°8 :"
+
+    Avec l'éditeur de script, **testez le code suivant :**
+
+    
+
+    ```python
+    citation = "Je ne cherche pas à connaître les réponses, je cherche à comprendre les questions."
+    compteur = 0
+    for elt in citation:
+        if elt == "e":
+            compteur = compteur + 1
+    print(compteur)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Que fait ce code ?**
+
+        Il compte le nombre de fois que la lettre "e" apparaît dans la chaîne `citation` et affiche le résultat.
+
+        **Explication :**
+        - La boucle parcourt chaque caractère de la chaîne.
+        - Si le caractère est un "e", le compteur est incrémenté de 1.
+
+    **Transformer le code pour qu'il compte le nombre de "a" :**
+
+    ??? success "Python"
+        {{ IDE() }}
+    
+    ?? success "Solution"
+        ```python
+        compteur = 0
+        for elt in citation:
+            if elt == "a":
+                compteur = compteur + 1
+        print(compteur)
+        ```
+
+## <span style="color:blue;">Exercices sur la boucle for</span>
+
+???+ question "Exercice 1 : Afficher les 100 premiers nombres entiers"
+
+    Écrire un script qui permet d’afficher les 100 premiers nombres entiers NON NULS.
+
+    ??? success "Python"
+        {{ IDE() }}
+    
+    ??? success "Solution"
+        ```python
+        for i in range(1, 101):
+            print(i)
+        ```
+
+
+        Ce code affiche les nombres de 1 à 100.
+
+        **Explication :**
+        - La boucle commence à 1 et s'arrête à 100.
+
+???+ question "Exercice 2 : Calculer des sommes"
+
+    Écrire un programme en Python pour calculer :
+
+    - **a)** `1 + 2 + 3 + ... + 100`
+    - **b)** `1 + 3 + 5 + ... + 99`
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+        
+        a)
+        ```python
+        somme = 0
+        for i in range(1, 101):
+            somme = somme + i
+        print(somme)
+        ```
+        b)
+        ```python
+        somme_impairs = 0
+        for i in range(1, 100, 2):
+            somme_impairs = somme_impairs + i
+        print(somme_impairs)
+            ```
+
+        **a)** Le programme affiche 5050.
+        **b)** Le programme affiche 2500.
+
+        **Explication :**
+        - Pour **a)**, on additionne tous les nombres de 1 à 100.
+        - Pour **b)**, on additionne tous les nombres impairs de 1 à 99.
+
+???+ question "Exercice 3 : Construire une pyramide"
+
+    Inès veut construire une pyramide à base carrée. La pyramide sur la photo a 7 étages.
+
+    ![image de la pyramide](Image1.png)
+
+    Écrire un programme en Python pour répondre au problème : Combien de billes faut-il pour une pyramide à 7 étages ? puis à 100 étages
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+        Il suffit de modifier l'algorithme de somme que l'on a déjà vu
+        ```python
+        s = 0
+        for i in range(11):
+            s = s + i
+        print(s)
+        ```
+
+        **Explication :**
+        - Chaque étage est un carré de billes, donc on additionne les carrés des nombres de 1 à 7.
+
+        ```python
+        s = 0
+        for i in range(1,8):
+            s = s + i
+        print(s)
+        ```
+
+        pour 100 étages on fait la même chose
+
+        ```python
+        s = 0
+        for i in range(1,101):
+            s = s + i
+        print(s)
+        ```
+
+    **Modifier le programme pour que l'utilisateur puisse choisir le nombre d'étages :**
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+        ```python
+        etages = int(input("Entrez le nombre d'étages : "))
+        s = 0
+        for i in range(1, etages+1):
+            s = s + i
+        print(s)
+        ```
 
 
