@@ -345,7 +345,7 @@ _Remarque : Attention à ne pas confondre :_
         - `a = 3, b = 3, c = 3` : "Le triangle est équilatéral"
 
         - `a = 4, b = 4, c = 5` : "Le triangle est isocèle"
-        
+
         - `a = 3, b = 4, c = 5` : "Le triangle n'est ni équilatéral ni isocèle"
 
 
@@ -389,7 +389,9 @@ Dans cette structure, on connait à l'avance le nombre de répétitions. Dans no
         Le programme affiche les nombres de 0 à 10. La fonction `range(11)` génère une séquence de 11 nombres, allant de 0 à 10.
 
         **Explication :**
+
         - `i` commence à 0 et augmente de 1 à chaque itération.
+
         - Le bloc `print(i)` s'exécute à chaque itération.
 
 _Remarque :_ On note `range(11)` pour indiquer que la boucle `print(i)` va s'exécuter 11 fois, mais `i` prendra toutes les valeurs entières entre `0` et `10` inclus.
@@ -417,8 +419,11 @@ _Remarque :_ On note `range(11)` pour indiquer que la boucle `print(i)` va s'ex�
         Le programme affiche la somme des nombres de 0 à 10, soit 55.
 
         **Explication :**
+
         - La variable `s` est initialisée à 0.
+
         - À chaque itération, la valeur de `i` est ajoutée à `s`.
+
         - Finalement, `print(s)` affiche la somme totale.
 
 _Remarque :_ Lors de l'instruction `for i in range(m, n)`, `i` prend toutes les valeurs entières entre `m` et `n-1`. Avec `for i in range(m, n, p)`, `i` prend les valeurs entre `m` et `n-1` en sautant de `p` à chaque fois.
@@ -434,7 +439,7 @@ for elmt in iterable:
 
 Dans cette boucle, `elmt` va parcourir les éléments de `iterable`. `iterable` peut être une chaîne de caractères ou une liste.
 
-???+ question "Activité n°7 : ❤️ Boucle de parcours de chaîne ❤️.
+???+ question "Activité n°7 : ❤️ Boucle de parcours de chaîne ❤️."
 
     Avec l'éditeur de script, **testez le code suivant :**
 
@@ -455,7 +460,9 @@ Dans cette boucle, `elmt` va parcourir les éléments de `iterable`. `iterable` 
         Il affiche chaque caractère de la chaîne `ch` un par un sur des lignes séparées.
 
         **Explication :**
+
         - La boucle `for` parcourt chaque caractère de la chaîne `ch`.
+
         - À chaque itération, `elmt` prend la valeur d'un caractère et l'affiche avec `print(elmt)`.
 
 _Modifiez la chaîne pour tester d'autres phrases._
@@ -484,7 +491,9 @@ _Modifiez la chaîne pour tester d'autres phrases._
         Il compte le nombre de fois que la lettre "e" apparaît dans la chaîne `citation` et affiche le résultat.
 
         **Explication :**
+
         - La boucle parcourt chaque caractère de la chaîne.
+
         - Si le caractère est un "e", le compteur est incrémenté de 1.
 
     **Transformer le code pour qu'il compte le nombre de "a" :**
@@ -492,7 +501,7 @@ _Modifiez la chaîne pour tester d'autres phrases._
     ??? success "Python"
         {{ IDE() }}
     
-    ?? success "Solution"
+    ??? success "Solution"
         ```python
         compteur = 0
         for elt in citation:
@@ -533,21 +542,28 @@ _Modifiez la chaîne pour tester d'autres phrases._
         {{ IDE() }}
 
     ??? success "Solution"
+        Il suffit de modifier l'algorithme de somme que l'on a déjà vu
+        ```python
+        s = 0
+        for i in range(11):
+            s = s + i
+        print(s)
+        ```
         
         a)
         ```python
-        somme = 0
+        s = 0
         for i in range(1, 101):
-            somme = somme + i
-        print(somme)
+            s = s + i
+        print(s)
         ```
         b)
-        ```python
-        somme_impairs = 0
-        for i in range(1, 100, 2):
-            somme_impairs = somme_impairs + i
-        print(somme_impairs)
-            ```
+         ```python
+        s = 0
+        for i in range(1, 100,2):
+            s = s + i
+        print(s)
+        ```
 
         **a)** Le programme affiche 5050.
         **b)** Le programme affiche 2500.
@@ -577,6 +593,7 @@ _Modifiez la chaîne pour tester d'autres phrases._
         ```
 
         **Explication :**
+        
         - Chaque étage est un carré de billes, donc on additionne les carrés des nombres de 1 à 7.
 
         ```python
