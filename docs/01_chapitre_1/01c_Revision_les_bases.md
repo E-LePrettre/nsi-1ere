@@ -148,8 +148,12 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         ```
 
         **Explication :**
-        - `a = 1 * -1` donne `a = -1`
-        - `a = -1 + (-1)` donne `a = -2`
+        1. `a = 1`
+        2. `b = -1`
+        3. `a = 1 * -1` donc `a = -1`
+        4. `a = -1 + (-1)` donc `a = -2`
+
+        La valeur finale de `a` est -2.
 
 ???+ question "Activité n° 6 : ❤️ Echange de valeurs entre 2 variables ❤️"
 
@@ -188,7 +192,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     total = dividende / diviseur
     print(total)
     ```
-    { IDE() }}
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -207,7 +211,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     resultat = a // b
     print(resultat)
     ```
-    { IDE() }}
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -215,6 +219,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         ```
         3
         ```
+        `//` effectue une division entière.
+
 
 ???+ question "Activité n°9 :"
 
@@ -226,7 +232,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     resultat = a % b
     print(resultat)
     ```
-    { IDE() }}
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -234,6 +240,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         ```
         1
         ```
+        Ce programme affiche `1` car 13 divisé par 4 donne un reste de 1.
+
 
 ???+ question "Activité n°10 : Incrémentation d'une variable"
 
@@ -245,7 +253,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     a = a + 1  # incrémentation de la variable a
     print(a)
     ```
-    { IDE() }}
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -268,6 +276,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     prenom = "Bob"
     print("Mon prénom est :", prenom)
     ```
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -277,13 +286,15 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         Mon prénom est : Bob
         ```
 
-???+ question "A faire vous-même Activité n°12 :"
+???+ question "Activité n°12 :"
 
     Réalisez un script qui contient trois variables : `prenom`, `nom` et `age` et qui doit afficher :
 
     ```
     Bonjour je m'appelle Alphonse Dansletas, j'ai 358 ans.
     ```
+
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -299,216 +310,137 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         Bonjour je m'appelle Alphonse Dansletas, j'ai 358 ans.
         ```
 
+## <span style="color:blue;">Dialoguer avec l'utilisateur</span>
 
 
 
+La **fonction** `input` permet d'ouvrir une boîte de dialogue et de **récupérer une information saisie par l'utilisateur**. 
 
-???+ question "Activité n° 3 :"
+L'information récupérée grâce à un `input` est une **chaîne de caractères**.
 
-    Attribuer la valeur 12 à la variable `moyenne` et afficher cette valeur.
+???+ question "Activité n°13 :"
 
-    {{ IDE() }}
+    **Tester :**
 
-    ??? success "Solution"
-
-        ```python
-        moyenne = 12
-        print(moyenne)
-        ```
-        Ce programme stocke la valeur 12 dans la variable `moyenne` et affiche cette valeur.
-
----
-
-???+ question "Activité n° 4 :"
-
-    Que vaut `a` à la fin de ce script ?
     ```python
-    a = 1
-    b = -1
-    a = a * b
-    a = a + b
-    ```
-    {{ IDE() }}
-
-    ??? success "Solution"
-
-        1. `a = 1`
-        2. `b = -1`
-        3. `a = 1 * -1` donc `a = -1`
-        4. `a = -1 + (-1)` donc `a = -2`
-
-        La valeur finale de `a` est -2.
-
----
-
-
----
-
-???+ question "Activité n° 6 :"
-
-    Compléter le programme suivant pour que la variable `total` contienne le résultat de la division de `dividende` par `diviseur`.
-    ```python
-    dividende = 13
-    diviseur = 4
-    ?
-    print(total)
-    ```
-    {{ IDE() }}
-
-    ??? success "Solution"
-
-        ```python
-        dividende = 13
-        diviseur = 4
-        total = dividende / diviseur
-        print(total)
-        ```
-        Le programme affiche : `3.25`.
-
----
-
-???+ question "Activité n° 7 :"
-
-    Tester maintenant la division entière avec l'opérateur `//`.
-    ```python
-    a = 13
-    b = 4
-    resultat = a // b
-    print(resultat)
-    ```
-    {{ IDE() }}
-
-    ??? success "Solution"
-
-        Ce programme affiche `3` car `//` effectue une division entière.
-
----
-
-???+ question "Activité n° 8 :"
-
-    Calculer le reste de la division euclidienne avec `%`.
-    ```python
-    a = 13
-    b = 4
-    resultat = a % b
-    print(resultat)
-    ```
-    {{ IDE() }}
-
-    ??? success "Solution"
-
-        Ce programme affiche `1` car 13 divisé par 4 donne un reste de 1.
-
----
-
-???+ question "Activité n° 9 :"
-
-    Que fait ce programme ?
-    ```python
-    a = 11
-    print(a)
-    a = a + 1  # incrémentation de la variable a
-    print(a)
-    ```
-    {{ IDE() }}
-
-    ??? success "Solution"
-
-        Le programme affiche :
-        ```
-        11
-        12
-        ```
-        Il incrémente la valeur de `a` de 1.
-
----
-
-???+ question "Activité n° 10 :"
-
-    Réaliser un script qui contient trois variables : `prenom`, `nom` et `age` et qui doit afficher :
-    "Bonjour je m'appelle Alphonse Dansletas, j'ai 358 ans."
-
-    {{ IDE() }}
-
-    ??? success "Solution"
-
-        ```python
-        prenom = "Alphonse"
-        nom = "Dansletas"
-        age = 358
-        print("Bonjour je m'appelle", prenom, nom, ", j'ai", age, "ans.")
-        ```
-
----
-
-???+ question "Activité n° 11 :"
-
-    Demander à l'utilisateur son prénom et l'afficher.
-    ```python
-    prenom = input("Quel est ton prénom ? ")
+    prenom = input("Quel est ton prénom ?")
     print(prenom)
     ```
     {{ IDE() }}
 
     ??? success "Solution"
 
-        Lorsque vous exécutez ce programme, il vous demande votre prénom et l'affiche ensuite.
+        **Résultat (si vous entrez `Alice`) :**
+        ```
+        Alice
+        ```
 
----
+???+ question "A faire vous-même Activité n°14 :"
 
-???+ question "Activité n° 12 :"
+    Écrire un script en Python qui demande à l'utilisateur son prénom, son nom et son âge, puis qui doit afficher :
 
-    Ecrire un script qui demande à l'utilisateur son prénom, son nom et son âge, puis affiche :
-    "Bonjour je m'appelle Alain Térieur, j'ai 217 ans."
+    ```
+    Bonjour je m'appelle Alain Térieur, j'ai 217 ans.
+    ```
+
+
+    (Dans le cas où vous vous appelleriez Alain Térieur et que vous seriez âgé de 217 ans.)
 
     {{ IDE() }}
 
     ??? success "Solution"
 
         ```python
-        prenom = input("Quel est ton prénom ? ")
-        nom = input("Quel est ton nom ? ")
-        age = input("Quel est ton âge ? ")
-        print("Bonjour je m'appelle", prenom, nom, ", j'ai", age, "ans.")
+        prenom = input("Quel est votre prénom ? ")
+        nom = input("Quel est votre nom ? ")
+        age = input("Quel est votre âge ? ")
+
+        print(f"Bonjour je m'appelle {prenom} {nom}, j'ai {age} ans.")
         ```
 
----
+        **Résultat (si vous entrez Alain, Térieur et 217) :**
+        ```
+        Bonjour je m'appelle Alain Térieur, j'ai 217 ans.
+        ```
 
-???+ question "Activité n° 13 :"
+???+ question "Activité n°15 :"
 
-    Créer un programme pour un boulanger qui demande le nombre de baguettes et affiche le prix total.
+    Un boulanger désire un programme qui demande à l'utilisateur le nombre de baguettes qu'il désire, qui calcule le prix total (sachant qu'une baguette coûte 1.10 €) et qui affiche le prix que l'utilisateur doit payer.
+
+    1. **Tester le script suivant avec 2 :**
+
+    ```python
+    nombre = input("Combien de baguettes désirez-vous ?")
+    prix = nombre * 1.1
+    print("Vous avez à payer", prix, "euros.")
+    ```
 
     {{ IDE() }}
 
     ??? success "Solution"
 
-        Correction du script pour convertir l'entrée en entier :
-        ```python
-        nombre = int(input("Combien de baguettes désirez-vous ? "))
-        prix = nombre * 1.1
-        print("Vous avez à payer", prix, "euros.")
+        **Résultat attendu :** 
+        Vous obtenez une erreur ou un résultat incorrect car `input` retourne une chaîne de caractères. La multiplication d'une chaîne par un nombre ne donne pas le résultat escompté.
+
+        **Erreur possible :**
+        ```
+        TypeError: can't multiply sequence by non-int of type 'float'
         ```
 
-        Ce programme calcule le prix en fonction du nombre de baguettes achetées.
+    2. **Testez le script suivant avec 2 :**
 
----
+    ```python
+    nombre = int(input("Combien de baguettes désirez-vous ?"))
+    prix = nombre * 1.1
+    print("Vous avez à payer", prix, "euros.")
+    ```
 
-???+ question "Activité n° 14 :"
+    {{ IDE() }}
 
-    Calculer le prix à payer pour une entrée dans un parc d'attraction en fonction du nombre d'adultes et d'enfants.
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        Vous avez à payer 2.2 euros.
+        ```
+
+        **Différence :** Ici, nous convertissons la chaîne de caractères en un nombre entier avec `int()`, ce qui permet de faire correctement la multiplication.
+
+## <span style="color:blue;">Fonction `int` et fonction `float`</span>
+
+L'instruction `int` permet de convertir certaines chaînes de caractères en un **nombre entier**.
+
+L'instruction `float` permet de convertir certaines chaînes de caractères en un **flottant**, c'est-à-dire un "nombre à virgule".
+
+???+ question "Activité n°16 :"
+
+    Vous êtes chargé(e) de mettre en place une borne automatique pour régler les droits d’entrée à un parc d’attractions.
+
+    Chaque adulte doit payer 21 € pour rentrer et chaque enfant doit payer 13 €.
+
+    **Écrire un programme** en Python qui demande à l'utilisateur le nombre d'adultes et d'enfants, puis affiche le prix total à payer.
 
     {{ IDE() }}
 
     ??? success "Solution"
 
         ```python
-        A = int(input("Combien d'adultes ? "))
-        E = int(input("Combien d'enfants ? "))
-        P = A * 21 + E * 13
-        print("Le prix total à payer est", P, "euros.")
+        A = int(input("Combien d'adultes dans le groupe ? "))
+        E = int(input("Combien d'enfants dans le groupe ? "))
+
+        P = (A * 21) + (E * 13)
+
+        print(f"Le prix total à payer est de {P} euros.")
         ```
 
-## Les chaines de caractères
+        **Exemple de résultat (si vous entrez 2 adultes et 3 enfants) :**
+        ```
+        Le prix total à payer est de 81 euros.
+        ```
+
+
+
+## <span style="color:blue;">Les chaines de caractères</span>
 
 ???+ question "Activité n°17 :"
     
@@ -521,6 +453,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     b = "une chaine délimitée par des guillemets"
     print(b)
     ```
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -529,11 +462,13 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         une chaine délimitée par des guillemets
         ```
 
-???+ question "A faire vous-même Activité n°18 :"
+???+ question "Activité n°18 :"
 
     Faire afficher exactement :
     - C'est bientôt Noël
     - Bonjour se dit "Hello"
+
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -548,7 +483,6 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         Bonjour se dit "Hello"
         ```
 
-## Opérateurs sur les chaînes de caractères
 
 ???+ question "Activité n°19 :"
 
@@ -557,9 +491,10 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     ```python
     chaine = 'Bonjour'
 
-    print('b' in chaine)  # affichera False
-    print('B' in chaine)  # affichera True
+    print('b' in chaine)  
+    print('B' in chaine)  
     ```
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -582,6 +517,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
 
     print(chaine1 + chaine2)
     ```
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -590,13 +526,15 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         Bonjour à tous.
         ```
 
-???+ question "A faire vous-même Activité n°21 :"
+???+ question "Activité n°21 :"
 
     À partir de deux chaînes de caractères :
     - Aujourd'hui
     - se dit "Today"
 
     Faites afficher la phrase complète par concaténation.
+
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -619,8 +557,9 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     ```python
     chaine = 'Bonjour à tous.'
 
-    print(len(chaine))  # affichera 15
+    print(len(chaine))  
     ```
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -634,24 +573,26 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
 ???+ question "Activité n°23 :"
 
     Lisez un caractère dans une chaîne avec `chaine[index]`.
+    ![image des indices de bonjour](55pDvH1.jpg)
 
     ```python
-    chaine = 'Bonjour'
+    chaine = 'bonjour'
 
-    print(chaine[0])   # B
-    print(chaine[1])   # o
-    print(chaine[-1])  # r
-    print(chaine[-2])  # u
+    print(chaine[0])   
+    print(chaine[1])   
+    print(chaine[-1])  
+    print(chaine[-2])  
     ```
+    {{ IDE() }}
 
     ??? success "Solution"
 
         **Résultat :**
         ```
-        B
-o
-r
-u
+        b
+        o
+        r
+        u
         ```
 
 ???+ question "A faire vous-même Activité n°24 :"
