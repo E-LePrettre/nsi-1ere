@@ -25,9 +25,10 @@ title: 02c Fiche Méthode Les bases
             if age >= 18:
                 print("Vous êtes majeur.")  # Affiche "Vous êtes majeur."
             ```
+            {{ IDE() }}
 
         ??? success "Exemple avec fonction"
-
+=
             ```python
             def verifier_majorite(age):
                 if age >= 18:
@@ -35,6 +36,9 @@ title: 02c Fiche Méthode Les bases
 
             verifier_majorite(20)
             ```
+            {{ IDE() }}
+       
+            
 
     ???+ question "b) `if / else`"
 
@@ -55,20 +59,24 @@ title: 02c Fiche Méthode Les bases
             if age >= 18:
                 print("Vous êtes majeur.")
             else:
-                print("Vous êtes mineur.")  # Affiche "Vous êtes mineur."
+                print("Vous êtes mineur.")  
             ```
+
+            {{ IDE() }}
 
         ??? success "Exemple avec fonction"
 
             ```python
             def verifier_age(age):
                 if age >= 18:
-                    print("Vous êtes majeur.")
+                    return "Vous êtes majeur."
                 else:
-                    print("Vous êtes mineur.")  # Affiche "Vous êtes mineur."
+                    return "Vous êtes mineur."  
 
-            verifier_age(17)
+            print(verifier_age(17))
             ```
+
+            {{ IDE() }}
 
     ???+ question "c) `if / elif`"
 
@@ -89,20 +97,24 @@ title: 02c Fiche Méthode Les bases
             if note >= 18:
                 print("Excellent")
             elif note >= 12:
-                print("Bien")  # Affiche "Bien"
+                print("Bien")  
             ```
+
+            {{ IDE() }}
 
         ??? success "Exemple avec fonction"
 
             ```python
             def evaluer_note(note):
                 if note >= 18:
-                    print("Excellent")
+                    return "Excellent"
                 elif note >= 12:
-                    print("Bien")  # Affiche "Bien"
+                    return "Bien"
 
-            evaluer_note(14)
+            print(evaluer_note(14))
             ```
+
+            {{ IDE() }}
 
     ???+ question "d) `if / elif / else`"
 
@@ -135,14 +147,16 @@ title: 02c Fiche Méthode Les bases
             ```python
             def evaluer_performance(note):
                 if note >= 18:
-                    print("Excellent")
+                    return "Excellent"
                 elif note >= 12:
-                    print("Bien")
+                    return "Bien"
                 else:
-                    print("Peut mieux faire")  # Affiche "Peut mieux faire"
+                    return "Peut mieux faire"
 
-            evaluer_performance(9)
+            print(evaluer_performance(9))
             ```
+
+            {{ IDE() }}
 
 ???+ question "Faire ce qui est proposé"
 
@@ -163,15 +177,17 @@ title: 02c Fiche Méthode Les bases
             print(chaine[0])  # Affiche 'P'
             print(chaine[3])  # Affiche 'h'
             ```
+            {{ IDE() }}
 
         ??? success "Exemple avec fonction"
 
             ```python
             def afficher_premier_caractere(chaine):
-                print(chaine[0])  # Affiche le premier caractère de la chaîne
+                return chaine[0]  # Affiche le premier caractère de la chaîne
 
-            afficher_premier_caractere("Bonjour")  # Affiche 'B'
+            print(afficher_premier_caractere("Bonjour"))  # Affiche 'B'
             ```
+            {{ IDE() }}
 
     ???+ question "b) Accès avec indexation négative `chaine[-nombre]`"
 
@@ -180,18 +196,21 @@ title: 02c Fiche Méthode Les bases
         ??? success "Exemple"
 
             ```python
+            chaine = "Python"
             print(chaine[-1])  # Affiche 'n'
             print(chaine[-3])  # Affiche 'h'
             ```
+            {{ IDE() }}
 
         ??? success "Exemple avec fonction"
 
             ```python
             def afficher_dernier_caractere(chaine):
-                print(chaine[-1])  # Affiche le dernier caractère de la chaîne
+                return chaine[-1]  # Affiche le dernier caractère de la chaîne
 
-            afficher_dernier_caractere("Bonjour")  # Affiche 'r'
+            print(afficher_dernier_caractere("Bonjour"))  # Affiche 'r'
             ```
+            {{ IDE() }}
 
     ???+ question "c) Tranches (slices) `chaine[début:fin]`"
 
@@ -200,18 +219,21 @@ title: 02c Fiche Méthode Les bases
         ??? success "Exemple"
 
             ```python
+            chaine = "Python"
             print(chaine[0:3])  # Affiche 'Pyt'
             print(chaine[2:5])  # Affiche 'tho'
             ```
+            {{ IDE() }}
 
         ??? success "Exemple avec fonction"
 
             ```python
             def extraire_tranche(chaine, debut, fin):
-                print(chaine[debut:fin])  # Affiche la tranche de la chaîne
+                return chaine[debut:fin]  # Affiche la tranche de la chaîne
 
-            extraire_tranche("Programmation", 0, 6)  # Affiche 'Progra'
+            print(extraire_tranche("Programmation", 0, 6))  # Affiche 'Progra'
             ```
+            {{ IDE() }}
 
     ???+ question "d) Tranches avec pas `chaine[début:fin:pas]`"
 
@@ -220,18 +242,21 @@ title: 02c Fiche Méthode Les bases
         ??? success "Exemple"
 
             ```python
+            chaine = "Python"
             print(chaine[0:6:2])  # Affiche 'Pto'
             print(chaine[::-1])    # Affiche 'nohtyP' (chaîne inversée)
             ```
+            {{ IDE() }}
 
         ??? success "Exemple avec fonction"
 
             ```python
             def inverser_chaine(chaine):
-                print(chaine[::-1])  # Affiche la chaîne inversée
+                return chaine[::-1]  # Affiche la chaîne inversée
 
-            inverser_chaine("Python")  # Affiche 'nohtyP'
+            print(inverser_chaine("Python"))  # Affiche 'nohtyP'
             ```
+            {{ IDE() }}
 
 ???+ question "Faire ce qui est proposé"
 
@@ -255,6 +280,8 @@ title: 02c Fiche Méthode Les bases
             ```
             *Affiche : P, y, t, h, o, n.*
 
+            {{ IDE() }}
+
         ??? success "Exemple avec fonction"
 
             ```python
@@ -262,8 +289,9 @@ title: 02c Fiche Méthode Les bases
                 for elmt in chaine:
                     print(elmt)  # Affiche chaque caractère de la chaîne
 
-            afficher_caracteres("Bonjour")  # Affiche B, o, n, j, o, u, r
+            print(afficher_caracteres("Bonjour"))  # Affiche B, o, n, j, o, u, r
             ```
+            {{ IDE() }}
 
     ???+ question "b) `for i in range(len(chaine_de_caractere))`"
 
@@ -284,6 +312,7 @@ title: 02c Fiche Méthode Les bases
             Caractère à l'index 4 : o
             Caractère à l'index 5 : n
             ```
+            {{ IDE() }}
 
         ??? success "Exemple avec fonction"
 
@@ -294,10 +323,8 @@ title: 02c Fiche Méthode Les bases
 
             afficher_avec_index("Python")  # Affiche les caractères avec leurs index
             ```
+            {{ IDE() }}
 
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
 
 
 ???+ question "4. Boucle `while`"
@@ -326,6 +353,7 @@ title: 02c Fiche Méthode Les bases
         Compteur : 3
         Compteur : 4
         ```
+        {{ IDE() }}
 
     ??? success "Exemple avec fonction"
 
@@ -338,8 +366,7 @@ title: 02c Fiche Méthode Les bases
 
         compter_jusqu_a(3)  # Affiche 0, 1, 2
         ```
+        {{ IDE() }}
 
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
+?
 
