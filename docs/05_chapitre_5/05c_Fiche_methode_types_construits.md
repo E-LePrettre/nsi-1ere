@@ -253,122 +253,120 @@ title: 05c Fiche méthode Types construits
 
 ???+ question "9. Boucles `for` **❤️ Boucle `for` sur chaque élément d'une chaîne : ❤️**""
 
-    
-
     ```python
     for elmt in chaine_de_caractere:
         print(elmt)
     ```
 
     ??? success "Exemple"
-
-      ```python
-      texte = "Python"
-      for elmt in texte:
-          print(elmt)
-      ```
-      *Affiche :*
-      ```
-      P
-      y
-      t
-      h
-      o
-      n
-      ```
-      {{ IDE() }}
+        ```python
+        texte = "Python"
+        for elmt in texte:
+            print(elmt)
+        ```
+        *Affiche :*
+        ```
+        P
+        y
+        t
+        h
+        o
+        n
+        ```
+        {{ IDE() }}
 
 ???+ question "10. Boucles `for` **❤️ Boucle `for` sur chaque élément d'une liste : ❤️**""
 
-  ```python
-  for elmt in [10, 20, 30, 40]:
-      print(elmt)
-  ```
+    ```python
+    for elmt in [10, 20, 30, 40]:
+        print(elmt)
+    ```
 
-  ??? success "Exemple"
+    ??? success "Exemple"
 
-      ```python
-      nombres = [10, 20, 30, 40]
-      for elmt in nombres:
-          print(elmt)
-      ```
-      *Affiche :*
-      ```
-      10
-      20
-      30
-      40
-      ```
-      {{ IDE() }}
+        ```python
+        nombres = [10, 20, 30, 40]
+        for elmt in nombres:
+            print(elmt)
+        ```
+        *Affiche :*
+        ```
+        10
+        20
+        30
+        40
+        ```
+        
+        {{ IDE() }}
 
 ???+ question "11. Boucles `for` **❤️ Boucle `for` sur chaque élément d'un tuple  ❤️**""
 
-  ```python
-  for elmt in ("rouge", "vert", "bleu"):
-      print(elmt)
-  ```
+    ```python
+    for elmt in ("rouge", "vert", "bleu"):
+        print(elmt)
+    ```
 
-  ??? success "Exemple"
+    ??? success "Exemple"
 
-      ```python
-      couleurs = ("rouge", "vert", "bleu")
-      for elmt in couleurs:
-          print(elmt)
-      ```
-      *Affiche :*
-      ```
-      rouge
-      vert
-      bleu
-      ```
-      {{ IDE() }}
+        ```python
+        couleurs = ("rouge", "vert", "bleu")
+        for elmt in couleurs:
+            print(elmt)
+        ```
+        *Affiche :*
+        ```
+        rouge
+        vert
+        bleu
+        ```
+        {{ IDE() }}
 
 ## <span style="color:blue;">La boucle while les listes/tuples</span>
 
 ???+ question "12. Boucle `while`"
 
-  La boucle `while` répète des instructions tant qu'une condition est vraie.
+    La boucle `while` répète des instructions tant qu'une condition est vraie.
 
-  ```python
-  while condition:
-      # Code à répéter tant que la condition est vraie
-  ```
+    ```python
+    while condition:
+        # Code à répéter tant que la condition est vraie
+    ```
 
-  ??? success "Exemple avec une liste"
+    ??? success "Exemple avec une liste"
 
-      ```python
-      nombres = [1, 2, 3, 4, 5]
-      i = 0
-      while i < len(nombres):
-          print(nombres[i])
-          i += 1
-      ```
-      *Affiche :*
-      ```
-      1
-      2
-      3
-      4
-      5
-      ```
-      {{ IDE() }}
+        ```python
+        nombres = [1, 2, 3, 4, 5]
+        i = 0
+        while i < len(nombres):
+            print(nombres[i])
+            i += 1
+        ```
+        *Affiche :*
+        ```
+        1
+        2
+        3
+        4
+        5
+        ```
+        {{ IDE() }}
 
-  ??? success "Exemple avec un tuple"
+    ??? success "Exemple avec un tuple"
 
-      ```python
-      couleurs = ("rouge", "vert", "bleu")
-      i = 0
-      while i < len(couleurs):
-          print(couleurs[i])
-          i += 1
-      ```
-      *Affiche :*
-      ```
-      rouge
-      vert
-      bleu
-      ```
-      {{ IDE() }}
+        ```python
+        couleurs = ("rouge", "vert", "bleu")
+        i = 0
+        while i < len(couleurs):
+            print(couleurs[i])
+            i += 1
+        ```
+        *Affiche :*
+        ```
+        rouge
+        vert
+        bleu
+        ```
+        {{ IDE() }}
 
 ## <span style="color:blue;">Exercices sur les listes/tuples</span>
 
