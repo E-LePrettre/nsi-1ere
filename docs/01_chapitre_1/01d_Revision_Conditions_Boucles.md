@@ -40,7 +40,7 @@ else:
 
 _Remarque :_ Le bloc `else` n'est pas obligatoire.
 
-???+ question "Activité n°1 :"
+???+ question "Activité n°1 : if ... else"
 
     Avec l'éditeur de script, **testez le code suivant :**
 
@@ -93,7 +93,7 @@ else:
     # bloc d'instructions exécuté si toutes les conditions précédentes sont False
 ```
 
-???+ question "Activité n°2 :"
+???+ question "Activité n°2 : if ... elif ... else"
 
     Avec l'éditeur de script, **testez le code suivant :**
 
@@ -145,7 +145,7 @@ _Remarque : Attention à ne pas confondre :_
 - `a = 2` stocke la valeur 2 dans la variable `a`.
 - `a == 2` teste si `a` est égal à l'entier 2.
 
-???+ question "Activité n°3 :"
+???+ question "Activité n°3 : if ... elif"
 
     **Écrire un script** qui demande à l’utilisateur sa note en informatique.
 
@@ -201,7 +201,7 @@ _Remarque : Attention à ne pas confondre :_
 
     
 
-???+ question "A faire vous-même Activité n°4 :"
+???+ question "Activité n°4 : Condiions"
 
     **Écrire un script** qui demande une couleur à l’utilisateur.
 
@@ -467,7 +467,7 @@ Dans cette boucle, `elmt` va parcourir les éléments de `iterable`. `iterable` 
 
 _Modifiez la chaîne pour tester d'autres phrases._
 
-???+ question "A faire vous-même Activité n°8 :"
+???+ question "Activité n°8 : Boucle for et condition"
 
     Avec l'éditeur de script, **testez le code suivant :**
 
@@ -593,7 +593,7 @@ _Modifiez la chaîne pour tester d'autres phrases._
         ```
 
         **Explication :**
-        
+
         - Chaque étage est un carré de billes, donc on additionne les carrés des nombres de 1 à 7.
 
         ```python
@@ -625,5 +625,201 @@ _Modifiez la chaîne pour tester d'autres phrases._
             s = s + i
         print(s)
         ```
+
+## <span style="color:blue;">La boucle while</span>
+
+
+Une *boucle **tant que*** permet de répéter un bloc d'instructions **jusqu'à ce que la condition soit fausse**.
+
+```python
+# Bloc tant que
+while condition:
+    # bloc d'instructions
+```
+
+Tant que la `condition` est vraie, les instructions sont exécutées.
+
+Dans cette structure, on ne connaît **pas à l'avance le nombre de répétitions**.
+
+_Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
+
+- Si la condition ne change jamais de valeur, la boucle ne s'arrêtera pas et l'algorithme restera bloqué sur le `while`.
+
+???+ question "Activité n°9 : ❤️ Algorithme de seuil ❤️"
+
+    Une balle part d'une hauteur de 2 mètres et perd 10% de sa hauteur à chaque rebond. On cherche le nombre de rebonds pour que la balle atteigne un maximum de 1,5 mètre de hauteur.
+
+   
+
+    ```python
+    hauteur = 2
+    rebond = 0
+    seuil = 1.5
+    while hauteur > seuil:
+        rebond = rebond + 1
+        hauteur = hauteur * 0.9
+    print(rebond)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        Ce script compte le nombre de rebonds nécessaires pour que la hauteur de la balle descende en dessous de 1,5 mètre.
+
+        **Explication :**
+
+        - La balle commence à 2 mètres.
+
+        - À chaque rebond, la hauteur est multipliée par 0.9 (perte de 10%).
+
+        - La boucle s'arrête dès que la hauteur est inférieure ou égale à 1.5 m.
+
+        **Test :** Modifier les valeurs pour que la balle démarre à 3 mètres et atteigne 2 mètres.
+
+???+ question "A faire vous-même Activité n°10 : Boucle while"
+
+    Faire un programme qui demande la note d'un élève. Tant que sa note est strictement inférieure à 18, le programme affichera "Il faut travailler". Chaque fois que ce message apparaît, la note de l'élève augmente de 1 point.
+
+    
+
+    ```python
+    note = int(input("Entrez votre note : "))
+    while note < 18:
+        print("Il faut travailler")
+        note = note + 1
+    print("Bravo, votre note est maintenant", note)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Explication :**
+
+        - Le programme demande une note.
+        
+        - Tant que la note est inférieure à 18, le message "Il faut travailler" s'affiche et la note est incrémentée de 1.
+
+        - Quand la note atteint 18, le programme félicite l'élève.
+
+        **Test :** Commencez avec une note de 15.
+
+## <span style="color:blue;"> Exercices sur les boucles</span>
+
+???+ question "Exercice 1 : Riche comme Crésus"
+
+    À la naissance de Crésus, son grand-père Midas lui ouvre un compte bancaire. Ensuite, à chaque anniversaire, son grand-père verse sur son compte 100 €, auxquels il ajoute le double de l’âge de Crésus.
+
+    Par exemple, lorsqu’il a deux ans, son grand-père lui verse 104 € (100 + 2*2), ce qui fait un total de 306 € à la deuxième année.
+
+    **Combien aurait-il cumulé au bout de 100 ans ?** 
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+        Il suffit de modifier l'algorithme de somme que l'on a déjà vu
+        ```python
+        s = 0
+        for i in range(11):
+            s = s + i
+        print(s)
+        ```
+
+        **Explication :**
+
+        - La boucle s'exécute jusqu'à ce que l'âge atteigne 100.
+
+        - Chaque année, Crésus reçoit 100 € plus le double de son âge.
+
+        - Le total est cumulé et affiché à la fin.
+    
+        ```python
+        s = 0
+        for i in range(1,101):
+            s = s + i * 2 + 100
+        print(s)
+        ```
+
+ 
+
+???+ question "Exercice 2 : Calculer des produits"
+
+    Écrire un programme Python qui calcule le produit des 100 premiers entiers.
+
+
+    **a) En utilisant une boucle `for` :**
+
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+        Il suffit de modifier l'algorithme de somme que l'on a déjà vu
+        ```python
+        s = 0
+        for i in range(11):
+            s = s + i
+        print(s)
+        ```
+        Il faut multiplier :
+        ```python
+        p = 1
+        for i in range(1, 101):
+            p = p * i
+        print(p)
+        ```
+
+    **b) En utilisant une boucle `while` :**
+
+    
+    ??? success "Python"
+        {{ IDE() }}
+
+    
+    ??? success "Solution"
+        ```python
+        p = 1
+        i = 1
+        while i <= 100:
+            p = p * i
+            i = i + 1
+        print(p)
+        ```
+   
+
+        **Explication :**
+
+        - Les deux programmes calculent le produit des entiers de 1 à 100.
+
+        - La version avec `for` utilise un compteur automatique, tandis que la version avec `while` gère le compteur manuellement.
+
+???+ question "Exercice 3 : Pliage"
+
+    On dispose d’une feuille de papier d’épaisseur 0,1 mm. Combien de fois doit-on la plier au minimum pour que l’épaisseur dépasse 400 mm ?
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+        ```python
+        epaisseur = 0.1
+        pliage = 0
+        while epaisseur <= 400:
+            epaisseur = epaisseur * 2
+            pliage = pliage + 1
+        print("pliage)
+        ```
+
+
+        **Explication :**
+
+        - Chaque pliage double l'épaisseur de la feuille.
+
+        - La boucle continue jusqu'à ce que l'épaisseur dépasse 400 mm.
+        
+        - Le programme affiche le nombre total de pliages nécessaires.
 
 
