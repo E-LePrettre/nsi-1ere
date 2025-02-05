@@ -30,7 +30,8 @@ Dans un nouvel onglet du navigateur internet, aller sur [basthon.fr](https://bas
     ```
     Observez le résultat dans la console.
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -43,7 +44,8 @@ Dans un nouvel onglet du navigateur internet, aller sur [basthon.fr](https://bas
 
     Essayez d'écrire un programme qui affichera votre prénom à l'écran. Testez-le.
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -78,7 +80,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     print(tartempion)
     ```
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -95,7 +98,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     tartempion = 15
     print("tartempion")
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -111,7 +115,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
 
     Écrire un programme dans lequel on attribue la valeur 12 à la variable `moyenne`. La valeur de `moyenne` doit ensuite s'afficher à l'écran.
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -137,7 +142,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     a = a * b
     a = a + b
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -159,7 +165,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
 
     Proposer un programme qui permet d'échanger les valeurs stockées dans les variables `a` et `b`.
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -192,7 +199,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     total = dividende / diviseur
     print(total)
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -211,7 +219,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     resultat = a // b
     print(resultat)
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -232,7 +241,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     resultat = a % b
     print(resultat)
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -253,7 +263,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     a = a + 1  # incrémentation de la variable a
     print(a)
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -276,7 +287,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     prenom = "Bob"
     print("Mon prénom est :", prenom)
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -294,7 +306,8 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
     Bonjour je m'appelle Alphonse Dansletas, j'ai 358 ans.
     ```
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -326,7 +339,8 @@ L'information récupérée grâce à un `input` est une **chaîne de caractères
     prenom = input("Quel est ton prénom ?")
     print(prenom)
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -346,7 +360,8 @@ L'information récupérée grâce à un `input` est une **chaîne de caractères
 
     (Dans le cas où vous vous appelleriez Alain Térieur et que vous seriez âgé de 217 ans.)
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -375,7 +390,8 @@ L'information récupérée grâce à un `input` est une **chaîne de caractères
     print("Vous avez à payer", prix, "euros.")
     ```
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -395,7 +411,8 @@ L'information récupérée grâce à un `input` est une **chaîne de caractères
     print("Vous avez à payer", prix, "euros.")
     ```
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -420,7 +437,8 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 
     **Écrire un programme** en Python qui demande à l'utilisateur le nombre d'adultes et d'enfants, puis affiche le prix total à payer.
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -453,7 +471,8 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
     b = "une chaine délimitée par des guillemets"
     print(b)
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -468,7 +487,8 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
     - C'est bientôt Noël
     - Bonjour se dit "Hello"
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -494,7 +514,8 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
     print('b' in chaine)  
     print('B' in chaine)  
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -517,7 +538,8 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 
     print(chaine1 + chaine2)
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -534,7 +556,8 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 
     Faites afficher la phrase complète par concaténation.
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -559,7 +582,8 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 
     print(len(chaine))  
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -573,6 +597,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 ???+ question "Activité n°23 :"
 
     Lisez un caractère dans une chaîne avec `chaine[index]`.
+
     ![image des indices de bonjour](55pDvH1.jpg)
 
     ```python
@@ -583,7 +608,8 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
     print(chaine[-1])  
     print(chaine[-2])  
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -602,7 +628,9 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
     chaine = 'Bonjour'
     ```
     Faire afficher **Bnu**.
-    {{ IDE() }}
+
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -629,7 +657,8 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
     print(chaine[::2])    # Bnor
     print(chaine[::-1])   # ruojnoB
     ```
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
@@ -657,7 +686,8 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
     - Noël
     - lëoN
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
     ??? success "Solution"
 
