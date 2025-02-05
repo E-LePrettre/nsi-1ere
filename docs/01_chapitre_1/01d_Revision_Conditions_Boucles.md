@@ -4,40 +4,6 @@ title: 01d Révision Les conditions et les boucles
 ---
 
 
-## <span style="color:blue;">Programmer un ordinateur c'est quoi ?</span>
-
-**Programmer**, c'est **créer des programmes** (suite d'ordres donnés à l'ordinateur). Un ordinateur sans programme ne sait rien faire.
-
-
-
-
-
-## <span style="color:blue;">Débuter avec Basthon </span>
-Dans un nouvel onglet du navigateur internet, aller sur [basthon.fr](https://basthon.fr) et choisir "Console".
-
-
-1. Aller sur le site [Basthon](https://basthon.fr).
-2. Choisir l'option "Console" pour exécuter du code Python.
-3. Vous pouvez également utiliser l'éditeur de scripts pour écrire des programmes plus complexes.
-
-## <span style="color:blue;">Affichage</span>
-
-???+ question "Activité n° 1 :"
-
-    Recopiez la ligne suivante dans l'éditeur de script exécutez-la :
-    ```python
-    print("Hello World!")
-    ```
-    Observez le résultat dans la console.
-
-    ??? success "Python"
-        {{ IDE() }}
-
-    ??? success "Solution"
-
-        Lorsque vous exécutez ce script, le message "Hello World!" doit apparaître dans la console. Vous venez d'écrire votre premier programme en Python !
-        
-        Remarque : Vous pouvez utiliser des guillemets simples ou doubles pour délimiter les chaînes de caractères en Python.
 
 
 
@@ -101,9 +67,13 @@ _Remarque :_ Le bloc `else` n'est pas obligatoire.
 
     ??? success "Solution"
         **Résultats attendus :**
+
         - Avec `a = 8` : "Vous avez entré un nombre positif ou nul 8"
+
         - Avec `a = -6` : "Vous avez entré un nombre négatif -6"
+
         - Avec `a = 0` : "Vous avez entré un nombre positif ou nul 0"
+
         - Avec `a = "positif"` : Erreur, car l'entrée n'est pas un entier.
 
 
@@ -140,6 +110,7 @@ else:
     ```
 
     **Alors, que se passe-t-il ?**
+
     - Avec `a = 8` ?  
     - Avec `a = -6` ?  
     - Avec `a = 0` ?  
@@ -150,9 +121,13 @@ else:
 
     ??? success "Solution"
         **Résultats attendus :**
+
         - Avec `a = 8` : "Vous avez entré un nombre positif 8"
+
         - Avec `a = -6` : "Vous avez entré un nombre strictement négatif -6"
+
         - Avec `a = 0` : "Vous avez entré un nombre nul 0"
+
         - Avec `a = "positif"` : Erreur, car l'entrée n'est pas un entier.
 
  
@@ -191,19 +166,37 @@ _Remarque : Attention à ne pas confondre :_
         note = int(input("Entrez votre note en informatique : "))
         if note >= 16:
             print("Tu es un dieu/deesse en info")
-        elif note >= 12:
+        elif 12 <= note < 16: 
             print("C’est bien")
-        elif note > 0:
+        elif 0 < note < 12>:
+            print("Il faut travailler")
+        elif note == 0:
+            print("OH LA LA")
+        ```
+
+        on aurait pu aussi écrire
+        ```python
+        note = int(input("Entrez votre note en informatique : "))
+        if note >= 16:
+            print("Tu es un dieu/deesse en info")
+        elif 12 <= note : 
+            print("C’est bien")
+        elif 0 < note :
             print("Il faut travailler")
         elif note == 0:
             print("OH LA LA")
         ```
 
         **Résultats attendus :**
+
         - Avec `note = 17` : "Tu es un dieu/deesse en info"
+
         - Avec `note = 16` : "Tu es un dieu/deesse en info"
+
         - Avec `note = 14` : "C’est bien"
+
         - Avec `note = 7` : "Il faut travailler"
+
         - Avec `note = 0` : "OH LA LA"
 
     
@@ -231,9 +224,13 @@ _Remarque : Attention à ne pas confondre :_
         ```
         
         **Résultats attendus :**
+
         - Avec `couleur = "rouge"` : "C’est gagné"
+
         - Avec `couleur = "bleu"` : "C’est gagné"
+
         - Avec `couleur = "vert"` : "C’est gagné"
+
         - Avec `couleur = "noir"` : "C’est perdu"
 
 
@@ -264,25 +261,28 @@ _Remarque : Attention à ne pas confondre :_
         couleur = input("Entrez une couleur : ")
         nombre = int(input("Entrez un nombre : "))
 
-        if couleur == "bleu":
-            if nombre > 20:
-                print("C’est gagné")
-            else:
-                print("Presque")
-        elif couleur == "rouge":
-            if nombre > 10:
-                print("Super")
-            else:
-                print("Presque")
+        if couleur == "bleu" and nombre > 20:
+            print("C’est gagné")
+        elif couleur == "bleu" and nombre < 20:
+            print("Presque")
+        elif couleur == "rouge" and nombre > 10:
+            print("Super")
+        elif couleur == "rouge" and nombre < 10:
+            print("Presque")
         else:
             print("C’est perdu")
         ```    
 
         **Résultats attendus :**
+
         - `couleur = "bleu"`, `nombre = 25` : "C’est gagné"
+
         - `couleur = "bleu"`, `nombre = 15` : "Presque"
+
         - `couleur = "rouge"`, `nombre = 12` : "Super"
+
         - `couleur = "rouge"`, `nombre = 8` : "Presque"
+
         - `couleur = "vert"`, `nombre = 30` : "C’est perdu"
 
 
@@ -310,9 +310,10 @@ _Remarque : Attention à ne pas confondre :_
 
 
 
-    2. Modifier le programme pour qu'il indique si le triangle est **isocèle** ou pas.
+    2 Modifier le programme pour qu'il indique si le triangle est **isocèle** ou pas.
 
-     ??? success "Python"
+
+    ??? success "Python"
         {{ IDE() }}
     
     ??? success "Solution"
@@ -325,9 +326,9 @@ _Remarque : Attention à ne pas confondre :_
 
 
 
-    3. Modifier le programme pour qu'il indique si le triangle est **équilatéral**, et s'il ne l'est pas, vérifier s'il est **isocèle**.
+    3 Modifier le programme pour qu'il indique si le triangle est **équilatéral**, et s'il ne l'est pas, vérifier s'il est **isocèle**.
 
-   ??? success "Python"
+    ??? success "Python"
         {{ IDE() }}
     
     ??? success "Solution"
@@ -342,7 +343,9 @@ _Remarque : Attention à ne pas confondre :_
         **Résultats attendus :**
 
         - `a = 3, b = 3, c = 3` : "Le triangle est équilatéral"
+
         - `a = 4, b = 4, c = 5` : "Le triangle est isocèle"
+        
         - `a = 3, b = 4, c = 5` : "Le triangle n'est ni équilatéral ni isocèle"
 
 
