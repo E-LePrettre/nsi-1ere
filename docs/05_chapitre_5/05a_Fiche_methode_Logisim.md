@@ -1,6 +1,6 @@
 ﻿---
 author: ELP
-title: 05 Fiche méthode Logicism
+title: 05a Fiche méthode Logicism
 ---
 
 # Fiche Méthode : Utilisation de Logisim

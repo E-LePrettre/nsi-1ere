@@ -1,6 +1,6 @@
 ---
 author: ELP
-title: 01b A la découverte de Python
+title: 02a A la découverte de Python
 ---
 
 
