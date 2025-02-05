@@ -692,11 +692,11 @@ title: 05c Fiche méthode Types construits
         for cle in etudiant.keys():
             print(cle)
 
-        print("\nValeurs :")
+        print("Valeurs :")
         for valeur in etudiant.values():
             print(valeur)
 
-        print("\nPaires clé-valeur :")
+        print("Paires clé-valeur :")
         for cle, valeur in etudiant.items():
             print(cle, valeur)
         ```
