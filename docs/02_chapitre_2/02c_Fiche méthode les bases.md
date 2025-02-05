@@ -368,5 +368,5 @@ title: 02c Fiche Méthode Les bases
         ```
         {{ IDE() }}
 
-?
+
 
