@@ -1,6 +1,6 @@
 ﻿---
 author: ELP
-title: 02c Fiche Méthode Les bases de la programmation Python
+title: 02c Fiche Méthode Les bases
 ---
 
 
@@ -144,6 +144,10 @@ title: 02c Fiche Méthode Les bases de la programmation Python
             evaluer_performance(9)
             ```
 
+???+ question "Faire ce qui est proposé"
+
+    {{ IDE() }}
+
 ???+ question "2. Les chaînes de caractères"
 
     Les chaînes de caractères sont des séries de caractères entourées de guillemets (simples ou doubles).
@@ -229,6 +233,11 @@ title: 02c Fiche Méthode Les bases de la programmation Python
             inverser_chaine("Python")  # Affiche 'nohtyP'
             ```
 
+???+ question "Faire ce qui est proposé"
+
+    {{ IDE() }}
+
+
 ???+ question "3. Boucles `for`"
 
     Les boucles `for` permettent de répéter des instructions pour chaque élément d'une séquence.
@@ -286,6 +295,11 @@ title: 02c Fiche Méthode Les bases de la programmation Python
             afficher_avec_index("Python")  # Affiche les caractères avec leurs index
             ```
 
+???+ question "Faire ce qui est proposé"
+
+    {{ IDE() }}
+
+
 ???+ question "4. Boucle `while`"
 
     La boucle `while` répète des instructions tant qu'une condition est vraie.
@@ -325,4 +339,7 @@ title: 02c Fiche Méthode Les bases de la programmation Python
         compter_jusqu_a(3)  # Affiche 0, 1, 2
         ```
 
+???+ question "Faire ce qui est proposé"
+
+    {{ IDE() }}
 
