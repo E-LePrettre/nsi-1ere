@@ -22,7 +22,7 @@ Dans un nouvel onglet du navigateur internet, aller sur [basthon.fr](https://bas
 
 ## <span style="color:blue;">Affichage</span>
 
-???+ question "Activité n° 1 :"
+???+ question "Activité n° 1 : Affichage"
 
     Recopiez la ligne suivante dans l'éditeur de script exécutez-la :
     ```python
@@ -40,7 +40,7 @@ Dans un nouvel onglet du navigateur internet, aller sur [basthon.fr](https://bas
         Remarque : Vous pouvez utiliser des guillemets simples ou doubles pour délimiter les chaînes de caractères en Python.
 
 
-???+ question "Activité n° 2 :"
+???+ question "Activité n° 2 : Affichage"
 
     Essayez d'écrire un programme qui affichera votre prénom à l'écran. Testez-le.
 
@@ -71,7 +71,7 @@ a = "easy"
 
 Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
 
-???+ question "Activité n°3 :"
+???+ question "Activité n°3 : Affectation"
 
     Avec l'éditeur de script, **testez le code suivant :**
 
@@ -111,7 +111,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         **Alors, que se passe-t-il ?**
         En plaçant `tartempion` entre guillemets, Python affiche la chaîne de caractères "tartempion" au lieu de la valeur de la variable.
 
-???+ question "Activité n°4 :"
+???+ question "Activité n°4 : Affectation"
 
     Écrire un programme dans lequel on attribue la valeur 12 à la variable `moyenne`. La valeur de `moyenne` doit ensuite s'afficher à l'écran.
 
@@ -132,7 +132,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
 
 ## <span style="color:blue;">Faire des calculs</span>
 
-???+ question "Activité n°5 :"
+???+ question "Activité n°5 : Calcul"
 
     Que vaut `a` à la fin de ce script :
 
@@ -189,7 +189,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         ```
 
 
-???+ question "Activité n°7 :"
+???+ question "Activité n°7 : Division"
 
     Compléter le programme suivant pour que la variable `total` contienne le résultat de la **division** de `dividende` par `diviseur`.
 
@@ -209,7 +209,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         3.25
         ```
 
-???+ question "Activité n°8 :"
+???+ question "Activité n°8 : Division euclidienne"
 
     La division précédente n'est pas entière. Pour faire calculer la division euclidienne, il faut utiliser `//`. Testez maintenant ce code :
 
@@ -231,7 +231,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         `//` effectue une division entière.
 
 
-???+ question "Activité n°9 :"
+???+ question "Activité n°9 : Reste de la division euclidienne"
 
     Pour faire calculer le reste de la division euclidienne, il faut utiliser `%`. Testez maintenant ce code :
 
@@ -278,7 +278,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
 
 ## <span style="color:blue;">Affichage en Python</span>
 
-???+ question "Activité n°11 :"
+???+ question "Activité n°11 : Variable"
 
     **Tester :**
 
@@ -298,7 +298,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         Mon prénom est : Bob
         ```
 
-???+ question "Activité n°12 :"
+???+ question "Activité n°12 : Variable"
 
     Réalisez un script qui contient trois variables : `prenom`, `nom` et `age` et qui doit afficher :
 
@@ -331,7 +331,7 @@ La **fonction** `input` permet d'ouvrir une boîte de dialogue et de **récupér
 
 L'information récupérée grâce à un `input` est une **chaîne de caractères**.
 
-???+ question "Activité n°13 :"
+???+ question "Activité n°13 : Dialogue"
 
     **Tester :**
 
@@ -349,7 +349,7 @@ L'information récupérée grâce à un `input` est une **chaîne de caractères
         Alice
         ```
 
-???+ question "Activité n°14 :"
+???+ question "Activité n°14 : Dialogue"
 
     Écrire un script en Python qui demande à l'utilisateur son prénom, son nom et son âge, puis qui doit afficher :
 
@@ -378,7 +378,7 @@ L'information récupérée grâce à un `input` est une **chaîne de caractères
         Bonjour je m'appelle Alain Térieur, j'ai 217 ans.
         ```
 
-???+ question "Activité n°15 :"
+???+ question "Activité n°15 : Dialogue avec un entier"
 
     Un boulanger désire un programme qui demande à l'utilisateur le nombre de baguettes qu'il désire, qui calcule le prix total (sachant qu'une baguette coûte 1.10 €) et qui affiche le prix que l'utilisateur doit payer.
 
@@ -429,7 +429,7 @@ L'instruction `int` permet de convertir certaines chaînes de caractères en un 
 
 L'instruction `float` permet de convertir certaines chaînes de caractères en un **flottant**, c'est-à-dire un "nombre à virgule".
 
-???+ question "Activité n°16 :"
+???+ question "Activité n°16 : Dialogue avec un entier"
 
     Vous êtes chargé(e) de mettre en place une borne automatique pour régler les droits d’entrée à un parc d’attractions.
 
@@ -448,7 +448,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 
         P = (A * 21) + (E * 13)
 
-        print(f"Le prix total à payer est de {P} euros.")
+        print("Le prix total à payer est de",P, "euros.")
         ```
 
         **Exemple de résultat (si vous entrez 2 adultes et 3 enfants) :**
@@ -460,7 +460,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 
 ## <span style="color:blue;">Les chaines de caractères</span>
 
-???+ question "Activité n°17 :"
+???+ question "Activité n°17 : Délimiter les chaines de caractères"
     
     Affichez des chaînes de caractères délimitées par des apostrophes et des guillemets.
 
@@ -481,7 +481,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         une chaine délimitée par des guillemets
         ```
 
-???+ question "Activité n°18 :"
+???+ question "Activité n°18 : Délimiter les chaines de caractères"
 
     Faire afficher exactement :
     - C'est bientôt Noël
@@ -504,7 +504,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         ```
 
 
-???+ question "Activité n°19 :"
+???+ question "Activité n°19 : Test d'appartenance"
 
     Testez l'appartenance d'un caractère dans une chaîne avec l'opérateur `in`.
 
@@ -528,7 +528,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         **Pourquoi ?**
         La recherche est sensible à la casse. 'b' minuscule n'est pas dans "Bonjour", tandis que 'B' majuscule l'est.
 
-???+ question "Activité n°20 :"
+???+ question "Activité n°20 : Concaténation"
 
     Concaténez deux chaînes de caractères avec l'opérateur `+`.
 
@@ -548,7 +548,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         Bonjour à tous.
         ```
 
-???+ question "Activité n°21 :"
+???+ question "Activité n°21 : Concaténation"
 
     À partir de deux chaînes de caractères :
 
@@ -575,7 +575,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         Aujourd'hui se dit "Today"
         ```
 
-???+ question "Activité n°22 :"
+???+ question "Activité n°22 : Fonction len()"
 
     Utilisez la fonction `len` pour obtenir le nombre de caractères dans une chaîne.
 
@@ -596,7 +596,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 
         Les espaces et la ponctuation comptent également comme des caractères.
 
-???+ question "Activité n°23 :"
+???+ question "Activité n°23 : Lecture de Caractères dans une Chaîne avec des Indices"
 
     Lisez un caractère dans une chaîne avec `chaine[index]`.
 
@@ -623,7 +623,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         u
         ```
 
-???+ question "Activité n°24 :"
+???+ question "Activité n°24 : Lecture de Caractères dans une Chaîne avec des Indices"
 
     À partir de :
     ```python
@@ -645,7 +645,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         Bnu
         ```
 
-???+ question "Activité n°25 :"
+???+ question "Activité n°25 : Extraction de Sous-chaînes avec le Slicing"
 
     Utilisez le **slicing** pour lire une sous-chaîne avec `chaine[debut:fin:pas]`.
 
@@ -674,7 +674,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         ruojnoB
         ```
 
-???+ question "Activité n°26 :"
+???+ question "Activité n°26 : Extraction de Sous-chaînes avec le Slicing"
 
     À partir de :
     ```python
@@ -690,7 +690,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
     - tôtneib
 
     - Noël
-    
+
     - lëoN
 
     ??? success "Python"
@@ -700,10 +700,10 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 
         ```python
         print(a[6:13])        # bientôt
-        print(a[0] + a[2] + a[3] + a[6] + a[8] + a[10])  # Csbnto
+        print(a[0::3])         # Csbnto
         print(a[12:5:-1])    # tôtneib
         print(a[-4:])        # Noël
-        print(a[-1::-1][:4]) # lëoN
+        print(a[-1:-5:-1])   # lëoN
         ```
 
         **Résultat :**
