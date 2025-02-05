@@ -52,7 +52,7 @@ Dans un nouvel onglet du navigateur internet, aller sur [basthon.fr](https://bas
         print("Alice")
         ```
 
- ## <span style="color:blue;">Les variables et les affectations</span>
+## <span style="color:blue;">Les variables et les affectations</span>
 
 
 Une **variable** est l'association d'un espace de la mémoire de l'ordinateur, accessible par son **nom**, et d'une **valeur** que l'on y **stocke**. En Python, l'affectation se réalise avec l'opérateur `=`.
@@ -127,7 +127,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
 
 ## <span style="color:blue;">Faire des calculs</span>
 
-???+ question "A faire vous-même Activité n°5 :"
+???+ question "Activité n°5 :"
 
     Que vaut `a` à la fin de ce script :
 
@@ -302,7 +302,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         prenom = "Alphonse"
         nom = "Dansletas"
         age = 358
-        print(f"Bonjour je m'appelle {prenom} {nom}, j'ai {age} ans.")
+        print("Bonjour je m'appelle ",prenom, nom, "j'ai" ,age, "ans.")
         ```
 
         **Résultat :**
@@ -602,6 +602,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
     chaine = 'Bonjour'
     ```
     Faire afficher **Bnu**.
+    {{ IDE() }}
 
     ??? success "Solution"
 
@@ -628,17 +629,18 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
     print(chaine[::2])    # Bnor
     print(chaine[::-1])   # ruojnoB
     ```
+    {{ IDE() }}
 
     ??? success "Solution"
 
         **Résultat :**
         ```
         Bo
-njo
-Bonjour
-onjour
-Bnor
-ruojnoB
+        njo 
+        Bonjour
+        onjour
+        Bnor
+        ruojnoB
         ```
 
 ???+ question "A faire vous-même Activité n°26 :"
@@ -655,6 +657,8 @@ ruojnoB
     - Noël
     - lëoN
 
+    {{ IDE() }}
+
     ??? success "Solution"
 
         ```python
@@ -668,10 +672,10 @@ ruojnoB
         **Résultat :**
         ```
         bientôt
-Csbnto
-tôtneib
-Noël
-lëoN
+        Csbnto
+        tôtneib
+        Noël
+        lëoN
         ```
 
 
