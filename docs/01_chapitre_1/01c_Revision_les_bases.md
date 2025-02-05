@@ -349,7 +349,7 @@ L'information récupérée grâce à un `input` est une **chaîne de caractères
         Alice
         ```
 
-???+ question "A faire vous-même Activité n°14 :"
+???+ question "Activité n°14 :"
 
     Écrire un script en Python qui demande à l'utilisateur son prénom, son nom et son âge, puis qui doit afficher :
 
@@ -551,7 +551,9 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 ???+ question "Activité n°21 :"
 
     À partir de deux chaînes de caractères :
+
     - Aujourd'hui
+
     - se dit "Today"
 
     Faites afficher la phrase complète par concaténation.
@@ -621,7 +623,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         u
         ```
 
-???+ question "A faire vous-même Activité n°24 :"
+???+ question "Activité n°24 :"
 
     À partir de :
     ```python
@@ -672,7 +674,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         ruojnoB
         ```
 
-???+ question "A faire vous-même Activité n°26 :"
+???+ question "Activité n°26 :"
 
     À partir de :
     ```python
@@ -680,10 +682,15 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
     ```
 
     Faire afficher :
+
     - bientôt
+
     - Csbnto
+
     - tôtneib
+
     - Noël
+    
     - lëoN
 
     ??? success "Python"
