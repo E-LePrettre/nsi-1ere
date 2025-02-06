@@ -519,7 +519,7 @@ On voit deux choses : le css ne fonctionne pas ni le codage utf-8 !!
 
 **<H3 STYLE="COLOR:red;">Activité  n°8.:**</H3>  Simulation  du  web  avec  serveur DNS  
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.061.jpeg)
+![](Image4.png)
 
 Normalement on ne s’adresse pas ainsi à un  serveur : on n’utilise pas l’adresse IP mais  son url. Le serveur de noms de domaine (ou  DNS) va traduire url en IP.  
 
