@@ -456,7 +456,7 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
 ## <H2 STYLE="COLOR:BLUE;">**8.  Simulation d’un réseau avec Filius<a name="_page10_x40.00_y36.92"></a>**</H2>
 
 **<H3 STYLE="COLOR:red;">Activité n°4.:**</H3> Lien direct entre deux ordinateurs  
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.058.png)
+![](Image1.png)
 
 - Lancer Filius  
 - Créer le réseau ci contre.   
@@ -467,7 +467,7 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
 - Faire un ipconfig dans le cmd du poste 10 et comparer l’adresse Mac avec l’adresse Mac de la source sur le tabelau des données échangées  
 
 **<H3 STYLE="COLOR:red;">Activité n°5.:**</H3> 2 ordinateurs et un serveur  
-![](Image1.png)
+![](Image2.png)
 
 - Modifier le réseau précédent pour mettre un serveur 192.168.1.12 et un switch  
 - Installer sur le serveur générique (port 55555) et démarrer le serveur  
