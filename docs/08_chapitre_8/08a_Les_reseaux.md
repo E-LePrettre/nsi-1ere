@@ -490,7 +490,7 @@ Puis envoi du message du client au serveur L’accusé de réception du serveur 
 On voit des échanges entre le client et le serveur en 4 temps 
 
 **<H3 STYLE="COLOR:red;">Activité n°6.:**</H3> 2 réseaux  
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.060.jpeg)
+![](Image3.png)
 
 - Modifier le réseau précédent pour obtenir  les deux réseaux inter connectés suivants :  
 - Pinguer depuis le poste en 1.10 le poste en 2.10   
