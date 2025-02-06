@@ -467,7 +467,7 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
 - Faire un ipconfig dans le cmd du poste 10 et comparer l’adresse Mac avec l’adresse Mac de la source sur le tabelau des données échangées  
 
 **<H3 STYLE="COLOR:red;">Activité n°5.:**</H3> 2 ordinateurs et un serveur  
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.059.png)
+![](Image1.png)
 
 - Modifier le réseau précédent pour mettre un serveur 192.168.1.12 et un switch  
 - Installer sur le serveur générique (port 55555) et démarrer le serveur  
