@@ -157,9 +157,7 @@ title: 02c Fiche Méthode Les bases
 
             {{ IDE() }}
 
-???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
 
 ???+ question "2. Les chaînes de caractères"
 
@@ -257,9 +255,7 @@ title: 02c Fiche Méthode Les bases
             ```
             {{ IDE() }}
 
-???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
 
 
 ???+ question "3. Boucles `for`"
