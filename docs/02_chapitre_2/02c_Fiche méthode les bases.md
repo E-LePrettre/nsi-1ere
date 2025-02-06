@@ -28,7 +28,6 @@ title: 02c Fiche Méthode Les bases
             {{ IDE() }}
 
         ??? success "Exemple avec fonction"
-=
             ```python
             def verifier_majorite(age):
                 if age >= 18:
