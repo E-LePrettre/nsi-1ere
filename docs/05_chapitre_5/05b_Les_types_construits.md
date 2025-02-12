@@ -29,9 +29,10 @@ print(tuple)
 autre_tuple = 'hello', # <-- notez la virgule
 print(autre_tuple)
 ```
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
+
 
 **<H3 STYLE="COLOR:red;">Activité n°2.: Création de tuples à partir d’une liste :</H3>** avec la fonction tuple() : 
 
@@ -55,7 +56,7 @@ t2 = 'c', 'd'
 print(t1 + t2) 
 print(3 * t1) 
 ```
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -78,7 +79,7 @@ Tester :
 
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ terminal() }}
 
@@ -95,7 +96,7 @@ tuple= tuple1, tuple2, 'tout ça !'
 print(tuple)
 print( tuple[1][0]) # permet d’accéder à … 
 ```
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -112,7 +113,7 @@ for element in prenoms: # méthode 1, elt prend à chaque tour les éléments de
 for i in range(len(prenoms)): # méthode 2, on parcourt les indices de la séquence
   print(prenoms[i]) 
 ```
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -127,7 +128,7 @@ def add(a, b):
 mon_tuple = add(5, 8) 
 print(f"{mon_tuple[0]} + {mon_tuple[1]} = {mon_tuple[2]}")
 ```
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -174,7 +175,7 @@ Tester avec
 
 > liste2
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -192,7 +193,7 @@ Tester avec
 
 > carres
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -240,9 +241,10 @@ Tester avec
 
 > mon_tab4
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
+
 
 mon_tab3 permet d’obtenir une liste qui contient tous les éléments de liste élevés au carré à condition que ces |
 |éléments de liste soient inférieurs à 10. 
@@ -266,7 +268,7 @@ Tester avec
 
 > liste6
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -287,7 +289,7 @@ liste3.pop(1)
 print(liste3)
 ```
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -301,7 +303,7 @@ print(liste)
 print(phrase2)
 ```
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -360,7 +362,7 @@ Tester avec :
 
 > a
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -378,7 +380,7 @@ for i in range(0, nb_ligne):
     a = m[i][j]
 ```
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -405,7 +407,7 @@ Tester :
 > res
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -427,7 +429,7 @@ Tester :
 > dico2
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -443,7 +445,7 @@ Tester :
 > d
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -466,7 +468,7 @@ for i in turing.values():
 ```
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -485,7 +487,7 @@ for key, value in turing.items() :
 ```
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -507,7 +509,7 @@ print(('C', 2) in d.items()) # teste si ('C', 2) est un couple clé-valeur
 ```
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -523,7 +525,7 @@ print(mes_fruits)
 ```
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -542,7 +544,7 @@ print(v)
 ```
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -557,7 +559,7 @@ print(len(d))
 ```
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -571,7 +573,7 @@ print(d)
 ```
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
@@ -587,7 +589,7 @@ print (f'à {mon_dico["lieu naissance"]}')
 ```
 
 
-???+ question "Faire ce qui est proposé"
+??? success "Python"
 
     {{ IDE() }}
 
