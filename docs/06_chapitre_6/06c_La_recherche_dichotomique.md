@@ -239,8 +239,10 @@ def rechercheDichotomique(T , x):
 ```python
 import random
 t1 = [random.randint(1,100_000_000) for _ in range(10_000)]
+t1.append(1)
 t1.sort()
 print(rechercheDichotomique(t1, 0))
+print(rechercheDichotomique(t1, 1))
 ```
 
 **<H3 STYLE="COLOR:red;">Activité n°3.: Observation de durées</H3>**
