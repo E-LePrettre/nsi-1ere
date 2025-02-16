@@ -92,7 +92,20 @@ Exemple :
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.2.1. Les<a name="_page2_x40.00_y212.92"></a> balises en paires</H4>
 
-Elles fonctionnent en nombre paire : `<balise1>` des indications `</balise1>`. On distingue une balise ouvrante et une balise fermante.
+La plupart des balises fonctionnent par paire :
+
+```html
+<balise> Contenu </balise>
+```
+La balise ouvrante <balise> marque le début de l’élément.
+La balise fermante </balise> marque la fin de l’élément.
+
+📌 Exemple :
+
+```html
+<p>Ceci est un paragraphe.</p>
+Ici, <p> ouvre un paragraphe et </p> le ferme.
+```
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.2.2. Les<a name="_page2_x40.00_y258.92"></a> balises orphelines</H4>
 
