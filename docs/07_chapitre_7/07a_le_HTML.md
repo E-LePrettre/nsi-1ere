@@ -94,7 +94,7 @@ Exemple :
 
 La plupart des balises fonctionnent par paire :
 
-```html
+```
 <balise> Contenu </balise>
 ```
 La balise ouvrante <balise> marque le début de l’élément.
@@ -122,7 +122,28 @@ Elles servent généralement à insérer des éléments simples comme des images
 
 ### <H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page2_x40.00_y290.92"></a> attributs</H3>
 
-Ce sont les options des balises : appelées attributs. Ils donnent les options des balises. Ils se placent après le nom de la balise ouvrante.
+Un **attribut** est une information supplémentaire ajoutée à une balise pour modifier son comportement.
+Il s’écrit **dans la balise ouvrante** sous la forme attribut="valeur".
+
+Exemple avec un lien :
+
+```html
+<a href="https://example.com">Cliquez ici</a>
+```
+
+Dans cet exemple :
+
+`<a>` est la balise de lien.
+`href="https://example.com"` est un attribut qui précise où pointe le lien.
+Autre exemple avec une image :
+
+```html
+<img src="photo.jpg" alt="Une belle photo" />
+```
+
+- src="photo.jpg" indique l'image à afficher.
+
+- alt="Une belle photo" est un texte alternatif affiché si l’image ne charge pas.
 
 `<balise attribut="valeur">`
 
