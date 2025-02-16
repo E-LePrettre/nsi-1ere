@@ -515,135 +515,122 @@ img {
 ✅ **Enregistrer et observer `index.html`**.
 
 ## <H2 STYLE="COLOR:BLUE;">5. Ajouter<a name="_page6_x40.00_y36.92"></a> de la couleur et un fond</H2> 
+
+Le CSS permet **d’améliorer l’apparence** d’une page web en modifiant **la couleur du texte et du fond**.
+
 ### <H3 STYLE="COLOR:GREEN;">5.1. La<a name="_page6_x40.00_y58.92"></a> couleur du texte</H3> 
 
-On utilise la propriété color suivie   
+La propriété `color` permet de changer la couleur du texte.  
 
-- Du nom de la couleur : white, silver, gray, red, green, blue, fuchsia, purple*…* ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.037.png)
-- De son code hecadécimal : #FF5A28*, …[* https://htmlcolorcodes.com/fr/ ](https://htmlcolorcodes.com/fr/)*ou[ http://www.colorpicker.com/ ](http://www.colorpicker.com/)
-- De son code rgb : rgb(240,96,204)*….[ https://htmlcolorcodes.com/fr/ ](https://htmlcolorcodes.com/fr/)*ou[ http://www.colorpicker.com/ ](http://www.colorpicker.com/)
+📌 **Trois façons de définir une couleur :**  
+
+| Méthode | Exemple |
+|---------|---------|
+| **Nom de couleur** | `color: red;` |
+| **Code hexadécimal** | `color: #FF5A28;` |
+| **Code RGB** | `color: rgb(240,96,204);` |
+
+💡 **Outils pratiques pour choisir une couleur :**  
+
+🎨 [HTML Color Codes](https://htmlcolorcodes.com/fr/)  
+
+🎨 [Color Picker](http://www.colorpicker.com/)  
+
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.038.jpeg)
 
+**<H3 STYLE="COLOR:red;">Activité n°11.:</H3>** Ajoutez cette règle dans `style.css` :
+```css
+body {
+    background-color: #F3E0C5;
+}
+```
+
+📌 **Expérimentez** en essayant ces variantes :  
+```css
+body {
+    background-color: rgb(255, 0, 0); /* Rouge */
+}
+```
+```css
+p {
+    background-color: rgba(255, 0, 0, 0.5); /* Fond rouge semi-transparent */
+}
+```
+
+✅ **Enregistrer et observer `index.html`**.
+
 ### <H3 STYLE="COLOR:GREEN;">5.2. Arrière<a name="_page6_x40.00_y498.92"></a> plan</H3> 
 
-La propriété CSS background est une propriété raccourcie qui permet de définir les différentes valeurs des propriétés liées à la gestion des arrière-plans d'un élément (couleur, image, origine, taille, répétition, etc.). 
 
-#### <H4 STYLE="COLOR:MAGENTA;">5.2.1. Couleur<a name="_page6_x40.00_y547.92"></a> de fond</H4>
+La propriété `background-image` permet d’ajouter une **image de fond**.
 
-On utilise la propriété background-color avec les mêmes propriétés que color*.* Il faut mettre cette propriété sur body
-
-
-**<H3 STYLE="COLOR:red;">Activité n°11.:</H3>** La couleur de fond d'une page est définie comme suit :  
+📌 **Syntaxe de base :**
 ```css
-body
-{
-    background-color: lightblue;
-}
-```
-
-
-Modifier la feuille de style pour que la couleur de fond soit #F3E0C5 
-```css
-body
-{
-    background-color: #F3E0C5
-}
-```
- 
-
-Modifier la feuille de style pour que la couleur de fond soit rgb(255,0,0) 
-```css
-body
-{
-    background-color: rgb(255,0,0)
-}
-```
- 
-
-Il existe aussi un niveau de transparence avec la notation RGBa. Par exemple :  
-```css
-p
-{
-    background-color: rgba(255, 0, 0, 0.5); /* Fond rouge à moitié transparent */
-}
-``` 
-
-
-
-#### <H4 STYLE="COLOR:MAGENTA;">5.2.2. Images<a name="_page7_x40.00_y91.92"></a> de fond</H4>
-
-La propriété permettant d'indiquer une image de fond est ```background-image```. Comme valeur, on doit renseigner ```url("nom_de_l_image.png")```
-
-**<H3 STYLE="COLOR:red;">Activité n°12.:</H3>** Choisir une image neutre sur internet que l’on appellera paper.gif et modifier la feuille de style pour y mettre une image de fond sous forme d’url 
-```css
-body
-{
+body {
     background-image: url("paper.gif");
-```
-
-
-
-##### <H4 STYLE="COLOR:MAGENTA;">5.2.2.1. Répétition d’arrière plan</H4>
-
-Par défaut, la background-image propriété répète une image à la fois horizontalement et verticalement. 
-
-Certaines images doivent être répétées uniquement horizontalement ou verticalement, sinon elles auront l'air étrange, comme ceci 
-
-```css
-body
-{
-    background-image: url("paper.gif");
-    background-repeat: repeat-x;
 }
 ```
 
 
 
-Le ```background-repeat```: répétition du fond. Par défaut, l'image de fond est répétée en mosaïque 
 
-- ```no-repeat```: le fond ne sera pas répété. L'image sera donc unique sur la page. 
-- ```repeat-x```: le fond sera répété uniquement sur la première ligne, horizontalement. 
-- ```repeat-y```: le fond sera répété uniquement sur la première colonne, verticalement. 
-- ```repeat```: le fond sera répété en mosaïque (par défaut). 
 
-##### <H4 STYLE="COLOR:MAGENTA;">5.2.2.2. Position d’arrière plan</H4>
 
-La ```background-position``` propriété est utilisée pour spécifier la position de l'image d'arrière-plan. 
+**<H3 STYLE="COLOR:red;">Activité n°12.:</H3>** 
+1 Trouvez une **image neutre** et nommez-la `paper.gif`. 
+
+2 Ajoutez-la dans le **même dossier** que votre fichier CSS.  
+
+3 Modifiez `style.css` pour appliquer l’image en fond :
 ```css
-body
-{
+body {
     background-image: url("paper.gif");
-    background-repeat: repeat-x;
-    background-position: right top;
 }
 ```
 
+✅ **Enregistrer et observer `index.html`**.
 
-Le ```background-position``` permet d’indiquer la position du fond par rapport au coin supérieur gauche de la page ou les mots clé ```top, bottom, left```… 
 
-##### <H4 STYLE="COLOR:MAGENTA;">5.2.2.3. Fixe ou scroll de l’arrière plan</H4> 
 
-La ```background-attachment``` propriété spécifie si l'image d'arrière-plan doit défiler ou être fixe (ne défile pas avec le reste de la page) 
+##### <H4 STYLE="COLOR:MAGENTA;">5.2.1. Répétition d’arrière plan</H4>
+
+Par défaut, une image de fond est **répétée** en mosaïque.  
+
+📌 **Contrôler la répétition du fond avec `background-repeat` :**  
 ```css
-body
-{
-    background-image: url("paper.gif");
-    background-repeat: repeat-x;
-    background-position: right top;
-     background-attachment: scroll;
-}
+background-repeat: no-repeat; /* Aucune répétition */
+background-repeat: repeat-x; /* Répétition horizontale */
+background-repeat: repeat-y; /* Répétition verticale */
+background-repeat: repeat; /* Par défaut, en mosaïque */
+```
+
+##### <H4 STYLE="COLOR:MAGENTA;">5.2.2. Position d’arrière plan</H4>
+
+On utilise `background-position` pour **placer l’image** dans la page.
+
+📌 **Exemple :**
+```css
+background-position: right top; /* En haut à droite */
+background-position: center; /* Centré */
 ```
 
 
-Le ```background-attachment```: fixer le fond. Deux valeurs sont disponibles :  
+##### <H4 STYLE="COLOR:MAGENTA;">5.2.3. Fixe ou scroll de l’arrière plan</H4> 
 
-- ```fixed```: l'image de fond reste fixe ; 
-- ```scroll```: l'image de fond défile avec le texte (par défaut).
 
-##### <H4 STYLE="COLOR:MAGENTA;">5.2.2.4. Propriétés de l’arrière plan abrégée</H4> 
+La propriété `background-attachment` permet **de fixer ou faire défiler l’image de fond**.
 
-Pour raccourcir le code, il est également possible de spécifier toutes les propriétés du fond dans une seule propriété. C'est ce qu'on appelle une propriété abrégée. 
+📌 **Exemple :**
+```css
+background-attachment: fixed; /* L’image reste fixe */
+background-attachment: scroll; /* L’image défile avec la page */
+```
+
+
+##### <H4 STYLE="COLOR:MAGENTA;">5.2.4. Propriétés abrégée de l’arrière plan</H4> 
+
+On peut **regrouper toutes ces propriétés** en une seule ligne :
 
 ```css
 body {
@@ -651,6 +638,7 @@ body {
     background-image: url("img_tree.png");
     background-repeat: no-repeat;
     background-position: right top;
+    background-attachment: fixed;
 }
 ```
 
@@ -660,22 +648,26 @@ On peut écrire une propriété abrégée dans une seule déclaration
 
 ```css
 body {
-    background: #ffffff url("img_tree.png") no-repeat right top;
+    background: #ffffff url("img_tree.png") no-repeat right top fixed;
   }
 ```
 
+📌 **Ordre des valeurs :** `couleur`, `image`, `répétition`, `position`, `défilement`.
 
+##### <H4 STYLE="COLOR:MAGENTA;">5.2.5. Plusieurs images</H4> 
 
-##### <H4 STYLE="COLOR:MAGENTA;">5.2.2.5. Plusieurs images</H4> 
-
-Depuis CSS, il est possible de donner plusieurs images de fond à un élément. Pour cela, il suffit de séparer les déclarations par une virgule, comme ceci : 
+Depuis CSS3, il est possible **d’empiler plusieurs images de fond** :
 
 ```css
-body
-{
-    background: url("soleil.png") fixed no-repeat top right, url("neige.png") fixed;
+body {
+    background: url("soleil.png") fixed no-repeat top right,
+                url("neige.png") fixed;
 }
 ```
+
+📌 **L’ordre des images est important** : la **première** s’affiche **au-dessus** des autres.
+
+
 
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.049.png)
@@ -683,45 +675,58 @@ body
 La première image de cette liste sera placée par-dessus les autres. Attention donc, l'ordre de déclaration des images a son importance : si vous inversez le soleil et la neige dans le code CSS précédent, vous ne verrez plus le soleil ! 
 
 ## <H2 STYLE="COLOR:BLUE;">6. Habillage<a name="_page8_x40.00_y542.92"></a></H2> 
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.050.png)
 
-Le CSS permet de faire flotter un élément autour d'un texte grâce à la propriété CSS ```float```. 
+La propriété `float` permet **de positionner une image à gauche ou à droite du texte**.
 
-- ```left``` : l'élément flottera à gauche. 
-- ```right``` : l'élément flottera à droite.
+
+
+### <H3 STYLE="COLOR:GREEN;"> **6.1. Flotter un élément à gauche ou à droite</h3>**  
+
+📌 **Exemple :**
 ```html
 <p>
     <img src="flash.gif" class="imageflottante" alt="Image flottante" />
 </p>
 ```
 ```css
-.imageflottante
-{
+.imageflottante {
     float: left;
+    margin-right: 10px;
 }
 ```
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.054.png)
 
-Pour ne plus faire flotter l'élément, il faut utiliser la propriété clear, qui peut prendre ces trois valeurs : 
+➡ L’image sera **alignée à gauche** avec un **espace de 10px à droite**.
 
-- ```left``` : le texte se poursuit en-dessous après un ```float: left```;
-- ```right``` : le texte se poursuit en-dessous après un ```float: right```;
-- ```both``` : le texte se poursuit en-dessous, que ce soit après un ```float: left```; ou après un ```float: right```;. 
+
+![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.050.png)
+
+### <H3 STYLE="COLOR:GREEN;"> **6.2. Stopper l’effet float avec `clear`</h3>**  
+
+Si on ne stoppe pas le `float`, **le texte continue à s’enrouler autour de l’image**.  
+La propriété `clear` permet **de forcer un retour à la ligne**.
+
+📌 **Exemple :**
 ```html
 <p><img src="flash.gif" class="imageflottante" alt="Image flottante" /></p>
 <p>Texte écrit à côté de l'image.</p>
 <p class="dessous">Texte écrit sous l'image.</p>  
 ```
 ```css
-.imageflottante
-{
+.imageflottante {
     float: left;
 }
-.dessous
-{
+.dessous {
     clear: both;
 }
-```  
+```
+
+📌 **Explication :**  
+- **`clear: left;`** → Le texte **reprend après une image flottant à gauche**.  
+- **`clear: right;`** → Le texte **reprend après une image flottant à droite**.  
+- **`clear: both;`** → Le texte **reprend après n’importe quelle image flottante**.  
+
+
+![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.054.png)
 
 
 
