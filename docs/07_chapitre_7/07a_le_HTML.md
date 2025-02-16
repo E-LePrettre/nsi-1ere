@@ -50,7 +50,7 @@ Pour créer un site web, on utilise des langages spécifiques, principalement **
 - **CSS (Cascading Style Sheets)** : gère l’apparence et la mise en page (couleurs, marges, positionnement…).  
 - **JavaScript** : permet d’ajouter de l’interactivité (animations, formulaires dynamiques, effets visuels…). 
 
-![HTML CSS](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.005.png)
+
 
 👉 **Résumé** :  
 ✅ Le **HTML** définit le contenu.  
@@ -72,7 +72,7 @@ Le site [https://caniuse.com/](https://caniuse.com/) tient à jour une liste des
 ## <H2 STYLE="COLOR:BLUE;">3. Le<a name="_page2_x40.00_y48.92"></a> langage HTML5</H2>
 ### <H3 STYLE="COLOR:GREEN;">3.1. Page<a name="_page2_x40.00_y70.92"></a> web en HTML</H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°1. :</H3>**
+**<H3 STYLE="COLOR:red;">Activité n°1. :</H3>** ouvrir capytale
 
 => CAPYTALE Le code vous sera donné par votre enseignant
 
