@@ -343,94 +343,176 @@ Dans ce cas, on utilise les **balises neutres** :
 
 
 ### <H3 STYLE="COLOR:GREEN;">3.5. Les<a name="_page3_x40.00_y425.92"></a> sélecteurs avancés</H3> 
-- ```*``` est un sélecteur universelle il sélectionne toutes les balises sans exception. 
+
+Les **sélecteurs avancés** permettent de **cibler des éléments précis** et d’affiner le style appliqué.
+
+📌 **Sélecteur universel `*`**
+
+Ce sélecteur applique un style à **toutes les balises** d’une page HTML.
+
 ```css
-*
-{
+* {
+    margin: 0;
+    padding: 0;
 }
 ```
- 
+**Utilisation** : Supprime **les marges et les paddings** par défaut.
 
-- une balise dans une autre : par exemple toutes les balises ```<em>``` **situées à l’intérieur** d’une balise ```<h3>```
+
+
+📌 **Sélecteur descendant**
+
+Sélectionne une **balise située à l’intérieur** d’une autre.
 
 ```css
-h3 em
-{
-}
-```
- 
-
-- La balise qui suit une autre : par exemple la première balise ```<p>``` **située après** un titre ```<h3>```
-```css
-h3 + p
-{
+h3 em {
+    color: red;
 }
 ```
 
+**Applique la couleur rouge** uniquement aux `<em>` **situés dans** un `<h3>`.
 
-- Une balise possédant un attribut : Sélectionne tous les liens ```<a>``` qui possèdent un **attribut** title.
+
+📌 **Sélecteur adjacent**  
+
+Cible un élément **juste après** un autre.
+
 ```css
-a[title]
-{ 
-} 
+h3 + p {
+    font-weight: bold;
+}
 ```
-Ce style sera sur : 
-```html
-<a href="http://site.com" title="Infobulle"> 
-```
-- Etc … pour une liste complète :[ site du W3C ](https://www.w3.org/Style/CSS-selectors-updates/WD-CSS-selectors-20010126.fr.html#selectors)
+**Le premier `<p>` après un `<h3>`** sera en **gras**.
 
-## <H2 STYLE="COLOR:BLUE;">4. Formater<a name="_page4_x40.00_y36.92"></a> du texte</H2> 
+
+📌 **Sélecteur d’attribut**
+
+Cible **les balises ayant un attribut spécifique**.
+
+```css
+a[title] {
+    text-decoration: underline;
+}
+```
+**Tous les liens `<a>` ayant un attribut `title` seront soulignés**.
+
+✏️ **Consultez la documentation complète**
+
+➡ Pour plus d’exemples, voir : [Sélecteurs CSS W3C](https://www.w3.org/Style/CSS-selectors-updates/WD-CSS-selectors-20010126.fr.html#selectors).
+
+
+
+## <H2 STYLE="COLOR:BLUE;">4. Formater<a name="_page4_x40.00_y36.92"></a> du texte</H2>
+
+Le CSS permet de modifier **la taille, la police, l’alignement et la mise en forme** du texte.
+
+
 ### <H3 STYLE="COLOR:GREEN;">4.1. Taille<a name="_page4_x40.00_y58.92"></a></H3> 
 
-On utilise la propriété font-size* avec deux techniques pour définir la taille : 
+La taille du texte est définie avec la propriété `font-size`.  
 
-- La taille absolue : en pixels, en cm ou en mm 
-- La taille relative : en % , ou nom (small, large, xx-large) ou nombre relatif (1em, 1.3em, 0.8em) qui permet de s’adapter à la taille des visiteurs 
+Il existe **deux types de tailles** :
+
+| Type | Unités | Exemple |
+|------|--------|---------|
+| **Absolue** | `px`, `cm`, `mm` | `font-size: 16px;` |
+| **Relative** | `%`, `em`, `rem`, `small`, `large` | `font-size: 120%;` |
+
+📌 **Recommandation** :  
+
+- **Préférez les tailles relatives** (`%`, `em`, `rem`) pour **s’adapter aux écrans**.
+
+
+**<H3 STYLE="COLOR:red;">Activité n°8.:</H3>** Dans `style.css`, ajoutez :
 ```css
-balise 
-{ 
-    font-size: 16px; 
-} 
+p {
+    font-size: 120%;
+}
 ```
-
-**<H3 STYLE="COLOR:red;">Activité n°8.:</H3>** Modifier la feuille de style pour que les paragraphes est une taille de 120% 
+✅ **Enregistrer et observer `index.html`**.
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.032.jpeg)
 
 ### <H3 STYLE="COLOR:GREEN;">4.2. La<a name="_page4_x40.00_y513.92"></a> police</H3> 
 
-C’est la propriété font-family. On peut définir plusieurs polices pour éviter des problèmes de compatibilité chez l’internaute.  
+La police est définie avec `font-family`.  
+
+Il est possible de spécifier **plusieurs polices**, au cas où la première n’est pas disponible.
+
 ```css
-balise 
-{ 
-    font-family: police1, police2, police3, police4; 
-} 
+p {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
 ```
+📌 **Ordre de préférence** :  
 
-Les polices qui fonctionnent sur la plupart des navigateurs : Arial ; Arial Black ; Comic Sans MS ; Courier New ; Georgia ; Impact ; Times New Roman ; Trebuchet MS ; Verdana. 
+- `"Trebuchet MS"` → Première police souhaitée. 
 
-Il est possible d’utiliser des polices personnalisées que l’internaute téléchargera automatiquement lors de la visite du site. 
+- `Arial` → Alternative si Trebuchet MS est absente.  
+
+- `sans-serif` → Police générique.
+
 
 **<H3 STYLE="COLOR:red;">Activité n°9.:</H3>** Modifier la feuille de style pour que les paragraphes est une police en Trebuchet MS. 
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.034.png)
 
+✅ **Enregistrer et observer `index.html`**.
+
 ### <H3 STYLE="COLOR:GREEN;">4.3. Italique,<a name="_page5_x40.00_y342.92"></a> gras, souligné</H3> 
 
-- la propriété ```font-style : normal, italic``` 
-- la propriété ```font-weight : normal, bold```
-- Le soulignement se traite avec ```text-decoration : underline*,* ou none```
+Les principales propriétés sont :
+
+| Effet | Propriété CSS | Valeurs |
+|-------|--------------|---------|
+| **Italique** | `font-style` | `normal`, `italic` |
+| **Gras** | `font-weight` | `normal`, `bold` |
+| **Souligné** | `text-decoration` | `none`, `underline` |
+
+**Exemple :**
+```css
+p {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
+```
+📌 **Recommandation** : Évitez d’abuser du **soulignement**, il est souvent utilisé pour les liens.
+
 
 ### <H3 STYLE="COLOR:GREEN;">4.4. L’alignement<a name="_page5_x40.00_y410.92"></a></H3> 
 
-On utilise la propriété ```text-align : left``` ou ```center``` ou ```right``` ou ```justify```
+Le texte peut être **aligné** avec la propriété `text-align` :
+
+| Valeur | Effet |
+|--------|-------|
+| `left` | Aligné à gauche (par défaut) |
+| `center` | Centré |
+| `right` | Aligné à droite |
+| `justify` | Justifié (alignement des deux côtés) |
+
+**Exemple :**  
+```css
+p {
+    text-align: justify;
+}
+```
+
+📌 **Les images peuvent aussi être centrées !**  
+Avec `display: block;` et `margin: auto;` :
+```css
+img {
+    display: block;
+    margin: auto;
+}
+```
+`
 
 **<H3 STYLE="COLOR:red;">Activité n°10.:</H3>** Modifier la feuille de style pour que les paragraphes soient justifiés et centré les images (penser à mettre des nom aux balises des images sur la index) 
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.036.jpeg)
 
-
+✅ **Enregistrer et observer `index.html`**.
 
 ## <H2 STYLE="COLOR:BLUE;">5. Ajouter<a name="_page6_x40.00_y36.92"></a> de la couleur et un fond</H2> 
 ### <H3 STYLE="COLOR:GREEN;">5.1. La<a name="_page6_x40.00_y58.92"></a> couleur du texte</H3> 
