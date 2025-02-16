@@ -731,132 +731,193 @@ La propriété `clear` permet **de forcer un retour à la ligne**.
 
 
 ## <H2 STYLE="COLOR:BLUE;">7. Créer<a name="_page9_x40.00_y302.92"></a> des bordures et des ombres</H2> 
+
+Les bordures et les ombres permettent d’améliorer la mise en forme des éléments en les encadrant ou en leur ajoutant un effet de relief.
+
 ### <H3 STYLE="COLOR:GREEN;">7.1. Bordures<a name="_page9_x40.00_y324.92"></a> standard</H3> 
 
-Pour ```border``` on peut utiliser jusqu'à trois valeurs pour modifier l'apparence de la bordure : 
+La propriété `border` permet de définir une bordure sur un élément HTML. 
 
-- **La largeur** : indiquez la largeur de votre bordure. Mettez une valeur en pixels (comme ```2px```). 
-- **La couleur** : c'est la couleur de votre bordure. Utilisez, comme on l'a appris, soit un nom de couleur (black,red,…), soit une valeur hexadécimale (```#FF0000```), soit une valeur RGB (```rgb(198, 212, 37)```). 
-- **Le type de bordure** : là, vous avez le choix. Votre bordure peut être un simple trait, ou des pointillés, ou encore des tirets, etc. Voici les différentes valeurs disponibles : 
-```none```: pas de bordure (par défaut) ; 
- ```solid```: un trait simple ; 
- ```dotted```: pointillés ; 
- ```double```: bordure double ; 
- *etc* 
+Elle prend **trois paramètres** :
 
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.057.png)
+| Paramètre | Description | Exemple |
+|-----------|-------------|---------|
+| **Largeur** | Épaisseur de la bordure (en `px`, `em`, etc.) | `3px` |
+| **Type** | Style de la bordure | `solid`, `dashed`, `dotted`, `double`… |
+| **Couleur** | Couleur de la bordure | `red`, `#FF0000`, `rgb(198, 212, 37)` |
 
-Ainsi, pour avoir une bordure bleue, en tirets, épaisse de 3 pixels autour de mes titres, je vais écrire : 
-
+📌 **Exemple :**
 ```css
-h1
-{
+h1 {
     border: 3px blue dashed;
 }
 ```
 
- 
+➡ **Résultat** : Une **bordure bleue en tirets** de `3px` autour des `<h1>`.
 
-Des bordures différentes en fonction du côté : 
 
-- ```border-top```: bordure du haut ; 
-- ```border-bottom```: bordure du bas ; 
-- ```border-left```: bordure de gauche ; 
-- ```border-right```: bordure de droite. 
+
+**Bordures spécifiques**  
+
+Il est possible d’appliquer une bordure **uniquement sur un côté** :
+
+| Propriété | Effet |
+|-----------|-------|
+| `border-top` | Bordure en haut |
+| `border-bottom` | Bordure en bas |
+| `border-left` | Bordure à gauche |
+| `border-right` | Bordure à droite |
+
+📌 **Exemple :**
+```css
+p {
+    border-bottom: 2px solid black;
+}
+```
+
+➡ **Résultat** : Un **trait noir sous les paragraphes**.
+
+
+
+
+![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.057.png)
+
 
 ### <H3 STYLE="COLOR:GREEN;">7.2. Bordures<a name="_page10_x40.00_y115.92"></a> arrondies</H3> 
 
-La propriété ```border-radius``` va nous permettre d'arrondir facilement les angles de n'importe quel élément. Il suffit d'indiquer la taille (« l'importance ») de l'arrondi en pixels, par exemple : ```border-radius : 10px```; 
+La propriété `border-radius` permet d’arrondir les angles d’un élément.
 
-**<H3 STYLE="COLOR:red;">Activité n°13.:</H3>** Modifier la feuille de style pour que le théorème soit entouré d’une bordure arrondie, d’une couleur, de style de traits et d’épaisseur au choix. Centrer le théorème. 
+📌 **Exemple :**
+```css
+div {
+    border: 2px solid black;
+    border-radius: 10px;
+}
+```
+
+➡ **Résultat** : Un encadrement **avec des coins arrondis de 10px**.
+ 
+
+**<H3 STYLE="COLOR:red;">Activité n°13.:</H3>** Ajouter une bordure au théorème**  
+Dans `style.css`, ajoutez :
+```css
+.theoreme {
+    border: 4px solid #FF5733; /* Bordure orange */
+    border-radius: 15px; /* Coins arrondis */
+    text-align: center; /* Centrer le texte */
+    padding: 10px; /* Espacement intérieur */
+    width: 50%;
+    margin: auto; /* Centrer le bloc */
+}
+```
+
+✅ **Enregistrer et observer `index.html`**.
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.061.jpeg)
 
 ### <H3 STYLE="COLOR:GREEN;">7.3. Les<a name="_page10_x40.00_y299.92"></a> ombres</H3> 
 
-Il est possible de mettre des ombres portés sur : 
+Les **ombres** permettent d’ajouter du relief aux éléments.
 
-- Des boites : la propriété ```box-shadow``` s'applique à tout le bloc et prend quatre valeurs dans l'ordre suivant 
-
-le décalage horizontal de l'ombre ; 
-le décalage vertical de l'ombre ; 
-L’adoucissement du dégradé ; 
-la couleur de l'ombre. 
-
-Par exemple, pour une ombre noire de 6 pixels, sans adoucissement, on écrira :   
+📌 **Ombre sur un bloc avec `box-shadow`** :
 ```css
-p
-{
+p {
     box-shadow: 6px 6px 0px black;
 }
 ```
+📌 **Ombre sur du texte avec `text-shadow`** :
+```css
+h1 {
+    text-shadow: 3px 3px 5px gray;
+}
+```
+
+➡ **Résultat** : Un **effet d’ombre** qui donne un aspect **en relief**.
 
 
-- du texte : avec ```text-shadow```  qui a le même fonctionnement 
 
-**<H3 STYLE="COLOR:red;">Activité n°14.:</H3>** Modifier la feuille de style pour que le théorème est une ombre portée sur sa bordure. 
+**<H3 STYLE="COLOR:red;">Activité n°14.:</H3>** ### ✏️ **Activité n°14 : Ajouter une ombre au théorème**  
+Dans `style.css`, ajoutez :
+```css
+.theoreme {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+```
+
+✅ **Enregistrer et observer `index.html`**.
+
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.066.jpeg)
 
 ## <H2 STYLE="COLOR:BLUE;">8. Les<a name="_page10_x40.00_y621.92"></a> apparences dynamiques</H2> 
 
-En CSS, on peut modifier l'apparence de certaines sections dynamiquement, après le chargement de la page, lorsque certains évènements se produisent. On utilise pour cela les pseudo-formats. 
 
-- ```:hover``` permet de changer l'apparence au survol (par exemple : a:hover pour modifier l'apparence des liens lorsque la souris pointe dessus). 
-- ```:active``` applique un style particulier au moment du clic. En pratique, il n'est utilisé que sur les liens.
+Le CSS permet **de modifier l’apparence des éléments en fonction des interactions de l’utilisateur**.
 
- 
-- ```:focus``` applique un style lorsque l'élément est sélectionné. 
-- ```:visited``` applique un style à un lien vers une page qui a déjà été vue. 
+| Pseudo-classe | Effet |
+|--------------|--------|
+| `:hover` | Changement au survol de la souris |
+| `:active` | Changement au moment du clic |
+| `:focus` | Changement quand l’élément est sélectionné |
+| `:visited` | Changement sur un lien déjà visité |
 
 ### <H3 STYLE="COLOR:GREEN;">8.1. Au<a name="_page11_x40.00_y36.92"></a> survol</H3> 
 
-Lorsque la souris survole quelque chose on peut prévoir un style différent. Par exemple : 
-
+📌 **Exemple :**
 ```css
-a /* Liens par défaut (non survolés) */
-{
-   text-decoration: none;
-   color: red;
-   font-style: italic;
+a {
+    text-decoration: none;
+    color: red;
+    font-style: italic;
 }
 
-a:hover /* Apparence au survol des liens */
-{
-   text-decoration: underline;
-   color: green;
+a:hover {
+    text-decoration: underline;
+    color: green;
 }
 ```
+➡ **Résultat** :  
+- Les **liens sont rouges** par défaut.  
+- Quand on **passe la souris**, ils deviennent **verts et soulignés**.
 
 
 
-### <H3 STYLE="COLOR:GREEN;">8.2. Au<a name="_page11_x40.00_y195.92"></a> clic</H3> 
 
-On peut par exemple changer la couleur de fond du lien lorsque l'on clique dessus : 
+### <H3 STYLE="COLOR:GREEN;">8.2. Modifier<a name="_page11_x40.00_y195.92"></a> l'apparence d'un clic</H3> 
+
+📌 **Exemple :**
 ```css
-a:active /* Quand le visiteur clique sur le lien */
-{
+a:active {
     background-color: #FFCC66;
 }
 ```
+➡ **Résultat** : Lien **coloré en orange au moment du clic**.
 
+---
 
-### <H3 STYLE="COLOR:GREEN;">8.3. Le<a name="_page11_x40.00_y276.92"></a> lien déjà visité</H3> 
+## **8.3. Modifier l’apparence d’un lien déjà visité (`:visited`)**  
 
-On peut changer cette apparence avec: *visited* (qui signifie « visité »).  
+📌 **Exemple :**
 ```css
-a:visited /* Quand le visiteur a déjà vu la page concernée */
-{
-    color: #AAA; /* Appliquer une couleur grise */
+a:visited {
+    color: #AAA;
 }
 ```
+➡ **Résultat** : **Les liens déjà visités** apparaissent en **gris**.
 
 
-## <H2 STYLE="COLOR:BLUE;">9. Les<a name="_page11_x40.00_y351.92"></a> tableaux</H2> 
+
+
+
+
+## <H2 STYLE="COLOR:BLUE;">9. Les<a name="_page11_x40.00_y351.92"></a> tableaux</H2>
+
+
+Les tableaux en HTML peuvent être améliorés avec CSS.
+
+
 ### <H3 STYLE="COLOR:GREEN;">9.1. Un<a name="_page11_x40.00_y389.92"></a> tableau simple</H3> 
 
-On utilise la balise ```<table></table>```. Puis il faut indiquer le début et la fin de chaque ligne : ```<tr></tr>```. A l’intérieur de chaque ligne, il faut définir toutes les cellules avec ```<td></td>```. 
-
-Par exemple : 
+📌 **HTML :**
 ```html
 <table>
    <tr>
@@ -872,40 +933,58 @@ Par exemple :
 </table>
 ```
 
-
-Il faut prendre le soin d’indiquer le type de bordure pour les cellules et/ou les lignes dans la feuille de style css. Par exemple : 
-
+📌 **CSS :**
 ```css
-table 
-{ 
-border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */ 
-} 
-td 
-{ 
-border: 1px solid black; 
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
 }
 ```
 
 
 
-### <H3 STYLE="COLOR:GREEN;">9.2. L’en<a name="_page11_x40.00_y705.92"></a> tête</H3> 
 
-La ligne d'en-tête est très facile à reconnaître pour deux raisons : 
+### <H3 STYLE="COLOR:GREEN;">9.2. Ajouter une ligne d’en<a name="_page11_x40.00_y705.92"></a> tête</H3> 
 
-- les cellules sont des ```<th>``` au lieu des ```<td>``` habituels ; 
+📌 **HTML :**
+```html
+<tr>
+    <th>Nom</th>
+    <th>Âge</th>
+    <th>Pays</th>
+</tr>
+```
 
-- c'est la première ligne du tableau 
+📌 **CSS :**
+```css
+th {
+    background-color: lightgray;
+}
+```
 
-### <H3 STYLE="COLOR:GREEN;">9.3. Titre<a name="_page12_x40.00_y36.92"></a> du tableau</H3> 
 
-Il est à mettre dans la balise ```  <caption></caption>```  juste après la balise ```<table>```
+### <H3 STYLE="COLOR:GREEN;">9.3. Ajouter un titre<a name="_page12_x40.00_y36.92"></a> du tableau</H3> 
 
-On peut changer la position du titre avec la propriété CSS ```caption-side``` qui peut prendre deux valeurs : 
+📌 **HTML :**
+```html
+<table>
+   <caption>Informations des utilisateurs</caption>
+</table>
+```
 
-- ```top```: le titre sera placé au-dessus du tableau (par défaut) ; 
-- ```bottom```: le titre sera placé en dessous du tableau.
+📌 **CSS :**
+```css
+caption {
+    font-weight: bold;
+    caption-side: bottom;
+}
+```
 
-### <H3 STYLE="COLOR:GREEN;">9.4. Gros<a name="_page12_x40.00_y120.92"></a> tableau</H3>
+### <H3 STYLE="COLOR:GREEN;">9.4. Fusionner<a name="_page12_x40.00_y120.92"></a> des cellules</H3>
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.076.png)
 
@@ -916,150 +995,150 @@ Il existe des balises HTML qui permettent de  définir les trois « zones » du 
 - le  pied  du  tableau  (en  bas)  :  il  se  définit  avec  les  balises  ```<tfoot></tfoot>```*.*  
 
 ### <H3 STYLE="COLOR:GREEN;">9.5. Fusionner<a name="_page12_x40.00_y268.92"></a></H3>   
-- La fusion de colonnes : c'est ce que je viens de faire dans cet exemple. La fusion s'effectue horizontalement. On utilisera l'attribut ```colspan```.
-- La fusion de lignes : là, deux lignes seront groupées entre elles. La fusion s'effectuera verticalement. On utilisera l'attribut ```rowspan```.
 
-Par exemple :
-
+📌 **HTML :**
 ```html
-<table>
-   <tr>
-       <th>Titre du film</th>
-       <th>Pour enfants ?</th>
-       <th>Pour adolescents ?</th>
-   </tr>
-   <tr>
-       <td>Massacre à la tronçonneuse</td>
-       <td >Non, trop violent</td>
-       <td>Oui</td>
-   </tr>
-   <tr>
-       <td>Les bisounours font du ski</td>
-       <td>Oui, adapté</td>
-       <td>Pas assez violent...</td>
-   </tr>
-   <tr>
-       <td>Lucky Luke, seul contre tous</td>
-       <td colspan="2">Pour toute la famille !</td>
-   </tr>
-</table>
+<tr>
+    <td colspan="2">Fusion de deux colonnes</td>
+</tr>
+<tr>
+    <td rowspan="2">Fusion de deux lignes</td>
+</tr>
 ```
+
 
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.078.jpeg)
 
-**<H3 STYLE="COLOR:red;">Activité n°15.:</H3>** Rajouter un tableau résumé à la fin de la index. Modifier la feuille de style pour que le tableau ressemble à l’image ci-dessous. Penser à nommer les balise pour les utiliser en css. 
+**<H3 STYLE="COLOR:red;">Activité n°15.:</H3>** 
+
+1. **Ajoutez un tableau résumé à la fin de `index.html`**.
+
+2. **Modifiez `style.css` pour obtenir un style similaire à l’exemple ci-dessous.**
+
+📌 **CSS recommandé :**
+```css
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #EEE;
+}
+```
+
+✅ **Enregistrer et observer `index.html`**.
+
+
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.079.png)![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.080.png)
 
 ## <H2 STYLE="COLOR:BLUE;">10. Le<a name="_page13_x40.00_y36.92"></a> modèle des boites</H2>
 
-Dans une mise en page réalisée en CSS, tous les éléments sont considérés comme des boîtes. Chacune de ces boîtes est constituée d’un contenu, d’un espacement intérieur, d’une bordure, et d’une marge externe. 
+n CSS, **tous les éléments sont des boîtes**.  
+Chaque boîte est composée de **quatre zones principales** :
 
-Voici les  propriétés  CSS  qui  permettent  de  déterminer  les  dimensions, la  couleur,  le style  de chacun  de  ses constituants : 
+| Propriété CSS | Description |
+|--------------|-------------|
+| `width` et `height` | Définissent la largeur et la hauteur du contenu |
+| `padding` | Définit l’espace intérieur entre le contenu et la bordure |
+| `border` | Définit la bordure (épaisseur, style, couleur) |
+| `margin` | Définit l’espace extérieur autour de l’élément |
 
+📌 **Exemple :**
+```css
+p {
+    width: 350px;
+    border: 1px solid black;
+    text-align: justify;
+    padding: 12px;
+    margin: 50px;
+}
+```
 
-
-|**Propriété CSS** |**Ce qui est concerné :** |
-| - | - |
-|```width``` et ```height``` |largeur et hauteur du contenu (texte, image, etc.) |
-|```padding``` |espacement intérieur, entre le contenu et la bordure |
-|```border``` |bordure (ou encadrement) |
-|```margin``` |marge externe, espace (transparent) entourant le tout |
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.082.png)![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.081.png)
 
-- ```width``` : c'est la largeur du bloc exprimé en pixels (px) ou en pourcentage (%). 
-- ```height``` : c'est la hauteur du bloc exprimé en pixels (px) ou en pourcentage (%). 
-- ```padding``` : indique la taille de la marge intérieure en pixels (px). 
-- ```margin``` : indique la taille de la marge extérieure en pixels (px). 
+**Centrer un élément avec `margin: auto`**  
 
-Un bloc peut avoir des dimensions minimales et maximales : 
-
-- ```min-width``` : largeur minimale ; 
-- ```min-height``` : hauteur minimale ; 
-- ```max-width``` : largeur maximale ; 
-- ```max-height``` : hauteur maximale. 
-
-Les marges extérieures peuvent avoir des valeurs différentes : 
-
-- ```margin-top``` : marge extérieure en haut ; 
-- ```margin-bottom``` : marge extérieure en bas ; 
-- ```margin-left``` : marge extérieure à gauche ; 
-- ```margin-right``` : marge extérieure à droite. 
-
-Idem pour les marges intérieures ! 
-
-Exemple : 
+📌 **Exemple :**
 ```css
-p
-{
-   width: 350px;
-   border: 1px solid black;
-   text-align: justify;
-   padding: 12px;
-   margin: 50px; /* Marge extérieure de 50px */
+p {
+    width: 350px;
+    margin: auto;
+}
+```
+➡ L’élément sera **centré horizontalement**.
+
+
+
+**Gérer le dépassement de texte avec `overflow`**  
+
+| Valeur | Effet |
+|--------|-------|
+| `visible` | Le texte dépasse de la boîte |
+| `hidden` | Le texte est coupé s’il dépasse |
+| `scroll` | Ajoute une barre de défilement si nécessaire |
+| `auto` | Ajoute une barre de défilement uniquement si nécessaire |
+
+📌 **Exemple :**
+```css
+div {
+    width: 200px;
+    height: 100px;
+    overflow: scroll;
 }
 ```
 
 
-
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.088.jpeg)
-
-Remarque : utiliser la propriété ```margin: auto``` pour centrer des blocs. Pour cela, il faut obligatoirement donner une largeur au bloc (avec la propriété ```width```). 
-
-Exemple : 
-
-```css
-p
-{
-    width: 350px; /* On a indiqué une largeur (obligatoire) */
-    margin: auto; /* On peut donc demander à ce que le bloc soit centré avec auto */
-}
-```
-
-
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.091.jpeg)
-
-Si vous voulez que le texte ne dépasse pas des limites du bloc, il va falloir utiliser la propriété ```overflow```. Voici les valeurs qu'elle peut accepter : 
-
-- ```visible``` (par défaut) : si le texte dépasse les limites de taille, il reste visible et sort volontairement du bloc. 
-- ```hidden``` : si le texte dépasse les limites, il sera tout simplement coupé. On ne pourra pas voir tout le texte. 
-- ```scroll``` : le texte sera coupé s'il dépasse les limites. Sauf que cette fois, le navigateur mettra en place des barres de défilement pour qu'on puisse lire l'ensemble du texte. 
-- ```auto``` : le navigateur décide de mettre ou non des barres de défilement. 
-
-Remarque : la propriété ```word-wrap: break-word``` permet de forcer la césure des très longs mots (généralement des adresses un peu longues). 
 
 ## <H2 STYLE="COLOR:BLUE;">11. Le<a name="_page15_x40.00_y36.92"></a> positionnement</H2> 
+
+La propriété `position` permet **de placer précisément un élément** dans une page.
+
 ### <H3 STYLE="COLOR:GREEN;">11.1. Les<a name="_page15_x40.00_y58.92"></a> positionnements absolu, fixe et relatif</H3> 
 
-La propriété CSS ```position``` permet de positionner avec précision des éléments sur la page. Pour cela, on lui donne une de ces valeurs : 
+| Valeur | Effet |
+|--------|-------|
+| `absolute` | Positionne l’élément **par rapport au parent** |
+| `fixed` | L’élément **reste fixe même lors du défilement** |
+| `relative` | Décale l’élément **par rapport à sa position normale** |
 
-- ```absolute``` : positionnement absolu ; il permet de placer un élément n'importe où sur la page (en haut à gauche, en bas à droite, tout au centre, etc.). 
-- ```fixed``` : positionnement fixe ; identique au positionnement absolu mais, cette fois, l'élément reste toujours visible, même si on descend plus bas dans la page. 
-- ```relative``` : positionnement relatif ; ce positionnement permet d'effectuer des « ajustements » : l'élément est décalé par rapport à sa position initiale. 
+📌 **Exemple :**
+```css
+div {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+```
+➡ L’élément sera placé **50px du haut et 100px de la gauche**.
 
-Si un bloc est positionné en absolu, il faut indiquer au navigateur où le positionner sur la page à l'aide des quatre propriétés CSS : 
+
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.093.png)
 
-- ```left``` : position par rapport à la gauche de la page ; 
-- ```right``` : position par rapport à la droite de la page ;
-- ```top``` : position par rapport au haut de la page ; 
-- ```bottom``` : position par rapport au bas de la page. 
+*Gérer la superposition avec `z-index`**  
 
-Exemple : 
+Si plusieurs éléments se chevauchent, la propriété `z-index` détermine **l’ordre d’affichage**.
+
+📌 **Exemple :**
 ```css
-element
-{
+div {
     position: absolute;
-    right: 0px;
-    bottom: 0px;
+    z-index: 10;
 }
 ```
+➡ **Plus la valeur est grande, plus l’élément est au premier plan.**
 
-
-Remarque : les éléments positionnés en absolu sont placés par- dessus le reste des éléments de la page ! Par ailleurs, si vous placez deux éléments en absolu vers le même endroit, ils risquent de se chevaucher.  Dans  ce  cas,  utilisez  la propriété ```z-index```  pour indiquer quel élément doit apparaître au-dessus des autres. 
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.097.png) 
 
@@ -1067,26 +1146,27 @@ L'élément ayant la valeur de ```z-index``` la plus élevée sera placé par-de
 
 ### <H3 STYLE="COLOR:GREEN;">11.2. Le<a name="_page15_x40.00_y697.92"></a> positionnement inline-block</H3> 
 
-En CSS la propriété ```display``` permet de transformer n'importe quel élément de la page d'un type vers un autre et les faire apparaître sous forme de blocs. À ce moment-là, les éléments vont se positionner les uns en-dessous des autres et il devient possible de modifier leurs dimensions ! 
 
-Voici quelques-unes des principales valeurs que peut prendre la propriété ```display``` : 
+La propriété `display` permet de modifier l’affichage d’un élément.
 
-|**Valeur** |**Exemples** |**Description** |
-| - | - | - |
-|```inline``` |```<a>, <em>, <span>```…|Eléments d'une ligne. Se placent les uns à côté des autres. |
-|```block``` |```<p>, <div>, <section>```… |Eléments en forme de blocs. Se placent les uns en-dessous des autres et peuvent être redimensionnés. |
-|```inline-block``` |```<select>, <input>``` |Eléments positionnés les uns à côté des autres (comme les inlines) mais qui peuvent être redimensionnés (comme les blocs). |
-|```none``` |```<head>``` |Eléments non affichés. |
+| Valeur | Effet |
+|--------|-------|
+| `inline` | Les éléments se placent **côte à côte** |
+| `block` | Les éléments se placent **les uns en-dessous des autres** |
+| `inline-block` | Comme `inline`, mais avec la possibilité de **modifier la taille** |
 
-Les éléments en ```inline-block``` nous permet d'utiliser la propriété ```vertical-align```. Cette propriété permet de modifier l'alignement vertical des éléments. Voici quelques-unes des valeurs possibles pour cette propriété : 
+📌 **Exemple :**
+```css
+nav {
+    display: inline-block;
+    width: 150px;
+    border: 1px solid black;
+    vertical-align: top;
+}
+```
 
-- ```baseline``` : aligne de la base de l'élément avec celle de l'élément parent (par défaut) ; 
-- ```top``` : aligne en haut ; 
-- ```middle``` : centre verticalement ;
-- ```bottom``` : aligne en bas ; 
-- (valeur en px ou %) : aligne à une certaine distance de la ligne de base (```baseline```). 
+➡ **Les éléments restent alignés horizontalement, mais peuvent être redimensionnés**.
 
-NB : les éléments ```inline-block``` se positionnent sur une même ligne de base (appelée ```baseline```), en bas. Exemple : nous voulons réaliser la page suivante.  
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.101.jpeg)
 
@@ -1155,42 +1235,39 @@ section
 
 ## <H2 STYLE="COLOR:BLUE;">12. Squelette<a name="_page17_x40.00_y239.92"></a> de base HTML – CSS</H2> 
 
-Le squelette d’une page web possède souvent une structure de base à cinq blocs principaux. 
+La plupart des sites web suivent une **structure de base** composée de **cinq blocs principaux** :
+
+![](https://i.imgur.com/Ru5GFDX.png)
+
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.108.png)
 
-Cette structure de base à cinq blocs principaux convient dans la majorité des cas, car elle permet de fabriquer une grande variété de mises en page.
+📌 **HTML :**
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Titre de la page</title>
-        <link rel="stylesheet" href="style.css"/>
+    <title>Titre de la page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-         <div class="header">En-tête</div>
-         <div class="nav">Navigation</div>
-         <div class="content">Contenu</div>
-         <div class="aside">Contexte</div>
-         <div class="footer">Pied de page</div>
+    <div class="header">En-tête</div>
+    <div class="nav">Navigation</div>
+    <div class="content">Contenu</div>
+    <div class="aside">Contexte</div>
+    <div class="footer">Pied de page</div>
 </body>
 </html>
 ```
+
+📌 **CSS :**
 ```css
-/* Mes styles */
-
-.header {….}
-
-.nav {….}
-
-.content {….}
-
-.aside {….}
-
-.footer {….}
-
+.header, .nav, .content, .aside, .footer {
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid black;
+}
 ```
 
-Il existe sur le web des collections de modèles de mise en page, à télécharger gratuitement.
- 
-Exemple : «[ Layout Gala ](http://blog.html.it/layoutgala/)» 
+➡ **Ce modèle est réutilisable pour structurer tout site web.**
+
