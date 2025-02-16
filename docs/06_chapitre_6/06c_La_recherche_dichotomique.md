@@ -325,7 +325,7 @@ Bien entendu, ce n’est pas ainsi que l’on procède : on ouvre l‘annuaire a
 
 On appelle logarithme à base 2, log<sub>2</sub>(x) d’un nombre x ≥ 1, le nombre de fois qu’il faut le diviser x par 2 pour obtenir un nombre inférieur ou égal à 1.
 
-Sur la calculatrice, log<sub>2</sub>(x) = $\frac{log(x)}{log(2)}$
+Sur la calculatrice, log<sub>2</sub>(x) = $\frac{ln(x)}{ln(2)}$
 
 3. A partir du logarithme à base 2, retrouver le résultat obtenu à la question 1.
 4. Calculer le temps nécessaire pour rechercher un nom dans l’annuaire français pour n = 60 millions d’entrées.
