@@ -730,9 +730,9 @@ Si une image est **trop grande**, on peut afficher **une version réduite (minia
 - **En cliquant dessus**, l’image originale (`fleur.jpg`) s’ouvre en grand.  
 
 **<H3 STYLE="COLOR:red;">Activité n°23 :**</h3>  
-1. Créez une miniature de votre **image de passoire**.  
+1 Créez une miniature de votre **image de passoire**.  
 
-2. Liez la miniature à l’image **grande taille**.  
+2 Liez la miniature à l’image **grande taille**.  
 
 
 On peut proposer une miniature cliquable pour des images très grosses :
