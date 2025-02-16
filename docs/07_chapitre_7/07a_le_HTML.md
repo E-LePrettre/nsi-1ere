@@ -471,7 +471,9 @@ Exemple :
 
 **ON NE POURRA PAS LE FAIRE AVEC CAPYTALE**
 
+Donc on créera simplement une page3
 
+Créer un fichier `page3.html` dans le même dossier que `index.html
 
 
 #### <H4 STYLE="COLOR:MAGENTA;">4.6.4. Lien<a name="_page8_x40.00_y511.92"></a> relatif vers une page située dans un dossier parent</H4>

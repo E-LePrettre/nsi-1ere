@@ -21,49 +21,94 @@ title: 07b Le CSS
 
 ## <H2 STYLE="COLOR:BLUE;">1. La<a name="_page0_x40.00_y671.92"></a> petite histoire du CSS</H2>
 
-CSS (**Cascading Style Sheets**), permet de choisir la couleur du texte, la police utilisée, la taille du texte, les bordures, le fond… et de faire la mise en page du site (menu à gauche, en-tête calé en haut, etc). 
+Le **CSS (Cascading Style Sheets)** permet de personnaliser **l’apparence** d’un site web :  
 
-Aux débuts du Web, CSS n'existait pas, il n'y avait initialement que le langage HTML. Cependant, les pages HTML commençaient à devenir assez complexes. Il y avait de plus en plus de balises et c'était un joyeux mélange entre le fond et la forme, qui rendait la mise à jour des pages web de plus en plus complexe. C'est pour cela que l'on a créé le langage CSS. 
+✔ Couleur du texte,  
+✔ Police et taille des caractères,  
+✔ Bordures et arrière-plan,  
+✔ Mise en page (menus, en-tête, pied de page…).  
+
+## 🔍 Pourquoi a-t-on créé le CSS ?  
+
+Au début du Web, **CSS n’existait pas** ! Seul le **HTML** permettait d'afficher du contenu, mais **sans mise en page avancée**.  
+
+💡 **Problème :**  
+- HTML mélangeait **contenu** et **mise en forme**, ce qui compliquait les mises à jour.  
+- Il fallait **modifier chaque page une par une** pour changer l’apparence d’un site.  
+
+💡 **Solution :**  
+➡ **Le CSS est apparu pour séparer la mise en forme (CSS) du contenu (HTML).**  
+➡ Résultat : un site **plus facile à gérer et à modifier** !
+
 
 ## <H2 STYLE="COLOR:BLUE;">2. Ou<a name="_page1_x40.00_y36.92"></a> écrit-on le CSS ?</H2>
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.003.png)
 
-On peut écrire du code en langage CSS à trois endroits différents :  
+On peut écrire du CSS à **trois endroits différents** :  
 
-- dans un fichier .css (méthode la plus recommandée) ;  
-- dans l'en-tête ```<head>``` du fichier HTML ;  
-- directement dans les balises du fichier HTML via un attribut style  (méthode **la moins recommandée).**  
+| Méthode | Explication | Recommandation |
+|---------|------------|---------------|
+| **Fichier externe (.css)** | Le CSS est écrit dans un fichier **séparé** (`style.css`). | ✅ **Méthode recommandée** (bonne pratique) |
+| **Dans l’en-tête (`<head>`)** | Le CSS est ajouté **dans la page HTML**, entre `<style>...</style>`. | ⚠ **Dépannage uniquement** |
+| **Directement dans une balise** | Le CSS est ajouté avec **l’attribut `style`** dans une balise HTML. | ❌ **À éviter !** (mauvaise pratique) |
 
-Nous écrirons le langage CSS dans un fichier style.css. On place ce fichier **habituellement** dans un dossier css. Ici (dans capytale) nous le laisserons à la racine
+👉 **Nous utiliserons un fichier `style.css`** pour organiser proprement notre code CSS.  
+Habituellement, on place ce fichier dans un dossier `css/`, mais dans **Capytale**, il sera à la racine.  
 
-Voici un exemple d’arborescence de site web :
+
+
+## 🏗 Exemple d’arborescence d’un site web  
+
+```
+/mon-site/
+│── index.html
+│── page2.html
+│── page3.html
+│── style.css   ← Notre fichier CSS
+│── images/
+│   ├── image1.jpg
+│   ├── image2.jpg
+```
+ou :
 
 ![](6789.png)
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** Dans la index.html rajouter le lien vers le fichier css. 
+**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** **Dans `index.html`**, ajouter **le lien vers `style.css`** dans la section `<head>` :
 
 ```html
 <!DOCTYPE html>
-
 <html>
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
         <title>Logique sur les passoires</title>
     </head>
-``` 
+```
+📌 **Explication** :  
 
-Dans le fichier style.css
+- La balise `<link>` relie notre fichier HTML à la feuille de style CSS (`style.css`).  
+
+- Désormais, **toute la mise en forme sera gérée dans ce fichier !**  
+
+✅ **Enregistrer et observer `index.html`**.
+
+
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.006.png)
 
-Enregistrer et observer la index.html. 
 
-**<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** Dans la page2.html rajouter le lien vers le fichier css. 
+
+**<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** 
+
+Ajoutez **la même ligne** dans `page2.html` :  
+
 ```html
-    <link rel="stylesheet" href="style.css">
-``` 
+<link rel="stylesheet" href="style.css">
+```
+
+✅ **Enregistrer et observer `page2.html`**.
+
 
 
 
@@ -71,37 +116,48 @@ Enregistrer et observer la index.html.
 
 Enregistrer et observer les page2.html et page3.html. 
 
-On note un avantage du CSS, il ne suffit que d’écrire cette instruction qu’une seule fois pour tout le site !! et en cas de changement de style tous les fichiers seront changés en même temps. 
+**Pourquoi utiliser un fichier CSS externe ?**  
+
+✔ **Un seul fichier CSS pour tout le site** : 
+
+   - Si vous changez la couleur du texte **dans `style.css`**, **toutes les pages seront mises à jour automatiquement !**  
+
+✔ **Facilité de maintenance** :  
+
+   - Pas besoin de modifier chaque fichier HTML individuellement.  
+
+📌 **Conclusion :**  
+
+Utiliser un **fichier CSS externe** est **la meilleure pratique** pour créer un site bien organisé et facilement modifiable. 🚀
+ 
 
 ## <H2 STYLE="COLOR:BLUE;">3. Appliquer<a name="_page1_x40.00_y534.92"></a> un style</H2> 
 
-Dans un code CSS, on trouve trois éléments différents : 
 
-- Des noms de balises : on écrit des noms des balises dont on veut modifier l’apparence. Pour modifier l’apparence de tous les paragraphes ```<p>``` on doit écrire p. 
-- Des propriétés CSS : les effets de style de la page sont rangés dans des propriétés.  Par exemple color ou font-size 
+Un fichier CSS est composé de **trois éléments clés** :  
 
-- Les valeurs : le nom de la couleur ou la taille de la police 
+| Élément | Rôle |
+|---------|------|
+| **Sélecteurs (balises)** | Désignent les éléments HTML à modifier (ex : `p`, `h1`, `div`…) |
+| **Propriétés CSS** | Définissent l’effet appliqué (ex : `color`, `font-size`) |
+| **Valeurs** | Spécifient comment appliquer la propriété (ex : `red`, `16px`) |
 
-Par exemple : 
+ 
+
+### <H3 STYLE="COLOR:GREEN;">3.1. Sélectionner<a name="_page2_x40.00_y67.92"></a> une balise</H3>
+
+On peut appliquer un style à **toutes** les balises d’un même type en écrivant simplement le nom de la balise dans le fichier CSS.
+
+### **Exemple :**
 ```css
-balise1
-{
-    propriete1: valeur1;
-}
-
-balise2
-{
-    propriete1: valeur1;
-    propriete2: valeur2;
-    propriete3: valeur3;
-    propriete4: valeur4;
+p {
+    color: blue;
+    font-size: 16px;
 }
 ```
 
+📌 Ici, tous les paragraphes `<p>` auront un texte **bleu** et une taille de **16 pixels**.
 
-On peut mettre autant de propriétés que l'on veut à l'intérieur **des accolades.** Chaque propriété est suivie du symbole « deux-points » ( : ) puis de la valeur correspondante. Enfin, chaque ligne se termine par un point-virgule ( ; ). 
-
-### <H3 STYLE="COLOR:GREEN;">3.1. Sélectionner<a name="_page2_x40.00_y67.92"></a> une balise</H3>
 
 **<H3 STYLE="COLOR:red;">Activité n°4.:</H3>** Avec la feuille de style modifier toutes les couleurs des mots entre les balises ```<em>``` et ```<strong>```. 
 
@@ -115,82 +171,176 @@ strong
     color : rgb(35, 241, 241) ;
 }
 ```
+✅ **Enregistrer et observer les changements sur `index.html`**.
 
 
-**<H3 STYLE="COLOR:red;">Activité n°5.:</H3>** Avec la feuille de style modifier toutes les couleurs des titres de la index h1, h2, h3, h4 et h5 
+**<H3 STYLE="COLOR:red;">Activité n°5.:</H3>** Dans `style.css`, ajoutez :
+```css
+h1, h2, h3, h4, h5 {
+    color: purple;
+}
+```
+✅ **Enregistrer et observer `index.html`**.
+
+📌 **Note :**  
+
+- En listant plusieurs sélecteurs séparés par une **virgule**, on applique un style à plusieurs éléments en même temps.  
 
 ### <H3 STYLE="COLOR:GREEN;">3.2. Les<a name="_page2_x40.00_y258.92"></a> commentaires</H3> 
 
-Les commentaires ne seront pas affichés, ils servent simplement à indiquer des informations. Taper ```/*```, suivi de votre commentaire, puis ```*/``` pour terminer votre commentaire. 
+Les **commentaires** permettent d’expliquer du code **sans qu’il soit interprété par le navigateur**.  
+
+📌 **Syntaxe d’un commentaire en CSS :**
+```css
+/* Ceci est un commentaire */
+```
+
+💡 **Bonne pratique :**  
+
+- Utiliser des commentaires pour organiser et clarifier le code CSS.
+
+
 
 ### <H3 STYLE="COLOR:GREEN;">3.3. Class<a name="_page2_x40.00_y309.92"></a> et id</H3> 
 
-Ce qu’on vient de dire a un défaut : en appliquant une couleur aux paragraphes, tous les paragraphes possèdent la même présentation sur toutes les pages. 
+Parfois, **on ne veut pas appliquer un style à toutes les balises d’un même type**, mais seulement à certaines d’entre elles.  
 
-On utilise alors des attributs spéciaux qui fonctionnent sur toutes les balises :  
-
-- l’attribut class
-- l’attribut id
+On utilise alors **les classes (`class`)** et **les identifiants (`id`)**.
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.3.1. L’attribut<a name="_page2_x40.00_y406.92"></a> class</H4>
 
-C’est un attribut que l’on peut mettre dans toutes les balises 
+Une **classe** permet d’appliquer un style **à plusieurs éléments**.  
 
+📌 **Syntaxe en HTML :**  
 ```html
-<h1 class=""> </h1> 
-<p class=""> </p> 
-<img class="" />
+<p class="important">Ce texte est important.</p>
 ```
 
+📌 **Syntaxe en CSS :**  
+```css
+.important {
+    color: red;
+    font-weight: bold;
+}
+```
+➡ Une classe doit toujours être précédée d’un **point (`.`)** en CSS.
 
-
-Entre les doubles cotes on associe un nom. 
-
-**<H3 STYLE="COLOR:red;">Activité n°6.:</H3>** Mettre des balises p autour du **théorème** de la index.html. 
+**<H3 STYLE="COLOR:red;">Activité n°6.:</H3>** **Dans `index.html`**, encadrer le théorème avec une balise `<p>` en lui attribuant une **classe** 
 
 ```html
     <p class ="theoreme"> …………………………………………..</p>
 ```
 
 
-Puis dans la feuille de style rajouter 
-
+**Dans `style.css`**, ajouter :
 ```css
-.theoreme
-{
-    color : red
+.theoreme {
+    color: red;
+    font-style: italic;
 }
 ```
 
-Enregistrer tout et observer. 
+✅ **Enregistrer et observer `index.html`**.
 
-Noter que le nom de la class doit se noter **avec un point en CSS**. 
+
+
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.3.2. L’attribut<a name="_page2_x40.00_y639.92"></a> id</H4> 
 
-L’attribut id est utilisé exactement de la même manière que l’attribut class. La différence est qu’il ne pourra être utilisé **qu’une seule fois par page.**  
+Un **ID** est utilisé **pour un seul élément unique** sur une page.
 
-Par exemple id = "tata" => 1 seul fois mais id = "titi"  pourra aussi être utilisé sur la même page. Habituellement, on ne met un attribut id qu’à quelque chose d’unique sur la page, **par exemple le logo ou l’introduction** 
+📌 **Syntaxe en HTML :**  
+```html
+<h1 id="titre">Mon titre</h1>
+```
 
-En CSS un id doit etre précéder d’un # 
+📌 **Syntaxe en CSS :**  
 ```css
-#logo 
-{ 
-/* Indiquez les propriétés CSS ici */ 
+#titre {
+    color: blue;
+    text-align: center;
 }
 ```
+➡ Un ID doit toujours être précédé d’un **dièse (`#`)** en CSS.
+
+💡 **Différence entre `class` et `id`** :  
+
+- `class` → Peut être utilisé sur **plusieurs éléments**.  
+
+- `id` → Un seul usage **par page**.
 
 
 ### <H3 STYLE="COLOR:GREEN;">3.4. Les<a name="_page3_x40.00_y36.92"></a> balises universelles</H3> 
 
-Pour le theorème de l’activité précédente, il a fallu rajouter des balises p. Or il existe des balises qui ne servent à rien : 
+Parfois, on veut **modifier une partie du texte** sans ajouter de `<p>`.  
 
-- ```<span> </span>``` c’est une balise inline c’est-à-dire que l’on place au sein d’un paragraphe de texte, pour sélectionner certains mots uniquement  
-- ```<div> </div>``` c’est une balise block qui entoure un bloc de texte. Elles créent un nouveau bloc dans la page et provoquent donc obligatoirement un retour à la ligne.  
+Dans ce cas, on utilise les **balises neutres** :
 
-**<H3 STYLE="COLOR:red;">Activité n°7.:</H3>** Modifier la index et la feuille de style pour que l’on puisse voir cela : 
+| Balise | Type | Utilisation |
+|--------|------|-------------|
+| `<span>` | **Inline** | Modifier **quelques mots** dans un texte |
+| `<div>` | **Block** | Regrouper un **ensemble d’éléments** |
+
+**<H3 STYLE="COLOR:red;">Activité n°7.:</H3>** 
+
+1 **Dans `index.html`**, modifier le texte du théorème :
+```html
+<p>La notion de <span class="passoire">passoires</span> est indépendante de la notion de trous.</p>
+```
+
+2 **Dans `style.css`**, ajouter :
+```css
+.passoire {
+    font-weight: bold;
+    background-color: yellow;
+}
+```
+
+✅ **Enregistrer et observer `index.html`**.
+
+📌 **Explication :**
+
+- `<span>` **n’ajoute pas de retour à la ligne**.
+
+- Il permet de modifier uniquement le mot **"passoires"**.
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.018.jpeg)
+
+
+**Exemple : Différence entre `<div>` et `<span>`**  
+
+**Avec `<div>` (bloc)** :
+```html
+<div class="citation">
+    <p>« Un grand pouvoir implique de grandes responsabilités. »</p>
+</div>
+```
+```css
+.citation {
+    border: 2px solid black;
+    padding: 10px;
+    background-color: lightgray;
+}
+```
+
+**Avec `<span>` (inline)** :
+```html
+<p>Ce mot est <span class="rouge">rouge</span> !</p>
+```
+```css
+.rouge {
+    color: red;
+    font-weight: bold;
+}
+```
+
+📌 **À retenir :**
+
+- `<div>` sert à **structurer** la mise en page.
+
+- `<span>` sert à **modifier une partie du texte** sans créer de nouveau bloc.
+
+
 
 ### <H3 STYLE="COLOR:GREEN;">3.5. Les<a name="_page3_x40.00_y425.92"></a> sélecteurs avancés</H3> 
 - ```*``` est un sélecteur universelle il sélectionne toutes les balises sans exception. 
