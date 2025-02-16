@@ -709,27 +709,54 @@ L’attribut `title` permet d’afficher **une infobulle** lorsque la souris pas
 
 Enregistrer et observer.
 
-On peut proposer une miniature cliquable pour des images très grosses :
+### <H3 STYLE="COLOR:GREEN;">5.4. Créer une miniature cliquable</h3>
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.066.png)
+Si une image est **trop grande**, on peut afficher **une version réduite (miniature)** qui **redirige vers l’image originale**.  
 
-Il faut les placer toutes les deux dans un dossier img. On affiche la version mini sur la page et on fait un lien vers la plus grosse image pour que l’image agrandie s’affiche lorsqu’on clique sur la miniature.
-
-
+**Exemple :**  
 ```html
 <p>
     Voici une photo d'une fleur de mon jardin. Cliquez dessus !<br />
     <a href="img/fleur.jpg">
-        <img src="images/fleur_mini.jpg" alt="Photo d'une fleur" title="C'est beau les fleurs quand même !" />
+        <img src="images/fleur_mini.jpg" alt="Photo d'une fleur" title="Cliquez pour voir en grand !" />
     </a>
 </p>
 ```
-Vérification de la syntaxe de votre page.
 
-Pour vérifier que votre page Web est conforme aux spécifications HTML5, rendez-vous sur le site du W3C (World Wide Web Consortium) : [http://validator.w3.org](http://validator.w3.org)
+📌 **Explication :**  
 
-Pour une page Web locale (pas encore publiée sur le Web) :
+- **L’image mini** (`fleur_mini.jpg`) s’affiche sur la page.  
 
-Validate by File Upload → Check
+- **En cliquant dessus**, l’image originale (`fleur.jpg`) s’ouvre en grand.  
 
-S'il y a des erreurs, elles vous seront indiquées, avec des explications.
+**<H3 STYLE="COLOR:red;">Activité n°23 :**</h3>  
+1. Créez une miniature de votre **image de passoire**.  
+
+2. Liez la miniature à l’image **grande taille**.  
+
+
+On peut proposer une miniature cliquable pour des images très grosses :
+
+![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.066.png)
+
+Il faut les placer toutes les deux dans le même dossier. On affiche la version mini sur la page et on fait un lien vers la plus grosse image pour que l’image agrandie s’affiche lorsqu’on clique sur la miniature.
+
+
+
+### <H3 STYLE="COLOR:GREEN;">5.5. Vérification du code HTML  
+
+💡 **Astuce : Valider son code HTML**  
+
+Il est important de **vérifier la syntaxe** de votre page Web.  
+
+Pour cela, utilisez **le validateur W3C** :  
+🔗 **[http://validator.w3.org](http://validator.w3.org)**  
+
+📌 **Si votre page n’est pas encore en ligne :** 
+
+- **Utiliser l’option "Validate by File Upload"**.  
+
+- **Cliquer sur "Check"**.  
+
+Si des erreurs sont détectées, elles seront **expliquées en détail** pour vous aider à les corriger.
+
