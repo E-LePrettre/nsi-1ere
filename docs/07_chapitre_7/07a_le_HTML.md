@@ -109,7 +109,16 @@ Ici, <p> ouvre un paragraphe et </p> le ferme.
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.2.2. Les<a name="_page2_x40.00_y258.92"></a> balises orphelines</H4>
 
-Elles servent en un point précis `<balise/>`.
+Certaines balises n’ont pas de balise fermante, on les appelle balises orphelines.
+Elles servent généralement à insérer des éléments simples comme des images ou des sauts de ligne.
+
+📌 Exemples :
+
+```html
+<img src="image.jpg" alt="Une image"> <!-- Balise image -->
+<br> <!-- Saut de ligne -->
+<hr> <!-- Ligne horizontale -->
+```
 
 ### <H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page2_x40.00_y290.92"></a> attributs</H3>
 
