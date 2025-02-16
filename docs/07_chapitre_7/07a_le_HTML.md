@@ -154,51 +154,55 @@ Autre exemple avec une image :
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <title>Logique sur les passoires</title>
+        <meta charset="utf-8">
+        <title>Première page HTML</title>
     </head>
     <body>
-        Bonjour tout le monde
+        <h1>Bonjour tout le monde</h1>
+        <p>Ceci est ma première page HTML.</p>
     </body>
 </html>
 ```
-Par souci de lisibilité du code on met des indentations (non obligatoires en HTML5).
+📌 Explication du code :
 
-Enregistrer, ouvrir le fichier et observer…
+- `<!DOCTYPE html>` : Indique que c’est une page HTML5.
 
-- La première ligne s’appelle le **doctype**, elle indique qu’il s’agit bien d’une page web HTML.
-- Les deux balises html englobent tout le contenu de la page.
-- L’en-tête head donne le titre, l’encodage. Le titre s’affichera dans l’onglet du navigateur et dans les résultats de recherche de Google par exemple. Les informations que contient l'en-tête ne sont pas affichées sur la page, ce sont simplement des informations générales à destination de l'ordinateur.
+- `<html>` : Conteneur principal de la page.
 
-`<meta charset="utf-8" />` : Cette balise indique l'encodage utilisé dans le fichier .html qui détermine comment les caractères spéciaux vont s'afficher (accents, idéogrammes chinois et japonais, caractères arabes, etc.). Il y a plusieurs techniques d'encodage mais aujourd'hui autant que possible on utilise UTF-8.
+- `<head>` : Contient les informations sur la page (titre, encodage…).
 
-`<title>` : C'est le titre de votre page, probablement l'élément le plus important ! Toute page doit avoir un titre qui décrit ce qu'elle contient.
+- `<meta charset="utf-8">` : Définit l'encodage des caractères (permet d'afficher les accents).
+
+- `<title>` : Définit le titre affiché dans l’onglet du navigateur.
 
 ![Title](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.008.png)
 
-Il faut savoir que le titre apparaît
+- `<body>` : Contient le contenu affiché sur la page.
 
- aussi dans les résultats de recherche, comme sur Google.
+- `<h1>` : Affiche un titre principal.
 
-- Le corps body : tout ce qui est écrit ici sera affiché.
+- `<p>` : Affiche un paragraphe.
 
-**Les commentaires** : (pour pouvoir se relire ou pour expliquer le code)
+📝 Bonnes pratiques :
 
-`<!-- je fais un commentaire-->`
+- Toujours bien indenter le code pour le rendre lisible (non obligatoire mais recommandé).
 
-Tout le code source est accessible à partir du navigateur. Dans **Firefox** : Menu > Web developer > page source ou CTRL + u.
+- Utiliser des commentaires pour expliquer le code :
+```html
+<!-- Ceci est un commentaire en HTML -->
+```
 
-**Exemple de structure complète d’une page HTML**
+**Exemple complet d’une page HTML avec CSS et JavaScript**
+Voici un exemple d'une page HTML plus avancée avec un fichier CSS et un fichier JavaScript :
 
-Voici un exemple complet d'une page HTML simple :
 ```html
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>Exemple de page HTML</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers un fichier CSS -->
+    <script src="script.js"></script> <!-- Lien vers un fichier JavaScript -->
 </head>
 <body>
     <h1>Bienvenue sur ma page</h1>
@@ -207,11 +211,18 @@ Voici un exemple complet d'une page HTML simple :
 </body>
 </html>
 ```
+📌 Ce qu’il faut retenir :
+✔ ``<!DOCTYPE html>`` pour préciser qu'on utilise HTML5.
 
-- `<!DOCTYPE html>` : Indique qu'il s'agit d'un document HTML5.
-- `<html>` : Conteneur principal de tout le contenu HTML.
-- `<head>` : Contient des **informations sur le document, comme le titre et les liens vers les ressources externes**.
-- `<body>` : Contient le **contenu visible et interactif de la page**.
+✔ ``<head>`` contient le titre, les styles et les scripts.
+
+✔ ``<body>`` contient le contenu visible.
+
+✔ On peut ajouter du CSS et du JavaScript pour enrichir la page.
+
+💡 Astuce :
+Vous pouvez voir le code source d'une page web en appuyant sur **CTRL + U** (Firefox, Chrome, Edge).
+
 
 
 ![DOM-model](DOM-model.svg.png)
