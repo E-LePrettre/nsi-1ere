@@ -230,7 +230,9 @@ Vous pouvez voir le code source d'une page web en appuyant sur **CTRL + U** (Fir
 ## <H2 STYLE="COLOR:BLUE;">4. L’organisation<a name="_page3_x40.00_y117.92"></a> d’une page HTML5</H2>
 ### <H3 STYLE="COLOR:GREEN;">4.1. Les<a name="_page3_x40.00_y139.92"></a> paragraphes</H3>
 
-La plupart du temps, on écrit du texte à l’intérieur d’un paragraphe. Le langage HTML propose justement la balise `<p>` pour délimiter les paragraphes. Il faut évidemment mettre ses paragraphes entre les balises body.
+En HTML, la majorité du texte est organisé en paragraphes. Pour cela, on utilise la balise ``<p>``.
+
+Le texte d’un paragraphe doit toujours être inclus dans la balise ``<body>``.
 
 **<H3 STYLE="COLOR:red;">Activité n°3. :</H3>**
 ```html
@@ -249,15 +251,21 @@ La plupart du temps, on écrit du texte à l’intérieur d’un paragraphe. Le 
     </p>
 </body>
 ```
-**Attention à mettre des indentations pour que le code soit lisible !!**
+📝 Conseil : Indentez bien votre code pour qu’il soit lisible et compréhensible !
 
 ### <H3 STYLE="COLOR:GREEN;">4.2. La<a name="_page3_x40.00_y481.92"></a> balise retour à la ligne</H3>
 
-Il existe une balise orpheline `<br />` qui permet un retour à la ligne.
+En HTML, les retours à la ligne ne sont pas pris en compte automatiquement. Pour forcer un saut de ligne, on utilise la balise orpheline `<br />`.
 
 **<H3 STYLE="COLOR:red;">Activité n°5. :</H3>** Modifier l’application n°4 pour ne mettre qu’un seul paragraphe et garder la mise en page.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.018.jpeg)
+
+💡 Rappel :
+
+- ``<p>`` délimite un paragraphe.
+
+- ``<br />`` insère un saut de ligne à l’intérieur d’un paragraphe.
 
 ### <H3 STYLE="COLOR:GREEN;">4.3. Les<a name="_page3_x40.00_y702.92"></a> titres</H3>
 
