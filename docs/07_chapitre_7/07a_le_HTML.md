@@ -104,8 +104,8 @@ La balise fermante </balise> marque la fin de l’élément.
 
 ```html
 <p>Ceci est un paragraphe.</p>
-Ici, <p> ouvre un paragraphe et </p> le ferme.
 ```
+Ici, ``<p>`` ouvre un paragraphe et ``</p>`` le ferme.
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.2.2. Les<a name="_page2_x40.00_y258.92"></a> balises orphelines</H4>
 
@@ -135,6 +135,7 @@ Dans cet exemple :
 
 `<a>` est la balise de lien.
 `href="https://example.com"` est un attribut qui précise où pointe le lien.
+
 Autre exemple avec une image :
 
 ```html
@@ -145,7 +146,7 @@ Autre exemple avec une image :
 
 - alt="Une belle photo" est un texte alternatif affiché si l’image ne charge pas.
 
-`<balise attribut="valeur">`
+
 
 ### <H3 STYLE="COLOR:GREEN;">3.4. Structure<a name="_page2_x40.00_y347.92"></a> de base d’une page HTML5</H3>
 
@@ -212,6 +213,7 @@ Voici un exemple d'une page HTML plus avancée avec un fichier CSS et un fichier
 </html>
 ```
 📌 Ce qu’il faut retenir :
+
 ✔ ``<!DOCTYPE html>`` pour préciser qu'on utilise HTML5.
 
 ✔ ``<head>`` contient le titre, les styles et les scripts.
@@ -240,7 +242,7 @@ Le texte d’un paragraphe doit toujours être inclus dans la balise ``<body>``.
     <p>Bonjour et bienvenue sur ma page</p>     
 </body> 
 ```
-**<H3 STYLE="COLOR:red;">Activité n°4. :</H3>** Je voudrais écrire le texte suivant exactement avec la même mise en page ci-dessous à la place de « Bonjour et bienvenue sur ma page ». **À vous de jouer !!**
+**<H3 STYLE="COLOR:red;">Activité n°4. :**</H3> Je voudrais écrire le texte suivant exactement avec la même mise en page ci-dessous à la place de « Bonjour et bienvenue sur ma page ». **À vous de jouer !!**
 ```html
 <body>
     <p>
