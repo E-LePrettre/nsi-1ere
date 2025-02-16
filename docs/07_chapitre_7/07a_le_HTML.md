@@ -78,7 +78,17 @@ Le site [https://caniuse.com/](https://caniuse.com/) tient à jour une liste des
 
 ### <H3 STYLE="COLOR:GREEN;">3.2. Les<a name="_page2_x40.00_y155.92"></a> balises</H3>
 
-Pour donner les instructions en HTML il faut utiliser des **balises**. Celles-ci sont invisibles à l’écran mais elles permettent à l’ordinateur de comprendre ce qu’il doit afficher. Les balises se repèrent facilement. Elles sont entourées de « chevrons », c’est-à-dire des symboles < balise>.
+Pour structurer une page en HTML, on utilise des balises.
+Les balises ne sont pas visibles à l’écran, mais elles indiquent au navigateur comment afficher le contenu.
+
+💡 Repérer une balise HTML :
+Les balises sont entourées de chevrons < >.
+
+Exemple :
+
+```html
+<p>Voici un paragraphe en HTML.</p>
+```
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.2.1. Les<a name="_page2_x40.00_y212.92"></a> balises en paires</H4>
 
