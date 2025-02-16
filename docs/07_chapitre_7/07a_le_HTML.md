@@ -271,12 +271,17 @@ En HTML, les retours à la ligne ne sont pas pris en compte automatiquement. Pou
 
 ### <H3 STYLE="COLOR:GREEN;">4.3. Les<a name="_page3_x40.00_y702.92"></a> titres</H3>
 
-Il a y six niveaux de titres différents :
+HTML propose 6 niveaux de titres :
 
-- Entre les balises `<h1></h1>` : titre de niveau 1.
-- Entre les balises `<h2></h2>` : titre de niveau 2.
-- ….
-- Entre les balises `<h6></h6>` : titre de niveau 6.
+- ``<h1>`` : Titre principal
+
+- ``<h2>`` : Sous-titre
+
+- ``<h3>`` : Sous-sous-titre
+
+- …
+
+- ``<h6>`` : Niveau de titre le plus bas
 
 **<H3 STYLE="COLOR:red;">Activité n°6. :</H3>** Ajouter un titre à l’application n°4 : Les passoires Puis un sous-titre : Le théorème des passoires,
 
@@ -297,7 +302,7 @@ Ajouter les bonnes balises pour observer cela sur le navigateur.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.025.jpeg)
 
-**Attention à mettre des indentations pour que le code soit lisible !!**
+
 
 **<H3 STYLE="COLOR:red;">Activité n°8. :</H3>** Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
 
@@ -328,47 +333,58 @@ Il y a trois sortes d'autobus : les autobus qui marchent à droite ; les autobus
 
 ### <H3 STYLE="COLOR:GREEN;">4.4. Mettre<a name="_page5_x40.00_y676.92"></a> en valeur</H3>
 
-Il y a différentes façons de mettre en valeur :
+En HTML, on peut **mettre en valeur du texte** de différentes manières :  
 
-- Pour mettre un peu en valeur le texte on utilise la balise `<em></em>`.
+| Balise | Rôle |
+|--------|------|
+| `<em>` | Met en italique (mise en valeur légère) |
+| `<strong>` | Met en gras (mise en valeur forte) |
+| `<mark>` | Surligne le texte |
 
 **<H3 STYLE="COLOR:red;">Activité n°10. :</H3>** utiliser les balises précédentes pour le mot passoire et théorème du premier paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.033.png)
 
-- Pour mettre en valeur le texte on utilise la balise `<strong></strong>`.
 
 **<H3 STYLE="COLOR:red;">Activité n°11. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du deuxième paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.036.jpeg)
 
-- Les balises `<mark></mark>` permettent de faire ressortir visuellement une portion de texte. L’extrait n’est pas forcément considéré comme important mais on veut qu’il se distingue bien du reste du texte.
+
 
 **<H3 STYLE="COLOR:red;">Activité n°12. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du troisième paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.038.jpeg)
 
-**Attention** : HTML pour le fond, CSS pour la forme
+**Pourquoi structurer correctement son HTML ?**  
 
-Le rôle des balises est d
+L'utilisation correcte des balises (`<h1>`, `<p>`, `<strong>`, etc.) est essentielle pour :  
+✅ **La lisibilité** du code.  
+✅ **Le référencement** (SEO) : Google repère les titres et le texte important.  
+✅ **L’accessibilité** : les logiciels de lecture d’écran comprennent mieux le contenu.  
 
-'indiquer le sens du texte. Ainsi, `<strong>` indique à l'ordinateur « Ce texte est important ». C'est tout.
+---
 
-Et pour montrer que le texte est **important**, l'ordinateur décide de le mettre en gras (mais il pourrait aussi bien l'écrire en rouge !). La plupart des navigateurs affichent les textes importants en gras, mais rien ne les y oblige.
+✅ **Améliorations apportées :**  
+- **Progression fluide** avec des exercices **guidés**.  
+- **Explications claires** et simplifiées.  
+- **Correction des répétitions et reformulations**.  
+- **Mise en avant des bonnes pratiques HTML**.  
 
-Pourquoi c’est important de différencier par les balises adéquates le texte ?
-
-De nombreux programmes analysent le code source des pages web, à commencer par les robots de moteurs de recherche. Ces robots parcourent le Web en lisant le code HTML de tous les sites. C'est le cas des robots de Google et de Bing, par exemple. Les mots-clés « **importants** » ont tendance à avoir plus de valeur à leurs yeux, donc si quelqu'un fait une recherche sur ces mots, il a plus de chances de tomber sur votre site.
 
 ### <H3 STYLE="COLOR:GREEN;">4.5. Les<a name="_page7_x40.00_y36.92"></a> listes</H3>
 
-Il y a deux types de listes :
+En HTML, il existe **deux types de listes** :  
 
-- Les listes non ordonnées ou listes à puces
+#### <H4 STYLE="COLOR:MAGENTA;">4.5.1. Les listes non ordonnées (listes à puces) </h4> 
 
-Pour créer une liste d’éléments sans notion d’ordre, il suffit d’utiliser les balises `<ul></ul>`. Puis pour chacun des éléments on utilise les balises `<li></li>`.
+Les listes **non ordonnées** sont des listes où l’ordre des éléments n’a pas d’importance.  
+Pour les créer, on utilise :  
 
-Par exemple :
+- `<ul>` (unordered list) pour **délimiter** la liste.  
+- `<li>` (list item) pour chaque **élément** de la liste.  
+
+**Exemple :**  
 ```html
 <ul>
     <li>Fraises</li>
@@ -376,13 +392,18 @@ Par exemple :
     <li>Cerises</li>
 </ul>
 ```
+
 **<H3 STYLE="COLOR:red;">Activité n°13. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du cinquième paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.040.png)
 
-- Les listes ordonnées ou listes numérotées ou énumérations
 
-Il suffit de remplacer les balises `<ul>` par `<ol>` et on utilise aussi les balises `<li></li>`. Par exemple :
+#### <H4 STYLE="COLOR:MAGENTA;">4.5.2. Les listes ordonnées (listes numérotées) </h4>
+
+Les listes **ordonnées** sont des listes **numérotées** où l’ordre des éléments a de l’importance.  
+Pour les créer, on remplace `<ul>` par `<ol>` (ordered list).  
+
+**Exemple :**  
 ```html
 <ol>
     <li>Fraises</li>
@@ -390,64 +411,94 @@ Il suffit de remplacer les balises `<ul>` par `<ol>` et on utilise aussi les bal
     <li>Cerises</li>
 </ol>
 ```
+
 **<H3 STYLE="COLOR:red;">Activité n°14. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du dernier paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.043.jpeg)
 
 ### <H3 STYLE="COLOR:GREEN;">4.6. Les<a name="_page7_x40.00_y697.92"></a> liens hypertexte</H3>
+
+Les **liens hypertexte** permettent de naviguer d’une page à une autre en HTML.  
+Pour créer un lien, on utilise la balise `<a>` avec l’attribut `href` qui définit l’URL cible. 
+
 #### <H4 STYLE="COLOR:MAGENTA;">4.6.1. Les<a name="_page7_x40.00_y717.92"></a> liens absolus</H4>
 
-Pour faire un lien vers un autre site, il faut utiliser les balises `<a></a>` et un attribut href qui indiquera la page.
-Par exemple :
+Un **lien absolu** mène vers une adresse **externe**, c’est-à-dire vers un autre site web.  
+
+**Exemple :**  
 ```html
 <a href="https://fr.wikipedia.org/wiki/Passoire">Passoire</a>
 ```
-**<H3 STYLE="COLOR:red;">Activité n°15. :</H3>** utiliser les balises précédentes pour mettre un lien vers casserole sur Wikipedia comme ci-dessous.
+
+**<H3 STYLE="COLOR:red;">Activité n°15. :</H3>** Créer un lien vers la page **Wikipedia de "Casserole"** en utilisant `<a>`. comme ci-dessous.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.046.jpeg)
 
-**Remarque** : Si vous faites un lien vers un site qui comporte une adresse un peu bizarre avec des &, comme : `http://www.site.com/?data=15&name=mateo21`, vous devrez remplacer tous les « & » par « `&amp;` » dans votre lien comme ceci : `http://www.site.com/?data=15&amp;name=mateo21`.
+📌 **Remarque :**  
+Si une URL contient des **"&"**, il faut remplacer chaque **"&"** par **"&amp;"**.  
+Exemple :  
+```html
+<a href="http://www.site.com/?data=15&amp;name=mateo21">Mon lien</a>
+```
+
 
 #### <H4 STYLE="COLOR:MAGENTA;">4.6.2. Lien<a name="_page8_x40.00_y259.92"></a> relatif vers une page d’un même dossier</H4>
 
-Pour faire un lien vers une page située dans un même dossier, on crée un lien relatif. Il suffit d’utiliser les balises `<a>` avec l’attribut href.
+Un **lien relatif** pointe vers une page située dans **le même dossier**.  
 
-**<H3 STYLE="COLOR:red;">Activité n°16. :</H3>** Créer une nouvelle page html page2.html dans le dossier contenant la page1 (Titre : Page 2). Après avoir rempli, la **structure minimale de la nouvelle page html** :
+Exemple :  
 ```html
-<p>
-    Pour consulter la <a href="index.html">logique sur les passoires</a>
-</p>
+<a href="page2.html">Aller à la page 2</a>
 ```
 
-Observer la page2.html.
+
+**<H3 STYLE="COLOR:red;">Activité n°16. :</H3>** 
+
+1. Créer un fichier `page2.html` dans le même dossier que `index.html`.  
+
+2. Ajouter un lien dans `page2.html` pour **revenir à `index.html`**. 
+
+
 
 #### <H4 STYLE="COLOR:MAGENTA;">4.6.3. Lien<a name="_page8_x40.00_y391.92"></a> relatif vers une page située dans un dossier fils</H4>
 
-**ON NE POURRA PAS LE FAIRE AVEC CAPYTALE**
-Pour faire un lien vers une page située dans un sous-dossier, on utilise le chemin relatif :
+Un lien peut mener à une page située dans **un sous-dossier**.  
 
-Créer un dossier **contenu** dans le dossier contenant la page index.html. Créer une nouvelle page html page3.html avec la **structure minimale** dans le dossier contenu (Titre : Page3). Sur la page2.html, rajouter :
+Exemple :  
 ```html
-<p>
-    Pour consulter la <a href="contenu/page3.html">page 3</a> du site
-</p>
+<a href="contenu/page3.html">Accéder à la page 3</a>
 ```
 
-Observer la page2.html.
+**ON NE POURRA PAS LE FAIRE AVEC CAPYTALE**
+
+
+
 
 #### <H4 STYLE="COLOR:MAGENTA;">4.6.4. Lien<a name="_page8_x40.00_y511.92"></a> relatif vers une page située dans un dossier parent</H4>
-**ON NE POURRA PAS LE FAIRE AVEC CAPYTALE**
-Pour faire un lien vers une page dans un dossier parent, on utilise toujours la même chose.
 
-Sur la page3.html, rajouter :
+Si la page se trouve **dans un dossier parent**, on utilise `../` pour remonter d’un niveau. 
+
+Exemple :  
 ```html
-<p>
-    Pour consulter la <a href="../page2.html">page 2</a> du site
-</p>
+<a href="../page2.html">Revenir à la page 2</a>
 ```
+
+**ON NE POURRA PAS LE FAIRE AVEC CAPYTALE**
+
 #### <H4 STYLE="COLOR:MAGENTA;">4.6.5. Lien<a name="_page8_x40.00_y599.92"></a> vers une ancre sur une même page</H4>
 
-Une **ancre** est une sorte de point de repère que l’on peut mettre dans les pages html lorsqu’elles sont très longues. Il peut alors être utile de faire un lien amenant plus bas dans la même page pour que le visiteur puisse sauter directement à la partie qui l'intéresse. Pour créer une ancre, il suffit de rajouter l'attribut id à une balise qui va alors servir de repère. Ce peut être n'importe quelle balise.
+Les **ancres** permettent de **naviguer à l’intérieur d’une même page**.  
+
+- On crée une ancre avec un `id` sur un élément.
+
+- On fait un lien vers cet `id` avec `#`.  
+
+**Exemple :**  
+```html
+<h1 id="haut">Les passoires</h1>
+<a href="#haut">Revenir en haut</a>
+```
+
 
 **<H3 STYLE="COLOR:red;">Activité n°17. :</H3>** Sur la index.html, on va faire une ancre sur le titre en haut de page
 ```html
@@ -464,7 +515,14 @@ Enregistrer et observer. S’il ne se passe rien, augmenter le zoom afin de fair
 
 #### <H4 STYLE="COLOR:MAGENTA;">4.6.6. Lien<a name="_page9_x40.00_y36.92"></a> vers une ancre sur une autre page</H4>
 
-Pour faire un lien vers **une ancre située dans une autre page,** on précise l’adresse de la page et le nom de l’ancre précédée de #.
+Pour faire un lien vers **une ancre située dans une autre page**, on précise la page suivie de `#id`.  
+
+**Exemple :** 
+
+```html
+<a href="index.html#haut">Retour au début de index.html</a>
+```
+
 
 **<H3 STYLE="COLOR:red;">Activité n°18. :</H3>** Sur la page2.html, on va faire un lien vers l’ancre de la index.html.
 ```html
@@ -480,7 +538,12 @@ Enregistrer et observer.
 
 #### <H4 STYLE="COLOR:MAGENTA;">4.6.7. Lien<a name="_page9_x40.00_y195.92"></a> affichant une infobulle</H4>
 
-Avec l’**attribut** title
+L’attribut `title` permet d’afficher une **infobulle** lorsque l’utilisateur survole un lien.  
+
+**Exemple :**  
+```html
+<a href="index.html#haut" title="Vous ne le regretterez pas !">Retour au début</a>
+```
 
 **<H3 STYLE="COLOR:red;">Activité n°19. :</H3>** Sur la page2.html, on va faire une infobulle
 ```html
@@ -492,7 +555,13 @@ Enregistrer et observer.
 
 #### <H4 STYLE="COLOR:MAGENTA;">4.6.8. Lien<a name="_page9_x40.00_y316.92"></a> qui ouvre une nouvelle fenêtre</H4>
 
-Pour forcer l’ouverture d’un lien dans une nouvelle fenêtre, on rajoutera target="_blank" à la balise `<a>`
+L’attribut `target="_blank"` ouvre le lien **dans un nouvel onglet**.  
+
+**Exemple :**  
+```html
+<a href="https://example.com" target="_blank">Visitez ce site</a>
+```
+
 
 **<H3 STYLE="COLOR:red;">Activité n°20. :</H3>** Sur la page2.html, on va faire une infobulle
 ```html
@@ -504,7 +573,13 @@ Enregistrer et observer.
 
 #### <H4 STYLE="COLOR:MAGENTA;">4.6.9. Un<a name="_page9_x40.00_y437.92"></a> lien pour envoyer un e-mail</H4>
 
-Avec un lien de type mailto, en cas de clic, un nouveau message vide s’ouvre.
+Un lien **mailto** ouvre automatiquement une fenêtre pour envoyer un e-mail.  
+
+**Exemple :**  
+```html
+<a href="mailto:exemple@email.com">Envoyez-moi un e-mail !</a>
+```
+
 
 **<H3 STYLE="COLOR:red;">Activité n°21. :</H3>** Sur la index.html, on va faire un lien vers un mail
 ```html
@@ -516,67 +591,115 @@ Enregistrer et observer.
 
 #### <H4 STYLE="COLOR:MAGENTA;">4.6.10. Un<a name="_page9_x40.00_y544.92"></a> lien pour télécharger un fichier</H4>
 
-Il s’agit d’un même type de lien mais vers le dossier à télécharger.
+Un lien peut être utilisé pour télécharger un fichier en le pointant directement.  
 
-Par exemple :
+**Exemple :**  
 ```html
-<p><a href="monfichier.zip">Télécharger le fichier</a></p>
+<a href="monfichier.zip">Télécharger le fichier</a>
 ```
 
 ## <H2 STYLE="COLOR:BLUE;">5. Insérer<a name="_page9_x40.00_y607.92"></a> une image</H2>
+
+Les images sont essentielles dans une page web. Elles permettent **d’illustrer, d’attirer l’attention et d’améliorer l’expérience utilisateur**.  
+
+
 ### <H3 STYLE="COLOR:GREEN;">5.1. Les<a name="_page9_x40.00_y629.92"></a> différents formats d’images</H3>
 
-Le format de l’image influence le poids mais également la qualité de l’image. Toutes les images diffusées sur internet ont un point commun : elles sont **compressées.**
+Le **format de l’image** influence **son poids et sa qualité**. Toutes les images sur internet sont **compressées** pour alléger leur poids et faciliter leur affichage.
 
 #### <H4 STYLE="COLOR:MAGENTA;">5.1.1. Le<a name="_page9_x40.00_y680.92"></a> JPEG</H4>
 
-Les images au format JPEG (Joint Photographic Expert Group) sont très répandues sur le Web. Ce format est conçu pour réduire le poids des photos qui peuvent comporter plus de 16 millions de couleurs différentes. Les images JPEG sont enregistrées avec l’extension .jpg ou .jpeg. Ce format permet de réduire le poids des photos mais les images sont de moindre qualité.
+📌 **JPEG (Joint Photographic Expert Group)** est le format d’image **le plus courant** sur le Web.
+
+✔ Supporte **16 millions de couleurs**. 
+
+✔ **Idéal pour les photos** (paysages, portraits…).  
+
+❌ **Compression avec perte** : la qualité diminue si l’image est trop compressée.  
+
+✔ Extensions : `.jpg`, `.jpeg`.
+
 
 #### <H4 STYLE="COLOR:MAGENTA;">5.1.2. Le<a name="_page9_x40.00_y751.92"></a> PNG</H4>
 
-Le format PNG (Portable Network Graphics) est le plus récent de tous. Le PNG a deux gros avantages : il peut être rendu transparent et il n’altère pas la qualité de l’image.
+📌 **PNG (Portable Network Graphics)** est un format **sans perte de qualité**.  
 
-Le PNG existe en deux versions :
+✔ **Prend en charge la transparence**.  
 
-- PNG 8 bits : 256 couleurs
-- PNG 24 bits : 16 millions de couleurs
+✔ Deux versions :
 
-Une photo au format PNG a un poids plus important qu’au format JPEG.
+   - **PNG 8 bits** : 256 couleurs (léger, mais limité).
+
+   - **PNG 24 bits** : 16 millions de couleurs. 
+
+❌ **Poids plus élevé** que le JPEG.  
+
+✔ Extension : `.png`.
+
 
 #### <H4 STYLE="COLOR:MAGENTA;">5.1.3. Le<a name="_page10_x40.00_y106.92"></a> GIF</H4>
 
-Le format GIF est limité à 256 couleurs. Par contre il peut être animé.
+📌 **GIF (Graphics Interchange Format)** est limité à **256 couleurs**, mais **il permet des animations**.  
+
+✔ Idéal pour **les petits dessins animés et les icônes animées**.  
+
+✔ Extension : `.gif`.
+
 
 #### <H4 STYLE="COLOR:MAGENTA;">5.1.4. Le<a name="_page10_x40.00_y144.92"></a> BITMAP</H4>
 
-C’est un format non compressé donc très (trop) gros.
+📌 **BMP (Bitmap)** est **un format non compressé**. 
+
+❌ **Taille très élevée**, rarement utilisé sur le Web.  
+
+✔ Extension : `.bmp`.
 
 ### <H3 STYLE="COLOR:GREEN;">5.2. Insérer<a name="_page10_x40.00_y183.92"></a> une image</H3>
 
-Pour insérer une image, il faut utiliser la balise orpheline `<img />`. La balise doit être accompagnée de deux attributs obligatoires :
+Pour insérer une image dans une page web, on utilise la **balise orpheline** `<img />`.  
+Cette balise doit être accompagnée d’au moins **deux attributs obligatoires** :  
 
-- src : il permet d’avoir le chemin de la source 
+| **Attribut** | **Rôle** |
+|-------------|---------|
+| `src`  | Indique le **chemin de l’image** |
+| `alt`  | **Texte alternatif** (si l’image ne s’affiche pas) |
 
-Par exemple :
+**Exemple :**  
 ```html
-<img src="http://monsite.fr/fleur.jpg" />
-<img src="images/fleur.jpg" />
+<img src="https://monsite.fr/fleur.jpg" alt="Photo d'une fleur" />
+<img src="images/fleur.jpg" alt="Photo d'une fleur" />
 ```
-- alt : cela signifie « texte alternatif ». Il faut toujours indiquer un texte alternatif à l’image qui permet de décrire l’image si elle ne s’affiche pas dans le navigateur de l’utilisateur. De plus, elle sera d’une aide précieuse pour les personnes mal voyantes. Cela aide aussi les robots des moteurs de recherche pour les recherches d'images. Pour la fleur, on mettrait par exemple : alt="Une fleur".
+📌 **À savoir :**  
 
-- title : permet d’insérer une info bulle (attribut facultatif)
+- **Le texte alternatif (`alt`) est important** : il aide les moteurs de recherche et les personnes malvoyantes.
 
-On aura ainsi finalement :
+- **Ne pas mettre d’espaces dans le nom des fichiers images !**  
+
+
+**Attention** : à ne pas mettre d’espace dans le nom !!
+
+### <H3 STYLE="COLOR:GREEN;">5.3. Ajouter une infobulle sur une image </h3> 
+
+L’attribut `title` permet d’afficher **une infobulle** lorsque la souris passe sur l’image.
+
+**Exemple :**  
 ```html
 <p>
     Voici une photo d'une fleur de mon jardin <br />
     <img src="images/fleur.jpg" alt="Photo d'une fleur" title="C'est beau les fleurs quand même !" />
 </p>
 ```
-**Attention** : à ne pas mettre d’espace dans le nom !!
 
-**ON NE POURRA PAS LE FAIRE AVEC CAPYTALE**
-Chercher trois images sur le web d’une passoire, d’une casserole et d’un autobus. Les enregistrer dans un dossier **images** dans le dossier Documents\site. Ouvrir la index.html et insérer ces trois images de telle sorte à obtenir la page ci-dessous. Mettre des infobulles du type « Ceci est une passoire ! »
+**<H3 STYLE="COLOR:red;">Activité n°22 :</h3>**  
+
+1. Cherchez **trois images** sur le Web (**passoire, casserole et autobus**).  
+
+2. Enregistrez-les dans un dossier .  
+
+3. Insérez-les dans `index.html` en ajoutant une infobulle pour chacune.  
+
+
+
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.063.jpeg)
 
@@ -591,6 +714,7 @@ On peut proposer une miniature cliquable pour des images très grosses :
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.066.png)
 
 Il faut les placer toutes les deux dans un dossier img. On affiche la version mini sur la page et on fait un lien vers la plus grosse image pour que l’image agrandie s’affiche lorsqu’on clique sur la miniature.
+
 
 ```html
 <p>
