@@ -33,32 +33,39 @@ Tim Berners-Lee n'est donc pas l'inventeur d'Internet, c'est « seulement » l'i
 ## <H2 STYLE="COLOR:BLUE;">2. Le<a name="_page1_x40.00_y237.92"></a> fonctionnement des sites web</H2>
 ### <H3 STYLE="COLOR:GREEN;">2.1. Les<a name="_page1_x40.00_y259.92"></a> navigateurs utilisés</H3>
 
-Pour consulter un site web, on doit lancer un programme appelé **navigateur web** :
+
+Pour consulter un site web, on utilise un programme appelé **navigateur web**.  
+Les navigateurs les plus courants sont **Google Chrome, Mozilla Firefox, Microsoft Edge et Safari**.  
+Il est recommandé de tester son site sur plusieurs navigateurs afin de garantir une compatibilité optimale.  
+
+> 📌 **Astuce** : Le site [Can I Use](https://caniuse.com/) permet de vérifier quelles fonctionnalités sont supportées par chaque navigateur.  
 
 ![Navigateurs](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.004.png)
 
 ### <H3 STYLE="COLOR:GREEN;">2.2. Les<a name="_page1_x40.00_y340.92"></a> langages</H3>
 
-Pour créer des sites web, on utilise des langages particuliers : le CSS et le HTML.
+Pour créer un site web, on utilise des langages spécifiques, principalement **HTML**, **CSS** et **JavaScript**.  
 
-Ces deux langages ont des rôles différents :
-
-- HTML (HyperText Markup Language) : Son rôle est de gérer et organiser le contenu. C’est donc en HTML que l’on écrit ce qui doit être affiché sur la page : le texte, les liens, les images….
-
-- CSS (Cascading Style Sheets) : le rôle du CSS est de gérer l’apparence de la page Web (agencement, positionnement, …). Il est apparu en 1996. Il a besoin d’une page HTML pour fonctionner.
+- **HTML (HyperText Markup Language)** : définit la structure du site (titres, paragraphes, images, liens…).  
+- **CSS (Cascading Style Sheets)** : gère l’apparence et la mise en page (couleurs, marges, positionnement…).  
+- **JavaScript** : permet d’ajouter de l’interactivité (animations, formulaires dynamiques, effets visuels…). 
 
 ![HTML CSS](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.005.png)
 
-- Le HTML définit le contenu.
-- Le CSS permet de définir la présentation : couleurs, image de fond, marges, taille du texte…
+👉 **Résumé** :  
+✅ Le **HTML** définit le contenu.  
+✅ Le **CSS** gère la présentation.  
+✅ Le **JavaScript** ajoute de l’interactivité. 
 
 ### <H3 STYLE="COLOR:GREEN;">2.3. Les<a name="_page1_x40.00_y687.92"></a> éditeurs et les logiciels conseillés</H3>
 
-Pour ce cours, nous utiliserons principalement **Capytale** pour les activités du cours et repl.it pour les projets, un éditeur en ligne qui permet de voir instantanément le résultat de son code HTML, CSS et JavaScript.
+Pour ce cours, nous utiliserons principalement **Capytale** pour les activités du cours.
 
-**Un logiciel intéressant pour cette partie est Visual Studio Code**
+Un autre logiciel recommandé est **Visual Studio Code**, un éditeur de code puissant et gratuit, idéal pour le développement web.  
 
-De plus, il est conseillé d’installer plusieurs navigateurs sur son ordinateur pour s’assurer que son site fonctionne correctement sur chacun d’eux : **Microsoft Edge et Firefox** au minimum.
+💡 **Bonnes pratiques** :  
+✔ Installez plusieurs navigateurs (Chrome, Firefox, Edge, Safari) pour tester votre site.  
+✔ Utilisez des outils comme **CodePen, JSFiddle ou Glitch** pour expérimenter rapidement avec le HTML/CSS.  
 
 Le site [https://caniuse.com/](https://caniuse.com/) tient à jour une liste des fonctionnalités prises en charge par les différentes versions de chaque navigateur.
 
