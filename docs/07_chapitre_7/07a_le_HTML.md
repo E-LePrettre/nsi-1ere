@@ -16,79 +16,92 @@ title: 07a Le HTML
 
 **Vidéo** : historique : [https://ladigitale.dev/digiview/#/v/6690fec0420aa](https://ladigitale.dev/digiview/#/v/6690fec0420aa)
 
-Le "World Wide Web", plus communément appelé "Web" a été développé au CERN (Conseil Européen pour la Recherche Nucléaire) par le Britannique **Sir Timothy John Berners-Lee** et le Belge **Robert Cailliau** en 1991. À cette époque, les principaux centres de recherche mondiaux étaient déjà connectés les uns aux autres, mais pour faciliter les échanges d'information, Tim Berners-Lee met au point le système hypertexte. Le système hypertexte permet, à partir d'un document, de consulter d'autres documents en cliquant sur des mots clés. Ces mots "cliquables" sont appelés **hyperliens** et sont souvent soulignés et en bleu.
+Le "World Wide Web", plus communément appelé "Web", a été développé au **CERN** (Conseil Européen pour la Recherche Nucléaire) par le Britannique **Sir Timothy John Berners-Lee** et le Belge **Robert Cailliau** en 1991.  
+- À cette époque, les principaux centres de recherche mondiaux étaient déjà connectés entre eux, mais il fallait **faciliter les échanges d'information**.  
+- Tim Berners-Lee met au point le **système hypertexte**, permettant de cliquer sur un mot-clé pour accéder à un autre document.  
+- Ces mots-clés sont appelés **hyperliens** (souvent soulignés et de couleur bleue).
 
-La première page web est toujours consultable à l'adresse suivante :
-
+La première page web est toujours consultable à l'adresse suivante :  
 - [http://info.cern.ch/hypertext/WWW/TheProject.html](http://info.cern.ch/hypertext/WWW/TheProject.html)
 
-Tim Berners-Lee développe le premier navigateur web (logiciel permettant de lire des pages contenant des hypertextes), il l'appelle simplement "**WorldWideWeb**". Tim Berners-Lee a créé le World Wide Web Consortium (W3C) qui définit les nouvelles versions des langages liés au Web.
+Tim Berners-Lee développe aussi le premier navigateur web, appelé "**WorldWideWeb**". Il a créé le **World Wide Web Consortium (W3C)**, qui définit encore aujourd’hui les standards du web (HTML, CSS, etc.).
 
-Le web se base sur trois choses : le **protocole HTTP** (HyperText Transfert Protocol), les **URL** (Uniform Resource Locator) et le langage de description **HTML** (HyperText Markup Language).
+Le Web repose sur trois technologies principales :  
+1. **Le protocole HTTP** (HyperText Transfer Protocol)  
+2. **Les URL** (Uniform Resource Locator)  
+3. **Le langage de description HTML** (HyperText Markup Language)
 
-Une chose très importante à bien avoir à l'esprit : beaucoup de personnes confondent "web" et "internet". L’"**internet**" est un "**réseau de réseaux**" alors que, comme nous venons de le voir, le web est la combinaison de trois technologies : HTTP, URL et HTML. D'ailleurs, on trouve autre chose que le "web" sur internet, par exemple, les emails avec le protocole SMTP (Simple Mail Transfert Protocol) et les transferts de fichiers avec le protocole FTP (File Transfert Protocol).
+> **Important** : **Internet** et **le Web** sont deux choses distinctes :  
+> - **Internet** : Un vaste réseau reliant des millions d’ordinateurs.  
+> - **Le Web** : Un service **qui s’appuie** sur Internet, composé des technologies HTTP, URL, HTML (et CSS, JavaScript…).
 
-Tim Berners-Lee n'est donc pas l'inventeur d'Internet, c'est « seulement » l'inventeur du Web.
+Tim Berners-Lee n'est donc pas l'inventeur d'Internet, mais bien l’inventeur du Web.
+
 
 ## <H2 STYLE="COLOR:BLUE;">2. Le<a name="_page1_x40.00_y237.92"></a> fonctionnement des sites web</H2>
 ### <H3 STYLE="COLOR:GREEN;">2.1. Les<a name="_page1_x40.00_y259.92"></a> navigateurs utilisés</H3>
 
 
-Pour consulter un site web, on utilise un programme appelé **navigateur web**.  
-Les navigateurs les plus courants sont **Google Chrome, Mozilla Firefox, Microsoft Edge et Safari**.  
-Il est recommandé de tester son site sur plusieurs navigateurs afin de garantir une compatibilité optimale.  
+Pour consulter un site web, on utilise un **navigateur web** (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari…).  
+- Tester un site sur plusieurs navigateurs permet de **vérifier la compatibilité**.
 
-> 📌 **Astuce** : Le site [Can I Use](https://caniuse.com/) permet de vérifier quelles fonctionnalités sont supportées par chaque navigateur.  
+> **Astuce** : Le site [Can I Use](https://caniuse.com/) sert à vérifier quelles fonctionnalités sont prises en charge par chaque navigateur.
 
 ![Navigateurs](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.004.png)
 
+
+
 ### <H3 STYLE="COLOR:GREEN;">2.2. Les<a name="_page1_x40.00_y340.92"></a> langages</H3>
 
-Pour créer un site web, on utilise des langages spécifiques, principalement **HTML**, **CSS** et **JavaScript**.  
+Pour créer un site web, on utilise **HTML**, **CSS** et **JavaScript** :
 
-- **HTML (HyperText Markup Language)** : définit la structure du site (titres, paragraphes, images, liens…).  
-- **CSS (Cascading Style Sheets)** : gère l’apparence et la mise en page (couleurs, marges, positionnement…).  
-- **JavaScript** : permet d’ajouter de l’interactivité (animations, formulaires dynamiques, effets visuels…). 
+- **HTML** : définit **le contenu** (titres, textes, images…).  
+- **CSS** : gère **l’apparence** (mise en page, couleurs, marges…).  
+- **JavaScript** : ajoute **l’interactivité** (animations, formulaires dynamiques…).
 
 
 
-👉 **Résumé** :  
-✅ Le **HTML** définit le contenu.  
-✅ Le **CSS** gère la présentation.  
-✅ Le **JavaScript** ajoute de l’interactivité. 
 
 ### <H3 STYLE="COLOR:GREEN;">2.3. Les<a name="_page1_x40.00_y687.92"></a> éditeurs et les logiciels conseillés</H3>
 
-Pour ce cours, nous utiliserons principalement **Capytale** pour les activités du cours.
-
-Un autre logiciel recommandé est **Visual Studio Code**, un éditeur de code puissant et gratuit, idéal pour le développement web.  
+- **Capytale** : Utilisé pour les activités de cours.  
+- **Visual Studio Code** : Puissant éditeur de code, gratuit, idéal pour le développement web.  
+- **Autres outils** (CodePen, JSFiddle, Glitch) pour expérimenter rapidement.
 
 💡 **Bonnes pratiques** :  
-✔ Installez plusieurs navigateurs (Chrome, Firefox, Edge, Safari) pour tester votre site.  
-✔ Utilisez des outils comme **CodePen, JSFiddle ou Glitch** pour expérimenter rapidement avec le HTML/CSS.  
+- Installer **plusieurs navigateurs** pour tester la compatibilité de son site.  
+- Vérifier les fonctionnalités supportées via [Can I Use](https://caniuse.com/).
 
-Le site [https://caniuse.com/](https://caniuse.com/) tient à jour une liste des fonctionnalités prises en charge par les différentes versions de chaque navigateur.
+
 
 ## <H2 STYLE="COLOR:BLUE;">3. Le<a name="_page2_x40.00_y48.92"></a> langage HTML5</H2>
 ### <H3 STYLE="COLOR:GREEN;">3.1. Page<a name="_page2_x40.00_y70.92"></a> web en HTML</H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°1. :</H3>** ouvrir capytale
+**=> CAPYTALE Le code vous sera donné par votre enseignant**
 
-=> CAPYTALE Le code vous sera donné par votre enseignant
+**<H3 STYLE="COLOR:red;">Activité n°1. :</H3>** 
+Ouvrir **Capytale** et saisissez un code HTML minimal :
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Ma première page HTML</title>
+  </head>
+  <body>
+    <p>Bonjour, voici ma première page !</p>
+  </body>
+</html>
+```
+
+Observez le résultat dans votre navigateur.
 
 ### <H3 STYLE="COLOR:GREEN;">3.2. Les<a name="_page2_x40.00_y155.92"></a> balises</H3>
 
-Pour structurer une page en HTML, on utilise des balises.
-Les balises ne sont pas visibles à l’écran, mais elles indiquent au navigateur comment afficher le contenu.
-
-💡 Repérer une balise HTML :
-Les balises sont entourées de chevrons < >.
-
-Exemple :
-
-```html
-<p>Voici un paragraphe en HTML.</p>
-```
+Les balises ne sont pas visibles à l’écran, mais elles structurent la page.  
+- La plupart des balises **fonctionnent par paire** (ex: `<p>` … `</p>`).  
+- Certaines balises **orphelines** n’ont pas de balise fermante (ex: `<img>`, `<br>`, `<hr>`).
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.2.1. Les<a name="_page2_x40.00_y212.92"></a> balises en paires</H4>
 
@@ -122,29 +135,16 @@ Elles servent généralement à insérer des éléments simples comme des images
 
 ### <H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page2_x40.00_y290.92"></a> attributs</H3>
 
-Un **attribut** est une information supplémentaire ajoutée à une balise pour modifier son comportement.
-Il s’écrit **dans la balise ouvrante** sous la forme attribut="valeur".
-
-Exemple avec un lien :
+Un **attribut** fournit des informations supplémentaires sur la balise. Exemple :
 
 ```html
-<a href="https://example.com">Cliquez ici</a>
+<a href="https://example.com">Un lien</a>
+<img src="image.jpg" alt="Une belle image">
 ```
 
-Dans cet exemple :
-
-`<a>` est la balise de lien.
-`href="https://example.com"` est un attribut qui précise où pointe le lien.
-
-Autre exemple avec une image :
-
-```html
-<img src="photo.jpg" alt="Une belle photo" />
-```
-
-- src="photo.jpg" indique l'image à afficher.
-
-- alt="Une belle photo" est un texte alternatif affiché si l’image ne charge pas.
+- `href="..."` définit la cible du lien.  
+- `src="..."` spécifie l’emplacement de l’image.  
+- `alt="..."` décrit l’image pour les personnes malvoyantes ou si l’image ne se charge pas.
 
 
 
@@ -257,7 +257,7 @@ Le texte d’un paragraphe doit toujours être inclus dans la balise ``<body>``.
 
 ### <H3 STYLE="COLOR:GREEN;">4.2. La<a name="_page3_x40.00_y481.92"></a> balise retour à la ligne</H3>
 
-En HTML, les retours à la ligne ne sont pas pris en compte automatiquement. Pour forcer un saut de ligne, on utilise la balise orpheline `<br />`.
+En HTML, les retours à la ligne ne sont pas pris en compte automatiquement. Pour forcer un saut de ligne, on utilise la balise orpheline `<br>`.
 
 **<H3 STYLE="COLOR:red;">Activité n°5. :</H3>** Modifier l’application n°4 pour ne mettre qu’un seul paragraphe et garder la mise en page.
 
@@ -267,7 +267,7 @@ En HTML, les retours à la ligne ne sont pas pris en compte automatiquement. Pou
 
 - ``<p>`` délimite un paragraphe.
 
-- ``<br />`` insère un saut de ligne à l’intérieur d’un paragraphe.
+- ``<br>`` insère un saut de ligne à l’intérieur d’un paragraphe.
 
 ### <H3 STYLE="COLOR:GREEN;">4.3. Les<a name="_page3_x40.00_y702.92"></a> titres</H3>
 
@@ -381,8 +381,8 @@ En HTML, il existe **deux types de listes** :
 Les listes **non ordonnées** sont des listes où l’ordre des éléments n’a pas d’importance.  
 Pour les créer, on utilise :  
 
-- `<ul>` (unordered list) pour **délimiter** la liste.  
-- `<li>` (list item) pour chaque **élément** de la liste.  
+- `<ul>` (unordered list) pour **délimiter** la liste.  (`<ul>` + `<li>`)  
+- `<li>` (list item) pour chaque **élément** de la liste.  (`<ol>` + `<li>`)
 
 **Exemple :**  
 ```html
@@ -687,7 +687,7 @@ L’attribut `title` permet d’afficher **une infobulle** lorsque la souris pas
 **Exemple :**  
 ```html
 <p>
-    Voici une photo d'une fleur de mon jardin <br />
+    Voici une photo d'une fleur de mon jardin <br>
     <img src="images/fleur.jpg" alt="Photo d'une fleur" title="C'est beau les fleurs quand même !" />
 </p>
 ```
@@ -718,7 +718,7 @@ Si une image est **trop grande**, on peut afficher **une version réduite (minia
 **Exemple :**  
 ```html
 <p>
-    Voici une photo d'une fleur de mon jardin. Cliquez dessus !<br />
+    Voici une photo d'une fleur de mon jardin. Cliquez dessus !<br>
     <a href="img/fleur.jpg">
         <img src="images/fleur_mini.jpg" alt="Photo d'une fleur" title="Cliquez pour voir en grand !" />
     </a>
