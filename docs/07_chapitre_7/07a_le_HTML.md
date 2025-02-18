@@ -12,145 +12,166 @@ title: 07a Le HTML
 5. [Insérer une image](#_page9_x40.00_y607.92)
 
 
-## <H2 STYLE="COLOR:BLUE;">1. Historique<a name="_page0_x40.00_y600.92"></a></H2>
+## **<H2 STYLE="COLOR:BLUE;">1. Historique**<a name="_page0_x40.00_y600.92"></a></H2>
 
-**Vidéo** : historique : [https://ladigitale.dev/digiview/#/v/6690fec0420aa](https://ladigitale.dev/digiview/#/v/6690fec0420aa)
+🔎 **Vidéo explicative**  
+🎥 [Regarder l'historique du Web](https://ladigitale.dev/digiview/#/v/6690fec0420aa)
 
-Le "World Wide Web", plus communément appelé "Web", a été développé au **CERN** (Conseil Européen pour la Recherche Nucléaire) par le Britannique **Sir Timothy John Berners-Lee** et le Belge **Robert Cailliau** en 1991.  
-- À cette époque, les principaux centres de recherche mondiaux étaient déjà connectés entre eux, mais il fallait **faciliter les échanges d'information**.  
-- Tim Berners-Lee met au point le **système hypertexte**, permettant de cliquer sur un mot-clé pour accéder à un autre document.  
-- Ces mots-clés sont appelés **hyperliens** (souvent soulignés et de couleur bleue).
+Le **World Wide Web** (souvent appelé **Web**) a été développé en **1991** au **CERN** (Conseil Européen pour la Recherche Nucléaire) par :
+- **Tim Berners-Lee** 🇬🇧 (informaticien britannique)
+- **Robert Cailliau** 🇧🇪 (ingénieur belge)
 
-La première page web est toujours consultable à l'adresse suivante :  
-- [http://info.cern.ch/hypertext/WWW/TheProject.html](http://info.cern.ch/hypertext/WWW/TheProject.html)
+💡 **Pourquoi ?**  
+➡ À cette époque, les chercheurs étaient déjà connectés entre eux, mais **l'échange d’informations était compliqué**.  
+➡ Tim Berners-Lee invente alors le **système hypertexte**, qui permet de cliquer sur des **hyperliens** (mots soulignés en bleu) pour passer d’un document à un autre.
 
-Tim Berners-Lee développe aussi le premier navigateur web, appelé "**WorldWideWeb**". Il a créé le **World Wide Web Consortium (W3C)**, qui définit encore aujourd’hui les standards du web (HTML, CSS, etc.).
+📌 **Première page web**  
+Le tout premier site Web est encore visible ici :  
+🔗 [http://info.cern.ch/hypertext/WWW/TheProject.html](http://info.cern.ch/hypertext/WWW/TheProject.html)
 
-Le Web repose sur trois technologies principales :  
+📌 **Le premier navigateur Web**  
+Il s’appelait **"WorldWideWeb"**, développé par Tim Berners-Lee lui-même.
+
+📌 **Le Web repose sur trois technologies principales** :
 1. **Le protocole HTTP** (HyperText Transfer Protocol)  
 2. **Les URL** (Uniform Resource Locator)  
-3. **Le langage de description HTML** (HyperText Markup Language)
+3. **Le langage HTML** (HyperText Markup Language)
 
-> **Important** : **Internet** et **le Web** sont deux choses distinctes :  
-> - **Internet** : Un vaste réseau reliant des millions d’ordinateurs.  
-> - **Le Web** : Un service **qui s’appuie** sur Internet, composé des technologies HTTP, URL, HTML (et CSS, JavaScript…).
+> ❗ **Attention !** Le Web et Internet sont **deux choses différentes** :  
+> - **Internet** est un **réseau mondial** reliant des millions d’ordinateurs.  
+> - **Le Web** est **un service** qui repose sur Internet, utilisant **HTTP, URL et HTML**.
 
-Tim Berners-Lee n'est donc pas l'inventeur d'Internet, mais bien l’inventeur du Web.
-
-
-## <H2 STYLE="COLOR:BLUE;">2. Le<a name="_page1_x40.00_y237.92"></a> fonctionnement des sites web</H2>
-### <H3 STYLE="COLOR:GREEN;">2.1. Les<a name="_page1_x40.00_y259.92"></a> navigateurs utilisés</H3>
+Tim Berners-Lee est donc **l’inventeur du Web**, mais **pas d’Internet**.
 
 
-Pour consulter un site web, on utilise un **navigateur web** (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari…).  
-- Tester un site sur plusieurs navigateurs permet de **vérifier la compatibilité**.
+## **<H2 STYLE="COLOR:BLUE;">2. Le<a name="_page1_x40.00_y237.92"></a> fonctionnement des sites web**</H2>
+### **<H3 STYLE="COLOR:GREEN;">2.1. Les<a name="_page1_x40.00_y259.92"></a> navigateurs utilisés** 🔎</H3>
 
-> **Astuce** : Le site [Can I Use](https://caniuse.com/) sert à vérifier quelles fonctionnalités sont prises en charge par chaque navigateur.
+Un site web est **affiché** grâce à un **navigateur web**.  
+Les plus connus sont :
+- **Google Chrome**
+- **Mozilla Firefox**
+- **Microsoft Edge**
+- **Safari**
+
+💡 **Pourquoi tester son site sur plusieurs navigateurs ?**  
+➡ Tous les navigateurs **n’interprètent pas** les sites **de la même manière**.  
+➡ Il faut s’assurer que le site fonctionne partout !
+
+> **Outil utile** : 🔗 [Can I Use](https://caniuse.com/)  
+> Ce site permet de vérifier si une fonctionnalité **HTML, CSS ou JavaScript** est compatible avec chaque navigateur.
+
+
 
 ![Navigateurs](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.004.png)
 
 
 
-### <H3 STYLE="COLOR:GREEN;">2.2. Les<a name="_page1_x40.00_y340.92"></a> langages</H3>
+### **<H3 STYLE="COLOR:GREEN;">2.2. Les<a name="_page1_x40.00_y340.92"></a> langages** 🔎</H3>
 
-Pour créer un site web, on utilise **HTML**, **CSS** et **JavaScript** :
+Un site web est **construit avec trois langages** principaux :
 
-- **HTML** : définit **le contenu** (titres, textes, images…).  
-- **CSS** : gère **l’apparence** (mise en page, couleurs, marges…).  
-- **JavaScript** : ajoute **l’interactivité** (animations, formulaires dynamiques…).
+| Langage | Rôle |
+|---------|------|
+| **HTML** (*HyperText Markup Language*) | Structure le contenu (titres, textes, images, liens…) |
+| **CSS** (*Cascading Style Sheets*) | Met en forme (couleurs, marges, disposition…) |
+| **JavaScript** | Ajoute des fonctionnalités dynamiques (effets visuels, formulaires interactifs…) |
 
-
-
-
-### <H3 STYLE="COLOR:GREEN;">2.3. Les<a name="_page1_x40.00_y687.92"></a> éditeurs et les logiciels conseillés</H3>
-
-- **Capytale** : Utilisé pour les activités de cours.  
-- **Visual Studio Code** : Puissant éditeur de code, gratuit, idéal pour le développement web.  
-- **Autres outils** (CodePen, JSFiddle, Glitch) pour expérimenter rapidement.
-
-💡 **Bonnes pratiques** :  
-- Installer **plusieurs navigateurs** pour tester la compatibilité de son site.  
-- Vérifier les fonctionnalités supportées via [Can I Use](https://caniuse.com/).
+📌 **Résumé** :  
+✅ **HTML** → Structure le contenu  
+✅ **CSS** → Définit l’apparence  
+✅ **JavaScript** → Ajoute de l’interactivité
 
 
 
-## <H2 STYLE="COLOR:BLUE;">3. Le<a name="_page2_x40.00_y48.92"></a> langage HTML5</H2>
-### <H3 STYLE="COLOR:GREEN;">3.1. Page<a name="_page2_x40.00_y70.92"></a> web en HTML</H3>
+
+
+### **<H3 STYLE="COLOR:GREEN;">2.3. Les<a name="_page1_x40.00_y687.92"></a> éditeurs et les logiciels conseillés** 🔎</H3>
+
+💻 **Logiciels à utiliser en cours** :
+- **Capytale** → Pour réaliser des exercices et tester du code.
+- **Visual Studio Code** (VS Code) → Un éditeur de code professionnel, gratuit et puissant.
+
+Autres outils pratiques :
+- **CodePen**, **JSFiddle**, **Glitch** → Pour tester rapidement du HTML/CSS.
+
+📌 **Bonnes pratiques** :
+✔ Installer **plusieurs navigateurs** pour tester un site.  
+✔ Vérifier la compatibilité avec 🔗 [Can I Use](https://caniuse.com/).  
+
+
+
+## **<H2 STYLE="COLOR:BLUE;">3. Le<a name="_page2_x40.00_y48.92"></a> langage HTML5**</H2>
+### **<H3 STYLE="COLOR:GREEN;">3.1. Page<a name="_page2_x40.00_y70.92"></a> web en HTML** 🔎</H3>
 
 **=> CAPYTALE Le code vous sera donné par votre enseignant**
 
 **<H3 STYLE="COLOR:red;">Activité n°1. :</H3>** 
-Ouvrir **Capytale** et saisissez un code HTML minimal :
+✅ Ouvrir **Capytale** et saisir ce code HTML minimal :
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>Ma première page HTML</title>
   </head>
   <body>
-    <p>Bonjour, voici ma première page !</p>
+    <p>Bonjour, voici ma première page web !</p>
   </body>
 </html>
 ```
+➡ **Ouvrir la page dans un navigateur** et observer le résultat.
 
-Observez le résultat dans votre navigateur.
 
-### <H3 STYLE="COLOR:GREEN;">3.2. Les<a name="_page2_x40.00_y155.92"></a> balises</H3>
 
-Les balises ne sont pas visibles à l’écran, mais elles structurent la page.  
-- La plupart des balises **fonctionnent par paire** (ex: `<p>` … `</p>`).  
-- Certaines balises **orphelines** n’ont pas de balise fermante (ex: `<img>`, `<br>`, `<hr>`).
+### **<H3 STYLE="COLOR:GREEN;">3.2. Les<a name="_page2_x40.00_y155.92"></a> balises**</H3>
 
-#### <H4 STYLE="COLOR:MAGENTA;">3.2.1. Les<a name="_page2_x40.00_y212.92"></a> balises en paires</H4>
+Un fichier **HTML** est composé de **balises** qui définissent les éléments de la page.
 
-La plupart des balises fonctionnent par paire :
+📌 **Types de balises :**
+| Type de balise | Exemple | Description |
+|---------------|---------|-------------|
+| **Balises en paires** | `<p> ... </p>` | Début (`<p>`) et fin (`</p>`) |
+| **Balises orphelines** | `<br>` `<img>` | Pas besoin de balise fermante |
 
-```
-<balise> Contenu </balise>
-```
-La balise ouvrante <balise> marque le début de l’élément.
-La balise fermante </balise> marque la fin de l’élément.
-
-📌 Exemple :
-
+**Exemple de balise en paire :**
 ```html
 <p>Ceci est un paragraphe.</p>
 ```
-Ici, ``<p>`` ouvre un paragraphe et ``</p>`` le ferme.
 
-#### <H4 STYLE="COLOR:MAGENTA;">3.2.2. Les<a name="_page2_x40.00_y258.92"></a> balises orphelines</H4>
-
-Certaines balises n’ont pas de balise fermante, on les appelle balises orphelines.
-Elles servent généralement à insérer des éléments simples comme des images ou des sauts de ligne.
-
-📌 Exemples :
-
+**Exemple de balise orpheline :**
 ```html
-<img src="image.jpg" alt="Une image"> <!-- Balise image -->
+<img src="image.jpg" alt="Description de l’image">
 <br> <!-- Saut de ligne -->
-<hr> <!-- Ligne horizontale -->
 ```
 
-### <H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page2_x40.00_y290.92"></a> attributs</H3>
 
-Un **attribut** fournit des informations supplémentaires sur la balise. Exemple :
 
+### **<H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page2_x40.00_y290.92"></a> attributs** 🔎</H3>
+
+Les **attributs** ajoutent des informations aux balises.
+
+Exemples :
 ```html
 <a href="https://example.com">Un lien</a>
-<img src="image.jpg" alt="Une belle image">
+<img src="photo.jpg" alt="Une belle photo">
 ```
 
-- `href="..."` définit la cible du lien.  
-- `src="..."` spécifie l’emplacement de l’image.  
-- `alt="..."` décrit l’image pour les personnes malvoyantes ou si l’image ne se charge pas.
+📌 **Explication des attributs** :
+| Attribut | Rôle |
+|----------|------|
+| `href="..."` | Définit le lien d’une balise `<a>` |
+| `src="..."` | Définit l’image affichée avec `<img>` |
+| `alt="..."` | Texte alternatif si l’image ne s’affiche pas |
 
 
 
-### <H3 STYLE="COLOR:GREEN;">3.4. Structure<a name="_page2_x40.00_y347.92"></a> de base d’une page HTML5</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.4. Structure<a name="_page2_x40.00_y347.92"></a> de base d’une page HTML5**</H3>
 
 **<H3 STYLE="COLOR:red;">Activité n°2. :</H3>**
+✅ Recopier ce code et l’afficher dans le navigateur :
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -164,25 +185,23 @@ Un **attribut** fournit des informations supplémentaires sur la balise. Exemple
     </body>
 </html>
 ```
-📌 Explication du code :
 
-- `<!DOCTYPE html>` : Indique que c’est une page HTML5.
+📌 **Explication du code** :
+| Élément | Rôle |
+|---------|------|
+| `<!DOCTYPE html>` | Indique qu’on utilise HTML5 |
+| `<html>` | Contient toute la page |
+| `<head>` | Métadonnées (titre, encodage…) |
+| `<meta charset="utf-8">` | Gère les accents et caractères spéciaux |
+| `<title>` | Titre affiché dans l’onglet du navigateur |
+| `<body>` | Contenu visible de la page |
+| `<h1>` | Titre principal |
+| `<p>` | Paragraphe de texte |
 
-- `<html>` : Conteneur principal de la page.
-
-- `<head>` : Contient les informations sur la page (titre, encodage…).
-
-- `<meta charset="utf-8">` : Définit l'encodage des caractères (permet d'afficher les accents).
-
-- `<title>` : Définit le titre affiché dans l’onglet du navigateur.
 
 ![Title](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.008.png)
 
-- `<body>` : Contient le contenu affiché sur la page.
 
-- `<h1>` : Affiche un titre principal.
-
-- `<p>` : Affiche un paragraphe.
 
 📝 Bonnes pratiques :
 
@@ -193,17 +212,17 @@ Un **attribut** fournit des informations supplémentaires sur la balise. Exemple
 <!-- Ceci est un commentaire en HTML -->
 ```
 
-**Exemple complet d’une page HTML avec CSS et JavaScript**
-Voici un exemple d'une page HTML plus avancée avec un fichier CSS et un fichier JavaScript :
+### **<H3 STYLE="COLOR:GREEN;">3.5. Exemple d’une page HTML + CSS + JavaScript<a name="_page2_x40.00_y347.92"></a>**</H3>
 
+**<H3 STYLE="COLOR:red;">Activité n°3. :</H3>**
 ```html
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Exemple de page HTML</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Lien vers un fichier CSS -->
-    <script src="script.js"></script> <!-- Lien vers un fichier JavaScript -->
+    <title>Exemple HTML + CSS + JS</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Fichier CSS -->
+    <script src="script.js"></script> <!-- Fichier JavaScript -->
 </head>
 <body>
     <h1>Bienvenue sur ma page</h1>
@@ -212,37 +231,39 @@ Voici un exemple d'une page HTML plus avancée avec un fichier CSS et un fichier
 </body>
 </html>
 ```
-📌 Ce qu’il faut retenir :
 
-✔ ``<!DOCTYPE html>`` pour préciser qu'on utilise HTML5.
+📌 **Ce qu’il faut retenir :**
+✔ `<!DOCTYPE html>` indique qu'on utilise **HTML5**.  
+✔ `<head>` contient le **titre**, les **styles** et les **scripts**.  
+✔ `<body>` contient le **contenu visible**.  
+✔ On peut ajouter du **CSS** et du **JavaScript** pour enrichir la page.
 
-✔ ``<head>`` contient le titre, les styles et les scripts.
-
-✔ ``<body>`` contient le contenu visible.
-
-✔ On peut ajouter du CSS et du JavaScript pour enrichir la page.
-
-💡 Astuce :
-Vous pouvez voir le code source d'une page web en appuyant sur **CTRL + U** (Firefox, Chrome, Edge).
-
+> 💡 **Astuce** :  
+> **Voir le code source d’une page Web** → **CTRL + U** (Firefox, Chrome, Edge)
 
 
 ![DOM-model](DOM-model.svg.png)
 
-## <H2 STYLE="COLOR:BLUE;">4. L’organisation<a name="_page3_x40.00_y117.92"></a> d’une page HTML5</H2>
-### <H3 STYLE="COLOR:GREEN;">4.1. Les<a name="_page3_x40.00_y139.92"></a> paragraphes</H3>
+## **<H2 STYLE="COLOR:BLUE;">4. L’organisation<a name="_page3_x40.00_y117.92"></a> d’une page HTML5** </H2>
+### **<H3 STYLE="COLOR:GREEN;">4.1. Les<a name="_page3_x40.00_y139.92"></a> paragraphes** 🔎</H3>
 
-En HTML, la majorité du texte est organisé en paragraphes. Pour cela, on utilise la balise ``<p>``.
+En **HTML**, le texte est généralement structuré sous forme de **paragraphes** à l'aide de la balise `<p>`.  
 
-Le texte d’un paragraphe doit toujours être inclus dans la balise ``<body>``.
+📌 **Règle importante :**  
+✔️ **Un paragraphe doit toujours être inclus dans `<body>`**.  
 
-**<H3 STYLE="COLOR:red;">Activité n°3. :</H3>**
+
+**<H3 STYLE="COLOR:red;">Activité n°4. :</H3>**
+Créer un paragraphe simple.
+
 ```html
 <body> 
-    <p>Bonjour et bienvenue sur ma page</p>     
+    <p>Bonjour et bienvenue sur ma page.</p>     
 </body> 
 ```
-**<H3 STYLE="COLOR:red;">Activité n°4. :**</H3> Je voudrais écrire le texte suivant exactement avec la même mise en page ci-dessous à la place de « Bonjour et bienvenue sur ma page ». **À vous de jouer !!**
+
+**<H3 STYLE="COLOR:red;">Activité n°5. :**</H3> 
+Je voudrais écrire le texte suivant exactement avec la même mise en page ci-dessous à la place de « Bonjour et bienvenue sur ma page ». **À vous de jouer !!**
 ```html
 <body>
     <p>
@@ -255,41 +276,39 @@ Le texte d’un paragraphe doit toujours être inclus dans la balise ``<body>``.
 ```
 📝 Conseil : Indentez bien votre code pour qu’il soit lisible et compréhensible !
 
-### <H3 STYLE="COLOR:GREEN;">4.2. La<a name="_page3_x40.00_y481.92"></a> balise retour à la ligne</H3>
+### **<H3 STYLE="COLOR:GREEN;">4.2. La<a name="_page3_x40.00_y481.92"></a> balise retour à la ligne `<br>`** 🔎</H3>
 
-En HTML, les retours à la ligne ne sont pas pris en compte automatiquement. Pour forcer un saut de ligne, on utilise la balise orpheline `<br>`.
+En **HTML**, les **retours à la ligne ne sont pas pris en compte automatiquement**.  
+➡️ Il faut utiliser la **balise orpheline** `<br>` pour forcer un saut de ligne.
 
-**<H3 STYLE="COLOR:red;">Activité n°5. :</H3>** Modifier l’application n°4 pour ne mettre qu’un seul paragraphe et garder la mise en page.
+**<H3 STYLE="COLOR:red;">Activité n°6. :</H3>** Modifier l’activité n°4 pour **garder la mise en page** avec `<br>` au lieu de plusieurs `<p>`.
+
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.018.jpeg)
 
-💡 Rappel :
 
-- ``<p>`` délimite un paragraphe.
 
-- ``<br>`` insère un saut de ligne à l’intérieur d’un paragraphe.
 
-### <H3 STYLE="COLOR:GREEN;">4.3. Les<a name="_page3_x40.00_y702.92"></a> titres</H3>
+### **<H3 STYLE="COLOR:GREEN;">4.3. Les<a name="_page3_x40.00_y702.92"></a> titres** 🔎</H3>
 
-HTML propose 6 niveaux de titres :
+HTML propose **6 niveaux de titres**, du plus important (`<h1>`) au moins important (`<h6>`).  
 
-- ``<h1>`` : Titre principal
+| Balise | Niveau |
+|--------|--------|
+| `<h1>` | Titre principal |
+| `<h2>` | Sous-titre |
+| `<h3>` | Sous-sous-titre |
+| …      | … |
+| `<h6>` | Niveau le plus bas |
 
-- ``<h2>`` : Sous-titre
 
-- ``<h3>`` : Sous-sous-titre
-
-- …
-
-- ``<h6>`` : Niveau de titre le plus bas
-
-**<H3 STYLE="COLOR:red;">Activité n°6. :</H3>** Ajouter un titre à l’application n°4 : Les passoires Puis un sous-titre : Le théorème des passoires,
+**<H3 STYLE="COLOR:red;">Activité n°7. :</H3>** Ajouter un titre à l’application précédente : Les passoires Puis un sous-titre : Le théorème des passoires,
 
 Ainsi, on aura :
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.022.jpeg)
 
-**<H3 STYLE="COLOR:red;">Activité n°7. :</H3>** Ajouter un autre paragraphe à la suite dont voici le texte :
+**<H3 STYLE="COLOR:red;">Activité n°8. :</H3>** Ajouter un autre paragraphe à la suite dont voici le texte :
 
 ```
 Les différents ordres de passoires
@@ -304,7 +323,7 @@ Ajouter les bonnes balises pour observer cela sur le navigateur.
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°8. :</H3>** Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
+**<H3 STYLE="COLOR:red;">Activité n°9. :</H3>** Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
 
 ```
 Les différents types de passoires du troisième ordre
@@ -320,7 +339,7 @@ Ajouter les bonnes balises pour observer cela sur le navigateur.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.029.jpeg)
 
-**<H3 STYLE="COLOR:red;">Activité n°9. :</H3>** Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
+**<H3 STYLE="COLOR:red;">Activité n°10. :</H3>** Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
 
 ```
 Les différents types de casseroles
@@ -331,28 +350,30 @@ Il y a trois sortes d'autobus : les autobus qui marchent à droite ; les autobus
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.031.png)
 
-### <H3 STYLE="COLOR:GREEN;">4.4. Mettre<a name="_page5_x40.00_y676.92"></a> en valeur</H3>
+### **<H3 STYLE="COLOR:GREEN;">4.4. Mettre<a name="_page5_x40.00_y676.92"></a> en valeur** 🔎</H3>
 
 En HTML, on peut **mettre en valeur du texte** de différentes manières :  
 
-| Balise | Rôle |
+| Balise | Effet |
 |--------|------|
-| `<em>` | Met en italique (mise en valeur légère) |
-| `<strong>` | Met en gras (mise en valeur forte) |
-| `<mark>` | Surligne le texte |
+| `<em>` | Italique (mise en valeur légère) |
+| `<strong>` | Gras (mise en valeur forte) |
+| `<mark>` | Surligné |
 
-**<H3 STYLE="COLOR:red;">Activité n°10. :</H3>** utiliser les balises précédentes pour le mot passoire et théorème du premier paragraphe.
+
+
+**<H3 STYLE="COLOR:red;">Activité n°11. :</H3>** utiliser les balises précédentes pour le mot passoire et théorème du premier paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.033.png)
 
 
-**<H3 STYLE="COLOR:red;">Activité n°11. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du deuxième paragraphe.
+**<H3 STYLE="COLOR:red;">Activité n°12. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du deuxième paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.036.jpeg)
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°12. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du troisième paragraphe.
+**<H3 STYLE="COLOR:red;">Activité n°13. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du troisième paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.038.jpeg)
 
@@ -363,16 +384,10 @@ L'utilisation correcte des balises (`<h1>`, `<p>`, `<strong>`, etc.) est essenti
 ✅ **Le référencement** (SEO) : Google repère les titres et le texte important.  
 ✅ **L’accessibilité** : les logiciels de lecture d’écran comprennent mieux le contenu.  
 
----
-
-✅ **Améliorations apportées :**  
-- **Progression fluide** avec des exercices **guidés**.  
-- **Explications claires** et simplifiées.  
-- **Correction des répétitions et reformulations**.  
-- **Mise en avant des bonnes pratiques HTML**.  
 
 
-### <H3 STYLE="COLOR:GREEN;">4.5. Les<a name="_page7_x40.00_y36.92"></a> listes</H3>
+
+### **<H3 STYLE="COLOR:GREEN;">4.5. Les<a name="_page7_x40.00_y36.92"></a> listes** 🔎</H3>
 
 En HTML, il existe **deux types de listes** :  
 
@@ -381,8 +396,8 @@ En HTML, il existe **deux types de listes** :
 Les listes **non ordonnées** sont des listes où l’ordre des éléments n’a pas d’importance.  
 Pour les créer, on utilise :  
 
-- `<ul>` (unordered list) pour **délimiter** la liste.  (`<ul>` + `<li>`)  
-- `<li>` (list item) pour chaque **élément** de la liste.  (`<ol>` + `<li>`)
+- `<ul>` (unordered list) pour **délimiter** la liste. 
+- `<li>` (list item) pour chaque **élément** de la liste. 
 
 **Exemple :**  
 ```html
@@ -393,12 +408,12 @@ Pour les créer, on utilise :
 </ul>
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°13. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du cinquième paragraphe.
+**<H3 STYLE="COLOR:red;">Activité n°14. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du cinquième paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.040.png)
 
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.5.2. Les listes ordonnées (listes numérotées) </h4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.5.2. Les listes ordonnées (listes numérotées)** </h4>
 
 Les listes **ordonnées** sont des listes **numérotées** où l’ordre des éléments a de l’importance.  
 Pour les créer, on remplace `<ul>` par `<ol>` (ordered list).  
@@ -412,16 +427,16 @@ Pour les créer, on remplace `<ul>` par `<ol>` (ordered list).
 </ol>
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°14. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du dernier paragraphe.
+**<H3 STYLE="COLOR:red;">Activité n°15. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du dernier paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.043.jpeg)
 
-### <H3 STYLE="COLOR:GREEN;">4.6. Les<a name="_page7_x40.00_y697.92"></a> liens hypertexte</H3>
+### **<H3 STYLE="COLOR:GREEN;">4.6. Les<a name="_page7_x40.00_y697.92"></a> liens hypertexte** 🔎</H3>
 
-Les **liens hypertexte** permettent de naviguer d’une page à une autre en HTML.  
-Pour créer un lien, on utilise la balise `<a>` avec l’attribut `href` qui définit l’URL cible. 
+Les **liens hypertexte** permettent de naviguer sur le web.  
+On les crée avec la balise `<a>` et l’attribut `href`. 
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.6.1. Les<a name="_page7_x40.00_y717.92"></a> liens absolus</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.6.1. Les<a name="_page7_x40.00_y717.92"></a> liens absolus**</H4>
 
 Un **lien absolu** mène vers une adresse **externe**, c’est-à-dire vers un autre site web.  
 
@@ -430,7 +445,7 @@ Un **lien absolu** mène vers une adresse **externe**, c’est-à-dire vers un a
 <a href="https://fr.wikipedia.org/wiki/Passoire">Passoire</a>
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°15. :</H3>** Créer un lien vers la page **Wikipedia de "Casserole"** en utilisant `<a>`. comme ci-dessous.
+**<H3 STYLE="COLOR:red;">Activité n°16. :</H3>** Créer un lien vers la page **Wikipedia de "Casserole"** en utilisant `<a>`. comme ci-dessous.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.046.jpeg)
 
@@ -442,7 +457,7 @@ Exemple :
 ```
 
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.6.2. Lien<a name="_page8_x40.00_y259.92"></a> relatif vers une page d’un même dossier</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.6.2. Lien<a name="_page8_x40.00_y259.92"></a> relatif vers une page d’un même dossier**</H4>
 
 Un **lien relatif** pointe vers une page située dans **le même dossier**.  
 
@@ -452,7 +467,7 @@ Exemple :
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°16. :</H3>** 
+**<H3 STYLE="COLOR:red;">Activité n°17. :</H3>** 
 
 1. Créer un fichier `page2.html` dans le même dossier que `index.html`.  
 
@@ -460,7 +475,7 @@ Exemple :
 
 
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.6.3. Lien<a name="_page8_x40.00_y391.92"></a> relatif vers une page située dans un dossier fils</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.6.3. Lien<a name="_page8_x40.00_y391.92"></a> relatif vers une page située dans un dossier fils**</H4>
 
 Un lien peut mener à une page située dans **un sous-dossier**.  
 
@@ -476,7 +491,7 @@ Donc on créera simplement une page3
 Créer un fichier `page3.html` dans le même dossier que `index.html
 
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.6.4. Lien<a name="_page8_x40.00_y511.92"></a> relatif vers une page située dans un dossier parent</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.6.4. Lien<a name="_page8_x40.00_y511.92"></a> relatif vers une page située dans un dossier parent**</H4>
 
 Si la page se trouve **dans un dossier parent**, on utilise `../` pour remonter d’un niveau. 
 
@@ -487,7 +502,7 @@ Exemple :
 
 **ON NE POURRA PAS LE FAIRE AVEC CAPYTALE**
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.6.5. Lien<a name="_page8_x40.00_y599.92"></a> vers une ancre sur une même page</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.6.5. Lien<a name="_page8_x40.00_y599.92"></a> vers une ancre sur une même page**</H4>
 
 Les **ancres** permettent de **naviguer à l’intérieur d’une même page**.  
 
@@ -502,7 +517,9 @@ Les **ancres** permettent de **naviguer à l’intérieur d’une même page**.
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°17. :</H3>** Sur la index.html, on va faire une ancre sur le titre en haut de page
+**<H3 STYLE="COLOR:red;">Activité n°18. :</H3>** 
+
+Sur la index.html, on va faire une ancre sur le titre en haut de page
 ```html
 <h1 id="haut">Les passoires</h1>
 ```
@@ -515,7 +532,7 @@ On crée un lien en bas de la page pour remonter vers le haut. Rajouter tout en 
 ```
 Enregistrer et observer. S’il ne se passe rien, augmenter le zoom afin de faire apparaître les barres de défilement sur le côté.
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.6.6. Lien<a name="_page9_x40.00_y36.92"></a> vers une ancre sur une autre page</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.6.6. Lien<a name="_page9_x40.00_y36.92"></a> vers une ancre sur une autre page**</H4>
 
 Pour faire un lien vers **une ancre située dans une autre page**, on précise la page suivie de `#id`.  
 
@@ -526,7 +543,7 @@ Pour faire un lien vers **une ancre située dans une autre page**, on précise l
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°18. :</H3>** Sur la page2.html, on va faire un lien vers l’ancre de la index.html.
+**<H3 STYLE="COLOR:red;">Activité n°19. :</H3>** Sur la page2.html, on va faire un lien vers l’ancre de la index.html.
 ```html
 <h1 id="haut">Les passoires</h1>
 ```
@@ -538,7 +555,7 @@ On crée un lien en bas de la page pour remonter vers le haut. Rajouter tout en 
 ```
 Enregistrer et observer.
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.6.7. Lien<a name="_page9_x40.00_y195.92"></a> affichant une infobulle</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.6.7. Lien<a name="_page9_x40.00_y195.92"></a> affichant une infobulle**</H4>
 
 L’attribut `title` permet d’afficher une **infobulle** lorsque l’utilisateur survole un lien.  
 
@@ -547,7 +564,7 @@ L’attribut `title` permet d’afficher une **infobulle** lorsque l’utilisate
 <a href="index.html#haut" title="Vous ne le regretterez pas !">Retour au début</a>
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°19. :</H3>** Sur la page2.html, on va faire une infobulle
+**<H3 STYLE="COLOR:red;">Activité n°20. :</H3>** Sur la page2.html, on va faire une infobulle
 ```html
 <p>
     <a href="index.html#haut" title="Vous ne le regretterez pas !">Aller en haut de la page logique sur les passoires</a>
@@ -555,7 +572,7 @@ L’attribut `title` permet d’afficher une **infobulle** lorsque l’utilisate
 ```
 Enregistrer et observer.
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.6.8. Lien<a name="_page9_x40.00_y316.92"></a> qui ouvre une nouvelle fenêtre</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.6.8. Lien<a name="_page9_x40.00_y316.92"></a> qui ouvre une nouvelle fenêtre**</H4>
 
 L’attribut `target="_blank"` ouvre le lien **dans un nouvel onglet**.  
 
@@ -565,7 +582,7 @@ L’attribut `target="_blank"` ouvre le lien **dans un nouvel onglet**.
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°20. :</H3>** Sur la page2.html, on va faire une infobulle
+**<H3 STYLE="COLOR:red;">Activité n°21. :</H3>** Sur la page2.html, on va faire une infobulle
 ```html
 <p>
     <a href="index.html#haut" title="Vous ne le regretterez pas !" target="_blank">Aller en haut de la page logique sur les passoires</a>
@@ -573,7 +590,7 @@ L’attribut `target="_blank"` ouvre le lien **dans un nouvel onglet**.
 ```
 Enregistrer et observer.
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.6.9. Un<a name="_page9_x40.00_y437.92"></a> lien pour envoyer un e-mail</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.6.9. Un<a name="_page9_x40.00_y437.92"></a> lien pour envoyer un e-mail**</H4>
 
 Un lien **mailto** ouvre automatiquement une fenêtre pour envoyer un e-mail.  
 
@@ -583,7 +600,7 @@ Un lien **mailto** ouvre automatiquement une fenêtre pour envoyer un e-mail.
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°21. :</H3>** Sur la index.html, on va faire un lien vers un mail
+**<H3 STYLE="COLOR:red;">Activité n°22. :</H3>** Sur la index.html, on va faire un lien vers un mail
 ```html
 <p>
     <a href="mailto:votrenom@bidule.com">Envoyez-moi un e-mail !</a>
@@ -591,7 +608,7 @@ Un lien **mailto** ouvre automatiquement une fenêtre pour envoyer un e-mail.
 ```
 Enregistrer et observer.
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.6.10. Un<a name="_page9_x40.00_y544.92"></a> lien pour télécharger un fichier</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.6.10. Un<a name="_page9_x40.00_y544.92"></a> lien pour télécharger un fichier**</H4>
 
 Un lien peut être utilisé pour télécharger un fichier en le pointant directement.  
 
@@ -600,99 +617,74 @@ Un lien peut être utilisé pour télécharger un fichier en le pointant directe
 <a href="monfichier.zip">Télécharger le fichier</a>
 ```
 
-## <H2 STYLE="COLOR:BLUE;">5. Insérer<a name="_page9_x40.00_y607.92"></a> une image</H2>
+## **<H2 STYLE="COLOR:BLUE;">5. Insérer<a name="_page9_x40.00_y607.92"></a> une image**</H2>
 
-Les images sont essentielles dans une page web. Elles permettent **d’illustrer, d’attirer l’attention et d’améliorer l’expérience utilisateur**.  
+Les images sont essentielles sur une page web :  
 
+✔ **Illustrent le contenu**  
 
-### <H3 STYLE="COLOR:GREEN;">5.1. Les<a name="_page9_x40.00_y629.92"></a> différents formats d’images</H3>
+✔ **Attirent l’attention**  
 
-Le **format de l’image** influence **son poids et sa qualité**. Toutes les images sur internet sont **compressées** pour alléger leur poids et faciliter leur affichage.
-
-#### <H4 STYLE="COLOR:MAGENTA;">5.1.1. Le<a name="_page9_x40.00_y680.92"></a> JPEG</H4>
-
-📌 **JPEG (Joint Photographic Expert Group)** est le format d’image **le plus courant** sur le Web.
-
-✔ Supporte **16 millions de couleurs**. 
-
-✔ **Idéal pour les photos** (paysages, portraits…).  
-
-❌ **Compression avec perte** : la qualité diminue si l’image est trop compressée.  
-
-✔ Extensions : `.jpg`, `.jpeg`.
+✔ **Améliorent l’expérience utilisateur**  
 
 
-#### <H4 STYLE="COLOR:MAGENTA;">5.1.2. Le<a name="_page9_x40.00_y751.92"></a> PNG</H4>
+### **<H3 STYLE="COLOR:GREEN;">5.1. Les<a name="_page9_x40.00_y629.92"></a> différents formats d’images**</H3>
 
-📌 **PNG (Portable Network Graphics)** est un format **sans perte de qualité**.  
+Le **format d’image** influence **la qualité et le poids du fichier**.  
+➡️ Une bonne optimisation est essentielle pour éviter **des chargements trop longs**.
 
-✔ **Prend en charge la transparence**.  
+| **Format** | **Caractéristiques** | **Extensions** |
+|------------|----------------------|---------------|
+| **JPEG** | Compression avec perte, 16M de couleurs, idéal pour photos | `.jpg`, `.jpeg` |
+| **PNG** | Compression sans perte, supporte la transparence | `.png` |
+| **GIF** | Animations, 256 couleurs max | `.gif` |
+| **BMP** | Pas de compression, fichiers très lourds | `.bmp` |
 
-✔ Deux versions :
+📌 **Recommandation** :  
 
-   - **PNG 8 bits** : 256 couleurs (léger, mais limité).
+✔ **JPEG** pour les **photos**.  
 
-   - **PNG 24 bits** : 16 millions de couleurs. 
+✔ **PNG** pour les **logos et images avec transparence**.  
 
-❌ **Poids plus élevé** que le JPEG.  
-
-✔ Extension : `.png`.
-
-
-#### <H4 STYLE="COLOR:MAGENTA;">5.1.3. Le<a name="_page10_x40.00_y106.92"></a> GIF</H4>
-
-📌 **GIF (Graphics Interchange Format)** est limité à **256 couleurs**, mais **il permet des animations**.  
-
-✔ Idéal pour **les petits dessins animés et les icônes animées**.  
-
-✔ Extension : `.gif`.
+✔ **GIF** pour les **animations**.  
 
 
-#### <H4 STYLE="COLOR:MAGENTA;">5.1.4. Le<a name="_page10_x40.00_y144.92"></a> BITMAP</H4>
 
-📌 **BMP (Bitmap)** est **un format non compressé**. 
 
-❌ **Taille très élevée**, rarement utilisé sur le Web.  
+### **<H3 STYLE="COLOR:GREEN;">5.2. Insérer<a name="_page10_x40.00_y183.92"></a> une image**</H3>
 
-✔ Extension : `.bmp`.
+📌 **Syntaxe de base :**  
+On utilise la balise **orpheline** `<img>`, qui nécessite **deux attributs obligatoires** :
 
-### <H3 STYLE="COLOR:GREEN;">5.2. Insérer<a name="_page10_x40.00_y183.92"></a> une image</H3>
+| **Attribut** | **Description** |
+|-------------|----------------|
+| `src`  | Définit **l’URL ou le chemin** de l’image |
+| `alt`  | **Texte alternatif** (affiché si l’image ne charge pas) |
 
-Pour insérer une image dans une page web, on utilise la **balise orpheline** `<img />`.  
-Cette balise doit être accompagnée d’au moins **deux attributs obligatoires** :  
-
-| **Attribut** | **Rôle** |
-|-------------|---------|
-| `src`  | Indique le **chemin de l’image** |
-| `alt`  | **Texte alternatif** (si l’image ne s’affiche pas) |
-
-**Exemple :**  
+📌 **Exemple :**  
 ```html
-<img src="https://monsite.fr/fleur.jpg" alt="Photo d'une fleur" />
-<img src="images/fleur.jpg" alt="Photo d'une fleur" />
-```
-📌 **À savoir :**  
-
-- **Le texte alternatif (`alt`) est important** : il aide les moteurs de recherche et les personnes malvoyantes.
-
-- **Ne pas mettre d’espaces dans le nom des fichiers images !**  
-
-
-**Attention** : à ne pas mettre d’espace dans le nom !!
-
-### <H3 STYLE="COLOR:GREEN;">5.3. Ajouter une infobulle sur une image </h3> 
-
-L’attribut `title` permet d’afficher **une infobulle** lorsque la souris passe sur l’image.
-
-**Exemple :**  
-```html
-<p>
-    Voici une photo d'une fleur de mon jardin <br>
-    <img src="images/fleur.jpg" alt="Photo d'une fleur" title="C'est beau les fleurs quand même !" />
-</p>
+<img src="images/fleur.jpg" alt="Photo d'une fleur">
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°22 :</h3>**  
+📌 **Bonnes pratiques :**  
+
+✔ **Éviter les noms d’images avec des espaces**.  
+
+✔ **Renseigner toujours l’attribut `alt`** pour l’accessibilité.  
+
+
+
+### **<H3 STYLE="COLOR:GREEN;">5.3. Ajouter une infobulle sur une image** </h3> 
+
+L’attribut `title` permet d’afficher une **infobulle** au survol de l’image.
+
+📌 **Exemple :**
+```html
+<img src="images/fleur.jpg" alt="Photo d'une fleur" title="C'est beau les fleurs !">
+```
+
+
+**<H3 STYLE="COLOR:red;">Activité n°23 :</h3>**  
 
 1. Cherchez **trois images** sur le Web (**passoire, casserole et autobus**).  
 
@@ -711,27 +703,24 @@ L’attribut `title` permet d’afficher **une infobulle** lorsque la souris pas
 
 Enregistrer et observer.
 
-### <H3 STYLE="COLOR:GREEN;">5.4. Créer une miniature cliquable</h3>
+### **<H3 STYLE="COLOR:GREEN;">5.4. Créer une miniature cliquable**</h3>
 
-Si une image est **trop grande**, on peut afficher **une version réduite (miniature)** qui **redirige vers l’image originale**.  
+Si une image est **trop grande**, on peut afficher une **version réduite** qui redirige vers l’image originale.
 
-**Exemple :**  
+📌 **Exemple :**
 ```html
-<p>
-    Voici une photo d'une fleur de mon jardin. Cliquez dessus !<br>
-    <a href="img/fleur.jpg">
-        <img src="images/fleur_mini.jpg" alt="Photo d'une fleur" title="Cliquez pour voir en grand !" />
-    </a>
-</p>
+<a href="images/fleur.jpg">
+    <img src="images/fleur_mini.jpg" alt="Photo d'une fleur" title="Cliquez pour voir en grand !">
+</a>
 ```
 
-📌 **Explication :**  
+✔ **La petite image (`fleur_mini.jpg`) s’affiche sur la page.**  
 
-- **L’image mini** (`fleur_mini.jpg`) s’affiche sur la page.  
+✔ **Si on clique dessus, l’image originale (`fleur.jpg`) s’ouvre en grand.**  
 
-- **En cliquant dessus**, l’image originale (`fleur.jpg`) s’ouvre en grand.  
 
-**<H3 STYLE="COLOR:red;">Activité n°23 :**</h3>  
+
+**<H3 STYLE="COLOR:red;">Activité n°24 :**</h3>  
 1 Créez une miniature de votre **image de passoire**.  
 
 2 Liez la miniature à l’image **grande taille**.  
@@ -747,18 +736,17 @@ Il faut les placer toutes les deux dans le même dossier. On affiche la version 
 
 ### <H3 STYLE="COLOR:GREEN;">5.5. Vérification du code HTML  
 
-💡 **Astuce : Valider son code HTML**  
+**Pourquoi valider son code HTML ?**  
+✔ **Éviter les erreurs d’affichage**.  
+✔ **Améliorer le référencement SEO**.  
+✔ **Faciliter la compatibilité avec tous les navigateurs**.  
 
-Il est important de **vérifier la syntaxe** de votre page Web.  
+💡 **Utiliser le validateur W3C :**  
+🔗 [https://validator.w3.org](https://validator.w3.org)  
 
-Pour cela, utilisez **le validateur W3C** :  
-🔗 **[http://validator.w3.org](http://validator.w3.org)**  
+📌 **Si votre page n’est pas encore en ligne :**  
 
-📌 **Si votre page n’est pas encore en ligne :** 
-
-- **Utiliser l’option "Validate by File Upload"**.  
-
+- **Utiliser "Validate by File Upload"**.  
 - **Cliquer sur "Check"**.  
 
-Si des erreurs sont détectées, elles seront **expliquées en détail** pour vous aider à les corriger.
-
+Si des erreurs sont détectées, elles seront expliquées et **faciles à corriger**.
