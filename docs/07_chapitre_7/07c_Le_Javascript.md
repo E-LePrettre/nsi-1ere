@@ -21,64 +21,126 @@ title: 07c Le Javascript
 ## <H2 STYLE="COLOR:BLUE;">1. Qu'est-ce que JavaScript et à quoi sert-il ? <a name="_page0_x40.00_y687.92"></a></H2>
 ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.004.png)
 
-Javascript est un langage de programmation utilisé **côté client** pour créer des fonctionnalités interactives sur les sites web. Javascript est **polyvalent, compatible** avec tous les navigateurs et permet la manipulation du contenu web en temps réel.
+JavaScript est un langage de programmation utilisé **côté client** pour ajouter des fonctionnalités interactives aux pages web.  
 
-Le Javascript est un langage dit **client-side** c’est-à-dire que les scripts sont exécutés par le navigateur chez ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.006.png)![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.007.png)![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.008.png)l’internaute. 
+📌 **Caractéristiques principales :**  
+✔ **Langage client-side** → Exécuté par le navigateur de l'utilisateur.  
+✔ **Polyvalent** → Fonctionne sur tous les navigateurs web.  
+✔ **Interactivité** → Manipulation en temps réel du contenu HTML et CSS.  
 
-Pour cela :  
+**📌 Comment fonctionne JavaScript dans une page web ?**  
 
-- votre ordinateur **récupère le code source d'une page web** sur un serveur.  
-- votre navigateur **interprète la page et les scripts** qu'elle contient.  
-- la page **formatée s'affiche sur votre écran**. Les scripts, quant à eux, sont mis en mémoire et seront lancés dès que l'événement attendu se produira  
+1. **Le navigateur récupère le code HTML/CSS/JS** depuis un serveur web.  
+2. **Le moteur JavaScript du navigateur interprète et exécute le script**.  
+3. **Les modifications apportées par JavaScript sont appliquées en temps réel** (exemple : animations, formulaires interactifs, boutons dynamiques, etc.).  
+
+➡ JavaScript **ne nécessite pas de serveur** pour fonctionner, il est directement exécuté **dans le navigateur** de l'utilisateur.
+
 ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.009.png)
 
 ## <H2 STYLE="COLOR:BLUE;">2. Comment<a name="_page1_x40.00_y280.92"></a> utiliser JavaScript avec HTML et CSS ?</H2>
 ### <H3 STYLE="COLOR:GREEN;">2.1. Cas<a name="_page1_x40.00_y302.92"></a> général :</H3>
 
-En intégrant le code JavaScript directement dans la page HTML, à l'intérieur de la balise ```<script>``` et ```</script>``` 
+Il est possible d’intégrer du JavaScript **dans le code HTML**, entre les balises `<script> ... </script>`.
+
+📌 **Exemple :**
 ```html
 <!DOCTYPE html>
 <html>
   <head>
     <style>
-      /* Votre feuille de style CSS */
+      /* Feuille de style CSS */
+      body {
+        font-family: Arial, sans-serif;
+      }
     </style>
   </head>
   <body>
-    <!-- Votre contenu HTML -->
+
+    <h1>Bienvenue sur ma page</h1>
+
+    <button onclick="afficherMessage()">Cliquez-moi</button>
+
     <script>
-      // Votre code JavaScript
+      function afficherMessage() {
+        alert("Bonjour ! Vous avez cliqué sur le bouton.");
+      }
     </script>
+
   </body>
 </html>
 ```
 
+✅ **Explication** :  
+- **Ligne 11 :** Un bouton HTML `<button>` déclenche une fonction **JavaScript** lorsqu'on clique dessus.  
+- **Ligne 14-16 :** Une fonction JavaScript `afficherMessage()` affiche une boîte de dialogue (`alert()`).  
+
+📌 **Résultat :** Lorsqu'on clique sur le bouton, une **alerte apparaît avec un message**.
+
+
+
 ### <H3 STYLE="COLOR:GREEN;">2.2. Fichier<a name="_page1_x40.00_y558.92"></a> js externalisé</H3>
 
-Pour bien faire on externalise dans un dossier js. On écrit le javascript dans un fichier script.js que l’on met **généralement** dans le dossier js. On peut placer 
-```html
-<script src="script.js"></script>
-```
+Pour une **meilleure organisation**, on peut **séparer** le JavaScript dans un fichier `.js` externe.
 
-- **soit dans l'en-tête** (```<head>``` ... ```</head>```), 
-
-- **soit dans le corps** (```<body>``` ... ```</body>```) de la page HTML. 
-
-**<H3 STYLE="COLOR:red;">Activité n°1 :</H3>** Dans la index.html rajouter le lien vers le fichier js 
+📌 **HTML (index.html) :**
 ```html
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="css/style.css" />
-        <script type="text/javascript" src="js/script.js"></script>
-        <title>Logique sur les passoires</title>
-    </head>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+    <title>Logique sur les passoires</title>
+</head>
+<body>
+    <h1>Bienvenue sur ma page</h1>
+    <button id="monBouton">Cliquez-moi</button>
+</body>
+</html>
 ```
 
-```type="text/javascript"``` est **facultatif**
+📌 **JavaScript (script.js) :**
+```js
+// Fonction exécutée lorsque le bouton est cliqué
+document.getElementById("monBouton").addEventListener("click", function() {
+    alert("Bonjour ! Vous avez cliqué sur le bouton.");
+});
+```
 
-**Activité n°1 suite:** 
-**Puis il faut créer le nouveau fichier javascript :**Créer un nouveau fichier vide (si ce n’est déjà fait) sous le nom **script.js**   
+✅ **Explication** :  
+- **Ligne 5 :** On sélectionne le bouton avec `document.getElementById("monBouton")`.  
+- **Ligne 6 :** On **écoute l’événement `click`** et on exécute une fonction **au clic**.  
+
+📌 **Résultat :** Quand on clique sur le bouton, une **alerte apparaît avec un message**.
+
+
+**<H3 STYLE="COLOR:red;">Activité n°1 : </H3> Ajouter un fichier JavaScript externe** 
+
+1. **Dans `index.html`**, ajoutez cette ligne dans `<head>` :
+```html
+<script src="js/script.js"></script>
+```
+2. **Créez un fichier `script.js`** dans le dossier `js/` s'il n'existe pas encore.  
+3. **Ajoutez ce code dans `script.js`** :
+```js
+document.getElementById("monBouton").addEventListener("click", function() {
+    alert("Vous avez cliqué !");
+});
+```
+4. **Enregistrez et testez la page `index.html` dans un navigateur**.
+
+✅ **Vous avez maintenant un script JavaScript externe qui fonctionne !** 🎉
+
+
+**📌 Pourquoi utiliser un fichier JavaScript externe ?**  
+
+✔ **Meilleure organisation** → Séparer HTML, CSS et JavaScript.  
+
+✔ **Réutilisation facile** → Un seul fichier `.js` peut être utilisé sur plusieurs pages. 
+ 
+✔ **Chargement plus rapide** → Le navigateur met en cache les fichiers `.js` pour **accélérer l’affichage** des pages.  
+
 
 ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.005.png)
 
