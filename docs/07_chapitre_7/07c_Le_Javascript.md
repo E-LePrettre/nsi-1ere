@@ -18,7 +18,7 @@ title: 07c Le Javascript
 11. [Interactions avec l’utilisateur ](#_page14_x40.00_y95.92)
 12. [Exercices ](#_page18_x40.00_y36.92)
 
-## <H2 STYLE="COLOR:BLUE;">1. Qu'est-ce que JavaScript et à quoi sert-il ? <a name="_page0_x40.00_y687.92"></a></H2>
+## **<H2 STYLE="COLOR:BLUE;">1. Qu'est-ce que JavaScript et à quoi sert-il ? <a name="_page0_x40.00_y687.92"></a></H2>**
 ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.004.png)
 
 JavaScript est un langage de programmation utilisé **côté client** pour ajouter des fonctionnalités interactives aux pages web.  
@@ -38,8 +38,8 @@ JavaScript est un langage de programmation utilisé **côté client** pour ajout
 
 ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.009.png)
 
-## <H2 STYLE="COLOR:BLUE;">2. Comment<a name="_page1_x40.00_y280.92"></a> utiliser JavaScript avec HTML et CSS ?</H2>
-### <H3 STYLE="COLOR:GREEN;">2.1. Cas<a name="_page1_x40.00_y302.92"></a> général :</H3>
+## **<H2 STYLE="COLOR:BLUE;">2. Comment<a name="_page1_x40.00_y280.92"></a> utiliser JavaScript avec HTML et CSS ?</H2>**
+### **<H3 STYLE="COLOR:GREEN;">2.1. Cas<a name="_page1_x40.00_y302.92"></a> général :</H3>**
 
 Il est possible d’intégrer du JavaScript **dans le code HTML**, entre les balises `<script> ... </script>`.
 
@@ -79,7 +79,7 @@ Il est possible d’intégrer du JavaScript **dans le code HTML**, entre les bal
 
 
 
-### <H3 STYLE="COLOR:GREEN;">2.2. Fichier<a name="_page1_x40.00_y558.92"></a> js externalisé</H3>
+### **<H3 STYLE="COLOR:GREEN;">2.2. Fichier<a name="_page1_x40.00_y558.92"></a> js externalisé</H3>**
 
 Pour une **meilleure organisation**, on peut **séparer** le JavaScript dans un fichier `.js` externe.
 
@@ -143,7 +143,7 @@ document.getElementById("monBouton").addEventListener("click", function() {
 
 
 
-## <H2 STYLE="COLOR:BLUE;">3. Boite<a name="_page2_x40.00_y237.92"></a> de dialogue</H2>
+## **<H2 STYLE="COLOR:BLUE;">3. Boite<a name="_page2_x40.00_y237.92"></a> de dialogue</H2>**
 
 JavaScript propose **trois types de boîtes de dialogue** pour interagir avec l'utilisateur :  
 
@@ -223,7 +223,7 @@ alert('Hello world!');
 ✅ **Félicitations, vous avez relié un fichier JavaScript externe !** 🎉
 
 
-## <H2 STYLE="COLOR:BLUE;">4. La<a name="_page2_x40.00_y113.92"></a> console</H2>
+## **<H2 STYLE="COLOR:BLUE;">4. La<a name="_page2_x40.00_y113.92"></a> console</H2>**
 
 La **console JavaScript** permet d'afficher des messages utiles pour **déboguer** un programme.
 
@@ -261,8 +261,8 @@ console.log("Bonjour " + nom + " !");
 
 ![](image1.png)
 
-## <H2 STYLE="COLOR:BLUE;">5. Les<a name="_page2_x40.00_y641.92"></a> variables</H2>
-### <H3 STYLE="COLOR:GREEN;">5.1. Déclarer<a name="_page2_x40.00_y663.92"></a> une variable</H3>
+## **<H2 STYLE="COLOR:BLUE;">5. Les<a name="_page2_x40.00_y641.92"></a> variables</H2>**
+### **<H3 STYLE="COLOR:GREEN;">5.1. Déclarer<a name="_page2_x40.00_y663.92"></a> une variable</H3>**
 
 Une variable est **un espace mémoire** permettant de stocker une valeur.  
 
@@ -302,7 +302,7 @@ console.log(myVariable);
 
 
 
-### <H3 STYLE="COLOR:GREEN;">5.2. Les<a name="_page3_x40.00_y137.92"></a> types de variables</H3>
+### **<H3 STYLE="COLOR:GREEN;">5.2. Les<a name="_page3_x40.00_y137.92"></a> types de variables</H3>**
 
 
 JavaScript est **typé dynamiquement** 📌 **(on n’a pas besoin de préciser le type d’une variable)**.
@@ -321,7 +321,7 @@ console.log(typeof true);       // "boolean"
 ```
  
 
-### <H3 STYLE="COLOR:GREEN;">5.3. Les<a name="_page3_x40.00_y247.92"></a> chaines de caractères</H3>
+### **<H3 STYLE="COLOR:GREEN;">5.3. Les<a name="_page3_x40.00_y247.92"></a> chaines de caractères</H3>**
 
 
 
@@ -343,7 +343,7 @@ console.log(message2);
 
 
 
-### <H3 STYLE="COLOR:GREEN;">5.4. Tester<a name="_page3_x40.00_y503.92"></a> l’existence de variables avec typeof ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.029.png)</H3>
+### **<H3 STYLE="COLOR:GREEN;">5.4. Tester<a name="_page3_x40.00_y503.92"></a> l’existence de variables avec typeof ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.029.png)</H3>**
 
 
 **<H3 STYLE="COLOR:red;">Activité n°9 :</H3>** 
@@ -368,7 +368,7 @@ boolean
 
 ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.031.png) 
 
-### <H3 STYLE="COLOR:GREEN;">5.5. Les<a name="_page3_x40.00_y706.92"></a> calculs</H3>
+### **<H3 STYLE="COLOR:GREEN;">5.5. Les<a name="_page3_x40.00_y706.92"></a> calculs</H3>**
 
 JavaScript permet **toutes les opérations classiques** :  
 ✔ Addition `+`  
@@ -403,7 +403,7 @@ console.log(result3);
 ➡ **Résultat attendu** : Affichage des valeurs calculées.
 
 
-### <H3 STYLE="COLOR:GREEN;">5.6. La<a name="_page4_x40.00_y154.92"></a> concaténation</H3>
+### **<H3 STYLE="COLOR:GREEN;">5.6. La<a name="_page4_x40.00_y154.92"></a> concaténation</H3>**
 
 📌 **Exemple :**  
 ```js
@@ -427,7 +427,7 @@ console.log(result);
 
  
 
-### <H3 STYLE="COLOR:GREEN;">5.7. Interagir<a name="_page4_x40.00_y286.92"></a> avec l’utilisateur</H3>
+### **<H3 STYLE="COLOR:GREEN;">5.7. Interagir<a name="_page4_x40.00_y286.92"></a> avec l’utilisateur</H3>**
 
 
 📌 **Exemple :**
@@ -456,7 +456,7 @@ console.log(result);
 
 
 
-### <H3 STYLE="COLOR:GREEN;">5.8. Convertir une entrée utilisateur en nombre (`parseInt()` et `parseFloat()`)</H3>
+### **<H3 STYLE="COLOR:GREEN;">5.8. Convertir une entrée utilisateur en nombre (`parseInt()` et `parseFloat()`)</H3>**
 
 📌 **Problème** : `prompt()` **retourne toujours du texte**.  
 📌 **Solution** : Convertir avec **`parseInt()` (entier)** ou **`parseFloat()` (nombre décimal)**.
@@ -482,8 +482,8 @@ console.log(result);
 
 
 
-## <H2 STYLE="COLOR:BLUE;">6. Les<a name="_page4_x40.00_y693.92"></a> conditions</H2>
-### <H3 STYLE="COLOR:GREEN;">6.1. Les<a name="_page4_x40.00_y715.92"></a> opérateurs de condition</H3>
+## **<H2 STYLE="COLOR:BLUE;">6. Les<a name="_page4_x40.00_y693.92"></a> conditions</H2>**
+### **<H3 STYLE="COLOR:GREEN;">6.1. Les<a name="_page4_x40.00_y715.92"></a> opérateurs de condition</H3>**
 
 Les opérations de comparaison classiques sont les mêmes : ```==``` ; ```!= ```; ```<``` ; ```<=``` etc.
 
@@ -504,8 +504,8 @@ console.log(result); // Affiche « false » car cet opérateur compare aussi les
 ```
 
 
-### <H3 STYLE="COLOR:GREEN;">6.2. Les<a name="_page5_x40.00_y167.92"></a> structures conditionnelles</H3>
-#### <H4 STYLE="COLOR:ORANGE;">6.2.1. La<a name="_page5_x40.00_y186.92"></a> condition « if else »</H4>
+### **<H3 STYLE="COLOR:GREEN;">6.2. Les<a name="_page5_x40.00_y167.92"></a> structures conditionnelles</H3>**
+#### **<H4 STYLE="COLOR:ORANGE;">6.2.1. La<a name="_page5_x40.00_y186.92"></a> condition « if else »</H4>****
 
 **<H3 STYLE="COLOR:red;">Activité n°15 :</H3>** 
 
@@ -555,7 +555,7 @@ if ( /* condition */ ) {
 ```
 
 
-#### <H4 STYLE="COLOR:ORANGE;">6.2.2. La<a name="_page5_x40.00_y659.92"></a> condition ```switch```</H4>
+#### **<H4 STYLE="COLOR:ORANGE;">6.2.2. La<a name="_page5_x40.00_y659.92"></a> condition ```switch```</H4>**
 
 
 **<H3 STYLE="COLOR:red;">Activité n°17 :</H3>** 
@@ -591,17 +591,17 @@ Tout ce qui suit les deux points d’un ```case``` sera exécuté si la variable
 
 
 
-## <H2 STYLE="COLOR:BLUE;">7. Les<a name="_page6_x40.00_y544.92"></a> opérateurs logiques</H2>
+## **<H2 STYLE="COLOR:BLUE;">7. Les<a name="_page6_x40.00_y544.92"></a> opérateurs logiques</H2>**
 
 - L’opérateur ET se note ```&&``` 
 - L’opérateur OU se note ```||``` (Alt Gr + 6)  
 - L’opérateur NON se note comme en Python avec ```!``` 
 
-## <H2 STYLE="COLOR:BLUE;">8. Les<a name="_page6_x40.00_y626.92"></a> boucles 🌀</H2>
+## **<H2 STYLE="COLOR:BLUE;">8. Les<a name="_page6_x40.00_y626.92"></a> boucles 🌀</H2>**
 
 Les boucles permettent d'exécuter plusieurs fois un même bloc de code tant qu'une condition est remplie. Il existe plusieurs types de boucles en JavaScript.
 
-### <H3 STYLE="COLOR:GREEN;">8.1. L’incrémentation<a name="_page6_x40.00_y648.92"></a></H3>
+### **<H3 STYLE="COLOR:GREEN;">8.1. L’incrémentation<a name="_page6_x40.00_y648.92"></a></H3>**
 
 L’incrémentation permet **d’ajouter une unité** à un nombre, tandis que la décrémentation permet **d’en soustraire une unité**. 
 
@@ -633,7 +633,7 @@ console.log(number2); // Affiche 1 (valeur après incrémentation)
 ```
 
 
-### <H3 STYLE="COLOR:GREEN;">8.2. La<a name="_page7_x40.00_y168.92"></a> boucle while</H3>
+### **<H3 STYLE="COLOR:GREEN;">8.2. La<a name="_page7_x40.00_y168.92"></a> boucle while</H3>**
 
 La boucle `while` permet d’exécuter du code tant qu’une condition est remplie.
 
@@ -651,7 +651,7 @@ console.log("Boucle terminée !");
 
 **⚠️ Attention :** Toujours s'assurer que la condition de sortie est bien gérée pour éviter une **boucle infinie**.
 
-### <H3 STYLE="COLOR:GREEN;">8.3. La<a name="_page7_x40.00_y328.92"></a> boucle do while</H3>
+### **<H3 STYLE="COLOR:GREEN;">8.3. La<a name="_page7_x40.00_y328.92"></a> boucle do while</H3>**
 
 Contrairement à `while`, la boucle `do while` **s'exécute au moins une fois**, même si la condition n'est pas remplie.
 
@@ -665,7 +665,7 @@ do {
 } while (count < 3); // Bien que la condition soit fausse, l'instruction s'exécute une fois
 ```
 
-### <H3 STYLE="COLOR:GREEN;">8.4. La<a name="_page7_x40.00_y446.92"></a> boucle for</H3>
+### **<H3 STYLE="COLOR:GREEN;">8.4. La<a name="_page7_x40.00_y446.92"></a> boucle for</H3>**
 
 La boucle `for` est souvent utilisée lorsque l’on connaît **le nombre exact d’itérations**.
 
@@ -685,7 +685,7 @@ console.log("Boucle terminée !");
 3️⃣ **Incrémentation** → `i++` (on ajoute 1 à `i` à chaque tour)
 
 
-## <H2 STYLE="COLOR:BLUE;">9. Les<a name="_page7_x40.00_y654.92"></a> fonctions 🛠️</H2>
+## **<H2 STYLE="COLOR:BLUE;">9. Les<a name="_page7_x40.00_y654.92"></a> fonctions 🛠️</H2>**
 
 Une fonction est un **bloc de code réutilisable** qui exécute une tâche précise.
 
@@ -782,11 +782,11 @@ console.log(testReturn()); // Affiche : Bonjour !
 
 
 
-## <H2 STYLE="COLOR:BLUE;">10. Modeler<a name="_page8_x40.00_y524.92"></a> des pages web avec js 🖥️</H2>
+## **<H2 STYLE="COLOR:BLUE;">10. Modeler<a name="_page8_x40.00_y524.92"></a> des pages web avec js 🖥️</H2>**
 
 Le **Document Object Model (DOM)** est une interface qui permet à JavaScript d'interagir avec une page HTML et de modifier son contenu ou son apparence en temps réel. 
 
-### <H3 STYLE="COLOR:GREEN;">10.1. Manipuler<a name="_page8_x40.00_y578.92"></a> les éléments HTML</H3>
+### **<H3 STYLE="COLOR:GREEN;">10.1. Manipuler<a name="_page8_x40.00_y578.92"></a> les éléments HTML</H3>**
 
 **<H3 STYLE="COLOR:red;">Activité n°26 :</H3>** 
 
@@ -911,7 +911,7 @@ function resetCouleur() {
 
 ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.097.png) ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.098.png)
 
-### <H3 STYLE="COLOR:GREEN;">10.2. Sélectionner<a name="_page10_x40.00_y701.92"></a> des éléments avec `querySelector` et `querySelectorAll`</H3>
+### **<H3 STYLE="COLOR:GREEN;">10.2. Sélectionner<a name="_page10_x40.00_y701.92"></a> des éléments avec `querySelector` et `querySelectorAll`</H3>**
 
 
 
@@ -945,7 +945,7 @@ function resetCouleur() {
 ```
 
 
-### <H3 STYLE="COLOR:GREEN;">10.3. Modification<a name="_page11_x40.00_y265.92"></a> de contenu de la page HTML avec la propriété ```innerHTML```</H3>
+### **<H3 STYLE="COLOR:GREEN;">10.3. Modification<a name="_page11_x40.00_y265.92"></a> de contenu de la page HTML avec la propriété ```innerHTML```</H3>**
 
 **<H3 STYLE="COLOR:red;">Activité n°32 :</H3>** 
 
@@ -975,7 +975,7 @@ function resetCouleur() {
 
 
 
-### <H3 STYLE="COLOR:GREEN;">10.4. Modification<a name="_page12_x40.00_y111.92"></a> de modification de style de la page HTML avec la propriété style</H3>
+### **<H3 STYLE="COLOR:GREEN;">10.4. Modification<a name="_page12_x40.00_y111.92"></a> de modification de style de la page HTML avec la propriété style</H3>**
 
 **<H3 STYLE="COLOR:red;">Activité n°34 :</H3>** 
 
@@ -1006,7 +1006,7 @@ function resetCouleur() {
 
 
 
-### <H3 STYLE="COLOR:GREEN;">10.5. Ajouter<a name="_page13_x40.00_y67.92"></a> et supprimer des classes CSS dynamiquement</H3>
+### **<H3 STYLE="COLOR:GREEN;">10.5. Ajouter<a name="_page13_x40.00_y67.92"></a> et supprimer des classes CSS dynamiquement</H3>**
 
 **<H3 STYLE="COLOR:red;">Activité n°36 :</H3>** 
  
@@ -1027,7 +1027,7 @@ function resetCouleur() {
 element.classList.remove("nouveauStyle");
 ```
 
-### <H3 STYLE="COLOR:GREEN;">10.6. Ajouter<a name="_page13_x40.00_y67.92"></a> des événements dynamiquement</H3>
+### **<H3 STYLE="COLOR:GREEN;">10.6. Ajouter<a name="_page13_x40.00_y67.92"></a> des événements dynamiquement</H3>**
 
 
 
@@ -1047,13 +1047,13 @@ element.classList.remove("nouveauStyle");
 ```
 
 
-## <H2 STYLE="COLOR:BLUE;">11. Interactions<a name="_page14_x40.00_y95.92"></a> avec l’utilisateur 🖱️⌨️</H2>
+## **<H2 STYLE="COLOR:BLUE;">11. Interactions<a name="_page14_x40.00_y95.92"></a> avec l’utilisateur 🖱️⌨️</H2>**
 
 Les **événements** en JavaScript permettent de réagir aux actions de l'utilisateur. Ils peuvent être déclenchés par **un clic**, **le passage de la souris**, **une pression sur une touche**, **le remplissage d'un formulaire**, etc.
 
 
 
-### <H3 STYLE="COLOR:GREEN;">11.1. Liste<a name="_page14_x40.00_y174.92"></a> des événements en JS</H3>
+### **<H3 STYLE="COLOR:GREEN;">11.1. Liste<a name="_page14_x40.00_y174.92"></a> des événements en JS</H3>**
 
 JavaScript propose **différents types d'événements** :
 
@@ -1081,7 +1081,7 @@ JavaScript propose **différents types d'événements** :
 👉 Pour une **liste complète**, consultez la documentation :  
 🔗 [Liste des événements JavaScript](https://www.lehtml.com/js/even.htm)
 
-### <H3 STYLE="COLOR:GREEN;">11.2. **<a name="_page14_x40.00_y550.92"></a> Manipuler les événements en JavaScript**</H3>
+### **<H3 STYLE="COLOR:GREEN;">11.2. <a name="_page14_x40.00_y550.92"></a> Manipuler les événements en JavaScript**</H3>
 
 **<H3 STYLE="COLOR:red;">Activité n°39 :</H3>** 
 
@@ -1150,7 +1150,7 @@ Dans cet exemple, un simple **clic** sur le texte affichera une alerte.
 - `keydown` détecte une touche **enfoncée**.
 - `event.key` affiche la touche appuyée.
 
-### <H3 STYLE="COLOR:GREEN;">11.3. **Le mot-clé `this` référence l’élément HTML qui a déclenché l’événement**.</H3>
+### **<H3 STYLE="COLOR:GREEN;">11.3. Le mot-clé `this` référence l’élément HTML qui a déclenché l’événement**.</H3>
 
 **<H3 STYLE="COLOR:red;">Activité n°43 :</H3>** 
 
@@ -1168,7 +1168,7 @@ Le mot-clé `this` **référence l’élément HTML qui a déclenché l’évén
 - **`onfocus`** → Quand l'utilisateur clique sur le champ, le texte change.
 - **`onblur`** → Quand il quitte le champ, le texte revient à sa valeur initiale.
 
-### <H3 STYLE="COLOR:GREEN;">11.4. **Ajouter plusieurs événements à un même élément**.</H3>
+### **<H3 STYLE="COLOR:GREEN;">11.4. Ajouter plusieurs événements à un même élément**.</H3>
 
 On peut attacher plusieurs événements **à un seul élément**.
 
@@ -1248,7 +1248,7 @@ Avec `removeEventListener()`, on peut **désactiver un événement**.
 
 **Pour aller plus loin ou avoir plus de détails** : [https://www.w3schools.com/jsref/dom_obj_all.asp](https://www.w3schools.com/jsref/dom_obj_all.asp) ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.005.png)
 
-## <H2 STYLE="COLOR:BLUE;">12. Exercices<a name="_page18_x40.00_y36.92"></a></H2>
+## **<H2 STYLE="COLOR:BLUE;">12. Exercices<a name="_page18_x40.00_y36.92"></a></H2>**
 
 => CAPYTALE Le code vous sera donné par votre enseignant 
 
