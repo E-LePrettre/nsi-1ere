@@ -1047,109 +1047,134 @@ element.classList.remove("nouveauStyle");
 ```
 
 
-## <H2 STYLE="COLOR:BLUE;">11. Interactions<a name="_page14_x40.00_y95.92"></a> avec l’utilisateur</H2>
+## <H2 STYLE="COLOR:BLUE;">11. Interactions<a name="_page14_x40.00_y95.92"></a> avec l’utilisateur 🖱️⌨️</H2>
 
-Les événements permettent de déclencher une fonction selon qu'une action s'est produite ou non. Par exemple, faire apparaître une fenêtre ```alert()``` lorsque l'utilisateur survole une zone d'une page web, ou ajouter un élément lors d'un clic de bouton de la souris (ou du clavier). 
+Les **événements** en JavaScript permettent de réagir aux actions de l'utilisateur. Ils peuvent être déclenchés par **un clic**, **le passage de la souris**, **une pression sur une touche**, **le remplissage d'un formulaire**, etc.
+
+
 
 ### <H3 STYLE="COLOR:GREEN;">11.1. Liste<a name="_page14_x40.00_y174.92"></a> des événements en JS</H3>
-Résumé des événements JS : Il est important de noter que les événements peuvent être déclenchés par des actions de l'utilisateur ou par des actions du script lui-même.  
 
-[https://www.lehtml.com/js/even.htm](https://www.lehtml.com/js/even.htm)
+JavaScript propose **différents types d'événements** :
 
-<table><tr><th>click </th><th>Cliquer (appuyer puis relâcher) sur l'élément </th></tr>
-<tr><td>dblclick </td><td>Double-cliquer sur l'élément </td></tr>
-<tr><td>mouseover</td><td>Faire entrer le curseur sur l'élément </td></tr>
-<tr><td>mouseout </td><td>Faire sortir le curseur de l'élément </td></tr>
-<tr><td>mousedown</td><td>Appuyer (sans relâcher) sur le bouton gauche de la souris sur l'élément </td></tr
+| **Événement**      | **Description** |
+|--------------------|----------------|
+| `click`          | L'utilisateur clique sur un élément. |
+| `dblclick`       | Double-clique sur un élément. |
+| `mouseover`      | La souris passe au-dessus d’un élément. |
+| `mouseout`       | La souris sort d’un élément. |
+| `mousedown`      | L'utilisateur appuie sur un bouton de la souris. |
+| `mouseup`        | L'utilisateur relâche le bouton de la souris. |
+| `mousemove`      | La souris se déplace au-dessus de l’élément. |
+| `keydown`        | Une touche du clavier est enfoncée. |
+| `keyup`          | Une touche du clavier est relâchée. |
+| `keypress`       | Une touche du clavier est pressée et relâchée. |
+| `focus`          | Un champ de formulaire reçoit le focus. |
+| `blur`           | Un champ de formulaire perd le focus. |
+| `change`         | La valeur d’un champ change. |
+| `input`          | L'utilisateur modifie un champ en tapant du texte. |
+| `select`         | Le texte est sélectionné dans un champ de texte. |
+| `submit`        | Un formulaire est soumis. |
+| `resize`        | La fenêtre est redimensionnée. |
+| `scroll`        | L’utilisateur fait défiler la page. |
 
->
-<tr><td>mouseup </td><td>Relâcher le bouton gauche de la souris sur l'élément </td></tr>
-<tr><td>mousemove</td><td>Faire déplacer le curseur sur l'élément </td></tr>
-<tr><td>keydown </td><td>Appuyer (sans relâcher) sur une touche de clavier sur l'élément </td></tr>
-<tr><td>keyup </td><td>Relâcher une touche de clavier sur l'élément </td></tr>
-<tr><td>keypress </td><td>Frapper (appuyer puis relâcher) une touche de clavier sur l'élément </td></tr>
-<tr><td>focus </td><td>« Cibler » l'élément </td></tr>
-<tr><td>blur </td><td>Annuler le « ciblage » de l'élément </td></tr>
-<tr><td>change </td><td>Changer la valeur d'un élément spécifique aux formulaires (input, checkbox, etc.) </td></tr>
-<tr><td rowspan="2">input </td><td>[Taper un caractère dans un champ de texte (son support n'est pas complet sur tous les ](https://caniuse.com/#feat=input-event)</td></tr>
-<tr><td>[navigateurs) (https://caniuse.com/#feat=input-event)](https://caniuse.com/#feat/input-event) </td></tr>
-<tr><td>select </td><td>Sélectionner le contenu d'un champ de texte (input, textarea, etc.) </td></tr>
-<tr><td>submit </td><td>déclenché lorsque le formulaire est soumis. </td></tr>
-<tr><td>resize </td><td>Resize de la fenêtre </td></tr>
-<tr><td>scroll </td><td>Scroll de la fenêtre </td></tr>
-</table>
+👉 Pour une **liste complète**, consultez la documentation :  
+🔗 [Liste des événements JavaScript](https://www.lehtml.com/js/even.htm)
 
-### <H3 STYLE="COLOR:GREEN;">11.2. La<a name="_page14_x40.00_y550.92"></a> pratique</H3>
+### <H3 STYLE="COLOR:GREEN;">11.2. **<a name="_page14_x40.00_y550.92"></a> Manipuler les événements en JavaScript**</H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°45 :</H3>** Créer un fichier (avec tout ce qu’il faut  ) **evenement.html**, et saisir le code ci-dessous. 
+**<H3 STYLE="COLOR:red;">Activité n°39 :</H3>** 
+
+📌 **Exécuter une alerte lors d’un clic**  
+Dans cet exemple, un simple **clic** sur le texte affichera une alerte.
+
+🔹 **Créer un fichier `evenement.html` et y insérer le code suivant** :
+
 ```html
 <body>
-   <span onclick="alert('Hello')"> Cliquez ici !</span>
+    <span onclick="alert('Hello')">Cliquez ici !</span>
 </body>
 ```
+✅ **Explication** : Lorsqu’on clique sur le texte, l’alerte `"Hello"` s’affiche.
 
-Enregistrer et observer la page html dans Firefox. Ici la fonction ```alert()``` ne se déclenche que lors d’un clic. 
+---
 
-**<H3 STYLE="COLOR:red;">Activité n°46 :</H3>** Afficher une alerte lorsque l'utilisateur clique sur un bouton :  
+**<H3 STYLE="COLOR:red;">Activité n°40 :</H3>** 
+
+📌 **Utiliser `addEventListener()` pour un clic sur un bouton**
 ```html
 <body>
-   <button id="bouton">Cliquez ici !</button> 
-   <script>
-      var bouton = document.getElementById("bouton");
-      bouton.addEventListener("click", function() {
-      console.log("Bouton cliqué");
-      });
-   </script>
+    <button id="bouton">Cliquez ici !</button>
+    <script>
+        var bouton = document.getElementById("bouton");
+        bouton.addEventListener("click", function() {
+            console.log("Bouton cliqué !");
+        });
+    </script>
 </body>
 ```
+✅ **Explication** :  
+- `getElementById("bouton")` cible le bouton.
+- `addEventListener("click", function() {...})` écoute le clic et exécute la fonction.
 
-**<H3 STYLE="COLOR:red;">Activité n°47 :</H3>** Changer la couleur de fond d'un élément lorsque la souris passe dessus  
+**<H3 STYLE="COLOR:red;">Activité n°41 :</H3>** 
+
+**Changer la couleur d’un élément lorsque la souris passe dessus**
 ```html
 <body>
-   <p id="maDiv">c'est un paragraphe avec un id</p>
-   <script>
-      var div = document.getElementById("maDiv");
-      div.addEventListener("mouseover", function() {
-      div.style.backgroundColor = "red";
-      });
-   </script>
+    <p id="maDiv">Passez la souris ici !</p>
+    <script>
+        var div = document.getElementById("maDiv");
+        div.addEventListener("mouseover", function() {
+            div.style.backgroundColor = "red";
+        });
+    </script>
 </body>
 ```
+✅ **Explication** : Lorsque la souris **survole** l'élément, son fond devient **rouge**.
 
-**<H3 STYLE="COLOR:red;">Activité n°48 :</H3>** Afficher le code d'une touche pressée lorsque l'utilisateur tape sur le clavier :
+**<H3 STYLE="COLOR:red;">Activité n°42 :</H3>** 
+
+📌 **Détecter la touche appuyée sur le clavier**
 ```html
 <body>
-   <p>c'est un paragraphe </p>
-   <script>
-      document.addEventListener("keydown", function(event) {
-      console.log("Touche pressée : " + event.keyCode);
-      });
-   </script>
-</body>
-```  
-
-**Le mot-clé ```this```** : il s'agit d'une propriété pointant **sur l'objet actuellement en cours d'utilisation**. Donc, si vous faites appel à ce mot-clé lorsqu'un événement est déclenché, l'objet pointé sera l'élément qui a déclenché l'événement. 
-
-**<H3 STYLE="COLOR:red;">Activité n°49 :</H3>**
-```html
-<body>
-   <input type="text" id="input" size="50" value="Cliquez ici"
-      onfocus="this.value = 'Appuyez sur la tabulation pour perdre le focus'" onblur="this.value= 'Cliquez ici !'">
+    <p>Appuyez sur une touche...</p>
+    <script>
+        document.addEventListener("keydown", function(event) {
+            console.log("Touche pressée : " + event.key);
+        });
+    </script>
 </body>
 ```
- 
-Enregistrer et observer la page html dans Firefox. 
+✅ **Explication** :  
+- `keydown` détecte une touche **enfoncée**.
+- `event.key` affiche la touche appuyée.
 
-![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.140.jpeg) ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.141.png)
+### <H3 STYLE="COLOR:GREEN;">11.3. **Le mot-clé `this` référence l’élément HTML qui a déclenché l’événement**.</H3>
 
-**Le mot clé ```this```** permet de pointer sur l'objet qui a déclenché l'évènement. 
+**<H3 STYLE="COLOR:red;">Activité n°43 :</H3>** 
 
-- ```onfocus``` : se déclenchera si le "focus" est pris par la balise ```input```. 
-- ```onblur``` : se déclenchera si le "focus" est perdu par la balise ```input```.
+Le mot-clé `this` **référence l’élément HTML qui a déclenché l’événement**.
 
-### <H3 STYLE="COLOR:GREEN;">11.3. Pour<a name="_page16_x40.00_y319.92"></a> aller plus loin avec eventListener</H3>
+📌 **Modifier un champ de texte au focus et blur**
+```html
+<body>
+    <input type="text" id="input" size="50" value="Cliquez ici"
+           onfocus="this.value = 'Écrivez quelque chose...'"
+           onblur="this.value = 'Cliquez ici !'">
+</body>
+```
+✅ **Explication** :  
+- **`onfocus`** → Quand l'utilisateur clique sur le champ, le texte change.
+- **`onblur`** → Quand il quitte le champ, le texte revient à sa valeur initiale.
 
-**<H3 STYLE="COLOR:red;">Activité n°50 :</H3>**
+### <H3 STYLE="COLOR:GREEN;">11.4. **Ajouter plusieurs événements à un même élément**.</H3>
+
+On peut attacher plusieurs événements **à un seul élément**.
+
+**<H3 STYLE="COLOR:red;">Activité n°44 :</H3>** 
+
+📌 **Ajouter plusieurs événements avec `addEventListener()`**
 ```html
 <!DOCTYPE html>
 <html>
@@ -1157,34 +1182,69 @@ Enregistrer et observer la page html dans Firefox.
     <button id="clickIt">Cliquez ici !</button> 
     <p id="hoverPara">Passez la souris sur ce texte !</p>
     <b id="effect"></b>
+
     <script>
-        const x = document.getElementById("clickIt");
-        const y = document.getElementById("hoverPara");
-        x.addEventListener("click", RespondClick);
-        y.addEventListener("mouseover", RespondMouseOver);
-        y.addEventListener("mouseout", RespondMouseOut); 
-        function RespondMouseOver() {
-            document.getElementById("effect").innerHTML +=
-                       "MouseOver Event" + "<br>";
-        }
-        function RespondMouseOut() {
-            document.getElementById("effect").innerHTML +=
-                      "MouseOut Event" + "<br>";
-        }
+        const bouton = document.getElementById("clickIt");
+        const texte = document.getElementById("hoverPara");
+
+        bouton.addEventListener("click", RespondClick);
+        texte.addEventListener("mouseover", RespondMouseOver);
+        texte.addEventListener("mouseout", RespondMouseOut);
+
         function RespondClick() {
-            document.getElementById("effect").innerHTML +=
-                      "Click Event" + "<br>";
+            document.getElementById("effect").innerHTML += "Clic détecté !<br>";
+        }
+
+        function RespondMouseOver() {
+            document.getElementById("effect").innerHTML += "MouseOver détecté !<br>";
+        }
+
+        function RespondMouseOut() {
+            document.getElementById("effect").innerHTML += "MouseOut détecté !<br>";
         }
     </script>
 </body>
 </html>
 ```
+✅ **Explication** :  
+- **Le bouton** déclenche un message `"Clic détecté !"`.
+- **Le texte** affiche `"MouseOver détecté !"` quand la souris passe dessus.
+- **Le texte** affiche `"MouseOut détecté !"` quand la souris quitte.
 
-Enregistrer et observer la page html dans Firefox.  
 
-![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.149.png)
 
-Comme vous le voyez, il est possible d'ajouter plusieurs ```EventListener``` à un même élément html. Vous pouvez aussi associer une fonction à votre ```eventListener``` sans qu'elle soit intégrée dans les paramètres, cette fonction peut être définie par la suite (comme ```RespondMouseOut```). 
+### **<H3 STYLE="COLOR:GREEN;">11.5. Pour<a name="_page16_x40.00_y319.92"></a> aller plus loin : Supprimer un écouteur d’événement**</H3>
+
+Avec `removeEventListener()`, on peut **désactiver un événement**.
+
+**<H3 STYLE="COLOR:red;">Activité n°45 :</H3>**
+
+📌 **Supprimer un événement après un clic**
+```html
+<body>
+    <button id="desactiver">Désactiver le clic</button>
+    <button id="bouton">Cliquez ici !</button>
+    <script>
+        var bouton = document.getElementById("bouton");
+        var desactiver = document.getElementById("desactiver");
+
+        function afficherMessage() {
+            console.log("Bouton cliqué !");
+        }
+
+        bouton.addEventListener("click", afficherMessage);
+
+        desactiver.addEventListener("click", function() {
+            bouton.removeEventListener("click", afficherMessage);
+            console.log("L'événement a été supprimé !");
+        });
+    </script>
+</body>
+```
+✅ **Explication** :  
+- `removeEventListener("click", afficherMessage)` **désactive l'événement**.
+
+       
 
 **Pour aller plus loin ou avoir plus de détails** : [https://www.w3schools.com/jsref/dom_obj_all.asp](https://www.w3schools.com/jsref/dom_obj_all.asp) ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.005.png)
 
