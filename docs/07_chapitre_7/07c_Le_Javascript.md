@@ -138,71 +138,126 @@ document.getElementById("monBouton").addEventListener("click", function() {
 ✔ **Meilleure organisation** → Séparer HTML, CSS et JavaScript.  
 
 ✔ **Réutilisation facile** → Un seul fichier `.js` peut être utilisé sur plusieurs pages. 
- 
+
 ✔ **Chargement plus rapide** → Le navigateur met en cache les fichiers `.js` pour **accélérer l’affichage** des pages.  
 
 
-![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.005.png)
 
 ## <H2 STYLE="COLOR:BLUE;">3. Boite<a name="_page2_x40.00_y237.92"></a> de dialogue</H2>
 
-**Nous allons dans la suite faire des activités indépendantes sur une nouvelle page HTML**
+JavaScript propose **trois types de boîtes de dialogue** pour interagir avec l'utilisateur :  
 
-**<H3 STYLE="COLOR:red;">Activité n°2 :</H3>**Dans une nouvelle page html que l’on appellera **exo_JS.html**
+| Type de boîte | Utilisation | Exemple |
+|--------------|------------|---------|
+| `alert()` | Affiche un **message d'information** | `alert("Bonjour !");` |
+| `confirm()` | Demande une **confirmation (Oui/Non)** | `confirm("Voulez-vous continuer ?");` |
+| `prompt()` | Demande **une saisie de l'utilisateur** | `prompt("Quel est votre nom ?");` |
+
+
+**<H3 STYLE="COLOR:red;">Activité n°2 :</H3>**
+
+1️⃣ **Créer un nouveau fichier HTML** appelé **`exo_JS.html`**  
+2️⃣ **Ajouter ce code dans `exo_JS.html`** :
 
 ```html
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Page de tests du code js</title>
-    </head>
-    <body>
-        Page de tests du code JS
-    </body>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Page de tests JavaScript</title>
+</head>
+<body>
+    <h1>Page de tests du code JavaScript</h1>
+</body>
 </html>
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°3 :</H3>**Dans exo_JS.html rajouter n’importe où dans les balises ```<body>```
+✅ **Enregistrer et ouvrir dans un navigateur**.
+
+
+
+**<H3 STYLE="COLOR:red;">Activité n°3 :</H3>**
+
+1️⃣ **Dans `exo_JS.html`**, ajouter ce code **dans `<body>`** :
 ```html
-<script> alert('Hello world!');
+<script>
+    alert('Hello world!');
 </script>
 ```
-Enregistrer et observer. 
+2️⃣ **Enregistrer et observer** :  
 
-**<H3 STYLE="COLOR:red;">Activité n°4 :</H3>** Dans exo_JS.html rajouter le lien vers le fichier js.
+➡ Une **boîte d’alerte** doit apparaître avec le message `"Hello world!"`.
+
+ 
+
+**<H3 STYLE="COLOR:red;">Activité n°4 :</H3>** 
+
+1️⃣ **Dans `exo_JS.html`**, modifier le code pour **ajouter un fichier externe `exo.js`** :
 ```html
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8" />
-        <script type="text/javascript" src="exo.js"></script>
-        <title>Page de tests du code js</title>
-    </head>
-    <body>
-        Page de tests du code JS
-    </body>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <script src="exo.js"></script>
+    <title>Page de tests JavaScript</title>
+</head>
+<body>
+    <h1>Page de tests du code JavaScript</h1>
+</body>
 </html>
 ```
 
-Créer un nouveau fichier vide **exo.js**
+2️⃣ **Créer un nouveau fichier `exo.js`** dans le même dossier.
 
-**<H3 STYLE="COLOR:red;">Activité n°5 :</H3>** Dans le fichier exo.js écrire le script suivant :
+
+**<H3 STYLE="COLOR:red;">Activité n°5 :</H3>** 
+
+1️⃣ **Dans `exo.js`**, ajouter ce code :
 ```js
 alert('Hello world!');
 ```
-Enlever de la page exo_JS.html
-```html
-<script> alert'Hello world!');
-</script>
-```
-Enregistrer le tout et observer
+2️⃣ **Dans `exo_JS.html`**, **supprimer** l'ancien `<script>` qui contenait `alert()`.  
+3️⃣ **Enregistrer et observer** :  
+➡ L’alerte **s’affiche toujours**, mais maintenant grâce à **`exo.js`**.
+
+✅ **Félicitations, vous avez relié un fichier JavaScript externe !** 🎉
+
 
 ## <H2 STYLE="COLOR:BLUE;">4. La<a name="_page2_x40.00_y113.92"></a> console</H2>
 
-**<H3 STYLE="COLOR:red;">Activité n°6 :</H3>** Dans le fichier exo.js écrire le script suivant (**à la place** de ce qu’il y avait) :
+La **console JavaScript** permet d'afficher des messages utiles pour **déboguer** un programme.
+
+
+**<H3 STYLE="COLOR:red;">Activité n°6 :</H3>** 
+
+1️⃣ **Dans `exo.js`**, remplacez `alert()` par :
 ```js
 console.log('Hello world!');
 ```
-Enregistrer le tout et observer dans **console** la page dans Firefox (ou EDGE) on fait **ctrl+Maj+I**
+2️⃣ **Enregistrer et ouvrir `exo_JS.html` dans un navigateur**.  
+3️⃣ **Ouvrir la console JavaScript** :  
+   - **Firefox / Edge** : `Ctrl + Maj + I` puis **onglet "Console"**  
+   - **Chrome** : `F12` puis **onglet "Console"**  
+
+➡ **Résultat attendu** : `"Hello world!"` s’affiche dans la console.
+
+---
+
+**📌 Pourquoi utiliser `console.log()` ?**  
+
+✔ **Affiche des messages sans interrompre la page (contrairement à `alert()`).**  
+
+✔ **Permet de tester et corriger du code facilement.**  
+
+✔ **Utile pour voir la valeur des variables en cours d'exécution.**  
+
+📌 **Exemple :**  
+```js
+let nom = "Alice";
+console.log("Bonjour " + nom + " !");
+```
+➡ `"Bonjour Alice !"` s’affichera dans la console.
+
 
 ![](image1.png)
 
