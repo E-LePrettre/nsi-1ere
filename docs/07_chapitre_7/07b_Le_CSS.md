@@ -21,24 +21,45 @@ title: 07b Le CSS
 
 ## <H2 STYLE="COLOR:BLUE;">1. La<a name="_page0_x40.00_y671.92"></a> petite histoire du CSS</H2>
 
-Le **CSS (Cascading Style Sheets)** permet de personnaliser **l’apparence** d’un site web :  
+Le **CSS (Cascading Style Sheets)** permet de personnaliser **l’apparence visuelle** d’un site web.  
+Grâce à CSS, on peut modifier :  
 
-✔ Couleur du texte,  
-✔ Police et taille des caractères,  
-✔ Bordures et arrière-plan,  
-✔ Mise en page (menus, en-tête, pied de page…).  
+✔ **Les couleurs** du texte et du fond, 
 
-## 🔍 Pourquoi a-t-on créé le CSS ?  
+✔ **La police et la taille des caractères**,  
 
-Au début du Web, **CSS n’existait pas** ! Seul le **HTML** permettait d'afficher du contenu, mais **sans mise en page avancée**.  
+✔ **Les bordures et les marges**,  
+
+✔ **La mise en page** (menus, en-tête, colonnes, pied de page…).  
+
+
+
+**🔍 Pourquoi a-t-on créé le CSS ?**  
+
+📌 **Avant CSS :**  
+
+- Seul **HTML** existait pour afficher le contenu, mais **sans mise en page avancée**.  
+- Les styles étaient inclus **directement dans le code HTML**, ce qui rendait les modifications difficiles.  
 
 💡 **Problème :**  
-- HTML mélangeait **contenu** et **mise en forme**, ce qui compliquait les mises à jour.  
-- Il fallait **modifier chaque page une par une** pour changer l’apparence d’un site.  
+
+❌ Le HTML **mélangeait contenu et mise en forme**.  
+
+❌ Pour modifier la mise en page, il fallait **changer chaque page une par une**.  
 
 💡 **Solution :**  
-➡ **Le CSS est apparu pour séparer la mise en forme (CSS) du contenu (HTML).**  
-➡ Résultat : un site **plus facile à gérer et à modifier** !
+
+✔ **Le CSS est apparu pour séparer la mise en forme du contenu.**  
+
+✔ Un **fichier CSS unique** permet de modifier l’apparence de **tout un site en une seule fois**.  
+
+📌 **Avantages :**  
+
+✅ **Gain de temps** : Une seule modification CSS affecte toutes les pages.  
+
+✅ **Code plus clair et organisé**.  
+
+✅ **Sites plus faciles à maintenir et à modifier**.  
 
 
 ## <H2 STYLE="COLOR:BLUE;">2. Ou<a name="_page1_x40.00_y36.92"></a> écrit-on le CSS ?</H2>
@@ -47,18 +68,15 @@ Au début du Web, **CSS n’existait pas** ! Seul le **HTML** permettait d'affic
 
 On peut écrire du CSS à **trois endroits différents** :  
 
-| Méthode | Explication | Recommandation |
-|---------|------------|---------------|
-| **Fichier externe (.css)** | Le CSS est écrit dans un fichier **séparé** (`style.css`). | ✅ **Méthode recommandée** (bonne pratique) |
-| **Dans l’en-tête (`<head>`)** | Le CSS est ajouté **dans la page HTML**, entre `<style>...</style>`. | ⚠ **Dépannage uniquement** |
-| **Directement dans une balise** | Le CSS est ajouté avec **l’attribut `style`** dans une balise HTML. | ❌ **À éviter !** (mauvaise pratique) |
-
-👉 **Nous utiliserons un fichier `style.css`** pour organiser proprement notre code CSS.  
-Habituellement, on place ce fichier dans un dossier `css/`, mais dans **Capytale**, il sera à la racine.  
+| **Méthode** | **Explication** | **Recommandation** |
+|-------------|---------------|--------------------|
+| **Fichier externe (`.css`)** | Le CSS est écrit dans un fichier **séparé** (`style.css`). | ✅ **Méthode recommandée** (bonne pratique) |
+| **Dans l’en-tête (`<head>`)** | Le CSS est ajouté **dans la page HTML**, entre `<style>...</style>`. | ⚠ **À éviter sauf pour du dépannage** |
+| **Directement dans une balise** | Le CSS est ajouté avec **l’attribut `style`** dans une balise HTML. | ❌ **Mauvaise pratique** (code difficile à maintenir) |
 
 
 
-## 🏗 Exemple d’arborescence d’un site web  
+**📌 Exemple d’arborescence d’un site web**  
 
 ```
 /mon-site/
@@ -70,28 +88,41 @@ Habituellement, on place ce fichier dans un dossier `css/`, mais dans **Capytale
 │   ├── image1.jpg
 │   ├── image2.jpg
 ```
+
+ 
+
 ou :
 
 ![](6789.png)
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** **Dans `index.html`**, ajouter **le lien vers `style.css`** dans la section `<head>` :
+📌 **Bonnes pratiques** :  
+- **Mettre le CSS dans un fichier externe** (`style.css`) pour une meilleure organisation.  
+- **Éviter de mettre du CSS directement dans le HTML**. 
+
+**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** **
+
+Dans le fichier **`index.html`**, ajoutez le lien vers `style.css` dans la section `<head>` :  
 
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="style.css">
-        <title>Logique sur les passoires</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Logique sur les passoires</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bienvenue sur mon site</h1>
+    <p>Voici ma première page avec du CSS !</p>
+</body>
+</html>
 ```
-📌 **Explication** :  
 
-- La balise `<link>` relie notre fichier HTML à la feuille de style CSS (`style.css`).  
+📌 **Explication :**  
+✔ La balise `<link>` permet de relier notre fichier HTML à la feuille de style `style.css`.  
+✔ Désormais, **toute la mise en forme sera gérée depuis ce fichier CSS externe**.  
 
-- Désormais, **toute la mise en forme sera gérée dans ce fichier !**  
-
-✅ **Enregistrer et observer `index.html`**.
+✅ **Enregistrer et observer `index.html`.**  
 
 
 
@@ -101,26 +132,33 @@ ou :
 
 **<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** 
 
-Ajoutez **la même ligne** dans `page2.html` :  
+Lier le fichier CSS à `page2.html`**  
+
+Ajoutez la même ligne dans `page2.html` :  
 
 ```html
 <link rel="stylesheet" href="style.css">
 ```
 
-✅ **Enregistrer et observer `page2.html`**.
+✅ **Enregistrer et observer `page2.html`.**  
 
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°3.:</H3>** Faire un lien également vers le fichier style.css depuis la page3.html. 
 
-Enregistrer et observer les page2.html et page3.html. 
+**<H3 STYLE="COLOR:red;">Activité n°3.:</H3>** Faire un lien vers le fichier CSS dans `page3.html`**  
 
-**Pourquoi utiliser un fichier CSS externe ?**  
+1. **Ouvrir `page3.html`**  
+2. **Ajouter le lien vers `style.css`**  
+3. **Enregistrer et observer les modifications sur les pages `page2.html` et `page3.html`.**  
 
-✔ **Un seul fichier CSS pour tout le site** : 
 
-   - Si vous changez la couleur du texte **dans `style.css`**, **toutes les pages seront mises à jour automatiquement !**  
+
+**📌 Pourquoi utiliser un fichier CSS externe ?**  
+
+✔ **Un seul fichier CSS pour tout le site** :  
+
+   - Si vous changez la couleur du texte dans `style.css`, **toutes les pages sont mises à jour automatiquement !**  
 
 ✔ **Facilité de maintenance** :  
 
@@ -128,101 +166,136 @@ Enregistrer et observer les page2.html et page3.html.
 
 📌 **Conclusion :**  
 
-Utiliser un **fichier CSS externe** est **la meilleure pratique** pour créer un site bien organisé et facilement modifiable. 🚀
+Utiliser un **fichier CSS externe** est **la meilleure pratique** pour créer un site **bien organisé et facilement modifiable**. 🚀  
+
+
+
  
 
 ## <H2 STYLE="COLOR:BLUE;">3. Appliquer<a name="_page1_x40.00_y534.92"></a> un style</H2> 
 
+Le **CSS** permet de **personnaliser l'apparence** des éléments d'une page web en définissant des styles appliqués à des balises HTML.
 
-Un fichier CSS est composé de **trois éléments clés** :  
+### <H3 STYLE="COLOR:GREEN;">3.1. Structure d'une règle CSS</H3>
+
+Une règle CSS est composée de **trois éléments** :  
 
 | Élément | Rôle |
 |---------|------|
-| **Sélecteurs (balises)** | Désignent les éléments HTML à modifier (ex : `p`, `h1`, `div`…) |
-| **Propriétés CSS** | Définissent l’effet appliqué (ex : `color`, `font-size`) |
-| **Valeurs** | Spécifient comment appliquer la propriété (ex : `red`, `16px`) |
+| **Sélecteur** | Désigne les éléments HTML à modifier (ex : `p`, `h1`, `.classe`, `#id`…) |
+| **Propriétés CSS** | Définissent l’effet appliqué (ex : `color`, `font-size`, `background`) |
+| **Valeurs** | Spécifient comment appliquer la propriété (ex : `red`, `16px`, `bold`) |
+
 
  
 
-### <H3 STYLE="COLOR:GREEN;">3.1. Sélectionner<a name="_page2_x40.00_y67.92"></a> une balise</H3>
+### <H3 STYLE="COLOR:GREEN;">3.2. Appliquer un style<a name="_page2_x40.00_y67.92"></a> à une balise HTML</H3>
 
 On peut appliquer un style à **toutes** les balises d’un même type en écrivant simplement le nom de la balise dans le fichier CSS.
 
-### **Exemple :**
+📌 **Exemple :** Modifier l'apparence des paragraphes (`<p>`)  
+
 ```css
 p {
-    color: blue;
-    font-size: 16px;
+    color: blue;   /* Texte en bleu */
+    font-size: 16px;  /* Taille du texte en 16 pixels */
 }
 ```
 
-📌 Ici, tous les paragraphes `<p>` auront un texte **bleu** et une taille de **16 pixels**.
+💡 **Explication** :  
+✔ **Tous les paragraphes `<p>` auront un texte bleu et une taille de 16px**.
 
 
-**<H3 STYLE="COLOR:red;">Activité n°4.:</H3>** Avec la feuille de style modifier toutes les couleurs des mots entre les balises ```<em>``` et ```<strong>```. 
 
+**<H3 STYLE="COLOR:red;">Activité n°4.:</H3>** Modifier les couleurs des mots entre `<em>` et `<strong>`**  
+
+1. **Ajoutez ces styles dans `style.css`** :  
 ```css
-em
-{
+em {
     color: red;
 }
-strong
-{
-    color : rgb(35, 241, 241) ;
+strong {
+    color: rgb(35, 241, 241);
 }
 ```
-✅ **Enregistrer et observer les changements sur `index.html`**.
+2. **Enregistrer et observer `index.html`**.
 
+✅ **Résultat attendu :**  
+- Les textes entourés de `<em>` deviennent rouges.  
+- Les textes entre `<strong>` prennent une couleur bleu-cyan.
 
-**<H3 STYLE="COLOR:red;">Activité n°5.:</H3>** Dans `style.css`, ajoutez :
+### <H3 STYLE="COLOR:GREEN;">3.3. Appliquer un style à plusieurs balises simultanément</H3>
+
+On peut appliquer un même style à **plusieurs balises** en les listant, séparées par une virgule.
+
+📌 **Exemple : Appliquer une couleur violette aux titres (`h1` à `h5`)**  
 ```css
 h1, h2, h3, h4, h5 {
     color: purple;
 }
 ```
-✅ **Enregistrer et observer `index.html`**.
+
+💡 **Explication** :  
+✔ Tous les titres `<h1>` à `<h5>` deviennent violets.  
+
+
+
+**<H3 STYLE="COLOR:red;">Activité n°5.:</H3>** Appliquer un style aux titres**  
+
+1. **Ajoutez cette règle dans `style.css`** :  
+```css
+h1, h2, h3, h4, h5 {
+    color: purple;
+}
+```
+2. **Enregistrer et observer `index.html`**.
+
 
 📌 **Note :**  
 
 - En listant plusieurs sélecteurs séparés par une **virgule**, on applique un style à plusieurs éléments en même temps.  
 
-### <H3 STYLE="COLOR:GREEN;">3.2. Les<a name="_page2_x40.00_y258.92"></a> commentaires</H3> 
+### <H3 STYLE="COLOR:GREEN;">3.4. Les<a name="_page2_x40.00_y258.92"></a> commentaires</H3> 
 
-Les **commentaires** permettent d’expliquer du code **sans qu’il soit interprété par le navigateur**.  
+Les **commentaires CSS** permettent d'ajouter des explications dans le code sans affecter l'affichage.
 
-📌 **Syntaxe d’un commentaire en CSS :**
+📌 **Syntaxe d’un commentaire en CSS** :  
 ```css
 /* Ceci est un commentaire */
 ```
 
-💡 **Bonne pratique :**  
-
-- Utiliser des commentaires pour organiser et clarifier le code CSS.
-
+💡 **Bonne pratique** :  
+✔ Utiliser des commentaires pour **expliquer et organiser le code CSS**.
 
 
-### <H3 STYLE="COLOR:GREEN;">3.3. Class<a name="_page2_x40.00_y309.92"></a> et id</H3> 
 
-Parfois, **on ne veut pas appliquer un style à toutes les balises d’un même type**, mais seulement à certaines d’entre elles.  
+### <H3 STYLE="COLOR:GREEN;">3.5. Utiliser des classes et des identifiants (`class` et `id`)<a name="_page2_x40.00_y309.92"></a> </H3> 
 
+arfois, on veut **appliquer un style uniquement à certains éléments** sans affecter tous ceux du même type.  
 On utilise alors **les classes (`class`)** et **les identifiants (`id`)**.
 
-#### <H4 STYLE="COLOR:MAGENTA;">3.3.1. L’attribut<a name="_page2_x40.00_y406.92"></a> class</H4>
+| **Attribut** | **Rôle** | **Utilisation** |
+|-------------|---------|--------------|
+| `class` | Applique un style **à plusieurs éléments** | **Utilisé souvent** |
+| `id` | Applique un style **à un seul élément unique** | **Un seul usage par page** |
 
-Une **classe** permet d’appliquer un style **à plusieurs éléments**.  
 
-📌 **Syntaxe en HTML :**  
+#### <H4 STYLE="COLOR:MAGENTA;">3.3.1. Définir une <a name="_page2_x40.00_y406.92"></a>classe (`class`)</H4>
+
+📌 **Exemple : Appliquer un style aux éléments avec la classe `.important`**  
 ```html
 <p class="important">Ce texte est important.</p>
 ```
-
-📌 **Syntaxe en CSS :**  
 ```css
 .important {
     color: red;
     font-weight: bold;
 }
 ```
+💡 **Explication** :  
+✔ Tous les éléments ayant **class="important"** seront **en rouge et en gras**.
+
+
 ➡ Une classe doit toujours être précédée d’un **point (`.`)** en CSS.
 
 **<H3 STYLE="COLOR:red;">Activité n°6.:</H3>** **Dans `index.html`**, encadrer le théorème avec une balise `<p>` en lui attribuant une **classe** 
@@ -245,41 +318,51 @@ Une **classe** permet d’appliquer un style **à plusieurs éléments**.
 
 
 
-#### <H4 STYLE="COLOR:MAGENTA;">3.3.2. L’attribut<a name="_page2_x40.00_y639.92"></a> id</H4> 
+#### <H4 STYLE="COLOR:MAGENTA;">3.3.2. Définir un identifiant (`id`)<a name="_page2_x40.00_y639.92"></a></H4> 
 
-Un **ID** est utilisé **pour un seul élément unique** sur une page.
-
-📌 **Syntaxe en HTML :**  
+U📌 **Exemple : Appliquer un style à un élément unique avec `id="titre"`**  
 ```html
 <h1 id="titre">Mon titre</h1>
 ```
-
-📌 **Syntaxe en CSS :**  
 ```css
 #titre {
     color: blue;
     text-align: center;
 }
 ```
+
+
+
+
 ➡ Un ID doit toujours être précédé d’un **dièse (`#`)** en CSS.
 
-💡 **Différence entre `class` et `id`** :  
-
-- `class` → Peut être utilisé sur **plusieurs éléments**.  
-
-- `id` → Un seul usage **par page**.
+💡 **Différences entre `class` et `id`** :  
+✔ **`class` peut être utilisé plusieurs fois sur la page**.  
+✔ **`id` est unique et ne doit être utilisé qu’une seule fois**.
 
 
-### <H3 STYLE="COLOR:GREEN;">3.4. Les<a name="_page3_x40.00_y36.92"></a> balises universelles</H3> 
+### <H3 STYLE="COLOR:GREEN;">3.6. Les<a name="_page3_x40.00_y36.92"></a> balises neutres `<div>` et `<span>`</H3> 
 
-Parfois, on veut **modifier une partie du texte** sans ajouter de `<p>`.  
+📌 **Pourquoi les utiliser ?**  
 
-Dans ce cas, on utilise les **balises neutres** :
+- `<div>` regroupe un ensemble d’éléments pour appliquer un style.  
+- `<span>` applique un style à une partie de texte sans retour à la ligne.  
 
-| Balise | Type | Utilisation |
-|--------|------|-------------|
-| `<span>` | **Inline** | Modifier **quelques mots** dans un texte |
-| `<div>` | **Block** | Regrouper un **ensemble d’éléments** |
+📌 **Exemple :**  
+```html
+<p>La notion de <span class="passoire">passoires</span> est indépendante de la notion de trous.</p>
+```
+```css
+.passoire {
+    font-weight: bold;
+    background-color: yellow;
+}
+```
+
+💡 **Explication** :  
+✔ **Le mot "passoires" est mis en surbrillance (fond jaune, texte en gras)**.  
+
+
 
 **<H3 STYLE="COLOR:red;">Activité n°7.:</H3>** 
 
@@ -342,59 +425,43 @@ Dans ce cas, on utilise les **balises neutres** :
 
 
 
-### <H3 STYLE="COLOR:GREEN;">3.5. Les<a name="_page3_x40.00_y425.92"></a> sélecteurs avancés</H3> 
+### <H3 STYLE="COLOR:GREEN;">3.7. Les<a name="_page3_x40.00_y425.92"></a> sélecteurs avancés</H3> 
 
-Les **sélecteurs avancés** permettent de **cibler des éléments précis** et d’affiner le style appliqué.
-
-📌 **Sélecteur universel `*`**
-
-Ce sélecteur applique un style à **toutes les balises** d’une page HTML.
-
+📌 **Sélecteur universel `*`** : Applique un style à **toutes les balises**.  
 ```css
 * {
     margin: 0;
     padding: 0;
 }
 ```
-**Utilisation** : Supprime **les marges et les paddings** par défaut.
 
-
-
-📌 **Sélecteur descendant**
-
-Sélectionne une **balise située à l’intérieur** d’une autre.
-
+📌 **Sélecteur descendant** : Sélectionne une **balise située à l’intérieur** d’une autre.  
 ```css
 h3 em {
     color: red;
 }
 ```
+💡 **Explication** :  
+✔ **Les `<em>` à l’intérieur d’un `<h3>` seront rouges.**  
 
-**Applique la couleur rouge** uniquement aux `<em>` **situés dans** un `<h3>`.
-
-
-📌 **Sélecteur adjacent**  
-
-Cible un élément **juste après** un autre.
-
+📌 **Sélecteur adjacent `+`** : Cible un élément **juste après** un autre.  
 ```css
 h3 + p {
     font-weight: bold;
 }
 ```
-**Le premier `<p>` après un `<h3>`** sera en **gras**.
+💡 **Explication** :  
+✔ **Le premier `<p>` après un `<h3>` sera en gras.**  
 
-
-📌 **Sélecteur d’attribut**
-
-Cible **les balises ayant un attribut spécifique**.
-
+📌 **Sélecteur d’attribut `[attribut]`** : Cible les balises ayant **un attribut spécifique**.  
 ```css
 a[title] {
     text-decoration: underline;
 }
 ```
-**Tous les liens `<a>` ayant un attribut `title` seront soulignés**.
+💡 **Explication** :  
+✔ **Tous les liens (`<a>`) ayant un attribut `title` seront soulignés.**  
+
 
 ✏️ **Consultez la documentation complète**
 
@@ -404,10 +471,11 @@ a[title] {
 
 ## <H2 STYLE="COLOR:BLUE;">4. Formater<a name="_page4_x40.00_y36.92"></a> du texte</H2>
 
-Le CSS permet de modifier **la taille, la police, l’alignement et la mise en forme** du texte.
+Le CSS permet de **modifier l’apparence du texte** : **taille, police, alignement, style (gras, italique, souligné)**.
 
 
-### <H3 STYLE="COLOR:GREEN;">4.1. Taille<a name="_page4_x40.00_y58.92"></a></H3> 
+
+### <H3 STYLE="COLOR:GREEN;">4.1. Modifier la taille du texte (`font-size`)<a name="_page4_x40.00_y58.92"></a></H3> 
 
 La taille du texte est définie avec la propriété `font-size`.  
 
@@ -419,9 +487,17 @@ Il existe **deux types de tailles** :
 | **Relative** | `%`, `em`, `rem`, `small`, `large` | `font-size: 120%;` |
 
 📌 **Recommandation** :  
+✔ **Préférez les tailles relatives** (`%`, `em`, `rem`) pour **s’adapter aux écrans**.  
+✔ L’unité **`em`** correspond à la taille relative par rapport à l’élément parent.  
+✔ L’unité **`rem`** correspond à la taille relative par rapport à la racine du document.  
 
-- **Préférez les tailles relatives** (`%`, `em`, `rem`) pour **s’adapter aux écrans**.
+📌 **Exemple :**  
 
+```css
+p {
+    font-size: 120%;  /* La taille du texte est augmentée de 20% par rapport à la valeur par défaut */
+}
+```
 
 **<H3 STYLE="COLOR:red;">Activité n°8.:</H3>** Dans `style.css`, ajoutez :
 ```css
@@ -431,26 +507,32 @@ p {
 ```
 ✅ **Enregistrer et observer `index.html`**.
 
+✅ **Résultat attendu :**  
+- Tous les paragraphes `<p>` auront une taille de **120%** de la taille normale.
+
+
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.032.jpeg)
 
-### <H3 STYLE="COLOR:GREEN;">4.2. La<a name="_page4_x40.00_y513.92"></a> police</H3> 
+### <H3 STYLE="COLOR:GREEN;">4.2. <a name="_page4_x40.00_y513.92"></a> Modifier la police (`font-family`)</H3> 
 
-La police est définie avec `font-family`.  
+La police des caractères est définie avec `font-family`.  
 
-Il est possible de spécifier **plusieurs polices**, au cas où la première n’est pas disponible.
+On peut spécifier **plusieurs polices** pour assurer la compatibilité avec les navigateurs.
 
+📌 **Exemple :**  
 ```css
 p {
     font-family: "Trebuchet MS", Arial, sans-serif;
 }
 ```
+
 📌 **Ordre de préférence** :  
 
-- `"Trebuchet MS"` → Première police souhaitée. 
+✔ `"Trebuchet MS"` → Première police souhaitée.  
+✔ `Arial` → Alternative si la première police est absente.  
+✔ `sans-serif` → Police générique au cas où aucune des précédentes n'est disponible.  
 
-- `Arial` → Alternative si Trebuchet MS est absente.  
 
-- `sans-serif` → Police générique.
 
 
 **<H3 STYLE="COLOR:red;">Activité n°9.:</H3>** Modifier la feuille de style pour que les paragraphes est une police en Trebuchet MS. 
@@ -459,30 +541,29 @@ p {
 
 ✅ **Enregistrer et observer `index.html`**.
 
-### <H3 STYLE="COLOR:GREEN;">4.3. Italique,<a name="_page5_x40.00_y342.92"></a> gras, souligné</H3> 
-
-Les principales propriétés sont :
+### <H3 STYLE="COLOR:GREEN;">4.3. Appliquer des styles (italique, gras, souligné)<a name="_page5_x40.00_y342.92"></a></H3> 
 
 | Effet | Propriété CSS | Valeurs |
 |-------|--------------|---------|
 | **Italique** | `font-style` | `normal`, `italic` |
-| **Gras** | `font-weight` | `normal`, `bold` |
-| **Souligné** | `text-decoration` | `none`, `underline` |
+| **Gras** | `font-weight` | `normal`, `bold`, `lighter`, `bolder` |
+| **Souligné** | `text-decoration` | `none`, `underline`, `overline`, `line-through` |
 
-**Exemple :**
+📌 **Exemple :**  
 ```css
 p {
-    font-style: italic;
-    font-weight: bold;
-    text-decoration: underline;
+    font-style: italic;     /* Texte en italique */
+    font-weight: bold;      /* Texte en gras */
+    text-decoration: underline;  /* Texte souligné */
 }
 ```
-📌 **Recommandation** : Évitez d’abuser du **soulignement**, il est souvent utilisé pour les liens.
+
+📌 **Recommandation** :  
+✔ **Évitez d’abuser du soulignement (`text-decoration: underline;`)**, car il est souvent utilisé pour les liens hypertexte.  
 
 
-### <H3 STYLE="COLOR:GREEN;">4.4. L’alignement<a name="_page5_x40.00_y410.92"></a></H3> 
 
-Le texte peut être **aligné** avec la propriété `text-align` :
+### <H3 STYLE="COLOR:GREEN;">4.4. Aligner du texte (`text-align`)<a name="_page5_x40.00_y410.92"></a></H3> 
 
 | Valeur | Effet |
 |--------|-------|
@@ -491,22 +572,25 @@ Le texte peut être **aligné** avec la propriété `text-align` :
 | `right` | Aligné à droite |
 | `justify` | Justifié (alignement des deux côtés) |
 
-**Exemple :**  
+📌 **Exemple : Justifier le texte**  
 ```css
 p {
     text-align: justify;
 }
 ```
-
-📌 **Les images peuvent aussi être centrées !**  
-Avec `display: block;` et `margin: auto;` :
+📌 **Exemple : Centrer une image**  
 ```css
 img {
     display: block;
     margin: auto;
 }
 ```
-`
+
+📌 **Explication** :  
+✔ `display: block;` transforme l’image en élément **bloquant** (par défaut, les images sont en `inline`).  
+✔ `margin: auto;` permet **de centrer l’image horizontalement**.  
+
+
 
 **<H3 STYLE="COLOR:red;">Activité n°10.:</H3>** Modifier la feuille de style pour que les paragraphes soient justifiés et centré les images (penser à mettre des nom aux balises des images sur la index) 
 
@@ -514,13 +598,19 @@ img {
 
 ✅ **Enregistrer et observer `index.html`**.
 
+✅ **Résultat attendu :**  
+✔ **Les paragraphes sont justifiés**.  
+✔ **Les images sont centrées** sur la page.
+
 ## <H2 STYLE="COLOR:BLUE;">5. Ajouter<a name="_page6_x40.00_y36.92"></a> de la couleur et un fond</H2> 
 
-Le CSS permet **d’améliorer l’apparence** d’une page web en modifiant **la couleur du texte et du fond**.
+Le CSS permet **d'améliorer l'apparence d'une page web** en modifiant **les couleurs du texte et du fond**.
 
-### <H3 STYLE="COLOR:GREEN;">5.1. La<a name="_page6_x40.00_y58.92"></a> couleur du texte</H3> 
 
-La propriété `color` permet de changer la couleur du texte.  
+
+### <H3 STYLE="COLOR:GREEN;">5.1. Modifier la couleur du texte (`color`)<a name="_page6_x40.00_y58.92"></a></H3> 
+
+La propriété `color` permet **de définir la couleur du texte**.  
 
 📌 **Trois façons de définir une couleur :**  
 
@@ -531,13 +621,20 @@ La propriété `color` permet de changer la couleur du texte.
 | **Code RGB** | `color: rgb(240,96,204);` |
 
 💡 **Outils pratiques pour choisir une couleur :**  
-
 🎨 [HTML Color Codes](https://htmlcolorcodes.com/fr/)  
-
 🎨 [Color Picker](http://www.colorpicker.com/)  
 
-
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.038.jpeg)
+
+📌 **Exemple :**  
+```css
+p {
+    color: #FF5A28;  /* Texte en orange */
+}
+```
+
+
+
 
 **<H3 STYLE="COLOR:red;">Activité n°11.:</H3>** Ajoutez cette règle dans `style.css` :
 ```css
@@ -560,10 +657,12 @@ p {
 
 ✅ **Enregistrer et observer `index.html`**.
 
-### <H3 STYLE="COLOR:GREEN;">5.2. Arrière<a name="_page6_x40.00_y498.92"></a> plan</H3> 
 
 
-La propriété `background-image` permet d’ajouter une **image de fond**.
+### <H3 STYLE="COLOR:GREEN;">5.2. Ajouter une image d’arrière-plan (`background-image`)<a name="_page6_x40.00_y498.92"></a></H3> 
+
+
+La propriété `background-image` permet d’ajouter une **image de fond** à une page.
 
 📌 **Syntaxe de base :**
 ```css
@@ -571,6 +670,7 @@ body {
     background-image: url("paper.gif");
 }
 ```
+
 
 
 
@@ -593,7 +693,7 @@ body {
 
 
 
-##### <H4 STYLE="COLOR:MAGENTA;">5.2.1. Répétition d’arrière plan</H4>
+##### <H4 STYLE="COLOR:MAGENTA;">5.2.1. Répétition de l’arrière-plan (`background-repeat`)</H4>
 
 Par défaut, une image de fond est **répétée** en mosaïque.  
 
@@ -605,7 +705,8 @@ background-repeat: repeat-y; /* Répétition verticale */
 background-repeat: repeat; /* Par défaut, en mosaïque */
 ```
 
-##### <H4 STYLE="COLOR:MAGENTA;">5.2.2. Position d’arrière plan</H4>
+
+##### <H4 STYLE="COLOR:MAGENTA;">5.2.2. Position de l’arrière-plan (`background-position`)</H4>
 
 On utilise `background-position` pour **placer l’image** dans la page.
 
@@ -616,7 +717,8 @@ background-position: center; /* Centré */
 ```
 
 
-##### <H4 STYLE="COLOR:MAGENTA;">5.2.3. Fixe ou scroll de l’arrière plan</H4> 
+
+##### <H4 STYLE="COLOR:MAGENTA;">5.2.3. Fixer ou défiler l’arrière-plan (`background-attachment`)</H4> 
 
 
 La propriété `background-attachment` permet **de fixer ou faire défiler l’image de fond**.
@@ -628,7 +730,8 @@ background-attachment: scroll; /* L’image défile avec la page */
 ```
 
 
-##### <H4 STYLE="COLOR:MAGENTA;">5.2.4. Propriétés abrégée de l’arrière plan</H4> 
+
+##### <H4 STYLE="COLOR:MAGENTA;">5.2.4. Propriétés abrégées de l’arrière-plan (`background`)</H4> 
 
 On peut **regrouper toutes ces propriétés** en une seule ligne :
 
@@ -654,18 +757,21 @@ body {
 
 📌 **Ordre des valeurs :** `couleur`, `image`, `répétition`, `position`, `défilement`.
 
-##### <H4 STYLE="COLOR:MAGENTA;">5.2.5. Plusieurs images</H4> 
+##### <H4 STYLE="COLOR:MAGENTA;">5.2.5. Ajouter plusieurs images d’arrière-plan</H4> 
 
-Depuis CSS3, il est possible **d’empiler plusieurs images de fond** :
+Depuis CSS3, il est possible **d’empiler plusieurs images de fond**.
 
+📌 **Exemple :**
 ```css
 body {
     background: url("soleil.png") fixed no-repeat top right,
                 url("neige.png") fixed;
 }
 ```
+📌 **Explication :**  
+- **La première image s'affiche au-dessus des autres**.
+- L’ordre des images **est important**.
 
-📌 **L’ordre des images est important** : la **première** s’affiche **au-dessus** des autres.
 
 
 
@@ -674,7 +780,7 @@ body {
 
 La première image de cette liste sera placée par-dessus les autres. Attention donc, l'ordre de déclaration des images a son importance : si vous inversez le soleil et la neige dans le code CSS précédent, vous ne verrez plus le soleil ! 
 
-## <H2 STYLE="COLOR:BLUE;">6. Habillage<a name="_page8_x40.00_y542.92"></a></H2> 
+## <H2 STYLE="COLOR:BLUE;">6. Habillage  (`float`)<a name="_page8_x40.00_y542.92"></a></H2> 
 
 La propriété `float` permet **de positionner une image à gauche ou à droite du texte**.
 
@@ -700,7 +806,7 @@ La propriété `float` permet **de positionner une image à gauche ou à droite 
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.050.png)
 
-### <H3 STYLE="COLOR:GREEN;"> **6.2. Stopper l’effet float avec `clear`</h3>**  
+### <H3 STYLE="COLOR:GREEN;"> **6.2. Stopper l’effet `float` avec `clear`</h3>**  
 
 Si on ne stoppe pas le `float`, **le texte continue à s’enrouler autour de l’image**.  
 La propriété `clear` permet **de forcer un retour à la ligne**.
@@ -721,9 +827,11 @@ La propriété `clear` permet **de forcer un retour à la ligne**.
 ```
 
 📌 **Explication :**  
-- **`clear: left;`** → Le texte **reprend après une image flottant à gauche**.  
-- **`clear: right;`** → Le texte **reprend après une image flottant à droite**.  
-- **`clear: both;`** → Le texte **reprend après n’importe quelle image flottante**.  
+| Valeur | Effet |
+|--------|-------|
+| `clear: left;` | Le texte reprend après une image flottant à gauche. |
+| `clear: right;` | Le texte reprend après une image flottant à droite. |
+| `clear: both;` | Le texte reprend après **toutes** les images flottantes. |
 
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.054.png)
@@ -732,34 +840,33 @@ La propriété `clear` permet **de forcer un retour à la ligne**.
 
 ## <H2 STYLE="COLOR:BLUE;">7. Créer<a name="_page9_x40.00_y302.92"></a> des bordures et des ombres</H2> 
 
-Les bordures et les ombres permettent d’améliorer la mise en forme des éléments en les encadrant ou en leur ajoutant un effet de relief.
+Les **bordures** et les **ombres** permettent d'améliorer la mise en page des éléments en les encadrant ou en leur ajoutant un effet de relief.
 
-### <H3 STYLE="COLOR:GREEN;">7.1. Bordures<a name="_page9_x40.00_y324.92"></a> standard</H3> 
+### <H3 STYLE="COLOR:GREEN;">7.1. Ajouter des bordures (`border`)<a name="_page9_x40.00_y324.92"></a></H3> 
 
-La propriété `border` permet de définir une bordure sur un élément HTML. 
+La propriété `border` permet d'ajouter une bordure autour d'un élément HTML.  
 
-Elle prend **trois paramètres** :
+Elle prend **trois paramètres** :  
 
 | Paramètre | Description | Exemple |
 |-----------|-------------|---------|
 | **Largeur** | Épaisseur de la bordure (en `px`, `em`, etc.) | `3px` |
-| **Type** | Style de la bordure | `solid`, `dashed`, `dotted`, `double`… |
-| **Couleur** | Couleur de la bordure | `red`, `#FF0000`, `rgb(198, 212, 37)` |
+| **Style** | Type de bordure | `solid`, `dashed`, `dotted`, `double`… |
+| **Couleur** | Couleur de la bordure | `red`, `#FF5733`, `rgb(255,0,0)` |
 
-📌 **Exemple :**
+📌 **Exemple :**  
 ```css
 h1 {
-    border: 3px blue dashed;
+    border: 3px dashed blue;
 }
 ```
-
-➡ **Résultat** : Une **bordure bleue en tirets** de `3px` autour des `<h1>`.
-
+➡ **Résultat** : Un `<h1>` avec une **bordure bleue en tirets** de `3px`.
 
 
-**Bordures spécifiques**  
 
-Il est possible d’appliquer une bordure **uniquement sur un côté** :
+**Bordures spécifiques (un seul côté)**  
+
+On peut appliquer une bordure uniquement sur **un côté** :
 
 | Propriété | Effet |
 |-----------|-------|
@@ -768,14 +875,13 @@ Il est possible d’appliquer une bordure **uniquement sur un côté** :
 | `border-left` | Bordure à gauche |
 | `border-right` | Bordure à droite |
 
-📌 **Exemple :**
+📌 **Exemple :**  
 ```css
 p {
     border-bottom: 2px solid black;
 }
 ```
-
-➡ **Résultat** : Un **trait noir sous les paragraphes**.
+➡ **Résultat** : Un **trait noir sous chaque paragraphe**.
 
 
 
@@ -815,24 +921,27 @@ Dans `style.css`, ajoutez :
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.061.jpeg)
 
-### <H3 STYLE="COLOR:GREEN;">7.3. Les<a name="_page10_x40.00_y299.92"></a> ombres</H3> 
+### <H3 STYLE="COLOR:GREEN;">7.3. Ajouter des ombres (`box-shadow` et `text-shadow`)<a name="_page10_x40.00_y299.92"></a></H3> 
 
-Les **ombres** permettent d’ajouter du relief aux éléments.
+Les **ombres** permettent d’ajouter du **relief** aux éléments.  
 
-📌 **Ombre sur un bloc avec `box-shadow`** :
+**📌 Ombre sur un élément (`box-shadow`)**  
 ```css
 p {
-    box-shadow: 6px 6px 0px black;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
 }
 ```
-📌 **Ombre sur du texte avec `text-shadow`** :
+➡ **Résultat** : Un **effet d'ombre douce** sur les `<p>`.
+
+---
+
+**📌 Ombre sur un texte (`text-shadow`)**  
 ```css
 h1 {
     text-shadow: 3px 3px 5px gray;
 }
 ```
-
-➡ **Résultat** : Un **effet d’ombre** qui donne un aspect **en relief**.
+➡ **Résultat** : Un **effet d’ombre sur le texte `<h1>`**.
 
 
 
@@ -860,7 +969,8 @@ Le CSS permet **de modifier l’apparence des éléments en fonction des interac
 | `:focus` | Changement quand l’élément est sélectionné |
 | `:visited` | Changement sur un lien déjà visité |
 
-### <H3 STYLE="COLOR:GREEN;">8.1. Au<a name="_page11_x40.00_y36.92"></a> survol</H3> 
+
+### <H3 STYLE="COLOR:GREEN;">8.1. <a name="_page11_x40.00_y36.92"></a>Changement de style au survol (`:hover`)</H3> 
 
 📌 **Exemple :**
 ```css
@@ -882,7 +992,7 @@ a:hover {
 
 
 
-### <H3 STYLE="COLOR:GREEN;">8.2. Modifier<a name="_page11_x40.00_y195.92"></a> l'apparence d'un clic</H3> 
+### <H3 STYLE="COLOR:GREEN;">8.2. Changement de style au clic (`:active`)<a name="_page11_x40.00_y195.92"></a></H3> 
 
 📌 **Exemple :**
 ```css
@@ -894,7 +1004,7 @@ a:active {
 
 ---
 
-## **8.3. Modifier l’apparence d’un lien déjà visité (`:visited`)**  
+### **<H3 STYLE="COLOR:GREEN;">8.3. Modifier l’apparence d’un lien déjà visité (`:visited`)** </h3> 
 
 📌 **Exemple :**
 ```css
@@ -909,13 +1019,13 @@ a:visited {
 
 
 
-## <H2 STYLE="COLOR:BLUE;">9. Les<a name="_page11_x40.00_y351.92"></a> tableaux</H2>
+## <H2 STYLE="COLOR:BLUE;">9. <a name="_page11_x40.00_y351.92"></a>Améliorer les tableaux en CSS</H2>
 
 
 Les tableaux en HTML peuvent être améliorés avec CSS.
 
 
-### <H3 STYLE="COLOR:GREEN;">9.1. Un<a name="_page11_x40.00_y389.92"></a> tableau simple</H3> 
+### <H3 STYLE="COLOR:GREEN;">9.1. Un<a name="_page11_x40.00_y389.92"></a> tableau simple (`border-collapse`)</H3> 
 
 📌 **HTML :**
 ```html
@@ -948,7 +1058,7 @@ td {
 
 
 
-### <H3 STYLE="COLOR:GREEN;">9.2. Ajouter une ligne d’en<a name="_page11_x40.00_y705.92"></a> tête</H3> 
+### <H3 STYLE="COLOR:GREEN;">9.2. Ajouter une ligne d’en-tête (`<th>`)<a name="_page11_x40.00_y705.92"></a></H3> 
 
 📌 **HTML :**
 ```html
@@ -1043,7 +1153,7 @@ th {
 
 ## <H2 STYLE="COLOR:BLUE;">10. Le<a name="_page13_x40.00_y36.92"></a> modèle des boites</H2>
 
-n CSS, **tous les éléments sont des boîtes**.  
+En CSS, **tous les éléments sont des boîtes**.  
 Chaque boîte est composée de **quatre zones principales** :
 
 | Propriété CSS | Description |
