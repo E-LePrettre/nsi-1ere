@@ -205,11 +205,11 @@ T(n) = 1(comparaison) + 1(%) + 1 (mémoire) + 1(affectation) + 1(accès mémoire
 
 ![](Aimg5.png)
 
-T(n)   = 1(affectation) + (n + 1) \*[1(+) +1(affectation) +1(mémoire) +1(affectation)] + 1(accès mémoire)  
+T(n)   = 1(affectation) + (n + 1) \*[1(+) +1(affectation) +2(mémoire) +1(affectation)] + 1(accès mémoire)  
 
-= 1 + (n + 1) \* 4 + 1  
-= 2 + 4n + 4
-= 4n + 6
+= 1 + (n + 1) \* 5 + 1  
+= 2 + 5n + 5
+= 5n + 7
 
 La complexité de cet algorithme est dite **linéaire.**  
 
