@@ -51,39 +51,48 @@ Une **adresse IP** est un numéro d’identification attribué **temporairement 
 ### <H3 STYLE="COLOR:GREEN;">**1.3. Anatomie<a name="_page1_x40.00_y162.92"></a> d’une adresse IP**</H3>  
 #### <H4 STYLE="COLOR:MAGENTA;">**1.3.1. Adresse<a name="_page1_x40.00_y181.92"></a> machine**</H4>
 
-Chaque  adresse  IP  contient  deux  informations  basiques,  **une  adresse  de  réseau**  et  une  **adresse  d'hôte**.  La combinaison des deux désigne de **manière unique** une machine et une seule sur un réseau. 
+Une adresse IP est divisée en **deux parties** :  
+- **NetID (identifiant du réseau)** : identifie le réseau.  
+- **HostID (identifiant de l’hôte)** : identifie une machine spécifique sur ce réseau.  
 
-La partie réseau  (**NetID**) aussi appelé **préfixe**, de l'adresse IP vient toujours en tête, la partie hôte (**HostID**) est donc toujours en queue. 
+Exemple :  
+Si une machine a l’adresse `131.254.100.48/24`, cela signifie :  
 
-*Exemple : une machine dont l’adresse serait 131.254.100.48.* 
+| **Réseau** | **Réseau** | **Réseau** | **Hôte** |  
+|-----------|-----------|-----------|-----------|  
+| 131       | 254       | 100       | 48        |  
 
+- Tous les appareils du même réseau auront une adresse commençant par `131.254.100.xxx`.  
+- Le `/24` signifie que **24 bits** sont utilisés pour désigner le réseau, laissant **8 bits** pour identifier les machines.  
 
-
-|*Réseau* |*Réseau* |*Réseau* |*Machine* |
-| - | - | - | - |
-|*131* |*254* |*100* |*48* |
-
-*Exemple :* 
-
-*Si les trois premiers octets désignent l’adresse du réseau, toutes les machines de  ce réseau auront une adresse commençant par 131.254.100.xxx.* 
 
 ![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.015.png)
 
-On indique toujours la taille du préfixe à la suite de l’adresse IPv4. Dans notre exemple la machine aura l’adresse suivante : 131.254.100.48 **/24.**  
 
-Les 24 premiers bits désignent le préfixe du réseau :  
-
-**10000011.11111110.01100100**.**xxxxxxxx/24**  
 
 **Combien de machines sont adressables sur ce réseau ?**
 
-On a l’identification de l’interface réseau de la machine comprend **8 bits**, on peut donc avoir 28 = **256 possibilités** soit 256-2 = **254 machines différentes** dans le réseau.  
+On a l’identification de l’interface réseau de la machine comprend **8 bits**, on peut donc avoir $2^8$ = **256 possibilités** soit 256-2 = **254 machines différentes** dans le réseau.  
 
 Il y a deux **adresses réservées** : 
 
 - la **zéro (adresse du sous réseau)** 
 - la **255** (c’est le **broadcast (adresse de diffusion)** : envoie vers toutes les machines) 
-#### <H4 STYLE="COLOR:MAGENTA;">**1.3.2. Adresse<a name="_page1_x40.00_y612.92"></a> du sous réseau**</H4>
+
+
+#### <H4 STYLE="COLOR:MAGENTA;">**1.3.2. Adresse<a name="_page1_x40.00_y612.92"></a> du sous réseau et masque de sous réseau**</H4>
+
+
+Un **masque de sous-réseau** permet de découper un réseau en sous-réseaux plus petits.  
+
+👉 **Exemple avec `192.168.1.55/24` (masque `255.255.255.0`)**  
+
+| **Adresse IP**         | **Masque**          | **Résultat AND** (Adresse réseau) |  
+|------------------------|--------------------|-----------------------------------|  
+| `192.168.1.55`       | `255.255.255.0`    | `192.168.1.0`                    |  
+
+L’adresse de **broadcast** sera `192.168.1.255`.  
+
 
 On obtient **l'adresse du sous réseau** avec l'opérateur AND  
 
@@ -140,126 +149,161 @@ Pour aller plus loin:
 #### <H4 STYLE="COLOR:MAGENTA;">**1.3.3. Adresse<a name="_page2_x40.00_y473.92"></a> publique et adresse privée**</H4>
 ![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.030.png)
 
-Les **adresses publiques** permettent à une machine de communiquer avec l’Internet. 
 
-Les **adresses privées** peuvent être attribuées dans des réseaux internes qui n’ont pas vocation à communiquer directement avec Internet. On dit que les adresses privées **ne sont pas routables** 
+| **Type d’adresse** | **Utilisation** | **Exemple** |  
+|-------------------|----------------|------------|  
+| **Publique**  | Visible sur Internet | `8.8.8.8` (Google DNS) |  
+| **Privée**    | Réseaux internes | `192.168.1.1` (box internet) |  
 
-Si  un  réseau  utilisant  **un  adressage  privé**  veut  communiquer  avec  l’Internet,  il  faudra  qu’un  équipement fasse une **translation** (ou traduction)  entre l’adresse privée et une adresse publique qui  serait disponible pour dialoguer avec l’Internet. On  appelle cette opération le **NAT**[^1].  
+📌 Les adresses privées **ne sont pas routables** sur Internet.  
+📌 Un **NAT (Network Address Translation)** convertit une adresse privée en une adresse publique pour accéder à Internet.  
+
 
 ### <H3 STYLE="COLOR:GREEN;">**1.4. Un<a name="_page3_x40.00_y36.92"></a> switch (commutateur réseau)**</H3>
 
-Un commutateur est un dispositif qui **achemine les données issues** d'un des différents **ports d'entrée vers un port de sortie spécifique** qui, à son tour, transfère ces données vers la destination prévue. 
+Un **switch** est un équipement qui **transmet les données uniquement aux destinataires concernés**.  
+- Il fonctionne en **couche 2 (liaison de données)**.  
+- Il **enregistre les adresses MAC** dans une table.  
 
-Le commutateur **garde en mémoire dans une table, l'adresse mac des destinataires.** Il décode ainsi **l'en-tête du paquet** pour y trouver son **adresse mac et l'envoyer uniquement à l'ordinateur concerné.** 
+🚀 **Avantages :**  
+✅ Réduit le trafic réseau.  
+✅ Plus performant qu’un hub (qui envoie à tout le monde).  
 
-Lorsqu'il reçoit une trame destinée à une adresse présente dans cette table, le commutateur renvoie la trame sur le port correspondant.  
-
-- Si **pas de problème** la **trame est transmise** 
-- Si le **port de destination est le même que celui de l'émetteur**, la **trame n'est pas transmise**.  
-- Si **l'adresse du destinataire est inconnue** dans la table, alors la trame est traitée **comme un broadcast**, c'est-à-dire qu'elle est transmise à tous les ports du commutateur à l'exception du port de réception. 
 
 ### <H3 STYLE="COLOR:GREEN;">**1.5. Un<a name="_page3_x40.00_y209.92"></a> routeur**</H3>
 
-Le routeur est un périphérique faisant la **liaison entre deux réseaux**.  
+Un **routeur** assure la connexion **entre plusieurs réseaux**.  
+- Il fonctionne en **couche 3 (réseau)**.  
+- Il utilise une **table de routage** pour acheminer les paquets.  
 
-Un routeur est un élément intermédiaire dans un réseau informatique assurant le **routage des paquets** entre réseaux indépendants. Ce routage est réalisé selon un ensemble de règles formant la **table de routage**.  
 
-### <H3 STYLE="COLOR:GREEN;">**1.6. Etude<a name="_page3_x40.00_y273.92"></a> de cas concret**</H3>
+Exemple :  
+- La box internet fait office de **routeur** entre le réseau domestique (Wi-Fi) et Internet.  
 
-Je veux aller sur[ www.nsi.fr.](http://www.nsi.fr/) Cette adresse n’existe pas sous cette forme. On a besoin de l’adresse réelle de ce site : **son IP**.  
+### <H3 STYLE="COLOR:GREEN;">**1.6. Etude<a name="_page3_x40.00_y273.92"></a> de cas concret : charger une page WEB**</H3>
 
-- C’est le rôle du **serveur DNS**. 
+Lorsqu’un utilisateur souhaite afficher une page Web en entrant une URL dans son navigateur, plusieurs étapes techniques se déroulent en arrière-plan. Nous allons détailler le chemin emprunté par la requête et la réponse entre l’ordinateur et le serveur du site Web.
 
-Cette IP est de la forme : 200.16.0.1  
+
+#### **1. La résolution de nom : obtenir l'adresse IP du site**
+
+Lorsqu’on tape `www.nsi.fr` dans la barre d’adresse, cette adresse n’existe pas sous cette forme sur Internet. En réalité, chaque site est identifié par une **adresse IP**.
+
+C’est le **serveur DNS (Domain Name System)** qui est chargé de traduire le nom de domaine en adresse IP.
 
 ![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.031.jpeg)
 
-J’interroge : 
+**Processus DNS**
+1. Le navigateur vérifie d'abord dans **son cache** s'il possède déjà l'IP associée au site.
+2. S’il ne la trouve pas, il envoie une requête DNS à :
+   - La **box internet** locale.
+   - Le **serveur DNS du fournisseur d'accès**.
+   - Un **serveur DNS public** (ex : Google DNS `8.8.8.8`).
+3. Une fois l’IP récupérée, elle est renvoyée à l’ordinateur.
 
-- ma box  
-- puis mon fournisseur d’accès qui a un serveur DNS.  
+**Exemple :** L’adresse IP de `www.nsi.fr` pourrait être `200.16.0.1`.
 
-Une fois l’adresse IP connue elle me renvient. 
+![Schéma du fonctionnement du DNS](Resolution-DNS-1-2048x1365.png)
 
-J'ai enfin **l'adresse IP** du site que je veux voir. Mon ordinateur va pouvoir demander à ce que je vois cette page. Pour cela, le procédé est du **même type** que la recherche DNS 
+#### **2. L’envoi de la requête HTTP**
 
-Je regarde si la page est dans le **cache du navigateur**. Sinon, mon programme (le navigateur) va se débrouiller  pour **envoyer ma demande sur internet** et faire en sorte  que la réponse me revienne   
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.032.jpeg)
+Maintenant que l’IP du site est connue, l’ordinateur peut envoyer une requête pour récupérer la page Web.
 
-1. Il faut que je dise quel genre de données je veux, c'est la **couche application** (couche 4) qui décide cela. Ici on veut une page **html** 
+**Construction de la requête**
+1. **Définition du type de données** : La couche application (couche 4 du modèle TCP/IP) décide d’envoyer une requête **HTTP**.
+2. **Découpe des données** : La couche transport (couche 3) applique le protocole **TCP** pour segmenter la requête.
+3. **Ajout des adresses IP** : La couche Internet (couche 2) encapsule les données avec les adresses **IP source et destination**.
+4. **Encapsulation Ethernet** : La couche réseau (couche 1) ajoute les adresses **MAC** et envoie la trame sur le réseau.
 
-2. La **couche transport** (couche 3) va dire qu'elle veut une page html: elle va appliquer le **protocole TCP** car c'est celui qui est approprié à cette demande et dire qu'elle fait une requête http. Ce message est un **segment TCP.** 
+On verra 
+![Schéma des couches du modèle TCP/IP](16225672656323_P2C5-3.png)
 
-3. elle prépare un message en donnant: ip de destination, son ip et tout ce que l'on a dit avant  ! C'est la **couche internet** (couche 2). Ce message est **un paquet.** 
+#### **3. L’intermédiaire : les routeurs et l’ARP**
 
-4. Notre poste possède **une table ARP** (address resolution protocol). Elle contient des associations **d'adresses IP et des adresses MA**C. 
+Avant d’arriver sur Internet, la requête doit être acheminée vers **la passerelle** (généralement la box).
 
-**2 cas : soit la table ARP connait ou ne connait pas notre box !** 
+1. L’ordinateur vérifie sa **table ARP** (Address Resolution Protocol) pour savoir à quelle **adresse MAC** envoyer la requête.
+2. Si l’adresse MAC de la passerelle est inconnue, une **requête ARP** est diffusée sur le réseau local pour la trouver.
+3. Une fois connue, la requête est envoyée vers la **box**.
 
-- Si la **table ARP connait notre box** notre message va aller vers lui 
-- Si la **table ARP** ne connait pas notre box ? 
+À chaque passage par un routeur, l’adresse MAC change, mais **l’adresse IP reste identique**.
 
-La destination ip n'est pas dans mon réseau donc je dois trouver l'adresse mac **de ma passerelle** par défaut (ma box). Je sais que c'est par là que j'en sors. 
+![Processus ARP et transmission des paquets](01.webp)
+![Processus ARP et transmission des paquets](02.webp)
+![Processus ARP et transmission des paquets](03.webp)
+![Processus ARP et transmission des paquets](04.webp)
 
-1. J'envoie donc une **requête ARP**. (« je cherche Ma box  »). Je donne mon adresse mac et celle que je veux. Je ne donne pas mon IP. On ne va pas quitter notre réseau. Le rôle d'une requête ARP est la **recherche d'adresse MAC**. 
-2. Le switch reçoit cette requête. Du coup il connait maintenant ma MAC adresse! il l'ajoute à sa table. S'il connait l'adresse **MAC de ma box, il me la renvoie.** 
-3. S'il ne la connait pas? Le switch va faire du **'flooding**'. Il va **dupliquer**  ma demande ARP et l'envoyer à tout le monde autour de lui. Celui qui se reconnait comme destination en profite pour m'enregistrer dans sa table ARP et fait une réponse ARP (**'c'est moi**'). Son adresse MAC passe dans **ma table ARP** 
+#### **4. L’acheminement de la requête sur Internet**
 
-Maintenant je connais la sortie vers l'internet, j'avais commencé à préparer un **paquet** avec : 
+La requête quitte le réseau local et est transmise d’un **routeur à un autre** sur Internet.
 
-- les données  
-- les  IP (src et dst)  
-- et j’ajoute maintenant **mon adresse mac et l'adresse mac de la sortie** vers l'internet  
+1. Chaque routeur examine l’**adresse IP de destination** et choisit le **meilleur chemin** selon sa table de routage.
+2. La requête traverse plusieurs **fournisseurs d’accès et backbone Internet** jusqu’au serveur du site Web.
+3. Une fois arrivée sur le serveur, elle est traitée par le logiciel Web (ex : Apache, Nginx).
 
-On est donc en **couche Réseau** : couche 1.  
+![Illustration du routage des paquets sur Internet](drawit-diagram-225.png)
 
-Cet ensemble est appelé **TRAME** (ou **frame**), le protocole employé est nommé **Ethernet.** 
 
-Tout cela arrive au routeur « ma box ». Il regarde la trame, voit qu'elle lui est destinée ! Il regarde donc le **paquet** (IP src, IP dst).  
+#### **5. La réponse du serveur Web**
 
-Le routeur va chercher dans sa **table de routage** pour voir s'il connait cette adresse.   
+Le serveur **lit la requête HTTP** et prépare la réponse avec la page demandée.
 
-- Si oui il suit la route en reformant une trame avec le même paquet mais en adresse de destination il met la nouvelle. 
-- Si non, il reforme une **trame en conservant** le paquet et une destination vers un autre serveur. 
+1. La page est convertie en **segments TCP**, puis en **paquets IP**, encapsulés dans des **trames Ethernet**.
+2. Les paquets retournent vers l’ordinateur **par un chemin qui peut être différent de l’aller**.
+3. Lors de la réception, l’ordinateur effectue une **désencapsulation** pour récupérer le contenu.
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.033.jpeg)
+![Retour des paquets et affichage dans le navigateur](ssl.jpg)
 
-On arrive enfin au serveur contenant ma page ! 
 
-Il lit la trame. Ah !! mais c’est pour moi (mon adresse mac). Il ouvre alors le **segment TCP**. C’est son IP. Il regarde donc les données …. Et là il voit une **requête HTTP**. 
+#### **6. Affichage de la page Web**
 
-Le serveur doit envoyer une page html, son application lui dit qu’on va utiliser le HTTP, donc le **protocole TCP.** Il fait le **paquet IP** avec :  
+Une fois les données reçues :
+1. Le **navigateur web** réassemble les paquets.
+2. Il **interprète le code HTML, CSS et JavaScript**.
+3. La page Web s’affiche sur l’écran.
 
-- mon IP,  
-- son IP  
-- le **segment TCP** 
+📌 **Remarque** : Si certains fichiers (images, styles CSS) sont en cache, ils ne sont pas téléchargés à nouveau.
 
-On ajoute par le **protocole Ethernet** :  
 
-- mon port comme destination,  
-- le sien 
-- le paquet IP  
 
-Et c’est reparti !! Par forcément par la même route 
+#### **7. Résumé des étapes**
+
+| Étape | Action |
+|-------|--------|
+| **1** | L'utilisateur entre l’URL dans le navigateur |
+| **2** | Recherche de l’adresse IP via DNS |
+| **3** | Envoi d’une requête HTTP vers le serveur |
+| **4** | Passage par plusieurs routeurs sur Internet |
+| **5** | Réponse du serveur contenant la page Web |
+| **6** | Affichage et rendu dans le navigateur |
+
 
 ## <H2 STYLE="COLOR:BLUE;">**2. Observation<a name="_page5_x40.00_y260.92"></a> d’un réseau**</H2>
 
 **<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** Dans une fenêtre **cmd** lancer les commandes 
 
-- **hostname** : affiche le nom réseau de l'ordinateur 
-- **ipconfig** (ifconfig sous linux): affiche un résumé des propriétés IP des cartes réseaux. Vous pourrez voir l'IP, le masque de sous réseau, la passerelle par défaut, si vous êtes en IPv6 ou Ipv4. 
-- **ipconfig /all** : donne en plus le nom de l'ordinateur (l'hôte) l'adresse MAC, le serveur dns 
-- **ipconfig /flushdns** : vide le cache dns 
-- **ipconfig /displaydns** : affiche le cache dns 
-- **ping** : suivi d'une ip ou d'une adresse de site, teste la connexion vers le site 
-- **tracert**: suivi d'une ip ou d'une adresse de site, affiche tous les sauts (la route) permettant l'accès au site demandé. 
-- **netstat**: permet d'afficher les ports actifs. Utile pour détecter un virus 
+Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS), utilisez les commandes suivantes pour observer et analyser le réseau :  
+
+| **Commande** | **Description** |
+|-------------|----------------|
+| `hostname` | Affiche le nom réseau de l’ordinateur. |
+| `ipconfig` (ou `ifconfig` sous Linux/macOS) | Affiche un résumé des paramètres IP des interfaces réseau : adresse IP, masque de sous-réseau, passerelle par défaut, IPv4 ou IPv6. |
+| `ipconfig /all` | Donne des informations détaillées : nom d’hôte, adresse MAC, serveurs DNS. |
+| `ipconfig /flushdns` | Vide le cache DNS. |
+| `ipconfig /displaydns` | Affiche le cache DNS. |
+| `ping [adresse]` | Vérifie la connexion à une adresse IP ou un site web. |
+| `tracert [adresse]` (ou `traceroute` sous Linux) | Affiche les étapes (sauts) nécessaires pour atteindre une adresse réseau. |
+| `netstat` | Affiche les ports actifs et les connexions réseau, utile pour détecter un virus. |
+
+
 ## <H2 STYLE="COLOR:BLUE;">**3. Le<a name="_page5_x40.00_y455.92"></a> protocole ARP**</H2>
 
-**ARP** (Adresse Resolution Protocol) est un protocole de communication, compagnon du protocole IP qui permet de **mettre en correspondance une adresse IPv4** d’un équipement **avec l’adresse physique** (MAC codage unique de l’équipement  quelque soit le réseau)  
+Le protocole **ARP (Address Resolution Protocol)** est utilisé pour **associer une adresse IP (logique) à une adresse MAC (physique)** sur un réseau local.  
+- **Pourquoi ?** Une machine connaît l’IP de sa destination, mais pour envoyer des données sur un réseau local, elle a besoin de son **adresse MAC**.  
+- **Comment ça marche ?** ARP envoie une **requête de diffusion** pour demander *"Qui possède cette adresse IP ?"*, et le propriétaire de l’IP répond avec son adresse MAC.  
 
-*Pour aller plus loin Protocole ARP :*   
-[*https://www.supinfo.com/articles/single/2440-protocole-arp* ](https://www.supinfo.com/articles/single/2440-protocole-arp) 
+📌 **Pour aller plus loin :** [Le protocole ARP expliqué](https://www.supinfo.com/articles/single/2440-protocole-arp)  
+
 
 
 
@@ -271,46 +315,54 @@ Par exemple : la table ARP de mon ordinateur ci-contre
 **<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** Dans une fenêtre **cmd** lancer la commande   l’instant fait 
 ```arp -a```
 
+Cela affichera la table ARP, avec une liste d’adresses IP associées à des adresses MAC sur le réseau local. 
+
 ## <H2 STYLE="COLOR:BLUE;">**4. Le<a name="_page5_x40.00_y630.92"></a> modèle TCP/IP**</H2>
 ### <H3 STYLE="COLOR:GREEN;">**4.1. Principe<a name="_page5_x40.00_y658.92"></a> des couches**</H3>
 
-Le **modèle OSI** (Open Systems Interconnexion) est une **norme de communication**, en réseau, de tous les systèmes informatiques. C'est un modèle de communications entre ordinateurs. Il fut conçu dans les années 70. 
+Le modèle **OSI** (Open Systems Interconnection) a été conçu dans les années 70 pour normaliser les communications entre ordinateurs.  
+Cependant, le modèle **TCP/IP**, plus simple et adopté dès 1983 sur **Arpanet** (ancêtre d’Internet), s’est imposé.  
 
-A l’époque de sa sortie, les grands opérateurs télécoms européens, alors tous publics, le combattent.  
+📌 **TCP/IP regroupe un ensemble de protocoles**, dont **TCP** (Transmission Control Protocol) et **IP** (Internet Protocol), initialement développés par la **DARPA** (Défense américaine).
 
-C'est à cause de ce retard et de son contexte trop peu ouvert, que la norme OSI **sera supplantée par TCP/IP** dans le domaine de l'Internet naissant puisqu'il sera adopté par le **réseau Arpanet le 1er janvier 1983.**
-
-Le sigle **TCP/IP regroupe un ensemble de protocoles** dont **TCP et IP.** Cette famille de protocole a été mise au point à partir d’une étude commandée au début des années 1970 par le DARPA (Defense Advanced Project Research Agency) qui dépend du département de la défense américaine. 
-
-A l’origine, un groupe de réseaux TCP/IP interconnectés était appelé inter-réseau ou **inter-net.** 
 
 ### <H3 STYLE="COLOR:GREEN;">**4.2. Les<a name="_page6_x40.00_y147.92"></a> rôles des couches dans le modèle TCP/IP**</H3>
 
-Le **modèle TCP/IP** est une suite de protocoles utilisées pour le transfert des données sur Internet. Il comporte  **4 couches** :  
+Le modèle **TCP/IP** comporte **4 couches**, chacune ayant un rôle précis :  
 
-- La couche **application** (couche n°4) se charge de traduire en langage machine les messages qui seront envoyés sur le réseau Internet. 
-- La couche **transport** (couche 3) permet d’envoyer les messages à la bonne application  et s’occupe de découper les paquets, vérifier les erreurs etc.. 
-- La couche **Internet** (couche 2) va s’occuper de l’acheminement des données de bout en bout sur Internet, c’est ce qu’on appelle le routage. Elle gère aussi le réassemblage des paquets à la réception. 
-- La couche **Réseau** (couche 1) va acheminer les données de routeur en routeur par les réseaux Internet  
+| **Couche** | **Rôle** |
+|-----------|---------|
+| **Application** (4) | Gère les données envoyées (ex : HTTP, FTP, DNS). |
+| **Transport** (3) | Assure la transmission fiable des données (ex : TCP, UDP). |
+| **Internet** (2) | Responsable du routage des paquets (ex : IP). |
+| **Réseau** (1) | Acheminement physique des données (ex : Ethernet, Wi-Fi). |
+
+📌 **Exemple :** Lorsque vous chargez une page Web, les données passent par **ces couches** pour être envoyées puis reçues.
+
 
 ### <H3 STYLE="COLOR:GREEN;">**4.3. Principe<a name="_page6_x40.00_y290.92"></a> de l’encapsulation**</H3>
 
 ![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.044.png)
 
-Chaque couche **ne s’occupe que du rôle qu’elle a à jouer**  et non du rôle de la précédente.  
+Lorsque des données sont envoyées sur le réseau :  
+1. Chaque couche **ajoute une en-tête** aux données.  
+2. Ces en-têtes permettent d'identifier **les protocoles utilisés**.  
+3. À la réception, les couches **décryptent et suppriment** les en-têtes une par une (*désencapsulation*).  
+
+![](https://upload.wikimedia.org/wikipedia/commons/6/6b/Encapsulation_TCP-IP.png)
+ 
 
 ### <H3 STYLE="COLOR:GREEN;">**4.4. Application<a name="_page6_x40.00_y409.92"></a> au modèle  TCP/IP**</H3>   
 
 ![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.048.png)
 
-En émission les données traversent chacune des couches de la machine émettrice et à chaque couche une information est ajoutée au paquet de données => c’est l’entête 
+En **émission** :
+- Chaque **paquet de données** traverse les **couches**, qui ajoutent une en-tête contenant les informations nécessaires au transport.  
+- Ex : Une requête HTTP sera **d’abord** encapsulée dans TCP, puis IP, puis Ethernet.  
 
-L’entête définit le protocole utilisé dans chaque couche => c’est **l’encapsulation** 
+En **réception** :
+- Chaque couche **décode** et **supprime** les en-têtes, jusqu’à ce que le message atteigne l’application destinataire.  
 
-Le message est découpé en segment.  
-Chacun des segments est alors **encapsulé** dans un **paquet TCP** comprenant en particulier les numéros de ports des applications sources et destinataires.  
-Ce paquet TCP est alors transmis à la **couche Internet** qui **l’encapsule** dans un **datagramme IP**.  
-Celui-ci est ensuite transmis à la **couche Réseau** qui l’encapsule dans une **trame Ethernet**. 
 
 ![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.052.jpeg)
 
@@ -318,19 +370,23 @@ L’entête est lu, interprétée et supprimée => **désencapsulation**
 
 ### <H3 STYLE="COLOR:GREEN;">**4.5. Etablissement<a name="_page7_x40.00_y349.92"></a> de la communication TCP (« three way handshake »)**</H3>
 
-Une communication TCP s’établit selon le principe d’une connexion en trois temps (three way handshake = poignée de main en trois temps) 
+Le protocole **TCP** établit une connexion en **3 étapes** pour garantir un échange fiable entre un client et un serveur.  
 
-- **Le client envoie** un numéro aléatoire de séquence dans un paquet TCP : qui sera un **SYN** 
+| Étape | Action |
+|------|--------|
+| **1. SYN** | Le client envoie une demande de connexion (`SYN`). |
+| **2. SYN-ACK** | Le serveur accepte et répond (`SYN-ACK`). |
+| **3. ACK** | Le client confirme (`ACK`). |
 
-Exemple : 1010 
+Exemple avec des numéros de séquence :  
+- Client → Serveur : **SYN (seq=1010)**  
+- Serveur → Client : **SYN-ACK (seq=1011, ack=3002)**  
+- Client → Serveur : **ACK (seq=3003)**  
 
-- **Le serveur qui reçoit** le paquet SYN génère un numéro aléatoire  **qu’il va renvoyer** dans un paquet particulier (**SYN-ACK**) qui contient aussi le numéro du client incrémenté de 1. Ce paquet est à la fois un accusé  de  réception  (acknowledgement)  pour  le  client  et  une  synchronisation  au  niveau  des  numéros d’échange côté serveur et client. 
+![](https://upload.wikimedia.org/wikipedia/commons/9/92/Three-way-handshake.png)
 
-Exemple : 1010 + 1 = 1011 et le numéro aléatoire 3002 
+📌 **Pourquoi cette étape est-elle importante ?** Elle évite l’envoi de données inutiles si la connexion ne peut être établie.
 
-- **Le client qui reçoit** ce paquet se considère connecté au serveur et envoie un dernier paquet particulier (ACK) dans lequel le numéro de séquence serveur aura été incrémenté. Le serveur qui reçoit ce paquet se considère à son tour connecté au client. 
-
-Exemple : 3002 + 1 = 3003 
 
 ![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.053.png)
 
