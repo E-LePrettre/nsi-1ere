@@ -15,29 +15,38 @@ title: 08a Les réseaux
 7. [Analyse de trame](#_titre7)
 8. [Simulation d’un réseau avec Filius](#_page10_x40.00_y36.92)
 
-**Un  réseau**  est  une  **connexion  de  plusieurs machines  entre  elles,**  afin  qu’elles  puissent  communiquer, échanger des informations suivant **des protocoles communs (règles communes)** définis à l’avance. 
+Un **réseau informatique** est un ensemble de **machines interconnectées** permettant l’échange d’informations en utilisant des **protocoles de communication communs**. Ces protocoles définissent les règles de transmission des données.  
 
-Le mot **réseau** s’applique aussi bien à l’ensemble des machines qu’aux infrastructures qui les relient.  
+Le terme **réseau** désigne à la fois :  
+- **Les machines** qui y sont connectées (ordinateurs, serveurs, routeurs, etc.).  
+- **Les infrastructures physiques** qui permettent la connexion (câbles, Wi-Fi, commutateurs, routeurs).  
 
-**Video 1** : Histoire de l’internet[ https://ladigitale.dev/digiview/#/v/6690fd5d7c1bd ](https://ladigitale.dev/digiview/#/v/6690fd5d7c1bd) 
+👉 **Vidéo :** [Histoire de l’Internet](https://ladigitale.dev/digiview/#/v/6690fd5d7c1bd)  
 
-Le Web correspond à **World Wide Web**, composé de worldwide (« **mondial** ») et de web (« **toile d’araignée** ») 
+Le Web correspond à **World Wide Web**, composé de *worldwide* (« **mondial** ») et *web* (« **toile d’araignée** »).  
 
 ## <H2 STYLE="COLOR:BLUE;">**1. Que<a name="_page0_x40.00_y569.92"></a> se passe-t-il lorsqu’on veut afficher une page web dans le navigateur ?**</H2>
 
-On a différents éléments : 
+Lorsqu’on veut afficher une page Web, plusieurs éléments interviennent :
 
 ![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.004.jpeg)
 
 ### <H3 STYLE="COLOR:GREEN;">**1.1. Une<a name="_page0_x40.00_y699.92"></a> adresse MAC**</H3>
 
-Une **adresse MAC** (Media Access Control), parfois appelée **adresse physique**, est un **identifiant physique** stocké dans **une carte réseau** ou **une interface réseau** similaire. Elle est **unique au monde**. 
+L’**adresse MAC** est un **identifiant physique unique** associé à une **carte réseau** (Wi-Fi, Ethernet).  
+- Elle est **attribuée à la fabrication** du matériel et ne change pas.  
+- On peut la comparer à une **plaque d’immatriculation** d’un appareil sur un réseau local.  
+
 
 ### <H3 STYLE="COLOR:GREEN;">**1.2. Une<a name="_page1_x40.00_y36.92"></a> adresse IP**</H3>
 
-Une **adresse IP** (Internet Protocol), est un numéro d’identification qui est **attribué de façon permanente ou provisoire à chaque périphérique relié à un réseau informatique qui utilise l’Internet Protocol**.  L’adresse IP est à la base du **système d’acheminement** (le **routage**) des paquets de données sur Internet. 
+Une **adresse IP** est un numéro d’identification attribué **temporairement ou en permanence** à un périphérique connecté à un réseau.  
+- Elle est essentielle au **routage des paquets de données** sur Internet.  
+- Il existe deux versions :  
+  - **IPv4** (32 bits) : format classique `192.168.1.1`.  
+  - **IPv6** (128 bits) : format `2001:db8::ff00:42:8329`.  
 
-Il existe des adresse IP de **version 4 (IPV4)** sur 32 bits et de **version 6 (IPV6)** sur 128 bits. La version 4 est actuellement la plus utilisée. 
+ℹ️ **Pourquoi IPv6 ?** L’IPv4 est en cours de remplacement par l’IPv6 car les 4,3 milliards d’adresses IPv4 sont presque toutes utilisées.
 
 ### <H3 STYLE="COLOR:GREEN;">**1.3. Anatomie<a name="_page1_x40.00_y162.92"></a> d’une adresse IP**</H3>  
 #### <H4 STYLE="COLOR:MAGENTA;">**1.3.1. Adresse<a name="_page1_x40.00_y181.92"></a> machine**</H4>
