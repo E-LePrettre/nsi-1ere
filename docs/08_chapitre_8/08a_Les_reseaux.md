@@ -147,7 +147,7 @@ Pour aller plus loin:
 - Classes d’adresse[ https://www.inetdoc.net/articles/adressage.ipv4/adressage.ipv4.class.html ](https://www.inetdoc.net/articles/adressage.ipv4/adressage.ipv4.class.html)
 
 #### <H4 STYLE="COLOR:MAGENTA;">**1.3.3. Adresse<a name="_page2_x40.00_y473.92"></a> publique et adresse privée**</H4>
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.030.png)
+
 
 
 | **Type d’adresse** | **Utilisation** | **Exemple** |  
