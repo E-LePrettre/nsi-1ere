@@ -13,180 +13,208 @@ title: 08b Interaction client-serveur - Requête
 5. [Exercices](#_page13_x40.00_y36.92)
 
 
-## <H2 STYLE="COLOR:BLUE;">1. Modèle<a name="_page0_x40.00_y516.92"></a> client/serveur</H2>
+## **<H2 STYLE="COLOR:BLUE;">1. Modèle<a name="_page0_x40.00_y516.92"></a> client/serveur**</H2>
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.004.png)
 
-Deux  ordinateurs  en  réseau  peuvent  s’échanger  des  **données**.  Un ordinateur A va souvent se contenter de **demander** (faire une **requête**)  des ressources à un ordinateur B. L’ordinateur B va lui se contenter de  **fournir**  des  ressources  à tous les ordinateurs  qui lui  en feront la  demande. On dira que A est le **client** alors que B est le **serveur**.   
+Dans un réseau, les **ordinateurs échangent des données**. L’un agit en **client** en **demandant des ressources**, tandis que l’autre joue le rôle de **serveur**, en **répondant aux requêtes** et en fournissant les ressources demandées.
 
-Un client peut être défini comme une application logicielle qui **envoie** des requêtes à un serveur. Un serveur peut être défini comme une application logicielle qui **attend** et **traite les requêtes** provenant de clients.  
+- **Un client** : application qui **envoie des requêtes**.  
+- **Un serveur** : application qui **attend et traite des requêtes**.  
+- **Exemple :** Un navigateur (client) demande une page web à un serveur.
 
-La communication entre un client et un serveur se fait généralement à l'aide d'un **protocole de communication spécifique**.(par exemple : HTTP entre navigateurs web et serveurs web) 
+💡 **Le Web est devenu dynamique** : Les serveurs ne se contentent plus d’envoyer des fichiers statiques, ils génèrent du code HTML à la volée grâce à des langages comme **PHP, Python, Java**.
 
-Les serveurs sont aujourd’hui **capables de générer eux-mêmes du code HTML**. Les résultats qui s’affichent à l’écran dépendent des demandes effectuées par l’utilisateur du site : le web est devenu **dynamique** 
-
-Différents langages de programmation peuvent être utilisés « coté serveur » afin de permettre au serveur de générer lui-même le code HTML à envoyer. Le plus utilisé encore aujourd’hui se nomme **PHP**. D’autres langages sont utilisables côté serveur : Java, Python,… 
-
-Par exemple : 
+**Exemple de génération dynamique de HTML avec PHP**
 ```php
 <?php 
 $heure = date("H:i"); 
-echo '<h1>Bienvenue sur mon site</h1> 
-	<p>Il est '.$heure.'</p>'; 
-?> 
+echo "<h1>Bienvenue sur mon site</h1>";
+echo "<p>Il est actuellement $heure</p>";
+?>
 ```
-
-
-Si un client se connecte à un serveur web qui exécute ce code à 18h23, le serveur enverra au client le code HTML ci-dessous : 
+💡 **Si le client se connecte à 18h23, le serveur lui enverra :**
 ```html
-<h1>Bienvenue sur mon site</h1> 
-<p>Il est 18h23</p>
+<h1>Bienvenue sur mon site</h1>
+<p>Il est actuellement 18h23</p>
 ```
 
 
-## <H2 STYLE="COLOR:BLUE;">2. Le<a name="_page1_x40.00_y233.92"></a> protocole HTTP</H2>
-### <H3 STYLE="COLOR:GREEN;">2.1. Qu’est<a name="_page1_x40.00_y255.92"></a> ce que c’est et quel est son rôle ?</H3>
 
-Le **HTTP (HyperText Transfert Protocol)** va permettre au client **d’effectuer des requêtes** à destination d’un serveur web. En retour, le serveur web va envoyer **une réponse**.  
+## **<H2 STYLE="COLOR:BLUE;">2. Le<a name="_page1_x40.00_y233.92"></a> protocole HTTP**</H2>
+### **<H3 STYLE="COLOR:GREEN;">2.1. Qu’est<a name="_page1_x40.00_y255.92"></a> ce que c’est et quel est son rôle ?**</H3>
 
-Le rôle de HTTP dans les interactions client-serveur est de fournir **une structure pour les requêtes et les réponses.**  La requête HTTP est composée de plusieurs lignes de texte qui **décrivent ce que le client demande au serveur**.  La réponse HTTP est également composée de plusieurs lignes de texte qui **décrivent ce que le serveur renvoie au client.** 
+Le **HyperText Transfer Protocol (HTTP)** est utilisé pour **envoyer des requêtes** du client au serveur et recevoir une **réponse** en retour.
 
-### <H3 STYLE="COLOR:GREEN;">2.2. Les<a name="_page1_x40.00_y417.92"></a> codes de statut HTTP</H3>
 
-Les **codes de statuts** sont des codes numériques qui indiquent **le résultat** d'une requête HTTP :  
+### **<H3 STYLE="COLOR:GREEN;">2.2. Les<a name="_page1_x40.00_y417.92"></a> codes de statut HTTP**</H3>
 
-- 200 et suivants indiquent une **réussite**.  
-- 300 et suivants indiquent **un déplacement de la ressource demandée**.  
-- 400 et suivants indiquent une **erreur du client** : requête mal formulée ou ressource inexistante (400: "Bad Request", 401: "Unauthorized", 402: "Payment Required", 403: "Forbidden", 404: "Not Found",...) 
-- 500 et suivants indiquent une **erreur du serveur.** (500: "Internal Server Error", 501: "Not Implemented", 502: "Bad Gateway", 503: "Service Unavailable",...)
+Les réponses HTTP contiennent un **code de statut** indiquant le résultat :
 
-### <H3 STYLE="COLOR:GREEN;">2.3. Principe<a name="_page1_x40.00_y564.92"></a> d’une requête</H3>
+| Code | Signification |
+|------|--------------|
+| **200** | OK (Succès) |
+| **301** | Redirection permanente |
+| **404** | Page non trouvée |
+| **500** | Erreur interne du serveur |
 
-Composition simplifiée d’une requête HTTP (client vers serveur) : 
+### **<H3 STYLE="COLOR:GREEN;">2.3. Principe<a name="_page1_x40.00_y564.92"></a> d’une requête**</H3>
 
-- La **méthode employée** pour effectuer la requête 
-- L’**URL** de la ressource 
-- La **version du protocole** utilisé par le client (souvent HTTP 1.1) 
-- Le **navigateur employé** (Firefox, Chrome) et sa **version** 
-- Le **type du document demandé** (par exemple HTML) 
+Lorsqu’un navigateur envoie une requête à un serveur web, cette requête suit une **structure standardisée**.  
 
-#### <H4 STYLE="COLOR:MAGENTA;">2.3.1. Ligne de Requête</H4>
-La première ligne d'une requête HTTP est la ligne de requête, qui spécifie le type de requête (méthode HTTP), l'URL de la ressource demandée, et la version du protocole HTTP.
+**Composition d’une requête HTTP (client vers serveur) :**  
 
-**Exemple:**
+1. **La méthode employée** (`GET`, `POST`, etc.)  
+2. **L’URL de la ressource** (`/index.html`)  
+3. **La version du protocole** (`HTTP/1.1`)  
+4. **Les en-têtes de requête** (informations supplémentaires sur la requête)  
+5. **Le corps de la requête (optionnel)** (données envoyées avec `POST`)  
+
+
+
+#### **<H4 STYLE="COLOR:MAGENTA;">2.3.1. Ligne de Requête**</H4>
+Elle contient **trois éléments principaux** :  
+
 ```
 GET /index.html HTTP/1.1
 ```
 
-- **GET** : Méthode HTTP utilisée (GET, POST, PUT, DELETE, etc.).
+🔹 **Méthode HTTP** : `GET` (ou `POST`, `PUT`, `DELETE`, etc.)  
+🔹 **Ressource demandée** : `/index.html`  
+🔹 **Version du protocole** : `HTTP/1.1`  
 
-- **/index.html** : URL de la ressource demandée.
 
-- **HTTP/1.1** : Version du protocole HTTP.
+#### **<H4 STYLE="COLOR:MAGENTA;">2.3.2. En-têtes de Requête (Headers)**</H4>
+Les **en-têtes HTTP** apportent des **informations supplémentaires** sur la requête et le client.  
 
-#### <H4 STYLE="COLOR:MAGENTA;">2.3.2. En-têtes de Requête (Headers)</H4>
-Les en-têtes de requête fournissent des informations supplémentaires sur la requête ou sur le client lui-même. Ils sont placés après la ligne de requête, chaque en-tête étant sur une nouvelle ligne.
-
-**Exemple:**
+**Exemple de requête avec en-têtes :**
 ```
+GET /index.html HTTP/1.1
 Host: www.example.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+Accept: text/html,application/xhtml+xml
+```
+📌 **Explications** :  
+- **Host** → Nom du site demandé (`www.example.com`)  
+- **User-Agent** → Type de navigateur utilisé (Chrome, Firefox, Edge…)  
+- **Accept** → Types de fichiers acceptés (`text/html`, `image/png`, etc.)  
+
+
+
+#### **<H4 STYLE="COLOR:MAGENTA;">2.3.3. Transmission des données avec GET et POST**</H4>
+
+**Cas d’un formulaire HTML**  
+Un formulaire HTML envoie **des données** vers le serveur en utilisant **GET** ou **POST**.  
+
+**Exemple de formulaire en GET :**
+```html
+<form method="GET" action="/login">
+    <input type="text" name="username" placeholder="Nom d'utilisateur">
+    <input type="password" name="password" placeholder="Mot de passe">
+    <button type="submit">Se connecter</button>
+</form>
+```
+➡️ **Avec GET, les données sont visibles dans l’URL** :  
+```
+https://www.example.com/login?username=dupont&password=azerty
+```
+🚨 **Problème** : La transmission du mot de passe en clair dans l’URL est **dangereuse**.
+
+**Exemple de formulaire en POST :**
+```html
+<form method="POST" action="/login">
+    <input type="text" name="username" placeholder="Nom d'utilisateur">
+    <input type="password" name="password" placeholder="Mot de passe">
+    <button type="submit">Se connecter</button>
+</form>
+```
+➡️ **Avec POST, les données sont envoyées dans le corps de la requête** et **n’apparaissent pas dans l’URL**.  
+
+
+
+#### **<H4 STYLE="COLOR:MAGENTA;">2.3.4. Différences entre GET et POST**</H4>
+| Critère  | **GET**  | **POST**  |
+|----------|---------|---------|
+| **Visibilité des données** | ✔️ Affichées dans l’URL  | ❌ Cachées (envoyées dans le corps) |
+| **Utilisation principale** | Demander une ressource  | Envoyer des données au serveur |
+| **Longueur des données** | ⚠️ Limitée par l’URL  | ✅ Illimitée (dépend du serveur) |
+| **Sécurité** | ❌ Données visibles (ex : mot de passe) | ✔️ Données masquées |
+| **Mémorisation dans l’historique** | ✔️ Oui | ❌ Non |
+| **Partage d’URL possible** | ✔️ Oui (`?search=info`) | ❌ Non |
+| **Exemples d’utilisation** | Recherche sur un site | Connexion, envoi de formulaire |
+
+📌 **Conclusion :**  
+- **GET** est utile pour des recherches (`search=informatique`).  
+- **POST** est plus adapté pour **des informations sensibles** (connexion, formulaire…).  
+
+🚀 **Bonnes pratiques** :
+- **Toujours utiliser POST pour les mots de passe**.  
+- **Préférer GET pour des paramètres non sensibles** (ex : tri d’articles sur un site e-commerce).  
+
+#### **<H4 STYLE="COLOR:MAGENTA;">Exemple de requête GET et POST complètes**</H4>
+
+**GET (visible dans l’URL)**
+```
+GET /search?q=ordinateur HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0
 ```
 
-- **Host** : Spécifie le domaine de destination (nécessaire pour les serveurs hébergeant plusieurs domaines).
-
-- **User-Agent** : Fournit des informations sur le client (navigateur, système d'exploitation).
-
-- **Accept** : Indique les types MIME que le client accepte.
-age** : Indique les langues préférées du client.
-
-#### <H4 STYLE="COLOR:MAGENTA;">2.3.3. Corps de la Requête (Request Body)</H4>
-Le corps de la requête est utilisé pour envoyer des données au serveur. Il est généralement utilisé avec les méthodes POST, PUT, et PATCH. Dans une requête GET, le corps est généralement vide.
-
-**Exemple:**
-Pour une requête POST envoyant des données de formulaire :
+➡️ Résultat :  
 ```
-POST /submit-form HTTP/1.1
+https://www.example.com/search?q=ordinateur
+```
+
+**POST (invisible dans l’URL)**
+```
+POST /login HTTP/1.1
 Host: www.example.com
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 27
 
-name=John&age=30&city=Paris
+username=john&password=secret
 ```
+➡️ **Les données sont transmises dans le corps** et **ne sont pas visibles** dans l’URL.
 
-- **Content-Type** : Spécifie le type de données envoyées dans le corps de la requête.
 
-- **Content-Length** : Spécifie la longueur du corps de la requête.
 
-- Le corps de la requête : Contient les données réelles (ex: `name=John&age=30&city=Paris`).
+### **<H3 STYLE="COLOR:GREEN;">2.4. Réponse HTTP du Serveur**</H3>
 
-Une requête HTTP utilise une méthode (c’est une commande qui demande au serveur d’effectuer une certaine action). Il y a plusieurs méthodes disponibles :
+Après qu'un client envoie une requête HTTP, le serveur lui répond en envoyant **trois éléments** :  
 
--	**GET** : c’est la méthode la plus courante pour demander une ressource. Elle est sans effet sur la ressource.
+1️⃣ **Un code de statut HTTP**  
+2️⃣ **Des en-têtes de réponse**  
+3️⃣ **Le corps de la réponse** (le contenu demandé : page HTML, JSON, image...) 
 
--	**POST** : cette méthode est utilisée pour soumettre des données en vue d’un traitement (côté serveur). Typiquement c’est la méthode employée lorsque l’on envoie au serveur les données issues d’un formulaire.
+#### **<H4 STYLE="COLOR:MAGENTA;">2.4.1. En-têtes de Réponse**</H4>
+Les en-têtes de réponse permettent d’indiquer au client comment interpréter la réponse du serveur.
 
--	**DELETE** : cette méthode permet de supprimer une ressource sur le serveur.
-
--	**PUT** : cette méthode permet de modifier une ressource sur le serveur
-
--	**PATCH** : pour modifier une ressource existante
-
-#### <H4 STYLE="COLOR:MAGENTA;">2.3.4. Composition Complète de la Requête</H4>
-Voici à quoi ressemble une requête HTTP complète en utilisant une requête POST comme exemple :
-
-```
-POST /submit-form HTTP/1.1
-Host: www.example.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome
-
-/58.0.3029.110 Safari/537.3
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 27
-
-name=John&age=30&city=Paris
-```
-
-- **Ligne de requête** : Début de la requête, spécifiant la méthode, l'URL et la version du protocole.
-
-- **En-têtes de requête** : Informations supplémentaires sur la requête ou le client.
-
-- **Corps de la requête** : Données envoyées au serveur (utilisé principalement dans les requêtes POST et PUT).
-
-### <H3 STYLE="COLOR:GREEN;">2.4. Réponse HTTP du Serveur avec PHP</H3>
-
-#### <H4 STYLE="COLOR:MAGENTA;">2.4.1. En-têtes de Réponse</H4>
-Les en-têtes de réponse restent les mêmes.
-
-**Exemple:**
+🔹 **Exemple d’une réponse HTTP :**
 ```
 HTTP/1.1 200 OK
 Content-Type: text/html; charset=UTF-8
-Content-Length: [calculated automatically by server]
+Content-Length: 356
 Connection: keep-alive
 ```
 
-**Ligne de Statut** :
+📌 **Explication des éléments :**
+- `HTTP/1.1 200 OK` → La requête a réussi et le contenu demandé est retourné.  
+- `Content-Type: text/html; charset=UTF-8` → La réponse est une page HTML encodée en UTF-8.  
+- `Content-Length: 356` → Indique la taille du contenu en octets.  
+- `Connection: keep-alive` → Maintient la connexion ouverte pour d’autres requêtes.  
 
-   - `HTTP/1.1 200 OK` : Indique que la requête a été traitée avec succès et que le serveur renvoie la page demandée.
+💡 **Remarque** : Les codes de statut HTTP jouent un rôle crucial :
+- **200 OK** : Succès de la requête.
+- **404 Not Found** : La ressource demandée n’existe pas.
+- **500 Internal Server Error** : Problème côté serveur.
 
-**En-têtes de Réponse** :
 
-   - `Content-Type: text/html; charset=UTF-8` : Indique que le contenu de la réponse est une page HTML encodée en UTF-8.
+#### **<H4 STYLE="COLOR:MAGENTA;">2.4.2. Corps de la Réponse avec PHP**</H4>
 
-   - `Content-Length: [calculated automatically by server]` : La longueur du corps de la réponse est calculée automatiquement par le serveur.
+Le corps de la réponse HTTP contient le **contenu réel renvoyé au navigateur**.  
+Si une page web est demandée, elle est envoyée sous forme de HTML.
 
-   - `Connection: keep-alive` : Indique que la connexion doit rester ouverte pour les requêtes suivantes.
-
-#### <H4 STYLE="COLOR:MAGENTA;">2.4.2. Corps de la Réponse avec PHP</H4>
-
-Le corps de la réponse contient le code HTML avec du PHP pour afficher dynamiquement les informations.
-
-**Exemple:**
-```html
+🔹 **Exemple d’une page générée dynamiquement avec PHP :**
+```php
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -195,62 +223,64 @@ Le corps de la réponse contient le code HTML avec du PHP pour afficher dynamiqu
 </head>
 <body>
     <?php
-    // Récupérer les données POST
-    $name = $_POST['name'];
-    $city = $_POST['city'];
+    // Récupération des données envoyées via une requête POST
+    $name = htmlspecialchars($_POST['name']);
+    $city = htmlspecialchars($_POST['city']);
     ?>
-    <h1>Bienvenue sur mon site, <?php echo htmlspecialchars($name); ?> de <?php echo htmlspecialchars($city); ?>!</h1>
+    <h1>Bienvenue sur mon site, <?php echo $name; ?> de <?php echo $city; ?> !</h1>
     <p>Nous sommes heureux de vous accueillir.</p>
 </body>
 </html>
 ```
-**Corps de la Réponse avec PHP** :
+📌 **Analyse** :
+- Le serveur reçoit les données du formulaire via `$_POST['name']` et `$_POST['city']`.  
+- `htmlspecialchars()` empêche les failles XSS en filtrant les caractères spéciaux.  
+- Le serveur renvoie une page personnalisée au client.
 
-   - Utilise PHP pour récupérer les données de la requête POST.
-
-   - Utilise `htmlspecialchars` pour échapper correctement les caractères spéciaux et éviter les attaques XSS.
-
-   - Génère dynamiquement le message de bienvenue avec le nom et la ville fournis.
-
-
-Une fois la requête reçue, le serveur va renvoyer une réponse, par exemple : 
-```html
-Date: Thu, 15 feb 2019 12:02:32 GMT 
-Server: Apache/2.0.54 (Debian GNU/Linux) DAV/2 SVN/1.1.4 
-Connection: close 
-Transfer-Encoding: chunked 
-Content-Type: text/html; charset=ISO-8859-1 
-
-<!doctype html> 
-<html lang="fr"> 
-<head> 
-<meta charset="utf-8"> 
-<title>Voici mon site</title> 
-</head> 
-<body> 
-<h1>Hello World! Ceci est un titre</h1> 
-<p>Ceci est un <strong>paragraphe</strong>. Avez-vous bien compris ?</p> 
-</body> 
-</html>
-```
-
-
-Le **HTTPS** est la version « sécurisée » du protocole HTTP : les données **sont chiffrées avant d’être transmises sur le réseau.** Lorsque la communication avec un site WEB est sécurisée, la barre d’adresse commence par un **cadenas**. 
 
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.028.jpeg)
 
-### <H3 STYLE="COLOR:GREEN;">2.5. Syntaxe<a name="_page3_x40.00_y314.92"></a> complète des URL</H3>
+#### **<H4 STYLE="COLOR:MAGENTA;">2.4.3. HTTPS : Sécurisation des échanges**</H4>
 
-La syntaxe des URL est de la forme ```protocole://nom-ou-adresse:port/document?n1=v1&…nk=vk#id```
+🔹 **Différence entre HTTP et HTTPS**  
+- **HTTP** : Les données **transitent en clair** sur le réseau.  
+- **HTTPS** : Les données sont **chiffrées** grâce au protocole **TLS (Transport Layer Security)**.  
 
-- Le port est **le port TCP** sur lequel effectuer la connexion.  
-- Le document est écrit comme **chemin relatif** à partir du répertoire où est stocké le site sur le serveur. La partie marquée par un « ? » est la liste des **paramètres de requête**.  
-- Ces paramètres sont des paires ni=vi où ni est le **nom du paramètre** et vi sa **valeur**. La portion finale #id est appelé un **signet** et permet de cibler un élément particulier dans la ressource demandée. 
+🔹 **Pourquoi HTTPS est important ?**
+- ✅ Protège contre **les attaques de type "man-in-the-middle"**.  
+- ✅ Sécurise les **informations sensibles** (mots de passe, paiements).  
+- ✅ Améliore le **référencement** des sites web (Google favorise les sites HTTPS).  
+
+💡 **Vérification** :  
+Si la barre d’adresse affiche 🔒 (cadenas vert), la connexion est sécurisée.  
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°1.**</H3> Passage de paramètre  un serveur 
+### **<H3 STYLE="COLOR:GREEN;">2.5. Syntaxe<a name="_page3_x40.00_y314.92"></a> complète des URL**</H3>
+
+📌 **Composition d’une URL complète :**  
+```
+protocole://nom-de-domaine:port/chemin?paramètre1=valeur1&paramètre2=valeur2#ancre
+```
+🔹 **Explication** :
+- `protocole` → HTTP ou HTTPS.  
+- `nom-de-domaine` → Adresse du serveur (`www.example.com`).  
+- `port` → Par défaut `80` (HTTP) ou `443` (HTTPS).  
+- `chemin` → Page demandée (`/index.html`).  
+- `?paramètre1=valeur1` → Données envoyées (utilisé avec GET).  
+- `#ancre` → Cible une section spécifique de la page.  
+
+🔹 **Exemple concret :**  
+```
+https://www.wikipedia.org/wiki/Informatique#Algorithmique
+```
+💡 **Ici, `#Algorithmique` permet d’accéder directement à la section "Algorithmique" de la page.**
+
+
+
+
+**<H3 STYLE="COLOR:RED;">Activité n°1.****</H3> Passage de paramètre  un serveur 
 
 - Aller sur[ HTTPs://fr.wikipedia.org ](https://fr.wikipedia.org/)
 - Dans la zone de recherche taper informatique 
@@ -262,19 +292,44 @@ En fait sur la page la portion de code HTML correspondant est :
 
 ```<span… id="Algorithmique">Algorithmique</span>```
 
-## <H2 STYLE="COLOR:BLUE;">3.  Coder l’envoi d’une requête par le navigateur<a name="_page3_x40.00_y617.92"></a></H2>
+## **<H2 STYLE="COLOR:BLUE;">3.  Coder l’envoi d’une requête par le navigateur<a name="_page3_x40.00_y617.92"></a>**</H2>
 
-Il existe plusieurs manières d'envoyer une requête HTTP depuis un navigateur. Voici quelques-unes des méthodes les plus courantes : 
+Les requêtes HTTP peuvent être envoyées de **plusieurs manières** :
 
-- **En utilisant une URL dans la barre d'adresse du navigateur** : le navigateur envoie une requête **GET** à la ressource indiquée dans la URL. 
-- **En utilisant un formulaire HTML** : un formulaire HTML peut être soumis en utilisant la méthode **GET** ou la méthode **POST**. La requête envoyée inclura les données saisies dans les champs du formulaire.
-- **En utilisant JavaScript** : en utilisant JavaScript, vous pouvez envoyer une requête HTTP en utilisant l'objet **XMLHttpRequest** ou en utilisant une bibliothèque telle que jQuery. Cela permet de faire des requêtes **GET**, **POST**, **PUT**, **DELETE**, etc. en fonction de vos besoins. 
+1️⃣ **Saisir une URL directement dans le navigateur**  
+2️⃣ **Utiliser un formulaire HTML**  
+3️⃣ **Écrire une requête via JavaScript**  
 
-### <H3 STYLE="COLOR:GREEN;">3.1. Exemples<a name="_page4_x40.00_y36.92"></a> de formulaire HTML</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.1. Exemple<a name="_page4_x40.00_y36.92"></a> d'un formulaire HTML**</H3>
+
+🔹 **Formulaire envoyant une requête GET** :
+```html
+<form method="GET" action="/search">
+    <input type="text" name="query" placeholder="Rechercher">
+    <button type="submit">Rechercher</button>
+</form>
+```
+➡️ Résultat :  
+```
+https://www.example.com/search?query=informatique
+```
+📌 **Problème** : Les données sont visibles dans l’URL ! ⚠️
+
+---
+
+🔹 **Formulaire envoyant une requête POST** :
+```html
+<form method="POST" action="/login">
+    <input type="text" name="username" placeholder="Nom d'utilisateur">
+    <input type="password" name="password" placeholder="Mot de passe">
+    <button type="submit">Se connecter</button>
+</form>
+```
+✅ **Les données sont cachées et envoyées dans le corps de la requête.**
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°2.**</H3>  Ouvrir un bloc note. Ajouter le script suivant et vérifier ce qu’on obtient dans le navigateur. Enregistrer le sous index.html **ATTENTION** à bien sélectionner tous les fichiers !
+**<H3 STYLE="COLOR:RED;">Activité n°2.****</H3>  Ouvrir un bloc note. Ajouter le script suivant et vérifier ce qu’on obtient dans le navigateur. Enregistrer le sous index.html **ATTENTION** à bien sélectionner tous les fichiers !
 
 ![](AZE.png)
 ```html
@@ -294,7 +349,7 @@ Il existe plusieurs manières d'envoyer une requête HTTP depuis un navigateur. 
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°3.**</H3> Remplir ce formulaire et le soumettre fera envoyer une requête GET vers l'URL ./login. Observer la nouvelle URL
+**<H3 STYLE="COLOR:RED;">Activité n°3.****</H3> Remplir ce formulaire et le soumettre fera envoyer une requête GET vers l'URL ./login. Observer la nouvelle URL
 
 Avec la méthode GET, les données du formulaire seront encodées **dans l'URL.**  
 
@@ -302,41 +357,41 @@ Si on saisit trois valeurs par exemple «Dupont », « azerty » et qu’on cliq
 
  
 
-**<H3 STYLE="COLOR:RED;">Activité n°4.**</H3> Modifier la page pour pouvoir la soumettre avec une requête POST. Remplir ce formulaire et le soumettre fera envoyer une requête POST et observer la nouvelle URL.
+**<H3 STYLE="COLOR:RED;">Activité n°4.****</H3> Modifier la page pour pouvoir la soumettre avec une requête POST. Remplir ce formulaire et le soumettre fera envoyer une requête POST et observer la nouvelle URL.
 
 Dans le cas d'un POST ils seront alors encodés **dans le corps de la requête**. 
 
-### <H3 STYLE="COLOR:GREEN;">3.2. Précision<a name="_page7_x40.00_y370.92"></a> sur la méthode GET ou POST</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.2. Différences entre GET et POST**<a name="_page7_x40.00_y370.92"></a> </H3>
 
-Lors de l’utilisation de la méthode GET dans un formulaire**, les données sont transmises en clair** dans la barre d’adresse du navigateur. Dans les faits, on obtient ```action.php?identifiant=<texte entré>```.  
+| Critère  | **GET**  | **POST**  |
+|----------|---------|---------|
+| **Visibilité** | ✔️ Données visibles dans l’URL | ❌ Données cachées |
+| **Taille des données** | ⚠️ Limitée par l’URL | ✅ Illimitée |
+| **Utilisation** | Recherche, navigation | Connexion, formulaires |
+| **Sécurité** | ❌ Moins sécurisé (ex : mot de passe visible) | ✔️ Recommandé pour les données sensibles |
 
-L’intérêt de la méthode GET est que toutes l’information nécessaire est contenue dans l’URL. Il est donc possible de recharger plusieurs fois la même URL.  
+💡 **À retenir** : Toujours utiliser **POST** pour les **données confidentielles** !
 
-**Par exemple** :[ HTTPs://www.data.gouv.fr/fr/search/?q=informatique.](https://www.data.gouv.fr/fr/search/?q=informatique) 
-
-Par contre les URL ne peuvent **pas être de taille longue** : si le **champ du formulaire est long** le serveur peut renvoyer un **code d’erreur 414.**  
-
-De plus, les mots de passes sont affichés comme une suite d’étoile dans l’URL mais lorsqu’ on clique sur le bouton le navigateur exécute la requête et affiche sans sa barre d’adresse URL **le mot de passe en clair**, et une personne présente à proximité de l’écran peut le voir. 
-
-Les caractéristique de la méthode POST sont exactement inverses. Lors du processus de soumission, l’URL n’est pas suffisante : il faut que les paramètres soient passés dans le corps de la requête. On ne pourra **pas sauvegarder l’URL**. **Si la taille des paramètres** envoyés est **trop importante** alors seule la méthode POST garanti que la requête ne sera pas tronquée. De même, pour les formulaires demandant un **mot de passe**, la méthode POST ne rendra **pas visible** ce dernier dans la barre d’adresse.  
-
-GET : 
-
-- Les données transmises sont visibles dans la barre d’adresse 
-- Les données restent dans l’historique du navigateur et dans le cache 
-- Les données peuvent être stockées dans un signet 
-- Limite le nombre de caractères dans les données de formulaire renvoyées 
-
-POST : 
-
-- Les données peuvent contenir des données binaires 
-- Les données sont masquées à l’utilisateur 
-- Les données soumises ne sont pas stockées dans le cache, l’historique ou les signets 
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.061.jpeg)
 
- 
-### <H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.3. Cookies et gestion de session**</H3>
+
+Un **cookie** est un fichier stocké sur l’ordinateur du client par le serveur pour **mémoriser des informations**.
+
+🔹 **Exemple d’un cookie HTTP :**
+```
+Set-Cookie: session_id=abc123; Expires=Wed, 21 Jul 2024 07:28:00 GMT; Secure; HttpOnly
+```
+📌 **Explication** :
+- `session_id=abc123` → Identifiant unique de la session.  
+- `Expires=Wed, 21 Jul 2024` → Date d’expiration du cookie.  
+- `Secure` → Le cookie n’est envoyé que sur des connexions HTTPS.  
+- `HttpOnly` → Protège contre les attaques XSS en interdisant l’accès en JavaScript.  
+
+
+
+### **<H3 STYLE="COLOR:GREEN;">3.4. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML**</H3>
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.047.jpeg)
 
@@ -354,21 +409,21 @@ POST :
 | `<textarea>` | Définit une zone de saisie de texte multiligne.                                        |
 
 
-### <H3 STYLE="COLOR:GREEN;">3.4. Elément<a name="_page5_x40.00_y275.92"></a> ```<input>``` : quelques exemples</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.5. Elément<a name="_page5_x40.00_y275.92"></a> ```<input>``` : quelques exemples**</H3>
 
 ![](090.png)
 
-### <H3 STYLE="COLOR:GREEN;">3.5. Elément<a name="_page5_x40.00_y485.92"></a> ```<select>``` : quelques exemples</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.6. Elément<a name="_page5_x40.00_y485.92"></a> ```<select>``` : quelques exemples**</H3>
 
 ![](091.png)
 
-### <H3 STYLE="COLOR:GREEN;">3.6. Elément<a name="_page6_x40.00_y36.92"></a> value dans ```<select>```</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.7. Elément<a name="_page6_x40.00_y36.92"></a> value dans ```<select>```**</H3>
 
 L'attribut value de l'élément est utilisé pour spécifier quelle valeur sera renvoyée au serveur. L'attribut value est **facultatif**. S’il n’est pas spécifié, alors **le texte** dans le conteneur **est envoyé à la place** 
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.055.png)
 
-### <H3 STYLE="COLOR:GREEN;">3.7. Les<a name="_page6_x40.00_y300.92"></a> boutons de commande</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.8. Les<a name="_page6_x40.00_y300.92"></a> boutons de commande**</H3>
 
 | Type                      | Description                                                                                                                                                       |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -389,13 +444,13 @@ L'attribut value de l'élément est utilisé pour spécifier quelle valeur sera 
 
 
 
-### <H3 STYLE="COLOR:GREEN;">3.8. Comment<a name="_page7_x40.00_y36.92"></a> le formulaire interagit avec le serveur ?</H3> 
+### **<H3 STYLE="COLOR:GREEN;">3.9. Comment<a name="_page7_x40.00_y36.92"></a> le formulaire interagit avec le serveur ?**</H3> 
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.059.jpeg)
 
 
 
-### <H3 STYLE="COLOR:GREEN;">3.9. Les<a name="_page8_x40.00_y290.92"></a> cookies</H3> 
+### **<H3 STYLE="COLOR:GREEN;">3.10. Les<a name="_page8_x40.00_y290.92"></a> cookies**</H3> 
 
 Il est important pour un site web de pouvoir identifier ces différents clients. Il utilise des **cookies**. C’est une petite quantité de données. Il est composé d’un nom, d’une valeur et optionnellement d’une date d’expiration. Le nom, la valeur et la durée de vie sont choisie par le serveur.  
 
@@ -452,25 +507,25 @@ Lorsqu'un client (navigateur web) reçoit cette réponse du serveur, il stocke l
 
    - Le cookie n'est pas accessible via JavaScript, ce qui le protège contre certaines attaques XSS (grâce au flag `HttpOnly`).
 
-**<H3 STYLE="COLOR:RED;">Activité n°5**</H3>: faire les exercices
+**<H3 STYLE="COLOR:RED;">Activité n°5****</H3>: faire les exercices
 
-## <H2 STYLE="COLOR:BLUE;">4. APPLICATION<a name="_page8_x40.00_y503.92"></a> : Création d’une page web dynamique</H2>
+## **<H2 STYLE="COLOR:BLUE;">4. APPLICATION<a name="_page8_x40.00_y503.92"></a> : Création d’une page web dynamique**</H2>
 
  
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.067.png)
 
-### <H3 STYLE="COLOR:GREEN;">4.1. Mise<a name="_page8_x40.00_y565.92"></a> en place d’un serveur Apache Wamp</H3>  
+### **<H3 STYLE="COLOR:GREEN;">4.1. Mise<a name="_page8_x40.00_y565.92"></a> en place d’un serveur Apache Wamp**</H3>  
 
 Telecharger un serveur Wamp (choisissez le exe) : UwAmp Wamp Server - Apache MySQL PHP [https://www.uwamp.com/fr/](https://www.uwamp.com/fr/)
 
 Normalement il s’installe dans C:\UwAmp
 
-**<H3 STYLE="COLOR:RED;">Activité n°6**</H3> Demarrer le serveur Wamp
+**<H3 STYLE="COLOR:RED;">Activité n°6****</H3> Demarrer le serveur Wamp
 
 
 
 
-### <H3 STYLE="COLOR:GREEN;">4.2. Formulaire<a name="_page9_x40.00_y154.92"></a> d’une page Web version php</H3>
+### **<H3 STYLE="COLOR:GREEN;">4.2. Formulaire<a name="_page9_x40.00_y154.92"></a> d’une page Web version php**</H3>
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.072.png)
 
 PHP est un langage de programmation qui s'intègre dans vos pages  HTML. Le sigle PHP est un acronyme récursif pour : PHP **Hypertext  Preprocessor** ! Il permet la **génération automatisée** (Preprocessor)  de vos pages Web (Hypertext). Celles-ci peuvent ainsi **s'adapter à la  demande ou suivant certaines conditions**. C'est pour cela que l'on  parle de pages **web dynamiques.**   
@@ -479,7 +534,7 @@ Cas très simple où le serveur va renvoyer au client une simple page HTML stati
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°7.**</H3> Créer avec le bloc note, un fichier où on aura copier :
+**<H3 STYLE="COLOR:RED;">Activité n°7.****</H3> Créer avec le bloc note, un fichier où on aura copier :
 
 ```html
 <!doctype html>
@@ -497,7 +552,7 @@ Enregistrer le dans le répertoire C:\UwAmp\www  sous le nom "index.html". **ATT
 ![](AZE.png)
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°8.**</H3> Ouvrir votre navigateur Web et taper dans la barre d'adresse **"localhost"**. On devrait voir la page Web s'afficher. 
+**<H3 STYLE="COLOR:RED;">Activité n°8.****</H3> Ouvrir votre navigateur Web et taper dans la barre d'adresse **"localhost"**. On devrait voir la page Web s'afficher. 
 
 Avec le "localhost", on indique au navigateur que le serveur Web se trouve sur le même ordinateur que lui (on parle de machine locale). Dans un cas normal, la barre d'adresse devrait être renseignée avec l'adresse du serveur Web. 
 
@@ -514,7 +569,7 @@ Il est très important de bien comprendre les processus mis en œuvre :
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°9. **</H3> Après avoir supprimé le fichier "index.html" préalablement créé dans le répertoire "www" **ET** le fichier "index.php", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
+**<H3 STYLE="COLOR:RED;">Activité n°9. ****</H3> Après avoir supprimé le fichier "index.html" préalablement créé dans le répertoire "www" **ET** le fichier "index.php", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
 ```php
 <?php
 date_default_timezone_set('Europe/Paris'); // Définir le fuseau horaire à Paris
@@ -526,7 +581,7 @@ echo '<h1>Bienvenue sur mon site</h1>
 Enregistrer le dans le répertoire C:\UwAmp\www  sous le nom "index.php". **ATTENTION** à bien sélectionner tous les fichiers.
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°10.**</H3> Ouvrir votre navigateur Web et taper dans la barre d'adresse **"localhost"**. 
+**<H3 STYLE="COLOR:RED;">Activité n°10.****</H3> Ouvrir votre navigateur Web et taper dans la barre d'adresse **"localhost"**. 
 
 On doit avoir une page HTML qui donne l'heure, si on **actualise** la page, **l'heure évolue**. On a donc bien une page dynamique : le serveur PHP crée la page Web au moment où elle est demandée. À chaque fois que la page est actualisée, la page HTML est générée de nouveau. 
 
@@ -549,7 +604,7 @@ Si un client effectue une requête à 18h23, le serveur enverra au client le cod
 <h1>Bienvenue sur mon site</h1> 
 <p>Il est 18h23</p> 
 ```
-**<H3 STYLE="COLOR:RED;">Activité n°11.**</H3> Après avoir supprimé le fichier "index.php" préalablement créé dans le répertoire "www", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
+**<H3 STYLE="COLOR:RED;">Activité n°11.****</H3> Après avoir supprimé le fichier "index.php" préalablement créé dans le répertoire "www", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
 
 ```html
 <!doctype html>
@@ -569,7 +624,7 @@ Si un client effectue une requête à 18h23, le serveur enverra au client le cod
 ```
 Enregistrer le dans le répertoire C:\UwAmp\www  sous le nom "index.html". ATTENTION à bien sélectionner tous les fichiers.
 
-**<H3 STYLE="COLOR:RED;">Activité n°12.**</H3> : Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www".  
+**<H3 STYLE="COLOR:RED;">Activité n°12.****</H3> : Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www".  
 ```php
 <?php
     $n=$_POST['nom'];
@@ -579,7 +634,7 @@ Enregistrer le dans le répertoire C:\UwAmp\www  sous le nom "index.html". ATTEN
 ```
 Enregistrer le dans le répertoire C:\UwAmp\www  sous le nom " trait_form.php  ". ATTENTION à bien sélectionner tous les fichiers.
 
-**<H3 STYLE="COLOR:RED;">Activité n°13.**</H3> : Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, remplir le formulaire proposé et valider en cliquant sur le bouton "Envoyer"
+**<H3 STYLE="COLOR:RED;">Activité n°13.****</H3> : Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, remplir le formulaire proposé et valider en cliquant sur le bouton "Envoyer"
 
 **Comment ça marche ?** 
 
@@ -606,7 +661,7 @@ Ces informations transitent entre le client et le serveur selon méthode utilis�
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°14.**</H3> Modifier les fichiers "index.html" et "trait_form.php" comme suit : 
+**<H3 STYLE="COLOR:RED;">Activité n°14.****</H3> Modifier les fichiers "index.html" et "trait_form.php" comme suit : 
 Pour index.html
 ```html
 <!doctype html>
@@ -637,7 +692,7 @@ Pour trait_form.php
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°15.**</H3> Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, Saisir le prénom et le nom puis valider en cliquant sur le bouton "Envoyer". **Observer attentivement la barre d'adresse du navigateur. 
+**<H3 STYLE="COLOR:RED;">Activité n°15.****</H3> Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, Saisir le prénom et le nom puis valider en cliquant sur le bouton "Envoyer". **Observer attentivement la barre d'adresse du navigateur. 
 
 Cette  fois-ci,  les  informations  du  formulaire  sont  transmises  au  serveur  par  l'intermédiaire  de  l'url  : ```localhost/trait_form.php?nom=tartempion&prenom=tartiflette```
 
@@ -645,7 +700,7 @@ Dans le cas de l'utilisation d'une méthode "POST" les données issues d'un form
 
 Les données envoyées par l'intermédiaire d'une méthode "GET" peuvent être modifiées directement dans l'url. 
 
-**<H3 STYLE="COLOR:RED;">Activité n°16.**</H3> Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, Saisir le prénom et le nom puis valider en cliquant sur le bouton "Envoyer". Modifier l'url : "```localhost/trait_form.php?nom=Martin&prenom=Jean-Pierre```", validez votre modification en appuyant sur la touche "Entrée". 
+**<H3 STYLE="COLOR:RED;">Activité n°16.****</H3> Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, Saisir le prénom et le nom puis valider en cliquant sur le bouton "Envoyer". Modifier l'url : "```localhost/trait_form.php?nom=Martin&prenom=Jean-Pierre```", validez votre modification en appuyant sur la touche "Entrée". 
 
 Normalement la page a bien été modifiée : "Bonjour Jean-Pierre Martin, j'espère que vous allez bien." 
 
@@ -653,7 +708,7 @@ Même si dans notre cas cette opération de modification d'URL est inoffensive, 
 
 Il est important de bien comprendre que la méthode "POST" **n'offre pas non plus une sécurité absolue** puisque toute personne ayant un bagage technique minimum sera capable de lire les données transmises à l'aide de la méthode "POST" en analysant la requête HTTP, même si ces données ne sont pas directement visibles dans l'URL. Seule l'utilisation du **protocole sécurisé HTTPS** garantit un transfert sécurisé des données entre le client et le serveur (les données sont chiffrées et donc illisibles pour une personne ne possédant pas la clé de déchiffrement). 
 
-**<H3 STYLE="COLOR:RED;">Activité n°17**</H3> Fermer le serveur Wamp
+**<H3 STYLE="COLOR:RED;">Activité n°17****</H3> Fermer le serveur Wamp
 
 Si le PHP vous passionne :  
 
@@ -677,10 +732,10 @@ Editeurs PHP en ligne :
 
 
 
-## <H2 STYLE="COLOR:BLUE;">5. Exercices<a name="_page13_x40.00_y36.92"></a></H2> 
+## **<H2 STYLE="COLOR:BLUE;">5. Exercices<a name="_page13_x40.00_y36.92"></a>**</H2> 
 
 
-**<H3 STYLE="COLOR:RED;">Exercice n°1 :**</H3> Réaliser le visuel du formulaire suivant :
+**<H3 STYLE="COLOR:RED;">Exercice n°1 :****</H3> Réaliser le visuel du formulaire suivant :
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.129.jpeg)
 
@@ -692,7 +747,7 @@ Pour cela :
 - vous proposerez deux types de carte bancaire possibles : 'Visa' et 'Bleue' (carte par défaut). 
 - Attention ! Sans Javascript, votre bouton 'Valider le paiement' sera sans effet.
 
-**<H3 STYLE="COLOR:RED;">Exercice n°2 :**</H3> Expliquer ce que fait ce code. 
+**<H3 STYLE="COLOR:RED;">Exercice n°2 :****</H3> Expliquer ce que fait ce code. 
 ```html
 <form>
 <p> Choix d'une nationalité :</p>
@@ -709,7 +764,7 @@ Pour cela :
 ```
 
 
-**Pour aller plus loin (avec du JS) : <H3 STYLE="COLOR:RED;">Exercice n°3 :</H3>** 
+**Pour aller plus loin (avec du JS) : <H3 STYLE="COLOR:RED;">Exercice n°3 :**</H3>** 
 
 Pour l'exercice on a besoin de trois instructions (déjà vues) : 
 
@@ -742,13 +797,13 @@ function selection() {
 
 Utiliser la console de votre navigateur afin de voir l'effet d'une des lignes. 
 
-**Pour aller plus loin (avec du JS) : <H3 STYLE="COLOR:RED;">Exercice n°4 :</H3>**  
+**Pour aller plus loin (avec du JS) : <H3 STYLE="COLOR:RED;">Exercice n°4 :**</H3>**  
 
 Ecrire un formulaire qui demande votre âge et qui indique dans la même page si vous êtes majeur ou mineur. 
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.136.png) ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.137.jpeg)
 
-**Pour aller plus loin (avec du JS) : <H3 STYLE="COLOR:RED;">Exercice n°5 :</H3>**  
+**Pour aller plus loin (avec du JS) : <H3 STYLE="COLOR:RED;">Exercice n°5 :**</H3>**  
 
 On donne le code suivant : 
 ```html
