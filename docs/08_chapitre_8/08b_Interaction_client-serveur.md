@@ -334,18 +334,27 @@ https://www.example.com/search?query=informatique
 ![](AZE.png)
 ```html
 <!DOCTYPE html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>requête</title>
+    <meta charset="UTF-8">
+    <title>Requête</title>
 </head>
 <body>
-<form method='GET' action='./login'>
-    <input name='user' type='text' required>
-    <input name='password' type='password' required>
-    <button type='submit'>login</button>
-</form>
+    <form method="GET" action="./login">
+        <input name="user" type="text" required placeholder="Nom d'utilisateur">
+        <input name="password" type="password" required placeholder="Mot de passe">
+        <button type="submit">Login</button>
+    </form>
 </body>
+</html>
 ```
+Ce formulaire utilise la **méthode GET**, ce qui signifie que :
+- Les données saisies (`user` et `password`) seront ajoutées dans l’URL après soumission.
+- Exemple d’URL après soumission :
+  ```
+  https://monsite.com/login?user=dupont&password=azerty
+  ```
+- ⚠️ **Problème** : Avec `GET`, le mot de passe est visible dans l’URL, ce qui n’est pas sécurisé.
 
 
 
@@ -355,11 +364,38 @@ Avec la méthode GET, les données du formulaire seront encodées **dans l'URL.*
 
 Si on saisit trois valeurs par exemple «Dupont », « azerty » et qu’on clique sur le bouton, alors le navigateur charge la page correspondante à ```user=dupont&password=*****```
 
- 
+✅ **Explication :**
+- En remplissant le formulaire et en cliquant sur "Login", l’URL résultante contiendra les données sous cette forme :
+  ```
+  https://monsite.com/login?user=dupont&password=azerty
+  ```
+
+- **Problème :** 
+  - Les données sont **visibles** dans l'URL, ce qui pose un problème de **sécurité**, notamment pour les mots de passe.
+
+
 
 **<H3 STYLE="COLOR:RED;">Activité n°4.****</H3> Modifier la page pour pouvoir la soumettre avec une requête POST. Remplir ce formulaire et le soumettre fera envoyer une requête POST et observer la nouvelle URL.
 
-Dans le cas d'un POST ils seront alors encodés **dans le corps de la requête**. 
+
+✅ **Explication :**
+- Cette activité demande de **modifier la méthode du formulaire** pour utiliser **POST** au lieu de **GET** :
+  ```html
+  <form method="POST" action="./login">
+  ```
+- **Différence avec GET :**
+  - Avec POST, les données sont **transmises dans le corps de la requête** et **non visibles dans l'URL**.
+  - Cela permet de **protéger les informations sensibles** comme les mots de passe.
+  - Exemple de requête envoyée par POST :
+    ```
+    POST /login HTTP/1.1
+    Host: monsite.com
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: 32
+
+    user=dupont&password=azerty
+    ```
+
 
 ### **<H3 STYLE="COLOR:GREEN;">3.2. Différences entre GET et POST**<a name="_page7_x40.00_y370.92"></a> </H3>
 
