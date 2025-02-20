@@ -343,7 +343,7 @@ Le modèle **TCP/IP** comporte **4 couches**, chacune ayant un rôle précis :
 
 ### <H3 STYLE="COLOR:GREEN;">**4.3. Principe<a name="_page6_x40.00_y290.92"></a> de l’encapsulation**</H3>
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.044.png)
+![](Sans.png)
 
 Lorsque des données sont envoyées sur le réseau :  
 1. Chaque couche **ajoute une en-tête** aux données.  
@@ -355,7 +355,7 @@ Lorsque des données sont envoyées sur le réseau :
 
 ### <H3 STYLE="COLOR:GREEN;">**4.4. Application<a name="_page6_x40.00_y409.92"></a> au modèle  TCP/IP**</H3>   
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.048.png)
+![](img04.png)
 
 En **émission** :
 - Chaque **paquet de données** traverse les **couches**, qui ajoutent une en-tête contenant les informations nécessaires au transport.  
@@ -365,7 +365,7 @@ En **réception** :
 - Chaque couche **décode** et **supprime** les en-têtes, jusqu’à ce que le message atteigne l’application destinataire.  
 
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.052.jpeg)
+![](img02bis.png)
 
 L’entête est lu, interprétée et supprimée => **désencapsulation** 
 
@@ -389,7 +389,7 @@ Exemple avec des numéros de séquence :
 📌 **Pourquoi cette étape est-elle importante ?** Elle évite l’envoi de données inutiles si la connexion ne peut être établie.
 
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.053.png)
+![](img05.png)
 
 *Il existe une technique de piratage, appelée spoofing IP, permettant de corrompre cette relation d'approbation !*
 
@@ -405,25 +405,25 @@ Dans le protocole du **bit alterné**, l’émetteur envoie les données encapsu
 
 - A réception d’un segment de donnée, la machine réceptrice va retourner un segment de donnée dont le **drapeau** (flag) ACK (acknowledgement : accusé de réception) **est à 1** (afin de signaler qu’il l’a bien reçu) accompagné d’un numéro d’accusé de réception égal au **numéro d’ordre précédent** qui seront ajouter au niveau de l’entête. 
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.054.jpeg)
+![](img06.png)
 
 - **Cas où la trame émise n’est pas reçue** 
 
 Si la trame émise n’est pas reçue, l’émetteur réagit. Il constate, en effet, qu’il n’a pas reçue d’accusé de réception dans les délais et renvoie la trame 
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.055.jpeg)
+![](img07.png)
 
 - **Cas du chevauchement de message** 
 
 En fait la trame n’a pas été perdu, elle arrive tout de même à destination. Le récepteur reçoit finalement deux trames identiques, mais écartera la seconde car son bit de séquence ne correspondra pas au bit attendu.  
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.056.jpeg)
+![](img08.png)
 
 - **Cas du chevauchement d’acquittements** 
 
 Il en va de même pour le chevauchement d’acquittements. Le récepteur rejettera l’acquittement qui n’aura pas le bit de séquence attendu. 
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.057.jpeg)
+![](img09.png)
 
 - **Pourquoi bit alterné ?** 
 
