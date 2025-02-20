@@ -360,7 +360,7 @@ Ce formulaire utilise la **méthode GET**, ce qui signifie que :
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°3.****</H3> Remplir ce formulaire et le soumettre fera envoyer une requête **GET** vers l'URL `./login`. Observer la nouvelle URL.
+**<H3 STYLE="COLOR:RED;">Activité n°3.**</H3> Remplir ce formulaire et le soumettre fera envoyer une requête **GET** vers l'URL `./login`. Observer la nouvelle URL.
 
 Avec la méthode **GET**, les données du formulaire seront encodées **dans l’URL**.
 
@@ -379,7 +379,7 @@ Si on saisit les valeurs :
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°4.****</H3> 
+**<H3 STYLE="COLOR:RED;">Activité n°4.**</H3> 
 Modifier la page pour pouvoir la soumettre avec une requête **POST**. Remplir ce formulaire et le soumettre fera envoyer une requête **POST**.
 
 Dans ce cas, les données ne seront **pas visibles dans l’URL**, mais envoyées **dans le corps de la requête**.
@@ -534,7 +534,7 @@ Set-Cookie: username=JohnDoe; Expires=Wed, 21 Jul 2024 07:28:00 GMT; Path=/; Dom
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°5****</H3>: faire les exercices
+**<H3 STYLE="COLOR:RED;">Activité n°5**</H3>: faire les exercices
 
 ## **<H2 STYLE="COLOR:BLUE;">4. APPLICATION<a name="_page8_x40.00_y503.92"></a> : Création d’une page web dynamique**</H2>
 
@@ -543,25 +543,28 @@ Set-Cookie: username=JohnDoe; Expires=Wed, 21 Jul 2024 07:28:00 GMT; Path=/; Dom
 
 ### **<H3 STYLE="COLOR:GREEN;">4.1. Mise<a name="_page8_x40.00_y565.92"></a> en place d’un serveur Apache Wamp**</H3>  
 
-Telecharger un serveur Wamp (choisissez le exe) : UwAmp Wamp Server - Apache MySQL PHP [https://www.uwamp.com/fr/](https://www.uwamp.com/fr/)
+📥 **Téléchargement**  
+Télécharger un serveur WAMP : [UwAmp Wamp Server - Apache MySQL PHP](https://www.uwamp.com/fr/)  
+Normalement, il s’installe dans `C:\UwAmp`. 
 
-Normalement il s’installe dans C:\UwAmp
+**<H3 STYLE="COLOR:RED;">Activité n°6**</H3> 
 
-**<H3 STYLE="COLOR:RED;">Activité n°6****</H3> Demarrer le serveur Wamp
+**Démarrer le serveur WAMP**  
+- Ouvrir `UwAmp.exe` et s'assurer qu'Apache et MySQL sont en cours d'exécution.  
+- Vérifier en tapant **localhost** dans un navigateur.  
 
-
-
+![](screen_home.png)
 
 ### **<H3 STYLE="COLOR:GREEN;">4.2. Formulaire<a name="_page9_x40.00_y154.92"></a> d’une page Web version php**</H3>
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.072.png)
 
-PHP est un langage de programmation qui s'intègre dans vos pages  HTML. Le sigle PHP est un acronyme récursif pour : PHP **Hypertext  Preprocessor** ! Il permet la **génération automatisée** (Preprocessor)  de vos pages Web (Hypertext). Celles-ci peuvent ainsi **s'adapter à la  demande ou suivant certaines conditions**. C'est pour cela que l'on  parle de pages **web dynamiques.**   
+PHP est un langage de programmation qui **s’intègre dans les pages HTML**. Il permet la **génération dynamique** des pages en fonction des requêtes du client.  
 
 Cas très simple où le serveur va renvoyer au client une simple page HTML statique. Le serveur Web Apache a été configuré pour qu'il envoie vers le client une page HTML située dans un répertoire nommé "www", ce répertoire "www" devant se trouver dans votre répertoire C:\UwAmp
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°7.****</H3> Créer avec le bloc note, un fichier où on aura copier :
+**<H3 STYLE="COLOR:RED;">Activité n°7.**</H3> Créer avec le bloc note, un fichier où on aura copier :
 
 ```html
 <!doctype html>
@@ -575,11 +578,14 @@ Cas très simple où le serveur va renvoyer au client une simple page HTML stati
     </body>
 </html>
 ```
-Enregistrer le dans le répertoire C:\UwAmp\www  sous le nom "index.html". **ATTENTION** à bien sélectionner tous les fichiers.
+
+📂 **Enregistrer sous** `C:\UwAmp\www\index.html`  
+
+**ATTENTION** à bien sélectionner tous les fichiers.
 ![](AZE.png)
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°8.****</H3> Ouvrir votre navigateur Web et taper dans la barre d'adresse **"localhost"**. On devrait voir la page Web s'afficher. 
+**<H3 STYLE="COLOR:RED;">Activité n°8.**</H3> Ouvrir votre navigateur Web et taper dans la barre d'adresse **"localhost"**. On devrait voir la page Web s'afficher. 
 
 Avec le "localhost", on indique au navigateur que le serveur Web se trouve sur le même ordinateur que lui (on parle de machine locale). Dans un cas normal, la barre d'adresse devrait être renseignée avec l'adresse du serveur Web. 
 
@@ -596,19 +602,22 @@ Il est très important de bien comprendre les processus mis en œuvre :
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°9. ****</H3> Après avoir supprimé le fichier "index.html" préalablement créé dans le répertoire "www" **ET** le fichier "index.php", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
+**<H3 STYLE="COLOR:RED;">Activité n°9.**</H3> Après avoir supprimé le fichier "index.html" préalablement créé dans le répertoire "www" **ET** le fichier "index.php", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
 ```php
 <?php
-date_default_timezone_set('Europe/Paris'); // Définir le fuseau horaire à Paris
+date_default_timezone_set('Europe/Paris'); // Fuseau horaire Paris
 $heure = date("H:i");
 echo '<h1>Bienvenue sur mon site</h1>
       <p>Il est '.$heure.'</p>';
 ?>
 ```
-Enregistrer le dans le répertoire C:\UwAmp\www  sous le nom "index.php". **ATTENTION** à bien sélectionner tous les fichiers.
+📂 **Enregistrer sous** `C:\UwAmp\www\index.php`  
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°10.****</H3> Ouvrir votre navigateur Web et taper dans la barre d'adresse **"localhost"**. 
+ **ATTENTION** à bien sélectionner tous les fichiers.
+
+
+**<H3 STYLE="COLOR:RED;">Activité n°10.**</H3> Ouvrir votre navigateur Web et taper dans la barre d'adresse **"localhost"**. 
 
 On doit avoir une page HTML qui donne l'heure, si on **actualise** la page, **l'heure évolue**. On a donc bien une page dynamique : le serveur PHP crée la page Web au moment où elle est demandée. À chaque fois que la page est actualisée, la page HTML est générée de nouveau. 
 
@@ -631,7 +640,7 @@ Si un client effectue une requête à 18h23, le serveur enverra au client le cod
 <h1>Bienvenue sur mon site</h1> 
 <p>Il est 18h23</p> 
 ```
-**<H3 STYLE="COLOR:RED;">Activité n°11.****</H3> Après avoir supprimé le fichier "index.php" préalablement créé dans le répertoire "www", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
+**<H3 STYLE="COLOR:RED;">Activité n°11.**</H3> Après avoir supprimé le fichier "index.php" préalablement créé dans le répertoire "www", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
 
 ```html
 <!doctype html>
@@ -649,9 +658,11 @@ Si un client effectue une requête à 18h23, le serveur enverra au client le cod
     </body>
 </html>
 ```
-Enregistrer le dans le répertoire C:\UwAmp\www  sous le nom "index.html". ATTENTION à bien sélectionner tous les fichiers.
+📂 **Enregistrer sous** `C:\UwAmp\www\index.html` . 
 
-**<H3 STYLE="COLOR:RED;">Activité n°12.****</H3> : Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www".  
+ATTENTION à bien sélectionner tous les fichiers.
+
+**<H3 STYLE="COLOR:RED;">Activité n°12.**</H3> : Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www".  
 ```php
 <?php
     $n=$_POST['nom'];
@@ -659,9 +670,11 @@ Enregistrer le dans le répertoire C:\UwAmp\www  sous le nom "index.html". ATTEN
     echo "<p>Bonjour ".$p." ".$n.", j'espère que vous allez bien.</p>";
 ?>
 ```
-Enregistrer le dans le répertoire C:\UwAmp\www  sous le nom " trait_form.php  ". ATTENTION à bien sélectionner tous les fichiers.
+📂 **Enregistrer sous** `C:\UwAmp\www\trait_form.php`. 
 
-**<H3 STYLE="COLOR:RED;">Activité n°13.****</H3> : Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, remplir le formulaire proposé et valider en cliquant sur le bouton "Envoyer"
+ATTENTION à bien sélectionner tous les fichiers.
+
+**<H3 STYLE="COLOR:RED;">Activité n°13.**</H3> : Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, remplir le formulaire proposé et valider en cliquant sur le bouton "Envoyer"
 
 **Comment ça marche ?** 
 
@@ -688,27 +701,20 @@ Ces informations transitent entre le client et le serveur selon méthode utilis�
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°14.****</H3> Modifier les fichiers "index.html" et "trait_form.php" comme suit : 
-Pour index.html
+**<H3 STYLE="COLOR:RED;">Activité n°14.**</H3> Modifier les fichiers "index.html" et "trait_form.php" comme suit : 
+
+📂 Modifier `index.html` :  
+
 ```html
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Le formulaire</title>
-    </head>
-    <body>
-        <form action="trait_form.php" method="get">
-                <label>Nom</label> : <input type="text" name="nom" />
-                <label>Prénom</label> : <input type="text" name="prenom" />
-                <input type="submit" value="Envoyer" />
-        </form>
-    </body>
-</html>
+<form action="trait_form.php" method="get">
+    <label>Nom</label> : <input type="text" name="nom" />
+    <label>Prénom</label> : <input type="text" name="prenom" />
+    <input type="submit" value="Envoyer" />
+</form>
 ```
 
+📂 Modifier `trait_form.php` :  
 
-Pour trait_form.php 
 ```php
 <?php
     $n=$_GET['nom'];
@@ -719,7 +725,8 @@ Pour trait_form.php
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°15.****</H3> Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, Saisir le prénom et le nom puis valider en cliquant sur le bouton "Envoyer". **Observer attentivement la barre d'adresse du navigateur. 
+
+**<H3 STYLE="COLOR:RED;">Activité n°15.**</H3> Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, Saisir le prénom et le nom puis valider en cliquant sur le bouton "Envoyer". **Observer attentivement la barre d'adresse du navigateur. 
 
 Cette  fois-ci,  les  informations  du  formulaire  sont  transmises  au  serveur  par  l'intermédiaire  de  l'url  : ```localhost/trait_form.php?nom=tartempion&prenom=tartiflette```
 
@@ -737,26 +744,15 @@ Il est important de bien comprendre que la méthode "POST" **n'offre pas non plu
 
 **<H3 STYLE="COLOR:RED;">Activité n°17****</H3> Fermer le serveur Wamp
 
-Si le PHP vous passionne :  
+📚 **Ressources utiles**  
+- [Introduction à PHP](http://www.phpdebutant.org/article118.php)  
+- [Afficher la date et l’heure](http://www.phpdebutant.org/article53.php)  
+- [PHP dans du code HTML](http://www.phpdebutant.org/article54.php)  
+- [Les sessions PHP](http://www.phpdebutant.org/article69.php)  
 
-- Introduction.[ http://www.phpdebutant.org/article118.php ](http://www.phpdebutant.org/article118.php)
-- Afficher une phrase ou une image.[ http://www.phpdebutant.org/article14.php ](http://www.phpdebutant.org/article14.php) 
-- Afficher la date et l'heure.[ http://www.phpdebutant.org/article53.php ](http://www.phpdebutant.org/article53.php) 
-- PHP dans du code HTML.[ http://www.phpdebutant.org/article54.php ](http://www.phpdebutant.org/article54.php) 
-- La concaténation.[ http://www.phpdebutant.org/article55.php ](http://www.phpdebutant.org/article55.php) 
-- Récupérer les valeurs d'un formulaire.[ http://www.phpdebutant.org/article56.php ](http://www.phpdebutant.org/article56.php) 
-- Les structures de contrôle.[ http://www.phpdebutant.org/article57.php ](http://www.phpdebutant.org/article57.php) 
-- Ecrire et lire dans un fichier texte.[ http://www.phpdebutant.org/article58.php ](http://www.phpdebutant.org/article58.php) 
-- Les fonctions utilisateurs.[ http://www.phpdebutant.org/article59.php ](http://www.phpdebutant.org/article59.php) 
-- Les variables d'environnement.[ http://www.phpdebutant.org/article60.php ](http://www.phpdebutant.org/article60.php) 
-- Quelques fonctions utiles.[ http://www.phpdebutant.org/article61.php ](http://www.phpdebutant.org/article61.php) 
-- Les sessions.[ http://www.phpdebutant.org/article69.php ](http://www.phpdebutant.org/article69.php) 
-
-Editeurs PHP en ligne : 
-
-- [http://phpfiddle.org/ ](http://phpfiddle.org/) 
-- [https://www.runphponline.com/ ](https://www.runphponline.com/) ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.008.png)
-
+🔧 **Editeurs PHP en ligne**  
+- [PHPFiddle](http://phpfiddle.org/)  
+- [RunPHPOnline](https://www.runphponline.com/)  
 
 
 ## **<H2 STYLE="COLOR:BLUE;">5. Exercices<a name="_page13_x40.00_y36.92"></a>**</H2> 
