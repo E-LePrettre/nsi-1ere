@@ -156,7 +156,7 @@ Pour aller plus loin:
 | **Privée**    | Réseaux internes | `192.168.1.1` (box internet) |  
 
 📌 Les adresses privées **ne sont pas routables** sur Internet.  
-📌 Un **NAT (Network Address Translation)** convertit une adresse privée en une adresse publique pour accéder à Internet.  
+📌 Un **NAT (Network Address Translation)** [^1] convertit une adresse privée en une adresse publique pour accéder à Internet.  
 
 
 ### <H3 STYLE="COLOR:GREEN;">**1.4. Un<a name="_page3_x40.00_y36.92"></a> switch (commutateur réseau)**</H3>
@@ -294,6 +294,7 @@ Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/mac
 | `ping [adresse]` | Vérifie la connexion à une adresse IP ou un site web. |
 | `tracert [adresse]` (ou `traceroute` sous Linux) | Affiche les étapes (sauts) nécessaires pour atteindre une adresse réseau. |
 | `netstat` | Affiche les ports actifs et les connexions réseau, utile pour détecter un virus. |
+
 
 
 ## <H2 STYLE="COLOR:BLUE;">**3. Le<a name="_page5_x40.00_y455.92"></a> protocole ARP**</H2>
@@ -523,101 +524,140 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
 **<H3 STYLE="COLOR:red;">Activité n°4.:**</H3> Lien direct entre deux ordinateurs  
 ![](Image1.png)
 
-- Lancer Filius  
-- Créer le réseau ci contre.   
-- Lancer la simulation   
-- Sur le poste 10 installer Ligne de commande  
-- Ouvrir le logiciel et faire ping 192.168.1.11  
-- Afficher les données échangées avec un click droit sur l’ordinateur 
-- Faire un ipconfig dans le cmd du poste 10 et comparer l’adresse Mac avec l’adresse Mac de la source sur le tabelau des données échangées  
+- Lancer **Filius**.  
+- Créer le réseau illustré ci-dessus.  
+- Lancer la simulation.  
+- Sur le poste **10**, installer **Ligne de commande**.  
+- Ouvrir l’application et exécuter :  
+  ```bash
+  ping 192.168.1.11
+  ```
+- Afficher les données échangées en effectuant un clic droit sur l’ordinateur.  
+- Effectuer un `ipconfig` dans le terminal du poste **10** et comparer l’adresse **MAC** avec celle de la source affichée dans le tableau des données échangées.  
 
 **<H3 STYLE="COLOR:red;">Activité n°5.:**</H3> 2 ordinateurs et un serveur  
 ![](Image2.png)
 
-- Modifier le réseau précédent pour mettre un serveur 192.168.1.12 et un switch  
-- Installer sur le serveur générique (port 55555) et démarrer le serveur  
-- sur  un  des  ordinateurs  installer  client  générique  et connecter  le  client  au  serveur   
-- envoyer un message au serveur en utilisant le client générique  
-- Afficher les données échangées avec un click droit sur l’ordinateur  
+- Modifier le réseau précédent pour y ajouter un **serveur** (IP : `192.168.1.12`) et un **switch**.  
+- Installer un **serveur générique** sur le serveur (`port 55555`) et le démarrer.  
+- Sur un des ordinateurs, installer un **client générique** et le connecter au serveur.  
+- Envoyer un **message** au serveur via le client générique.  
+- Observer les **données échangées** en effectuant un clic droit sur l’ordinateur.  
 
-La couche de transport est utilisée pour la première fois. On voit :  
 
-Selon le protocole de communication TCP, une connexion entre deux hôtes s’établit en trois étapes : Tri-wayhandshake. Dès la connexion on définit les numéros de séquence que l’on utilisera pour le transfert de données TCP 
+**Comprendre la couche transport : le Three-Way Handshake TCP**  
+Lorsqu’une connexion TCP s’établit, trois étapes sont nécessaires :  
 
-1. SYN : le client qui désire établir une connexion avec le serveur va envoyer un premier paquet SYN (synchronize) au serveur. Le numéro de séquence de ce paquet est un nombre aléatoire A. 
-1. SYN-ACK : le serveur va répondre au client à l’aide d’un paquet SYN-ACK (synchronize acknowledge). Le numéro du ACK est A+1. Tandis que le numéro de séquence du paquet SYN-ACK est un nombre aléatoire B. 
-1. ACK : pour terminer, le client va envoyer un paquet ACK au serveur qui va servir d’accusé de réception. Le numéro de séquence de ce paquet est défini par A+1 et le numéro du ACK est B+1 
+1. **SYN** : Le client envoie une demande (`SYN`) au serveur avec un **numéro de séquence A**.  
+2. **SYN-ACK** : Le serveur répond avec un **SYN-ACK**, où le numéro de séquence du `ACK` est **A+1**, et envoie un **numéro aléatoire B**.  
+3. **ACK** : Le client envoie un dernier `ACK`, où le numéro du **ACK** est **B+1**.  
 
-Puis envoi du message du client au serveur L’accusé de réception du serveur au client en A+2 L’envoi du message du serveur au client L’accusé de réception du client en B+2 
+Ensuite :  
+- Le client envoie son message au serveur.  
+- Le serveur accuse réception en **A+2**.  
+- Le serveur envoie sa réponse au client.  
+- Le client accuse réception en **B+2**.  
 
-- Cliquer sur déconnexion  
+Pour terminer la connexion, cliquez sur **Déconnexion**.  
 
-On voit des échanges entre le client et le serveur en 4 temps 
+On observe que les échanges entre le client et le serveur suivent **4 étapes**.  
 
 **<H3 STYLE="COLOR:red;">Activité n°6.:**</H3> 2 réseaux  
 ![](Image3.png)
 
-- Modifier le réseau précédent pour obtenir  les deux réseaux inter connectés suivants :  
-- Pinguer depuis le poste en 1.10 le poste en 2.10   
+- Modifier le réseau précédent pour obtenir **deux réseaux interconnectés**.  
+- Essayer de **pinguer** (`ping 1.10 → 2.10`).  
+- Normalement, le message ne peut pas traverser le premier réseau vers le second.  
 
-Normalement le message n’arrive pas à quitter le  premier réseau pour le second.  
+**Ajouter une passerelle pour permettre la communication**  
+- Configurer la passerelle du **routeur** :
+  - **Réseau 1** : `192.168.1.1`
+  - **Réseau 2** : `192.168.1.2`
+- Ajouter la passerelle correspondante sur **chaque ordinateur** (`1.x` et `2.x`).  
+- Pinguer de **1.10** vers **2.10** après configuration.  
 
-Il  faut  donc  indiquer  une  passerelle  qui  sera  l’adresse du routeur 192.168.1.1 et 192.168.1.2  
-
-- Mettre une passerelle sur chaque ordinateur en 1.x et faire de même pour chaque ordinateur en 2.x. 
-- Pinguer de nouveau depuis le poste en 1.10, le poste en 2.10 
-- Installer un client générique sur le poste 2.10 et connecter le poste en 2.10 au serveur en 1.12 pour lui envoyer le message « bonjour » 
-- Afficher et observer les données échangées 
+📌 **Test avancé** : Installer un **client générique** sur **2.10** et l’envoyer au **serveur 1.12** avec le message `"Bonjour"`. Observer les **données échangées**.  
 
 **<H3 STYLE="COLOR:red;">Activité n°7.:**</H3> Simulation du web avec adresse IP 
 
-- Installer un serveur web  et un éditeur de texte sur le serveur en 1.12 
-- Utiliser l’éditeur de texte pour ouvrir le fichier index.html qui se trouve sur le répertoire root/webserver 
+- Installer un **serveur Web** et un **éditeur de texte** sur **1.12**.  
+- Modifier le fichier **index.html** (situé dans `/root/webserver`).  
+- Ajouter **vos propres fichiers** :
+  - `page1.html`
+  - `script.js` (`/js/`)
+  - `style.css` (`/css/`)
+  - Images (`/images/`)
+- Renommer :
+  - `index.html` → `indexold.html`
+  - `page1.html` → `index.html`
+- Sauvegarder les modifications.  
 
-- Modifier pour qu’il affiche une de vos pages créées. Pour cela installer un explorateur de document. Importer la page1.html, importer le fichier script.js dans un dossier js et le fichier style.css dans un dossier css et éventuellement les images dans un dossier images. Renommer index.html en indexold.html et renommer la page1.html en index.html 
-Sauvegarder. 
-
-- Sur le bureau de votre serveur web, lancer l’application «Serveur Web ». Appuyer sur « Démarrer ». 
-- Ensuite installer un navigateur web sur le poste 2.10. Lancer et se connecter au serveur 1.12 en tapant l’URL ```http://192.168.1.12``` dans la barre d’adresse du navigateur. 
-
-On voit deux choses : le css ne fonctionne pas ni le codage utf-8 !! 
+**Démarrer et tester le serveur Web**  
+- Ouvrir l’application **Serveur Web**, cliquer sur **Démarrer**.  
+- Depuis un **navigateur Web** sur **2.10**, entrer l’URL :  
+  ```
+  http://192.168.1.12
+  ```
+📌 **Problème observé :**  
+- **CSS ne fonctionne pas**.  
+- **Encodage UTF-8 incorrect**.  
 
 **<H3 STYLE="COLOR:red;">Activité  n°8.:**</H3>  Simulation  du  web  avec  serveur DNS  
 
 ![](Image4.png)
 
-Normalement on ne s’adresse pas ainsi à un  serveur : on n’utilise pas l’adresse IP mais  son url. Le serveur de noms de domaine (ou  DNS) va traduire url en IP.  
+**Pourquoi utiliser un DNS ?**  
+Sur Internet, on utilise des **noms de domaine** au lieu d’adresses IP. Le **serveur DNS** traduit ces noms en adresses IP.  
 
-- Il faut ajouter un serveur d’adresse IP  192.168.3.10 et comme passerelle on  mettra  192.168.3.1.  et  ajouter  une  connexion au routeur en 192.168.3.1  
-- Pour  permettre  à  tous  les  postes  d’utiliser les services du DNS, il faut ajouter l’adresse IP du DNS dans la configuration de tous les ordinateurs du réseau. Sur chaque ordinateur rajouter dans serveur DNS l’IP du serveur DNS. 
-- Installer sur le serveur DNS l’application serveur DNS. Lancer et paramétrer pour faire correspondre l’adresse : .www.serverwebdensi.fr avec 192.168.1.12 (IP du serveur). Puis démarrer le serveur DNS. 
-- Sur le poste 2.10, taper l’url[ www.serverwebdensi.fr.](http://www.serverwebdensi.fr/)  
+**Configuration d’un serveur DNS**  
+1. Ajouter un **serveur DNS** avec l’IP `192.168.3.10` et comme passerelle `192.168.3.1`.  
+2. Connecter le **serveur DNS** au **routeur** (`192.168.3.1`).  
+3. Ajouter l’**IP du serveur DNS** dans la configuration **réseau de tous les postes**.  
+4. Installer et **paramétrer** l’application **serveur DNS** sur `192.168.3.10` :
+   - Associer **www.serverwebdensi.fr** → `192.168.1.12` (serveur Web).  
+   - **Démarrer** le serveur DNS.  
+5. Sur **2.10**, tester en tapant dans un navigateur :  
+   ```
+   http://www.serverwebdensi.fr
+   ```
+**Vérification**  
+- Sur **1.10**, ouvrir un terminal et exécuter :  
+  ```bash
+  host www.serverwebdensi.fr
+  ```
+- Observer le résultat.  
 
-Le DNS fait son travaille 
-Vérification :  
-
-- Aller sur le poste1.10. Dans l’editeur de commande taper host[ www.serverwebdensi.fr.](http://www.serverwebdensi.fr/) Observer 
 
 **<H3 STYLE="COLOR:red;">Activité n°9.:**</H3> Chemin d’un client à un serveur 
 
-- ouvrir le fichier snt\_sim\_res.fls. 
-- Faire un "traceroute" entre l'ordinateur M14 et l'ordinateur M9 (n'oubliez pas de faire un "ipconfig" sur la machine M9 afin d'obtenir son adresse IP). Noter le chemin parcouru pour aller de la machine M14 à la machine M9. 
-- Supprimer le câble réseau qui relie le routeur F au routeur E (simulation de panne), refaites un "traceroute" entre M14 et M9. Que constatez-vous ? (ATTENTION : cela peut ne pas fonctionner du premier coup, car la mise à jour des tables de routage n'est pas immédiate : vous pouvez essayer de faire un ping entre M14 et M9, si cela ne fonctionne pas (timeout), attendez quelques secondes et recommencez. Une fois que le ping fonctionne, vous pouvez faire le traceroute). 
+- Ouvrir le fichier `snt_sim_res.fls`.  
+- Lancer un **traceroute** entre **M14** et **M9** :  
+  ```bash
+  tracert [IP de M9]  # Windows
+  traceroute [IP de M9]  # Linux/macOS
+  ```
+- Supprimer le câble **routeur F → routeur E** (simulation de panne).  
+- Refaites un **traceroute** entre **M14** et **M9**.  
 
-Sous windows c’est tracert 
+📌 **Remarque** : Il se peut que la mise à jour des tables de routage prenne du temps.  
+- Si `ping` ne fonctionne pas immédiatement, **attendez quelques secondes et réessayez**.  
+
 
 **<H3 STYLE="COLOR:red;">Activité n°10.:**</H3> Chemin d’un client à un serveur version graphique 
 
-Sur le site[ https://gsuite.tools/traceroute ](https://gsuite.tools/traceroute)on pourra voir le chemin vers un des serveurs de plusieurs site web 
+Utiliser le site : [Traceroute en ligne](https://gsuite.tools/traceroute)  
+- Entrer une **URL** pour observer son chemin.  
 
-- Visualiser le chemin pour le site gs-cassaigne.fr (on peut zoomer) 
-- Visualiser le chemin pour le site aliexpress.com (site chinois) 
-- De même pour[ www.intechinfo.fr ](http://www.intechinfo.fr/)
-- De même pour malekal.com 
+**Exemples de sites à tester :**  
+- `gs-cassaigne.fr`  
+- `aliexpress.com`  
+- `www.intechinfo.fr`  
+- `malekal.com`  
 
-commande ipconfig pcastuces :[ https://www.pcastuces.com/pratique/windows/outils_reseau/page4.htm ](https://www.pcastuces.com/pratique/windows/outils_reseau/page4.htm)
 
-commande ipconfig papergeek[ https://www.papergeek.fr/ipconfig-comment-connaitre-son-adresse-ip-locale-et-son- adresse-mac-sous-windows-80996 ](https://www.papergeek.fr/ipconfig-comment-connaitre-son-adresse-ip-locale-et-son-adresse-mac-sous-windows-80996)
-
+**Ressources complémentaires**  
+**Commandes réseau**  
+- **ipconfig** (Windows) : [Guide PC Astuces](https://www.pcastuces.com/pratique/windows/outils_reseau/page4.htm)  
+- **ipconfig** (PaperGeek) : [Explication détaillée](https://www.papergeek.fr/ipconfig-comment-connaitre-son-adresse-ip-locale-et-son-adresse-mac-sous-windows-80996)  
 
 [^1]: Network Address Translation : Traduction d’adresse réseau
