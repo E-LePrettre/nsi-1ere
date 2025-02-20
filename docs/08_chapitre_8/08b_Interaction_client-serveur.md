@@ -280,7 +280,7 @@ https://www.wikipedia.org/wiki/Informatique#Algorithmique
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°1.****</H3> Passage de paramètre  un serveur 
+**<H3 STYLE="COLOR:RED;">Activité n°1.**</H3> Passage de paramètre  un serveur 
 
 - Aller sur[ HTTPs://fr.wikipedia.org ](https://fr.wikipedia.org/)
 - Dans la zone de recherche taper informatique 
@@ -329,22 +329,24 @@ https://www.example.com/search?query=informatique
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°2.****</H3>  Ouvrir un bloc note. Ajouter le script suivant et vérifier ce qu’on obtient dans le navigateur. Enregistrer le sous index.html **ATTENTION** à bien sélectionner tous les fichiers !
+**<H3 STYLE="COLOR:RED;">Activité n°2.**</H3>  Ouvrir un bloc-notes. Ajouter le script suivant et vérifier ce qu’on obtient dans le navigateur. Enregistrer le fichier sous `index.html`.
+
+⚠ **ATTENTION** à bien sélectionner **tous les fichiers** lors de l'enregistrement !
 
 ![](AZE.png)
 ```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Requête</title>
+  <meta charset="UTF-8">
+  <title>Requête</title>
 </head>
 <body>
-    <form method="GET" action="./login">
-        <input name="user" type="text" required placeholder="Nom d'utilisateur">
-        <input name="password" type="password" required placeholder="Mot de passe">
-        <button type="submit">Login</button>
-    </form>
+<form method='GET' action='./login'>
+    <input name='user' type='text' required>
+    <input name='password' type='password' required>
+    <button type='submit'>Login</button>
+</form>
 </body>
 </html>
 ```
@@ -358,28 +360,35 @@ Ce formulaire utilise la **méthode GET**, ce qui signifie que :
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°3.****</H3> Remplir ce formulaire et le soumettre fera envoyer une requête GET vers l'URL ./login. Observer la nouvelle URL
+**<H3 STYLE="COLOR:RED;">Activité n°3.****</H3> Remplir ce formulaire et le soumettre fera envoyer une requête **GET** vers l'URL `./login`. Observer la nouvelle URL.
 
-Avec la méthode GET, les données du formulaire seront encodées **dans l'URL.**  
+Avec la méthode **GET**, les données du formulaire seront encodées **dans l’URL**.
 
-Si on saisit trois valeurs par exemple «Dupont », « azerty » et qu’on clique sur le bouton, alors le navigateur charge la page correspondante à ```user=dupont&password=*****```
+Si on saisit les valeurs :
+- **Nom d'utilisateur** : `Dupont`
+- **Mot de passe** : `azerty`
 
-✅ **Explication :**
-- En remplissant le formulaire et en cliquant sur "Login", l’URL résultante contiendra les données sous cette forme :
-  ```
-  https://monsite.com/login?user=dupont&password=azerty
-  ```
+➡ Le navigateur chargera la page avec l'URL suivante :
+```
+./login?user=dupont&password=azerty
+```
+
 
 - **Problème :** 
   - Les données sont **visibles** dans l'URL, ce qui pose un problème de **sécurité**, notamment pour les mots de passe.
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°4.****</H3> Modifier la page pour pouvoir la soumettre avec une requête POST. Remplir ce formulaire et le soumettre fera envoyer une requête POST et observer la nouvelle URL.
+**<H3 STYLE="COLOR:RED;">Activité n°4.****</H3> 
+Modifier la page pour pouvoir la soumettre avec une requête **POST**. Remplir ce formulaire et le soumettre fera envoyer une requête **POST**.
+
+Dans ce cas, les données ne seront **pas visibles dans l’URL**, mais envoyées **dans le corps de la requête**.
+
+
 
 
 ✅ **Explication :**
-- Cette activité demande de **modifier la méthode du formulaire** pour utiliser **POST** au lieu de **GET** :
+- Ici on demande de **modifier la méthode du formulaire** pour utiliser **POST** au lieu de **GET** :
   ```html
   <form method="POST" action="./login">
   ```
@@ -411,72 +420,74 @@ Si on saisit trois valeurs par exemple «Dupont », « azerty » et qu’on cliq
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.061.jpeg)
 
-### **<H3 STYLE="COLOR:GREEN;">3.3. Cookies et gestion de session**</H3>
-
-Un **cookie** est un fichier stocké sur l’ordinateur du client par le serveur pour **mémoriser des informations**.
-
-🔹 **Exemple d’un cookie HTTP :**
-```
-Set-Cookie: session_id=abc123; Expires=Wed, 21 Jul 2024 07:28:00 GMT; Secure; HttpOnly
-```
-📌 **Explication** :
-- `session_id=abc123` → Identifiant unique de la session.  
-- `Expires=Wed, 21 Jul 2024` → Date d’expiration du cookie.  
-- `Secure` → Le cookie n’est envoyé que sur des connexions HTTPS.  
-- `HttpOnly` → Protège contre les attaques XSS en interdisant l’accès en JavaScript.  
 
 
 
-### **<H3 STYLE="COLOR:GREEN;">3.4. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML**</H3>
+
+### **<H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML**</H3>
+
+Un formulaire HTML est composé de plusieurs éléments permettant de structurer et saisir des données.
+
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.047.jpeg)
 
-| Type         | Description                                                                            |
-|--------------|----------------------------------------------------------------------------------------|
-| `<button>`   | Définit un bouton cliquable.                                                           |
-| `<fieldset>` | Regroupe les éléments liés dans un formulaire.                                         |
-| `<form>`     | Définit le conteneur de formulaire.                                                    |
-| `<input>`    | Définit un champ de saisie. HTML5 définit plus de 20 types d'entrée différents.        |
-| `<label>`    | Définit une étiquette pour un élément d’entrée de formulaire.                          |
-| `<legend>`   | Définit l'étiquette d'un groupe de champs.                                             |
-| `<option>`   | Définit une option dans une liste multi-éléments.                                      |
-| `<optgroup>` | Définit un groupe d'options connexes dans une liste à éléments multiples.              |
-| `<select>`   | Définit une liste à choix multiples.                                                   |
-| `<textarea>` | Définit une zone de saisie de texte multiligne.                                        |
+| **Type**        | **Description** |
+|----------------|---------------|
+| `<button>`     | Définit un bouton cliquable. |
+| `<fieldset>`   | Regroupe les éléments liés dans un formulaire. |
+| `<form>`       | Définit le conteneur de formulaire. |
+| `<input>`      | Définit un champ de saisie. |
+| `<label>`      | Définit une étiquette pour un élément de formulaire. |
+| `<legend>`     | Définit l’étiquette d’un groupe de champs. |
+| `<option>`     | Définit une option dans une liste déroulante. |
+| `<optgroup>`   | Regroupe des options connexes dans une liste. |
+| `<select>`     | Définit une liste à choix multiples. |
+| `<textarea>`   | Définit une zone de saisie de texte multiligne. |
 
 
-### **<H3 STYLE="COLOR:GREEN;">3.5. Elément<a name="_page5_x40.00_y275.92"></a> ```<input>``` : quelques exemples**</H3>
+
+
+### **<H3 STYLE="COLOR:GREEN;">3.4. Elément<a name="_page5_x40.00_y275.92"></a> ```<input>``` : quelques exemples**</H3>
+
+Le champ `<input>` est utilisé pour permettre la saisie de texte, mots de passe, et autres valeurs.
+
+
 
 ![](090.png)
 
-### **<H3 STYLE="COLOR:GREEN;">3.6. Elément<a name="_page5_x40.00_y485.92"></a> ```<select>``` : quelques exemples**</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.5. Elément<a name="_page5_x40.00_y485.92"></a> ```<select>``` : quelques exemples**</H3>
+
+L'élément `<select>` permet de créer une liste déroulante avec des options de choix.
+
 
 ![](091.png)
 
-### **<H3 STYLE="COLOR:GREEN;">3.7. Elément<a name="_page6_x40.00_y36.92"></a> value dans ```<select>```**</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.6. Elément<a name="_page6_x40.00_y36.92"></a> value dans ```<select>```**</H3>
 
-L'attribut value de l'élément est utilisé pour spécifier quelle valeur sera renvoyée au serveur. L'attribut value est **facultatif**. S’il n’est pas spécifié, alors **le texte** dans le conteneur **est envoyé à la place** 
+’attribut `value` d’un `<option>` définit la valeur qui sera envoyée au serveur lorsqu'un choix est fait.
+
+L'attribut value est **facultatif**. S’il n’est pas spécifié, alors **le texte** dans le conteneur **est envoyé à la place** 
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.055.png)
 
 ### **<H3 STYLE="COLOR:GREEN;">3.8. Les<a name="_page6_x40.00_y300.92"></a> boutons de commande**</H3>
 
-| Type                      | Description                                                                                                                                                       |
-|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `<input type="submit">`   | Crée un bouton qui soumet les données du formulaire au serveur.                                                                                                    |
-| `<input type="reset">`    | Crée un bouton qui efface les données de formulaire déjà entrées par l’utilisateur.                                                                                |
-| `<input type="button">`   | Crée un bouton personnalisé. Ce bouton peut nécessiter l’ajout de Javascript à toute action.                                                                       |
-| `<input type="image">`    | Crée un bouton de soumission personnalisé qui utilise une image pour son affichage.                                                                                |
-| `<button>`                | Crée un bouton personnalisé. L'élément `<button>` diffère de `<input type="button">` en ce que vous pouvez complètement personnaliser ce qui apparaît dans le bouton. |
-|                           | En l’utilisant, vous pouvez par exemple inclure à la fois des images et du texte ou ignorer entièrement le traitement côté serveur à l’aide de liens hypertexte.     |
-|                           | Vous pouvez transformer le bouton en bouton de soumission en utilisant l’attribut type = = `submit`.                                                                | |                                                                 |
+Différents types de boutons permettent d’interagir avec le formulaire :
+
+| **Type**                    | **Description** |
+|-----------------------------|----------------|
+| `<input type="submit">`     | Envoie les données du formulaire. |
+| `<input type="reset">`      | Efface les champs du formulaire. |
+| `<input type="button">`     | Bouton personnalisé (nécessite JavaScript). |
+| `<input type="image">`      | Bouton sous forme d’image. |
+| `<button>`                  | Bouton plus flexible pouvant contenir du texte et des images. |
+
+
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.057.png)
 
-**ATTENTION** à ne pas confondre :
-
--	```<button>``` avec ```<input type=’button’>```
-
--	```<input type=’submit’>``` avec ```<button type=’submit’>```
+⚠ **Attention à ne pas confondre :**
+- `<button>` avec `<input type='button'>`
+- `<input type='submit'>` avec `<button type='submit'>`
 
 
 
