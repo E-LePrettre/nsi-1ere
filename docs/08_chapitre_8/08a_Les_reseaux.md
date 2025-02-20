@@ -310,7 +310,7 @@ Le protocole **ARP (Address Resolution Protocol)** est utilisé pour **associer 
 
 Par exemple : la table ARP de mon ordinateur ci-contre
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.035.jpeg) 
+![](titre.png) 
 
 
 **<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** Dans une fenêtre **cmd** lancer la commande   l’instant fait 
