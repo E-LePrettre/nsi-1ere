@@ -470,7 +470,7 @@ L'attribut value est **facultatif**. S’il n’est pas spécifié, alors **le t
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.055.png)
 
-### **<H3 STYLE="COLOR:GREEN;">3.8. Les<a name="_page6_x40.00_y300.92"></a> boutons de commande**</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.7. Les<a name="_page6_x40.00_y300.92"></a> boutons de commande**</H3>
 
 Différents types de boutons permettent d’interagir avec le formulaire :
 
@@ -491,19 +491,22 @@ Différents types de boutons permettent d’interagir avec le formulaire :
 
 
 
-### **<H3 STYLE="COLOR:GREEN;">3.9. Comment<a name="_page7_x40.00_y36.92"></a> le formulaire interagit avec le serveur ?**</H3> 
+### **<H3 STYLE="COLOR:GREEN;">3.8. Comment<a name="_page7_x40.00_y36.92"></a> le formulaire interagit avec le serveur ?**</H3> 
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.059.jpeg)
 
 
 
-### **<H3 STYLE="COLOR:GREEN;">3.10. Les<a name="_page8_x40.00_y290.92"></a> cookies**</H3> 
+### **<H3 STYLE="COLOR:GREEN;">3.9. Les<a name="_page8_x40.00_y290.92"></a> cookies**</H3> 
 
-Il est important pour un site web de pouvoir identifier ces différents clients. Il utilise des **cookies**. C’est une petite quantité de données. Il est composé d’un nom, d’une valeur et optionnellement d’une date d’expiration. Le nom, la valeur et la durée de vie sont choisie par le serveur.  
+Un site web utilise des **cookies** pour identifier et suivre ses visiteurs. Un cookie est une **petite quantité de données** stockée dans le navigateur du client. Il est composé de :  
+- **Un nom**  
+- **Une valeur**  
+- **Optionnellement, une date d'expiration**  
 
-Lorsqu’un serveur veut déposer un cookie particulier chez un client, il l’envoie comme un entête de réponse HTTP.  
+Le serveur choisit ces paramètres et envoie le cookie au client via les **en-têtes HTTP**.
 
-**Exemple d'Entête de Réponse HTTP avec Cookie**
+**Exemple d'En-tête de Réponse HTTP avec un Cookie**  
 
 ```http
 HTTP/1.1 200 OK
@@ -511,48 +514,25 @@ Content-Type: text/html; charset=UTF-8
 Set-Cookie: username=JohnDoe; Expires=Wed, 21 Jul 2024 07:28:00 GMT; Path=/; Domain=example.com; Secure; HttpOnly
 ```
 
+**Détails de la Réponse**  
 
-**Ligne de Statut** :
+**Ligne de Statut :**  
+- `HTTP/1.1 200 OK` : La requête a été traitée avec succès, et le serveur renvoie une réponse correcte.  
 
-   - `HTTP/1.1 200 OK` : Indique que la requête a été traitée avec succès et que le serveur renvoie une réponse correcte.
+**En-têtes de Réponse :**  
+- `Content-Type: text/html; charset=UTF-8` : Le type du contenu est du **HTML encodé en UTF-8**.  
 
-**En-têtes de Réponse** :
+**Détails du cookie (`Set-Cookie`) :**  
+- `Set-Cookie: username=JohnDoe` : Crée un cookie nommé **username** avec la valeur **JohnDoe**.  
+- `Expires=Wed, 21 Jul 2024 07:28:00 GMT` : Date d’expiration du cookie ; après cette date, il sera supprimé automatiquement.  
+- `Path=/` : Le cookie est disponible sur **toutes les pages** du site.  
+- `Domain=example.com` : Le cookie est valide pour **example.com** et ses sous-domaines.  
+- `Secure` : Le cookie est **transmis uniquement via HTTPS**, garantissant une transmission sécurisée.  
+- `HttpOnly` : Le cookie **n’est pas accessible en JavaScript**, ce qui le protège des attaques XSS (Cross-Site Scripting).  
 
-   - `Content-Type: text/html; charset=UTF-8` : Spécifie le type de contenu de la réponse. Ici, il s'agit de HTML encodé en UTF-8.
-   
-**Set-Cookie** :
 
-   - `Set-Cookie: username=JohnDoe` : Crée un cookie nommé `username` avec la valeur `JohnDoe`.
 
-   - `Expires=Wed, 21 Jul 2024 07:28:00 GMT` : Date et heure d'expiration du cookie. Passée cette date, le cookie sera supprimé par le navigateur.
 
-   - `Path=/` : Le cookie est disponible pour toutes les URL du domaine.
-
-   - `Domain=example.com` : Le domaine pour lequel le cookie est valide. Le cookie sera envoyé pour toutes les requêtes à `example.com` et ses sous-domaines.
-
-   - `Secure` : Indique que le cookie doit être envoyé uniquement via des connexions sécurisées (HTTPS).
-
-   - `HttpOnly` : Indique que le cookie n'est accessible que par le serveur et ne peut pas être manipulé par le JavaScript côté client, ce qui aide à protéger contre les attaques XSS.
-
-**Utilisation Typique**
-
-Lorsqu'un client (navigateur web) reçoit cette réponse du serveur, il stocke le cookie conformément aux directives spécifiées. Par exemple :
-
-**Connexion sécurisée** :
-
-   - Le cookie ne sera envoyé au serveur que lors de requêtes via HTTPS (grâce au flag `Secure`).
-
-**Accès au cookie** :
-
-   - Le cookie est accessible pour toutes les pages du domaine `example.com` (grâce au flag `Path=/` et `Domain=example.com`).
-
-**Durée de vie** :
-
-   - Le cookie expirera et sera supprimé automatiquement après le 21 juillet 2024 (grâce au flag `Expires`).
-
-**Protection contre XSS** :
-
-   - Le cookie n'est pas accessible via JavaScript, ce qui le protège contre certaines attaques XSS (grâce au flag `HttpOnly`).
 
 **<H3 STYLE="COLOR:RED;">Activité n°5****</H3>: faire les exercices
 
