@@ -18,27 +18,38 @@ title: 07a Le HTML
 🎥 [Regarder l'historique du Web](https://ladigitale.dev/digiview/#/v/6690fec0420aa)
 
 Le **World Wide Web** (souvent appelé **Web**) a été développé en **1991** au **CERN** (Conseil Européen pour la Recherche Nucléaire) par :
+
 - **Tim Berners-Lee** 🇬🇧 (informaticien britannique)
+
 - **Robert Cailliau** 🇧🇪 (ingénieur belge)
 
 💡 **Pourquoi ?**  
+
 ➡ À cette époque, les chercheurs étaient déjà connectés entre eux, mais **l'échange d’informations était compliqué**.  
+
 ➡ Tim Berners-Lee invente alors le **système hypertexte**, qui permet de cliquer sur des **hyperliens** (mots soulignés en bleu) pour passer d’un document à un autre.
 
 📌 **Première page web**  
+
 Le tout premier site Web est encore visible ici :  
 🔗 [http://info.cern.ch/hypertext/WWW/TheProject.html](http://info.cern.ch/hypertext/WWW/TheProject.html)
 
 📌 **Le premier navigateur Web**  
+
 Il s’appelait **"WorldWideWeb"**, développé par Tim Berners-Lee lui-même.
 
 📌 **Le Web repose sur trois technologies principales** :
+
 1. **Le protocole HTTP** (HyperText Transfer Protocol)  
+
 2. **Les URL** (Uniform Resource Locator)  
+
 3. **Le langage HTML** (HyperText Markup Language)
 
 > ❗ **Attention !** Le Web et Internet sont **deux choses différentes** :  
+
 > - **Internet** est un **réseau mondial** reliant des millions d’ordinateurs.  
+
 > - **Le Web** est **un service** qui repose sur Internet, utilisant **HTTP, URL et HTML**.
 
 Tim Berners-Lee est donc **l’inventeur du Web**, mais **pas d’Internet**.
@@ -49,23 +60,26 @@ Tim Berners-Lee est donc **l’inventeur du Web**, mais **pas d’Internet**.
 
 Un site web est **affiché** grâce à un **navigateur web**.  
 Les plus connus sont :
+
 - **Google Chrome**
+
 - **Mozilla Firefox**
+
 - **Microsoft Edge**
+
 - **Safari**
 
 💡 **Pourquoi tester son site sur plusieurs navigateurs ?**  
+
 ➡ Tous les navigateurs **n’interprètent pas** les sites **de la même manière**.  
+
 ➡ Il faut s’assurer que le site fonctionne partout !
 
 > **Outil utile** : 🔗 [Can I Use](https://caniuse.com/)  
+
 > Ce site permet de vérifier si une fonctionnalité **HTML, CSS ou JavaScript** est compatible avec chaque navigateur.
 
-
-
 ![Navigateurs](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.004.png)
-
-
 
 ### **<H3 STYLE="COLOR:GREEN;">2.2. Les<a name="_page1_x40.00_y340.92"></a> langages** 🔎</H3>
 
@@ -78,25 +92,30 @@ Un site web est **construit avec trois langages** principaux :
 | **JavaScript** | Ajoute des fonctionnalités dynamiques (effets visuels, formulaires interactifs…) |
 
 📌 **Résumé** :  
-✅ **HTML** → Structure le contenu  
+
+✅ **HTML** → Structure le contenu 
+
 ✅ **CSS** → Définit l’apparence  
+
 ✅ **JavaScript** → Ajoute de l’interactivité
-
-
-
 
 
 ### **<H3 STYLE="COLOR:GREEN;">2.3. Les<a name="_page1_x40.00_y687.92"></a> éditeurs et les logiciels conseillés** 🔎</H3>
 
 💻 **Logiciels à utiliser en cours** :
+
 - **Capytale** → Pour réaliser des exercices et tester du code.
+
 - **Visual Studio Code** (VS Code) → Un éditeur de code professionnel, gratuit et puissant.
 
 Autres outils pratiques :
+
 - **CodePen**, **JSFiddle**, **Glitch** → Pour tester rapidement du HTML/CSS.
 
 📌 **Bonnes pratiques** :
+
 ✔ Installer **plusieurs navigateurs** pour tester un site.  
+
 ✔ Vérifier la compatibilité avec 🔗 [Can I Use](https://caniuse.com/).  
 
 
@@ -233,12 +252,17 @@ Exemples :
 ```
 
 📌 **Ce qu’il faut retenir :**
-✔ `<!DOCTYPE html>` indique qu'on utilise **HTML5**.  
-✔ `<head>` contient le **titre**, les **styles** et les **scripts**.  
+
+✔ `<!DOCTYPE html>` indique qu'on utilise **HTML5**. 
+
+✔ `<head>` contient le **titre**, les **styles** et les **scripts**.
+
 ✔ `<body>` contient le **contenu visible**.  
+
 ✔ On peut ajouter du **CSS** et du **JavaScript** pour enrichir la page.
 
 > 💡 **Astuce** :  
+
 > **Voir le code source d’une page Web** → **CTRL + U** (Firefox, Chrome, Edge)
 
 
@@ -250,6 +274,7 @@ Exemples :
 En **HTML**, le texte est généralement structuré sous forme de **paragraphes** à l'aide de la balise `<p>`.  
 
 📌 **Règle importante :**  
+
 ✔️ **Un paragraphe doit toujours être inclus dans `<body>`**.  
 
 
@@ -278,7 +303,8 @@ Je voudrais écrire le texte suivant exactement avec la même mise en page ci-de
 
 ### **<H3 STYLE="COLOR:GREEN;">4.2. La<a name="_page3_x40.00_y481.92"></a> balise retour à la ligne `<br>`** 🔎</H3>
 
-En **HTML**, les **retours à la ligne ne sont pas pris en compte automatiquement**.  
+En **HTML**, les **retours à la ligne ne sont pas pris en compte automatiquement**. 
+
 ➡️ Il faut utiliser la **balise orpheline** `<br>` pour forcer un saut de ligne.
 
 **<H3 STYLE="COLOR:red;">Activité n°6. :</H3>** Modifier l’activité n°4 pour **garder la mise en page** avec `<br>` au lieu de plusieurs `<p>`.
@@ -379,9 +405,12 @@ En HTML, on peut **mettre en valeur du texte** de différentes manières :
 
 **Pourquoi structurer correctement son HTML ?**  
 
-L'utilisation correcte des balises (`<h1>`, `<p>`, `<strong>`, etc.) est essentielle pour :  
-✅ **La lisibilité** du code.  
+L'utilisation correcte des balises (`<h1>`, `<p>`, `<strong>`, etc.) est essentielle pour : 
+
+✅ **La lisibilité** du code. 
+
 ✅ **Le référencement** (SEO) : Google repère les titres et le texte important.  
+
 ✅ **L’accessibilité** : les logiciels de lecture d’écran comprennent mieux le contenu.  
 
 
@@ -394,9 +423,11 @@ En HTML, il existe **deux types de listes** :
 #### <H4 STYLE="COLOR:MAGENTA;">4.5.1. Les listes non ordonnées (listes à puces) </h4> 
 
 Les listes **non ordonnées** sont des listes où l’ordre des éléments n’a pas d’importance.  
+
 Pour les créer, on utilise :  
 
 - `<ul>` (unordered list) pour **délimiter** la liste. 
+
 - `<li>` (list item) pour chaque **élément** de la liste. 
 
 **Exemple :**  
@@ -416,6 +447,7 @@ Pour les créer, on utilise :
 #### **<H4 STYLE="COLOR:MAGENTA;">4.5.2. Les listes ordonnées (listes numérotées)** </h4>
 
 Les listes **ordonnées** sont des listes **numérotées** où l’ordre des éléments a de l’importance.  
+
 Pour les créer, on remplace `<ul>` par `<ol>` (ordered list).  
 
 **Exemple :**  
@@ -450,7 +482,9 @@ Un **lien absolu** mène vers une adresse **externe**, c’est-à-dire vers un a
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.046.jpeg)
 
 📌 **Remarque :**  
+
 Si une URL contient des **"&"**, il faut remplacer chaque **"&"** par **"&amp;"**.  
+
 Exemple :  
 ```html
 <a href="http://www.site.com/?data=15&amp;name=mateo21">Mon lien</a>
@@ -737,16 +771,21 @@ Il faut les placer toutes les deux dans le même dossier. On affiche la version 
 ### <H3 STYLE="COLOR:GREEN;">5.5. Vérification du code HTML  
 
 **Pourquoi valider son code HTML ?**  
+
 ✔ **Éviter les erreurs d’affichage**.  
+
 ✔ **Améliorer le référencement SEO**.  
+
 ✔ **Faciliter la compatibilité avec tous les navigateurs**.  
 
 💡 **Utiliser le validateur W3C :**  
+
 🔗 [https://validator.w3.org](https://validator.w3.org)  
 
 📌 **Si votre page n’est pas encore en ligne :**  
 
 - **Utiliser "Validate by File Upload"**.  
+
 - **Cliquer sur "Check"**.  
 
 Si des erreurs sont détectées, elles seront expliquées et **faciles à corriger**.
