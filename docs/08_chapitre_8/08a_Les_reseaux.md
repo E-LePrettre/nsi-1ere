@@ -46,9 +46,9 @@ L’**adresse MAC** est un **identifiant physique unique** associé à une **car
 
 Une **adresse IP** est un numéro d’identification attribué **temporairement ou en permanence** à un périphérique connecté à un réseau. 
 
-- Elle est essentielle au **routage des paquets de données** sur Internet. 
+Elle est essentielle au **routage des paquets de données** sur Internet. 
 
-- Il existe deux versions :  
+Il existe deux versions :  
 
   - **IPv4** (32 bits) : format classique `192.168.1.1`.
 
