@@ -23,9 +23,12 @@ title: 07c Le Javascript
 
 JavaScript est un langage de programmation utilisé **côté client** pour ajouter des fonctionnalités interactives aux pages web.  
 
-📌 **Caractéristiques principales :**  
+📌 **Caractéristiques principales :** 
+
 ✔ **Langage client-side** → Exécuté par le navigateur de l'utilisateur.  
+
 ✔ **Polyvalent** → Fonctionne sur tous les navigateurs web.  
+
 ✔ **Interactivité** → Manipulation en temps réel du contenu HTML et CSS.  
 
 **📌 Comment fonctionne JavaScript dans une page web ?**  
@@ -72,7 +75,9 @@ Il est possible d’intégrer du JavaScript **dans le code HTML**, entre les bal
 ```
 
 ✅ **Explication** :  
+
 - **Ligne 11 :** Un bouton HTML `<button>` déclenche une fonction **JavaScript** lorsqu'on clique dessus.  
+
 - **Ligne 14-16 :** Une fonction JavaScript `afficherMessage()` affiche une boîte de dialogue (`alert()`).  
 
 📌 **Résultat :** Lorsqu'on clique sur le bouton, une **alerte apparaît avec un message**.
@@ -108,8 +113,10 @@ document.getElementById("monBouton").addEventListener("click", function() {
 });
 ```
 
-✅ **Explication** :  
-- **Ligne 5 :** On sélectionne le bouton avec `document.getElementById("monBouton")`.  
+✅ **Explication** : 
+
+- **Ligne 5 :** On sélectionne le bouton avec `document.getElementById("monBouton")`. 
+
 - **Ligne 6 :** On **écoute l’événement `click`** et on exécute une fonction **au clic**.  
 
 📌 **Résultat :** Quand on clique sur le bouton, une **alerte apparaît avec un message**.
@@ -157,6 +164,7 @@ JavaScript propose **trois types de boîtes de dialogue** pour interagir avec l'
 **<H3 STYLE="COLOR:red;">Activité n°2 :**</H3>
 
 1️⃣ **Créer un nouveau fichier HTML** appelé **`exo_JS.html`**  
+
 2️⃣ **Ajouter ce code dans `exo_JS.html`** :
 
 ```html
@@ -217,7 +225,9 @@ JavaScript propose **trois types de boîtes de dialogue** pour interagir avec l'
 alert('Hello world!');
 ```
 2️⃣ **Dans `exo_JS.html`**, **supprimer** l'ancien `<script>` qui contenait `alert()`.  
-3️⃣ **Enregistrer et observer** :  
+
+3️⃣ **Enregistrer et observer** : 
+
 ➡ L’alerte **s’affiche toujours**, mais maintenant grâce à **`exo.js`**.
 
 ✅ **Félicitations, vous avez relié un fichier JavaScript externe !** 🎉
@@ -234,14 +244,17 @@ La **console JavaScript** permet d'afficher des messages utiles pour **déboguer
 ```js
 console.log('Hello world!');
 ```
-2️⃣ **Enregistrer et ouvrir `exo_JS.html` dans un navigateur**.  
+2️⃣ **Enregistrer et ouvrir `exo_JS.html` dans un navigateur**. 
+
 3️⃣ **Ouvrir la console JavaScript** :  
+
    - **Firefox / Edge** : `Ctrl + Maj + I` puis **onglet "Console"**  
+
    - **Chrome** : `F12` puis **onglet "Console"**  
 
 ➡ **Résultat attendu** : `"Hello world!"` s’affiche dans la console.
 
----
+
 
 **📌 Pourquoi utiliser `console.log()` ?**  
 
@@ -336,9 +349,12 @@ console.log(message2);
 ```
 ➡ **Résultat** : Les messages s’affichent dans la console.
 
-📌 **Autres caractères spéciaux utiles :**  
+📌 **Autres caractères spéciaux utiles :** 
+
 - `\n` → retour à la ligne  
+
 - `\t` → tabulation  
+
 - `\uXXXX` → caractère Unicode (pour insérer le caractère donc la [valeur unicode](http://fr.wikipedia.org/wiki/Table_des_caractÃ¨res_Unicode) est XXXX (en hexadécimales). )
 
 
@@ -371,10 +387,15 @@ boolean
 ### **<H3 STYLE="COLOR:GREEN;">5.5. Les<a name="_page3_x40.00_y706.92"></a> calculs**</H3>
 
 JavaScript permet **toutes les opérations classiques** :  
+
 ✔ Addition `+`  
+
 ✔ Soustraction `-`  
+
 ✔ Multiplication `*`  
+
 ✔ Division `/`  
+
 ✔ Modulo `%` (reste de la division)
 
 📌 **Exemple :**
@@ -459,6 +480,7 @@ console.log(result);
 ### **<H3 STYLE="COLOR:GREEN;">5.8. Convertir une entrée utilisateur en nombre (`parseInt()` et `parseFloat()`)**</H3>
 
 📌 **Problème** : `prompt()` **retourne toujours du texte**.  
+
 📌 **Solution** : Convertir avec **`parseInt()` (entier)** ou **`parseFloat()` (nombre décimal)**.
 
 📌 **Exemple :**
@@ -594,7 +616,9 @@ Tout ce qui suit les deux points d’un ```case``` sera exécuté si la variable
 ## **<H2 STYLE="COLOR:BLUE;">7. Les<a name="_page6_x40.00_y544.92"></a> opérateurs logiques**</H2>
 
 - L’opérateur ET se note ```&&``` 
+
 - L’opérateur OU se note ```||``` (Alt Gr + 6)  
+
 - L’opérateur NON se note comme en Python avec ```!``` 
 
 ## **<H2 STYLE="COLOR:BLUE;">8. Les<a name="_page6_x40.00_y626.92"></a> boucles 🌀**</H2>
@@ -680,8 +704,11 @@ console.log("Boucle terminée !");
 ```
 
 **Explication des paramètres :**
-1️⃣ **Initialisation** → `let i = 0` (on initialise la variable `i`)  
+
+1️⃣ **Initialisation** → `let i = 0` (on initialise la variable `i`) 
+
 2️⃣ **Condition** → `i < 5` (on continue tant que `i` est inférieur à 5)  
+
 3️⃣ **Incrémentation** → `i++` (on ajoute 1 à `i` à chaque tour)
 
 
@@ -708,7 +735,9 @@ showMessage(); // On exécute la fonction
 ```
 
 **Explication :**  
+
 - `showMessage()` affiche un message fixe.
+
 - Elle ne prend aucun argument. 
 
 **<H3 STYLE="COLOR:red;">Activité n°23 : Exemple de fonction avec argument :**</H3> 
@@ -724,6 +753,7 @@ greetUser("Bob");   // Affiche : Bonjour Bob !
 ```
 
 **Explication :**  
+
 - La fonction `greetUser()` prend un argument `name` et affiche un message personnalisé.
 
 
@@ -742,8 +772,11 @@ askName(); // Demande un nom à l'utilisateur et l'affiche
 ```
 
 **Explication :**  
+
 - `prompt()` récupère l’entrée de l’utilisateur.
+
 - On stocke cette valeur dans `userName`.
+
 - On l’affiche ensuite avec `console.log()`.
 
 
@@ -763,7 +796,9 @@ console.log("Résultat de l'addition : " + resultat); // Affiche 12
 ```
 
 **Explication :**  
+
 - La fonction **additionne deux nombres** et retourne le résultat.
+
 - Le `return` **renvoie la valeur**, qui est stockée dans `resultat`.
 
 ---
@@ -791,6 +826,7 @@ Le **Document Object Model (DOM)** est une interface qui permet à JavaScript d'
 **<H3 STYLE="COLOR:red;">Activité n°26 :**</H3> 
 
 📌 **Sélection d'un élément par son ID**
+
 La méthode `getElementById()` permet de récupérer un élément HTML unique à partir de son **ID**.
 
 ```html
@@ -805,6 +841,7 @@ La méthode `getElementById()` permet de récupérer un élément HTML unique à
 
 **<H3 STYLE="COLOR:red;">Activité n°27 :**</H3> 
 📌 **Sélection des éléments par leur classe**
+
 La méthode `getElementsByClassName()` permet de récupérer **plusieurs éléments** qui partagent une même classe.
 
 ```html
@@ -900,7 +937,7 @@ function resetCouleur() {
 
 ✅ **Avantage** : Séparer la logique du design en utilisant **CSS** au lieu de modifier directement les styles avec JavaScript.
 
----
+
 
 
 ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.094.png)
@@ -1079,6 +1116,7 @@ JavaScript propose **différents types d'événements** :
 | `scroll`        | L’utilisateur fait défiler la page. |
 
 👉 Pour une **liste complète**, consultez la documentation :  
+
 🔗 [Liste des événements JavaScript](https://www.lehtml.com/js/even.htm)
 
 ### **<H3 STYLE="COLOR:GREEN;">11.2. <a name="_page14_x40.00_y550.92"></a> Manipuler les événements en JavaScript**</H3>
@@ -1086,6 +1124,7 @@ JavaScript propose **différents types d'événements** :
 **<H3 STYLE="COLOR:red;">Activité n°39 :**</H3> 
 
 📌 **Exécuter une alerte lors d’un clic**  
+
 Dans cet exemple, un simple **clic** sur le texte affichera une alerte.
 
 🔹 **Créer un fichier `evenement.html` et y insérer le code suivant** :
@@ -1097,7 +1136,7 @@ Dans cet exemple, un simple **clic** sur le texte affichera une alerte.
 ```
 ✅ **Explication** : Lorsqu’on clique sur le texte, l’alerte `"Hello"` s’affiche.
 
----
+
 
 **<H3 STYLE="COLOR:red;">Activité n°40 :**</H3> 
 
@@ -1114,7 +1153,9 @@ Dans cet exemple, un simple **clic** sur le texte affichera une alerte.
 </body>
 ```
 ✅ **Explication** :  
+
 - `getElementById("bouton")` cible le bouton.
+
 - `addEventListener("click", function() {...})` écoute le clic et exécute la fonction.
 
 **<H3 STYLE="COLOR:red;">Activité n°41 :**</H3> 
@@ -1147,7 +1188,9 @@ Dans cet exemple, un simple **clic** sur le texte affichera une alerte.
 </body>
 ```
 ✅ **Explication** :  
+
 - `keydown` détecte une touche **enfoncée**.
+
 - `event.key` affiche la touche appuyée.
 
 ### **<H3 STYLE="COLOR:GREEN;">11.3. Le mot-clé `this` référence l’élément HTML qui a déclenché l’événement**.</H3>
@@ -1165,7 +1208,9 @@ Le mot-clé `this` **référence l’élément HTML qui a déclenché l’évén
 </body>
 ```
 ✅ **Explication** :  
+
 - **`onfocus`** → Quand l'utilisateur clique sur le champ, le texte change.
+
 - **`onblur`** → Quand il quitte le champ, le texte revient à sa valeur initiale.
 
 ### **<H3 STYLE="COLOR:GREEN;">11.4. Ajouter plusieurs événements à un même élément**.</H3>
@@ -1207,8 +1252,11 @@ On peut attacher plusieurs événements **à un seul élément**.
 </html>
 ```
 ✅ **Explication** :  
+
 - **Le bouton** déclenche un message `"Clic détecté !"`.
+
 - **Le texte** affiche `"MouseOver détecté !"` quand la souris passe dessus.
+
 - **Le texte** affiche `"MouseOut détecté !"` quand la souris quitte.
 
 
@@ -1242,6 +1290,7 @@ Avec `removeEventListener()`, on peut **désactiver un événement**.
 </body>
 ```
 ✅ **Explication** :  
+
 - `removeEventListener("click", afficherMessage)` **désactive l'événement**.
 
        
