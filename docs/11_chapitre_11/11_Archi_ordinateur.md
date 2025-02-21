@@ -554,36 +554,49 @@ HALT
    - L’instruction **MOV** est à l’adresse **000**.  
 
    - L’instruction **STR** est à l’adresse **001**.  
-   
+
    - L’instruction **HALT** est à l’adresse **002**.  
 
 **<H3 STYLE="COLOR:red;">Activité n°12.:** Exécution pas à pas :</H3>
-Il suffit maintenant de cliquer sur le bouton "RUN". Le CPU va "travailler" en direct grâce à de petites animations. Si cela va trop vite (ou trop doucement), on peut régler la vitesse de simulation à
+1️⃣ **Exécutez** le programme en cliquant sur **RUN**.  
+2️⃣ Observez l’animation du CPU.  
+3️⃣ Vérifiez que **l’adresse mémoire 150 contient bien 42**.  
+4️⃣ **Modifier** la vitesse avec **<< et >>**.  
 
- l'aide des boutons "<<" et ">>". Un appui sur le bouton "STOP" met en pause la simulation.
+📌 **Remarque** : Pour relancer la simulation, cliquez sur **RESET**.
+
+
 Une fois la simulation terminée, on constate que la cellule mémoire d'adresse 150, contient bien le nombre 42 (en base 10) et que le registre R0 a bien stocké le nombre 42.
-Attention : pour relancer la simulation il faut appuyer sur « RESET »
 
-**<H3 STYLE="COLOR:red;">Activité n°13.:</H3>** Modifier le programme précédent pour qu'à la fin de l'exécution on trouve le nombre 54 à l'adresse mémoire 50. On utilisera le registre R1 à la place du registre R0. Tester vos modifications en exécutant la simulation.
 
-**<H3 STYLE="COLOR:red;">Activité n°14.:</H3>** Saisir et tester le programme suivant :
-```
-   MOV R0, #4
-   STR R0,30
-   MOV R0, #8
-   STR R0,75
-   LDR R0,30
-   CMP R0, #10
-   BNE else
-   MOV R0, #9
-   STR R0,75
-   B endif
+**<H3 STYLE="COLOR:red;">Activité n°13.:</H3>** 
+
+💡 **Modifier le programme précédent** pour **stocker 54 dans l’adresse mémoire 50** en utilisant **R1**. 
+
+✅ **Testez** la modification en exécutant le programme.
+
+**<H3 STYLE="COLOR:red;">Activité n°14.:</H3>** 
+
+💡 **Tester le programme suivant** :
+```assembly
+MOV R0, #4
+STR R0, 30
+MOV R0, #8
+STR R0, 75
+LDR R0, 30
+CMP R0, #10
+BNE else
+MOV R0, #9
+STR R0, 75
+B endif
 else:
-   LDR R0,30
-   ADD R0, R0, #1
-   STR R0,30
+LDR R0, 30
+ADD R0, R0, #1
+STR R0, 30
 endif:
-   MOV R0, #6
-   STR R0,23
-   HALT
+MOV R0, #6
+STR R0, 23
+HALT
 ```
+✅ **Analysez** le comportement du programme.  
+
