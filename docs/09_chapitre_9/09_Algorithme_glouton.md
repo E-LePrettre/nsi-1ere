@@ -16,8 +16,11 @@ title: 09 Algorithme glouton
 En informatique, un **algorithme glouton** (*greedy algorithm*) est une **technique de résolution** de problème.  
 
 Un algorithme glouton suit **un principe simple** :
+
 - À chaque **étape**, il choisit la **meilleure solution immédiate**.
+
 - Il ne revient **jamais en arrière** pour modifier un choix précédent.  
+
 - Son **objectif** est d’obtenir un résultat **optimal**, mais ce n’est **pas toujours garanti**.  
 
 💡 **Remarque :** Les algorithmes gloutons sont souvent utilisés pour **les problèmes d'optimisation**, comme le **rendu de monnaie** ou le **problème du sac à dos**.
@@ -27,7 +30,9 @@ Un algorithme glouton suit **un principe simple** :
 Ce problème consiste à rendre une somme avec **le moins de pièces (ou billets) possible**.  
 
 🔹 **Principe de l’algorithme glouton** :  
+
 1. Sélectionner **la pièce la plus grande possible** (sans dépasser la somme restante).  
+
 2. Répéter jusqu’à ce que la somme soit totalement rendue.  
  
 
@@ -44,6 +49,7 @@ Rendre **8€** 💶
 | 1 pièce de 1€   | |
 
 ✅ Avec **le système de pièces européen**, l’algorithme glouton **donne toujours un choix optimal**.  
+
 ⚠️ Cependant, ce n’est pas **toujours** le cas avec d’autres systèmes de pièces.
 
 
@@ -65,6 +71,7 @@ Rendre **8€** 💶
 **<H3 STYLE="COLOR:RED;">Activité n°1.**</H3> 
 
 Implémentation en Python**
+
 📌 **Objectif :** Traduire cet algorithme en Python sur **Capytale**  
 
 **Algorithme en pseudo-code :**
@@ -126,8 +133,11 @@ Soit 30 euros, l’algorithme ne fonctionne plus, car il manque une pièce de 1 
 ### <H3 STYLE="COLOR:GREEN;"> **1.2. Le<a name="_page2_x51.00_y32.00"></a> problème du sac à dos**</H3> 
 
 Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimisation :
+
 - On dispose **d’objets**, chacun ayant une **valeur** et un **poids**.
+
 - Le sac a une **capacité maximale**.
+
 - **Objectif :** choisir les objets pour **maximiser la valeur** sans dépasser le poids.
 
 **Exemple :**  
@@ -145,9 +155,10 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
 
 
 **<H3 STYLE="COLOR:RED;">Activité n°2.**: Sac à dos :</H3> Implémentation en Python**
+
 📌 **Objectif :** Programmer une fonction qui **remplit un sac à dos** selon la **méthode gloutonne**.
 
-#### **Pseudo-code :**
+**Pseudo-code :**
 ```
 Fonction remplirSac(objets : liste triée par valeur, poidsMax : float) -> liste des objets choisis
 	p ← 0  
@@ -204,6 +215,7 @@ print(remplirSacDico(objets, poidsMax))
 
 
 - **Les algorithmes gloutons sont rapides et simples**, mais ils ne garantissent pas toujours une solution optimale.
+
 - Pour des solutions optimales, on utilise des méthodes plus avancées comme **la programmation dynamique** ou **l’arbre de recherche**.
 
 💡 **Remarque :** Le **problème du sac à dos optimal** sera étudié en **Terminale** avec des techniques comme la **séparation et évaluation** (*Branch & Bound*).
