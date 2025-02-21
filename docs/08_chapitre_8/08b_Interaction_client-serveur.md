@@ -6,8 +6,8 @@ title: 08b Interaction client-serveur - Requête
 
 **Table des matières** 
 
-1. [Modèle client/serveur=](#_page0_x40.00_y516.92)
-1. [Le protocole HTTP=](#_page1_x40.00_y233.92)
+1. [Modèle client/serveur](#_page0_x40.00_y516.92)
+1. [Le protocole HTTP](#_page1_x40.00_y233.92)
 3. [Coder l’envoi d’une requête par le navigateur](#_page3_x40.00_y617.92)
 4. [APPLICATION : Création d’une page web dynamique](#_page8_x40.00_y503.92)
 5. [Exercices](#_page13_x40.00_y36.92)
