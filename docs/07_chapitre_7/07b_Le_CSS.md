@@ -39,6 +39,7 @@ Grâce à CSS, on peut modifier :
 📌 **Avant CSS :**  
 
 - Seul **HTML** existait pour afficher le contenu, mais **sans mise en page avancée**.  
+
 - Les styles étaient inclus **directement dans le code HTML**, ce qui rendait les modifications difficiles.  
 
 💡 **Problème :**  
@@ -95,8 +96,10 @@ ou :
 
 ![](6789.png)
 
-📌 **Bonnes pratiques** :  
+📌 **Bonnes pratiques** : 
+
 - **Mettre le CSS dans un fichier externe** (`style.css`) pour une meilleure organisation.  
+
 - **Éviter de mettre du CSS directement dans le HTML**. 
 
 **<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** **
@@ -119,7 +122,9 @@ Dans le fichier **`index.html`**, ajoutez le lien vers `style.css` dans la secti
 ```
 
 📌 **Explication :**  
-✔ La balise `<link>` permet de relier notre fichier HTML à la feuille de style `style.css`.  
+
+✔ La balise `<link>` permet de relier notre fichier HTML à la feuille de style `style.css`. 
+
 ✔ Désormais, **toute la mise en forme sera gérée depuis ce fichier CSS externe**.  
 
 ✅ **Enregistrer et observer `index.html`.**  
@@ -203,6 +208,7 @@ p {
 ```
 
 💡 **Explication** :  
+
 ✔ **Tous les paragraphes `<p>` auront un texte bleu et une taille de 16px**.
 
 
@@ -221,7 +227,9 @@ strong {
 2. **Enregistrer et observer `index.html`**.
 
 ✅ **Résultat attendu :**  
-- Les textes entourés de `<em>` deviennent rouges.  
+
+- Les textes entourés de `<em>` deviennent rouges. 
+
 - Les textes entre `<strong>` prennent une couleur bleu-cyan.
 
 ### **<H3 STYLE="COLOR:GREEN;">3.3. Appliquer un style à plusieurs balises simultanément**</H3>
@@ -265,13 +273,15 @@ Les **commentaires CSS** permettent d'ajouter des explications dans le code sans
 ```
 
 💡 **Bonne pratique** :  
+
 ✔ Utiliser des commentaires pour **expliquer et organiser le code CSS**.
 
 
 
 ### **<H3 STYLE="COLOR:GREEN;">3.5. Utiliser des classes et des identifiants (`class` et `id`)<a name="_page2_x40.00_y309.92"></a> **</H3> 
 
-arfois, on veut **appliquer un style uniquement à certains éléments** sans affecter tous ceux du même type.  
+Parfois, on veut **appliquer un style uniquement à certains éléments** sans affecter tous ceux du même type.  
+
 On utilise alors **les classes (`class`)** et **les identifiants (`id`)**.
 
 | **Attribut** | **Rôle** | **Utilisation** |
@@ -292,7 +302,8 @@ On utilise alors **les classes (`class`)** et **les identifiants (`id`)**.
     font-weight: bold;
 }
 ```
-💡 **Explication** :  
+💡 **Explication** : 
+
 ✔ Tous les éléments ayant **class="important"** seront **en rouge et en gras**.
 
 
@@ -320,7 +331,7 @@ On utilise alors **les classes (`class`)** et **les identifiants (`id`)**.
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.3.2. Définir un identifiant (`id`)<a name="_page2_x40.00_y639.92"></a></H4> 
 
-U📌 **Exemple : Appliquer un style à un élément unique avec `id="titre"`**  
+📌 **Exemple : Appliquer un style à un élément unique avec `id="titre"`**  
 ```html
 <h1 id="titre">Mon titre</h1>
 ```
@@ -337,7 +348,9 @@ U📌 **Exemple : Appliquer un style à un élément unique avec `id="titre"`**
 ➡ Un ID doit toujours être précédé d’un **dièse (`#`)** en CSS.
 
 💡 **Différences entre `class` et `id`** :  
+
 ✔ **`class` peut être utilisé plusieurs fois sur la page**.  
+
 ✔ **`id` est unique et ne doit être utilisé qu’une seule fois**.
 
 
@@ -346,6 +359,7 @@ U📌 **Exemple : Appliquer un style à un élément unique avec `id="titre"`**
 📌 **Pourquoi les utiliser ?**  
 
 - `<div>` regroupe un ensemble d’éléments pour appliquer un style.  
+
 - `<span>` applique un style à une partie de texte sans retour à la ligne.  
 
 📌 **Exemple :**  
@@ -360,6 +374,7 @@ U📌 **Exemple : Appliquer un style à un élément unique avec `id="titre"`**
 ```
 
 💡 **Explication** :  
+
 ✔ **Le mot "passoires" est mis en surbrillance (fond jaune, texte en gras)**.  
 
 
@@ -442,24 +457,29 @@ h3 em {
 }
 ```
 💡 **Explication** :  
+
 ✔ **Les `<em>` à l’intérieur d’un `<h3>` seront rouges.**  
 
 📌 **Sélecteur adjacent `+`** : Cible un élément **juste après** un autre.  
+
 ```css
 h3 + p {
     font-weight: bold;
 }
 ```
 💡 **Explication** :  
+
 ✔ **Le premier `<p>` après un `<h3>` sera en gras.**  
 
 📌 **Sélecteur d’attribut `[attribut]`** : Cible les balises ayant **un attribut spécifique**.  
+
 ```css
 a[title] {
     text-decoration: underline;
 }
 ```
 💡 **Explication** :  
+
 ✔ **Tous les liens (`<a>`) ayant un attribut `title` seront soulignés.**  
 
 
@@ -487,8 +507,11 @@ Il existe **deux types de tailles** :
 | **Relative** | `%`, `em`, `rem`, `small`, `large` | `font-size: 120%;` |
 
 📌 **Recommandation** :  
+
 ✔ **Préférez les tailles relatives** (`%`, `em`, `rem`) pour **s’adapter aux écrans**.  
+
 ✔ L’unité **`em`** correspond à la taille relative par rapport à l’élément parent.  
+
 ✔ L’unité **`rem`** correspond à la taille relative par rapport à la racine du document.  
 
 📌 **Exemple :**  
@@ -508,6 +531,7 @@ p {
 ✅ **Enregistrer et observer `index.html`**.
 
 ✅ **Résultat attendu :**  
+
 - Tous les paragraphes `<p>` auront une taille de **120%** de la taille normale.
 
 
@@ -529,7 +553,9 @@ p {
 📌 **Ordre de préférence** :  
 
 ✔ `"Trebuchet MS"` → Première police souhaitée.  
+
 ✔ `Arial` → Alternative si la première police est absente.  
+
 ✔ `sans-serif` → Police générique au cas où aucune des précédentes n'est disponible.  
 
 
@@ -558,7 +584,8 @@ p {
 }
 ```
 
-📌 **Recommandation** :  
+📌 **Recommandation** :
+
 ✔ **Évitez d’abuser du soulignement (`text-decoration: underline;`)**, car il est souvent utilisé pour les liens hypertexte.  
 
 
@@ -587,7 +614,9 @@ img {
 ```
 
 📌 **Explication** :  
+
 ✔ `display: block;` transforme l’image en élément **bloquant** (par défaut, les images sont en `inline`).  
+
 ✔ `margin: auto;` permet **de centrer l’image horizontalement**.  
 
 
@@ -599,7 +628,9 @@ img {
 ✅ **Enregistrer et observer `index.html`**.
 
 ✅ **Résultat attendu :**  
+
 ✔ **Les paragraphes sont justifiés**.  
+
 ✔ **Les images sont centrées** sur la page.
 
 ## **<H2 STYLE="COLOR:BLUE;">5. Ajouter<a name="_page6_x40.00_y36.92"></a> de la couleur et un fond**</H2> 
@@ -621,7 +652,9 @@ La propriété `color` permet **de définir la couleur du texte**.
 | **Code RGB** | `color: rgb(240,96,204);` |
 
 💡 **Outils pratiques pour choisir une couleur :**  
+
 🎨 [HTML Color Codes](https://htmlcolorcodes.com/fr/)  
+
 🎨 [Color Picker](http://www.colorpicker.com/)  
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.038.jpeg)
@@ -769,7 +802,9 @@ body {
 }
 ```
 📌 **Explication :**  
+
 - **La première image s'affiche au-dessus des autres**.
+
 - L’ordre des images **est important**.
 
 
@@ -809,6 +844,7 @@ La propriété `float` permet **de positionner une image à gauche ou à droite 
 ### **<H3 STYLE="COLOR:GREEN;"> **6.2. Stopper l’effet `float` avec `clear`</h3>**  
 
 Si on ne stoppe pas le `float`, **le texte continue à s’enrouler autour de l’image**.  
+
 La propriété `clear` permet **de forcer un retour à la ligne**.
 
 📌 **Exemple :**
@@ -905,6 +941,7 @@ div {
  
 
 **<H3 STYLE="COLOR:red;">Activité n°13.:</H3>** Ajouter une bordure au théorème**  
+
 Dans `style.css`, ajoutez :
 ```css
 .theoreme {
@@ -946,6 +983,7 @@ h1 {
 
 
 **<H3 STYLE="COLOR:red;">Activité n°14.:</H3>** ### ✏️ **Activité n°14 : Ajouter une ombre au théorème**  
+
 Dans `style.css`, ajoutez :
 ```css
 .theoreme {
@@ -986,7 +1024,9 @@ a:hover {
 }
 ```
 ➡ **Résultat** :  
+
 - Les **liens sont rouges** par défaut.  
+
 - Quand on **passe la souris**, ils deviennent **verts et soulignés**.
 
 
@@ -1101,7 +1141,9 @@ caption {
 Il existe des balises HTML qui permettent de  définir les trois « zones » du tableau :  
 
 - l'en-tête (en haut) : il se définit avec  les balises ```<thead></thead>```; 
-- le corps (au centre) : il se définit avec  les balises ```<tbody></tbody>```;   
+
+- le corps (au centre) : il se définit avec  les balises ```<tbody></tbody>```; 
+
 - le  pied  du  tableau  (en  bas)  :  il  se  définit  avec  les  balises  ```<tfoot></tfoot>```*.*  
 
 ### **<H3 STYLE="COLOR:GREEN;">9.5. Fusionner<a name="_page12_x40.00_y268.92"></a>**</H3>   
@@ -1200,6 +1242,7 @@ p {
 | `auto` | Ajoute une barre de défilement uniquement si nécessaire |
 
 📌 **Exemple :**
+
 ```css
 div {
     width: 200px;
