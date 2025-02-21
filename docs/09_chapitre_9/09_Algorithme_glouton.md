@@ -13,58 +13,73 @@ title: 09 Algorithme glouton
 
 ## <H2 STYLE="COLOR:BLUE;"> **1. Algorithmes<a name="_page0_x51.00_y229.00"></a> gloutons**</H2> 
 
-En informatique, un algorithme glouton (greedy algorithm) est une **technique** permettant de résoudre un problème. Un algorithme glouton va aborder la résolution d'un problème en plusieurs étapes :
+En informatique, un **algorithme glouton** (*greedy algorithm*) est une **technique de résolution** de problème.  
 
-- À chaque étape, l’algorithme va adopter un choix qui lui **semble le meilleur,** et ce, **dans l'espoir** qu'à la fin de la résolution, le résultat obtenu soit lui-même **optimal**. 
-- Mais un algorithme glouton **ne repart jamais en arrière** afin de modifier ses choix (le choix qui semble le meilleur à un instant t est définitif) donc il se peut que le résultat final ne soit pas. 
+Un algorithme glouton suit **un principe simple** :
+- À chaque **étape**, il choisit la **meilleure solution immédiate**.
+- Il ne revient **jamais en arrière** pour modifier un choix précédent.  
+- Son **objectif** est d’obtenir un résultat **optimal**, mais ce n’est **pas toujours garanti**.  
 
-Les algorithmes gloutons servent principalement à résoudre des **problèmes d'optimisation**. Il existe de multiples exemples. 
+💡 **Remarque :** Les algorithmes gloutons sont souvent utilisés pour **les problèmes d'optimisation**, comme le **rendu de monnaie** ou le **problème du sac à dos**.
 
 ### <H3 STYLE="COLOR:GREEN;"> **1.1. Le<a name="_page0_x51.00_y404.00"></a> problème de rendu de monnaie**</H3> 
 
-Un des grands classiques est le problème du rendu de monnaie où l'on souhaite rendre une somme en utilisant le moins de pièces (ou de billets) possibles. Le principe de l'algorithme consiste à répéter **le choix de la pièce de plus grande valeur** qui ne dépasse pas la somme restante. 
+Ce problème consiste à rendre une somme avec **le moins de pièces (ou billets) possible**.  
 
-**Remarque** : On dit qu'il s'agit d'un algorithme glouton, car il choisit la pièce la plus grosse à chaque étape sans réfléchir à la suite. 
+🔹 **Principe de l’algorithme glouton** :  
+1. Sélectionner **la pièce la plus grande possible** (sans dépasser la somme restante).  
+2. Répéter jusqu’à ce que la somme soit totalement rendue.  
+ 
 
-Exemple avec le système de pièces européen : Rendre la somme de 8€ 
+**Exemple avec le système de pièces européen :** 
 
 ![](Aspose.Words.35e5d16a-adab-4fc0-8fbe-75d584bf8d1c.004.png)
-<table xmlns="http://www.w3.org/1999/html">
-<tr><td colspan="11">Solution optimale</td><td colspan="11">Solution non optimale </td></tr>
 
-<td colspan="11">1 billet de 5€<br> 1 pièce de 2€ <br>1 pièce de 1€</td><td colspan="11">4 pièces de 2€</td></tr>
-</table>
+Rendre **8€** 💶  
+
+| Solution optimale | Solution non optimale |
+|------------------|----------------------|
+| 1 billet de 5€  | 4 pièces de 2€ |
+| 1 pièce de 2€   | |
+| 1 pièce de 1€   | |
+
+✅ Avec **le système de pièces européen**, l’algorithme glouton **donne toujours un choix optimal**.  
+⚠️ Cependant, ce n’est pas **toujours** le cas avec d’autres systèmes de pièces.
 
 
-Avec le système de pièces européen, l’algorithme glouton donne toujours un choix optimal. 
-
-Mais que se passe-t-il, si l’on utilise un autre monnayeur avec des pièces différentes ? 
-
-Rendre la somme de 6 €
+**Exemple avec un autre système monétaire :**
 
 ![](Aspose.Words.35e5d16a-adab-4fc0-8fbe-75d584bf8d1c.005.png)
-<table>
-<tr><td colspan="11">Solution optimale</td><td colspan="11">Solution non optimale </td></tr>
-<tr><td colspan="11">2 pièces de 3€</td><td colspan="11">1 pièce de 4€<br>  2 pièces de 1€ <br>Total : 3 pièces (algorithme glouton)</td></tr>
-</table>
+
+🔹 Rendre **6€** avec les pièces {4€, 3€, 1€}  
+
+| Solution optimale | Solution obtenue par l'algorithme glouton |
+|------------------|----------------------|
+| 2 pièces de 3€ | 1 pièce de 4€ + 2 pièces de 1€ |
+
+🚨 **L’algorithme glouton donne ici une solution non optimale**, car il ne prévoit **pas les étapes suivantes**.
+
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:RED;">Activité n°1.**</H3> Rendu de monnaie : Traduire l’algorithme suivant, en Python dans capytale
+**<H3 STYLE="COLOR:RED;">Activité n°1.**</H3> 
 
+Implémentation en Python**
+📌 **Objectif :** Traduire cet algorithme en Python sur **Capytale**  
+
+**Algorithme en pseudo-code :**
 ```
-Fonction renduMonnaie (somme : entier, pièces : liste des pièces dans l’ordre décroissant) : liste des pièces choisies
-
-	n←longueur de la liste de pièces
+Fonction renduMonnaie(somme : entier, pièces : liste triée par ordre décroissant) -> liste des pièces choisies
+	n ← longueur de la liste pièces
 	initialiser à zéro la liste "choisies" de dimension n
-	Pour i de 1 à n par pas de 1
-		Tant que somme>= pieces[i]
-			somme←somme-pieces[i]
-			choisies[i]← choisies[i]+1
-		fin tant que
-	fin pour
-    retourner choisies
-``` 
+	Pour i de 1 à n :
+		Tant que somme >= pièces[i]
+			somme ← somme - pièces[i]
+			choisies[i] ← choisies[i] + 1
+	Fin Pour
+	retourner choisies
+```
+
 Aide : 	
 
 - le prototype de la fonction est donc : ```renduMonnaie(somme: int, pieces: list) -> list``` 
@@ -110,39 +125,42 @@ Soit 30 euros, l’algorithme ne fonctionne plus, car il manque une pièce de 1 
 
 ### <H3 STYLE="COLOR:GREEN;"> **1.2. Le<a name="_page2_x51.00_y32.00"></a> problème du sac à dos**</H3> 
 
-Le problème du sac à dos (knapsack problem) est aussi un **problème d’optimisation.** Il permet de résoudre le problème du remplissage d’un sac à dos. 
+Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimisation :
+- On dispose **d’objets**, chacun ayant une **valeur** et un **poids**.
+- Le sac a une **capacité maximale**.
+- **Objectif :** choisir les objets pour **maximiser la valeur** sans dépasser le poids.
 
-On dispose pour cela de plusieurs objets (chaque objet possède une valeur et un poids). Seulement le sac ne peut pas contenir plus d’un certain poids. Le but des de choisir judicieusement les objets afin de **maximiser la valeur des objets** sans dépasser le poids maximum. 
+**Exemple :**  
+🔹 Sac limité à **4.7 kg**  
 
-L’algorithme glouton va choisir **à chaque étape du remplissage l’objet de plus grande valeur**. On répète les étapes du remplissage juste avant que le poids maximal soit atteint. 
+| Objet  | Valeur | Poids | Choix de l’algorithme glouton |
+|--------|--------|-------|-------------------------------|
+| Jumelles | 5 | 0.5 kg | ✅ Prend |
+| Tente | 3 | 4 kg | ✅ Prend |
+| Gourde | 2 | 1 kg | ❌ Impossible (dépasse la limite) |
+| Carte | 1 | 0.2 kg | ✅ Prend |
 
-Exemple : 
+⚠️ **Problème** : L’algorithme glouton **ne vérifie pas toutes les combinaisons** possibles.  
 
-<table><tr><th colspan="1" rowspan="2"><b>Matériel à emmener dans un sac de 4.7KG</b> </th><th colspan="1" rowspan="2">Valeur et poids </th><th colspan="4">Emporté (oui/non) </th></tr>
-<tr><td colspan="1">Etape1 </td><td colspan="1">Etape2 </td><td colspan="1">Etape3 </td><td colspan="1">Etape4 </td></tr>
-<tr><td colspan="1">gourde</td><td colspan="1">Valeur : 2 </br>Poids : 1 </td><td colspan="1">x </td><td colspan="1">x </td><td colspan="1">Pas possible</td><td colspan="1"><p>Pas possible</p></td></tr>
-<tr><td colspan="1">jumelles</td><td colspan="1">Valeur : 5 </br>Poids : 0.5 </td><td colspan="1">Oui </td><td colspan="1">Déjà pris </td><td colspan="1">Déjà pris </td><td colspan="1">Déjà pris </td></tr>
-<tr><td colspan="1">carte</td><td colspan="1">Valeur : 1 </br>Poids : 0.2 </td><td colspan="1">x </td><td colspan="1">x </td><td colspan="1">x </td><td colspan="1">Oui </td></tr>
-<tr><td colspan="1">tente</td><td colspan="1">Valeur : 3 </br>Poids : 4 </td><td colspan="1">x </td><td colspan="1">oui </td><td colspan="1">Déjà pris </td><td colspan="1">Déjà pris </td></tr>
-</table>
 
-**<H3 STYLE="COLOR:RED;">Activité n°2.**: Sac à dos :</H3> affichage des objets choisis selon leur valeur: Traduire l’algorithme suivant, en Python dans capytale : 
+
+**<H3 STYLE="COLOR:RED;">Activité n°2.**: Sac à dos :</H3> Implémentation en Python**
+📌 **Objectif :** Programmer une fonction qui **remplit un sac à dos** selon la **méthode gloutonne**.
+
+#### **Pseudo-code :**
 ```
-Fonction remplirSac (objets : liste des objets dans l’ordre décroissant, poidsMax : en décimal) : liste des objets choisis
-
-	p←0
-
-
-	n←longueur de la liste des objets
-	initialiser à zéro la liste objetschoisis de dimension n
-	Pour i de 1 à n par pas de 1
-		Si p+objets[i][1]<= poidsMax alors
-			objetsChoisis[i]←1
+Fonction remplirSac(objets : liste triée par valeur, poidsMax : float) -> liste des objets choisis
+	p ← 0  
+	n ← longueur de objets
+	initialiser à zéro la liste objetsChoisis
+	Pour i de 1 à n :
+		Si p + objets[i][1] ≤ poidsMax :
+			objetsChoisis[i] ← 1
 			p ← p + objets[i][1]
-		fin si
-	fin pour
-	retourner objetschoisis
+	Fin Pour
+	retourner objetsChoisis
 ```
+
 
 **Aide :** 
 
@@ -164,39 +182,31 @@ print('Les objets choisis sont')
 print(remplirSac(objets,poidsMax))
 ```
 
-L’algorithme choisit bien les articles selon notre prévision.
+### <H3 STYLE="COLOR:GREEN;"> **1.3. Variante : Affichage sous forme de dictionnaire**</H3> 
 
-**<H3 STYLE="COLOR:RED;">Activité n°3.**: Sac à dos :</H3> affichage des objets choisis selon leur valeur et du poids total : 
 
-Avant de partir aux Bahamas, on doit remplir sa valise. La compagnie d’aviation n’accepte qu’une valise de dépassant pas 23kg. 
+**<H3 STYLE="COLOR:RED;">Activité n°3.**: Sac à dos :</H3> 
+📌 **Objectif :** Adapter la fonction pour **retourner un dictionnaire** indiquant les objets pris.
 
-La liste des objets est la suivante :
+**Test avec une valise de voyage** ✈️
 ```python
-objets=[[6,5.0,'chaussures'],[5,5.0,'habits'],[4.5,2.0,'trousse de toilette'],[4,2.0,'crêmes'],[3,8.0,'livres'],[2,2.0,'palmes tuba'],[1,0.5,'guide touristique']]
+objets = [[6,5.0,'chaussures'], [5,5.0,'habits'], [4.5,2.0,'trousse de toilette'], 
+          [4,2.0,'crèmes'], [3,8.0,'livres'], [2,2.0,'palmes tuba'], [1,0.5,'guide touristique']]
+poidsMax = 23  
+print(remplirSacDico(objets, poidsMax))
 ```
+✅ **Résultat attendu :**  
+```python
+{'chaussures': 1, 'habits': 1, 'trousse de toilette': 1, 'crèmes': 1, 'livres': 1, 'guide touristique': 1}
+``` 
 
-exemple :  
-```[6,5.0,'chaussures'] → 6 : valeur, 5.0 : poids, 'chaussures' : désignation ```
+### <H3 STYLE="COLOR:GREEN;"> **1.4. Conclusion**</H3> 
 
-Utiliser l’algorithme glouton correspondant afin d’indiquer les objets pouvant être mis dans la valise. Coder une fonction ```remplirSacpoids``` qui tiennent compte de la nouvelle situation et qui soit basée sur l'algorithme glouton 
 
-**<H3 STYLE="COLOR:RED;">Activité n°4.**: Sac à dos V2 :</H3> affichage des objets choisis selon leur valeur avec leur nombre: on veut retourner un dictionnaire. Coder une fonction ```remplirSacDico``` qui tiennent compte de la nouvelle situation et qui soit basée sur l'algorithme glouton
-Le prototype de la fonction est : 
-```remplirSacDico(objets: list,poidsMax: float) -> dict: ```
+- **Les algorithmes gloutons sont rapides et simples**, mais ils ne garantissent pas toujours une solution optimale.
+- Pour des solutions optimales, on utilise des méthodes plus avancées comme **la programmation dynamique** ou **l’arbre de recherche**.
 
-**Résultat attendu** : 
-```{'chaussures': 1, 'habits': 1, 'trousse de toilette': 1, 'crèmes': 1, 'livres': 1, 'palmes tuba': 0, 'guide touristique': 1} ```
-
-**<H3 STYLE="COLOR:RED;">Activité n°5.**: Sac à dos V3 :</H3> affichage des objets choisis selon leur valeur avec leur nombre différent de 0 : 
-on veut retourner un dictionnaire qui n’affichera que les objets réellement mis dans la valise (dont le nombre d’objet !=0). Coder une fonction ```remplirSacDico_V2``` qui tiennent compte de la nouvelle situation et qui soit basée sur l'algorithme glouton
-
-**Résultat attendu :** 
-```{'chaussures': 1, 'habits': 1, 'trousse de toilette': 1, 'crèmes': 1, 'livres': 1, 'guide touristique': 1} ```
-
-**Remarque** :  
-L’algorithme glouton est un algorithme qui ne remet jamais en cause une décision prise auparavant.  
-
-C’est donc une **méthode de résolution approchée.** Pour trouver la solution optimale, et être certain qu’il n’y a pas mieux, il faut utiliser une méthode exacte qui demande un temps de calcul beaucoup plus long. On peut citer la procédure par  séparation  et  évaluation  (PSE)  qui  peut  énumère  toutes  les  solutions  possibles,  mais  seules  les  solutions potentiellement de bonnes qualités sont énumérées. Il faut alors mettre en place un ***arbre de recherche*** qui sera vu en terminale. 
+💡 **Remarque :** Le **problème du sac à dos optimal** sera étudié en **Terminale** avec des techniques comme la **séparation et évaluation** (*Branch & Bound*).
 
 ## <H2 STYLE="COLOR:BLUE;"> **2. Exercice<a name="_page7_x51.00_y32.00"></a>**</H2>  
 
