@@ -18,10 +18,12 @@ title: 08b Interaction client-serveur - Requête
 
 Dans un réseau, les **ordinateurs échangent des données** :  
 
-- **Le client** envoie une requête pour demander une ressource (exemple : un navigateur web).  
+- **Le client** envoie une requête pour demander une ressource (exemple : un navigateur web). 
+
 - **Le serveur** reçoit la requête, la traite et répond avec la ressource demandée (exemple : un serveur web).  
 
 💡 **Le Web est devenu dynamique**  
+
 Les serveurs ne se limitent plus à envoyer des fichiers statiques. Grâce à des langages comme **PHP, Python ou Java**, ils génèrent du contenu en temps réel.
 
 📌 **Exemple : Génération dynamique d'une page avec PHP**  
@@ -68,10 +70,15 @@ Un serveur HTTP répond toujours avec un **code de statut**, qui indique le rés
 Un **navigateur** envoie une **requête** à un **serveur web** en suivant une **structure standardisée**.
 
 **Structure d’une requête HTTP**
+
 1️⃣ **Méthode HTTP** (`GET`, `POST`...)  
+
 2️⃣ **URL de la ressource** (`/index.html`)  
+
 3️⃣ **Version du protocole** (`HTTP/1.1`)  
+
 4️⃣ **En-têtes de requête** (informations supplémentaires)  
+
 5️⃣ **Corps de requête** *(optionnel - pour `POST` uniquement)*  
 
 
@@ -102,8 +109,11 @@ Accept: text/html,application/xhtml+xml
 ```
 
 📌 **Explication :**  
+
 ✔️ `Host` → Nom du site demandé (`www.example.com`)  
+
 ✔️ `User-Agent` → Type de navigateur utilisé (`Mozilla/5.0`)  
+
 ✔️ `Accept` → Type de contenu accepté (`text/html`, `image/png`...)  
 
 
@@ -152,7 +162,9 @@ https://www.example.com/login?username=dupont&password=azerty
 | **Exemples** | Recherche sur un site | Connexion, formulaire |
 
 🚀 **Bonnes pratiques** :  
+
 ✔️ **Utiliser GET pour des recherches (`?q=ordinateur`)**  
+
 ✔️ **Utiliser POST pour des données sensibles (mots de passe, paiements)**  
 
 
@@ -163,7 +175,9 @@ https://www.example.com/login?username=dupont&password=azerty
 Après réception d’une requête, **le serveur répond avec** :  
 
 1️⃣ **Un code de statut** (`200 OK`, `404 Not Found`, `500 Internal Server Error`...)  
+
 2️⃣ **Des en-têtes de réponse** (`Content-Type: text/html`)  
+
 3️⃣ **Le contenu demandé** (HTML, JSON, image...)  
 
 
@@ -177,8 +191,11 @@ Connection: keep-alive
 ```
 
 📌 **Explication** :  
+
 ✔️ `200 OK` → Requête réussie  
+
 ✔️ `Content-Type` → Contenu en HTML  
+
 ✔️ `Connection: keep-alive` → Maintient la connexion ouverte  
 
 
@@ -186,6 +203,7 @@ Connection: keep-alive
 #### **<H4 STYLE="COLOR:MAGENTA;">2.4.2. Corps de la Réponse avec PHP**</H4>
 
 Le corps de la réponse HTTP contient le **contenu réel renvoyé au navigateur**.  
+
 Si une page web est demandée, elle est envoyée sous forme de HTML.
 
 🔹 **Exemple d’une page générée dynamiquement avec PHP :**
@@ -208,8 +226,11 @@ Si une page web est demandée, elle est envoyée sous forme de HTML.
 </html>
 ```
 📌 **Analyse** :
+
 - Le serveur reçoit les données du formulaire via `$_POST['name']` et `$_POST['city']`.  
+
 - `htmlspecialchars()` empêche les failles XSS en filtrant les caractères spéciaux.  
+
 - Le serveur renvoie une page personnalisée au client.
 
 
@@ -219,12 +240,17 @@ Si une page web est demandée, elle est envoyée sous forme de HTML.
 #### **<H4 STYLE="COLOR:MAGENTA;">2.4.3. HTTPS : Sécurisation des échanges**</H4>
 
 🔹 **Différences entre HTTP et HTTPS**  
+
 ✔️ **HTTP** → Données **non chiffrées**, vulnérables aux attaques  
+
 ✔️ **HTTPS** → Données **chiffrées** grâce au protocole TLS  
 
 🔹 **Pourquoi utiliser HTTPS ?**  
+
 ✔️ **Protection des données** (paiements, mots de passe)  
-✔️ **Amélioration du référencement** (Google privilégie HTTPS)  
+
+✔️ **Amélioration du référencement** (Google privilégie HTTPS) 
+
 ✔️ **Affichage du cadenas 🔒** dans la barre d’adresse  
 
 💡 **Astuce** : Toujours vérifier la présence du 🔒 dans l’URL avant d’entrer des données sensibles.  
@@ -240,10 +266,15 @@ protocole://nom-de-domaine:port/chemin?paramètre1=valeur1&paramètre2=valeur2#a
 ```
 
 🔹 **Explication** :  
+
 ✔️ `protocole` → HTTP ou HTTPS  
+
 ✔️ `nom-de-domaine` → Adresse du serveur (`www.example.com`)  
+
 ✔️ `chemin` → Page demandée (`/index.html`)  
+
 ✔️ `?paramètre1=valeur1` → Données envoyées (utilisé avec GET)  
+
 ✔️ `#ancre` → Cible une section spécifique d’une page  
 
 🔹 **Exemple concret**  
@@ -258,13 +289,19 @@ https://fr.wikipedia.org/wiki/Informatique#Algorithmique
 **<H3 STYLE="COLOR:RED;">Activité n°1.**</H3> Passage de paramètre  un serveur 
 
 1️⃣ **Aller sur** [Wikipedia](https://fr.wikipedia.org/)  
+
 2️⃣ **Taper "informatique" dans la barre de recherche**  
+
 3️⃣ **Noter l’URL générée**  
+
 4️⃣ **Comparer ces URLs** :
+
    - [https://fr.wikipedia.org/w/index.php?search=informatique](https://fr.wikipedia.org/w/index.php?search=informatique)
+
    - [https://fr.wikipedia.org/wiki/Informatique#Algorithmique](https://fr.wikipedia.org/wiki/Informatique#Algorithmique)
 
 🔹 **Que remarquez-vous ?**  
+
 📌 **Les paramètres sont passés via l’URL et permettent d’accéder directement aux résultats.**  
 
 
@@ -273,14 +310,16 @@ https://fr.wikipedia.org/wiki/Informatique#Algorithmique
 Il existe plusieurs **manières d’envoyer une requête HTTP** :  
 
 1️⃣ **Saisir une URL dans la barre d’adresse du navigateur**  
+
 2️⃣ **Utiliser un formulaire HTML**  
+
 3️⃣ **Envoyer une requête via JavaScript (AJAX, Fetch API, etc.)**  
 
 ### **<H3 STYLE="COLOR:GREEN;">3.1. Exemple<a name="_page4_x40.00_y36.92"></a> d'un formulaire HTML**</H3>
 
 💡 **Un formulaire HTML permet d’envoyer des données au serveur avec les méthodes `GET` ou `POST`.**  
 
-#### **1️⃣ Formulaire avec la méthode `GET` (⚠️ données visibles dans l’URL)**
+**1️⃣ Formulaire avec la méthode `GET` (⚠️ données visibles dans l’URL)**
 ```html
 <form method="GET" action="/search">
     <input type="text" name="query" placeholder="Rechercher">
@@ -295,7 +334,7 @@ https://www.example.com/search?query=informatique
 
 ---
 
-#### **2️⃣ Formulaire avec la méthode `POST` (✔️ plus sécurisé)**
+**2️⃣ Formulaire avec la méthode `POST` (✔️ plus sécurisé)**
 ```html
 <form method="POST" action="/login">
     <input type="text" name="username" placeholder="Nom d'utilisateur">
@@ -330,7 +369,9 @@ https://www.example.com/search?query=informatique
 </html>
 ```
 Ce formulaire utilise la **méthode GET**, ce qui signifie que :
+
 - Les données saisies (`user` et `password`) seront ajoutées dans l’URL après soumission.
+
 - Exemple d’URL après soumission :
   ```
   https://monsite.com/login?user=dupont&password=azerty
@@ -344,7 +385,9 @@ Ce formulaire utilise la **méthode GET**, ce qui signifie que :
 Avec la méthode **GET**, les données du formulaire seront encodées **dans l’URL**.
 
 Si on saisit les valeurs :
+
 - **Nom d'utilisateur** : `Dupont`
+
 - **Mot de passe** : `azerty`
 
 ➡ Le navigateur chargera la page avec l'URL suivante :
@@ -354,6 +397,7 @@ Si on saisit les valeurs :
 
 
 - **Problème :** 
+
   - Les données sont **visibles** dans l'URL, ce qui pose un problème de **sécurité**, notamment pour les mots de passe.
 
 
@@ -367,13 +411,17 @@ Dans ce cas, les données ne seront **pas visibles dans l’URL**, mais envoyée
 
 
 ✅ **Explication :**
+
 - Ici on demande de **modifier la méthode du formulaire** pour utiliser **POST** au lieu de **GET** :
   ```html
   <form method="POST" action="./login">
   ```
 - **Différence avec GET :**
+
   - Avec POST, les données sont **transmises dans le corps de la requête** et **non visibles dans l'URL**.
+
   - Cela permet de **protéger les informations sensibles** comme les mots de passe.
+
   - Exemple de requête envoyée par POST :
     ```
     POST /login HTTP/1.1
@@ -461,7 +509,7 @@ L'élément `<select>` permet de créer une liste déroulante avec des options d
 
 ### **<H3 STYLE="COLOR:GREEN;">3.6. Elément<a name="_page6_x40.00_y36.92"></a> value dans ```<select>```**</H3>
 
-’attribut `value` d’un `<option>` définit la valeur qui sera envoyée au serveur lorsqu'un choix est fait.
+L’attribut `value` d’un `<option>` définit la valeur qui sera envoyée au serveur lorsqu'un choix est fait.
 
 L'attribut value est **facultatif**. S’il n’est pas spécifié, alors **le texte** dans le conteneur **est envoyé à la place** 
 
@@ -483,7 +531,9 @@ L'attribut value est **facultatif**. S’il n’est pas spécifié, alors **le t
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.057.png)
 
 ⚠ **Attention à ne pas confondre :**
+
 - `<button>` avec `<input type='button'>`
+
 - `<input type='submit'>` avec `<button type='submit'>`
 
 🚀 **Préférez `<button>` pour plus de flexibilité !** 
@@ -500,9 +550,12 @@ L'attribut value est **facultatif**. S’il n’est pas spécifié, alors **le t
 
 ### **<H3 STYLE="COLOR:GREEN;">3.9. Les<a name="_page8_x40.00_y290.92"></a> cookies**</H3> 
 
-Un site web utilise des **cookies** pour identifier et suivre ses visiteurs. Un cookie est une **petite quantité de données** stockée dans le navigateur du client. Il est composé de :  
+Un site web utilise des **cookies** pour identifier et suivre ses visiteurs. Un cookie est une **petite quantité de données** stockée dans le navigateur du client. Il est composé de :
+
 - **Un nom**  
+
 - **Une valeur**  
+
 - **Optionnellement, une date d'expiration**  
 
 Le serveur choisit ces paramètres et envoie le cookie au client via les **en-têtes HTTP**.
@@ -518,17 +571,25 @@ Set-Cookie: username=JohnDoe; Expires=Wed, 21 Jul 2024 07:28:00 GMT; Path=/; Dom
 **Détails de la Réponse**  
 
 **Ligne de Statut :**  
+
 - `HTTP/1.1 200 OK` : La requête a été traitée avec succès, et le serveur renvoie une réponse correcte.  
 
 **En-têtes de Réponse :**  
+
 - `Content-Type: text/html; charset=UTF-8` : Le type du contenu est du **HTML encodé en UTF-8**.  
 
 **Détails du cookie (`Set-Cookie`) :**  
+
 - `Set-Cookie: username=JohnDoe` : Crée un cookie nommé **username** avec la valeur **JohnDoe**.  
+
 - `Expires=Wed, 21 Jul 2024 07:28:00 GMT` : Date d’expiration du cookie ; après cette date, il sera supprimé automatiquement.  
-- `Path=/` : Le cookie est disponible sur **toutes les pages** du site.  
+
+- `Path=/` : Le cookie est disponible sur **toutes les pages** du site. 
+
 - `Domain=example.com` : Le cookie est valide pour **example.com** et ses sous-domaines.  
+
 - `Secure` : Le cookie est **transmis uniquement via HTTPS**, garantissant une transmission sécurisée.  
+
 - `HttpOnly` : Le cookie **n’est pas accessible en JavaScript**, ce qui le protège des attaques XSS (Cross-Site Scripting).  
 
 
@@ -539,6 +600,7 @@ Set-Cookie: username=JohnDoe; Expires=Wed, 21 Jul 2024 07:28:00 GMT; Path=/; Dom
 
 ## **<H2 STYLE="COLOR:BLUE;">4. APPLICATION<a name="_page8_x40.00_y503.92"></a> : Création d’une page web dynamique** 🌍💻</H2>
 Un site web peut être **statique** (HTML pur) ou **dynamique** (généré à la volée par un langage comme PHP).  
+
 Nous allons mettre en place un **serveur web local** et apprendre à **créer une page dynamique en PHP**.
 
 
@@ -548,13 +610,16 @@ Nous allons mettre en place un **serveur web local** et apprendre à **créer un
 ### **<H3 STYLE="COLOR:GREEN;">4.1. Mise<a name="_page8_x40.00_y565.92"></a> en place d’un serveur Apache Wamp** 🚀</H3>  
 
 📥 **Téléchargement**  
+
 Télécharger un serveur WAMP : [UwAmp Wamp Server - Apache MySQL PHP](https://www.uwamp.com/fr/)  
 Normalement, il s’installe dans `C:\UwAmp`. 
 
 **<H3 STYLE="COLOR:RED;">Activité n°6**</H3> 
 
 **Démarrer le serveur WAMP**  
+
 - Ouvrir `UwAmp.exe` et s'assurer qu'Apache et MySQL sont en cours d'exécution.  
+
 - Vérifier en tapant **localhost** dans un navigateur.  
 
 ![](screen_home.png)
@@ -593,7 +658,9 @@ Avant de passer à **PHP**, créons une **page HTML statique**.
 **<H3 STYLE="COLOR:RED;">Activité n°8.**</H3> . 
 
 ✅ **Tester dans le navigateur**  
+
 1️⃣ Ouvrir **`localhost`**  
+
 2️⃣ La page doit afficher : *"Le serveur Apache fonctionne parfaitement !"*   
 
 ### **<H3 STYLE="COLOR:GREEN;">4.3. Affichage d'une d’une page Web dynamique**</H3>
@@ -609,14 +676,15 @@ echo '<h1>Bienvenue sur mon site</h1>
 ```
 📂 **Enregistrer sous** `C:\UwAmp\www\index.php`  
 
-
- **ATTENTION** à bien sélectionner tous les fichiers.
+**ATTENTION** à bien sélectionner tous les fichiers.
 
 
 **<H3 STYLE="COLOR:RED;">Activité n°10.**</H3> Ouvrir votre navigateur Web  
 
-✅ **Tester dans le navigateur**  
+✅ **Tester dans le navigateur** 
+
 1️⃣ Ouvrir `localhost`    
+
 2️⃣ La page doit afficher **l’heure actuelle**  
 
 📌 **Si vous actualisez la page, l’heure change** → preuve que **la page est générée dynamiquement** ! 🔄
@@ -661,13 +729,19 @@ ATTENTION à bien sélectionner tous les fichiers.
 ATTENTION à bien sélectionner tous les fichiers.
 
 **<H3 STYLE="COLOR:RED;">Activité n°13.**</H3> : Ouvrir le navigateur Web 
+
 ✅ **Tester dans le navigateur**  
+
 1️⃣ Ouvrir `localhost/index.html`  
+
 2️⃣ Remplir le formulaire et cliquer sur **"Envoyer"**  
+
 3️⃣ La page doit afficher **"Bonjour [Prénom] [Nom], bienvenue !"**  
 
-📌 **Explication** :  
+📌 **Explication** : 
+
 - **Le formulaire envoie les données en `POST` à `trait_form.php`**  
+
 - **PHP récupère les données et affiche un message personnalisé** 
 
 
@@ -700,7 +774,8 @@ ATTENTION à bien sélectionner tous les fichiers.
 
 **<H3 STYLE="COLOR:RED;">Activité n°15.**</H3> Ouvrir le navigateur Web 
 
-✅ **Tester et observer l’URL après soumission**  
+✅ **Tester et observer l’URL après soumission** 
+
 ➡️ Avec **GET**, les données sont visibles dans l’URL :  
 ```
 localhost/trait_form.php?nom=Dupont&prenom=Jean
@@ -713,29 +788,39 @@ localhost/trait_form.php?nom=Dupont&prenom=Jean
 | **Sécurité** | ⚠️ Moins sécurisé | ✅ Recommandé |
 
 📌 **Conclusion** :  
+
 - **GET** est utile pour les **recherches et URL partageables**  
+
 - **POST** est utilisé pour **les informations sensibles (ex: mots de passe)**  
 
 
 
 **<H3 STYLE="COLOR:RED;">Activité n°16.**</H3> 
+
 📌 **Objectif** : Observer les différences entre **les méthodes GET et POST**.
 
 1️⃣ **Tester avec `POST`** et vérifier que les données **ne sont pas visibles dans l’URL**  
+
 2️⃣ **Tester avec `GET`** et observer l’URL après validation du formulaire  
 
 
 
 **<H3 STYLE="COLOR:RED;">Activité n°17**</H3> Fermer le serveur Wamp
 
-📚 **Ressources utiles**  
+📚 **Ressources utiles**
+
 - [Introduction à PHP](http://www.phpdebutant.org/article118.php)  
+
 - [Afficher la date et l’heure](http://www.phpdebutant.org/article53.php)  
+
 - [PHP dans du code HTML](http://www.phpdebutant.org/article54.php)  
+
 - [Les sessions PHP](http://www.phpdebutant.org/article69.php)  
 
 🔧 **Editeurs PHP en ligne**  
+
 - [PHPFiddle](http://phpfiddle.org/)  
+
 - [RunPHPOnline](https://www.runphponline.com/)  
 
 
@@ -749,9 +834,13 @@ localhost/trait_form.php?nom=Dupont&prenom=Jean
 Pour cela : 
 
 - vous utilisez les balises input et select,  
+
 - vous préciserez le type lors de l'utilisation d'une balise input, 
+
 - vous préciserez le name dans chacun des cas (attribut name utilisé plus tard pour retrouver la valeur d'un élément d'un formulaire).
-- vous proposerez deux types de carte bancaire possibles : 'Visa' et 'Bleue' (carte par défaut). 
+
+- vous proposerez deux types de carte bancaire possibles : 'Visa' et 'Bleue' (carte par défaut).
+
 - Attention ! Sans Javascript, votre bouton 'Valider le paiement' sera sans effet.
 
 **<H3 STYLE="COLOR:RED;">Exercice n°2 :**</H3> Expliquer ce que fait ce code. 
@@ -799,7 +888,9 @@ function selection() {
 
 
 1. Intégrer au code de l'exercice 2 ci-dessus ce script, soit directement, soit avec un lien vers un fichier javascript. 
+
 1. Relancer le code ainsi augmenté de l'exercice 2. Que remarquez-vous ? 
+
 1. Commenter chaque ligne de cette fonction écrite en JavaScript. 
 
 Utiliser la console de votre navigateur afin de voir l'effet d'une des lignes. 
