@@ -11,28 +11,33 @@ title: 11 Architecture de l’ordinateur
 4. [**Langage assembleur**](#_page8_x40.00_y390.92)
 5. [**Simulation CPU**](#_page11_x40.00_y36.92)
 
-Video 1 :[ https://www.dailymotion.com/video/xhleks ](https://www.dailymotion.com/video/xhleks)
+
 
 ## <H2 STYLE="COLOR:BLUE;"> **1. Historique<a name="_page0_x40.00_y403.92"></a> de l’informatique** </H2>
 
-Video 2 :[ https://ladigitale.dev/digiview/#/v/669d6e5b4ed67 ](https://ladigitale.dev/digiview/#/v/669d6e5b4ed67)
+🎥 **Video 1** : [Histoire de l’informatique (Dailymotion)](https://www.dailymotion.com/video/xhleks) 
+
+🎥 **Video 2** : [Évolution des ordinateurs](https://ladigitale.dev/digiview/#/v/669d6e5b4ed67)  
+
 
 ### <H3 STYLE="COLOR:GREEN;"> **1.1. Les<a name="_page0_x40.00_y459.92"></a> machines à programmes externes** </H3>
+
 - **Machines électromécaniques**
 
-L’allemand **Konrad ZUSE** achève le **Z1** en 1938, un ordinateur mécanique utilisant le système binaire, puis le **Z3** en 1941, premier ordinateur complètement automatique lisant son programme sur une bande perforée. Le Z3 utilisait déjà le calcul en virgule flottante et réalisait 3 à 4 additions par seconde.
+L’allemand **Konrad ZUSE** achève le **Z1** en 1938, un ordinateur mécanique utilisant le système binaire, puis le **Z3** en 1941, premier ordinateur entièrement automatique lisant son programme sur une bande perforée. Le Z3 utilisait déjà le calcul en virgule flottante et réalisait 3 à 4 additions par seconde.
+
 
 **Réplique du Zuse Z3 au Deutsches Museum de Munich.**
 ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.002.png)
 
-Peu après aux Etats-Unis, **Howard H. AIKEN** construit l’ordinateur électromécanique **MARK I** (1944). Le MARK I pesait environ 5 tonnes et était composé de plus de 750 000 pièces !
+Peu après, aux États-Unis, **Howard H. AIKEN** construit l’ordinateur électromécanique **MARK I** (1944). Le MARK I pesait environ **5 tonnes** et était composé de plus de **750 000 pièces**.
 
-**L’ordinateur MARK inauguré à Harvard le 7 août 1944 mesurait 16m de long, 2,40m de haut, 0,5 m de profondeur et pesait 4,5 tonnes.**
+
 
 ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.001.png)
 Source : espace-turing.fr
 
-Le **Mark I** lisait ses instructions sur des cartes perforées et exécutait l’instruction courante puis lisait la suivante.
+Le **Mark I** lisait ses instructions sur des cartes perforées, exécutait l’instruction courante, puis lisait la suivante.
 
 ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.003.png)
 Source : Wikipédia
@@ -41,32 +46,46 @@ Source : Wikipédia
 
 L’apparition des **tubes à vide**, bien plus rapides que les relais des machines électromécaniques, marque le début de l’électronique moderne.
 
-Entre 1943 et 1945 les Britanniques **Max NEWMAN** et **Tomy FLOWERS** mettent en service les **COLOSSUS** utilisés pour déchiffrer le code de LORENZ employé par les allemands durant la seconde guerre mondiale.
+Entre 1943 et 1945, les Britanniques **Max NEWMAN** et **Tommy FLOWERS** mettent en service **COLOSSUS**, utilisé pour déchiffrer le code **Lorenz** employé par les Allemands durant la Seconde Guerre mondiale.
 
-Le célèbre **ENIAC** des Américains **John MAUCHLY** et **John ECKERT** est achevé en novembre 1945 et effectue des calculs balistiques à l’aide de 18 00 tubes à vide.
+Le célèbre **ENIAC**, développé par **John MAUCHLY** et **John ECKERT**, est achevé en novembre 1945 et utilisé pour des calculs balistiques grâce à **18 000 tubes à vide**.
 
-**L'ENIAC** (Electronic Numerical Integrator And Computer) : premier ordinateur entièrement électronique (1945).
-
-Il peut être reprogrammé pour résoudre, en principe, tous les problèmes calculatoires.
 
 ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.004.png)
 Source : Wikipédia
 
+L’ENIAC est le **premier ordinateur entièrement électronique** et peut être reprogrammé pour résoudre divers problèmes de calcul.
+
 ### <H3 STYLE="COLOR:GREEN;"> **1.2. Les<a name="_page1_x40.00_y480.92"></a> machines à programmes enregistrés** </H3>
 
-- Basés sur les travaux de **MAUCHLY**, **ECKERT** et **VON NEUMANN**, les machines à programmes enregistrés sont les ancêtres directs des ordinateurs actuels. Dans ce type de machines, les données et les programmes résident en mémoire. Les premières machines de ce type apparaissent dès 1948 avec les ordinateurs britanniques BABY et EDSAC, suivis par leurs homologues américains **EDVAC** et **UNIVAC**.
-- Le début des années 1950 voient apparaître les premiers ordinateurs commerciaux et les modèles se succèdent avec comme principaux acteurs les constructeurs **IBM** (International Business Machines), **DEC** (Digital Equipment Corporation) et **BULL**.
+Basées sur les travaux de **MAUCHLY, ECKERT et VON NEUMANN**, ces machines sont les ancêtres des ordinateurs modernes. Dans ce type de machine, **les données et les programmes sont stockés en mémoire**.
+
+Les premières machines de ce type apparaissent dès 1948 avec les ordinateurs britanniques **BABY** et **EDSAC**, suivis par leurs homologues américains **EDVAC** et **UNIVAC**.
+
+Dès les années 1950, les premiers ordinateurs commerciaux apparaissent, dominés par les constructeurs **IBM** (International Business Machines), **DEC** (Digital Equipment Corporation) et **BULL**.
+
 
 ### <H3 STYLE="COLOR:GREEN;"> **1.3. Du<a name="_page1_x40.00_y644.92"></a> micro-ordinateur à la micro-informatique** </H3>
 - **Miniaturisation et explosion du marché**
 
-Le **transistor** (1947) devient un produit industriel très fiable qu’on peut fabriquer à faible coût au milieu des années 1950. Son émergence technologique, marque la fin des tubes à vide.
+- **Le transistor** (1947) marque la fin des tubes à vide et devient un produit industriel fiable et peu coûteux dès les années 1950.  
 
-Le **circuit intégré** qui rassemble de nombreux composants miniaturisés sur une petite surface apparaît en 1958 et ne cessera de se perfectionner au fil du temps.
+- **Le circuit intégré** (1958) miniaturise davantage les composants électroniques.  
 
-Durant plus de 10 ans, **IBM** et **DEC** dominent le marché alors que la science informatique encore naissante, permet de former dans les université des personnes qui se spécialisent dans l’utilisation et la programmation des ordinateurs. L’apparition du **microprocesseur** (INTEL 4004 en 1971) permet à de nouveaux acteurs d’apparaître et d’innover : l’informatique s’ouvre au grand public.
+- **Le microprocesseur** (**Intel 4004** en 1971) révolutionne l’informatique et ouvre la voie aux ordinateurs personnels.
 
-Une multitude de machines sont commercialisées : **l’ALTAIR 8800** premier ordinateur grand public, sans clavier ni écran, l’**APLLE II** (1977), l’**IBM PC** (1981), le **COMMODORE 64** (1982), le **APPLE MACINTOSH** (1984). Ce dernier est d’ailleurs le premier ordinateur personnel équipé d’une souris et d’une interface graphique.
+💻 **Premiers micro-ordinateurs** :  
+
+- **ALTAIR 8800** (1975) : premier ordinateur grand public, sans clavier ni écran.  
+
+- **APPLE II** (1977)  
+
+- **IBM PC** (1981)  
+
+- **COMMODORE 64** (1982)  
+
+- **APPLE MACINTOSH** (1984) : premier ordinateur personnel avec une souris et une interface graphique.
+
 
 ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.005.png)
 ALTAIR 8800
@@ -85,114 +104,200 @@ APPLE MACINTOSH
 
 - **Langages et système d’exploitation**
 
-Après la naissance des premiers compilateurs conçus Grace HOPPER à partir de 1951, **John BACKUS** achève l’élaboration du langage **FORTRAN** en 1956. Il est suivi par **LISP**, **COBOL** et enfin **BASIC** en 1964. Les grands principes des langages de programmation étant formulés, de nombreux langages voient le jour entre les années 1970 et 2000 : le **C** (1972), **ML** (1973) dont est issu **CAML**, **ADA** (1983) et APPLE **C++** en 1986. Le langage **PYTHON** verra le jour quant à lui en 1991 et JAVASCRIPT en 1995.
+💾 **Les langages de programmation**  
 
-Au milieu des années 1960, chaque constructeur développe son propre système d’exploitation : **OS 360** puis **MVS** chez **IBM**, le système **UNIX** (1970) chez AT&T…
+- **1951** : Premiers compilateurs créés par **Grace HOPPER**.  
 
-En 1984 **Richard STALLMAN**, chercheur au MIT entame la création du système **GNU** (GNU’s Not Unix) et promeut le mouvement du logiciel libre.
+- **1956** : **FORTRAN** (John BACKUS).  
 
-Par la suite, c’est finalement **MS-DOS**, écrit par Microsoft pour IBM qui s’imposera sur les micro-ordinateurs grand public, suivi par Windows en 1985.
+- **Années 1960-2000** : **LISP, COBOL, BASIC (1964), C (1972), ADA (1983), C++ (1986), PYTHON (1991), JAVASCRIPT (1995)**.
 
-A l’heure actuelle on distingue trois grands types d’OS (Operating System) équipant les ordinateurs modernes : **WINDOWS**, **MAC OS** et **GNU LINUX** créé par **Linus TORVALDS** en 1991.
+💻 **Les systèmes d’exploitation**  
+
+- **1960s** : Chaque constructeur crée son propre OS (**OS 360, MVS, UNIX (1970)**).  
+
+- **1984** : **Richard STALLMAN** lance le projet **GNU** et le mouvement du logiciel libre.  
+
+- **1985** : **MS-DOS (Microsoft) domine les micro-ordinateurs**, suivi de **Windows**.  
+
+- **1991** : **GNU/Linux** voit le jour grâce à **Linus TORVALDS**.
+
+Actuellement, les principaux systèmes d’exploitation sont **Windows, macOS et GNU/Linux**.
+
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** Répondre par Vrai ou faux Remarque : Certaines questions nécessitent une recherche internet. 
-<table>
+**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** 
 
-<tr><td colspan="2" valign="top">1. Blaise Pascal a mis au point le logiciel Turbo Pascal. </td><td colspan="2"></td></tr>
-<tr><td colspan="2" valign="top">2. George Boole était un spécialiste de la logique binaire. </td><td colspan="2"></td></tr>
-<tr><td colspan="2" valign="top">3. Alan Turing a travaillé sur l’intelligence artificielle. </td><td colspan="2"></td></tr>
-<tr><td colspan="2" valign="top">4. Alan Turing a cassé le code Enigma. </td><td colspan="2"></td></tr>
-<tr><td colspan="2" valign="top">5. L’ordinateur ENIAC était aussi petit qu’une boite à chaussure. </td><td colspan="2"></td></tr>
-<tr><td colspan="2" valign="top">6. John Von Neumann a conçu l’architecture de base de tous les ordinateurs actuels. </td><td colspan="2"></td></tr>
-<tr><td colspan="2" valign="top">7. L’invention du transistor a permis de miniaturiser les ordinateurs. </td><td colspan="2"></td></tr>
-<tr><td colspan="2" valign="top">8. Le premier micro-ordinateur est américain. </td><td colspan="2"></td></tr>
-<tr><td colspan="2" valign="top">9. Le processeur 8086 possède 1000000 de transistors </td><td colspan="2"></td></tr>
-<tr><td colspan="2" valign="top">10. Gary Kasparov est imbattable aux échecs. </td><td colspan="2"></td></tr>
-<tr><td colspan="2" valign="top">11. La loi de Moore est toujours valide en 2020 </td><td colspan="2"></td></tr>
-</table>
+Répondre par Vrai ou faux 
 
-**<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** Cocher la ou les bonnes réponses. Remarque : Certaines questions nécessitent une recherche internet. 
-<table>
+Certaines questions nécessitent une recherche Internet.  
 
-<tr><td colspan="8" valign="top">  </td></tr>
-<tr><td colspan="2" valign="top"><p>1. Le premier algorithme connu remonte... </p><p>- au XX siècle </p><p>- au XIX siècle </p><p>- au 1er siècle </p><p>- bien avant le 1er siècle </p></td><td colspan="2" valign="top"><p>2. Le mot algorithme vient du nom </p><p>- Al-Khwârizmi </p><p>- Grace Murray Hopper </p><p>- Steve Jobs </p><p>- Augusta Ada King </p></td><td colspan="2" valign="top"><p>3. Le 1er compilateur fut conçu par </p><p>- Al-Khwârizmi </p><p>- Grace Murray Hopper </p><p>- Steve Jobs </p><p>- Augusta Ada King </p></td><td colspan="2"></td><td colspan="3" rowspan="2" valign="top"></td></tr>
-<tr><td colspan="2" valign="top"><p>4. Le 1er programme fut écrit par </p><p>- Al-Khwârizmi </p><p>- Grace Murray Hopper </p><p>- Steve Jobs </p><p>- Augusta Ada King </p></td><td colspan="2" valign="top"><p>5. Le transistor fut inventé dans les années </p><p>- 1850 </p><p>- 1900 </p><p>- 1950 </p><p>- 2000 </p></td><td colspan="2" valign="top"><p>6. Le circuit intégré fut inventé après le transistor. </p><p>- Vrai </p><p>- Faux </p><p>- Les deux ont été inventés en même temps </p><p>- Cette question n'a aucun sens</p></td><td colspan="2"></td><td colspan="3" rowspan="2" valign="top"></td></tr>
-<tr><td colspan="2" valign="top"><p>7. La souris a été inventée après le disque dur. </p><p>- Vrai </p><p>- Faux </p><p>- Les deux ont été inventés en même temps </p><p>- Cette question n'a aucun sens </p></td><td colspan="2" valign="top"><p>8. L’invention du premier microprocesseur date des années </p><p>- 1945 </p><p>- 1970 </p><p>- 1990 </p><p>- début des années 2000 </p></td><td colspan="2" valign="top"><p>9. L’internet a été inventé après le web. </p><p>- Vrai </p><p>- Faux </p><p>- Les deux ont été inventés en même temps </p><p>- Cette question n'a aucun sens</p></td><td colspan="2"></td><td colspan="3" rowspan="2" valign="top"></td></tr>
-<tr><td colspan="6" valign="top"><p>10. Le moteur de recherche Google a été créé en </td><td colspan="3" rowspan="3" valign="top"></td></tr>
-<tr><td colspan="6" valign="top">- 1990 </td></tr>
-<tr><td colspan="6" valign="top">- 1998 </td></tr>
-<tr><td colspan="6" valign="top">- 2005 </td></tr>
-<tr><td colspan="6" valign="top">- 2010 </td></tr>
-</table>
+1️⃣ Blaise Pascal a mis au point le logiciel Turbo Pascal. 
+
+2️⃣ George Boole était un spécialiste de la logique binaire.  
+
+3️⃣ Alan Turing a travaillé sur l’intelligence artificielle. 
+
+4️⃣ Alan Turing a cassé le code Enigma.  
+
+5️⃣ L’ordinateur ENIAC était aussi petit qu’une boîte à chaussures.  
+
+6️⃣ John Von Neumann a conçu l’architecture de base des ordinateurs modernes.  
+
+7️⃣ L’invention du transistor a permis de miniaturiser les ordinateurs.  
+
+8️⃣ Le premier micro-ordinateur est américain. 
+
+9️⃣ Le processeur 8086 possède 1 000 000 de transistors.  
+
+🔟 Gary Kasparov est imbattable aux échecs. 
+
+1️⃣1️⃣ La loi de Moore est toujours valide en 2020.  
+
+
+
+**<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** Cocher la ou les bonnes réponses. 
+
+Certaines questions nécessitent une recherche Internet.  
+
+1️⃣ Le premier algorithme connu remonte... 
+
+📌 XXe siècle / 📌 XIXe siècle / 📌 Ier siècle / 📌 Bien avant  
+
+2️⃣ Le mot "algorithme" vient du nom…  
+
+📌 Al-Khwârizmi / 📌 Grace Hopper / 📌 Steve Jobs / 📌 Ada Lovelace  
+
+3️⃣ Le premier compilateur a été conçu par… 
+
+📌 Al-Khwârizmi / 📌 Grace Hopper / 📌 Steve Jobs / 📌 Ada Lovelace  
+
+📌 **Et bien d’autres questions à explorer !**  
+
 
 ## <H2 STYLE="COLOR:BLUE;"> **2. Les<a name="_page3_x40.00_y539.92"></a> différents types de mémoires** </H2>
 ### <H3 STYLE="COLOR:GREEN;"> **2.1. Organisation<a name="_page3_x40.00_y567.92"></a> de la mémoire** </H3>
 
-Il existe de nombreuses technologies de mémoire qui se distinguent par leur durabilité (volatile ou permanente), leur mode d’accès (par adresse ou dans l’ordre de leur rangement) ou leur temps d’accès. En règle générale, plus une mémoire est performante, plus elle est chère.
+Il existe de nombreuses **technologies de mémoire**, qui se distinguent selon plusieurs critères :
 
-- Il existe la **mémoire morte** ( **ROM** = Read Only Memory ) chargée de stocker le programme. C’est une mémoire à lecture seule, en principe.
-- On parle de **mémoire vive** (ou volatile) (**RAM** = Random Access Memory) quand le contenu est perdu lorsque le courant s’arrête : il s’agit des registres, des mémoires cache, de la mémoire centrale.
-- Les disques durs, disquettes, CDROM, etc… sont des périphériques de stockage et sont considérés comme des mémoires secondaires.
+- **Durabilité** : mémoire volatile (données perdues à l'arrêt du courant) ou permanente.  
 
-Remarque : la mémoire ROM contient notamment le BIOS (Basic Input Output System) qu’il est possible, sur les machines dotées de carte mère récente, de mettre à jour (flashage du BIOS).
+- **Mode d’accès** : accès direct (adressage aléatoire) ou séquentiel.
+
+- **Temps d’accès** : plus une mémoire est rapide, plus elle est chère.  
+
+Les principales catégories de mémoire sont :  
+
+- **Mémoire morte (ROM – Read Only Memory)** : mémoire **non volatile**, utilisée pour stocker des programmes essentiels comme le BIOS (Basic Input Output System). Elle est en lecture seule mais peut être mise à jour (flashage du BIOS).  
+
+- **Mémoire vive (RAM – Random Access Memory)** : mémoire **volatile**, utilisée pour stocker temporairement les instructions et données des programmes en cours d'exécution.  
+
+- **Mémoire de stockage secondaire** : disques durs (HDD, SSD), clés USB, CD-ROM...  
 
 ### <H3 STYLE="COLOR:GREEN;"> **2.2. Les<a name="_page4_x40.00_y47.92"></a> registres** </H3>
 
-Un **registre** est un emplacement **mémoire interne** au processeur. Les registres se situent au sommet de la hiérarchie mémoire : il s'agit de la **mémoire la plus rapide** d'un ordinateur, mais dont le coût de fabrication est le plus élevé, car la place dans un microprocesseur est limitée.
+Un **registre** est un emplacement **mémoire interne** au processeur. Il s’agit de la mémoire **la plus rapide**, mais également **la plus coûteuse**, car son espace est limité.  
 
-Il sert à **stocker des opérandes** et **des résultats intermédiaires** lors des opérations effectuées dans l’UAL. Leur capacité, leur nombre et leurs rôles varient selon les processeurs. La grande majorité des processeurs actuels ont des registres de taille 64 bits. Ils sont accessibles via un jeu d’instructions.
+🔹 **Rôle des registres** : 
+
+- Stocker des **opérandes** et **résultats intermédiaires** pendant le traitement des instructions.  
+
+- Varier en capacité, nombre et fonctions selon les processeurs. 
+
+- Être directement accessibles via le jeu d’instructions du processeur.  
+
+💡 **La plupart des processeurs modernes ont des registres de 64 bits**.
+
 
 ### <H3 STYLE="COLOR:GREEN;"> **2.3. Mémoires<a name="_page4_x40.00_y175.92"></a> centrales et mémoires caches** </H3>
 
-La **mémoire centrale** est une mémoire vive qui contient les programmes en cours et les données qu’ils manipulent. Elle est de taille importante (plusieurs Go). Elle est organisée en **cellules** appelées « **cases mémoires** » qui contiennent chacune une donnée ou une instruction repérée par une **adresse** qui est un **nombre entier**. Le temps d’accès à chaque cellule est le même : on parle de mémoire à accès aléatoire (RAM) bien qu’il soit plus judicieux de parler de mémoire à accès direct.
+**Mémoire centrale (RAM)**  
 
-Afin de pouvoir adapter la très grande vitesse du processeur à celle plus faible de la mémoire centrale, on place entre les deux une mémoire plus rapide, la **mémoire cache** qui contient les instructions et les données en cours d’utilisation car, la plupart du temps, les données qui viennent d’être utilisées ont une probabilité plus grande d’être réutilisées que d’autres. La **mémoire cache** (de l’ordre de quelques Mo) est souvent constitué de mémoire de type statique **SRAM** plus rapide mais plus chère que celle de type **RAM dynamique (SDRAM, DDR** …) utilisée dans la mémoire centrale. Généralement la mémoire cache est intégrée au « socket » du processeur.
+La **mémoire centrale** stocke temporairement les programmes et leurs données pendant leur exécution. Elle est **volatile**, ce qui signifie que les informations sont perdues lorsque l’ordinateur s’éteint.  
+
+🔹 Organisation :  
+
+- Constituée de **cases mémoires** repérées par une **adresse unique**.  
+
+- Accès rapide et en **temps constant**. 
+
+- Types : **SDRAM, DDR, DDR2, DDR3, DDR4, DDR5**.
+
+**Mémoire cache**  
+
+Pour compenser la différence de vitesse entre le **processeur** et la **mémoire centrale**, on utilise une **mémoire cache** intégrée au processeur.  
+
+🔹 Caractéristiques :  
+
+- Stocke les **instructions et données les plus utilisées** pour éviter de les rechercher en RAM.
+
+- Plus rapide que la RAM, mais plus petite et plus chère.
+
+- **Types** :  
+
+  1 **Cache L1** : la plus rapide, située directement dans le cœur du processeur.  
+
+  2 **Cache L2** : plus grande, mais légèrement plus lente.  
+
+  3 **Cache L3** : partagée entre plusieurs cœurs d’un processeur multi-cœur.  
+
 
 **<H3 STYLE="COLOR:red;">Activité n°3.:</H3>** Quelques interrogations 
 
-Il reste toujours pas mal de questions en suspens. Quatre exemples :
+💡 Réfléchissez aux réponses aux questions suivantes :  
 
-1. Où sont stockés les programmes là-dedans ? ça doit être forcément dedans puisque le programme fait partie de la machine. Mais où ?
-2. Comment fait la machine pour faire une addition ?
-3. Si on veut récupérer des données externes (clavier ?), on récupère à partir de quelle provenance ?
-4. Si on veut envoyer des informations vers l’extérieur (écran ?), on envoie vers quelle destination ?
+1️⃣ Où sont stockés les programmes dans la mémoire ?  
+
+2️⃣ Comment l’ordinateur effectue-t-il une addition ?  
+
+3️⃣ D’où proviennent les données entrées via le clavier ?
+
+4️⃣ Où vont les informations envoyées vers l’écran ? 
 
 ## <H2 STYLE="COLOR:BLUE;"> **3. Architecture<a name="_page4_x40.00_y536.92"></a> de Von Neumann** </H2>
 
-L’architecture dite **architecture de Von Neumann est** un modèle pour un ordinateur qui utilise une structure de stockage unique pour conserver à la fois les instructions et les données demandées ou produites par le calcul. De telles machines sont aussi connues sous le nom d’**ordinateur à programme enregistré**. Le modèle de Von Neumann est conforme à un schéma qui a peu évolué depuis son origine en 1945.
+L’**architecture de Von Neumann** (1945) est un **modèle d’ordinateur** où **les instructions et les données partagent la même mémoire**. Ce modèle est toujours utilisé dans les ordinateurs modernes.  
+
+
 
 ### <H3 STYLE="COLOR:GREEN;"> **3.1. Organisation<a name="_page4_x633.92"></a> générale** </H3>
 
-Les instructions qui composent les programmes sont exécutées par le **CPU** (Central Processing Unit). Il est schématiquement constitué de 3 parties.
+🔹 **Les trois parties du CPU** : 
 
-- **L’unité arithmétique et logique** (UAL ou ALU en anglais) est chargée de l’exécution de tous les calculs de base que peut réaliser le microprocesseur.
-- **L’unité de contrôle** est chargée du séquençage des opérations : elle permet d’exécuter les instructions (les programmes).
-- **la mémoire** contient à la fois les données et le programme. Le programme indique à l’unité de contrôle les calculs à faire sur les données. La mémoire est divisée en mémoire volatile (programmes et données en cours de fonctionnement) et mémoire permanente (programmes et données de base de la machine). Un emplacement de mémoire interne à un processeur est appelé un registre.
+- **L’unité arithmétique et logique (UAL ou ALU)** : effectue les **calculs** et les **opérations logiques**.  
 
-Les données doivent circuler entre les différentes parties d’un ordinateur, notamment entre la mémoire vive et le CPU. Le système permettant cette circulation est appelé **bus** : un bus de 64 bits est constitué de 64 «fils électriques » qui permettent de faire transiter 64 bits simultanément. Il existe, sans entrer dans les détails, 3 grands types de bus :
+- **L’unité de contrôle** : exécute les instructions en coordonnant les autres composants.  
 
-- Le **bus d’adresses** permet de faire circuler des adresses (par exemple l’adresse d’une donnée à aller chercher en mémoire).
-- Le **bus de données** permet de faire circuler des données.
-- Le **bus de contrôle** permet de spécifier le type d’action (exemples : écriture d’une donnée en mémoire, lecture d’une donnée en mémoire).
+- **La mémoire** : stocke **instructions et données**.  
 
-Les **dispositifs d’entrée-sortie** permettent de communiquer avec le monde extérieur (clavier, écran, imprimante,…)
+🔹 **Le bus (système de communication interne)**  
+
+Il permet aux composants de **transporter des données et instructions**.  
+
+Il existe **trois types de bus** :  
+
+1️⃣ **Bus d’adresses** : transporte les adresses mémoire. 
+
+2️⃣ **Bus de données** : transporte les données elles-mêmes. 
+
+3️⃣ **Bus de contrôle** : gère le type d’opération (lecture, écriture…).  
+
+🔹 **Les périphériques d’entrée/sortie**  
+
+Ils permettent à l’ordinateur de communiquer avec l’extérieur (**clavier, écran, imprimante...**).
+
 
 ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.021.jpeg)
 
-**Architecture simplifiée de Von Neumann**
+💡 **L’architecture Harvard** est une alternative où les mémoires des programmes et des données sont séparées, permettant un **traitement plus rapide**.
 
-Remarques :
+**<H3 STYLE="COLOR:red;">Activité n°4.:</H3>** Calcul de la mémoire disponible**  
 
-- **L’architecture Havard** se distingue de l’architecture Von Neuman uniquement par le fait que les mémoires programmes et données **sont séparées**. Cette organisation permet de transférer instructions et des données simultanément, ce qui améliore les performances, mais augmente les coûts.
-- Les ordinateurs **multiprocesseurs** permettent un parallélisme de tâches pour obtenir une plus grande puissance de calcul. Cette technologie a été utilisée pour des supercalculateurs, elle peut aussi l'être pour s'affranchir des limites de la montée en fréquence des processeurs : de nombreux processeurs actuels sont dits **multi-cœur**, et embarquent en fait plusieurs **monoprocesseurs** sur une même puce.
+1️⃣ **Combien d’adresses mémoire différentes peut-on avoir avec un bus d’adresses de 16 bits ?**  
 
-**<H3 STYLE="COLOR:red;">Activité n°4.:</H3>** On part du principe que le système doit pouvoir transporter en une seule opération une adresse via son bus d’adresses. Peux-tu répondre à ces deux questions. 
+2️⃣ **Si chaque case mémoire contient 1 octet, quelle est la capacité maximale de mémoire vive ?**  
 
-1. Combien d’adresses-mémoires RAM différentes peut-on avoir dans un ordinateur dont le bus d’adresse est un bus 16 bits ?
-
-2. Si on considère que chaque case mémoire correspond à un octet, quelle est la mémoire vive maximale disponible sur ce système s’il ne disposant pas d’autres manières d’adresser sa mémoire ?
 
 ### <H3 STYLE="COLOR:GREEN;"> **3.2. Le<a name="_page6_x297.92"></a> CPU** </H3>
 
@@ -200,13 +305,33 @@ Le processeur (CPU, pour Central Processing Unit) est le cerveau de l’ordinate
 
 ### <H3 STYLE="COLOR:GREEN;"> **3.3. Le<a name="_page6_x426.92"></a> rôle de l’horloge CPU** </H3>
 
-Une **horloge** rythme le travail du CPU: à chaque battement, une action. Plus la fréquence de l'horloge, mesurée en hertz (Hz), est élevée, plus le processeur est rapide. Cadencé à 2 GHz, il abat ainsi deux milliards d'opérations par seconde.
+Le **processeur** (CPU – Central Processing Unit) est le **cœur de l’ordinateur**.  
 
-On caractérise le microprocesseur par :
+🔹 **Caractéristiques** : 
 
-- sa fréquence d’horloge : en MHz ou GHz
-- le nombre d’instructions par secondes qu’il est capable d’exécuter
-- la taille des données qu’il est capable de traiter : en bits
+- Manipule des **données binaires** et des **instructions**.  
+
+- Contient des **millions de transistors** miniaturisés.  
+
+- Intégré dans un **boîtier** surmonté d’un **ventilateur**.  
+
+
+
+
+
+### <H3 STYLE="COLOR:GREEN;"> **3.4. Le rôle de l’horloge CPU**  </H3>
+
+Le **processeur est cadencé** par une **horloge interne**, qui envoie des **impulsions électriques** synchronisant ses opérations.  
+
+📌 **Caractéristiques du CPU** :  
+
+- **Fréquence d’horloge** (en MHz ou GHz).  
+
+- **Nombre d’instructions par seconde**. 
+
+- **Taille des données traitées** (en bits).  
+
+💡 **Un CPU cadencé à 2 GHz exécute 2 milliards d’opérations par seconde**.
 
 **<H3 STYLE="COLOR:red;">Activité n°5.:</H3>** Sur les photos ci-dessous, identifier le processeur. 
 
@@ -214,19 +339,37 @@ On caractérise le microprocesseur par :
 ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.027.png)
 ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.028.png)
 
-### <H3 STYLE="COLOR:GREEN;"> **3.4. Les<a name="_page7_x274.92"></a> limites** </H3>
+### <H3 STYLE="COLOR:GREEN;"> **3.5. Les<a name="_page7_x274.92"></a> limites** </H3>
 
-Ce modèle impose un **va-et-vient** constant entre le **CPU et la mémoire**, soit pour charger la prochaine instruction à exécuter, soit pour récupérer les données sur lesquelles l’instruction courante doit opérer. Mais la différence de vitesse entre les microprocesseurs et la mémoire est très grande. De plus, cet accès se fait à travers un bus, mais pour des raisons technologiques, le débit du bus a augmenté moins vite que le débit d’accès à la mémoire et surtout que la vitesse des processeurs. D’où un phénomène d’attente — le **« goulot de von Neumann »** — qui réduit les performances
+🔹 **Le principal problème : le goulet d’étranglement**  
+
+- Le processeur est **beaucoup plus rapide** que la mémoire. 
+
+- Le **bus mémoire** ne peut **pas suivre la cadence**.  
+
+- **Solution** : utilisation de **mémoires caches et multiprocesseurs**.  
+
+
 
 ### <H3 STYLE="COLOR:GREEN;"> **3.5. Évolution<a name="_page7_x423.92"></a> : le multiprocesseur et les mémoires caches** </H3>
 
-Selon la **loi de Moore** (1965), le nombre de transistors, c’est-à-dire l’élément principal qui compose les processeurs des ordinateurs**, double tous les deux ans**. Et parallèlement, double également la puissance des appareils. Moore fixa ensuite le cycle non plus sur 2 ans, mais **dix-huit mois.** Donc selon Moore tous les 18 mois il y a doublement du nombre de transistors, rendant les ordinateurs rapidement obsolètes. Sa loi s’est vérifiée jusqu’à récemment. Il avait cependant déclaré en 1997 que cette croissance des performances des puces se heurterait aux environs de 2017 à une limite physique : celle de la taille des atomes. Et nous y sommes. On voit en effet depuis quelques années le rythme du doublement diminuer en fréquence.
+🔹 **La loi de Moore** (1965) : 
 
-Mais, l'augmentation de la fréquence devenant techniquement de plus en plus difficile (problème de surchauffe), une nouvelle idée permet de poursuivre la loi de Moore : mettre **plus de processeurs** dans un seul PC.
+- 🏆 **Le nombre de transistors double tous les 18 à 24 mois**. 
 
-De plus, la multiplication des cœurs pose le problème de la synchronisation de la mémoire. Il existe plusieurs stratégies pour répartir la mémoire cache de chaque processeur.
+- 🚀 Augmentation des performances et miniaturisation. 
 
-Ces évolutions ont pour conséquence de mettre la **mémoire**, plutôt que l’unité centrale, **au centre de l’ordinateur**, et **d’augmenter le degré de parallélisme** dans le traitement et la circulation de l’information
+- ❌ **Depuis 2017, cette loi atteint ses limites physiques.**  
+
+🔹 **Solution moderne** :  
+
+✅ **Multiprocesseurs** et **multi-cœurs** permettent un traitement **parallèle** des données. 
+
+✅ **Mémoire cache plus performante** pour compenser la lenteur de la RAM.  
+
+💡 Aujourd’hui, **l’optimisation mémoire est devenue un enjeu majeur**.
+
+
 
 **<H3 STYLE="COLOR:red;">Activité n°6.:</H3>** Ci-contre, retrouver les interfaces RJ45, VGA, HDMI et USB. 
 
@@ -234,106 +377,83 @@ Ces évolutions ont pour conséquence de mettre la **mémoire**, plutôt que l�
 
 ## <H2 STYLE="COLOR:BLUE;"> **4. Langage<a name="_page8_x40.00_y390.92"></a> assembleur** </H2>
 
-Le microprocesseur étant incapable d'interpréter la phrase "additionne le nombre 125 et la valeur située dans le registre R2,
+Le **microprocesseur** ne peut pas interpréter directement des instructions en langage naturel comme :
 
- range le résultat dans le registre R1", il faut coder cette instruction sous forme binaire :
+> _"Additionne le nombre 125 et la valeur située dans le registre R2, range le résultat dans le registre R1"._
 
-"additionne le nombre 125 et la valeur située dans le registre R2, range le résultat dans le registre R1" ⇓
+Ces instructions doivent être traduites en **code binaire** compréhensible par le processeur :  
+```binary
+11100010100000100001000001111101
+```
+Cependant, l'écriture en binaire étant complexe et peu lisible, on utilise des **mnémoniques** sous forme de langage **assembleur**, plus compréhensible pour les programmeurs :  
+```assembly
+ADD R1, R2, #125
+```
 
-"11100010100000100001000001111101"
+Ce code en assembleur signifie :  
 
-Afin de faciliter la lecture et l'écriture d'instructions machine par les informaticiens, on remplace les codes binaires par des symboles mnémoniques, en utilisant la syntaxe du langage appelé assembleur.
+- **ADD** : additionne  
 
-"additionne le nombre 125 et la valeur située dans le registre R2, range le résultat dans le registre R1" ⇓  
-"ADD R1,R2,#125" ⇓
+- **R1** : registre où stocker le résultat  
 
-"11100010100000100001000001111101"
+- **R2** : registre contenant l'une des valeurs  
 
-**Exemples d’instruction en assembleur :**
+- **#125** : valeur immédiate ajoutée à R2  
 
-- LDR R1,78
+### <H3 STYLE="COLOR:GREEN;"> **4.1. Exemples d’instructions en assembleur** </H3>
 
-Place la valeur stockée à l'adresse mémoire 78 dans le registre R1 (par souci de simplification, nous continuons à utiliser des adresses mémoire codées en base 10)
-
-- STR R3,125
-
-Place la valeur stockée dans le registre R3 en mémoire vive à l'adresse 125
-
-- ADD R1,R0,#128
-
-Additionne le nombre 128 (une valeur immédiate est identifiée grâce au symbole #) et la valeur stockée dans le registre R0, place le résultat dans le registre R1
-
-- ADD R0,R1,R2
-
-Additionne la valeur stockée dans le registre R1 et la valeur stockée dans le registre R2, place le résultat dans le registre R0
-
-- SUB R1,R0,#128
-
-Soustrait le nombre 128 de la valeur stockée dans le registre R0, place le résultat dans le registre R1
-
-- SUB R0,R1,R2
-
-Soustrait la valeur stockée dans le registre R2 de la valeur stockée dans le registre R1, place le résultat dans le registre R0
-
-- MOV R1, #23
-
-Place le nombre 23 dans le registre R1
-
-- MOV R0, R3
-
-Place la valeur stockée dans le registre R3 dans le registre R0
-
-- B 45
-
-Nous avons une structure de rupture de séquence, la prochaine instruction à exécuter se situe en mémoire vive à l'adresse 45
-
-- CMP R0, #23
-
-Compare la valeur stockée dans le registre R0 et le nombre 23. Cette instruction CMP doit précéder une instruction de branchement conditionnel BEQ, BNE, BGT, BLT (voir ci-dessous)
-
-- CMP R0, R1
-
-Compare la valeur stockée dans le registre R0 et la valeur stockée dans le registre R1.
-
-- CMP R0, #23 BEQ 78
-
-La prochaine instruction à exécuter se situe à l'adresse mémoire 78 si la valeur stockée dans le registre R0 est égale à 23
-
-- CMP R0, #23 BNE 78
-
-La prochaine instruction à exécuter se situe à l'adresse mémoire 78 si la valeur stockée dans le registre R0 n'est pas égale à 23
-
-- CMP R0, #23 BGT 78
-
-La prochaine instruction à exécuter se situe à l'adresse mémoire 78 si la valeur stockée dans le registre R0 est plus grand que 23
-
-- CMP R0, #23 BLT 78
-
-La prochaine instruction à exécuter se situe à l'adresse mémoire 78 si la valeur stockée dans le registre R0 est plus petit que 23
-
-- HALT !
-
-Arrête l'exécution du programme
+| **Instruction**  | **Description** |
+|----------------|---------------|
+| `LDR R1, 78`  | Charge la valeur située à l'adresse mémoire **78** dans le registre **R1**. |
+| `STR R3, 125` | Stocke la valeur contenue dans le registre **R3** à l'adresse mémoire **125**. |
+| `ADD R1, R0, #128` | Additionne **128** avec la valeur du registre **R0** et stocke le résultat dans **R1**. |
+| `ADD R0, R1, R2` | Additionne les valeurs des registres **R1** et **R2**, et stocke le résultat dans **R0**. |
+| `SUB R1, R0, #128` | Soustrait **128** à la valeur du registre **R0**, et stocke le résultat dans **R1**. |
+| `MOV R1, #23` | Stocke la valeur **23** dans le registre **R1**. |
+| `MOV R0, R3` | Copie la valeur de **R3** dans **R0**. |
+| `B 45` | Change la séquence d'exécution en sautant à l’adresse **45**. |
+| `CMP R0, #23` | Compare la valeur de **R0** avec **23**. |
+| `CMP R0, #23 BEQ 78` | Si **R0 == 23**, alors saute à l’adresse **78**. |
+| `CMP R0, #23 BGT 78` | Si **R0 > 23**, alors saute à l’adresse **78**. |
+| `HALT` | Arrête l’exécution du programme. |
 
 **<H3 STYLE="COLOR:red;">Activité n°7.:</H3>** Expliquer les instructions suivantes 
 
-- ADD R0, R1, #42  
-- LDR R5,98 
-- CMP R4, #18 
-- BGT 77 
-- STR R0,15 
-- B 100
+📌 **Décrivez les instructions suivantes en langage naturel :** 
 
-**<H3 STYLE="COLOR:red;">Activité n°8.:</H3>** Écrire les instructions en assembleur correspondant aux phrases suivantes : 
+1️⃣ `ADD R0, R1, #42`  
 
-- Additionne la valeur stockée dans le registre R0 et la valeur stockée dans le registre R1, le résultat est stocké dans le registre R5
-- Place la valeur stockée à l'adresse mémoire 878 dans le registre R0
-- Place le contenu du registre R0 en mémoire vive à l'adresse 124
-- la prochaine instruction à exécuter se situe en mémoire vive à l'adresse 478
-- Si la valeur stockée dans le registre R0 est égale 42 alors la prochaine instruction à exécuter se situe à l'adresse mémoire 85
+2️⃣ `LDR R5, 98`  
 
-**<H3 STYLE="COLOR:red;">Activité n°9.:</H3>** Correspondance du langage Python et du langage assembleur 
+3️⃣ `CMP R4, #18`  
 
+4️⃣ `BGT 77`  
+
+5️⃣ `STR R0, 15`  
+
+6️⃣ `B 100`  
+
+### <H3 STYLE="COLOR:GREEN;"> **4.2. Applications** </H3>
+
+**<H3 STYLE="COLOR:red;">Activité n°8.:</H3>** 
+
+📌 **Écrivez les instructions en assembleur correspondant aux phrases suivantes :**  
+
+1️⃣ Additionne la valeur stockée dans **R0** et celle stockée dans **R1**, stocke le résultat dans **R5**. 
+
+2️⃣ Charge la valeur située à l’adresse mémoire **878** dans le registre **R0**.  
+
+3️⃣ Stocke la valeur du registre **R0** en mémoire à l’adresse **124**.  
+
+4️⃣ Sauter directement à l’instruction stockée en mémoire **478**.  
+
+5️⃣ Si **R0 == 42**, sauter à l’adresse **85**.
+
+**<H3 STYLE="COLOR:red;">Activité n°9.:</H3>** 
+
+📌 **Comparer le programme suivant en Python et en Assembleur** :
+
+**Python**  
 ```python
 x = 4
 y = 8
@@ -344,55 +464,71 @@ else:
 z = 6
 ```
 
-```
-   MOV R0, #4
-   STR R0,30
-   MOV R0, #8
-   STR R0,75
-   LDR R0,30
-   CMP R0, #10
-   BNE else
-   MOV R0, #9
-   STR R0,75
-   B endif
+**Assembleur équivalent**
+```assembly
+MOV R0, #4
+STR R0, 30
+MOV R0, #8
+STR R0, 75
+LDR R0, 30
+CMP R0, #10
+BNE else
+MOV R0, #9
+STR R0, 75
+B endif
 else:
-   LDR R0,30
-   ADD R0, R0, #1
-   STR R0,30
+LDR R0, 30
+ADD R0, R0, #1
+STR R0, 30
 endif:
-   MOV R0, #6
-   STR R0,23
-   HALT
+MOV R0, #6
+STR R0, 23
+HALT
 ```
+📌 **Questions** :  
 
-Après avoir analysé très attentivement le programme en assembleur ci-dessus, vous essaierez d'établir une correspondance entre les lignes du programme en Python et les lignes du programme en assembleur. À quoi sert la ligne "B endif" ? À quoi correspondent les adresses mémoires 23, 75 et 30?
+1️⃣ À quoi sert la ligne `B endif` ?  
+
+2️⃣ Que représentent les adresses mémoires `23`, `75` et `30` ?  
+
 
 ## <H2 STYLE="COLOR:BLUE;"> **5. Simulation<a name="_page11_x40.00_y36.92"></a> CPU** </H2>
 
-On utilise un simulateur développé par Peter L Higginson. Ce simulateur est basé sur une architecture de von Neumann. Nous allons trouver dans ce simulateur :
+Nous allons utiliser un **simulateur CPU** basé sur l’architecture **Von Neumann**.  
 
-- une RAM
-- un CPU
+### <H3 STYLE="COLOR:GREEN;"> **5.1. Présentation du simulateur** </H3>
 
-Une version en ligne de ce simulateur est disponible ici :[ http://www.peterhigginson.co.uk/AQA/ ](http://www.peterhigginson.co.uk/AQA/)
+📌 Disponible en ligne : [🔗 Peter Higginson’s CPU Simulator](http://www.peterhigginson.co.uk/AQA/)  
 
-![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.050.jpeg)
+📷 **Interface du simulateur**  
 
-Les différentes parties du simulateur :
+![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.050.jpeg)  
 
-- à droite, on trouve la mémoire vive ("main memory")
-- au centre, on trouve le microprocesseur
-- à gauche on trouve la zone d'édition ("Assembly Language"), c'est dans cette zone que nous allons saisir nos programmes en assembleur
+🔹 **Zones principales du simulateur** : 
 
-### <H3 STYLE="COLOR:GREEN;"> **5.1. La<a name="_page11_x648.92"></a> RAM** </H3>
+1️⃣ **Mémoire vive (Main Memory)** : Contient les instructions et les données.(à droite)  
+
+2️⃣ **Microprocesseur (CPU)** : Exécute les instructions. (au centre)
+
+3️⃣ **Éditeur d’assembleur (Assembly Language)** : Permet d’écrire du code.  (à gauche)
+
+
+
+### <H3 STYLE="COLOR:GREEN;"> **5.1. Configuration de la RAM<a name="_page11_x648.92"></a> RAM** </H3>
 
 Par défaut le contenu des différentes cellules de la mémoire est en base 10 (entier signé), mais d'autres options sont possibles : base 10 (entier non-signé, "unsigned"), base 16 ("hex"), base 2 ("binary"). On accède à ces options à l'aide du bouton "OPTIONS" situé en bas dans la partie gauche du simulateur.
 
-**<H3 STYLE="COLOR:red;">Activité n°10.:</H3>** À l'aide du bouton "OPTIONS", passer à un affichage en binaire. 
+**<H3 STYLE="COLOR:red;">Activité n°10.:</H3>**  
 
-Chaque cellule de la mémoire comporte 32 bits (classiquement une cellule de RAM comporte 8 bits).
-Chaque cellule de la mémoire possède une adresse (de 000 à 199), ces adresses sont codées en base 10.
-Repasser à un affichage en base 10 (bouton "OPTION"->"signed")
+1️⃣ Utiliser le bouton **"OPTIONS"** pour afficher la mémoire en **binaire**.  
+
+2️⃣ Chaque cellule mémoire contient **32 bits**.  
+
+3️⃣ Vérifier l’adresse mémoire utilisée (entre **000 et 199**). 
+
+4️⃣ Remettre l’affichage en **base 10**.  (bouton "OPTION"->"signed")
+
+
 
 ### <H3 STYLE="COLOR:GREEN;"> **5.2. Le<a name="_page12_x73.92"></a> CPU** </H3>
 
@@ -404,19 +540,22 @@ Dans la partie centrale du simulateur, nous allons trouver en allant du haut ver
 
 ### <H3 STYLE="COLOR:GREEN;"> **5.3. Programmer<a name="_page12_x218.92"></a> en assembleur** </H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°11.:</H3>** Dans la partie "éditeur" ("Assembly Language") saisissez les lignes de codes suivantes :
-```
-MOV R0,#42
-STR R0,150
+**<H3 STYLE="COLOR:red;">Activité n°11.:</H3>** 
+1️⃣ Dans l'éditeur **Assembly Language**, saisissez :  
+```assembly
+MOV R0, #42
+STR R0, 150
 HALT
 ```
-Cliquer sur le bouton "submit
+2️⃣ Cliquez sur **Submit**.  
 
-L’assembleur converti les trois lignes du programme en instructions machines :
+3️⃣ Vérifiez que :  
 
-- la première instruction est stockée à l’adresse mémoire 000
-- la deuxième à l’adresse 001
-- la troisième à l’adresse 002
+   - L’instruction **MOV** est à l’adresse **000**.  
+
+   - L’instruction **STR** est à l’adresse **001**.  
+   
+   - L’instruction **HALT** est à l’adresse **002**.  
 
 **<H3 STYLE="COLOR:red;">Activité n°12.:** Exécution pas à pas :</H3>
 Il suffit maintenant de cliquer sur le bouton "RUN". Le CPU va "travailler" en direct grâce à de petites animations. Si cela va trop vite (ou trop doucement), on peut régler la vitesse de simulation à
