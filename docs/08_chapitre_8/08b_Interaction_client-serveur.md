@@ -596,7 +596,7 @@ Avant de passer à **PHP**, créons une **page HTML statique**.
 1️⃣ Ouvrir **`localhost`**  
 2️⃣ La page doit afficher : *"Le serveur Apache fonctionne parfaitement !"*   
 
-
+### **<H3 STYLE="COLOR:GREEN;">4.3. Affichage d'une d’une page Web dynamique**</H3>
 
 **<H3 STYLE="COLOR:RED;">Activité n°9.**</H3> Après avoir supprimé le fichier "index.html" préalablement créé dans le répertoire "www" **ET** le fichier "index.php", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
 ```php
@@ -613,29 +613,19 @@ echo '<h1>Bienvenue sur mon site</h1>
  **ATTENTION** à bien sélectionner tous les fichiers.
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°10.**</H3> Ouvrir votre navigateur Web et taper dans la barre d'adresse **"localhost"**. 
+**<H3 STYLE="COLOR:RED;">Activité n°10.**</H3> Ouvrir votre navigateur Web  
 
-On doit avoir une page HTML qui donne l'heure, si on **actualise** la page, **l'heure évolue**. On a donc bien une page dynamique : le serveur PHP crée la page Web au moment où elle est demandée. À chaque fois que la page est actualisée, la page HTML est générée de nouveau. 
+✅ **Tester dans le navigateur**  
+1️⃣ Ouvrir `localhost`    
+2️⃣ La page doit afficher **l’heure actuelle**  
 
-L’extension ".html" a été remplacée par ".php". Au moment de la requête, le programme contenu dans ce fichier a été exécuté et la page HTML a été générée. Dans les 2 cas, le fichier se nomme "index", car par défaut, le serveur prend en compte un fichier nommé "index" ("index.php" ou "index.html" selon les cas).  
+📌 **Si vous actualisez la page, l’heure change** → preuve que **la page est générée dynamiquement** ! 🔄
 
-**Comment ça marche ?** 
+### **<H3 STYLE="COLOR:GREEN;">4.4. Interaction avec un Formulaire en PHP** 🖊️</H3>
 
-- "```$heure = date("H:i");```", "```$heure```" est une variable (en **PHP les variables commencent** par **un "**$**"**), cette variable "contient" une chaîne de caractères qui correspond à l'heure courante 
+Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.  
 
-- **l'instruction "**```echo```**" permet d'afficher la chaîne de caractères** **qui suit l'instruction**. 
 
-Dans  notre  cas,  la  chaîne  de  caractères  est  "```<h1>Bienvenue  sur  mon  site</h1>  <p>Il  est '.$heure.'</p>```" ce qui correspond à du HTML à l'exception de "$heure" qui permet d'afficher le contenu de la variable "```$heure```".  
-
-La page Web générée contiendra le code HTML et le contenu de la variable "$heure".  
-
-**Le point "**.**" est, en PHP, l'opérateur de concaténation** (alors que par exemple en Python, l'opérateur de concaténation est le "+")  
-
-Si un client effectue une requête à 18h23, le serveur enverra au client le code HTML ci-dessous : 
-```html
-<h1>Bienvenue sur mon site</h1> 
-<p>Il est 18h23</p> 
-```
 **<H3 STYLE="COLOR:RED;">Activité n°11.**</H3> Après avoir supprimé le fichier "index.php" préalablement créé dans le répertoire "www", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
 
 ```html
@@ -670,32 +660,18 @@ ATTENTION à bien sélectionner tous les fichiers.
 
 ATTENTION à bien sélectionner tous les fichiers.
 
-**<H3 STYLE="COLOR:RED;">Activité n°13.**</H3> : Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, remplir le formulaire proposé et valider en cliquant sur le bouton "Envoyer"
+**<H3 STYLE="COLOR:RED;">Activité n°13.**</H3> : Ouvrir le navigateur Web 
+✅ **Tester dans le navigateur**  
+1️⃣ Ouvrir `localhost/index.html`  
+2️⃣ Remplir le formulaire et cliquer sur **"Envoyer"**  
+3️⃣ La page doit afficher **"Bonjour [Prénom] [Nom], bienvenue !"**  
 
-**Comment ça marche ?** 
-
-- **Dans la page en HTML** :   
-
-Dans la balise ```<form>``` du code HTML, il y a 2 attributs : « action » et « method ».  
-
-- L’attribut ```action="trait_form.php"```  indique que le client enverra une requête http vers le serveur en cas de click sur le bouton « envoyer ». Pour répondre à cette requête du client, le serveur devra exécuter le programme PHP contenu dans le fichier « trait_form.php ».  
-
-- La ```method="post"``` indique que la méthode utilisée pour effectuer cette requête http est une méthode « POST » . 
-
-Au niveau des deux balises « input » permettant de saisir le nom et le prénom, on voit l’attribut « name »   
-
-- **Dans la page en PHP** :  
-- la ligne ```$n=$\_POST['nom'];``` permet d’attribuer à la variable $n la chaine de caractères qui a été saisie par l’utilisateur dans le formulaire : balise input ayant l’attribut name="nom". Le nom de ```$_POST['nom']``` est directement lié au nom de l’attribut ```name="nom"```.
-- Le principe est le même pour la variable $p : le ```prenom``` de ```$_POST['prenom']``` est directement lié au prenom de l’attribut ```name="prenom"```.
-Un ```$_POST['toto']```  contiendra  la  chaine  de  caractère  saisie  par  l’utilisateur  dans  le  champ correspondant à une balise input possédant un attribut ```name="toto"```. 
-
-- ```echo "<p>Bonjour ".$p." ".$n.", j'espère que vous allez bien.</p>"```  contient l’instruction echo déjà vu précédemment 
-
-Un clic sur le bouton "Envoyer" **déclenche une requête HTTP** vers le serveur et que les informations saisies dans le formulaire sont envoyées vers le serveur (puisqu'il est possible de récupérer ces informations au niveau du code PHP : une fois de plus, le code **PHP est uniquement exécuté du côté serveur**).  
-
-Ces informations transitent entre le client et le serveur selon méthode utilisée par la requête HTTP. Dans l'exemple ci-dessus, la méthode utilisée est la méthode "POST" ("```method="post```"). 
+📌 **Explication** :  
+- **Le formulaire envoie les données en `POST` à `trait_form.php`**  
+- **PHP récupère les données et affiche un message personnalisé** 
 
 
+### **<H3 STYLE="COLOR:GREEN;">4.5. Interaction avec un Formulaire en PHP** 🖊️</H3>
 
 **<H3 STYLE="COLOR:RED;">Activité n°14.**</H3> Modifier les fichiers "index.html" et "trait_form.php" comme suit : 
 
@@ -722,23 +698,35 @@ Ces informations transitent entre le client et le serveur selon méthode utilis�
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°15.**</H3> Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, Saisir le prénom et le nom puis valider en cliquant sur le bouton "Envoyer". **Observer attentivement la barre d'adresse du navigateur. 
+**<H3 STYLE="COLOR:RED;">Activité n°15.**</H3> Ouvrir le navigateur Web 
 
-Cette  fois-ci,  les  informations  du  formulaire  sont  transmises  au  serveur  par  l'intermédiaire  de  l'url  : ```localhost/trait_form.php?nom=tartempion&prenom=tartiflette```
+✅ **Tester et observer l’URL après soumission**  
+➡️ Avec **GET**, les données sont visibles dans l’URL :  
+```
+localhost/trait_form.php?nom=Dupont&prenom=Jean
+```
 
-Dans le cas de l'utilisation d'une méthode "POST" les données issues d'un formulaire sont envoyées au serveur **sans être directement visibles**, alors que dans le cas de l'utilisation d'une méthode "GET", les données **sont visibles** (et accessibles) puisqu'elles sont envoyées par l'intermédiaire de l'url. 
+| **Critère**   | **GET** | **POST** |
+|--------------|--------|---------|
+| **Données visibles dans l’URL ?** | ✅ Oui | ❌ Non |
+| **Utilisation principale** | 🔍 Recherche | 🔐 Formulaires sensibles |
+| **Sécurité** | ⚠️ Moins sécurisé | ✅ Recommandé |
 
-Les données envoyées par l'intermédiaire d'une méthode "GET" peuvent être modifiées directement dans l'url. 
+📌 **Conclusion** :  
+- **GET** est utile pour les **recherches et URL partageables**  
+- **POST** est utilisé pour **les informations sensibles (ex: mots de passe)**  
 
-**<H3 STYLE="COLOR:RED;">Activité n°16.****</H3> Ouvrir le navigateur Web et taper dans la barre d'adresse "localhost". Une fois la page Web affichée dans votre navigateur, Saisir le prénom et le nom puis valider en cliquant sur le bouton "Envoyer". Modifier l'url : "```localhost/trait_form.php?nom=Martin&prenom=Jean-Pierre```", validez votre modification en appuyant sur la touche "Entrée". 
 
-Normalement la page a bien été modifiée : "Bonjour Jean-Pierre Martin, j'espère que vous allez bien." 
 
-Même si dans notre cas cette opération de modification d'URL est inoffensive, il faut bien se douter que dans des situations plus complexes, une telle modification pourrait entrainer des conséquences plus problématiques (piratage). **Il faut donc éviter d'utiliser la méthode "**GET**" pour transmettre les données issues d'un formulaire vers un serveur.** 
+**<H3 STYLE="COLOR:RED;">Activité n°16.**</H3> 
+📌 **Objectif** : Observer les différences entre **les méthodes GET et POST**.
 
-Il est important de bien comprendre que la méthode "POST" **n'offre pas non plus une sécurité absolue** puisque toute personne ayant un bagage technique minimum sera capable de lire les données transmises à l'aide de la méthode "POST" en analysant la requête HTTP, même si ces données ne sont pas directement visibles dans l'URL. Seule l'utilisation du **protocole sécurisé HTTPS** garantit un transfert sécurisé des données entre le client et le serveur (les données sont chiffrées et donc illisibles pour une personne ne possédant pas la clé de déchiffrement). 
+1️⃣ **Tester avec `POST`** et vérifier que les données **ne sont pas visibles dans l’URL**  
+2️⃣ **Tester avec `GET`** et observer l’URL après validation du formulaire  
 
-**<H3 STYLE="COLOR:RED;">Activité n°17****</H3> Fermer le serveur Wamp
+
+
+**<H3 STYLE="COLOR:RED;">Activité n°17**</H3> Fermer le serveur Wamp
 
 📚 **Ressources utiles**  
 - [Introduction à PHP](http://www.phpdebutant.org/article118.php)  
@@ -754,7 +742,7 @@ Il est important de bien comprendre que la méthode "POST" **n'offre pas non plu
 ## **<H2 STYLE="COLOR:BLUE;">5. Exercices<a name="_page13_x40.00_y36.92"></a>**</H2> 
 
 
-**<H3 STYLE="COLOR:RED;">Exercice n°1 :****</H3> Réaliser le visuel du formulaire suivant :
+**<H3 STYLE="COLOR:RED;">Exercice n°1 :**</H3> Réaliser le visuel du formulaire suivant :
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.129.jpeg)
 
@@ -766,7 +754,7 @@ Pour cela :
 - vous proposerez deux types de carte bancaire possibles : 'Visa' et 'Bleue' (carte par défaut). 
 - Attention ! Sans Javascript, votre bouton 'Valider le paiement' sera sans effet.
 
-**<H3 STYLE="COLOR:RED;">Exercice n°2 :****</H3> Expliquer ce que fait ce code. 
+**<H3 STYLE="COLOR:RED;">Exercice n°2 :**</H3> Expliquer ce que fait ce code. 
 ```html
 <form>
 <p> Choix d'une nationalité :</p>
