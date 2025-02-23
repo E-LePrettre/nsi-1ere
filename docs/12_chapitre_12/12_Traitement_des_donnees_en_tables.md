@@ -13,94 +13,84 @@ title: 12 Traitement des données en tables
 
 ## <H2 STYLE="COLOR:BLUE;">**1. Les fichiers CSV et les fichiers JSON<a name="_page0_x40.00_y360.92"></a></h2>**
 
-On trouve souvent des jeux de données en libre accès. Les fichiers correspondants sont souvent proposés aux formats
+Les jeux de données en libre accès sont souvent fournis sous les formats suivants :
 
-- **csv** pour Comma Separated Values,
+- **CSV (Comma Separated Values)** : format simple de fichier texte structurant les données sous forme de tableau, où chaque ligne représente un enregistrement et chaque colonne une variable.
 
-- **json** pour JavaScript Object Notation.
+- **JSON (JavaScript Object Notation)** : format structuré sous forme de paires clé-valeur, utilisé principalement pour les échanges de données entre applications.
 
-Ces deux formats de fichiers permettent de présenter des données textuelles. 
+### <H3 STYLE="COLOR:GREEN;">**1.1. Exemple de format CSV</h3>** 
 
-Voici par exemple les mêmes informations présentées dans chacun des formats :
-
-- Au format CSV :
+Un fichier CSV contenant des albums de musique pourrait être structuré ainsi :
 ```
-Album;groupe;année;classement
-Master of Puppets;Metalica;1986;1
+Album;Groupe;Année;Classement
+Master of Puppets;Metallica;1986;1
 Paranoid;Black Sabbath;1970;2
-Rage against the machine;Rage against the machine;1992;3
-Ride the lightning;Metallica;1984;4
-Rust in peace;Megadeth;1990;5
-Metallica;Metallica;1991;6
-Toxicity;System of a down;2001;7
-reign in blood;Slayer;1986;8
-the number of the beast;Iron maiden;1982;9
-From mars to sirius;Gojira;2005;10
-..and justice for all;Metallica;1988;11
-Mutter;Rammstein;2001;12
-Painkiller;Judas Priest;1990;13
-Powerslave;Iron maiden;1984;14
-Blawater Park;Opeth;2001;15
+Rage Against the Machine;Rage Against the Machine;1992;3
+Ride the Lightning;Metallica;1984;4
 ```
-- Au format JSON
-```
-{ "amis": [
-    {"nom": "Jean","âge": 26,"ville": "Paris","passion": "VTT"},
-    {"nom": "Marion","âge": 28,"ville": "Lyon","passion": "badminton"},
-          ]
+📌 **Remarques :**  
+
+- Les valeurs sont séparées par un **point-virgule (`;`)**, mais d'autres séparateurs comme la **virgule (`,`)** ou la **tabulation (`\t`)** existent.
+
+- En France, le **point-virgule (`;`)** est souvent utilisé contrairement à d'autres pays où la virgule prédomine.  
+
+### <H3 STYLE="COLOR:GREEN;">**1.2. Exemple de format JSON</h3>** 
+
+L'équivalent en JSON du fichier précédent :
+```json
+{
+    "albums": [
+        {"Album": "Master of Puppets", "Groupe": "Metallica", "Année": 1986, "Classement": 1},
+        {"Album": "Paranoid", "Groupe": "Black Sabbath", "Année": 1970, "Classement": 2},
+        {"Album": "Rage Against the Machine", "Groupe": "Rage Against the Machine", "Année": 1992, "Classement": 3},
+        {"Album": "Ride the Lightning", "Groupe": "Metallica", "Année": 1984, "Classement": 4}
+    ]
 }
 ```
+📌 **Remarques :**  
 
-Nous travaillerons désormais avec les fichiers csv. L'exemple précédent permet de remarquer plusieurs choses :
+- JSON est plus structuré et convient aux **applications web** et **bases de données NoSQL**. 
 
-- un fichier csv contient des **données textuelles**,
+- Il permet d’imbriquer des objets et de gérer des types variés (**nombres, chaînes de caractères, booléens, listes…**).  
 
-- les données sont organisées en lignes,
+### <H3 STYLE="COLOR:GREEN;">**1.3. Exemple de format XML</h3>** 
 
-- la première ligne regroupe le nom **des descripteurs** (il y en a quatre ici : nom, âge, ville et passion),
-
-- les autres lignes contiennent **des enregistrements**
-
-- au sein de chaque ligne, les valeurs sont délimitées par un **séparateur** (ici le caractère " ;"), mais les séparateurs peuvent être une tabulation ou une virgule
-
-- les données peuvent être de types différents. 
-
-**Attention** : Le séparateur en France est ; mais ce n'est pas le même dans d'autres pays, ni pour tous les logiciels (soyez vigilants)!
-
-**Remarque** : il existe aussi un autre format pour conserver des données : le format xml pour eXtensible Markup Language qui utilise des balises au même titre que le html :
+Un autre format structuré est le **XML (Extensible Markup Language)** :
+```xml
+<albums>
+    <album>
+        <titre>Master of Puppets</titre>
+        <groupe>Metallica</groupe>
+        <annee>1986</annee>
+        <classement>1</classement>
+    </album>
+</albums>
 ```
-<?xml version="1.0" encoding="UTF-8"?>
-<amis>
-    <personne>
-        <nom>Jean</nom>
-        <âge>26</âge>
-        <ville>Paris</ville>
-        <passion>VTT</passion>
-    </personne>
-    <personne>
-        <nom>Marion</nom>
-        <âge>28</âge>
-        <ville>Lyon</ville>
-        <passion>badminton</passion>
-    </personne>
-</amis>
-```
+📌 **Remarque :** XML est utilisé dans certaines bases de données et échanges de données.
+
+
 ## <H2 STYLE="COLOR:BLUE;">**2. Importation d’un fichier CSV<a name="_page7_x40.00_y36.92"></a></h2>**
 
-### <H3 STYLE="COLOR:GREEN;">**2.1. En liste<a name="_page1_x40.00_y36.92"></a></h3>** 
+### <H3 STYLE="COLOR:GREEN;">**2.1. Lecture d'un fichier CSV en liste simple<a name="_page1_x40.00_y36.92"></a></h3>** 
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:</h3> Lecture et création de liste avec un CSV (délimiteur ;)** : 
+**<H3 STYLE="COLOR:red;">Activité n°1.:</h3> Lire un fichier CSV avec `csv.reader`** : 
+
 ```python
 import csv
-f = open("musique.csv")       			# ouvre le fichier CSV
-donnees = csv.reader(f, delimiter=';')       		# lit et précise le délimiteur
-for row in donnees:                                    	# pour chaque ligne de donnees
-    print(row)                                  	# affiche chaque ligne
-f.close()						# toujours fermer le fichier
+
+f = open("musique.csv", encoding="utf-8")  # Ouvre le fichier CSV avec encodage UTF-8
+donnees = csv.reader(f, delimiter=';')  # Lecture avec séparateur ";"
+for row in donnees:  
+    print(row)  # Affiche chaque ligne
+f.close()  # Toujours fermer le fichier
 ```
+
+
+
 **Attention sur Thonny** (par exemple) il faut enregistrer le fichier python au même endroit que le fichier CSV.
 ```
 >>>
@@ -122,137 +112,217 @@ f.close()						# toujours fermer le fichier
 ['Blawater Park', 'Opeth', '2001', '15']
 ```
 
-Ici le problème est que les données ne sont pas structurées : la première ligne est la ligne des **«descripteurs»** (ou des **«champs»**), alors que les lignes suivantes sont les **valeurs** de ces descripteurs.
+📝 **Problème** : Les données sont des **listes non structurées**. La première ligne correspond aux **descripteurs**, les autres lignes aux **valeurs**.
 
-### <H3 STYLE="COLOR:GREEN;">**2.2. En liste de liste<a name="_page5_x40.00_y36.92"></a></h3>** 
+### <H3 STYLE="COLOR:GREEN;">**2.2. Lecture en liste de liste<a name="_page5_x40.00_y36.92"></a></h3>** 
 
-**<H3 STYLE="COLOR:red;">Activité  n°2.:</h3>  Lecture et création de liste de listes avec un CSV (délimiteur ;)** :
+**<H3 STYLE="COLOR:red;">Activité  n°2.:</h3>  Stocker un fichier CSV sous forme de liste de listes** :
 
 ```python
 import csv
-table=[]
-f = open("musique.csv")       		# ouvre le fichier CSV
-donnees = csv.reader(f, delimiter=';')       	# lit et précise le délimiteur
-for row in donnees:                           # pour chaque ligne de donnees
-    table.append(row)                         # construit la liste de liste
-print(table)                          	# affichage de la liste de liste
-f.close()					# toujours fermer le fichier
+
+table = []
+with open("musique.csv", encoding="utf-8") as f:
+    donnees = csv.reader(f, delimiter=';')  
+    for row in donnees:
+        table.append(row)  # Ajoute chaque ligne à la liste table
+
+print(table)  # Affichage de la liste de listes
 ```
+
+
+
 ```
 >>>
 [['Album', 'groupe', 'annÃ©e', 'classement'], ['Master of Puppets', 'Metalica', '1986', '1'], ['Paranoid', 'Black Sabbath', '1970', '2'], ['Rage against the machine', 'Rage against the machine', '1992', '3'], ['Ride the lightning', 'Metallica', '1984', '4'], ['Rust in peace', 'Megadeth', '1990', '5'], ['Metallica', 'Metallica', '1991', '6'], ['Toxicity', 'System of a down', '2001', '7'], ['reign in blood', 'Slayer', '1986', '8'], ['the number of the beast', 'Iron maiden', '1982', '9'], ['From mars to sirius', 'Gojira', '2005', '10'], ['..and justice for all', 'Metallica', '1988', '11'], ['Mutter', 'Rammstein', '2001', '12'], ['Painkiller', 'Judas Priest', '1990', '13'], ['Powerslave', 'Iron maiden', '1984', '14'], ['Blawater Park', 'Opeth', '2001', '15']]
 ```
+✅ **Avantage** : Structure en **tableau** facilitant l’accès aux données. 
 
-### <H3 STYLE="COLOR:GREEN;">**2.3. En liste de dictionnaires<a name="_page6_x79.00_y408.92"></a></h3>** 
+❌ **Inconvénient** : Il faut manipuler les indices (`table[0]`, `table[1]`...) pour récupérer les données.
+
+### <H3 STYLE="COLOR:GREEN;">**2.3. Lecture en liste de dictionnaires<a name="_page6_x79.00_y408.92"></a></h3>** 
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°3.:</h3> Création de liste de dictionnaires** : 
+**<H3 STYLE="COLOR:red;">Activité n°3.:</h3> Transformer un fichier CSV en liste de dictionnaires** : 
 
 ```python
 import csv
-dico=[]
-f = open("musique.csv")       			# ouvre le fichier CSV
-donnees = csv.DictReader(f, delimiter=';')   	# lit convertit en dico précise le délimiteur
-for row in donnees:                                    # pour chaque ligne de donnees
-    dico.append(row)                                    # construit la liste de dico
-print(dico)                            		# affichage de dico
-f.close()						# toujours fermer le fichier
+
+dico = []
+with open("musique.csv", encoding="utf-8") as f:
+    donnees = csv.DictReader(f, delimiter=';')  
+    for row in donnees:
+        dico.append(row)  
+
+print(dico)  # Affichage de la liste de dictionnaires
 ```
+
 
 ```
 >>>
 [{'Album': 'Master of Puppets', 'groupe': 'Metalica', 'annÃ©e': '1986', 'classement': '1'}, {'Album': 'Paranoid', 'groupe': 'Black Sabbath', 'annÃ©e': '1970', 'classement': '2'}, {'Album': 'Rage against the machine', 'groupe': 'Rage against the machine', 'annÃ©e': '1992', 'classement': '3'}, {'Album': 'Ride the lightning', 'groupe': 'Metallica', 'annÃ©e': '1984', 'classement': '4'}, {'Album': 'Rust in peace', 'groupe': 'Megadeth', 'annÃ©e': '1990', 'classement': '5'}, {'Album': 'Metallica', 'groupe': 'Metallica', 'annÃ©e': '1991', 'classement': '6'}, {'Album': 'Toxicity', 'groupe': 'System of a down', 'annÃ©e': '2001', 'classement': '7'}, {'Album': 'reign in blood', 'groupe': 'Slayer', 'annÃ©e': '1986', 'classement': '8'}, {'Album': 'the number of the beast', 'groupe': 'Iron maiden', 'annÃ©e': '1982', 'classement': '9'}, {'Album': 'From mars to sirius', 'groupe': 'Gojira', 'annÃ©e': '2005', 'classement': '10'}, {'Album': '..and justice for all', 'groupe': 'Metallica', 'annÃ©e': '1988', 'classement': '11'}, {'Album': 'Mutter', 'groupe': 'Rammstein', 'annÃ©e': '2001', 'classement': '12'}, {'Album': 'Painkiller', 'groupe': 'Judas Priest', 'annÃ©e': '1990', 'classement': '13'}, {'Album': 'Powerslave', 'groupe': 'Iron maiden', 'annÃ©e': '1984', 'classement': '14'}, {'Album': 'Blawater Park', 'groupe': 'Opeth', 'annÃ©e': '2001', 'classement': '15'}]
 ```
 
-On récupère le fichier CSV dans une **liste de dictionnaires** qui ont tous les mêmes descripteurs avec la commande **DictReader** de la bibliothèque **csv**.
-A noter que **DictReader** crée une liste de dictionnaires ordonnés !
+✅ **Avantage** : Chaque ligne est convertie en **dictionnaire** avec des **clés explicites**.
 
-### <H3 STYLE="COLOR:GREEN;">**2.4. Application<a name="_page7_x40.00_y304.92"></a></h3>** 
+❌ **Inconvénient** : Utilisation légèrement plus gourmande en mémoire.
 
-**Exploitation graphique**
 
-Nous allons utiliser le module Matplotlib pour illustrer les données de notre fichier csv.
-Pour tracer un nuage de points (par l'instruction plt.plot), Matplotlib requiert :
+## <H2 STYLE="COLOR:BLUE;">**3. Application : Analyse et Visualisation de données CSV<a name="_page7_x40.00_y36.92"></a></h2>**
 
-- une liste X contenant toutes les abscisses des points à tracer.
+### <H3 STYLE="COLOR:GREEN;">**3.1. Tracer un graphique avec `matplotlib`</h3>** 
 
-- une liste Y contenant toutes les ordonnées des points à tracer.
-
-Exemple :
-
+📌 **Exemple de graphique avec Matplotlib**
 ```python
 import matplotlib.pyplot as plt
-X = [0, 1, 3, 6]
-Y = [12, 10, 7, 15]
-plt.plot(X, Y, 'ro') 
+
+X = [0, 1, 3, 6]  # Liste des abscisses
+Y = [12, 10, 7, 15]  # Liste des ordonnées
+
+plt.plot(X, Y, 'ro')  # 'ro' = points rouges
+plt.xlabel("Abscisse")
+plt.ylabel("Ordonnée")
+plt.title("Exemple de nuage de points")
 plt.show()
 ```
-Dans l'instruction plt.plot(X, Y, 'ro') :
+📌 **Explication** :  
+- `plt.plot(X, Y, 'ro')` affiche les points rouges.  
+- `plt.show()` affiche le graphique.  
 
-- X sont les abscisses,
-
-- Y sont les ordonnées,
-- 'ro' signifie :
-
-- qu'on veut des points (c'est le 'o', plus de choix ici).
-
-- qu'on veut qu'ils soient rouges (c'est le 'r' plus de choix ici).
 
 ![](15.png)
 
-**<H3 STYLE="COLOR:red;">Activité n°4.:</h3> Application** : on travaillera avec le fichier metalbands.csv. Comme ce fichier n’est pas encodé en ‘utf-8’ il faut utiliser une autre manière de l’ouvrir  pour pouvoir spécifier l’encodage :
+### <H3 STYLE="COLOR:GREEN;">**3.2. Analyse du fichier `MetalBands.csv`</h3>** 
+
+**<H3 STYLE="COLOR:red;">Activité n°4.:</h3> Analyse de données CSV** : 
+
 
 ```python
 import csv
+
 dico = []
-# ouvrez le fichier en spécifiant l'encodage
-with open("MetalBands.csv", encoding='ISO-8859-1') as f: 
-    # lit et convertit en dictionnaire, précise le délimiteur
+with open("MetalBands.csv", encoding='ISO-8859-1') as f:  
     donnees = csv.DictReader(f, delimiter=',')  
-    for row in donnees:  # pour chaque ligne de donnees
-        dico.append(row)  # construit la liste de dico
-print(dico)  # affichage de dico
-f.close()
+    for row in donnees:
+        dico.append(row)
+
+print(len(dico))  # 1. Nombre de groupes
+print(dico[811])  # 2. Nom du groupe en 812
 ```
-1 Combien de groupes sont présents dans ce fichier ?
+📌 **Explications** :
 
-2 Quel est le nom du groupe en 812
+1️⃣ `len(dico)` : Affiche le nombre de groupes présents.  
 
-3 Combien de groupes se sont formés en 1981. Attention les dates sont ici des chaines de caractères
+2️⃣ `dico[811]` : Affiche le groupe en **812e position** (indexation commence à 0).  
 
-4 Donner la liste des groupes dont le genre est du ‘Melodic death’. 
-**Aide** : il y a 275 groupe
-ATTENTION à tout mettre en minuscule pour ne pas avoir d’ennuis. Pour les supprimer les doublons : on convertit la liste en ensemble (set) avec la fonction set() à placer devant l’instruction
+### <H3 STYLE="COLOR:GREEN;">**3.3. Recherche de groupes par année</h3>** 
 
-5 Afficher sur un graphique tous les groupes de métal, en mettant l’année de formation en abscisse et le nombre de fans en ordonnée.
-Attention à convertir les nombres en entier.
-Cela peut prendre un peu de temps
+**<H3 STYLE="COLOR:red;">Activité n°5.**</h3>  : 
 
-6 Faire apparaitre ensuite (par-dessus) les groupes de ‘Melodic death’ en bleu (‘bo’) et les groupes de Heavy en vert (‘go’). Attention aux majuscules, minuscules => pensez à tout mettre en minuscule
-
-
-
-## <H2 STYLE="COLOR:BLUE;">**3.Tri<a name="_page7"></a></h2>**
-
-Pour exploiter les données, il peut être intéressant de les trier. Une utilisation possible est l’obtention du classement des entrées selon tel ou tel critère. Une autre utilisation vient du fait que la **recherche dichotomique** dans un tableau trié est bien plus efﬁcace que la recherche séquentielle dans un tableau quelconque.
-
-### <H3 STYLE="COLOR:GREEN;">**3.1. Fonction filtre<a name="_page7_x"></a></h3>** 
-
-**<H3 STYLE="COLOR:red;">Activité n°5.:</h3> fonction filtre**: on travaillera avec le fichier metalbands.csv. Créer une fonction groupeGenre qui renvoie une liste contenant les fiches de tous les groupes de métal d’un genre passée en paramètre.
-
-Exemple d'utilisation :
+📌 **Compter les groupes formés en 1981**
+```python
+groupes_1981 = [band for band in dico if band['formed'] == '1981']
+print(f"Nombre de groupes formés en 1981 : {len(groupes_1981)}")
 ```
+📌 **Explication** :
+
+- On **filtre** les groupes avec `formed == '1981'`.
+
+- On affiche la **taille** de la liste filtrée.
+
+### <H3 STYLE="COLOR:GREEN;">**3.4. Liste des groupes de "Melodic Death</h3>** 
+
+**<H3 STYLE="COLOR:red;">Activité n°6.**</h3>  : 
+
+📌 **Lister les groupes en supprimant les doublons**
+```python
+genres = set()  # Utilisation d'un ensemble pour éviter les doublons
+for band in dico:
+    if "melodic death" in band['genre'].lower():
+        genres.add(band['band_name'])  
+
+print(genres)
+```
+📌 **Explication** :
+
+- `band['genre'].lower()` convertit en **minuscule** pour éviter les erreurs de casse.
+
+- `set()` supprime automatiquement les doublons.
+
+### <H3 STYLE="COLOR:GREEN;">**3.5. Visualisation des groupes sur un graphique</h3>** 
+
+**<H3 STYLE="COLOR:red;">Activité n°7.**</h3>  : 
+
+📌 **Tracer le nombre de fans en fonction de l'année de formation**
+```python
+import matplotlib.pyplot as plt
+
+X = []  # Années
+Y = []  # Nombre de fans
+
+for band in dico:
+    if band['formed'].isdigit() and band['fans'].isdigit():
+        X.append(int(band['formed']))  
+        Y.append(int(band['fans']))  
+
+plt.plot(X, Y, 'ro', label="Tous les groupes")  # Points rouges
+plt.xlabel("Année de formation")
+plt.ylabel("Nombre de fans")
+plt.title("Évolution du nombre de fans des groupes de métal")
+plt.legend()
+plt.show()
+```
+
+
+## <H2 STYLE="COLOR:BLUE;">**3.Tri des données<a name="_page7"></a></h2>**
+
+L’exploitation des données passe souvent par un **tri** afin de faciliter la recherche et l’analyse des informations.
+
+📌 **Pourquoi trier ?** 
+
+- Obtenir un classement (exemple : tri des groupes de métal par popularité).  
+
+- Optimiser les recherches (exemple : la **recherche dichotomique** est plus efficace sur un tableau trié).  
+
+
+
+### <H3 STYLE="COLOR:GREEN;">**3.1. Fonction filtre : rechercher un groupe selon son genre<a name="_page7_x"></a></h3>** 
+
+**<H3 STYLE="COLOR:red;">Activité n°8.:</h3> Développer une fonction `groupeGenre()` qui filtre les groupes par genre musical.**: 
+
+**Exemple d'utilisation :**
+```python
 >>> print(groupeGenre('Extreme folk'))
-[{'': '17', 'band_name': 'Ensiferum', 'fans': '1879', 'formed': '1995', 'origin': 'Finland', 'split': '1995', 'style': 'Extreme folk'}, {'': '67', 'band_name': 'Ensiferum', 'fans': '1879', 'formed': '1995', 'origin': 'Finland', 'split': '1995', 'style': 'Extreme folk'}, {'': '113', 'band_name': 'Finntroll', 'fans': '967', 'formed': '1997', 'origin': 'Finland', 'split': '1997', 'style': 'Extreme folk'}, {'': '652', 'band_name': 'Brymir', 'fans': '108', 'formed': '2006', 'origin': 'Finland', 'split': '-', 'style': 'Extreme folk'}]
+[{'band_name': 'Ensiferum', 'fans': '1879', 'formed': '1995', 'origin': 'Finland', 'style': 'Extreme folk'}, 
+ {'band_name': 'Finntroll', 'fans': '967', 'formed': '1997', 'origin': 'Finland', 'style': 'Extreme folk'}, 
+ {'band_name': 'Brymir', 'fans': '108', 'formed': '2006', 'origin': 'Finland', 'style': 'Extreme folk'}]
 ```
-Attention aux majuscules, minuscules
+📌 **Attention** : Vérifier les majuscules/minuscules pour éviter les erreurs.
+
+🔹 **Implémentation de la fonction `groupeGenre()`**
+```python
+def groupeGenre(genre_recherche):
+    """Retourne la liste des groupes appartenant au genre donné."""
+    genre_recherche = genre_recherche.lower()  # Normalisation en minuscules
+    groupes = [band for band in dico if band['style'].lower() == genre_recherche]
+    return groupes
+
+# Exemple d'utilisation
+print(groupeGenre('Extreme folk'))
+```
 
 
-### <H3 STYLE="COLOR:GREEN;">**3.2. Fonction tri<a name="_page7_x40.00_y"></a></h3>** 
 
-On ne peut pas directement trier le tableau précédent… car cela ne veut rien dire. Il faut indiquer selon quels critères on veut effectuer ce tri.
-Pour cela, on appelle la fonction **sorted()**  ou la méthode **.sort()** , avec l’argument supplémentaire **key** qui est une fonction renvoyant la valeur utilisée pour le tri.
+### <H3 STYLE="COLOR:GREEN;">**3.2. Fonction de tri<a name="_page7_x40.00_y"></a></h3>** 
+
+Le tri permet d'ordonner les données selon un critère donné.  
+
+- `sorted()` retourne une **nouvelle liste triée**.  
+
+- `.sort()` trie la **liste en place** (modifie la liste originale).  
+
+
 
 La méthode **.sort()**  trie la liste en place, alors que la fonction **sorted()** renvoie une **nouvelle liste** correspondant la liste triée, la liste initiale étant laissée intacte.
 
@@ -268,201 +338,159 @@ def age(personnage):
     return int(personnage["age estimé"])
 ```
 
-```
->>> age(Simpsons[0])
-10
-```
-La création de cette fonction age va nous permettre de spécifier une clé de tri, par le paramètre key :
-Tri d'un dictionnaire  
-```
->>> triSimpsons = sorted(Simpsons, key=age)
->>> triSimpsons
-    [{'Prenom': 'Maggie', 'age estimé': '1'},
-     {'Prenom': 'Lisa', 'age estimé': '8'},
-     {'Prenom': 'Bart', 'age estimé': '10'},
-     {'Prenom': 'Marge', 'age estimé': '37'},
-     {'Prenom': 'Homer', 'age estimé': '38'}]
-```
-On peut aussi inverser l'ordre de tri :
-```
->>> triSimpsons = sorted(Simpsons, key=age, reverse=True)
->>> triSimpsons
-    [{'Prenom': 'Homer', 'age estimé': '38'},
-     {'Prenom': 'Marge', 'age estimé': '37'},
-     {'Prenom': 'Bart', 'age estimé': '10'},
-     {'Prenom': 'Lisa', 'age estimé': '8'},
-     {'Prenom': 'Maggie', 'age estimé': '1'}]
+🔹 **Exemple de tri d'un dictionnaire**  
+```python
+Simpsons = [{"Prenom": "Bart", "age": "10"},
+           {"Prenom": "Lisa", "age": "8"},
+           {"Prenom": "Maggie", "age": "1"},
+           {"Prenom": "Homer", "age": "38"},
+           {"Prenom": "Marge", "age": "37"}]
+
+def age(personnage):
+    return int(personnage["age"])  # Conversion en entier
+
+# Tri des personnages par âge croissant
+triSimpsons = sorted(Simpsons, key=age)
+
+# Tri par âge décroissant
+triSimpsonsDesc = sorted(Simpsons, key=age, reverse=True)
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°6.:**</h3> on travaillera avec le fichier metalbands.csv. Trier les noms des groupes par nombre de fans décroissants et afficher les groupes qui ont plus de 2000 fans. 
+**<H3 STYLE="COLOR:red;">Activité n°9.:</h3>Trier les groupes par nombre de fans (ordre décroissant)** 
+
+🎯 **Objectif** : Afficher les groupes ayant **plus de 2000 fans**, sans doublon.
+
+```python
+def tri_par_fans(dico):
+    """Trie les groupes par nombre de fans en ordre décroissant et affiche ceux avec +2000 fans."""
+    fans_sorted = sorted(dico, key=lambda x: int(x['fans']), reverse=True)  # Tri décroissant
+    groupes_uniques = set()  # Pour éviter les doublons
+
+    for band in fans_sorted:
+        if int(band['fans']) > 2000 and band['band_name'] not in groupes_uniques:
+            print(f"{band['band_name']} - {band['fans']} fans")
+            groupes_uniques.add(band['band_name'])  # Ajout dans l'ensemble
+
+# Exécution
+tri_par_fans(dico)
+```
+📌 **Aide** : Il y a **13 groupes** ayant plus de 2000 fans.
 
 
-On va faire apparaitre la liste avec une seule fois chaque groupe
-**Aide** il y a 13 groupes
 
-**<H3 STYLE="COLOR:red;">Activité n°7.:**</h3> on travaillera avec le fichier metalbands.csv. Trier les noms des groupes par année de formation et afficher les groupes qui se sont formés entre 1980 compris et 1985 compris.
+**<H3 STYLE="COLOR:red;">Activité n°10.:</h3> Trier les groupes par année de formation (1980-1985)**
 
-On va faire apparaitre la liste avec une seule fois chaque groupe
-**Aide** il y a 240 groupes
+🎯 **Objectif** : Afficher les groupes créés entre **1980 et 1985**, sans doublon.
 
-## <H2 STYLE="COLOR:BLUE;">**4.Fusion de tables<a name="_page12"></a></h2>**
+```python
+def groupes_1980_1985(dico):
+    """Retourne la liste des groupes formés entre 1980 et 1985."""
+    groupes_sorted = sorted(dico, key=lambda x: int(x['formed']))  # Tri par année croissante
+    groupes_uniques = set()
 
-On considère dans ce sujet les trois fichiers csv décrits ci-dessous :
-countries.csv contient des informations décrivant les pays :
+    for band in groupes_sorted:
+        if 1980 <= int(band['formed']) <= 1985 and band['band_name'] not in groupes_uniques:
+            print(f"{band['band_name']} - {band['formed']}")
+            groupes_uniques.add(band['band_name'])  # Évite les doublons
 
--   CountryCode : le code du pays (texte, clé primaire)
+# Exécution
+groupes_1980_1985(dico)
+```
+📌 **Aide** : Il y a **240 groupes** correspondant à ces critères.
 
--	Name : le nom du pays (texte)
 
--	Continent : le continent du pays (texte)
 
--	SurfaceArea : la surface du pays (nombre décimal)
+## <H2 STYLE="COLOR:BLUE;">**4.Fusion de tables : Croisement des données CSV<a name="_page12"></a></h2>**
 
--	Population : la population du pays (entier)
+Nous disposons de **trois fichiers CSV** contenant des informations sur les pays, langues et villes :
 
--	Capital : la capitale du pays (nombre entier correspondant à un ID dans le fichier cities.csv)
+1. **countries.csv** (pays) 
 
--	d'autres descripteurs qui ne nous intéressent pas ici...
+2. **languages.csv** (langues parlées)  
 
-languages.csv contient les informations sur les langues parlées dans chaque pays :
+3. **cities.csv** (villes)  
 
--	CountryCode : le code du pays (texte)
 
--	Language : la langue concernée par cette entrée (texte)
 
--	IsOfficial : cette langue est-elle officielle dans ce pays ? (texte, T pour True, F pour False)
-
--	Percentage : le pourcentage de locuteurs dans le pays (nombre décimal)
-
-cities.csv contient des informations décrivant des villes :
-
--	ID : l'identifiant de la ville (entier)
-
--	Name : le nom de la ville (texte)
-
--	code : le code du pays dans lequel est situé la ville (texte)
-
--	District : la région d'appartenance de la ville (texte)
-
--	Population : la population de la ville (entier)
-
-**<H3 STYLE="COLOR:red;">Activité n°8.:</h3> ouverture des tables** :  
+**<H3 STYLE="COLOR:red;">Activité n°11:</h3> Ouverture et chargement des fichiers CSV** :  
 ```python
 import csv
-pays=[]
-f = open("countries.csv")       			
-donnees = csv.DictReader(f, delimiter=',')   	
-for row in donnees:                                    
-    pays.append(row)                                   
-print(pays)                            		
-f.close()	
 
-langues=[]
-f = open("languages.csv")       			
-donnees = csv.DictReader(f, delimiter=',')   	
-for row in donnees:                                    
-    langues.append(row)                                   
-print(langues)                            		
-f.close()	
+# Chargement du fichier countries.csv
+pays = []
+with open("countries.csv", encoding="utf-8") as f:
+    donnees = csv.DictReader(f, delimiter=',')
+    for row in donnees:
+        pays.append(row)
 
-villes=[]
-f = open("cities.csv")       			
-donnees = csv.DictReader(f, delimiter=',')   	
-for row in donnees:                                    
-    villes.append(row)                                   
-print(villes)                            		
-f.close()		
+# Chargement du fichier languages.csv
+langues = []
+with open("languages.csv", encoding="utf-8") as f:
+    donnees = csv.DictReader(f, delimiter=',')
+    for row in donnees:
+        langues.append(row)
+
+# Chargement du fichier cities.csv
+villes = []
+with open("cities.csv", encoding="utf-8") as f:
+    donnees = csv.DictReader(f, delimiter=',')
+    for row in donnees:
+        villes.append(row)
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°9.:</h3> Langues parlées dans chaque pays** :  
-Quelles sont les langues parlées en Haïti ? Pour le savoir il faut :
 
-- parcourir la liste pays jusqu'à trouver le code de Haïti (orthographié Haiti dans la liste pays),
+**<H3 STYLE="COLOR:red;">Activité n°12.:</h3> Rechercher les langues parlées en Haïti** :  
 
-- parcourir la liste langues et en extraire les valeurs correspondant à ce code.
-
-**Langues parlées en Haïti**
-
-Compléter le code ci-dessous permettant de déterminer les langues parlées en Haïti.
-```python
-i_haiti = 0
-while pays[i_haiti]["Name"]... "Haiti":
-    i_haiti = ...
-
-code = pays[i_haiti][...]
-
-langues_haiti = []
-for entree in langues:
-    if entree[...] == code:
-        langues_haiti.append(entree)
-
-for langue in langues_haiti:
-    print(langue)
-```
-Le descripteur CountryCode permet donc de faire le lien entre les deux listes pays et langues.
-Utilisons cette relation afin de déterminer les langues parlées dans un pays quelconque.
-
-**Langues parlées dans un pays**
-
-On demande d'écrire deux fonctions :
-
-- code_pays prend en argument la liste des pays ainsi que le nom d'un pays et renvoie son code ;
-
-- langues_parlees prend en argument les listes des données des pays et celle des langues (arguments pays et langues) ainsi que le nom d'un pays (nom) et renvoie la liste des noms des langues parlées dans ce pays.
-
-Exemples :
-```
->>> code_pays(pays, "Haiti")
-"HTI"
->>> langues_parlees(pays, langues, "Haiti")
-['French', 'Haiti Creole']
-```
+🎯 **Objectif** : Trouver les langues parlées en Haïti à partir du code pays.
 
 ```python
+# Trouver le code de Haïti
 def code_pays(pays, nom):
-    """Renvoie le code d'un pays"""
-    ...
+    """Renvoie le code du pays donné."""
+    for country in pays:
+        if country["Name"] == nom:
+            return country["CountryCode"]
+    return None  # Si le pays n'est pas trouvé
 
-
+# Trouver les langues parlées
 def langues_parlees(pays, langues, nom):
-    """Renvoie la liste des noms des langues parlées dans le pays indiqué par son nom"""
-    ...
+    """Renvoie la liste des langues parlées dans un pays donné."""
+    code = code_pays(pays, nom)
+    return [langue["Language"] for langue in langues if langue["CountryCode"] == code]
 
-assert sorted(langues_parlees(pays, langues, "Haiti")) == ['French', 'Haiti Creole']
+# Exécution
+print(langues_parlees(pays, langues, "Haiti"))
 ```
+📌 **Exemple de sortie** : `['French', 'Haiti Creole']`
 
-**<H3 STYLE="COLOR:red;">Activité n°10.:</h3> Capitales** : 
-Quelle est la capitale d'Haïti ? Là encore, il faut :
 
-- parcourir la liste des pays jusqu'à trouver l'entrée correspondant à Haïti,
+**<H3 STYLE="COLOR:red;">Activité n°13.:</h3> Trouver la capitale d’un pays** : 
 
-- repérer le code de la capitale correspondante,
-
-- parcourir la liste des villes jusqu'à trouver le code cherché.
-
-Nous allons effectuer ces actions pour chacun des pays présents dans la liste. La capitale étant trouvée, nous ajouterons une nouvelle clé CapitalName au dictionnaire du pays. La valeur associée sera le nom de la capitale obtenu.
-
-Certains des « pays » listés n'en sont pas vraiment et n'ont donc pas de capitale. C'est par exemple le cas de l'Antarctique.
-Lors de l'import des données, on leur a associé la valeur -1 à la clé Capital.
-
-Associer les capitales aux pays
-Compléter le code ci-dessous afin d'ajouter à chaque dictionnaire correspondant à un pays une nouvelle entrée CapitalName contenant le nom de sa capitale.
-On utilisera la chaîne vide "" comme valeur pour les « pays » sans capitale.
-
-Ainsi :
-
-- le dictionnaire correspondant à la France contiendra un nouveau couple "CapitalName": "Paris",
-
-- celui de l'Antarctique "CapitalName": "".
+🎯 **Objectif** : Associer chaque pays à sa capitale.  
 
 ```python
-# Compléter ici
+# Associer les capitales aux pays
+for country in pays:
+    capital_id = country["Capital"]
+    capital_name = ""
 
-print(f"La capitale de la {pays[72]['Name']} est {pays[72]['CapitalName']}.")
+    for city in villes:
+        if city["ID"] == capital_id:
+            capital_name = city["Name"]
+            break  # Dès qu'on trouve la capitale, on arrête
+
+    country["CapitalName"] = capital_name  # Ajout au dictionnaire
+
+# Exécution pour Haïti
+print(f"La capitale de {pays[72]['Name']} est {pays[72]['CapitalName']}.")
 ```
+📌 **Cas particulier** : Certains pays comme l'**Antarctique** n'ont pas de capitale.
 
- Merci à Nicolas Revéret
+
+
+
+Merci à Nicolas Revéret
 
 ## <H2 STYLE="COLOR:BLUE;">**5.  Projet (démarche d’investigation)<a name="_page13_x40.00_y36.92"></a></h2>** 
 
