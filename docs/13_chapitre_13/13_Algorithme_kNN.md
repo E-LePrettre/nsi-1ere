@@ -14,16 +14,22 @@ title: 13 Algorithme des k plus proches voisins
 
 Le **machine learning** (apprentissage automatique) est une discipline de l'intelligence artificielle où l'ordinateur apprend à partir de données pour faire des prédictions ou des décisions. Il existe **trois grandes catégories** d’apprentissage machine :
 
-1. **Apprentissage supervisé**  
+1 **Apprentissage supervisé**  
+
    - On fournit à l’algorithme des exemples avec leurs réponses correctes.  
+
    - Exemple : Prédiction de la météo, reconnaissance d’images, diagnostic médical.
 
-2. **Apprentissage non supervisé**  
+2 **Apprentissage non supervisé**  
+
    - L’algorithme analyse un grand nombre de données non étiquetées pour repérer des tendances.  
+
    - Exemple : Regroupement de clients en fonction de leur comportement d’achat.
 
-3. **Apprentissage par renforcement**  
+3 **Apprentissage par renforcement**  
+
    - Un agent prend des décisions et apprend grâce à des récompenses ou punitions.  
+   
    - Exemple : L’IA jouant aux échecs ou au jeu de go (AlphaZero).
 
 Le **deep learning** (apprentissage profond) est un sous-domaine du machine learning basé sur des réseaux de neurones profonds.
@@ -260,7 +266,7 @@ On fixe **k = 10**, mais cette fois, on **n’utilise que la deuxième caractér
 
 #### <H4 STYLE="COLOR:MAGENTA;"> **1.8.3. Comment<a name="_page5_x40.00_y520.92"></a> représenter ce type de donnée en Python avec matplotlib** </H4>
 
-’algorithme k-NN est plus compréhensible lorsqu’il est visualisé.  
+L’algorithme k-NN est plus compréhensible lorsqu’il est visualisé.  
 
 💡 **Vérification des bibliothèques nécessaires :**  
 Avant d’exécuter les scripts suivants, vérifiez que les bibliothèques **Matplotlib** et **Scikit-learn** sont installées sur votre éditeur knn (Thonny par exemple):
