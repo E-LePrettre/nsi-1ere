@@ -846,7 +846,7 @@ $\text{Signe} \quad Exposant \quad Mantisse$
 
 ✅ **Résultat binaire** :
 
-$\textcolor{red}{1} \quad \textcolor{blue}{10000010} \quad \textcolor{green}{01000100000000000000000}$
+$1 \quad 10000010 \quad 01000100000000000000000$
 
 
 ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.095.jpeg)
