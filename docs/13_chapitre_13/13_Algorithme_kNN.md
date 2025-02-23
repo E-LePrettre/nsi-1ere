@@ -10,264 +10,361 @@ title: 13 Algorithme des k plus proches voisins
 3. [**PROBLEME : ANALYSE DE TEXTE**](#_page14_x40.00_y36.92)
 
 ## <H2 STYLE="COLOR:BLUE;"> **1. Algorithmes<a name="_page0_x61.00_y296.92"></a> des k plus proches voisins (k Nearest Neighbors : k-NN)** </H2>
-### <H3 STYLE="COLOR:GREEN;"> **1.1. Le<a name="_page0_x40.00_y318.92"></a> machine learning** </H3>
+### <H3 STYLE="COLOR:GREEN;"> **1.1. Introduction au Machine Learning<a name="_page0_x40.00_y318.92"></a>** </H3>
 
-Le **machine learning**, ou **apprentissage automatique**, est une technique où l'ordinateur apprend à partir de données. On donne à l'ordinateur beaucoup d'exemples, et il apprend à reconnaître des modèles pour faire des prédictions ou des décisions basées sur de nouvelles données.
+Le **machine learning** (apprentissage automatique) est une discipline de l'intelligence artificielle où l'ordinateur apprend à partir de données pour faire des prédictions ou des décisions. Il existe **trois grandes catégories** d’apprentissage machine :
 
-Il y a trois catégories d’apprentissage machine : 
+1. **Apprentissage supervisé**  
+   - On fournit à l’algorithme des exemples avec leurs réponses correctes.  
+   - Exemple : Prédiction de la météo, reconnaissance d’images, diagnostic médical.
 
-- **Apprentissage supervisé** : On montre à l'ordinateur des exemples et leurs réponses correctes. Ensuite, l'ordinateur apprend à faire la même chose pour de nouvelles données. Par exemple, cet apprentissage est utilisé pour prédire la météo.
+2. **Apprentissage non supervisé**  
+   - L’algorithme analyse un grand nombre de données non étiquetées pour repérer des tendances.  
+   - Exemple : Regroupement de clients en fonction de leur comportement d’achat.
 
-  
+3. **Apprentissage par renforcement**  
+   - Un agent prend des décisions et apprend grâce à des récompenses ou punitions.  
+   - Exemple : L’IA jouant aux échecs ou au jeu de go (AlphaZero).
 
-Le **deep learning** (apprentissage profond) est une des méthodes d’apprentissage supervisé. Les sorties de chaque module servent d’entrée aux suivants. On parle alors de réseaux de neurones artificiels. 
+Le **deep learning** (apprentissage profond) est un sous-domaine du machine learning basé sur des réseaux de neurones profonds.
 
-- **Sans supervision** : l’algorithme est **laissé à lui-même**, alors qu’on lui fournit un grand nombre de données  non  étiquetées.  La  machine  y  repère  des  corrélations  pour  construire  elle-même  son algorithme de classification. Par exemple, l’algorithme de **reconnaissance faciale de Facebook** qui identifie les personnes sur les photos est un exemple d’apprentissage machine sans supervision. 
-- **Par renforcement** : un programme informatique interagit avec un environnement dynamique dans lequel il doit atteindre un but. Le programme-apprenti reçoit **des récompenses ou des punitions** pendant qu’il navigue dans l’espace du problème et qu’il apprend à identifier le comportement le plus efficace. C’est ce type d’apprentissage qui a permis au programme Alpha Zero de Google de battre le champion de jeu de go Lee Sedol en 2016. 
+ 
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.008.jpeg)
 
 ### <H3 STYLE="COLOR:GREEN;"> **1.2. Le<a name="_page1_x40.00_y258.92"></a> principe de l’algorithme k-NN** </H3>
 
-L'*algorithme k-NN* est un type d'apprentissage où l'ordinateur utilise des exemples avec des étiquettes pour apprendre à classer de nouvelles données. 
+L’algorithme **k-NN (k Nearest Neighbors)** est un **algorithme de classification** basé sur la proximité entre les points. Il est utilisé par des services comme **Amazon, Netflix ou Spotify** pour recommander du contenu.
 
-Il est par exemple utilisé par des entreprises d’Internet comme Amazon, Netflix, Spotify ou iTunes afin de prévoir si on est intéressé ou non par un produit. 
+**Principe :**
+
+1. On calcule les distances entre la donnée à classer et les données existantes.
+
+2. On sélectionne les **k** points les plus proches.
+
+3. On attribue à la nouvelle donnée la classe majoritaire parmi ces **k** points.
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.009.png)
 
-Voici le principe de l’algorithme des k plus proches voisins : 
+💡 **Important** : Le choix de la **valeur de k** est crucial. Une valeur trop petite risque de rendre l’algorithme sensible au bruit, alors qu’une valeur trop grande peut brouiller la classification.
 
-- On calcule les distances entre la donnée à classer *u* et chaque donnée appartenant à l’ensemble E des données à l’aide de la fonction d . 
-- On retient les k données du jeu de données E, les plus proches de la donnée *u* à classer. 
-- On attribue à *u* la classe qui est la plus fréquente parmi les k données les plus proches. 
 
-On comprend bien que la notion de distance est un élément central de cet algorithme. 
+### <H3 STYLE="COLOR:GREEN;"> 1.3. **Distances entre les points<a name="_page1_x40.00_y681.92"></a>** </H3>
 
-### <H3 STYLE="COLOR:GREEN;"> 1.3. **Distances<a name="_page1_x40.00_y681.92"></a>** </H3>
+L’algorithme **k-NN repose sur la notion de distance**. L’une des plus courantes est la **distance euclidienne** :
 
-La **distance Euclidienne** est une façon de mesurer à quel point deux points sont éloignés dans un espace. 
+$
+\text{distance}(P_1, P_2) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
+$
 
-Par exemple, pour deux points avec des coordonnées $\left(x_1,y_1\right)$ et $\left(x_2,y_2\right)$,\ la distance Euclidienne est la ligne droite entre eux.t  
+Autres distances possibles :
 
-distance(données<sub>1</sub>,  donnée<sub>2</sub>)=$\sqrt{(x1-x2)²+(y1- y2)²}$
+- **Manhattan** : $|x_1 - x_2| + |y_1 - y_2|$
+
+- **Tchebychev** : $\max(|x_1 - x_2|, |y_1 - y_2|)$
+
+
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:red;">Activité n°1. : Calcul de distance euclidienne**</H3>
+**<H3 STYLE="COLOR:red;">Activité n°1. </H3>: Calcul de distance euclidienne**
 
-Ecrire une fonction qui permet de générer au hasard une liste de points à coordonnées entières : 
-- Abscisses comprises entre xmin et xmax 
--  Ordonnées comprises entre ymin et ymax 
-Le nombre de points de cette liste sera généré au hasard entre nbmin et nbmax (paramètre de la fonction). 
-
-```python
-from random import randint
-xmin, xmax = -20, 20
-ymin, ymax = -20, 20
-
-
-def genereListePoints(nbmin, nbmax):
-    """
-    nbmin -- entier
-    nbmax -- entier
-    précondition: nbmin < nbmax
-
-    Renvoie une liste de couples d'entiers,
-    le premier élément de chaque couple
-    est compris entre xmin et xmax (au sens large),
-    le second élément de chaque couple est
-    compris entre ymin et ymax (au sens large).
-    Les couples (x, y) sont générés au hasard.
-    Le nombre de couples est généré au hasard, entre nbmin et nbmax.
-    """
-    
-    # à compléter
-```
-
-Tester votre fonction avec l’appel : 
-```genereListePoints(5, 15)``` permet de retourner une liste de coordonnées de points contenant entre 5 et 15 points 
-
-
-
-Écrire une fonction distance prenant en paramètres 4 nombres x1, y1, x2, y2 et renvoyant la distance euclidienne entre les points M(x1,y1) et A(x2,y2). 
+Implémentez une fonction Python pour calculer la distance entre deux points :
 
 ```python
 from math import sqrt
 
-def distance(x1,y1,x2,y2):
-    """
-    Renvoie la distance euclidienne entre A(a,b) et M(x,y)
-    """
-    # à compléter
+def distance(x1, y1, x2, y2):
+    """Renvoie la distance euclidienne entre deux points."""
+    return sqrt((x1 - x2)**2 + (y1 - y2)**2)
+
+# Test
+print(distance(4, 0, 1, 4))  # Résultat attendu : 5.0
 ```
 
-Exemple d'appel (distance entre les points A(4,0) et B(1,4)): 
-```
->>> distance(4, 0, 1, 4) 
-5.0 
+### **<H3 STYLE="COLOR:GREEN;"> 1.4. Génération aléatoire de points** </H3>
+
+Nous allons générer des **points aléatoires** dans un espace défini.
+
+**<H3 STYLE="COLOR:red;">Activité 2 </H3>: Génération d’une liste de points**
+
+```python
+from random import randint
+
+xmin, xmax = -20, 20
+ymin, ymax = -20, 20
+
+def genereListePoints(nbmin, nbmax):
+    """Génère une liste de points avec coordonnées aléatoires."""
+    nb_points = randint(nbmin, nbmax)
+    return [(randint(xmin, xmax), randint(ymin, ymax)) for i in range(nb_points)]
+
+# Test
+print(genereListePoints(5, 15))
 ```
 
-Écrire une fonction python ```plusProcheVoisin(listePoints, x, y)``` prenant en paramètres: 
--  une liste de points telle que celle de l'activité 1 ci-dessus. 
--  un nouveau point A de coordonnées entières (abscisse entre xmin et xmax et ordonnée entre ymin et ymax). 
+### **<H3 STYLE="COLOR:GREEN;"> 1.5. Trouver le plus proche voisin** </H3>
 
-et renvoyant le point de la liste qui est le plus proche de A. 
+**<H3 STYLE="COLOR:red;">Activité 3 </H3>: Trouver le point le plus proche d’un point donné**
+
 ```python
 def plusProcheVoisin(listePoints, x, y):
     """
-    listePoints -- liste de points à coordonnées entières
-    x -- entier entre xmin et xmax
-    y -- entier entre ymin et ymax
+    listePoints -- liste de tuples représentant les points (x, y)
+    x -- coordonnée x du point cible
+    y -- coordonnée y du point cible
 
-    Renvoie le point de la liste listePoints le plus proche de (x,y)
+    Objectif :
+    Trouver et retourner le point de listePoints qui est le plus proche de (x, y).
     """
-    distance_min = inf # initialisation à +infini
-    # à compléter
+
+    # Étape 1 : Initialisation
+    point_le_plus_proche = None  # Pour stocker le point le plus proche
+    distance_minimale = float('inf')  # Commence avec une distance très grande
+
+    # Étape 2 : Parcourir chaque point de la liste
+    for (x_point, y_point) in listePoints:
+        # Étape 3 : Calculer la distance entre ce point et (x, y)
+        d = distance(x, y, x_point, y_point)
+
+        # Étape 4 : Vérifier si cette distance est la plus petite trouvée jusqu'à présent
+        if d < distance_minimale:
+            distance_minimale = d  # Mettre à jour la distance minimale
+            point_le_plus_proche = (x_point, y_point)  # Mettre à jour le point le plus proche
+
+    # Étape 5 : Retourner le point ayant la plus petite distance
+    return point_le_plus_proche
+
+# Test
+liste = genereListePoints(5, 15)
+point_cible = (5, 5)
+print("Point le plus proche de", point_cible, ":", plusProcheVoisin(liste, *point_cible))
 ```
 
-### <H3 STYLE="COLOR:GREEN;"> **1.4. Présentation<a name="_page3_x40.00_y36.92"></a> de l’algorithme des k plus proches voisins** </H3>
 
-On considère un jeu de données constitué de la façon suivante : 
-- les données sont réparties suivant deux types : le type 1 et le type 2 
-- les données n'ont que deux caractéristiques 
+### <H3 STYLE="COLOR:GREEN;"> **1.6. Représentation graphique des points<a name="_page3_x40.00_y36.92"></a>** </H3>
 
-Voici une représentation de ces données : 
+
+**<H3 STYLE="COLOR:red;">Activité 4 </H3>: Visualisation avec Matplotlib**
+
+```python
+import matplotlib.pyplot as plt
+
+# Points de type 1
+x1 = [1, 3, 8, 13]
+y1 = [28, 27.2, 37.6, 40.7]
+
+# Points de type 2
+x2 = [2, 3, 10, 15]
+y2 = [30, 26, 39, 35.5]
+
+plt.axis([0, 15, 0, 50])
+plt.xlabel('Caractéristique 1')
+plt.ylabel('Caractéristique 2')
+plt.title('Représentation des deux types')
+
+plt.scatter(x1, y1, label='Type 1', color='red')
+plt.scatter(x2, y2, label='Type 2', color='blue')
+
+plt.legend()
+plt.grid()
+plt.show()
+```
+
+### **<H3 STYLE="COLOR:GREEN;"> 1.7. Présentation de l’algorithme des k plus proches voisins**</h3>
+
+L’algorithme des **k plus proches voisins** (k-Nearest Neighbors, k-NN) est une méthode d’apprentissage supervisé qui permet de classer une nouvelle donnée en fonction des échantillons déjà connus.  
+
+**Principe de fonctionnement**
+
+1. On dispose d’un **jeu de données** comprenant des éléments appartenant à différentes **catégories**. Chaque élément est décrit par plusieurs caractéristiques.  
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.013.jpeg)
 
-Il faut introduire une **nouvelle donnée** (appelée cible) avec ses deux caractéristiques.  
+2. On introduit une **nouvelle donnée** (appelée cible) dont on souhaite **déterminer la catégorie**.  
 
-Dans un premier temps, il faut fixer le nombre de voisins. On choisit k = 6. C’est un choix arbitraire. Voici une nouvelle représentation avec la cible et la recherche des 
-
-6 voisins : 
+3. On choisit un **nombre de voisins** à considérer : **k** (par exemple, k = 6).  
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.014.jpeg)
 
-Parmi ses 6 voisins, il y a 2 voisins de type 1 et 4 voisins de type 2. Il est donc probable que la cible soit de type 2. On a choisi la **distance Euclidienne** mais on aurait pu choisir une **autre distance (**Manhattan, Tchebychev…) **.** 
+4. On calcule la **distance** entre la cible et chaque élément du jeu de données (le plus souvent la **distance euclidienne**). 
 
-### <H3 STYLE="COLOR:GREEN;"> **1.5. L’algorithme<a name="_page3_x40.00_y616.92"></a>** </H3>
-#### <H4 STYLE="COLOR:MAGENTA;"> **1.5.1. Préconditions**<a name="_page3_x40.00_y636.92"></a>  </H4>
+5. On sélectionne les **k données les plus proches**.  
 
-Pour prédire la classe d’un nouvel élément, il faut: 
+6. On **attribue à la cible** la classe majoritaire parmi ces k voisins.  
 
-- Un **échantillon de données** 
-- Un **nouvel élément** dont on veut prédire le type 
-- La **valeur de k**
+L'illustration suivante montre un exemple où l'on doit classer une nouvelle donnée en fonction des 6 plus proches voisins :  
 
-Une fois ces données modélisées, on peut formaliser l’algorithme de la façon suivante : 
 
-- Trouver, dans l’échantillon, les k plus proches voisins de l’élément à déterminer 
-- Parmi ces proches_voisins, trouver la classification majoritaire 
-- Renvoyer la classification_majoritaire 
 
-**Remarque** : k = 6 est ici un **choix arbitraire**. Cette valeur doit néanmoins être choisie judicieusement. 
+**Interprétation :** 
 
-#### <H4 STYLE="COLOR:MAGENTA;"> **1.5.2. Un<a name="_page4_x40.00_y149.92"></a> premier exemple** </H4>
+Dans ce cas, parmi les **6 plus proches voisins**, il y a **4 éléments rouges (Type 2) et 2 éléments bleus (Type 1)**.  
+
+➡️ **La cible sera classée comme Type 2.**  
+
+> **Remarque :** 
+
+> On utilise la **distance Euclidienne** dans cet exemple, mais on pourrait également choisir d’autres mesures comme la distance de **Manhattan** ou de **Tchebychev**.
+
+
+
+### <H3 STYLE="COLOR:GREEN;"> **1.8. L’algorithme k-NN en détail<a name="_page3_x40.00_y616.92"></a>** </H3>
+
+#### <H4 STYLE="COLOR:MAGENTA;"> **1.8.1. Préconditions**<a name="_page3_x40.00_y636.92"></a>  </H4>
+
+Pour classer une donnée avec k-NN, il faut :
+
+✅ Un **échantillon de données** où chaque élément est associé à une catégorie.  
+
+✅ Une **nouvelle donnée** dont on veut déterminer la catégorie.  
+
+✅ Une **valeur de k**, qui représente le nombre de voisins à considérer.  
+
+
+
+#### <H4 STYLE="COLOR:MAGENTA;"> **1.8.2. <a name="_page4_x40.00_y149.92"></a>Exemples** </H4>
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.021.jpeg)
 
-La cible : caractéristique1 = 50 et caractéristique2 = 8
+**<H3 STYLE="COLOR:red;">Activité n°5 </H3>: Exemple 1**
 
-**<H3 STYLE="COLOR:red;">Activité n°2.:** On choisit k = 4 et la distance schématisée par un disque. </H3>
+
+Une cible a pour caractéristiques **(50,8)** et on choisit **k = 4**.  
+On trace un cercle englobant les **4 voisins les plus proches**.  
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.022.jpeg)
 
-a.  Quel est le type de notre donnée cible ? 
-b.  A quelle valeur de k peut-on décider du type de notre donnée cible ? 
-On choisit k = 10. Pour la distance, on décide que les valeurs de la caractéristique1 n’ont pas d’importance. La distance dépend de la caractéristique2. 
+**Questions :**  
+
+- Quelle est la catégorie majoritaire ?  
+
+- Quelle valeur de k permet d’avoir une classification fiable ?  
+
+
+
+**<H3 STYLE="COLOR:red;">Activité n°6.:</H3>Exemple 2** 
+
+On fixe **k = 10**, mais cette fois, on **n’utilise que la deuxième caractéristique** (la première n’a pas d’impact sur la distance). 
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.023.jpeg)
 
-c.  Quel est le type de notre donnée cible ? 
-On choisit k = 7. Pour la distance, on décide que les valeurs de la caractéristique2 n’ont pas d’importance. La distance dépend de la caractéristique1 
+**Questions :** 
+
+- La décision change-t-elle ?  
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.024.jpeg)
 
-d.  Quel est le type de notre donnée cible ? 
+- Que se passe-t-il si on utilise **k = 7** mais que seule la première caractéristique est prise en compte ?  
 
-#### <H4 STYLE="COLOR:MAGENTA;"> **1.5.3. Comment<a name="_page5_x40.00_y520.92"></a> représenter ce type de donnée en Python avec matplotlib** </H4>
 
-Vérification que **matplotlib** est installée : dans la console python (on vérifie aussi pour la bibliothèque **sklearn**) 
 
-**vérification de l’installation** 
+
+#### <H4 STYLE="COLOR:MAGENTA;"> **1.8.3. Comment<a name="_page5_x40.00_y520.92"></a> représenter ce type de donnée en Python avec matplotlib** </H4>
+
+’algorithme k-NN est plus compréhensible lorsqu’il est visualisé.  
+
+💡 **Vérification des bibliothèques nécessaires :**  
+Avant d’exécuter les scripts suivants, vérifiez que les bibliothèques **Matplotlib** et **Scikit-learn** sont installées sur votre éditeur knn (Thonny par exemple):
+
+```bash
+pip install matplotlib scikit-learn pandas
 ```
->>> import matplotlib 
->>> import sklearn  
-```
-Si matplotlib n’est pas installé : 
-Lancer **l’invite de commande windows** en mode administrateur (taper cmd dans la barre de recherche de windows) puis bouton droit et « exécuter en tant qu’administrateur ». 
-Mise à jour de l’installateur *pip* de python : 
-```python -m pip install --upgrade pip ```
 
-Installation de matplotlib :  
-```python -m pip install matplotlib sklearn ```
 
-on peut en profiter pour installer d’autres bibliothèques : 
-```python -m pip install numpy scipy pandas ipython jupyter sympy nose pygame flask pillow ```
+**<H3 STYLE="COLOR:red;">Activité n°7.: Première visualisation des données avec Matplotlib**</H3> 
 
-**<H3 STYLE="COLOR:red;">Activité n°3.: Représentation avec matplotlib**</H3> Copier coller le script suivant dans un fichier python 
 ```python
-from math import *
 import matplotlib.pyplot as plt
 
-# Données de type 1
-liste_x_1=[1,3,8,13]
-liste_y_1=[28,27.2,37.6,40.7]
+# Données de type 1 (exemple)
+liste_x_1 = [1, 3, 8, 13]
+liste_y_1 = [28, 27.2, 37.6, 40.7]
 
-# Données de type 2
-liste_x_2=[2,3,10,15]
-liste_y_2=[30,26,39,35.5]
+# Données de type 2 (exemple)
+liste_x_2 = [2, 3, 10, 15]
+liste_y_2 = [30, 26, 39, 35.5]
 
-plt.axis([0,15, 0, 50]) # Attention [x1,x2,y1,y2]
+plt.axis([0, 15, 0, 50])  # Définition des limites du graphique [xmin, xmax, ymin, ymax]
 plt.xlabel('Caractéristique 1')
-plt.ylabel('Caractérstique 2')
+plt.ylabel('Caractéristique 2')
 plt.title('Représentation des deux types')
 plt.grid()
-plt.scatter(liste_x_1,liste_y_1, label='type 1')
-plt.scatter(liste_x_2,liste_y_2, label='type 2')
+
+# Affichage des points
+plt.scatter(liste_x_1, liste_y_1, label='Type 1', color='blue')
+plt.scatter(liste_x_2, liste_y_2, label='Type 2', color='red')
+
 plt.legend()
 plt.show()
 ```
+📌 **Résultat attendu :**  
+
+- Les points sont bien séparés en **deux groupes**  
+
+- Chaque point est coloré en fonction de son **type**  
+
+
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.026.jpeg)
 
-**<H3 STYLE="COLOR:red;">Activité n°4.: Représentation avec matplotlib avec les rectangle et ellipse :**</H3> Copier coller le script suivant dans un fichier python 
+**<H3 STYLE="COLOR:red;">Activité n°8.: Ajout d’une nouvelle donnée et visualisation des voisins :**</H3> 
+
 ```python
-from math import *
 import matplotlib.pyplot as plt
 
 # Données de type 1
-liste_x_1=[1,3,8,13]
-liste_y_1=[28,27.2,37.6,40.7]
+liste_x_1 = [1, 3, 8, 13]
+liste_y_1 = [28, 27.2, 37.6, 40.7]
 
 # Données de type 2
-liste_x_2=[2,3,10,15]
-liste_y_2=[30,26,39,35.5]
+liste_x_2 = [2, 3, 10, 15]
+liste_y_2 = [30, 26, 39, 35.5]
 
 fig, ax = plt.subplots()
 
-plt.axis([0,15, 0, 50]) # Attention [x1,x2,y1,y2]
+plt.axis([0, 15, 0, 50])
 plt.xlabel('Caractéristique 1')
-plt.ylabel('Caractérstique 2')
-plt.title('Représentation des deux types')
+plt.ylabel('Caractéristique 2')
+plt.title('Représentation des deux types avec cible')
 plt.grid()
-plt.scatter(liste_x_1,liste_y_1, label='type 1')
-plt.scatter(liste_x_2,liste_y_2, label='type 2')
-plt.legend()
 
+# Points existants
+plt.scatter(liste_x_1, liste_y_1, label='Type 1', color='blue')
+plt.scatter(liste_x_2, liste_y_2, label='Type 2', color='red')
+
+# Nouvelle donnée à classer
+plt.scatter(6, 30, color='green', label="Cible")
+
+# Cercle représentant la zone des k plus proches voisins
 ax.add_artist(plt.Circle((6, 30), 4, edgecolor='b', facecolor='none'))
-ax.add_artist(
-    plt.Rectangle((6,0), 2, 50,
-                      edgecolor = 'black', facecolor = 'none',
-                      fill = True, hatch = '/', linestyle = 'dashed',
-                      linewidth = 3, zorder = 1))
 
+plt.legend()
 plt.show()
 ```
+📌 **Résultat attendu :**  
+
+- La **cible** est représentée par un **point vert**  
+
+- Le **cercle bleu** montre les **k voisins les plus proches**  
+
+
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.027.jpeg)
 
-### <H3 STYLE="COLOR:GREEN;"> **1.6. Etude<a name="_page8_x40.00_y36.92"></a> sur le jeu de données « iris »** </H3>
+**Conclusion**
+
+L’algorithme k-NN est une **méthode simple mais efficace** pour classer de nouvelles données en fonction des plus proches voisins.  
+
+📌 **Points à retenir :**  
+
+✅ Le choix de **k** influence fortement la précision du modèle.  
+
+✅ La **distance utilisée** (euclidienne, Manhattan, etc.) peut modifier les résultats.  
+
+✅ On peut **visualiser graphiquement** les données pour mieux comprendre les classifications. 
+
+### <H3 STYLE="COLOR:GREEN;"> **1.9. Etude<a name="_page8_x40.00_y36.92"></a> sur le jeu de données « iris »** </H3>
 
 En 1936, Edgar Anderson a collecté des données sur 3 espèces d'iris : "iris setosa", "iris virginica" et "iris versicolor" 
 
@@ -281,58 +378,54 @@ iris virginica
 iris versicolor
 
 
-Pour chaque iris étudié, Anderson a mesuré (en cm) : 
 
-- la largeur des sépales 
-- la longueur des sépales 
-- la largeur des pétales 
-- la longueur des pétales 
 
-Par souci simplification, on étudiera uniquement la largeur et à la longueur des pétales. Pour chaque iris mesuré, Anderson a aussi noté l'espèce ("iris setosa", "iris  virginica" ou "iris versicolor") 
+Par souci simplification, on étudiera uniquement 
+
+- la longueur des pétales  
+
+- la largeur des pétales  
+
+- l'espèce de l'iris (au lieu d'utiliser les noms des espèces, on utilisera  des chiffres : 0 pour "iris setosa", 1 pour "iris virginica" et 2 pour  "iris versicolor") 
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.031.png)
 
 Pour ceux qui travaillent avec Thonny : le fichier iris.csv se trouve dans le dossier Ressources. Copier le dans  le dossier personnel noté kNN  
 
-En résumé, le fichier contient :  
-
-- la longueur des pétales  
-- la largeur des pétales  
-- l'espèce de l'iris (au lieu d'utiliser les noms des espèces, on utilisera  des chiffres : 0 pour "iris setosa", 1 pour "iris virginica" et 2 pour  "iris versicolor")  
-
-Ce jeu de donnée est actuellement utilisé par des personnes désirant s’initier aux algorithmes de machine learning 
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°5.: Représentation avec matplotlib et pandas :**</H3> Visualiser le résultats du code suivant : 
+
+**<H3 STYLE="COLOR:red;">Activité n°9.: Représentation avec matplotlib et pandas :**</H3> 
+
 ```python
-import
-
- pandas
+import pandas as pd
 import matplotlib.pyplot as plt
 
-iris=pandas.read_csv("iris.csv")
-x=iris.loc[:,"petal_length"]
-y=iris.loc[:,"petal_width"]
-lab=iris.loc[:,"species"]
+# Chargement des données
+iris = pd.read_csv("iris.csv")
+
+# Sélection des caractéristiques
+x = iris["petal_length"]
+y = iris["petal_width"]
+lab = iris["species"]
+
+# Tracé des points en fonction de l’espèce
 plt.scatter(x[lab == 0], y[lab == 0], color='g', label='setosa')
 plt.scatter(x[lab == 1], y[lab == 1], color='r', label='virginica')
 plt.scatter(x[lab == 2], y[lab == 2], color='b', label='versicolor')
+
 plt.legend()
 plt.show()
 ```
 
-**Sur la figure** : x correspond à la longueur des pétales, correspond à la largeur des pétales et lab correspond à l'espèce d'iris (0,1 ou 2).|
+📌 **Résultat attendu :**  
 
-```"plt.scatter"``` permet de tracer des points, et ```"x[lab == 0]"``` permet de considérer uniquement l'espèce "iris setosa" (lab==0).  
+- Les **trois espèces d’iris** sont bien séparées  
 
-Le premier ```"plt.scatter"``` permet de tracer les points correspondant à l'espèce "iris setosa", ces points seront vert (```color='g'```), 
+- La **longueur et la largeur des pétales** permettent une classification visuelle  
 
-Le deuxième ```"plt.scatter"``` permet de tracer les points correspondant à l'espèce "iris virginica", ces points seront rouge (```color='r'```), 
 
-Le troisième ```"plt.scatter"``` permet de tracer les points correspondant à l'espèce "iris versicolor", ces points seront bleu (```color='b'```).  
-
-On a en abscisse la longueur du pétale et en ordonnée la largeur du pétale. On remarque que les points sont regrouper par espèces d’iris. 
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.032.jpeg)
 
