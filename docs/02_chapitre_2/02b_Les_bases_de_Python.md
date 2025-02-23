@@ -123,8 +123,10 @@ Une condition permet d’exécuter des instructions **uniquement si une certaine
         None
         ```
 
-    **Remarque :**  
+    **Remarque :** 
+
     - La fonction ne retourne rien si la note est inférieure à 10.  
+    
     - On peut améliorer cela en ajoutant une instruction `else`.
 
 
@@ -758,13 +760,13 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
 **<H3 STYLE="COLOR:red;">Exercice 6</H3>**★ 
 
-1.  Avec une boucle for, écrire une fonction nombre_de_z(chaine) qui compte le nombre de lettres z dans une chaîne de caractères. Par exemple : 
+1  Avec une boucle for, écrire une fonction nombre_de_z(chaine) qui compte le nombre de lettres z dans une chaîne de caractères. Par exemple : 
 ```
 nombre_de_z('Zinedine Zidane') 
 2
 ```
 
-2.  Ecrire une fonction nombre_de_z2(chaine) qui fait la même chose, directement avec la 
+2  Ecrire une fonction nombre_de_z2(chaine) qui fait la même chose, directement avec la 
 méthode count() de la classe str. Pour obtenir de l’aide sur cette méthode : 
 ```
 help(str.count)
@@ -772,7 +774,7 @@ help(str.count)
 
 **<H3 STYLE="COLOR:red;">Exercice 7</H3>**★ 
 
-1.  Ecrire la fonction devinette(proposition) du jeu de devinette suivant : 
+1  Ecrire la fonction devinette(proposition) du jeu de devinette suivant : 
 
 ```
 >>> 
@@ -788,8 +790,9 @@ Gagné
 en 3 coups !
 ```
 
-2.  Quelle est la stratégie la plus efficace ? 
-3.  Question bonus : Montrer que l’on peut deviner un nombre en 7 coups maximum. 
+2  Quelle est la stratégie la plus efficace ? 
+
+3  Question bonus : Montrer que l’on peut deviner un nombre en 7 coups maximum. 
 Bibliographie :[ La dichotomie ](http://fr.wikipedia.org/wiki/Dichotomie)
 Remarques :  
 -  l’algorithme de Dichotomie est au programme de première NSI. 
@@ -918,6 +921,7 @@ la valeur de (1+math.sqrt(5))/2 est : 1.618033988749895
 **Aide** : Le but est de regarder le reste de la division entre le nombre donné et nombre diviseur
 
 1) avec une boucle for
+
 2) avec une boucle while
 
 [QCM sur les boucles ](http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_python_loop)
@@ -968,7 +972,9 @@ Une variable définie **dans une fonction** n’existe que **dans cette fonction
         ```
 
     **Explication :**
+
     - La variable `a` dans la fonction est **locale** et différente de `a` du programme principal.
+
     - Elle est **détruite** à la fin de l’exécution de la fonction.
 
 
@@ -1012,7 +1018,9 @@ Une variable **globale** est accessible **partout** dans le programme.
         ```
 
     **Remarque :**  
+
     - L’utilisation de `global` permet de **modifier la variable globale** à l’intérieur de la fonction.  
+
     - ⚠️ **À éviter !** Cela peut provoquer des erreurs difficiles à détecter.
 
 
@@ -1050,7 +1058,9 @@ Les **fonctions lambda** permettent de **définir rapidement une petite fonction
         ```
 
     **Explication :**
+
     - `lambda x: 2*x` est **une version simplifiée** d’une fonction classique.
+
     - **Utile** pour des fonctions **très courtes**.
 
 
@@ -1088,7 +1098,9 @@ Il est parfois utile de donner **une valeur par défaut** aux paramètres.
         ```
 
     **Explication :**
+
     - Si **aucune valeur** n’est précisée, **la valeur par défaut** est utilisée.
+
     - Permet d’avoir **des paramètres facultatifs**.
 
 
