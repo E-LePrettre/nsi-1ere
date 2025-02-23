@@ -82,68 +82,91 @@ Il n'existe **pas de convention universelle** pour le pseudo-code. Afin de bien 
 ## **<H2 STYLE="COLOR:BLUE;">4. Python<a name="_page2_x40.00_y464.92"></a></h2>** 
 ### **<H3 STYLE="COLOR:GREEN;">4.1. Pourquoi<a name="_page2_x40.00_y486.92"></a> apprendre le langage Python ?</h3>** 
 
-Python est à la fois simple et puissant, il vous permet d'écrire **des scripts très simples**, mais grâce à ses nombreuses bibliothèques, vous pouvez travailler sur des **projets plus ambitieux.** 
+Python est un langage **simple et puissant**. Il permet d’écrire des **scripts très basiques**, mais grâce à ses nombreuses bibliothèques, il est également utilisé dans des **projets avancés** comme l’intelligence artificielle, la data science et le développement web.
 
 
 
 ### **<H3 STYLE="COLOR:GREEN;">4.2. Qu’est-ce<a name="_page2_x40.00_y550.92"></a> que c’est ?</h3>** 
 
-En 1989, le hollandais **Guido van Rossum** commence le développement du langage de programmation Python. Python est un langage **multi plateforme**. 
-
-Le langage Python est gratuit, sous **licence libre**. 
-
-### **<H3 STYLE="COLOR:GREEN;">4.3. Les<a name="_page2_x40.00_y614.92"></a> consignes</h3>** 
-- Dans la suite du cours, ouvrir l’interpréteur Python  (si vous êtes sur Thonny)
-
-- Taper chacune des commandes présentées et vérifier son résultat. 
+En 1989, le hollandais **Guido van Rossum** a développé Python, un langage **multi-plateforme** et **gratuit**, distribué sous **licence libre**.
 
 
-### **<H3 STYLE="COLOR:GREEN;">4.4. Premiers<a name="_page3_x40.00_y36.92"></a> pas avec l’interpréteur de commandes Python</h3>** 
 
-Explorez les fonctionnalités de base de l’interpréteur Python en tapant des commandes simples comme des calculs, des assignations de variables ou des manipulations de chaînes.
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:Les calculs de bases :</h3>** Tester les calculs suivant :
-**ATTENTION : faire entrer à chaque ligne du scripts suivants**
+### **<H3 STYLE="COLOR:GREEN;">4.3. Premiers<a name="_page3_x40.00_y36.92"></a> pas avec Python</h3>** 
 
-```python
-7 + 3 * 4
-(7 + 3 ) * 4
-10 / 3
-```
+Dans cette section, vous allez explorer les fonctionnalités de base de Python en testant des commandes simples.
 
-???+ question "Faire ce qui est proposé"
+???+ question "Activité n°1 : Les calculs de base"
 
-    {{ terminal() }}
+    **Tester :**
 
- 
- Les espaces sont optionnels. 
- Les règles de priorité en maths sont-elles respectées ? …………………….
- 
-**<H3 STYLE="COLOR:red;">Activité n°2.:** **Addition de float :</h3>** Tester les calculs suivant :
+    ```python
+    7 + 3 * 4
+    (7 + 3) * 4
+    10 / 3
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
-```python
-3.11 + 2.08
-```
+    ??? success "Solution"
 
-???+ question "Faire ce qui est proposé"
+        **Résultat :**
+        ```
+        19
+        40
+        3.3333333333333335
+        ```
 
-    {{ terminal() }}
-    
-Que remarquez-vous ?............. 
+    Les règles de priorité en mathématiques sont-elles respectées ? **Oui** ✅
 
-**<H3 STYLE="COLOR:red;">Activité n°3.:La division entière et le modulo :</h3>** Tester les calculs :
-**ATTENTION : faire entrer à chaque ligne du scripts suivant**
+???+ question "Activité n°2 : Addition de nombres décimaux"
 
-```python
-10 // 5
-10 // 4
-10 % 4
-10 % 3
-```
+    **Tester :**
 
-???+ question "Faire ce qui est proposé"
+    ```python
+    3.11 + 2.08
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
-    {{ terminal() }}
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        5.19
+        ```
+
+    **Remarque :** Python utilise la **virgule flottante**, ce qui peut entraîner des imprécisions pour certaines additions.
+
+???+ question "Activité n°3 : Division entière et modulo"
+
+    **Tester :**
+
+    ```python
+    11 // 5
+    11 // 4
+    11 % 4
+    11 % 3
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        2
+        2
+        2
+        1
+        ```
+
+    **Explication :**
+    - `//` représente la **division entière** (quotient sans décimale).
+    - `%` permet d’obtenir le **reste de la division**.
+
+
 
 La division entière permet de déterminer la valeur tronquée de la division et le modulo permet de déterminer la valeur du reste. 
 
@@ -153,149 +176,164 @@ On souhaite effectuer la division de 3395  par 99.
 
 On s’est arrêté car 29 est plus petit que 99 et qu’on ne souhaitait pas aller plus loin et se retrouver avec un nombre à virgule. On a effectué une division dite division entière. On en déduit donc que 3395 = 99 \* 34 + 29
 
-**<H3 STYLE="COLOR:red;">Activité n°4.:** **L’exponentiation :</h3>** Tester les calculs :
-**ATTENTION : faire entrer à chaque ligne du scripts suivant**
-</H3>
+???+ question "Activité n°4 : Puissance (exponentiation)"
 
-```python
-3 ** 2
-2 ** 3
-```
+    **Tester :**
 
-???+ question "Faire ce qui est proposé"
+    ```python
+    3 ** 2
+    2 ** 3
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
-    {{ terminal() }}
+    ??? success "Solution"
 
-### **<h3 STYLE="COLOR:GREEN;">4.5. Variables,<a name="_page4_x40.00_y133.92"></a> types</h3>** 
+        **Résultat :**
+        ```
+        9
+        8
+        ```
 
-Une variable est un espace mémoire dans lequel il est possible de stocker une valeur (une donnée). On va affecter des valeurs à des variables.  
+
+### **<h3 STYLE="COLOR:GREEN;">4.4. Variables,<a name="_page4_x40.00_y133.92"></a> et types de données</h3>** 
+
+Une **variable** est un espace mémoire qui stocke une valeur.  
 
 ![](Aspose.Words.7488426a-f593-4c9d-89c4-e8b91637fe20.024.png)**Attention le symbole de l’affectation est =** 
 
-#### **<H4 STYLE="COLOR:MAGENTA;">4.5.1. Noms<a name="_page4_x40.00_y194.92"></a> de variables</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">4.4.1. Déclaration et affichage d'une variable<a name="_page4_x40.00_y194.92"></a></h4>**
 
-Le nom d’une variable :
+???+ question "Activité n°5 : Affectation et affichage"
 
-- Doit contenir des lettres (non accentuées), des chiffres ou l’underscore _.
+    **Tester :**
 
-- Ne doit pas commencer par un chiffre.
+    ```python
+    age = 17
+    print(age)  # Affiche la valeur de la variable
+    print(type(age))  # Affiche le type de la variable
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
-Exemples corrects : `age`, `mon_age`, `temperature1`.
+    ??? success "Solution"
 
-Exemples incorrects : `1age`, `âge`.
-
-#### **<H4 STYLE="COLOR:MAGENTA;">4.5.2. Le<a name="_page4_x40.00_y249.92"></a> type int (integer)</h4>** 
-
-
-
-**<H3 STYLE="COLOR:red;">Activité n°5.:</H3>** Tester les calculs : 
-**ATTENTION : faire entrer à chaque ligne du scripts suivants**
-
-```python
-age = 17
-```
-La fonction print affiche la valeur de la variable :
-```python
-print(age) # Affiche la valeur de la variable
-```
-
-La fonction type() retourne le type de la variable : 
-```python
-print(type(age)) # Retourne le type de la variable
-```
-
-???+ question "Faire ce qui est proposé"
-
-    {{ terminal() }}
+        **Résultat :**
+        ```
+        17
+        <class 'int'>
+        ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°6.:</H3>** L’incrémentation ou la décrémentation : Tester les calculs suivant dans la console
-**ATTENTION : faire entrer à chaque ligne du scripts suivants**
+???+ question "Activité n°6 : Incrémentation et décrémentation"
 
-```python
-# ceci est un commentaire 
-a = 10 
-a = a + 1 # on incrémente la valeur de a. On peut l’écrire aussi a +=1 
-print(a) 
-a = a – 3 # on décrémente la valeur de a. On peut l’écrire aussi a -=3  
-print(a) 
-```
-???+ question "Faire ce qui est proposé"
+    **Tester :**
 
-    {{ terminal() }}
+    ```python
+    a = 10 
+    a += 1  # On incrémente la valeur de a
+    print(a)
 
-#### **<H4 STYLE="COLOR:MAGENTA;">4.5.3. Le<a name="_page4_x40.00_y602.92"></a> type float (nombres en virgule flottante)</h4>**
-**<H3 STYLE="COLOR:red;">Activité n°7.:</H3>** Tester les calculs suivant dans la console
-**ATTENTION : faire entrer à chaque ligne du scripts suivants**
+    a -= 3  # On décrémente la valeur de a
+    print(a)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
-```python
-b = 17.0  # le séparateur décimal est un point (et non une virgule) 
-print(b) 
-print(type(b)) 
-```
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        11
+        8
+        ```
 
 
-```python
-c = 14.0 / 3.0
-print(c) 
-```
+
+#### **<H4 STYLE="COLOR:MAGENTA;">4.4.2. Les<a name="_page4_x40.00_y602.92"></a> nombres à virgule flottante (float)</h4>**
+
+???+ question "Activité n°7 : Les nombres flottants"
+
+    **Tester :**
+
+    ```python
+    b = 17.0  # Le séparateur décimal est un point
+    print(b)
+    print(type(b))
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        17.0
+        <class 'float'>
+        ```
 
 
-```python
-c = 14.0 // 3.0  # division entière 
-print(c)
-```
+#### **<H4 STYLE="COLOR:MAGENTA;">4.4.4. Les<a name="_page5_x40.00_y196.92"></a> chaînes de caractères (str)</h4>**
 
 
-![](Aspose.Words.7488426a-f593-4c9d-89c4-e8b91637fe20.040.png)Attention : avec des nombres entiers, l’opérateur / renvoie généralement un flottant : 
+???+ question "Activité n°8 : Manipulation de chaînes"
 
-```python
-c = 14 / 3 
-print(c)
-```
-???+ question "Faire ce qui est proposé"
+    **Tester :**
 
-    {{ terminal() }}
+    ```python
+    nom = 'Dupont'  # Chaîne entre apostrophes
+    prenom = "Pierre"  # Chaîne entre guillemets
+    print(nom, prenom)  # Affichage avec espace automatique
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
-#### **<H4 STYLE="COLOR:MAGENTA;">4.5.4. Le<a name="_page5_x40.00_y196.92"></a> type str (string : chaîne de caractères)</h4>**
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        Dupont Pierre
+        ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°8.:</H3>**  Tester les calculs suivant dans la console
-**ATTENTION : faire entrer à chaque ligne du scripts suivants**
+???+ question "Activité n°9 : Concaténation de chaînes"
 
-```python
-nom = 'Dupont'    # entre apostrophes 
-print(nom) 
-print(type(nom)) 
-prenom = "Pierre"   # on peut aussi utiliser les guillemets 
-print(prenom) 
-print(nom, prenom)   # ne pas oublier la virgule 
-```
-???+ question "Faire ce qui est proposé"
+    **Tester :**
 
-    {{ terminal() }}
+    ```python
+    nom = 'Dupont'
+    prenom = "Pierre"
+    chaine = nom + " " + prenom  # Concaténation avec espace
+    print(chaine)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
-**<H3 STYLE="COLOR:red;">Activité n°9.:</H3>** La concaténation désigne la mise bout à bout de plusieurs chaînes de caractères (de type string). La concaténation utilise l’opérateur + 
-**ATTENTION : faire entrer à chaque ligne du scripts suivants**
+    ??? success "Solution"
 
-```python
-nom = 'Dupont' 
-prenom = "Pierre"
-chaine = nom + prenom  # concaténation de deux chaînes de caractères 
-print(chaine) 
-```
-???+ question "Faire ce qui est proposé"
+        **Résultat :**
+        ```
+        Dupont Pierre
+        ```
 
-    {{ terminal() }}
+???+ question "Activité n°10 : Longueur d'une chaîne de caractères"
 
-**<H3 STYLE="COLOR:red;">Activité n°10.:</H3>** La fonction len() retourne la longueur (length) de la chaîne de caractères : 
+    **Tester :**
 
-```python
-len("abc")  
-```
-???+ question "Faire ce qui est proposé"
+    ```python
+    len("abc")
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
-    {{ terminal() }}
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        3
+        ```
+
+    La fonction **len()** permet de connaître le nombre de caractères dans une chaîne.
 
 Un **slice** permet le découpage de structures de données séquentielles (comme les chaînes de caractères ou les listes). La syntaxe utilisée est : **[début:fin:pas].** 
 
@@ -303,169 +341,206 @@ NB : si pas < 0, la liste est parcourue dans le sens inverse.
 
 ![](Aimg.png)
 
-**<H3 STYLE="COLOR:red;">Activité n°11.:</H3>** 
-**ATTENTION : faire entrer à chaque ligne du scripts suivants**
+???+ question "Activité n°11 : Découpage de chaînes (slice)"
 
-```python
-string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
+    **Tester :**
 
-string[0]        # Renvoie l’élément à l’indice 0 : 'A'
-string[2]        # Renvoie l’élément à l’indice 2 : 'C'
-string[:3]       # Renvoie les trois premiers termes : 'ABC'
-string[:13:2]    # Renvoie les 13 premiers termes, mais 1 sur 2 : 'ACEGIKM'
-string[::-1]     # Renvoie le renversement de la chaîne : 'ZYXWVUTSRQPONMLKJIHGFEDCBA'
-string[13::-2]   # Renvoie du 13e à l’indice 0, mais 1 sur 2 et à l’envers : 'NLJHFDB'
-string[:13:-2]   # Renvoie du dernier élément au 14e, mais 1 sur 2 et à l’envers : 'ZXVTRP'
-string[-4:-2]    # Renvoie du -4 au -2 (exclu) : 'WX'
-```
-???+ question "Faire ce qui est proposé"
+    ```python
+    string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
 
-    {{ terminal() }}
-
-**<H3 STYLE="COLOR:red;">Activité n°12.:</H3>** ![](Aspose.Words.7488426a-f593-4c9d-89c4-e8b91637fe20.051.png)Attention aux apostrophes et guillemets dans les chaînes de caractères ! 
-
-```python
-chaine = 'Aujourd'hui'
-chaine  = 'Aujourd\'hui'   # séquence d'échappement \' 
-print(chaine) 
-chaine  = "Aujourd'hui"
-print(chaine) 
-```
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
-
-**<H3 STYLE="COLOR:red;">Activité n°13.:</H3>** La séquence d'échappement \n représente un saut ligne : 
-
-```python
-chaine = 'Premiere ligne\nDeuxieme ligne' 
-print(chaine)
-``` 
-
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
+    print(string[0])       # Premier caractère : 'A'
+    print(string[2])       # Troisième caractère : 'C'
+    print(string[:3])      # Trois premiers caractères : 'ABC'
+    print(string[:13:2])   # Un caractère sur deux parmi les 13 premiers : 'ACEGIKM'
+    print(string[::-1])    # Renversement de la chaîne : 'ZYXWVUTSRQPONMLKJIHGFEDCBA'
+    print(string[13::-2])  # Un caractère sur deux à l'envers jusqu'à l'indice 0 : 'NLJHFDB'
+    print(string[:13:-2])  # Un caractère sur deux en sens inverse à partir du 14e : 'ZXVTRP'
+    print(string[-4:-2])   # Extraction des caractères d'indices -4 à -2 (exclu) : 'WX'
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
 
-**<H3 STYLE="COLOR:red;">Activité n°14.:</H3>** On ne peut pas mélanger les serviettes et les torchons (ici type str et type int) : 
+???+ question "Activité n°12 : Attention aux apostrophes"
 
-```python
-chaine = 'a' 
-chaine = chaine + 2
-chaine2 = chaine + str(2)
-print(chaine)  # Résultat : 'a2'
-```
-???+ question "Faire ce qui est proposé"
+    **Tester :**
 
-    {{ IDE() }}
+    ```python
+    chaine = 'Aujourd\'hui'   # Séquence d'échappement \'
+    print(chaine) 
 
-
-- Python **ne peut pas additionner** directement une chaîne (str) et un entier (int).
-
-- La conversion explicite avec str() ou int() permet de résoudre ce problème.
+    chaine = "Aujourd'hui"    # Utilisation des guillemets
+    print(chaine)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
 
 
+???+ question "Activité n°13 : Les sauts de ligne"
 
-**<H3 STYLE="COLOR:red;">Activité n°15.:</H3>** La méthode lower()retourne la chaîne de caractères en casse minuscule (upper() fait l’inverse): 
+    **Tester :**
 
-```python
-chaine = "BONJOUR"  # ou bien : chaine = str("BONJOUR") 
-chaine2 = chaine.lower()   # on applique la méthode lower() à l'objet chaine 
-print(chaine2) 
-print(chaine) 
-```
-???+ question "Faire ce qui est proposé"
+    ```python
+    chaine = 'Premiere ligne\nDeuxieme ligne' 
+    print(chaine)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
-    {{ IDE() }}
+---
 
+???+ question "Activité n°14 : Problème d'addition entre chaînes et nombres"
 
+    **Tester :**
 
+    ```python
+    chaine = 'a' 
+    # chaine = chaine + 2  # Provoque une erreur
+    chaine2 = chaine + str(2)  # Solution correcte
+    print(chaine2)  # Résultat : 'a2'
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
-**<H3 STYLE="COLOR:red;">Activité n°16.:</H3>** La fonction split() permet de créer une liste en indiquant le séparateur (par exemple l’espace pour obtenir une liste de mot) : 
-
-```python
-texte = "Il est important de construire" 
-print(texte)
-a = texte.split(' ') 
-print(a) 
-```
-
-Cette méthode est communément appelée tuple unpacking 
-
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
-
-**<H3 STYLE="COLOR:red;">Activité n°17.:</H3>** La fonction ' '.join(a) fait l’inverse, elle prend une liste et renvoie un teste, entre guillemets on indique le séparateur si on ne met rien, tout sera attaché. 
-
-```python
-texte = "Il est important, de construire" 
-liste1 = ' '.join(texte) 
-print(liste1) 
-liste2 = ','.join(texte) 
-print(liste2)
-```
-
-C’est la méthode inverse du tuple unpacking 
-
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
-
-#### **<H4 STYLE="COLOR:MAGENTA;">4.5.5. Le<a name="_page8_x40.00_y323.92"></a> type bool (booléen)</h4>** 
+    **Remarque :**  
+    - Python **ne peut pas additionner directement** une chaîne (str) et un entier (int).  
+    - La conversion explicite avec **str()** permet de résoudre ce problème.
 
 
+???+ question "Activité n°15 : Conversion en minuscules"
 
-**<H3 STYLE="COLOR:red;">Activité n°18.:</H3>** Deux valeurs sont possibles : True et False 
+    **Tester :**
 
-```python
-choix = True 
-print(type(choix)) 
-```
-
-![](Aimg2.png)
- 
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
+    ```python
+    chaine = "BONJOUR"
+    chaine2 = chaine.lower()   # Convertit en minuscules
+    print(chaine2) 
+    print(chaine) 
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
 
-**<H3 STYLE="COLOR:red;">Activité n°19.:</H3>**  
+???+ question "Activité n°16 : Séparer une phrase en mots"
 
-```python
-b = 10 
-print(b > 8) 
-print(b == 5) 
-print(b != 10) 
-print(0 <= b <= 20) 
-```
-???+ question "Faire ce qui est proposé"
+    **Tester :**
 
-    {{ IDE() }}
+    ```python
+    texte = "Il est important de construire"
+    print(texte)
 
-**<H3 STYLE="COLOR:red;">Activité n°20.:</H3>** Les opérateurs logiques : and, or, not
+    mots = texte.split(' ')  # Découpe la phrase en mots
+    print(mots)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
-```python
-note = 13.0 
-print(note >= 12.0 and note < 14.0 ) 
-```
 
-???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+???+ question "Activité n°17 : Fusionner une liste en chaîne"
 
-**<H3 STYLE="COLOR:red;">Activité n°21.:</H3>** L’opérateur in s’utilise avec des chaînes (type str) ou des listes (type list) : 
-**ATTENTION : faire entrer à chaque ligne du scripts suivants**
+    **Tester :**
 
-```python
-chaine = 'Bonsoir' 
-print('soir' in chaine) 
- 
-```
-???+ question "Faire ce qui est proposé"
+    ```python
+    texte = "Il est important de construire"
+    
+    liste1 = ' '.join(texte)  # Séparé par un espace
+    print(liste1) 
 
-    {{ IDE() }}
+    liste2 = ','.join(texte)  # Séparé par une virgule
+    print(liste2)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+#### **<H4 STYLE="COLOR:MAGENTA;">4.4.4. Les booléens (bool)</h4>**
+
+???+ question "Activité n°18 : Les valeurs booléennes"
+
+    **Tester :**
+
+    ```python
+    choix = True
+    print(type(choix))  # Affiche le type
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        <class 'bool'>
+        ```
+
+
+
+???+ question "Activité n°19 : Comparaisons booléennes"
+
+    **Tester :**
+
+    ```python
+    b = 10
+    print(b > 8)
+    print(b == 5)
+    print(b != 10)
+    print(0 <= b <= 20)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        True
+        False
+        False
+        True
+        ```
+
+
+
+???+ question "Activité n°20 : Opérateurs logiques"
+
+    **Tester :**
+
+    ```python
+    note = 13.0
+    print(note >= 12.0 and note < 14.0)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        True
+        ```
+
+
+
+???+ question "Activité n°21 : Vérification d’appartenance (in)"
+
+    **Tester :**
+
+    ```python
+    chaine = 'Bonsoir'
+    print('soir' in chaine)  # Vérifie si 'soir' est présent
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        True
+        ```
+
+
 
 ## **<H2 STYLE="COLOR:BLUE;">5. Exercices<a name="_page10_x40.00_y36.92"></a></h2>** 
 
