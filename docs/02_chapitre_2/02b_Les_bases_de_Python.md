@@ -18,213 +18,156 @@ title: 02b Les bases de Python
 
 ## **<H2 STYLE="COLOR:BLUE;">1. Définir<a name="_page0_x40.00_y467.92"></a> une fonction</h2>** 
 
-On utilise l’instruction def puis dans la définition de la fonction l’instruction return pour quitter l’appel. 
+En Python, une fonction est définie avec l’instruction `def`. Une fonction peut renvoyer une valeur grâce à l’instruction `return`.
 
 
+???+ question "Activité n°1 : Définir une première fonction"
 
-**<H3 STYLE="COLOR:red;">Activité n° 1.:</H3>**  
-```python
-def mapremierefonction():  # cette fonction n'a pas de paramètre 
-    """  
-    Cette fonction renvoie 'Bonjour'  
-    """ 
-    return "Bonjour"       
-```
+    **Tester :**
 
-Une fois la fonction définie, nous pouvons l’appeler : 
+    ```python
+    def mapremierefonction():  # Cette fonction n'a pas de paramètre 
+        """  
+        Cette fonction renvoie 'Bonjour'  
+        """ 
+        return "Bonjour"  
+    ```
 
-> mapremierefonction()  # ne pas oublier les parenthèses () 
+    **Appeler la fonction :**
+    
+    ```python
+    print(mapremierefonction())  # Ne pas oublier les parenthèses ()
+    ```
 
+    ??? success "Python"
+        {{ IDE() }}
 
-L’accès à la documentation se fait avec la fonction pré-définie help() : 
+    ??? success "Solution"
 
+        **Résultat :**
+        ```
+        Bonjour
+        ```
 
-> help(mapremierefonction) # affichage de la documentation
+???+ question "Activité n°2 : Vérifier la parité d'un nombre"
 
-???+ question "Faire ce qui est proposé"
+    **Tester :**
 
-    {{ IDE() }}
+    ```python
+    def parite(nombre): 
+        """ Affiche la parité d'un nombre entier """ 
+        if nombre % 2 != 0:  # L'opérateur % donne le reste d'une division 
+            return f"{nombre} est impair" 
+        else: 
+            return f"{nombre} est pair"
+    ```
 
+    **Exécuter :**
+    
+    ```python
+    print(parite(13))
+    print(parite(24))
+    ```
 
-**<H3 STYLE="COLOR:red;">Activité n° 2.:</H3>**  
-```python 
-def parite(nombre): 
-    """ Affiche la parité d'un nombre entier """ 
-    if nombre%2 != 0:   # L'opérateur % donne le reste d'une division 
-        return str(nombre)+ ' est impair' 
-    elif nombre%2 == 0: 
-        return str(nombre)+ ' est pair'  
-```
-Une fois la fonction définie, nous pouvons l’appeler : 
-> parite(13)
-  
-> parite(24)
+    ??? success "Python"
+        {{ IDE() }}
 
-???+ question "Faire ce qui est proposé"
+    ??? success "Solution"
 
-    {{ IDE() }}
+        **Résultat :**
+        ```
+        13 est impair
+        24 est pair
+        ```
+
 
 
 ## **<H2 STYLE="COLOR:BLUE;">2. Les<a name="_page1_x40.00_y240.92"></a> conditions  ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.009.png)</h2>**
+
+Une condition permet d’exécuter des instructions **uniquement si une certaine condition est satisfaite**.
+
+
 
 ### **<H3 STYLE="COLOR:GREEN;">2.1. Les<a name="_page1_x40.00_y262.92"></a> structures conditionnelles</h3>**  
 #### **<H4 STYLE="COLOR:MAGENTA;">2.1.1. L’instruction<a name="_page1_x40.00_y281.92"></a> simple if</h4>**
 ![](Aimg0.png)
 
-L’instruction if  (si en français) permet d’exécuter des instructions  seulement si une certaine condition est satisfaite.  
+???+ question "Activité n°3 : Vérifier si on a la moyenne"
 
-```
-if expression:         # attention à la ponctuation   
-    bloc d'instructions  # attention à l'indentation  
-suite du programme  
-```
+    **Tester :**
 
-Si l’expression est vraie (True) alors le bloc d’instructions est exécuté.  Si l’expression est fausse (False) on passe directement à la suite du  programme.  
+    ```python
+    def moyenne(note): 
+        """ 
+        Cette fonction permet de savoir si on a la moyenne
+        """ 
+        if note >= 10: 
+            return "J'ai la moyenne" 
+    ```
 
-**<H3 STYLE="COLOR:red;">Activité n° 3.: Condition</H3>**   
- 
-Recopier le code suivant 
-```python
-def moyenne(note): 
-    """ 
-    cette fonction permet de savoir si on a la moyenne
-    """ 
-    if note >= 10: 
-        # ce bloc est exécuté si note >= 10.0 est vraie
-        return "J'ai la moyenne" 
-```
-Exécuter le programme  
-> moyenne(16)
+    **Exécuter :**
+    
+    ```python
+    print(moyenne(16))
+    print(moyenne(5))
+    ```
 
-> moyenne(5)
+    ??? success "Python"
+        {{ IDE() }}
 
-???+ question "Faire ce qui est proposé"
+    ??? success "Solution"
 
-    {{ IDE() }}
+        **Résultat :**
+        ```
+        J'ai la moyenne
+        None
+        ```
 
-**<H3 STYLE="COLOR:red;">Activité n° 4. : Condition</H3>**
- 
-Recopier le code suivant 
-```python
-def incremente_b(a): 
-    """ 
-    cette fonction incrémente la valeur de b sous conditions de la valeur de a 
-    """ 
-    b = 8 
-    if a > 0: 
-        b = b + 1 
-        return a, b 
-```
-Exécuter le programme  
-> incremente_b(5) 
+    **Remarque :**  
+    - La fonction ne retourne rien si la note est inférieure à 10.  
+    - On peut améliorer cela en ajoutant une instruction `else`.
 
-> incremente_b(-3)
 
-???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
+
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.1.2. L’instruction<a name="_page2_x40.00_y36.92"></a> else</h4>**![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.014.png)**
 
-Une instruction else est toujours associée à une instruction if 
+???+ question "Activité n°4 : Ajouter une condition else"
 
-```
-if expression: 
-    bloc d'instructions 1   # attention à l'indentation 
-else:   # else est au même niveau que if     
-    bloc d'instructions 2   # attention à l'indentation 
-suite du programme 
-```
+    **Tester :**
 
-Si l’expression est vraie (True) alors le bloc d’instructions 1 est exécuté. 
-
-Si l’expression est fausse (False) alors c’est le bloc d’instructions 2 qui est exécuté. 
-
-
-
-**<H3 STYLE="COLOR:red;">Activité n° 5. Condition</H3>**
-
-recopier et tester le code suivant
-```python
-def moyenne(note): 
-    """ 
-    cette fonction permet de savoir si on a la moyenne 
-    """ 
-    if note >= 10: 
-        # ce bloc est exécuté si note >= 10.0 est vraie 
-        return "J'ai la moyenne" 
-    else: 
-        return "C'est en dessous de la moyenne" 
-```
-
-Tester le script avec  
-> moyenne(15) 
-
-> moyenne(8.5) 
-
-> moyenne(56) 
-
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
-
-
-**<H3 STYLE="COLOR:red;">Activité n° 6.</H3>**Pour traiter le cas des notes invalides (<0 ou >20), on peut imbriquer des instructions conditionnelles, recopier 
-et tester le code suivant :
-```python
-def moyenne(note): 
-    """ 
-    cette fonction permet de savoir si on a la moyenne 
-    """ 
-    if note > 20.0 or note < 0.0: 
-        # ce bloc est exécuté si l'expression (note > 20.0 or note < 0.0) est vraie 
-        return "Note invalide !" 
-    else: 
-        # ce bloc est exécuté si l'expression (note > 20.0 or note < 0.0) est fausse 
-        if note >= 10.0: 
-            # ce bloc est exécuté si l'expression (note >= 10.0) est vraie 
+    ```python
+    def moyenne(note): 
+        """ 
+        Cette fonction permet de savoir si on a la moyenne 
+        """ 
+        if note >= 10: 
             return "J'ai la moyenne" 
         else: 
-            # ce bloc est exécuté si l'expression (note >= 10.0) est fausse 
-            return "C'est en dessous de la moyenne"
-``` 
+            return "C'est en dessous de la moyenne" 
+    ```
 
-Tester le script avec  
-> moyenne(56) 
+    **Exécuter :**
+    
+    ```python
+    print(moyenne(15))
+    print(moyenne(8.5))
+    print(moyenne(56))
+    ```
 
-> moyenne(14.6) 
+    ??? success "Python"
+        {{ IDE() }}
 
-???+ question "Faire ce qui est proposé"
+    ??? success "Solution"
 
-    {{ IDE() }}
+        **Résultat :**
+        ```
+        J'ai la moyenne
+        C'est en dessous de la moyenne
+        J'ai la moyenne
+        ```
 
-**<H3 STYLE="COLOR:red;">Activité n° 7.</H3>**On ajoute encore un niveau d’imbrication pour traiter les cas particuliers 0 et 20 : 
-
-```python
-def moyenne(note): 
-    """ 
-    cette fonction permet de savoir si on a la moyenne 
-    """ 
-    if note > 20.0 or note < 0.0: 
-    # ce bloc est exécuté si l'expression (note > 20.0 or note < 0.0) est vraie 
-        return "Note invalide !" 
-    else: 
-        # ce bloc est exécuté si l'expression (note > 20.0 or note < 0.0) est fausse 
-        if note >= 10.0:  # ce bloc est exécuté si l'expression (note >= 10.0) est vraie             
-            if note == 20.0:# ce bloc est exécuté si l'expression (note == 20.0) est vraie                 
-                return "C'est excellent !" 
-            return "J'ai la moyenne" 
-        else: 
-            # ce bloc est exécuté si l'expression (note >= 10.0) est fausse 
-            if note == 0.0: # ce bloc est exécuté si l'expression (note == 0.0) est vraie                 
-                return "... lamentable !" 
-            return "C'est en dessous de la moyenne"
-```
-
-Tester le script avec  
-> moyenne(20) 
-
-> moyenne(3) 
 
 ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.065.png) On peut mettre qu’**UNE** instruction else par condition if et l’instruction else **n’est pas obligatoire** 
 
@@ -234,139 +177,195 @@ Tester le script avec
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.1.3. L’instruction<a name="_page3_x40.00_y321.92"></a> elif</h4>**
 
-Une instruction elif (contraction de else if) est toujours associée à une instruction if
+???+ question "Activité n°5 : Vérification de validité d'une note"
 
-```
-if expression 1: 
-    bloc d'instructions 1 
-elif expression 2: 
-    bloc d'instructions 2 
-elif expression 3: 
-    bloc d'instructions 3  # ici deux instructions elif, mais il n'y a pas de limitation 
-else: 
-    bloc d'instructions 4 
-suite du programme 
-```
+    **Tester :**
 
-- Si l’expression 1 est vraie alors le bloc d’instructions 1 est exécuté, et on passe à la suite du programme. Si l’expression 1 est fausse alors on teste l’expression 2 : 
-- Si l’expression 2 est vraie on exécute le bloc d’instructions 2, et on passe à la suite du programme. Si l’expression 2 est fausse alors on teste l’expression 3, etc. 
-- Le bloc d’instructions 4 est donc exécuté si toutes les expressions sont fausses (c’est le bloc “par défaut”). 
+    ```python
+    def moyenne(note): 
+        """ 
+        Cette fonction permet de savoir si la note est valide et donne une appréciation 
+        """ 
+        if note > 20 or note < 0: 
+            return "Note invalide !" 
+        elif note >= 10: 
+            return "J'ai la moyenne" 
+        else: 
+            return "C'est en dessous de la moyenne"
+    ```
 
-L’instruction elif évite souvent l’utilisation de conditions imbriquées (et souvent compliquées).
+    **Exécuter :**
+    
+    ```python
+    print(moyenne(56)) 
+    print(moyenne(14.6))
+    print(moyenne(-3))
+    ```
 
-**<H3 STYLE="COLOR:red;">Activité n° 8.</H3>** 
-```python
-def moyenne(note):
-    """
-    cette fonction permet de donner une appréciation sur la note
-    """
-    if note == 0.0:
-        return "... lamentable !"
-    elif note == 20.0:
-        return "C'est excellent !"
-    elif note < 10.0 and note > 0.0:
-        return "C'est en dessous de la moyenne"
-    elif note >= 10.0 and note < 20.0: # ou bien : elif 10.0 <= note < 20.0:
-        return "J'ai la moyenne"
-    else:
-        return "Note invalide !"
-```
-Tester le avec différentes notes 
+    ??? success "Python"
+        {{ IDE() }}
 
-???+ question "Faire ce qui est proposé"
+    ??? success "Solution"
 
-    {{ IDE() }}
+        **Résultat :**
+        ```
+        Note invalide !
+        J'ai la moyenne
+        Note invalide !
+        ```
+???+ question "Activité n°6 : Ajouter des appréciations"
 
-### **<H3 STYLE="COLOR:GREEN;">2.2. Les<a name="_page4_x40.00_y36.92"></a> prédicats et booléens</h3>** 
+    **Tester :**
 
-Les conditions qui se trouvent entre le if et les deux points sont appelés des prédicats. On peut tester directement ces prédicats dans l’interpréteur. 
+    ```python
+    def moyenne(note): 
+        """ 
+        Cette fonction permet de savoir si on a la moyenne et d'ajouter une appréciation 
+        """ 
+        if note > 20 or note < 0: 
+            return "Note invalide !" 
+        elif note == 20:
+            return "C'est excellent !" 
+        elif note == 0:
+            return "... lamentable !" 
+        elif note >= 10:
+            return "J'ai la moyenne" 
+        else:
+            return "C'est en dessous de la moyenne"
+    ```
+
+    **Exécuter :**
+    
+    ```python
+    print(moyenne(20))
+    print(moyenne(3))
+    print(moyenne(10))
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        C'est excellent !
+        C'est en dessous de la moyenne
+        J'ai la moyenne
+        ```
+
+
+
+### **<H3 STYLE="COLOR:GREEN;">2.2. Les<a name="_page4_x40.00_y36.92"></a> booléens et opérateurs logiques</h3>** 
+
+
+
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.1. Les<a name="_page4_x40.00_y87.92"></a> booléens True et False :</h4>**
 
-Tester dans  la console
-> a = 0 
+Python permet d’utiliser des expressions **booléennes**, qui ne peuvent être que `True` (vrai) ou `False` (faux).
 
-> a == 5
+???+ question "Activité n°7 : Vérifier une expression logique"
 
-> a > -8 True 
+    **Tester :**
 
-> a != 10 True 
+    ```python
+    a = 5
+    print(a > 3)  # True
+    print(a == 10)  # False
+    print(a != 5)  # False
+    print(0 <= a <= 10)  # True
+    ```
 
-L’interpréteur renvoie True (« vrai ») ou False (« faux »). True et False sont les deux valeurs possibles d’un nouveau type : les booléen (bool). 
+    ??? success "Python"
+        {{ IDE() }}
 
-???+ question "Faire ce qui est proposé"
-
-    {{ terminal() }}
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.2. Les<a name="_page4_x40.00_y255.92"></a> booléens And, Or et Not :</h4>**
 
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n° 9.  avec And</h3>**  
+???+ question "Activité n°8 : Vérifier un intervalle avec `and`"
 
-```python 
-def bool_and(a): 
-    """ 
-    Utilisation du booléen and 
-    """ 
-    if a >= 2 and a <= 8: 
-        return "a est dans l'intervalle." 
-    else: 
-        return "a n'est pas dans l'intervalle." 
-```
-Tester 
-> bool_and(5) 
+    **Tester :**
 
-> bool_and(10) 
+    ```python
+    def bool_and(a): 
+        """ 
+        Vérifie si a est dans l'intervalle [2,8] 
+        """ 
+        if a >= 2 and a <= 8: 
+            return "a est dans l'intervalle." 
+        else: 
+            return "a n'est pas dans l'intervalle." 
+    ```
 
-???+ question "Faire ce qui est proposé"
+    **Exécuter :**
+    
+    ```python
+    print(bool_and(5)) 
+    print(bool_and(10)) 
+    ```
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
-**<H3 STYLE="COLOR:red;">Activité n° 10. avec or </h3>** 
+---
 
-```python
-def bool_or(a): 
-    """ 
-    Utilisation du booléen or 
-    """ 
-    if a < 2 or a > 8: 
-        return "a n'est pas dans l'intervalle." 
-    else: 
-        return "a est dans l'intervalle." 
-```
-Tester 
-> bool_or(5) 
+???+ question "Activité n°9 : Vérifier une condition avec `or`"
 
-> bool_or(10)
+    **Tester :**
 
-???+ question "Faire ce qui est proposé"
+    ```python
+    def bool_or(a): 
+        """ 
+        Vérifie si a est hors de l'intervalle [2,8] 
+        """ 
+        if a < 2 or a > 8: 
+            return "a n'est pas dans l'intervalle." 
+        else: 
+            return "a est dans l'intervalle." 
+    ```
 
-    {{ IDE() }}
+    **Exécuter :**
+    
+    ```python
+    print(bool_or(5)) 
+    print(bool_or(10))
+    ```
 
-**<H3 STYLE="COLOR:red;">Activité n° 11. avec Not.</H3>** 
+    ??? success "Python"
+        {{ IDE() }}
 
-```python 
-def bool_not(a): 
-    """ 
-    Utilisation du booléen not 
-    """ 
-    if not a == 5 : 
-        return "a n'est pas égal à 5." 
-    else: 
-        return "a est égal à 5." 
-```
+---
 
-Le prédicat not a==5 équivaut donc à a!=5. 
-Tester 
-> bool_not(5) 
+???+ question "Activité n°10 : Utilisation de `not`"
 
-> bool_not(10)
+    **Tester :**
 
-???+ question "Faire ce qui est proposé"
+    ```python
+    def bool_not(a): 
+        """ 
+        Vérifie si a est différent de 5 
+        """ 
+        if not a == 5 : 
+            return "a n'est pas égal à 5." 
+        else: 
+            return "a est égal à 5." 
+    ```
 
-    {{ IDE() }}
+    **Exécuter :**
+    
+    ```python
+    print(bool_not(5)) 
+    print(bool_not(10))
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+
 
 ### **<H3 STYLE="COLOR:GREEN;">2.3. Exercices<a name="_page5_x40.00_y36.92"></a></h3>** 
 
