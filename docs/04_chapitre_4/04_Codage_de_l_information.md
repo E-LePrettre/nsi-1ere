@@ -38,6 +38,7 @@ Cette **représentation binaire** est utilisée pour **stocker et traiter** tout
 - Un **double mot** (*double word*, `dword`) = 32 bits.
 
 ✅ **Unités de mesure informatique :**
+
 | Unité | Notation | Équivalent en octets |
 |--------|---------|----------------------|
 | **Kilooctet** | `ko` | 10³ octets |
