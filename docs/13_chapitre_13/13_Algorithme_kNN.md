@@ -29,7 +29,7 @@ Le **machine learning** (apprentissage automatique) est une discipline de l'inte
 3 **Apprentissage par renforcement**  
 
    - Un agent prend des décisions et apprend grâce à des récompenses ou punitions.  
-   
+
    - Exemple : L’IA jouant aux échecs ou au jeu de go (AlphaZero).
 
 Le **deep learning** (apprentissage profond) est un sous-domaine du machine learning basé sur des réseaux de neurones profonds.
@@ -601,7 +601,9 @@ prediction = model.predict([[longueur, largeur]])
 Exemples. 
 
 - distance('ami' , 'amu') = 1 
+
 - distance('don' , 'bon') = 1 
+
 - distance('zozo' , 'bobo') = 2 
 
 Écrire une fonction python prenant en entrée deux chaînes de caractères de même longueur et renvoyant la distance de Hamming entre ces deux chaînes. 
@@ -669,9 +671,13 @@ print("La liste des ", k, " plus proches voisins de la cible : ", k_plus_proches
 ```
 
 1 Afficher le résultat de la fonction k_plus_proches_voisins(table,cible,k). Quel est le type de la cible ? 
+
 2 Quelle est la valeur de k ? 
+
 3 Quelle distance a-t-on utilisée ? 
+
 4 Utiliser d'autres valeurs de k. Quel est l'effet sur le type de la cible ? 
+
 5 Changer la distance. Programmer la distance de Tchebychev. Quel est l'effet sur le type de la cible ? 
 
 **<H3 STYLE="COLOR:red;">Exercice n° 3 : algorithme k-NN**</H3> 
@@ -690,12 +696,17 @@ Ce que vous devez seulement savoir sur cette distance pour cet exercice c'est qu
 Sur le graphique ci-dessus, le carré dessiné : 
 
 - en rouge correspond ainsi à l'ensemble des points se trouvant à 3 mètres. 
+
 - en noir correspond ainsi à l'ensemble des points se trouvant à 1 mètre. 
  
 1 À quelle valeur de k correspond le carré noir ? 
+
 2 Quelle serait l'origine de l'élément de squelette en considérant cette valeur de k ? 
+
 3 On choisit k=9. Quelle serait l'origine de l'élément de squelette en considérant cette valeur de k ? 
+
 4 On choisit k=11. Quelle serait l'origine de l'élément de squelette en considérant cette valeur de k ? 
+
 5 Peut-on savoir à coup sûr, en prenant une valeur de k inférieure au égale à 11, si le combattant dont on a trouvé un élément de squelette était un combattant de la Triple-Entente (France + Royaume-Uni + Russie) ou de la Triple-Alliance (Allemagne + Autriche-Hongrie + Italie) ? 
 
 ## <H2 STYLE="COLOR:BLUE;"> **3.  Problème : analyse de texte<a name="_page14_x40.00_y36.92"></a>** </H2>
