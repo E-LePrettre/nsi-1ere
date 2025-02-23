@@ -17,61 +17,75 @@ title: 03 Mise au point des scripts et gestion des exceptions
 
 ### **<H3 STYLE="COLOR:GREEN;">1.1. Qu’est-ce qu’une docstring ?</h3>**
 
-Une **docstring** est un texte placé juste après l’en-tête d’une fonction en Python. Elle sert à expliquer clairement :
+Une **docstring** est un texte placé juste après l’en-tête d’une fonction en Python. Elle sert à expliquer :
 
 1. **Ce que fait la fonction** ;
 
-2. **Comment l’utiliser** (avec des informations sur les paramètres et le résultat attendu) ;
+2. **Comment l’utiliser** (informations sur les paramètres et le résultat attendu) ;
 
-3. **Les conditions à respecter pour éviter des erreurs**.
+3. **Les conditions d’utilisation pour éviter les erreurs**.
 
-C’est une façon de **documenter** le code, c’est-à-dire de rendre les fonctions plus faciles à comprendre pour les autres (et pour soi-même, si on revient sur le code plus tard !).
-
-### **<H3 STYLE="COLOR:GREEN;">1.2. Pourquoi utiliser une docstring ?</h3>**
-
-Quand on écrit une fonction, les autres utilisateurs (ou même nous plus tard) peuvent se demander : 
-
-- « Cette fonction fait quoi ? »
-
-- « Qu’est-ce que je dois donner comme valeurs pour que la fonction fonctionne ? »
-
-- « Qu’est-ce que la fonction va me renvoyer comme résultat ? »
-
-La docstring répond à ces questions directement, **sans avoir à lire le code**. Elle est comme une fiche technique qui aide à comprendre la fonction plus vite.
-
-### **<H3 STYLE="COLOR:GREEN;">1.3. Comment écrire une docstring ?</h3>**
-
-Une docstring se met **entre triples guillemets** `"""` juste après le nom de la fonction. 
+Elle est essentielle pour rendre le code **plus lisible** et **plus compréhensible**.
 
 
-**<H3 STYLE="COLOR:red;">Activité n° 1.:</H3>** Exemple de documentation de fonctions que l’on obtient dans l’aide de la fonction 
 
-```python
-def factorielle(n):
-   """
-   fonction qui retourne la factorielle d'un nombre
-   :param n: int
-   :return: int
-   CU (conditions d'utilisation) : n >= 0
-   >>> factorielle(0)
-   1
-   >>> factorielle(4)
-   24
-   """
-   resultat = 1
-   for i in range(2, n+1):
-      resultat = resultat * i
-   return resultat
-```
-### **<H3 STYLE="COLOR:GREEN;">1.4. Comment voir la docstring d’une fonction ?</h3>**
 
-On peut voir la docstring en utilisant la commande **help(nom_de_la_fonction)**. Par exemple :
+### **<H3 STYLE="COLOR:GREEN;">1.2. Comment écrire une docstring ?</h3>**
 
-```python
-help(factorielle)
-```
+???+ question "Activité n°1 : Ajouter une docstring"
 
-Cette commande affichera directement la description de la fonction, les paramètres, la valeur de retour, et les exemples si la docstring est bien écrite.
+    **Tester :**
+
+    ```python
+    def factorielle(n):
+        """
+        Fonction qui retourne la factorielle d'un nombre.
+        :param n: int
+        :return: int
+        CU (conditions d'utilisation) : n >= 0
+        >>> factorielle(0)
+        1
+        >>> factorielle(4)
+        24
+        """
+        resultat = 1
+        for i in range(2, n + 1):
+            resultat = resultat * i
+        return resultat
+    ```
+
+    **Exécuter :**
+    
+    ```python
+    help(factorielle)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        Help on function factorielle in module __main__:
+
+        factorielle(n)
+            Fonction qui retourne la factorielle d'un nombre.
+            :param n: int
+            :return: int
+            CU (conditions d'utilisation) : n >= 0
+            >>> factorielle(0)
+            1
+            >>> factorielle(4)
+            24
+        ```
+
+    **Explication :**
+    - La **docstring** est affichée avec la commande `help(factorielle)`.
+    - Elle décrit clairement **l’objectif** et **les conditions d’utilisation**.
+
+
+
 
  
 **TESTER l'activité 1 ET help(factorielle)** [ALLER SUR BASTHON](https://console.basthon.fr/)
