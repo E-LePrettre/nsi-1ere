@@ -51,15 +51,9 @@ Cette **représentation binaire** est utilisée pour **stocker et traiter** tout
 
 🚨 **Attention :** En informatique, 1 Mo = **1024 × 1024** octets (1 048 576 octets), et non 1 000 000.
 
- 
-
-
-
 ## **<H2 STYLE="COLOR:BLUE;">2. Les<a name="_page1_x40.00_y467.92"></a> bases courantes</h2>** 
 
 L’écriture des nombres dépend du **système de numération** utilisé. On utilise principalement trois bases :
-
-
 
 ### **<H3 STYLE="COLOR:GREEN;">2.1. La<a name="_page1_x40.00_y489.92"></a> base 10 ou base décimale</h3>** 
 
@@ -67,12 +61,10 @@ L’écriture des nombres dépend du **système de numération** utilisé. On ut
 
 Chaque position d’un chiffre représente une **puissance de 10**.
 
-
 ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.008.png)
 
 Exemple :  
 185<sub>10</sub> = **1 × 10² + 8 × 10¹ + 5 × 10⁰**
-
 
 ### **<H3 STYLE="COLOR:GREEN;">2.2. La<a name="_page1_x40.00_y677.92"></a> base 2 ou base binaire</h3>** 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.1. Le<a name="_page1_x40.00_y697.92"></a> binaire</h4>**
@@ -97,8 +89,6 @@ Chaque position représente une **puissance de 2**.
 | 9 | 1001 |
 | 10 | 1010 |
 
-
-
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.2. Le<a name="_page2_x40.00_y74.92"></a> binaire en Python</h4>**
 
 ✅ **Afficher un nombre en binaire avec Python :**
@@ -112,7 +102,6 @@ Chaque position représente une **puissance de 2**.
 
     ??? success "Python"
         {{ terminal() }}
-
 
 En Python on peut écrire les nombres entiers directement en binaire. Il suffit pour cela de faire précéder cette écriture par **0b**.  
 
@@ -149,8 +138,6 @@ Autre exemple :
 
 167 = 0b10100111
 
-
-
 **Méthode des puissances de 2** : 
 
 ![](Aimg.png)
@@ -163,9 +150,6 @@ Autre exemple :
 - 1=20. On peut s’arrêter (dès qu’on atteint une puissance de 2). On a un chiffre 1 à la position 1. 
 
 57 = 0b111001  
-
-
-
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.4. <a name="_page2_x40.00_y722.92"></a>Conversion binaire → décimal</h4>**
 
@@ -187,11 +171,6 @@ Exemple : Convertir `1011<sub>2</sub>` en décimal :
     ??? success "Python"
         {{ terminal() }}
 
-
-
-
-
-
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.5. Addition<a name="_page3_x40.00_y258.92"></a> de deux nombres binaires</h4>** 
 
 L'**addition binaire** suit les mêmes règles que l'addition en base 10, avec quelques spécificités :
@@ -203,10 +182,6 @@ L'**addition binaire** suit les mêmes règles que l'addition en base 10, avec q
 | 1 + 0 = 1          | 1 + 0 = 1           |
 | 1 + 1 = 2          | 1 + 1 = **10** (on retient 1) |
 | 1 + 1 + 1 = 3      | 1 + 1 + 1 = **11** (on retient 1) | 
-
-
-
-
 
 📌 **Exemple d'addition binaire** :
 
@@ -232,8 +207,6 @@ L'**addition binaire** suit les mêmes règles que l'addition en base 10, avec q
 
     ??? success "Python"
         {{ terminal() }}
-
-
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.6. Multiplication<a name="_page3_x40.00_y462.92"></a> de deux nombres binaires</h4>**  
 
@@ -270,8 +243,6 @@ La **multiplication binaire** suit le même principe que la multiplication en ba
 
     ??? success "Python"
         {{ terminal() }}
-
-
 
 ### **<H3 STYLE="COLOR:GREEN;">2.3. La<a name="_page3_x40.00_y727.92"></a> base 16 ou base hexadécimal</h3>** 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.3.1. L’hexadécimal<a name="_page3_x40.00_y747.92"></a></h4>** 
@@ -340,10 +311,6 @@ Si le nombre binaire de départ n'a pas un nombre de bits multiple de 4, **il fa
     ??? success "Python"
         {{ terminal() }}
 
-
-
-
-
 #### **<H4 STYLE="COLOR:MAGENTA;">2.3.3. <a name="_page4_x40.00_y309.92"></a>Conversion hexadécimal → décimal</h4>**  
 
 📌 **Méthode des puissances de 16 :**  
@@ -367,7 +334,6 @@ Exemple : Convertir `12B7<sub>16</sub>` en décimal :
     ??? success "Python"
         {{ terminal() }}
 
-
 #### **<H4 STYLE="COLOR:MAGENTA;">2.3.4. Passage<a name="_page4_x40.00_y569.92"></a> du système hexadécimal au décimal</h4>** 
 
 🔢 **Correspondance entre lettres hexadécimales et chiffres décimaux**
@@ -389,13 +355,9 @@ Pour convertir un nombre hexadécimal en **base 10**, on utilise la **notation p
 
 $12B7_{16} = 1 \times 16^3 + 2 \times 16^2 + 11 \times 16^1 + 7 \times 16^0$
 
-
 $= 1 \times 4096 + 2 \times 256 + 11 \times 16 + 7$
 
-
 $= 4096 + 512 + 176 + 7 = 4791$
-
-
 
 🖥 **Tester en Python**
 Python permet de **convertir directement** un nombre hexadécimal en décimal avec la fonction `int()`. 
@@ -418,26 +380,80 @@ Python permet de **convertir directement** un nombre hexadécimal en décimal av
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.3.5. Addition<a name="_page5_x40.00_y90.92"></a> de deux nombres en base 16</H4>** 
 
+🔢 **Principe de l'addition hexadécimale**
+
+L’addition en **base 16** suit le même principe que l’addition en base 10 :
+
+- Lorsqu'une somme dépasse 15 (_F<sub>16</sub>_), on effectue une **retenue** sur la colonne de gauche.
+
+- Chaque somme est exprimée en notation hexadécimale (A=10, B=11, ..., F=15).
+
+⚡ **Exemple :** Additionner **89<sub>16</sub> + C8<sub>16</sub>**.
+
+| Étape | 8<sub>16</sub> | 9<sub>16</sub> |  +  | C<sub>16</sub> | 8<sub>16</sub> |
+|------|------|------|------|------|------|
+| Valeur en décimal | 8  | 9  | +  | 12 (C) | 8  |
+| Addition | 8 + 12 | 9 + 8 |
+| Résultat | 14 (E) | 17 (1 retenue, reste 1) |
+| Valeur finale | 151<sub>16</sub> |
+
 ![](Aimg5.png)
-
-8<sub>16</sub> + 9<sub>16</sub> = une seizaine et un 
-C’est-à-dire on pose 1 et on retient le 1 de la seizaine 
-
 ![](Aimg6.png)
 
-Ce nombre 151 en hexadécimal se lirait donc "une seizaine-carré cinq seizaines et un". D'ou le calcul en base 10 : 1x16x16 + 5x16 + 1 = 256 + 80 + 1 soit  337 en base 10 Ainsi le nombre 151 exprimé en hexadécimal est le même nombre que 337 en base 10 
+💡 **Interprétation** : 
 
-On pouvait aussi convertir les deux nombres en binaire et faire leur addition. 
+- 8<sub>16</sub> + C<sub>16</sub> = **E<sub>16</sub>**
+
+- 9<sub>16</sub> + 8<sub>16</sub> = **11<sub>16</sub>** → On pose **1** et on **retient 1**.
+
+- La somme finale est **151<sub>16</sub>**.
+
+✅ **Conversion en base 10** :
+
+$1 \times 16^2 + 5 \times 16^1 + 1 \times 16^0 = 256 + 80 + 1 = 337$
+
+💡 **Vérification avec Python** :
+
+???+ question "Activité n°9 :"
+
+    ```python
+    # Addition en hexadécimal
+    somme = hex(0x89 + 0xC8)  # 0x signifie base 16
+    print(somme)  # Résultat : 0x151
+    ```
+
+    ??? success "Python"
+        {{ terminal() }}
+
 
 ### **<H3 STYLE="COLOR:GREEN;">2.4. Une<a name="_page5_x40.00_y421.92"></a> base quelconque</h3>** 
 
-Par exemple la représentation de base cinq de 58 
+Le principe de conversion en **base quelconque** est le même qu’en binaire ou en hexadécimal :
+
+- On décompose un nombre en **puissances de la base choisie**.
+
+- Chaque coefficient indique combien de fois une puissance apparaît.
+
+📌 **Exemple : Représentation de 58 en base 5**  
+
+$58 = 2 \times 5^2 + 1 \times 5^1 + 3 \times 5^0$
+
+➡ **58 en base 5 s'écrit donc 213<sub>5</sub>.**
+
+🔢 **Méthode des divisions successives**
+
+Une autre méthode consiste à :
+
+1. **Diviser** le nombre par la base.
+
+2. **Récupérer** le reste.
+
+3. **Continuer** jusqu'à obtenir un quotient de 0.
+
+4. **Lire les restes à l’envers**.
 
 ![](Aimg7.png)
-
-Donc, 58 objets se regroupent en 11 paquets et 3 unités, puis les 11 paquets se regroupent en 2 paquets de paquets et 1 paquet. 
-
-58 = 2 × 5² + 1× 5<sup>1</sup> +3 × 5<sup>0</sup>. Donc 58 = 213<sub>5</sub>. 
+ 
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Le<a name="_page5_x40.00_y574.92"></a> codage des nombres entiers signés en binaire</h2>** 
 
@@ -472,7 +488,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
 
 ✅ **Tester avec Python :**
 
-???+ question "Activité n°9 :"
+???+ question "Activité n°10 :"
 
     ```python
     print(bin(27))  # Affiche 0b11011
@@ -505,7 +521,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
 
 ✅ **Tester avec Python :**
 
-???+ question "Activité n°10:"
+???+ question "Activité n°11:"
 
     ```python
     def complement_a_2(n):
@@ -516,9 +532,6 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
 
     ??? success "Python"
         {{ terminal() }}
-
-
-
 
 #### **<H4 STYLE="COLOR:MAGENTA;">3.1.3. <a name="_page7_x40.00_y335.92"></a>Addition en binaire avec des nombres signés</h4>** 
 
@@ -536,7 +549,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
 
 ✅ **Tester avec Python :**
 
-???+ question "Tester :"
+???+ question "Activité n°12 :"
 
     ```python
     print(complement_a_2(27))   # 00011011
@@ -546,9 +559,6 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
 
     ??? success "Python"
         {{ terminal() }}
-
-
-
 
 #### **<H4 STYLE="COLOR:MAGENTA;">3.1.4. <a name="_page7_x40.00_y496.92"></a>Conversion binaire → décimal (nombre négatif)</h4>** 
 
@@ -576,7 +586,7 @@ Si un nombre binaire commence par **1**, il est **négatif** en complément à 2
 
 ✅ **Tester avec Python :**
 
-???+ question "Tester :"
+???+ question "Activité n°13 :"
 
     ```python
     def binaire_vers_decimal(binaire):
@@ -590,26 +600,13 @@ Si un nombre binaire commence par **1**, il est **négatif** en complément à 2
     ??? success "Python"
         {{ terminal() }}
 
-
-### **<H3 STYLE="COLOR:GREEN;">3.2. Table<a name="_page7_x40.00_y758.92"></a> de valeurs</h3>** 
-
-![](Aimg9.png)
-
-**On prototype** une fonction en indiquant son nom, le type des éventuels paramètres et de la valeur renvoyée le cas échéant. 
-
-Exemple pour une fonction qui calcule le carré d’un nombre et renvoie la valeur trouvée : 
-
-```python
-def carre(nombre : int) -> int:     
-    return nombre ** 2 
-```
-
 ## **<H2 STYLE="COLOR:BLUE;">4. Exercices<a name="_page9_x40.00_y36.92"></a></h2>** 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 **<H3 STYLE="COLOR:red;">Exercice 1 :</H3>** ★ On suppose toujours nos entiers encodés sur un octet. 
 
 - Donner la représentation binaire 12, 100 et 88 
+
 - Réaliser l’addition binaire bit à bit de ces 3 nombres. 
 
 **<H3 STYLE="COLOR:red;">Exercice 2 :</H3>** ★ On suppose toujours nos entiers encodés sur un octet. Donner les compléments à 2 de -12, -100 et -88. 
@@ -617,13 +614,17 @@ def carre(nombre : int) -> int:
 **<H3 STYLE="COLOR:red;">Exercice 3 :</H3>** ★
 
 - Réaliser l’addition binaire des compléments à 2 des nombres 12 et -100. 
+
 - Vérifier qu’on retrouve bien le résultat précédent pour -88. 
 
 **<H3 STYLE="COLOR:red;">Exercice 4 :</H3>** ★ Donner les notations décimales des binaires signés sur un octet suivant : 
 
 - 0b1111 1111 
+
 - 0b1000 0000 
+
 - 0b0111 1111 
+
 - 0b1010 0011 
 
 **<H3 STYLE="COLOR:red;">Exercice 5 :</H3>** Conversion décimal – binaire 
@@ -648,6 +649,7 @@ Tout au début du programme, ne pas oublier cette ligne : # coding: utf-8
 2 Vérifier les conversions suivantes:
 
 - dec2bin(1843) == '11100110011' 
+
 - dec2bin(43) == '0101011'
 
 3 Convertir -2 et conclure. 
@@ -657,8 +659,11 @@ Tout au début du programme, ne pas oublier cette ligne : # coding: utf-8
 **Aide :** 
 
 - 	Les nombres entiers positifs sont codés sur 1 octet donc on peut les coder entre 0 et et 255. Les nombres entiers signés sont également codés sur 1 octet entre -128 à 127. 
+
 -  Les nombres positifs commence par 0
+
 -  Les nombres négatifs commence par 1.
+
 -  Le complément à 2 peut être calculer par une autre méthode : 
 
 Sur 8 bits, -88 en complément à 2 correspond au nombre binaire suivant :
@@ -670,11 +675,10 @@ Sur 8 bits, -88 en complément à 2 correspond au nombre binaire suivant :
 Le bit de signe donne donc **1**010 1000 
 
 
-
-
 5	Vérifier les conversions suivantes
 
 - dec2bin_negatif(-2) == '11111110'
+
 - dec2bin_negatif(-1) == '11111111'
 
 
@@ -683,6 +687,7 @@ Le bit de signe donne donc **1**010 1000
 7 Vérifier les conversions suivantes :
 
 - conversion(88) == '01011000'
+
 - conversion(-88) == '10101000'
 
 8	Convertir -1.1 et conclure.
@@ -718,19 +723,33 @@ QCM 2 :[ http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_numerique](http://fa
 
 ## **<H2 STYLE="COLOR:BLUE;">5.  Représentation des nombres réels<a name="_page12_x40.00_y36.92"></a></h2>** 
 
-En base 10, l’expression 652,375 est une manière abrégée d’écrire : 
+En informatique, les nombres réels (avec une partie décimale) sont représentés différemment des nombres entiers.  
 
-6.10<sup>2</sup> + 5.10<sup>1</sup> + 2.10<sup>0</sup> + 3.10<sup>−1</sup> + 7.10<sup>−2</sup> + 5.10<sup>−3</sup>
+En **base 10**, l’écriture d’un nombre réel suit le principe des puissances de 10 :  
+$652,375 = 6 \times 10^2 + 5 \times 10^1 + 2 \times 10^0 + 3 \times 10^{-1} + 7 \times 10^{-2} + 5 \times 10^{-3}$
 
-Il en va de même pour la base 2. L’expression 110,101 signifie : 
+De la même manière, en **base 2**, un nombre réel est écrit avec les puissances de 2 :
+$110,101_2 = 1 \times 2^2 + 1 \times 2^1 + 0 \times 2^0 + 1 \times 2^{-1} + 0 \times 2^{-2} + 1 \times 2^{-3}$
+$= 4 + 2 + 0,5 + 0,125 = 6,625_{10}$
 
-1.2<sup>2</sup> + 1.2<sup>1</sup> + 0.2<sup>0</sup> + 1.2<sup>-1</sup> + 0.2<sup>-2</sup> + 1.2<sup>-3</sup>
 
 ### **<H3 STYLE="COLOR:GREEN;">5.1. Conversion<a name="_page12_x40.00_y115.92"></a> de binaire en décimal</h3>** 
 
-On peut ainsi facilement convertir un nombre réel de la base 2 vers la base 10. Par exemple : 
+Pour convertir un nombre en **base 2** vers la **base 10**, on applique la même logique que pour les nombres entiers :
 
-110,101 = 1.2<sup>2</sup> + 1.2<sup>1</sup> + 0.2<sup>0</sup> + 1.2<sup>-1</sup> + 0.2<sup>-2</sup> + 1.2<sup>-3</sup> = 4 + 2 + 0,5 + 0,125 = 6,625 
+1. Multiplier chaque chiffre binaire par la puissance de **2** correspondante.
+
+2. Additionner les résultats.
+
+💡 **Exemple :** Convertir **110,101<sub>2</sub>** en base 10.
+
+| Bit | 1 | 1 | 0 | , | 1 | 0 | 1 |
+|----|----|----|----|----|----|----|----|
+| Puissance de 2 | $2^2$ | $2^1$ | $2^0$ | , | $2^{-1}$ | $2^{-2}$ | $2^{-3}$ |
+| Valeur | 4 | 2 | 0 | , | 0.5 | 0 | 0.125 |
+
+$110,101_2 = 4 + 2 + 0 + 0.5 + 0 + 0.125 = 6.625_{10}$
+
 
 ### **<H3 STYLE="COLOR:GREEN;">5.2. Conversion<a name="_page12_x40.00_y167.92"></a> de décimal en binaire</h3>** 
 
@@ -743,87 +762,89 @@ Le passage de base 10 en base 2 est plus subtil. Par exemple : convertissons 123
 
 On continue ainsi jusqu'à la précision désirée..
 
-Attention ! Un nombre à développement décimal fini en base 10 ne l'est pas forcément en base 2. Cela peut engendrer de mauvaises surprises. 
+Convertir un **nombre entier** en binaire est simple (divisions successives). Mais pour la **partie décimale**, on applique une autre méthode :  
 
+1. **Multiplier** la partie décimale par 2.
 
+2. **Récupérer** la partie entière du résultat.
+
+3. **Conserver** la partie décimale et recommencer.
+
+4. **Arrêter** lorsque la partie décimale devient nulle ou atteint la précision souhaitée.
+
+🔢 **Exemple : Convertir 1234,347 en binaire**
+1. **Partie entière** :  
+   $1234_{10} = 10011010010_{2}$ 
+2. **Partie décimale** :  
+   $0.347 \times 2 = 0.694 \quad (\textbf{0}$
+   $0.694 \times 2 = 1.388 \quad (\textbf{1})$
+   $0.388 \times 2 = 0.776 \quad (\textbf{0})$
+   $0.776 \times 2 = 1.552 \quad (\textbf{1})$
+   $0.552 \times 2 = 1.104 \quad (\textbf{1})$
+
+✅ **Résultat** :  
+$1234,347_{10} = 10011010010,01011_{2}$
+
+⚠ **Problème** : Un nombre décimal fini **en base 10** peut avoir une **représentation infinie en base 2**.  
 
 ### **<H3 STYLE="COLOR:GREEN;">5.3. Représentation<a name="_page13_x40.00_y36.92"></a> des flottants dans un ordinateur></h3>** 
 
-Il est parfois nécessaire d’approximer la valeur à représenter. 
-Règles de base : 
+Les ordinateurs utilisent la **norme IEEE 754** pour stocker les nombres réels en **précision simple (32 bits)** ou **double (64 bits)**.
 
-- Il ne faut jamais tester une égalité entre deux nombres flottants mais utiliser une marge d’erreur relative.  
-- Il ne faut pas se fier à l’affichage de Python qui n’affiche pas toutes les décimales stockées du nombre flottant. 
+🔢 **Problème des nombres flottants**
 
+- L’ordinateur représente les nombres en binaire avec une **précision limitée**.
 
+- Certains nombres ne peuvent pas être stockés avec une précision exacte.
 
-**<H3 STYLE="COLOR:red;">Activité n° 5.:</H3>**  
-Tester :
-> 0.1
+💡 **Exemple :** Tester en Python
 
-> 0.2
+???+ question "Activité n+14 :"
 
-> 0.1 + 0.2 
+    ```python
+    print(0.1 + 0.2)  # Résultat inattendu : 0.30000000000000004
+    ```
 
-> 0.1 + 0.2 
+    ??? success "Python"
+        {{ terminal() }}
 
-???+ question "Faire ce qui est proposé"
-
-    {{ terminal() }}
-
-La norme IEEE[^2] 754 est la norme la plus employée pour la représentation des nombres à virgule flottante dans le domaine informatique. Il existe deux formats de codage :  
-
-- le format dit "simple précision" et le format dit "double précision".  
-- Le format "simple précision" utilise 32 bits pour écrire un nombre flottant alors que le format "double précision" utilise 64 bits.  
-
-Sur 32 bits (ou 64), on utilise : 
-
-- 1bit pour le signe,  
-- 8 (ou 11) pour l’exposant  
-- 23 bits (ou 52 bits) pour la mantisse. 
+🖥 **Format IEEE 754**
+Les nombres sont stockés sous la forme :
+$\text{Signe} \quad Exposant \quad Mantisse$
 
 ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.094.jpeg)
 
-Conditions à respecter : 
+| **Champ**  | **Taille (bits)** | **Description** |
+|------------|------------------|----------------|
+| **Signe**  | 1 bit  | 0 = positif, 1 = négatif |
+| **Exposant**  | 8 bits (simple) / 11 bits (double)  | Code décalé |
+| **Mantisse**  | 23 bits (simple) / 52 bits (double)  | Partie fractionnaire |
 
-- l'exposant 00000000 est interdit. 
-- l'exposant 11111111 est interdit. On s'en sert toutefois pour signaler des erreurs, on appelle alors cette configuration du nombre NaN, ce qui signifie « Not a number ». 
-- il faut commencer par écrire le nombre sous la forme : 1,XXXXX.2<sup>exposant</sup>. La partie « XXXXX » constitue la mantisse.  
-- Pour le format simple précision, 8 bits sont consacrés à l’exposant, il est donc possible de représenter 256 valeurs : soit les exposants compris entre (-126)<sub>10</sub> et (+127)<sub>10</sub> c’est-à-dire 126 valeurs négatives + le zéro + 127 valeurs positives (-127 et +128 sont des valeurs réservées). 
-- Pour avoir des valeurs uniquement positives, il va falloir procéder à un décalage : ajouter systématiquement 127 à la valeur de l’exposant.  
+✅ **Exemple :** **Représentation de -10,125 en IEEE 754 (32 bits)**
 
-Exemple : -10,125 au format simple précision 
+1. **Conversion en binaire** :
+   $10,125_{10} = 1010,001_{2}$
+2. **Normalisation** :
+   $1,010001 \times 2^3$
+3. **Codage** :
+   - **Signe** = `1` (négatif)
+   - **Exposant** = $3 + 127 = 130 = 10000010_2$
+   - **Mantisse** = `01000100000000000000000`
 
-1ère étape : conversion en binaire du nombre relatif 
-
-- 10<sub>10</sub> = 1010<sub>2</sub> 
-- 0,125<sub>10</sub> 
-
-```
-0,125 x 2 = 0,250 
-0,250 x 2 = 0,50 
-0,50 x 2 = 1 + 0 (arrêt) 
-```
-
-- 0,125<sub>10</sub> =  0,001<sub>2</sub>  
-
-soit 10,125<sub>10</sub> = 1010,001<sub>2</sub> 
-
-2ème étape : utilisation de la norme IEEE 754 
-
-- Le bit de signe est 1 (nombre négatif) 
-- On décale la virgule de trois rangs vers la gauche 1010,001 = 1,010001.2<sup>3</sup>
-- On ajoute 127 à la valeur de l’exposant 1,010001.2<sup>130</sup>
-- L’exposant est 130<sub>10</sub> = 10000010<sub>2</sub>
-- La mantisse 010001 doit comporter 23 bits => on rajoute des zéros pour arriver à 23 
+✅ **Résultat binaire** :
+$\textcolor{red}{1} \quad \textcolor{blue}{10000010} \quad \textcolor{green}{01000100000000000000000}$
 
 ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.095.jpeg)
 
-En convertissant en hexadécimal : 
+✅ **Résultat hexadécimal** : `C1202000`
 
 ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.096.jpeg)
 
-[https://www.h-schmidt.net/FloatConverter/IEEE754.html ](https://www.h-schmidt.net/FloatConverter/IEEE754.html) 
+✅ **Vérifier avec un convertisseur en ligne** :  
+[IEEE 754 Float Converter](https://www.h-schmidt.net/FloatConverter/IEEE754.html)
+
+
+
 
 ## **<H2 STYLE="COLOR:BLUE;">6.  Exercices<a name="_page15_x40.00_y36.92"></a></h2>** 
 
