@@ -483,35 +483,96 @@ QCM :[ http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_python3x_2 ](http://fa
 ## **<H2 STYLE="COLOR:BLUE;">3. Les<a name="_page7_x40.00_y36.92"></a> boucles</h2>** 
 ### **<H3 STYLE="COLOR:GREEN;">3.1. L’instruction<a name="_page7_x40.00_y58.92"></a> for…in</h3>**
 
-L'instruction for travaille sur des séquences. Elle est en fait spécialisée dans le parcours d'une séquence de plusieurs données.
+L'instruction `for` permet de parcourir une **séquence** (liste, chaîne de caractères, etc.).
 
 ```
 for élément in séquence :     
     bloc d'instructions 
-suite du programme 
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n° 12.:</H3>** Avec une séquence de caractères : 
-```python
-def epeler(chaine): 
-    """ 
-    affiche chaque lettre de la chaine de caractère appelée chaine 
-    """ 
-    for elmt in chaine: 
-        print(elmt) 
-    return 'voilà!!' 
-```
-elmt s’appelle la variable d’itération 
-Tester la fonction avec : 
->  epeler('Bonjour') 
 
-La variable lettre est initialisée avec le premier élément de la séquence ('B'). Le bloc d’instructions est alors exécuté. 
-Puis la variable lettre est mise à jour avec le second élément de la séquence ('o') et le bloc d’instructions à nouveau 
-exécuté… Le bloc d’instructions est exécuté une dernière fois lorsqu’on arrive au dernier élément de la séquence ('r'). 
+???+ question "Activité n°11 : Épeler un mot"
 
-???+ question "Faire ce qui est proposé"
+    **Tester :**
 
-    {{ IDE() }}
+    ```python
+    def epeler(chaine): 
+        """ 
+        Affiche chaque lettre de la chaîne de caractères
+        """ 
+        for elmt in chaine: 
+            print(elmt) 
+        return 'Voilà !!' 
+    ```
+
+    **Exécuter :**
+    
+    ```python
+    print(epeler("Bonjour"))
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        B
+        o
+        n
+        j
+        o
+        u
+        r
+        Voilà !!
+        ```
+
+
+
+???+ question "Activité n°12 : Tester l'épellation sur Python Tutor"
+
+    🖥️ **Visualiser l'exécution du script en détail :**
+    
+    <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20epeler%28chaine%29%3A%20%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20affiche%20chaque%20lettre%20de%20la%20chaine%20de%20caract%C3%A8re%20appel%C3%A9e%20chaine%20%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20for%20elmt%20in%20chaine%3A%20%0A%20%20%20%20%20%20%20%20print%28elmt%29%20%0A%20%20%20%20return%20'voil%C3%A0!!'%20%0A%0Aepeler%28'Bonjour'%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+ 
+
+
+
+???+ question "Activité n°13 : Parcourir une liste"
+
+    **Tester :**
+    
+    ```python
+    def epeler(liste):
+        """
+        Affiche chaque élément d'une liste
+        """
+        for elmt in liste:
+            print(elmt)
+        return 'Voilà !!'
+    ```
+
+    **Exécuter :**
+    
+    ```python
+    print(epeler(['Pierre', 67.5, 18]))
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        Pierre
+        67.5
+        18
+        Voilà !!
+        ```
+
+
 
 **<H3 STYLE="COLOR:red;">Activité n° 13.:</H3>** Tester le script précédent sur python Tutor
 <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20epeler%28chaine%29%3A%20%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20affiche%20chaque%20lettre%20de%20la%20chaine%20de%20caract%C3%A8re%20appel%C3%A9e%20chaine%20%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20for%20elmt%20in%20chaine%3A%20%0A%20%20%20%20%20%20%20%20print%28elmt%29%20%0A%20%20%20%20return%20'voil%C3%A0!!'%20%0A%0Aepeler%28'Bonjour'%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
