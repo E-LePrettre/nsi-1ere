@@ -727,10 +727,13 @@ QCM 2 :[ http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_numerique](http://fa
 En informatique, les nombres réels (avec une partie décimale) sont représentés différemment des nombres entiers.  
 
 En **base 10**, l’écriture d’un nombre réel suit le principe des puissances de 10 :  
+
 $652,375 = 6 \times 10^2 + 5 \times 10^1 + 2 \times 10^0 + 3 \times 10^{-1} + 7 \times 10^{-2} + 5 \times 10^{-3}$
 
 De la même manière, en **base 2**, un nombre réel est écrit avec les puissances de 2 :
+
 $110,101_2 = 1 \times 2^2 + 1 \times 2^1 + 0 \times 2^0 + 1 \times 2^{-1} + 0 \times 2^{-2} + 1 \times 2^{-3}$
+
 $= 4 + 2 + 0,5 + 0,125 = 6,625_{10}$
 
 
@@ -757,6 +760,7 @@ $110,101_2 = 4 + 2 + 0 + 0.5 + 0 + 0.125 = 6.625_{10}$
 Le passage de base 10 en base 2 est plus subtil. Par exemple : convertissons 1234,347 en base 2. 
 
 1. La partie entière se transforme comme précédemment : 1234<sub>10</sub> = 10011010010<sub>2</sub>
+
 2. On transforme la partie décimale selon le schéma suivant :
 
 ![](Aimg11.png)
@@ -788,7 +792,7 @@ Convertir un **nombre entier** en binaire est simple (divisions successives). Ma
    $0.388 \times 2$ = $0.776 \quad$ $\textbf{0}$
 
    $0.776 \times 2$ = $1.552 \quad$ $\textbf{1}$
-   
+
    $0.552 \times 2$ = $1.104 \quad$ $\textbf{1}$
 
 ✅ **Résultat** :  
