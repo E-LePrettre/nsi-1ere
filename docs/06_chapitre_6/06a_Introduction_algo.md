@@ -465,7 +465,7 @@ La complexité étant constante, on note **O(1)** en notation de Landau.
     Ce sera le cas de tous les algorithmes avec un coût du type : **T(n) = an² + bn + c**, où a, b et c sont des constantes.  
 
     Le coût est fonction du carré du nombre d’éléments à traiter. On le note **O(n²)**.
-    
+
 ### **<H3 STYLE="COLOR:GREEN;">4.2. Complexité<a name="_page5_x40.00_y322.92"></a> en espace</H3>**
 
 La complexité en espace est une mesure de l'espace utilisé par un algorithme, exprimé comme fonction de la taille de l'entrée. L'espace compte le nombre maximum de cases mémoire utilisées simultanément pendant un calcul. 
@@ -486,7 +486,13 @@ L'étude des différents algorithmes proposés dans la suite des activités (Tri
 
 Comparaison des temps d’exécution d’algorithmes de différentes complexités 
 
-![](Aspose.Words.a85c3482-3dff-4bb5-bcc8-000ab623943b.033.jpeg)
+| **Taille**  | **Complexité** | **1** | **log₂(n)** | **n** | **n log₂(n)** | **n²** | **n³** | **2ⁿ** |
+|------------|-------------|--------|------------|--------|------------|--------|--------|------|
+| **n = 10²**  | ≃ 1µs | 6,6µs | 0,1ms | 0,6ms | 10ms | 1s | 4 × 10¹⁶a |
+| **n = 10³**  | ≃ 1µs | 9,9µs | 1ms | 9,9ms | 1s | 16,6mn | ∞ |
+| **n = 10⁴**  | ≃ 1µs | 13,3µs | 10ms | 0,1s | 100s | 11,5j | ∞ |
+| **n = 10⁵**  | ≃ 1µs | 16,6µs | 0,1s | 1,6s | 2,7h | 31,7a | ∞ |
+| **n = 10⁶**  | ≃ 1µs | 19,9µs | 1s | 19,9s | 11,5j | 31,7 × 10³a | ∞ |
 
 Si on double la taille d’un tableau : 
 
