@@ -53,9 +53,7 @@ L’algorithme **k-NN (k Nearest Neighbors)** est un **algorithme de classificat
 
 L’algorithme **k-NN repose sur la notion de distance**. L’une des plus courantes est la **distance euclidienne** :
 
-$
-\text{distance}(P_1, P_2) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
-$
+$\text{distance}(P_1, P_2) = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$
 
 Autres distances possibles :
 
@@ -181,17 +179,17 @@ L’algorithme des **k plus proches voisins** (k-Nearest Neighbors, k-NN) est un
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.013.jpeg)
 
-2. On introduit une **nouvelle donnée** (appelée cible) dont on souhaite **déterminer la catégorie**.  
+2 On introduit une **nouvelle donnée** (appelée cible) dont on souhaite **déterminer la catégorie**.  
 
-3. On choisit un **nombre de voisins** à considérer : **k** (par exemple, k = 6).  
+3 On choisit un **nombre de voisins** à considérer : **k** (par exemple, k = 6).  
 
 ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.014.jpeg)
 
-4. On calcule la **distance** entre la cible et chaque élément du jeu de données (le plus souvent la **distance euclidienne**). 
+4 On calcule la **distance** entre la cible et chaque élément du jeu de données (le plus souvent la **distance euclidienne**). 
 
-5. On sélectionne les **k données les plus proches**.  
+5 On sélectionne les **k données les plus proches**.  
 
-6. On **attribue à la cible** la classe majoritaire parmi ces k voisins.  
+6 On **attribue à la cible** la classe majoritaire parmi ces k voisins.  
 
 L'illustration suivante montre un exemple où l'on doit classer une nouvelle donnée en fonction des 6 plus proches voisins :  
 
