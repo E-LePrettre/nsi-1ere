@@ -12,8 +12,9 @@ title: 02b Les bases de Python
 4. [**Portée de variables : variables globales et locales**](#_page13_x40.00_y36.92)
 5. [**La fonction lambda**](#_page13_x40.00_y581.92)
 6. [**Fonctions avec des valeurs par défaut**](#_page14_x40.00_y36.92)
-7. [**Exercices**](#_page15_x40.00_y36.92)
-8. [**Problèmes**](#_page15_x40.00_y36.91)
+7. [**Prototype de fonction**](#7-prototype-de-fonction)
+8. [**Exercices**](#_page15_x40.00_y36.92)
+9. [**Problèmes**](#_page15_x40.00_y36.91)
 
 
 ## **<H2 STYLE="COLOR:BLUE;">1. Définir<a name="_page0_x40.00_y467.92"></a> une fonction</h2>** 
@@ -1103,9 +1104,31 @@ Il est parfois utile de donner **une valeur par défaut** aux paramètres.
 
     - Permet d’avoir **des paramètres facultatifs**.
 
+## **<H2 STYLE="COLOR:BLUE;">7. Prototype de fonction**</h2>
+
+En Python, on peut **prototyper** une fonction en indiquant le type de ses **paramètres** et de sa **valeur retournée**.
+
+📌 **Exemple : une fonction qui calcule le carré d’un nombre entier** :
+
+```python
+def carre(nombre: int) -> int:
+    return nombre ** 2
+```
+
+✅ **Tester :**
+
+???+ question "Tester :"
+
+    ```python
+    print(carre(5))  # Affiche 25
+    ```
+
+    ??? success "Python"
+        {{ terminal() }}
 
 
-## **<H2 STYLE="COLOR:BLUE;">7. Exercices<a name="_page15_x40.00_y36.92"></a></h2>**
+
+## **<H2 STYLE="COLOR:BLUE;">8. Exercices<a name="_page15_x40.00_y36.92"></a></h2>**
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
@@ -1279,6 +1302,6 @@ Source :[ Fabrice  ](http://fsincere.free.fr/isn/python/cours_python_ch4.php)
 
 
 
-## **<H2 STYLE="COLOR:BLUE;">8. Problème<a name="_page15_x40.00_y36.91"></a></h2>** 
+## **<H2 STYLE="COLOR:BLUE;">9. Problème<a name="_page15_x40.00_y36.91"></a></h2>** 
 Le chifoumi sur **CAPYTALE**
 
