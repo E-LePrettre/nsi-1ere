@@ -292,33 +292,33 @@ a = a + 1
 
     ??? success "Total des opérations"
     
-    ```
-    `h = n // 3600` 
+        ```
+        `h = n // 3600` 
 
-      - 1 opération de division entière (`//`)
-      - 1 affectation  
-      - 1 accès mémoire 
+        - 1 opération de division entière (`//`)
+        - 1 affectation  
+        - 1 accès mémoire 
 
-    `m = (n - 3600 * h) // 60` 
+        `m = (n - 3600 * h) // 60` 
 
-      - 1 multiplication (`*`)  
-      - 1 soustraction (`-`)  
-      - 1 division entière (`//`)  
-      - 1 affectation  
-      - 2 accès mémoire 
+        - 1 multiplication (`*`)  
+        - 1 soustraction (`-`)  
+        - 1 division entière (`//`)  
+        - 1 affectation  
+        - 2 accès mémoire 
 
-    `s = n % 60`  
+        `s = n % 60`  
 
-      - 1 modulo (`%`)  
-      - 1 affectation  
-      - 1 accès mémoire 
+        - 1 modulo (`%`)  
+        - 1 affectation  
+        - 1 accès mémoire 
 
-    `return h, m, s` 
+        `return h, m, s` 
 
-      - 3 accès mémoire 
+        - 3 accès mémoire 
 
-    T(n) = 19
-    ```
+        T(n) = 19
+        ```
 
         **Résultat attendu :**
         ```
