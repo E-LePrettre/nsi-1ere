@@ -431,119 +431,159 @@ plt.show()
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°6.: Choix de la cible :**</H3>  On choisit un pétale de 0,5 cm de large et 2 cm de long. Rajouter au fichier précédent (avant ```plt.legend()```) : 
+**<H3 STYLE="COLOR:red;">Activité n°10.: Choix de la cible :**</H3>  
+
+Nous allons choisir un pétale de **0,5 cm de large** et **2 cm de long**.  
+
+Pour cela, il suffit de rajouter au fichier Python précédent la ligne suivante avant `plt.legend()` :  
+
 ```python
 plt.scatter(2.0, 0.5, color='k')
 ```
 
-![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.033.jpeg)
+**Visualisation du graphique :**  
+![Choix de la cible 1](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.033.jpeg)
 
-Conclusion : il y a de fortes chances que l’iris soit de l’espèce « iris setosa » 
+**Conclusion :**  
+
+Il y a de **fortes chances** que l’iris soit de l’espèce **« iris setosa »**, car il est positionné dans la zone des points verts correspondant à cette espèce.
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°7.: Autre choix de la cible :**</H3>  On choisit un pétale de 0,75 cm de large et 2,5 cm de long. Modifier le fichier pour observer la nouvelle cible. 
 
-Dans ce cas il est plus difficile de choisir. Il faut alors  utiliser l’algorithme des « k plus proches voisins ».  
+**<H3 STYLE="COLOR:red;">Activité n°11.: Autre choix de la cible :**</H3>  
+Nous choisissons maintenant un pétale de **0,75 cm de large** et **2,5 cm de long**.  
 
-![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.034.jpeg)
+Il faut modifier le fichier pour observer la **nouvelle cible**.
 
-- on calcule la distance entre la cible et chaque  point issu du jeu de données « iris » (c’est un  calcul de distance entre deux points)  
-- on sélectionne uniquement les k distances les plus  petites (les k plus proches voisins)  
-- parmi les k plus proches voisins, on détermine  quelle est l’espèce majoritaire. On associe alors  l’espèce  majoritaire  parmi  les  k  plus  proches  voisins.  
+**Visualisation du graphique :**  
+![Choix de la cible 2](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.034.jpeg)
 
-Si k = 3   
+Dans ce cas, il devient **plus difficile** de déterminer l’espèce de l’iris **à l’œil nu**. 
 
-![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.035.png)
+➡ **Il faut alors utiliser l’algorithme des k plus proches voisins (k-NN)**.
 
-L’espèce inconnue est l’espèce « setosa ».  
+L’algorithme suit ces étapes :
 
-La bibliothèque Python Scikit Learn propose un grand  nombre d'algorithmes lié au machine learning (c'est sans  aucun doute la bibliothèque la plus utilisée en machine  learning).  Parmi  tous  ces  algorithmes, Scikit Learn propose l'algorithme des k plus proches voisins.  
+- **1.** Calculer la **distance** entre la cible et chaque point du jeu de données « iris » (c'est un calcul entre deux points).
 
-**<H3 STYLE="COLOR:red;">Activité n°8.: Représentation avec matplotlib, pandas et sklean :**</H3> Visualiser le résultat du code suivant 
+- **2.** Sélectionner uniquement les **k distances les plus petites** (les k plus proches voisins).
+
+- **3.** Déterminer quelle est l'**espèce majoritaire** parmi les k plus proches voisins.
+
+- **4.** Attribuer cette espèce à la **cible**.
+
+Si **k = 3** :  
+
+**Visualisation avec les 3 plus proches voisins :**  
+
+![Calcul des plus proches voisins](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.035.png)
+
+**Résultat :**  
+L’espèce inconnue est classée comme **« iris setosa »**.
+
+ 
+
+**<H3 STYLE="COLOR:red;">Activité n°12.: Représentation avec matplotlib, pandas et sklean :**</H3> 
+
+Nous allons maintenant utiliser **Scikit-Learn** pour implémenter l’algorithme des k plus proches voisins.
+
+#### **Code Python :**
 ```python
 import pandas
 import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
 
-#traitement CSV
-iris=pandas.read_csv("iris.csv")
-x=iris.loc[:,"petal_length"]
-y=iris.loc[:,"petal_width"]
-lab=iris.loc[:,"species"]
-#fin traitement CSV
+# Chargement du jeu de données
+iris = pandas.read_csv("iris.csv")
+x = iris.loc[:, "petal_length"]
+y = iris.loc[:, "petal_width"]
+lab = iris.loc[:, "species"]
 
-#valeurs
-longueur=2.5
-largeur=0.75
-k=3
-#fin valeurs
+# Valeurs de la cible
+longueur = 2.5
+largeur = 0.75
+k = 3
 
-#graphique
+# Affichage des points
 plt.scatter(x[lab == 0], y[lab == 0], color='g', label='setosa')
 plt.scatter(x[lab == 1], y[lab == 1], color='r', label='virginica')
 plt.scatter(x[lab == 2], y[lab == 2], color='b', label='versicolor')
 plt.scatter(longueur, largeur, color='k')
 plt.legend()
-#fin graphique
 
-#algo knn
-d=list(zip(x,y))
+# Algorithme k-NN
+d = list(zip(x, y))
 model = KNeighborsClassifier(n_neighbors=k)
-model.fit(d,lab)
-prediction= model.predict([[longueur,largeur]])
-#fin algo knn
+model.fit(d, lab)
+prediction = model.predict([[longueur, largeur]])
 
-#Affichage résultats
-txt="Résultat : "
-if prediction[0]==0:
-  txt=txt+"setosa"
-if prediction[0]==1:
-  txt=txt+"virginica"
-if prediction[0]==2:
-  txt=txt+"versicolor"
-plt.text(3,0.5, f"largeur : {largeur} cm longueur : {longueur} cm", fontsize=12)
-plt.text(3,0.3, f"k : {k}", fontsize=12)
-plt.text(3,0.1, txt, fontsize=12)
-#fin affichage résultats
+# Affichage du résultat
+txt = "Résultat : "
+if prediction[0] == 0:
+    txt += "setosa"
+elif prediction[0] == 1:
+    txt += "virginica"
+else:
+    txt += "versicolor"
+
+plt.text(3, 0.5, f"largeur : {largeur} cm longueur : {longueur} cm", fontsize=12)
+plt.text(3, 0.3, f"k : {k}", fontsize=12)
+plt.text(3, 0.1, txt, fontsize=12)
 
 plt.show()
 ```
 
-![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.037.jpeg)
+#### **Visualisation du résultat :**  
+![Résultat prédiction k-NN](attachment:file-G6M1hfRZPEDLMqzEHAAmvs)
+
+➡ **L’algorithme k-NN classe la cible comme étant un iris setosa.**
 
 
-Interressons nous à la partie « knn » 
+
+**Explication du fonctionnement de k-NN en Python**  
+
+L’algorithme k-NN est implémenté en Python avec **Scikit-Learn**.  
+
+La ligne suivante **associe chaque point (x, y) avec son label** :
 ```python
-#algo knn
-d=list(zip(x,y))
-model = KNeighborsClassifier(n_neighbors=k)
-model.fit(d,lab)
-prediction= model.predict([[longueur,largeur]])
-#fin algo knn
+d = list(zip(x, y))
 ```
-
-La fonction ```zip()``` permet de faire **des boucles sur deux séquences en même temps**. On passe alors de  
+Nous passons d’un format sous forme de **deux listes séparées** :
 ```python
 x = [1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, ...] 
 y = [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.4,....] 
 ```
-à une **liste de tuples** d : 
+➡ **à une liste de tuples** représentant les coordonnées :
 ```python
-d = [(1.4, 0.2), (1.4, 0.2), (1.3, 0.2) (1.5, 0.2), (1.4, 0.2), (1.7, 0.2), (1.4, 0.4), ...] 
+d = [(1.4, 0.2), (1.4, 0.2), (1.3, 0.2), (1.5, 0.2), ...] 
 ```
-On obtient ainsi une liste de tuples qui représentent les coordonnées (x, y). 
 
-- ```KNeighborsClassifier``` est une méthode issue de la bibliothèque scikit-learn (voir plus haut le ```from sklearn.neighbors import KNeighborsClassifier```), cette méthode prend ici en paramètre le nombre de "plus proches voisins" (```model = KNeighborsClassifier(n\_neighbors=k)```)
-- ```model.fit(d, lab)``` permet d'associer les tuples présents dans la liste d avec les labels (0 : "iris setosa", 1 : "iris virginica" ou 2 : "iris versicolor").  
-Par exemple le premier tuple de la liste d, (1.4, 0.2) est associé au premier label de la liste lab (0), et ainsi de suite...
+**Explication du modèle k-NN :**
+```python
+model = KNeighborsClassifier(n_neighbors=k)
+model.fit(d, lab)
+prediction = model.predict([[longueur, largeur]])
+```
+- **`KNeighborsClassifier(n_neighbors=k)`** : crée un modèle k-NN avec k voisins.
 
-- La ligne ```prediction= model.predict([[longueur,largeur]])``` permet d'effectuer une prédiction pour un couple [longueur, largeur] (dans l'exemple ci-dessus longueur=2.5 et largeur=0.75). La variable prediction contient alors le label trouvé par l'algorithme knn.  
-Attention, prediction est une liste Python qui contient un seul élément (le label), il est donc nécessaire d'écrire prediction[0] afin d'obtenir le label. 
+- **`model.fit(d, lab)`** : entraîne le modèle en associant les points `(x, y)` à leurs étiquettes (`lab`).
 
-**<H3 STYLE="COLOR:red;">Activité n°9.: Utilisation de l’algorithme knn :**</H3> Modifier l’algorithme précédent pour qu’il affiche un nombre de voisin différents → k = 5 
+- **`model.predict([[longueur, largeur]])`** : prédit l’espèce de la cible `[longueur, largeur]`.
 
-**<H3 STYLE="COLOR:red;">Activité n°10.: Utilisation de l’algorithme knn :**</H3> Modifier l’algorithme précédent pour qu’il affiche un nombre de voisin différents et une cible différente. 
+⚠ **Attention :** `prediction` est une **liste contenant un seul élément**, il faut donc utiliser `prediction[0]` pour obtenir l’étiquette.
+
+
+
+
+![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.037.jpeg)
+
+
+
+
+**<H3 STYLE="COLOR:red;">Activité n°13.: Utilisation de l’algorithme knn :**</H3> Modifier l’algorithme précédent pour qu’il affiche un nombre de voisin différents → k = 5 
+
+
 
 
 ## <H2 STYLE="COLOR:BLUE;"> **2. Exercices<a name="_page12_x40.00_y36.92"></a>** </H2>
