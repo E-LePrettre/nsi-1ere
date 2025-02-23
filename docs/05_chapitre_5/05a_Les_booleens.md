@@ -13,65 +13,87 @@ title: 05a Les booléens
 
 ## **<H2 STYLE="COLOR:BLUE;">1. L’algèbre<a name="_page0_x40.00_y375.04"></a> de Boole</h2>** 
 
-L'algèbre de Boole, ou calcul booléen, est la partie des mathématiques qui s'intéresse aux opérations et aux fonctions sur les variables logiques. Elle fut inventée par le mathématicien britannique George Boole. Aujourd'hui, l'algèbre de Boole trouve de nombreuses applications en informatique et dans la conception des circuits électroniques. 
+L'**algèbre de Boole** est une branche des mathématiques qui traite des **opérations logiques**. Elle a été développée par **George Boole** et est largement utilisée en informatique et en électronique numérique.
 
-On appelle B l'ensemble constitué de deux éléments appelés valeurs de vérité {FAUX, VRAI}. Cet ensemble est aussi noté B = {0, 1}, notation que l'on utilisera désormais. Sur cet ensemble on peut définir les lois ET et OU et une transformation appelée « complémentaire » (parfois « inversion » ou « contraire »). 
+✅ L’algèbre de Boole repose sur l’ensemble **B = {0, 1}** où :
+- `0` représente **FAUX** (état bas).
+- `1` représente **VRAI** (état haut).
+
+On y retrouve trois **opérations fondamentales** :
+
 
 ### **<H3 STYLE="COLOR:GREEN;">1.1. ET<a name="_page0_x40.00_y473.04"></a></h3>** 
 
-Elle est définie de la manière suivante : **a ET b est VRAI si et seulement si a est VRAI et b est VRAI.**
+**Définition** : `a ET b` est VRAI **si et seulement si** `a` ET `b` sont tous deux VRAIS.
 
-Cette loi est aussi notée : 
+✅ Différentes notations :
+- `a ⋅ b`
+- `a ∧ b`
+- `a & b` ou `a && b` (langages C, Java, PHP…)
+- `a AND b` (Python, Pascal…)
 
-- a · b 
-- a/\b (dans quelques notations algébriques, ou en APL[^1]) 
-- a&b ou a&&b (Perl, C, PHP, ...) 
-- a AND b (Ada, Pascal, Python, ...)
+
+
 
 ### **<H3 STYLE="COLOR:GREEN;">1.2. OU<a name="_page0_x40.00_y591.04"></a></h3>** 
 
-Elle est définie de la manière suivante : **a OU b est VRAI si et seulement si a est VRAI ou b est VRAI, ou si a et b sont vrais.**
+**Définition** : `a OU b` est VRAI **si et seulement si** `a` ou `b` (ou les deux) sont VRAIS.
 
-Cette loi est aussi notée : 
+✅ Différentes notations :
+- `a + b`
+- `a ∨ b`
+- `a OR b` (Python, Pascal…)
 
-- a+b 
-- a\/b (dans quelques notations algébriques ou en APL) 
-- ab ou ab (Perl, C, PHP, ...) 
-- a OR b (Ada, Pascal, Python, ...) 
 
 ### **<H3 STYLE="COLOR:GREEN;">1.3. NON<a name="_page1_x40.00_y43.04"></a></h3>** 
 
+**Définition** : `NON a` est VRAI **si et seulement si** `a` est FAUX.
+
+✅ Différentes notations :
+- `¬a`
+- `!a` (C, Java…)
+- `NOT a` (Pascal, ASM…)
 Le contraire de « a » est VRAI si et seulement si a est FAUX
 
-Le contraire de a est noté : 
 
-- a 
-- ¬a 
-- ~a (dans quelques notations algébriques ou en APL) 
-- !a (C, C++...) 
-- NOT a (ASM, Pascal, ...) 
 
 ## **<H2 STYLE="COLOR:BLUE;">2. Les<a name="_page1_x40.00_y213.04"></a> fonctions logiques et tables de vérité</h2>** 
 
-A la base de la plupart des composants d’un ordinateur, on retrouve le **transistor**. Il a été inventé fin 1947 par les Américains  John  Bardeen,  William  Shockley  et  Walter  Brattain.  Les  premiers  ordinateurs  datent  de  1943  et fonctionnaient grâce à des tubes électroniques moins performant que les transistors. 
+L'algèbre de Boole est à la base des **circuits logiques** utilisés dans les ordinateurs.
 
-Les transistors sont regroupés dans des circuits intégrés : ils sont gravés sur des plaques de silicium ainsi que les connexions. Un transistor se comportent comme un interrupteur : le courant passe ou le courant ne passe pas. On parle d’un **état « haut »** symbolisé par **un 1** et d’un **état « bas »** symbolisé par **un 0.** 
+💡 Un **transistor** fonctionne comme un **interrupteur** :  
+- `1` : le courant passe (**état haut**).
+- `0` : le courant ne passe pas (**état bas**).
 
-Un transistor est l’élément de base des circuits logiques. Un circuit logique permet de réaliser une  **opération booléenne**. Ces opérations booléennes sont directement liées à l’algèbre de Boole (1815-1864). Un circuit logique prend en entrée un ou des signaux électriques (1 ou 0) et donne en sortie un ou des signaux électriques. Il existe deux catégories de circuit logique : 
+🔹 Types de circuits logiques :
+1. **Circuits combinatoires** : la sortie dépend uniquement des entrées.
+2. **Circuits séquentiels** : la sortie dépend des entrées et de l’historique des états précédents.
 
-- Les **circuits combinatoires** : les états en sortie dépendent uniquement des états en entrée 
-- Les **circuits séquentiels** : les états en sortie dépendent des états en entrée ainsi que du temps et des états antérieurs 
+
 
 ### **<H3 STYLE="COLOR:GREEN;">2.1. La<a name="_page1_x40.00_y426.04"></a> porte NON (NOT)</h3>** 
 
-La porte NON inverse l’état en entrée. Si l’entrée de la porte est dans un état « bas » on obtiendra en sortie un état « haut » et vice versa. On aura la **table de vérité** suivante : 
+| Entrée (`E`) | Sortie (`S`) |
+|---|---|
+| 0 | 1 |
+| 1 | 0 |
+
+✅ **La sortie est l'inverse de l'entrée.**
+
+???+ question "Tester :"
+
+    ```python
+    def NOT(a):
+        return not a
+
+    print(NOT(1))  # Affiche 0
+    print(NOT(0))  # Affiche 1
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
 
 
-
-|E (Entrée) |S (Sortie)| 
-| - | - | 
-|1 |0 |
-|0 |1 |
 
 La porte NON est symbolisée par le schéma suivant : 
 
@@ -81,16 +103,28 @@ La porte NON est symbolisée par le schéma suivant :
 
 ### **<H3 STYLE="COLOR:GREEN;">2.2. La<a name="_page1_x40.00_y623.04"></a> porte OU (OR)</h3>** 
 
-La porte OU a deux entrée E1 et E2 et une sortie S 
+| `E1` | `E2` | `S` (Sortie) |
+|---|---|---|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 1 |
 
+✅ **La sortie est 1 si au moins une des entrées est 1.**
 
+???+ question "Tester :"
 
-|E1 (Entrée) |E2 (Entrée) |S (Sortie) |
-| - | - | - |
-|0 |0 |0 |
-|0 |1 |1 |
-|1 |0 |1 |
-|1 |1 |1 |
+    ```python
+    def OR(a, b):
+        return a or b
+
+    print(OR(0, 1))  # Affiche 1
+    print(OR(0, 0))  # Affiche 0
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
 
 La porte OU est symbolisée par le schéma suivant : 
 
@@ -100,16 +134,29 @@ La porte OU est symbolisée par le schéma suivant :
 
 ### **<H3 STYLE="COLOR:GREEN;">2.3. La<a name="_page2_x40.00_y162.04"></a> porte ET (AND)</h3>** 
 
-La porte ET a deux entrée E1 et E2 et une sortie S 
+| `E1` | `E2` | `S` (Sortie) |
+|---|---|---|
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+✅ **La sortie est 1 uniquement si les deux entrées sont 1.**
+
+???+ question "Tester :"
+
+    ```python
+    def AND(a, b):
+        return a and b
+
+    print(AND(1, 1))  # Affiche 1
+    print(AND(1, 0))  # Affiche 0
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
 
 
-
-|E1 (Entrée) |E2 (Entrée) |S (Sortie) |
-| - | - | - |
-|0 |0 |0 |
-|0 |1 |0 |
-|1 |0 |0 |
-|1 |1 |1 |
 
 La porte ET est symbolisée par le schéma suivant : 
 
@@ -121,14 +168,29 @@ La porte ET est symbolisée par le schéma suivant :
 
 ### **<H3 STYLE="COLOR:GREEN;">2.4. La<a name="_page2_x40.00_y432.04"></a> porte OU EXCLUSIF (XOR)</h3>** 
 
-La porte XOR a deux entrée E1 et E2 et une sortie S 
+| `E1` | `E2` | `S` (Sortie) |
+|---|---|---|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
 
-|E1 (Entrée) |E2 (Entrée) |S (Sortie) |
-| - | - | - |
-|0 |0 |0 |
-|0 |1 |1 |
-|1 |0 |1 |
-|1 |1 |0 |
+✅ **La sortie est 1 uniquement si les entrées sont différentes.**
+
+???+ question "Tester :"
+
+    ```python
+    def XOR(a, b):
+        return a ^ b
+
+    print(XOR(1, 1))  # Affiche 0
+    print(XOR(1, 0))  # Affiche 1
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+
 
 La porte XOR est symbolisée par le schéma suivant : 
 
@@ -162,38 +224,47 @@ La porte XOR est symbolisée par le schéma suivant :
 **<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** Voici un exemple de fonction booléenne : La fonction multiplexeur, notée mux.  
  
 mux(x,y,z)=(not(x) and y)or (x and z) 
-1.  Compléter le tableau 
+1  Compléter le tableau 
+
 x y z not(x) not(x) and y x and z mux(x,y,z) 
 ![](Aimg010.png)
 
-2. Montrer que (x and y) = not (not(x) or not(y))  
-3. Montrer que (x or y) = not (not(x) and not(y))  
-4. Trouver l’expression  de  la  fonction  ssi(x,y)  à  l’aide  des  opérateurs booléens   
+2 Montrer que (x and y) = not (not(x) or not(y))  
+
+3 Montrer que (x or y) = not (not(x) and not(y))  
+
+4 Trouver l’expression  de  la  fonction  ssi(x,y)  à  l’aide  des  opérateurs booléens   
 
 ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.020.png)
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Quelques<a name="_page3_x40.00_y448.04"></a> propriétés</h2>** 
 ### **<H3 STYLE="COLOR:GREEN;">3.1. Associativité</h3>**
-Comme avec les opérations habituelles, certaines parenthèses sont inutiles :
 
-(a + b) + c = a + (b + c) = a + b + c 
+Certaines parenthèses peuvent être omises :
 
-(a·b)·c = a·(b·c) = a·b·c 
+- `(a + b) + c = a + (b + c) = a + b + c`
+- `(a ⋅ b) ⋅ c = a ⋅ (b ⋅ c) = a ⋅ b ⋅ c`
+
+
+
 
 ### **<H3 STYLE="COLOR:GREEN;">3.2. Commutativité<a name="_page3_x40.00_y528.04"></a></H3>** 
-L'ordre est sans importance : 
 
-a + b = b + a 
+L'ordre des opérandes **n'a pas d'importance** :
 
-a·b = b·a 
+- `a + b = b + a`
+- `a ⋅ b = b ⋅ a`
+
 
 ### **<H3 STYLE="COLOR:GREEN;">3.3. Distributivité<a name="_page3_x40.00_y585.04"></a></h3>** 
 
-Comme avec les opérations mathématiques habituelles, il est possible de distribuer : 
+On peut distribuer les opérations comme en algèbre classique :
 
-a·(b + c) = a·b + a·c 
+- `a ⋅ (b + c) = (a ⋅ b) + (a ⋅ c)`
 
-Attention : comportement différent par rapport aux opérateurs + et · habituels  
+🚨 **Attention** : La distributivité de `ET` sur `OU` **ne fonctionne pas comme en arithmétique**.
+
+ 
 
 ### **<H3 STYLE="COLOR:GREEN;">3.4. Lois<a name="_page3_x40.00_y649.04"></a> de Morgan</h3>**[^2] 
 
@@ -206,6 +277,24 @@ Le  complément  d’une  somme  logique  (non  arithmétique)  est  égal  au  
 Le  complément  d’un  produit  logique  (non  arithmétique)  est  égal  à  la  somme  logique  (non  arithmétique) des termes complémentés.  
 
 ![](Aimg012.png)
+
+✅ **Les lois de De Morgan permettent de transformer une opération en son opposée.**
+
+???+ question "Tester :"
+
+    ```python
+    def de_morgan_1(a, b):
+        return not (a or b) == (not a and not b)
+
+    def de_morgan_2(a, b):
+        return not (a and b) == (not a or not b)
+
+    print(de_morgan_1(1, 0))  # Affiche True
+    print(de_morgan_2(1, 1))  # Affiche True
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
 
 ## **<H2 STYLE="COLOR:BLUE;">4. Exercices<a name="_page4_x40.00_y43.04"></a></h2>** 
 
