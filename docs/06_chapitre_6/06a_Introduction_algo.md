@@ -149,7 +149,8 @@ Il faut numéroter toutes les lignes de l'algorithme.
 
 ![](Aimg2.png)
 
-📊 **Trace de l’exécution avec n = 5**  
+📊 **Trace de l’exécution avec n = 5** 
+
 | #Ligne | n | r | Commentaire |
 |--------|---|---|-------------|
 | 1      | 5 | 0 | Initialisation |
@@ -289,45 +290,44 @@ a = a + 1
         return h, m, s
     ```
 
-    **Explication du coût T(n) :**  
+    ??? success "Total des opérations"
+    
+    ```
+    `h = n // 3600` 
 
-    - `h = n // 3600`  
       - 1 opération de division entière (`//`)
       - 1 affectation  
-      - 1 accès mémoire  
-      
-    - `m = (n - 3600 * h) // 60`  
+      - 1 accès mémoire 
+
+    `m = (n - 3600 * h) // 60` 
+
       - 1 multiplication (`*`)  
       - 1 soustraction (`-`)  
       - 1 division entière (`//`)  
       - 1 affectation  
-      - 2 accès mémoire  
-      
-    - `s = n % 60`  
+      - 2 accès mémoire 
+
+    `s = n % 60`  
+
       - 1 modulo (`%`)  
       - 1 affectation  
-      - 1 accès mémoire  
+      - 1 accès mémoire 
 
-    - `return h, m, s`  
-      - 3 accès mémoire  
+    `return h, m, s` 
 
-    **Total des opérations :**
-    
+      - 3 accès mémoire 
+
+    T(n) = 19
     ```
-    T(n) = 1(//) + 1(affectation) + 1 (mémoire) + 1(*) + 1(-) + 1(//) + 1(affectation) + 2 (mémoire) + 1(%) + 1 (affectation) + 1 (mémoire) + 3(accès mémoire) = 15
-    ```
-
-    La complexité étant constante, on note **O(1)** en notation de Landau.
-
-    ??? success "Python"
-        {{ IDE() }}
-
-    ??? success "Solution"
 
         **Résultat attendu :**
         ```
         La complexité de cet algorithme est constante : O(1)
         ```
+
+La complexité étant constante, on note **O(1)** en notation de Landau.
+
+    
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.1.3. Algorithmes sans structure conditionnelle</H4>**
 
