@@ -16,7 +16,9 @@ title: 05a Les booléens
 L'**algèbre de Boole** est une branche des mathématiques qui traite des **opérations logiques**. Elle a été développée par **George Boole** et est largement utilisée en informatique et en électronique numérique.
 
 ✅ L’algèbre de Boole repose sur l’ensemble **B = {0, 1}** où :
+
 - `0` représente **FAUX** (état bas).
+
 - `1` représente **VRAI** (état haut).
 
 On y retrouve trois **opérations fondamentales** :
@@ -27,9 +29,13 @@ On y retrouve trois **opérations fondamentales** :
 **Définition** : `a ET b` est VRAI **si et seulement si** `a` ET `b` sont tous deux VRAIS.
 
 ✅ Différentes notations :
+
 - `a ⋅ b`
+
 - `a ∧ b`
+
 - `a & b` ou `a && b` (langages C, Java, PHP…)
+
 - `a AND b` (Python, Pascal…)
 
 
@@ -40,8 +46,11 @@ On y retrouve trois **opérations fondamentales** :
 **Définition** : `a OU b` est VRAI **si et seulement si** `a` ou `b` (ou les deux) sont VRAIS.
 
 ✅ Différentes notations :
+
 - `a + b`
+
 - `a ∨ b`
+
 - `a OR b` (Python, Pascal…)
 
 
@@ -50,9 +59,13 @@ On y retrouve trois **opérations fondamentales** :
 **Définition** : `NON a` est VRAI **si et seulement si** `a` est FAUX.
 
 ✅ Différentes notations :
+
 - `¬a`
+
 - `!a` (C, Java…)
+
 - `NOT a` (Pascal, ASM…)
+
 Le contraire de « a » est VRAI si et seulement si a est FAUX
 
 
@@ -62,11 +75,15 @@ Le contraire de « a » est VRAI si et seulement si a est FAUX
 L'algèbre de Boole est à la base des **circuits logiques** utilisés dans les ordinateurs.
 
 💡 Un **transistor** fonctionne comme un **interrupteur** :  
+
 - `1` : le courant passe (**état haut**).
+
 - `0` : le courant ne passe pas (**état bas**).
 
 🔹 Types de circuits logiques :
+
 1. **Circuits combinatoires** : la sortie dépend uniquement des entrées.
+
 2. **Circuits séquentiels** : la sortie dépend des entrées et de l’historique des états précédents.
 
 
@@ -243,6 +260,7 @@ x y z not(x) not(x) and y x and z mux(x,y,z)
 Certaines parenthèses peuvent être omises :
 
 - `(a + b) + c = a + (b + c) = a + b + c`
+
 - `(a ⋅ b) ⋅ c = a ⋅ (b ⋅ c) = a ⋅ b ⋅ c`
 
 
@@ -253,6 +271,7 @@ Certaines parenthèses peuvent être omises :
 L'ordre des opérandes **n'a pas d'importance** :
 
 - `a + b = b + a`
+
 - `a ⋅ b = b ⋅ a`
 
 
