@@ -131,7 +131,7 @@ Une condition permet d’exécuter des instructions **uniquement si une certaine
 
 
 
-#### **<H4 STYLE="COLOR:MAGENTA;">2.1.2. L’instruction<a name="_page2_x40.00_y36.92"></a> else</h4>**![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.014.png)**
+#### **<H4 STYLE="COLOR:MAGENTA;">2.1.2. L’instruction<a name="_page2_x40.00_y36.92"></a> else</h4>**![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.014.png)
 
 ???+ question "Activité n°4 : Ajouter une condition else"
 
@@ -171,9 +171,7 @@ Une condition permet d’exécuter des instructions **uniquement si une certaine
 
 ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.065.png) On peut mettre qu’**UNE** instruction else par condition if et l’instruction else **n’est pas obligatoire** 
 
-???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.1.3. L’instruction<a name="_page3_x40.00_y321.92"></a> elif</h4>**
 
@@ -574,149 +572,178 @@ for élément in séquence :
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n° 13.:</H3>** Tester le script précédent sur python Tutor
-<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20epeler%28chaine%29%3A%20%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20affiche%20chaque%20lettre%20de%20la%20chaine%20de%20caract%C3%A8re%20appel%C3%A9e%20chaine%20%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20for%20elmt%20in%20chaine%3A%20%0A%20%20%20%20%20%20%20%20print%28elmt%29%20%0A%20%20%20%20return%20'voil%C3%A0!!'%20%0A%0Aepeler%28'Bonjour'%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
-
-
-
-**<H3 STYLE="COLOR:red;">Activité n° 14.:</H3>** avec les éléments d’une liste : 
-Recopier la fonction précédente et tester la fonction précédente avec  
->  epeler(['Pierre', 67.5, 18])  
-
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
 
 ### **<H3 STYLE="COLOR:GREEN;">3.2. L’instruction<a name="_page7_x40.00_y637.92"></a> for avec la fonction range()</h3>**
 
+La fonction `range()` permet de **générer une séquence de nombres**.
+
+???+ question "Activité n°14 : Compter jusqu’à un nombre donné"
+
+    **Tester :**
+
+    ```python
+    def compter(nombre): 
+        """ 
+        Affiche les nombres de 1 jusqu'à celui demandé
+        """ 
+        for i in range(1, nombre + 1): 
+            print(i) 
+        return 'Voilà !!'
+    ```
+
+    **Exécuter :**
+    
+    ```python
+    print(compter(5))
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        1
+        2
+        3
+        4
+        5
+        Voilà !!
+        ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n° 15.:</H3>** L’association avec la fonction range() est très utile pour créer des **séquences automatiques de nombres entiers :** 
 
-```python
-def compter(nombre): 
-    """ 
-    affiche les nombres de 1 à celui demandé comme un chrono 
-    """ 
-    for i in range(1,nombre+1): 
-        print(i) 
-    return 'voilà!!' 
-```
+???+ question "Activité n°15 : Table de multiplication"
 
-> compter(5)
+    **Tester :**
 
-???+ question "Faire ce qui est proposé"
+    ```python
+    def table_de_multiplication(nombre): 
+        """ 
+        Affiche la table de multiplication du nombre donné
+        """ 
+        for i in range(0, 11): 
+            print(i, 'x', nombre, '=', i * nombre) 
+        return 'Voilà !!'
+    ```
 
-    {{ IDE() }}
+    **Exécuter :**
+    
+    ```python
+    print(table_de_multiplication(9))
+    ```
 
+    ??? success "Python"
+        {{ IDE() }}
 
-**<H3 STYLE="COLOR:red;">Activité n° 16.:</H3>** Table de multiplication 
- - 
-La création d’une table de multiplication paraît plus simple avec une boucle for qu’avec une boucle while :
-```python 
-def table_de_multiplication(nombre): 
-    """ 
-    affiche la table de multiplication du nombre demandé 
-    """ 
-    for i in range(0,11): 
-        print(i, 'x', nombre, '=', i*nombre) 
-    return 'voilà!!' 
-```
-> table_de_multiplication(9) 
+    ??? success "Solution"
 
-???+ question "Faire ce qui est proposé"
+        **Résultat :**
+        ```
+        0 x 9 = 0
+        1 x 9 = 9
+        2 x 9 = 18
+        ...
+        10 x 9 = 90
+        Voilà !!
+        ```
 
-    {{ IDE() }}
 
 ### **<H3 STYLE="COLOR:GREEN;">3.3. L’instruction<a name="_page8_x40.00_y448.92"></a> while</h3>**
 
-On utilise généralement la boucle while lorsqu’on souhaite répéter un nombre de fois une même instruction et **qu’on ne sait pas combien de fois cette instruction va être répétée**. 
+Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
-On connait alors une **condition d’arrêt**, c’est-à-dire un test qui permet de savoir si l’instruction va être répétée ou non. 
 
-Point de vocabulaire : dans l’exemple précédent, 50 sera appelé le **prédicat.** 
+???+ question "Activité n°16 : Compteur avec `while`"
 
-```
-while expression:  # attention à la ponctuation     
-    bloc d'instructions # attention à l'indentation 
-suite du programme 
-```
+    **Tester :**
 
-Si l’expression est vraie (True) le bloc d’instructions est exécuté, puis l’expression est à nouveau évaluée. Le cycle continue jusqu'à ce que l’expression soit fausse (False) : on passe alors à la suite du programme. 
+    ```python
+    def compteur():
+        """
+        Affiche un compteur de 1 à 4
+        """
+        compt = 1
+        while compt < 5:
+            print(compt)
+            compt += 1  # Incrémentation
+        return f"Le compteur vaut {compt} à la fin de la boucle."
+    ```
 
-**<H3 STYLE="COLOR:red;">Activité n° 17.:</H3>** un script qui compte de 1 à 4 
+    **Exécuter :**
+    
+    ```python
+    print(compteur())
+    ```
 
-```python
-def compteur():
-    """
-    affiche un compteur
-    """
-    compt = 1
-    while compt < 5:
-        # ce bloc est exécuté tant que la condition (compteur < 5) est vraie
-        print(compt)
-        compt += 1 # incrémentation du compteur, compteur = compteur + 1
-    return "le compteur vaut à la fin de la boucle vaut : "+str(compt) 
-```
+    ??? success "Python"
+        {{ IDE() }}
 
-> compteur()
+    ??? success "Solution"
 
-???+ question "Faire ce qui est proposé"
+        **Résultat :**
+        ```
+        1
+        2
+        3
+        4
+        Le compteur vaut 5 à la fin de la boucle.
+        ```
 
-    {{ IDE() }}
 
-**<H3 STYLE="COLOR:red;">Activité n° 18.:</H3>** Tester le script précédent sur python Tutor
-<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20compteur%28%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20affiche%20un%20compteur%0A%20%20%20%20%22%22%22%0A%20%20%20%20compt%20%3D%201%0A%20%20%20%20while%20compt%20%3C%205%3A%0A%20%20%20%20%20%20%20%20%23%20ce%20bloc%20est%20ex%C3%A9cut%C3%A9%20tant%20que%20la%20condition%20%28compteur%20%3C%205%29%20est%20vraie%0A%20%20%20%20%20%20%20%20print%28compt%29%0A%20%20%20%20%20%20%20%20compt%20%2B%3D%201%20%23%20incr%C3%A9mentation%20du%20compteur,%20compteur%20%3D%20compteur%20%2B%201%0A%20%20%20%20return%20%22le%20compteur%20vaut%20%C3%A0%20la%20fin%20de%20la%20boucle%20vaut%20%3A%20%22%2Bstr%28compt%29%0A%0Acompteur%28%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+???+ question "Activité n°17 : Tester sur Python Tutor"
+
+    🖥️ **Visualiser l'exécution du script en détail :**
+    
+    <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20compteur%28%29%3A%0A%20%20%20%20%22%22%22%0A%20%20%20%20affiche%20un%20compteur%0A%20%20%20%20%22%22%22%0A%20%20%20%20compt%20%3D%201%0A%20%20%20%20while%20compt%20%3C%205%3A%0A%20%20%20%20%20%20%20%20%23%20ce%20bloc%20est%20ex%C3%A9cut%C3%A9%20tant%20que%20la%20condition%20%28compteur%20%3C%205%29%20est%20vraie%0A%20%20%20%20%20%20%20%20print%28compt%29%0A%20%20%20%20%20%20%20%20compt%20%2B%3D%201%20%23%20incr%C3%A9mentation%20du%20compteur,%20compteur%20%3D%20compteur%20%2B%201%0A%20%20%20%20return%20%22le%20compteur%20vaut%20%C3%A0%20la%20fin%20de%20la%20boucle%20vaut%20%3A%20%22%2Bstr%28compt%29%0A%0Acompteur%28%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+
+
 
 
 ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.065.png)Attention aux programmes qui cyclent (bouclent) : selon la condition de continuation on peut se retrouver sur une **boucle infinie.** Par exemple avec l’application précédente, avec une condition du type compteur > 0, condition qui sera toujours vrai, le programme exécute la boucle sans jamais s’arrêter.  
 
 
-
-**<H3 STYLE="COLOR:red;">Activité n° 19.:</H3>** Affichage de l’heure courante 
-
-```python
-import time     # importation du module time 
-quitter = 'n'   # initialisation 
-while quitter != 'o': 
-    # ce bloc est exécuté tant que la condition est vraie 
-    # strftime() est une fonction du module time 
-    print('Heure courante ', time.strftime('%H:%M:%S')) 
-    quitter = input("Voulez-vous quitter le programme (o/n) ? ") 
-print("A bientôt") 
-```
-???+ question "Faire ce qui est proposé"
-
-    {{ IDE() }}
-
 ### **<H3 STYLE="COLOR:GREEN;">3.4. L’instruction<a name="_page9_x40.00_y446.92"></a> break</h3>**
 
-L’instruction break provoque une **sortie immédiate** d’une boucle while ou d’une boucle for. 
+???+ question "Activité n°18 : Affichage de l'heure en boucle"
 
-Dans l’exemple suivant, l’expression True est toujours … vraie : on a une boucle sans fin. L’instruction break est donc le seul moyen de sortir de la boucle. 
+    **Tester :**
 
+    ```python
+    import time  # Importation du module time
 
+    while True:
+        print('Heure courante', time.strftime('%H:%M:%S'))
+        time.sleep(1)  # Pause d'une seconde
+        quitter = input('Voulez-vous quitter le programme (o/n) ? ')
+        if quitter == 'o':
+            break  # Interrompt la boucle
+    print("À bientôt")
+    ```
 
-**<H3 STYLE="COLOR:red;">Activité n° 20.:</H3>** Affichage de l’heure courante 
- 
-```python
-import time     # importation du module time 
-while True: 
-    print('Heure courante ', time.strftime('%H:%M:%S')) 
-    time.sleep(1) # fait une pause de 1s entre chaque affichage 
-    quitter = input('Voulez-vous quitter le programme (o/n) ? ') 
-    if quitter == 'o': 
-        break 
-print("A bientôt") 
-```
-???+ question "Faire ce qui est proposé"
+    ??? success "Python"
+        {{ IDE() }}
 
-    {{ IDE() }}
+    ??? success "Solution"
 
-### **<H3 STYLE="COLOR:GREEN;">3.5. Astuce<a name="_page9_x40.00_y739.92"></a></h3>** 
+        **Résultat :**
+        ```
+        Heure courante 14:30:01
+        Voulez-vous quitter le programme (o/n) ? n
+        Heure courante 14:30:02
+        Voulez-vous quitter le programme (o/n) ? o
+        À bientôt
+        ```
 
-Si  vous  **connaissez  le  nombre  de  boucles  à  effectuer,  utiliser  une  boucle for**.  Autrement,  utiliser  une boucle while (notamment pour faire des boucles sans fin). 
+### **<H3 STYLE="COLOR:GREEN;">3.5. Astuce : Quand utiliser `for` ou `while` ?<a name="_page9_x40.00_y739.92"></a></h3>** 
+
+✅ **Utiliser `for`** lorsque vous connaissez **le nombre exact de répétitions**. 
+
+✅ **Utiliser `while`** lorsque vous **ne savez pas combien de fois la boucle doit s’exécuter** (ex: attendre une entrée utilisateur).  
 
 ### **<H3 STYLE="COLOR:GREEN;">3.6. Exercices<a name="_page10_x40.00_y36.92"></a></h3>** 
 
@@ -899,113 +926,172 @@ Source :[ Fabrice Sincère ](http://fsincere.free.fr/isn/python/cours_python_ch3
 
 ## **<H2 STYLE="COLOR:BLUE;">4. Portée<a name="_page13_x40.00_y36.92"></a> de variables : variables globales et locales</h2>** 
 
-La **portée d’une variable** est l’endroit du programme où on peut accéder à la variable. 
+La **portée d’une variable** détermine où elle peut être utilisée dans le programme.
+ 
 
 ### **<H3 STYLE="COLOR:GREEN;">4.1. Variables<a name="_page13_x40.00_y76.92"></a> locales</h3>** 
 
 
+Une variable définie **dans une fonction** n’existe que **dans cette fonction**. Elle est **détruite** à la fin de l’exécution de la fonction.
 
-**<H3 STYLE="COLOR:red;">Activité n° 21.:</H3>**Observons le script suivant : 
-```python
-a = 10     # variable globale au programme 
 
-def mafonction(): 
-    a = 20 # variable locale à la fonction 
-    return a 
-```
-Tester
-> print(a) # nous sommmes dans l'espace global du programme
+???+ question "Activité n°19 : Variables locales"
 
-> mafonction() # nous sommes dans l'espace local de la fonction
+    **Tester :**
 
-> print(a) # de retour dans l'espace global
+    ```python
+    a = 10  # variable globale au programme 
 
-???+ question "Faire ce qui est proposé"
+    def mafonction(): 
+        a = 20  # variable locale à la fonction
+        return a
+    ```
 
-    {{ IDE() }}
+    **Exécuter :**
+    
+    ```python
+    print(a)  # Nous sommes dans l'espace global du programme
+    print(mafonction())  # Nous sommes dans l'espace local de la fonction
+    print(a)  # De retour dans l'espace global
+    ```
 
-Nous avons deux variables différentes qui portent le même nom a 
+    ??? success "Python"
+        {{ IDE() }}
 
-Une variable a de valeur 20 est créée dans la fonction : c’est une **variable locale** à la fonction. **Elle est détruite dès que l’on sort de la fonction.** 
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        10
+        20
+        10
+        ```
+
+    **Explication :**
+    - La variable `a` dans la fonction est **locale** et différente de `a` du programme principal.
+    - Elle est **détruite** à la fin de l’exécution de la fonction.
+
+
 
 ### **<H3 STYLE="COLOR:GREEN;">4.2. Variables<a name="_page13_x40.00_y329.92"></a> globales</h3>** 
 
 
+Une variable **globale** est accessible **partout** dans le programme.
 
-**<H3 STYLE="COLOR:red;">Activité n° 22.:</H3>**L’instruction global rend une variable globale : 
+???+ question "Activité n°20 : Variables globales"
 
-```python
-a = 10     # variable globale 
+    **Tester :**
 
-def mafonction(): 
-    global a   # la variable est maintenant globale 
-    a = 20 
-    return a 
-```
-Tester
-> print(a)
+    ```python
+    a = 10  # variable globale 
 
-> mafonction()
+    def mafonction(): 
+        global a   # On rend 'a' globale
+        a = 20  
+        return a
+    ```
 
-> print(a)
+    **Exécuter :**
+    
+    ```python
+    print(a)  # Avant modification
+    print(mafonction())  # Modification dans la fonction
+    print(a)  # Après modification
+    ```
 
-???+ question "Faire ce qui est proposé"
+    ??? success "Python"
+        {{ IDE() }}
 
-    {{ IDE() }}
+    ??? success "Solution"
 
-**Remarque** : il est préférable **d'éviter** l’utilisation de l’instruction global car c’est une source d’erreurs (on peut ainsi modifier le contenu d’une variable globale en croyant agir sur une variable locale).  
+        **Résultat :**
+        ```
+        10
+        20
+        20
+        ```
+
+    **Remarque :**  
+    - L’utilisation de `global` permet de **modifier la variable globale** à l’intérieur de la fonction.  
+    - ⚠️ **À éviter !** Cela peut provoquer des erreurs difficiles à détecter.
+
+
 
 ## **<H2 STYLE="COLOR:BLUE;">5. La<a name="_page13_x40.00_y581.92"></a> fonction lambda</h2>** 
 
-Parfois **pour éviter d’avoir à coder une fonction surtout si elle est très courte,** on préfère utiliser une fonction que l’on appelle **lambda** 
+Les **fonctions lambda** permettent de **définir rapidement une petite fonction anonyme**.
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n° 23.:</H3>**Au lieu de coder la fonction g(x)= 2x, on peut écrire 
+???+ question "Activité n°21 : Fonction lambda"
 
-```python
-g = lambda x: 2*x 
-```
+    **Tester :**
 
-> g(3) 
+    ```python
+    g = lambda x: 2*x
+    ```
 
-> g(4) 
+    **Exécuter :**
+    
+    ```python
+    print(g(3))  # Double 3
+    print(g(4))  # Double 4
+    ```
 
-Point de vocabulaire : En toute rigueur, on appelle fonctions les **fonctions** qui **retourne quelque chose (avec return**) et **procédure celle qui ne retourne rien**. 
+    ??? success "Python"
+        {{ IDE() }}
 
-???+ question "Faire ce qui est proposé"
+    ??? success "Solution"
 
-    {{ IDE() }}
+        **Résultat :**
+        ```
+        6
+        8
+        ```
+
+    **Explication :**
+    - `lambda x: 2*x` est **une version simplifiée** d’une fonction classique.
+    - **Utile** pour des fonctions **très courtes**.
+
+
 
 ## **<H2 STYLE="COLOR:BLUE;">6. Fonctions<a name="_page14_x40.00_y36.92"></a> avec des valeurs par défaut</H2>** 
 
-Il est parfois utile de définir des fonctions avec **plusieurs paramètres** dont certains, parce que par exemple rarement modifiés, sont **optionnels et possèdent donc une valeur par défaut**. 
+Il est parfois utile de donner **une valeur par défaut** aux paramètres.
 
 
+???+ question "Activité n°22 : Valeurs par défaut"
 
-**<H3 STYLE="COLOR:red;">Activité n° 24.:</H3>**
+    **Tester :**
 
-```python
-def vetement(couleur_pull='rouge', couleur_pantalon='bleu'): 
-    return 'Le pull est '+couleur_pull+' et le pantalon est '+ couleur_pantalon 
-```
+    ```python
+    def vetement(couleur_pull='rouge', couleur_pantalon='bleu'): 
+        return f"Le pull est {couleur_pull} et le pantalon est {couleur_pantalon}"
+    ```
 
-Tester
-> vetement('bleu','bleu')
+    **Exécuter :**
+    
+    ```python
+    print(vetement('bleu', 'bleu'))  # Modification des 2 valeurs
+    print(vetement(couleur_pantalon='noir'))  # Seul le pantalon change
+    ```
 
-> vetement(couleur_pantalon='noir')
+    ??? success "Python"
+        {{ IDE() }}
 
-???+ question "Faire ce qui est proposé"
+    ??? success "Solution"
 
-    {{ IDE() }}
+        **Résultat :**
+        ```
+        Le pull est bleu et le pantalon est bleu
+        Le pull est rouge et le pantalon est noir
+        ```
 
-Autre exemple :
+    **Explication :**
+    - Si **aucune valeur** n’est précisée, **la valeur par défaut** est utilisée.
+    - Permet d’avoir **des paramètres facultatifs**.
 
-![](2023-09-02.png)
-Tester 
-???+ question "Faire ce qui est proposé"
 
-    {{ IDE() }}
 
 ## **<H2 STYLE="COLOR:BLUE;">7. Exercices<a name="_page15_x40.00_y36.92"></a></h2>**
 => **CAPYTALE Le code vous sera donné par votre enseignant**
