@@ -225,53 +225,111 @@ Un **algorithme correct** doit respecter deux conditions :
 
 ## **<H2 STYLE="COLOR:BLUE;">4. Complexité<a name="_page3_x40.00_y361.92"></a></H2>**
 
-Un algorithme est implémenté dans un langage spécifique (Java, C, Python,...) et va s'exécuter sur une machine. 
+L'efficacité d’un algorithme peut être mesurée selon **deux critères** :  
 
-La durée d'exécution du programme va dépendre du nombre d'instructions élémentaires mobilisées lors de son exécution. On parle alors de **complexité temporelle.** 
+✔ **La complexité temporelle** : nombre d'opérations nécessaires pour exécuter l'algorithme.  
 
-Le programme va également mobiliser un certain nombre de ressources machines, en particulier la mémoire. On parle alors de complexité spatiale.  
+✔ **La complexité spatiale** : quantité de mémoire utilisée par l'algorithme.  
 
-Être capable d'évaluer la complexité d'un algorithme est importante, tout particulièrement, dans le cadre du traitement de données importantes (big data). Cela va permettre de sélectionner l'algorithme le plus performant en fonction des données à traiter. 
-
-On va donc effectuer des calculs sur l’algorithme en lui-même, dans sa version "papier". Les résultats de ces calculs fourniront une **estimation du temps d’exécution de l’algorithme lors de son fonctionnement.** 
+L'objectif est de **trouver les algorithmes les plus rapides et les plus économes en ressources** pour résoudre un problème donné.
+ation du temps d’exécution de l’algorithme lors de son fonctionnement.** 
 
 ### **<H3 STYLE="COLOR:GREEN;">4.1. Complexité<a name="_page3_x40.00_y529.92"></a> temporelle</H3>**
-#### <H4 STYLE="COLOR:MAGENTA;">4.1.1. Règles<a name="_page3_x40.00_y549.92"></a> de calcul</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.1.1. Règles<a name="_page3_x40.00_y549.92"></a> de calcul</H4>**
 
-Pour calculer la complexité, il faut examiner chaque ligne de code et l'y attribuer un **coût en temps.** 
+💡 **Comment mesurer le coût d’un algorithme ?**  
 
-Le coût ainsi obtenu n'aura pas d'unité, il s'agit d'un nombre d'opérations dont chacune aurait le même temps d’exécution : 1. Les opérations qui vont devoir être comptabilisées sont : 
+Chaque **instruction** d’un programme **prend du temps** pour s’exécuter.  
 
-- Les affectations comptent pour 1 unité de temps: a←2 
+On va **attribuer un coût** à chaque **opération de base** :  
 
-- Les comparaisons comptent pour 1 unité de temps: 2<3  
+| **Opération** | **Exemple** | **Coût** |
+|-------------|------------|---------|
+| Affectation | `a = 2` | 1 |
+| Comparaison | `2 < 3` | 1 |
+| Accès mémoire | `Lire a` | 1 |
+| Affichage | `print(a)` | 2 |
+| Opération arithmétique | `3 + 2` | 1 |
 
-- L'accès aux mémoires  comptent pour une 1 unité de temps et afficher pour 2 unités de temps: Lire a  Afficher a 
-- Chaque opération élémentaire compte pour une 1 unité de temps : 3+2  
+💡 **Exemple simple**  
 
-Déterminons le coût de la ligne de code suivante : 
+Analysons le **coût** de la ligne de code suivante :  
+```python
+a = a + 1
+```
+📊 **Détail du calcul** : 
 
-a←a+1 
+- `a + 1` → **1 opération d'addition**  
 
-T(n) = 1(affectation) + 1(accès à la mémoire) + 1(addition) = 3 
+- Accès à `a` → **1 lecture mémoire**  
 
-On ne comptera **pas la définition des fonctions**. 
+- Stockage du résultat dans `a` → **1 affectation**  
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.1.2. Algorithmes<a name="_page4_x40.00_y124.92"></a> sans structure de contrôle</H4>
+📝 **Coût total :** **1 + 1 + 1 = 3 unités de temps**  
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:** Le coût T(n) de cet algorithme écrit en python.</H3>**
+> **🎯 Règle importante :**  
 
-![](Aimg3.png)
+> On ne compte **pas** la définition des **fonctions** ou des **variables**. On ne compte **que leur exécution** !
 
-T(n) = 1(//) + 1(affectation) + 1 (mémoire) + 1(\*) + 1(-) + 1(//) + 1(affectation) + 2 (mémoire) + 1(%) + 1 affectation + 1 (mémoire) + 3(accès mémoire) = 15 
+ 
 
-![](Aspose.Words.a85c3482-3dff-4bb5-bcc8-000ab623943b.018.png)
+#### **<H4 STYLE="COLOR:MAGENTA;">4.1.2. Algorithmes<a name="_page4_x40.00_y124.92"></a> sans structure de contrôle</H4>**
 
-Le coût C est constant et ne dépend pas de n, on le note alors O(1) en notation de Landau.  
+**<H3 STYLE="COLOR:red;">Activité n°1.:** Le coût T(n) de cet algorithme écrit en python.</H3>
 
-O caractérise le comportement asymptotique quand n → +∞.  
+???+ question "Activité n°1 : Calcul du coût T(n) d'un algorithme"
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.1.3. Algorithmes sans structure conditionnelle</H4>
+    **Analyser le code suivant et calculer son coût :**
+    
+    ```python
+    def conversion(n: float) -> list:
+        h = n // 3600
+        m = (n - 3600 * h) // 60
+        s = n % 60
+        return h, m, s
+    ```
+
+    **Explication du coût T(n) :**  
+
+    - `h = n // 3600`  
+      - 1 opération de division entière (`//`)
+      - 1 affectation  
+      - 1 accès mémoire  
+      
+    - `m = (n - 3600 * h) // 60`  
+      - 1 multiplication (`*`)  
+      - 1 soustraction (`-`)  
+      - 1 division entière (`//`)  
+      - 1 affectation  
+      - 2 accès mémoire  
+      
+    - `s = n % 60`  
+      - 1 modulo (`%`)  
+      - 1 affectation  
+      - 1 accès mémoire  
+
+    - `return h, m, s`  
+      - 3 accès mémoire  
+
+    **Total des opérations :**
+    
+    ```
+    T(n) = 1(//) + 1(affectation) + 1 (mémoire) + 1(*) + 1(-) + 1(//) + 1(affectation) + 2 (mémoire) + 1(%) + 1 (affectation) + 1 (mémoire) + 3(accès mémoire) = 15
+    ```
+
+    La complexité étant constante, on note **O(1)** en notation de Landau.
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat attendu :**
+        ```
+        La complexité de cet algorithme est constante : O(1)
+        ```
+
+#### **<H4 STYLE="COLOR:MAGENTA;">4.1.3. Algorithmes sans structure conditionnelle</H4>**
 
 **<H3 STYLE="COLOR:red;">Activité n°2.:** On s’intéresse à la fonction (−1)<sup>n</sup>.  Le coût T(n) de cet algorithme écrit en python.</H3>**
 
@@ -279,7 +337,7 @@ O caractérise le comportement asymptotique quand n → +∞.
 
 T(n) = 1(comparaison) + 1(%) + 1 (mémoire) + 1(affectation) + 1(accès mémoire) = 5 
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.1.4. Algorithmes<a name="_page4_x40.00_y507.92"></a> avec structure itérative</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.1.4. Algorithmes<a name="_page4_x40.00_y507.92"></a> avec structure itérative</H4>**
 
 **<H3 STYLE="COLOR:red;">Activité n°3.:** On s’intéresse à la fonction qui utilise une structure for pour calculer la somme des n premiers entiers. Le coût T(n) de cet algorithme écrit en python.</H3>**
 
@@ -297,7 +355,7 @@ Ce sera le cas de tous les algorithmes avec un coût du type : **T(n)=an + b** o
 
 Ici, le coût dépend linéairement du nombre d’éléments à traiter. On le note O(n).
 
-#### <H4 STYLE="COLOR:MAGENTA;">4.1.5. Algorithmes<a name="_page5_x40.00_y36.92"></a> avec deux structures itératives imbriquées</H4>
+#### **<H4 STYLE="COLOR:MAGENTA;">4.1.5. Algorithmes<a name="_page5_x40.00_y36.92"></a> avec deux structures itératives imbriquées</H4>**
 
 **<H3 STYLE="COLOR:red;">Activité n°4.:** On considère que la taille des listes mots et fichiers\_test sont de n.  La complexité T(n) de cet algorithme écrit en python.</H3>**
 
