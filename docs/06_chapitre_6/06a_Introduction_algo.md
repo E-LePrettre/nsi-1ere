@@ -320,10 +320,6 @@ a = a + 1
         T(n) = 19
         ```
 
-        **Résultat attendu :**
-        ```
-        La complexité de cet algorithme est constante : O(1)
-        ```
 
 La complexité étant constante, on note **O(1)** en notation de Landau.
 
