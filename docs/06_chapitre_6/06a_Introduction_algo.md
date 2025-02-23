@@ -276,7 +276,6 @@ a = a + 1
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.1.2. Algorithmes<a name="_page4_x40.00_y124.92"></a> sans structure de contrôle</H4>**
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:** Le coût T(n) de cet algorithme écrit en python.</H3>
 
 ???+ question "Activité n°1 : Calcul du coût T(n) d'un algorithme"
 
@@ -327,47 +326,146 @@ La complexité étant constante, on note **O(1)** en notation de Landau.
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.1.3. Algorithmes sans structure conditionnelle</H4>**
 
-**<H3 STYLE="COLOR:red;">Activité n°2.:** On s’intéresse à la fonction (−1)<sup>n</sup>.  Le coût T(n) de cet algorithme écrit en python.</H3>**
+???+ question "Activité n°2 : Calcul du coût T(n) d'un algorithme"
 
-![](Aimg4.png)
+    **Analyser le code suivant et calculer son coût :**
+    
+    ```python
+    def puissanceMoinsUn(n: int) -> int:
+        if n % 2 == 0:
+            res = 1
+        else:
+            res = -1
+        return res
+    ```
 
-T(n) = 1(comparaison) + 1(%) + 1 (mémoire) + 1(affectation) + 1(accès mémoire) = 5 
+    ??? success "Total des opérations"
+    
+        ```
+        `if n % 2 == 0:` 
+
+        - 1 opération modulo (`%`)  
+        - 1 comparaison (`==`)  
+
+        `res = 1` ou `res = -1`  
+
+        - 1 affectation  
+
+        `return res` 
+
+        - 1 accès mémoire 
+
+        T(n) = 1(modulo) + 1(comparaison) + 1(affectation) + 1(accès mémoire) = 4
+        ```
+
+    La complexité étant constante, on note **O(1)** en notation de Landau.
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.1.4. Algorithmes<a name="_page4_x40.00_y507.92"></a> avec structure itérative</H4>**
 
-**<H3 STYLE="COLOR:red;">Activité n°3.:** On s’intéresse à la fonction qui utilise une structure for pour calculer la somme des n premiers entiers. Le coût T(n) de cet algorithme écrit en python.</H3>**
+???+ question "Activité n°3 : Calcul du coût T(n) d'un algorithme"
 
-![](Aimg5.png)
+    **Analyser le code suivant et calculer son coût :**
+    
+    ```python
+    def sommeEntiers(n):
+        somme = 0
+        for i in range(n + 1):
+            somme += i
+        return somme
+    ```
 
-T(n)   = 1(affectation) + (n + 1) \*[1(+) +1(affectation) +2(mémoire) +1(affectation)] + 1(accès mémoire)  
+    ??? success "Total des opérations"
+    
+        ```
+        `somme = 0`  
 
-= 1 + (n + 1) \* 5 + 1  
-= 2 + 5n + 5
-= 5n + 7
+        - 1 affectation  
 
-La complexité de cet algorithme est dite **linéaire.**  
+        `for i in range(n + 1):`  
 
-Ce sera le cas de tous les algorithmes avec un coût du type : **T(n)=an + b** où a et b sont des réels. 
+        - 1 affectation (`i = 0`)
+        - n + 1 comparaisons (`i < n + 1`)
+        - n + 1 incrémentations (`i += 1`)
 
-Ici, le coût dépend linéairement du nombre d’éléments à traiter. On le note O(n).
+        `somme += i`  
+
+        - n + 1 additions (`+`)  
+        - n + 1 affectations  
+
+        `return somme`  
+
+        - 1 accès mémoire  
+
+        T(n) = 1(affectation) + (n + 1) * [1(+) + 1(affectation) + 2(mémoire) + 1(affectation)] + 1(accès mémoire)
+
+        = 1 + (n + 1) * 5 + 1  
+        = 2 + 5n + 5  
+        = 5n + 7
+        ```
+
+    La complexité de cet algorithme est dite **linéaire**.  
+
+    Ce sera le cas de tous les algorithmes avec un coût du type : **T(n) = an + b**, où a et b sont des constantes.  
+
+    Ici, le coût dépend linéairement du nombre d’éléments à traiter. On le note **O(n)**.
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.1.5. Algorithmes<a name="_page5_x40.00_y36.92"></a> avec deux structures itératives imbriquées</H4>**
 
-**<H3 STYLE="COLOR:red;">Activité n°4.:** On considère que la taille des listes mots et fichiers\_test sont de n.  La complexité T(n) de cet algorithme écrit en python.</H3>**
+???+ question "Activité n°4 : Calcul du coût T(n) d'un algorithme"
 
-![](Aimg6.png)
+    **Analyser le code suivant et calculer son coût :**
+    
+    ```python
+    def trouvemot(mots: list, fichier_test: list) -> list:
+        resultat = []
+        for mot in mots:
+            for ligne in fichier_test:
+                if mot in ligne:
+                    resultat.append(mot)
+        return resultat
+    ```
 
-T(n)  = 1(affectation)+n\*[n \*[1(comparaison)+1(affectation+1(mémoire))]+1(mémoire)  
+    ??? success "Total des opérations"
+    
+        ```
+        `resultat = []`  
 
-= 1 + n \* (n \* 3) + 1  
-= 2 + 3 n²  
+        - 1 affectation  
 
-La complexité de cet algorithme est dite **quadratique**.  
+        `for mot in mots:`  
 
-Ce sera le cas de tous les algorithmes avec un coût du type : **T(n)=an² + bn + c** où a, b et c sont des réels. 
+        - n affectations (`mot`)
+        - n comparaisons (`mot in mots`)
 
-Le coût est fonction du carré du nombre d’éléments à traiter. On le note O(n²).
+        `for ligne in fichier_test:`  
 
+        - n * n affectations (`ligne`)
+        - n * n comparaisons (`ligne in fichier_test`)
+
+        `if mot in ligne:`  
+
+        - n * n comparaisons
+
+        `resultat.append(mot)`  
+
+        - n * n accès mémoire (append)
+
+        `return resultat`  
+
+        - 1 accès mémoire  
+
+        T(n) = 1(affectation) + n \*[n \*[1(comparaison) + 1(affectation) + 1(mémoire)]] + 1(mémoire)  
+
+        = 1 + n * (n * 3) + 1  
+        = 2 + 3n²  
+        ```
+
+    La complexité de cet algorithme est dite **quadratique**.  
+
+    Ce sera le cas de tous les algorithmes avec un coût du type : **T(n) = an² + bn + c**, où a, b et c sont des constantes.  
+
+    Le coût est fonction du carré du nombre d’éléments à traiter. On le note **O(n²)**.
+    
 ### **<H3 STYLE="COLOR:GREEN;">4.2. Complexité<a name="_page5_x40.00_y322.92"></a> en espace</H3>**
 
 La complexité en espace est une mesure de l'espace utilisé par un algorithme, exprimé comme fonction de la taille de l'entrée. L'espace compte le nombre maximum de cases mémoire utilisées simultanément pendant un calcul. 
