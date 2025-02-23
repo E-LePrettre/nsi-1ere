@@ -774,14 +774,22 @@ Convertir un **nombre entier** en binaire est simple (divisions successives). Ma
 4. **Arrêter** lorsque la partie décimale devient nulle ou atteint la précision souhaitée.
 
 🔢 **Exemple : Convertir 1234,347 en binaire**
+
 1. **Partie entière** :  
+
    $1234_{10} = 10011010010_{2}$ 
+
 2. **Partie décimale** :  
-   $0.347 \times 2 = 0.694 \quad (\textbf{0}$
-   $0.694 \times 2 = 1.388 \quad (\textbf{1})$
-   $0.388 \times 2 = 0.776 \quad (\textbf{0})$
-   $0.776 \times 2 = 1.552 \quad (\textbf{1})$
-   $0.552 \times 2 = 1.104 \quad (\textbf{1})$
+
+   $0.347 \times 2$ = $0.694 \quad$ $\textbf{0}$
+
+   $0.694 \times 2$ = $1.388 \quad$ $\textbf{1}$
+
+   $0.388 \times 2$ = $0.776 \quad$ $\textbf{0}$
+
+   $0.776 \times 2$ = $1.552 \quad$ $\textbf{1}$
+   
+   $0.552 \times 2$ = $1.104 \quad$ $\textbf{1}$
 
 ✅ **Résultat** :  
 $1234,347_{10} = 10011010010,01011_{2}$
