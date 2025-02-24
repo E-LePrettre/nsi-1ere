@@ -12,332 +12,438 @@ title: 05b Types construits
 
 ## **<H2 STYLE="COLOR:BLUE;">1.  Les<a name="_page0_x40.00_y242.92"></a> séquences en Python</h2>** 
 
-Il est possible de "stocker" plusieurs grandeurs dans une même structure, ce type de structure est appelé **une séquence.** De façon plus précise, nous définirons une séquence comme un ensemble fini et ordonné d'éléments indicés de 0 à n-1 (si cette séquence comporte n éléments). 
+Python permet de **stocker plusieurs valeurs** dans une seule structure appelée **séquence**.  
 
-Nous allons étudier plus particulièrement 2 types de séquences **: les tuples et les listes** (il en existe d'autres que nous n'évoquerons pas ici). 
+🔹 Une **séquence** est un **ensemble fini et ordonné** d'éléments, chacun ayant un **indice** qui commence à **0** et se termine à **n-1** (où n est la taille de la séquence).  
+
+🛠 **Types de séquences en Python :**  
+
+📌 **Les tuples** : Séquences **immuables** (non modifiables après leur création).
+
+📌 **Les listes** : Séquences **mutables** (modifiables à tout moment).  
+
 
 ### **<H3 STYLE="COLOR:GREEN;">1.1.  Les<a name="_page0_x40.00_y378.92"></a> tuples en Python</h3>** 
 
-Les **tuples** sont des séquences (ou p-uplet), assez semblables aux listes, sauf qu'on ne peut **PAS MODIFIER** un tuple après qu'il ait été créé :  ils sont **non mutables.** Cela signifie qu'on définit le contenu d'un tuple (les objets qu'il doit contenir) lors de sa création, mais qu'on ne peut en ajouter ou en retirer par la suite. 
+#### **<H4 STYLE="COLOR:MAGENTA;">1.1.1. Définition</h4>**
 
 
-**<H3 STYLE="COLOR:red;">Activité n°1.: Les parenthèses sont facultatives</H3>**  
+Un **tuple** est une séquence **immuable** (*non modifiable après sa création*). Une fois défini, son contenu **ne peut pas être modifié, ajouté ou supprimé**.  
 
-```python
-tuple = 'a', 123 , True
-print(tuple)
-autre_tuple = 'hello', # <-- notez la virgule
-print(autre_tuple)
-```
-??? success "Python"
+📌 **Syntaxe :**  
 
-    {{ IDE() }}
+Un tuple peut être défini avec des **parenthèses `()`** ou sans parenthèses.
 
+???+ question "Activité n°1 : Création d'un tuple"
 
-**<H3 STYLE="COLOR:red;">Activité n°2.: Création de tuples à partir d’une liste :</H3>** avec la fonction tuple() : 
+    🔹 **Tester :**  
 
-Tester :
+    ```python
+    tuple1 = ('a', 123, True)  # Avec parenthèses
+    tuple2 = 'hello',  # Sans parenthèses (notez la virgule)
+    
+    print(tuple1)
+    print(tuple2)
+    ```
 
-> liste = [7, 5, 6, 8, 3] 
+    ??? success "Python"
+        {{ IDE() }}
 
-> a = tuple(liste) 
+#### **<H4 STYLE="COLOR:MAGENTA;">1.1.2. Transformer une liste en tuple</h4>**
 
-> a 
+Python permet de **convertir une liste** en tuple grâce à la fonction `tuple()`.  
 
-**
-**Attention** la fonction **tuple()** ne fonctionnne pour l'instant pas sur la version de python qui est sur Basthon
+???+ question "Activité n°2 : Conversion d'une liste en tuple"
 
-**<H3 STYLE="COLOR:red;">Activité n°3.: Concaténation :</H3>** Il existe deux opérations de concaténation avec les opérateurs + et *. De nouveaux 
+    🔹 **Tester :**  
 
+    ```python
+    liste = [7, 5, 6, 8, 3]  # Une liste
+    a = tuple(liste)  # Conversion en tuple
+    print(a)  
+    ```
 
-```python
-t1 = 'a', 'b'
-t2 = 'c', 'd'
-print(t1 + t2) 
-print(3 * t1) 
-```
-??? success "Python"
+    ❗ **Attention** : La fonction `tuple()` peut ne pas fonctionner sur certaines versions de Python sur Basthon.
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
 
-**<H3 STYLE="COLOR:red;">Activité n°4.: Utilisation des indices :</H3>** Les indices permettent d’accéder aux différents éléments d’un tuple : 
+#### **<H4 STYLE="COLOR:MAGENTA;">1.1.3. Concaténation de tuples</h4>**
 
-Tester :
+📌 Deux **opérations principales** sont possibles avec les tuples :  
 
-> t = "a", 1, "b", 2, "c", 3
+✅ **Concaténation (`+`)** : Assemble deux tuples. 
 
-> len(t)
+✅ **Répétition (`*`)** : Répète un tuple plusieurs fois.  
 
-> t[2] # pour afficher le 3ème élément
+???+ question "Activité n°3 : Concaténation et répétition"
 
-> t[-1] # pour afficher le dernier élément
+    🔹 **Tester :**  
 
-> t[1:3] # pour afficher les éléments de l'indice 1 à l'indice 3 (non compris)
+    ```python
+    t1 = ('a', 'b')
+    t2 = ('c', 'd')
+    
+    print(t1 + t2)  # Concaténation
+    print(3 * t1)  # Répétition
+    ```
 
-> t[0:5:2] # pour afficher les éléments de 0 à 5 (non compris) mais de 2 en 2
+    ??? success "Python"
+        {{ IDE() }}
 
+#### **<H4 STYLE="COLOR:MAGENTA;">1.1.4. Accéder aux éléments d'un tuple</h4>**
 
+Les tuples sont **indexés** comme les listes, ce qui permet d’accéder à leurs éléments avec des **indices**.
 
-??? success "Python"
+???+ question "Activité n°4 : Accès aux éléments d'un tuple"
 
-    {{ terminal() }}
+    🔹 **Tester :**  
 
-![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.013.png)Attention comme dans les listes (tableaux) les indices des éléments commencent à 0. 
+    ```python
+    t = ("a", 1, "b", 2, "c", 3)
 
+    print(len(t))  # Nombre d'éléments
+    print(t[2])  # Troisième élément
+    print(t[-1])  # Dernier élément
+    print(t[1:3])  # Éléments d'indice 1 à 3 (non compris)
+    print(t[0:5:2])  # De 0 à 5 (non compris), par pas de 2
+    ```
 
+    📌 **Les indices commencent à 0.**
 
-**<H3 STYLE="COLOR:red;">Activité n°5.: Tuple de tuples :</H3>**On peut créer des tuples de tuples : 
+    ??? success "Python"
+        {{ IDE() }}
 
-```python
-tuple1 = 'a', 123 , True
-tuple2= 13, 17
-tuple= tuple1, tuple2, 'tout ça !'
-print(tuple)
-print( tuple[1][0]) # permet d’accéder à … 
-```
-??? success "Python"
 
-    {{ IDE() }}
+#### **<H4 STYLE="COLOR:MAGENTA;">1.1.5. Tuples imbriqués (Tuple de tuples)</h4>**
 
-Un **tuple est immuable** (on ne peut pas le modifier) mais il contient des objets muables (qu’on peut modifier)
+Un tuple peut **contenir d'autres tuples**.  
 
+???+ question "Activité n°5 : Tuples imbriqués"
 
+    🔹 **Tester :**  
 
-**<H3 STYLE="COLOR:red;">Activité n°6.: Parcours d’un tuples de deux manières :</H3>**  
+    ```python
+    tuple1 = ('a', 123, True)
+    tuple2 = (13, 17)
+    grand_tuple = (tuple1, tuple2, 'Hello!')
 
-```python
-prenoms="bruno","Marie"
-for element in prenoms: # méthode 1, elt prend à chaque tour les éléments de la séquence
-  print(element)
-for i in range(len(prenoms)): # méthode 2, on parcourt les indices de la séquence
-  print(prenoms[i]) 
-```
-??? success "Python"
+    print(grand_tuple)
+    print(grand_tuple[1][0])  # Accéder au premier élément du deuxième tuple
+    ```
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
+💡 **Un tuple est immuable** mais **peut contenir des objets modifiables** comme des listes.
 
-**<H3 STYLE="COLOR:red;">Activité n°7.:</H3>** Grâce au tuple, une fonction peut renvoyer plusieurs valeurs  
+#### **<H4 STYLE="COLOR:MAGENTA;">1.1.6. Parcourir un tuple avec une boucle</h4>**
 
-```python
-def add(a, b):
-  c = a + b 
-  return (a, b, c) 
+📌 On peut parcourir un tuple **de deux manières** :  
 
-mon_tuple = add(5, 8) 
-print(f"{mon_tuple[0]} + {mon_tuple[1]} = {mon_tuple[2]}")
-```
-??? success "Python"
+🔹 **1ère méthode** : Lire directement les éléments.  
 
-    {{ IDE() }}
+🔹 **2ème méthode** : Parcourir avec les indices.
 
-**Remarque** :  Les  chaines  de  caractères  formatées  (aussi  appelées  ***f-strings***)  permettent  d’inclure  la  valeur d’expressions Python dans des chaines de caractères en les préfixant avec f ou F et écrire des expressions comme {expression}. 
+???+ question "Activité n°6 : Parcours d'un tuple"
 
+    🔹 **Tester :**  
 
-|**Opérations/méthodes**|` `**Description** |
-| - | - |
-|**Méthodes** |**et opérations communes aux listes et tuples.**|
-|<p>x in s </p>|Renvoie True si un élément de s est égale à x, False sinon |
-|<p>x not in s </p>|Renvoie True si aucun un élément de s n'est égale à x, False sinon |
-|len(s)|Renvoie le nombre d'éléments de s |
-|s == s1 |Renvoie True si s et s1 sont de même type, ont la même longueur,et ont des éléments égaux deux à deux. |
-|s[i]|Renvoie l'élément d'indice i de s. Le premier élément a pour indice 0. |
-|s[i:j]|Renvoie une partie de l'indice i à j non inclus |
-|s.index(x)|Renvoie l'indice de la première apparition de x dans s |
-|s.count(x)|Renvoie le nombre d'apparitions de x dans s |
-|s+t|Renvoie une nouvelle séquence concaténation de s et t. |
-|n*t|Renvoie une nouvelle séquence composée de la concaténation de t avec lui même n fois. |
+    ```python
+    prenoms = ("Bruno", "Marie")
 
-### **<H3 STYLE="COLOR:GREEN;">1.2.  Les<a name="_page2_x40.00_y419.92"></a> tableaux</h3>** 
+    for element in prenoms:  # Méthode 1
+        print(element)
 
-Sous Python, les **tableaux** sont appelés **listes** et on peut définir une liste comme une collection d’éléments séparés par des virgules, l’ensemble étant enfermé dans des crochets. Une liste est une séquence **mutable.** 
+    for i in range(len(prenoms)):  # Méthode 2
+        print(prenoms[i])
+    ```
 
-Les éléments individuels qui constituent une liste peuvent être de type varié. 
+    ??? success "Python"
+        {{ IDE() }}
 
-Les  objets  placés  dans  une  liste  sont  rendus  accessibles  par  l’intermédiaire  d’un  index  (nombre  qui  indique l’emplacement de l’objet dans la séquence). Son premier indice a pour rang 0. 
+#### **<H4 STYLE="COLOR:MAGENTA;">1.1.7. Retourner plusieurs valeurs avec un tuple</h4>**
 
 
+Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuples.
 
-**<H3 STYLE="COLOR:red;">Activité n°8.: Création de listes</H3>** 
+???+ question "Activité n°7 : Retour de plusieurs valeurs"
 
-```python
-liste_vide = []
-liste1 = 10 *[0]
-liste2 = list(range(2,10,3))
-```
+    🔹 **Tester :**  
 
-Tester avec
+    ```python
+    def add(a, b):
+        c = a + b
+        return (a, b, c)  # Retourne un tuple
 
-> liste_vide
+    mon_tuple = add(5, 8)
+    print(f"{mon_tuple[0]} + {mon_tuple[1]} = {mon_tuple[2]}")
+    ```
 
-> liste1
+    ??? success "Python"
+        {{ IDE() }}
 
-> liste2
+📌 **Remarque** : Les **f-strings** (`f"{variable}"`) permettent d'afficher des expressions plus lisibles.
 
-??? success "Python"
+#### **<H4 STYLE="COLOR:MAGENTA;">1.1.8. Opérations courantes sur les tuples</h4>**
 
-    {{ IDE() }}
+| **Opérations/Méthodes** | **Description** |
+|------------------|-----------------------------------|
+| `x in s`  | Vérifie si `x` est dans `s` |
+| `x not in s` | Vérifie si `x` n'est pas dans `s` |
+| `len(s)` | Nombre d’éléments de `s` |
+| `s[i]` | Accès à l’élément d’indice `i` |
+| `s[i:j]` | Extraction des éléments de `i` à `j` (exclu) |
+| `s.index(x)` | Indice de la première occurrence de `x` |
+| `s.count(x)` | Nombre d’occurrences de `x` |
+| `s + t` | Concaténation de `s` et `t` |
+| `n * t` | Répète `t` `n` fois |
 
-![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.021.png) ATTENTION : si vous avez dans un programme "range(a,b)", a est la borne inférieure et b a borne supérieure. Vous ne devez surtout pas perdre de vu que **la borne inférieure est incluse**, mais que **la borne supérieure est exclue.** 
+📌 **Attention :** Contrairement aux listes, les tuples **ne peuvent pas être modifiés** après leur création.
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n° 9.: Construction par compréhension</H3>** L’instruction s’écrit sous la **forme [expression(i) for i in objet]**. Ce type de construction est très spécifique au langage Python. 
+### **<H3 STYLE="COLOR:GREEN;">1.2.  Les<a name="_page2_x40.00_y419.92"></a> tableaux en Python : Les Listes</h3>** 
 
-```python
-carres = [i*i for i in range(11)]
-```
+n Python, **les tableaux sont appelés des listes**. Une liste est une **séquence mutable**, ce qui signifie qu'on peut **modifier son contenu après sa création**.  
 
-Tester avec
+📌 **Définition :**  
 
-> carres
+Une liste est une **collection d’éléments** séparés par des virgules et entourés de crochets `[]`.  
 
-??? success "Python"
+📌 **Caractéristiques des listes :**  
 
-    {{ IDE() }}
+✅ **Modifiables** : On peut ajouter, supprimer ou modifier des éléments.  
 
-La compréhension de listes **évite donc d'écrire** le code “classique” suivant : 
+✅ **Indexées** : Chaque élément a un indice, commençant à `0`.  
 
-**A NE PAS FAIRE**
+✅ **Hétérogènes** : Une liste peut contenir des éléments de **différents types** (nombres, chaînes, booléens…).  
+
+
+#### **<H4 STYLE="COLOR:MAGENTA;">1.2.1. Création de listes en Python</h4>**
+
+???+ question "Activité n°8 : Création de listes"
+
+    🔹 **Tester :**  
+
+    ```python
+    liste_vide = []  # Une liste vide
+    liste1 = 10 * [0]  # Liste contenant dix zéros
+    liste2 = list(range(2, 10, 3))  # Liste contenant les nombres de 2 à 10 avec un pas de 3
+
+    print(liste_vide)
+    print(liste1)
+    print(liste2)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **Remarque :**  
+
+🔹 `range(a, b, p)` crée une **suite de nombres** de `a` à `b` (exclu) avec un pas `p`.  
+
+🔹 **ATTENTION** : La borne inférieure est incluse, mais **la borne supérieure est exclue**.  
+
+#### **<H4 STYLE="COLOR:MAGENTA;">1.2.2. Construction de listes par compréhension</h4>**
+
+Python permet de créer des listes de manière **optimisée et élégante** grâce aux **list comprehensions**.
+
+???+ question "Activité n°9 : Construction par compréhension"
+
+    🔹 **Tester :**  
+
+    ```python
+    carres = [i * i for i in range(11)]  # Liste des carrés de 0 à 10
+    print(carres)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **Pourquoi utiliser cette méthode ?** 
+
+✅ Plus **rapide** et **plus lisible** qu'une boucle classique.  
+
+✅ Évite d’utiliser `.append()` pour ajouter des éléments.  
+
+❌ **Ne pas faire** :
+
 ```python
 carres = []
 for i in range(11):
- carres.append(i*i)
+    carres.append(i * i)  # Ajout manuel (moins optimal)
 ```
 
+#### **<H4 STYLE="COLOR:MAGENTA;">1.2.3. Exemples avancés de compréhension de liste</h4>**
 
-**<H3 STYLE="COLOR:red;">Activité n° 10. : Construction par compréhension</H3>**  
+???+ question "Activité n°10 : Création avancée de listes"
 
-```python
-multiples_de_3 = [3 * i for i in range(30)]
-multiples_de_6 = [2 * n for n in multiples_de_3]
+    🔹 **Tester :**  
 
-mon_tab = [p for p in range(0, 5)]
+    ```python
+    multiples_de_3 = [3 * i for i in range(30)]  # Multiples de 3
+    multiples_de_6 = [2 * n for n in multiples_de_3]  # Multiples de 6 à partir de ceux de 3
 
-liste = [1, 7, 9, 15, 5, 20, 10, 8]
+    mon_tab = [p for p in range(0, 5)]  # Liste de 0 à 4
 
-mon_tab2 = [element for element in liste if element > 10]
+    liste = [1, 7, 9, 15, 5, 20, 10, 8]
 
+    mon_tab2 = [element for element in liste if element > 10]  # Garde les éléments > 10
+    mon_tab3 = [elm ** 2 for elm in liste if elm < 10]  # Carrés des éléments < 10
+    mon_tab4 = [[[i, j] for i in range(3)] for j in range(2)]  # Liste imbriquée
 
-mon_tab3 = [elm**2 for elm in liste if elm < 10]
-mon_tab4 = [[[i, j] for i in range(3)] for j in range(2)]
+    import random
+    resultat = [random.randint(1, 6) for i in range(10)]  # 10 nombres aléatoires entre 1 et 6
 
-import random
-resultat = [random.randint(1, 6) for i in range(10)]
-```
+    print(multiples_de_3)
+    print(multiples_de_6)
+    print(mon_tab)
+    print(mon_tab2)
+    print(mon_tab3)
+    print(mon_tab4)
+    print(resultat)
+    ```
 
-Tester avec
-
-> multiples_de_3
-
-> multiples_de_6
-
-> mon_tab
-
-> mon_tab2
-
-> mon_tab3
-
-> mon_tab4
-
-??? success "Python"
-
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
 
-mon_tab3 permet d’obtenir une liste qui contient tous les éléments de liste élevés au carré à condition que ces |
-|éléments de liste soient inférieurs à 10. 
+#### **<H4 STYLE="COLOR:MAGENTA;">1.2.4. Copier une liste en Python</h4>**
+
+En Python, copier une liste **correctement** est important pour éviter les erreurs !
+
+???+ question "Activité n°11 : Copie d'une liste"
+
+    🔹 **Tester :**  
+
+    ```python
+    liste3 = [1, 49, 81, 25, 64]
+    liste4 = liste3[:]  # Copie classique
+    liste5 = liste3[::-1]  # Liste inversée
+    liste6 = list(liste5)  # Copie avec list()
+
+    print(liste4)
+    print(liste5)
+    print(liste6)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **ATTENTION ⚠️** :  
+
+Si on fait `liste6 = liste5`, on ne crée **pas une nouvelle liste**, mais un **lien** entre `liste6` et `liste5`. Toute modification sur l’une **affectera l’autre** !  
+
+#### **<H4 STYLE="COLOR:MAGENTA;">1.2.5. Ajouter et supprimer des éléments d'une liste</h4>**
+
+???+ question "Activité n°12 : Ajouter et supprimer des éléments"
+
+    🔹 **Tester :**  
+
+    ```python
+    liste3 = [1, 49, 81, 25, 64]
+    liste3.append("dernier élément")  # Ajout à la fin
+    print(liste3)
+
+    liste3.pop(1)  # Supprime l'élément à l'indice 1
+    print(liste3)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+#### **<H4 STYLE="COLOR:MAGENTA;">1.2.6. Manipuler des chaînes avec les listes</h4>**
+
+Les listes sont **très utiles** pour manipuler des chaînes de caractères grâce aux méthodes `.split()` et `.join()`.
+
+???+ question "Activité n°13 : Découpage et fusion de chaînes"
+
+    🔹 **Tester :**  
+
+    ```python
+    citation = "Je ne cherche pas à connaître les réponses, je cherche à comprendre les questions."
+
+    liste = citation.split(" ")  # Découpe la phrase en liste de mots
+    phrase2 = " ".join(liste)  # Recrée la phrase en ajoutant des espaces
+
+    print(liste)
+    print(phrase2)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
 
 
+#### **<H4 STYLE="COLOR:MAGENTA;">1.2.7. Méthodes spécifiques aux listes</h4>**
 
-**<H3 STYLE="COLOR:red;">Activité n°11.: Copie de liste</H3>**  
+|Contrairement aux tuples, les listes possèdent **des méthodes supplémentaires** :
 
-```python
-liste3 = [1, 49, 81, 25, 64]
-liste4 = liste3[::]
-liste5 = liste3[::-1]
-liste6 = list(liste5)
-```
-
-Tester avec
-
-> liste4
-
-> liste5
-
-> liste6
-
-??? success "Python"
-
-    {{ IDE() }}
-
-**ATTENTION** :  si on copie une liste en faisant liste6 = liste5, on ne la copie pas réellement on fait seulement **un lien** de la variable liste6 vers [64, 25, 81, 49, 1]. Si on modifie la liste5, alors la liste6 est également modifiée !! 
+| **Méthode** | **Description** |
+|------------|----------------|
+| `s.append(x)` | Ajoute `x` à la fin de `s`. |
+| `s[i] = x` | Modifie l’élément d’indice `i`. |
+| `s.insert(i, x)` | Insère `x` à l’indice `i`. |
+| `s.remove(x)` | Supprime le premier élément `x` rencontré. |
+| `s.pop(i)` | Supprime l’élément à l’indice `i` (ou le dernier par défaut). |
+| `s.sort()` | Trie la liste. |
+| `s.reverse()` | Inverse l’ordre des éléments. |
 
 
+**Pourquoi utiliser un tuple plutôt qu'une liste ?**  
 
+✅ **Un tuple est plus rapide qu'une liste.**  
 
+✅ **Si les valeurs ne doivent pas être modifiées, il est préférable d'utiliser un tuple.**  
 
+✅ **Les tuples sont protégés contre les modifications accidentelles.**  
 
-**<H3 STYLE="COLOR:red;">Activité n°12.:</H3>** Ajouter et supprimer des éléments 
-
-```python
-liste3 = [1, 49, 81, 25, 64]
-liste3.append("en dernier")
-print(liste3)
-liste3.pop(1)
-print(liste3)
-```
-
-??? success "Python"
-
-    {{ IDE() }}
-
-**<H3 STYLE="COLOR:red;">Activité n°13.: avec les chaine de caractères  :</H3>** Il existe pour les listes des méthodes très intéressantes dans le traitement des chaines de caractères. Ce sont les méthodes split() et join(). Observer le code proposé et réaliser les affichages des listes créées. Penser à également utiliser la commande type(variables) afin de vérifier le type des variables créées. 
-
-```python
-citation="Je ne cherche pas à connaître les réponses, je cherche à comprendre les questions."
-liste=citation.split(" ")
-phrase2=" ".join(liste)
-print(liste)
-print(phrase2)
-```
-
-??? success "Python"
-
-    {{ IDE() }}
-
-Les mêmes opérations et méthodes peuvent être appliquées aux listes qu’au tuples mais voici celles qui ne sont applicables qu’aux listes (mais pas aux tuples) 
-
-
-
-|**Méthodes** |**et opérations applicables aux listes (mais pas aux tuples)**|
-| - | :- |
-|s.append(x)|Ajoute l'élément x à la fin de la liste s. |
-|s[i] = x|Modifie la liste et affecte la valeur x à la case d'indice i. Attention, cette case doit exister. |
-|s.insert(i,v)|Insère l'élément x dans s à l'indice i . Cette méthode décale les indices suivants. |
-|s.remove(x)|Supprime de la liste le premier élément dont la valeur est égale à x |
-|s.pop(i)|Enlève de la liste l'élément à la position i et renvoie sa valeur. En l'absence de i, c'est le dernier élément qui est supprimé et renvoyé |
-|s.sort()|Modifie la liste s en la triant |
-|s.reverse()|Modifie la listes en inversant l'ordre des éléments de s |
-
-Quel **est l'intérêt d'utiliser un tuple** ? La réponse est simple : les opérations sur les tuples sont **plus "rapides".** Quand vous savez que votre liste ne sera pas modifiée, il est préférable d'utiliser un tuple à la place d'une liste. 
 
 ### **<H3 STYLE="COLOR:GREEN;">1.3.  Les<a name="_page5_x40.00_y36.92"></a> tableaux de tableaux</h3>** 
 
-Les éléments d'un tableau peuvent être également un tableau. Ce type d'objet rappelle un objet mathématique qui s'appelle une **matrice**. Cet objet est utilisé dans de nombreux domaines, notamment dans le traitement des images. Une image est une **matrice de pixels**. 
+En Python, **les tableaux peuvent contenir d'autres tableaux**.  
+Ce type de structure est appelé une **matrice** et est utilisé dans de nombreux domaines comme :  
 
-On appelle matrice un tableau de tableaux dont chaque tableau à la même longueur. Chaque élément d'une matrice A est noté a𝑖,𝑗  où *i* est le numéro de ligne et *j* le numéro de colonne. 
+📌 **Applications des matrices :**  
 
-On représente une matrice de taille n,m en mathématiques ainsi : 
+✅ **Mathématiques** : Manipulation de données sous forme de tableaux. 
 
-![](Aimg016.png)
+✅ **Traitement d’images** : Une image est une **matrice de pixels**. 
 
-Pour accéder à un élément organisé en **liste de liste**, on utilise une notation avec un double crochets. Le premier indice pointe la ligne et le deuxième indice pointe la colonne. 
+✅ **Intelligence Artificielle & Machine Learning** : Utilisation d’algèbre linéaire.
 
-Si notre matrice contient n listes de m éléments on peut la voir ainsi : 
+#### **<H4 STYLE="COLOR:MAGENTA;">1.3.1. Définition et Notation des Matrices</h4>**
 
-![](Aimg017.png)
+
+On appelle **matrice** un **tableau de tableaux**, où chaque tableau **a la même longueur**.  
+
+📌 **Représentation d’une matrice de taille `(n, m)` en mathématiques :**  
+
+
+$A = \begin{bmatrix}
+a_{1,1} & a_{1,2} & a_{1,3} \\
+a_{2,1} & a_{2,2} & a_{2,3} \\
+a_{3,1} & a_{3,2} & a_{3,3}
+\end{bmatrix}$
+
+
+📌 **Notation en Python :**  
+
+Une matrice en **Python** est une **liste de listes**, où :  
+
+✅ **Ligne `i`** = `m[i]`  
+
+✅ **Colonne `j` dans la ligne `i`** = `m[i][j]`  
+
+📌 **Organisation d’une matrice en Python :**  
+
+```python
+m = [[1, 3, 4], 
+     [5, 6, 8], 
+     [2, 1, 3], 
+     [7, 8, 15]]
+```
 
 
 
