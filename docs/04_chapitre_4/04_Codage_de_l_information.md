@@ -911,22 +911,30 @@ Aide : Penser à utiliser la méthode split comme précédemment
 
 
 
-## **<H2 STYLE="COLOR:BLUE;">7.  Codage des caractères<a name="_page16_x40.00_y36.92"></a></h2>** 
+## **<H2 STYLE="COLOR:BLUE;">7.  Codage des caractères : De l'ASCII à l'Unicode !** 🖥️
+<a name="_page16_x40.00_y36.92"></a></h2> 
 
-### **<H3 STYLE="COLOR:GREEN;">7.1. Le<a name="_page16_x40.00_y58.92"></a> code ASCII</h3>**[^3]** 
+### **<H3 STYLE="COLOR:GREEN;">7.1. Le<a name="_page16_x40.00_y58.92"></a> code ASCII[^3] La base du texte numérique !** 🔤 </h3>
 
-La norme ASCII[^4] (on prononce généralement « aski ») établit une correspondance entre une représentation binaire des caractères de l'alphabet latin et les symboles, les signes, qui constituent cet alphabet.  
+Le **code ASCII** (*American Standard Code for Information Interchange*, prononcé "aski") est la première norme informatique permettant de **représenter des caractères sous forme de nombres**.
 
-Par exemple, le caractère a est associé à 1100001 (97) et A à 1000001 (65).  
-
-La norme ASCII permet ainsi à toutes sortes de machines de stocker, analyser et communiquer de l'information textuelle. En particulier, la quasi-totalité des ordinateurs personnels et des stations de travail utilisent l'encodage ASCII. Le code ASCII de base représentait les caractères sur 7 bits (c'est- à-dire 128 caractères possibles, de 0 à 127). 
+![](Copy of ASCII Character set.JPG)
 
 ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.101.jpeg)
 
-1. L’œuvre complète de Shakespeare tient sur 5 615 776 caractères (lettres et signes de ponctuation et d’espacement). À raison d’un octet pour représenter un caractère, cela fait donc environ 5,6 mégaoctets (5,6 Mo) de texte brut. 
-2. Une photo de résolution moyenne (4:3 8 mégapixel, 3264x2448) prise par un smartphone fait 19,5 kilo- octets (19,5 ko) une fois compressée. 
-3. La Joconde en haute définition (HD) sur une image de 7 479 × 11 146 pixels pour une taille de fichier de 89,94 mégaoctets (89,94 Mo). 
-4. Une minute de vidéo sur YouTube de qualité web pour smartphone, fait 3,1 méga-octets (3 Mo) 
+📌 **Comment ça marche ?**  
+Chaque caractère est associé à un nombre unique, codé en **binaire** sur **7 bits** :
+
+| Caractère | Code ASCII | Représentation binaire |
+|-----------|------------|----------------------|
+| A         | 65         | 1000001              |
+| B         | 66         | 1000010              |
+| a         | 97         | 1100001              |
+| z         | 122        | 1111010              |
+
+📌 **Pourquoi c’est utile ?**  
+Grâce à ASCII, les ordinateurs peuvent **échanger du texte** sans ambiguïté.
+
 
 **<H3 STYLE="COLOR:red;">Activité n° 6. : Python et la table ascii</h3>** Les fonctions chr et ord permettent d’accéder à la table 
 
@@ -939,19 +947,49 @@ Tester
 
     {{ terminal() }}
 
-### **<H3 STYLE="COLOR:GREEN;">7.2. Les<a name="_page16_x40.00_y611.92"></a> encodages ISO-latin</h3>** 
+### **<H3 STYLE="COLOR:GREEN;">7.2. Les<a name="_page16_x40.00_y611.92"></a> limites d’ASCII et l’arrivée des encodages ISO-latin** 🌍</h3>*
 
-Dans les années 1990, pour satisfaire les besoins des pays européens, ont été définis plusieurs encodages alternatifs, connus sous le nom de ISO-latin, ou encore ISO-8859.  
+Avec **seulement 128 caractères**, ASCII n'était pas suffisant pour représenter les **lettres accentuées** et les caractères d’autres alphabets (é, ñ, ç, ß, …).
 
-Idéalement, on aurait pu et certainement dû définir un seul encodage pour représenter tous les nouveaux caractères; mais entre toutes les langues européennes, le nombre de caractères à ajouter était substantiel, et cet encodage unifié aurait largement dépassé 256 caractères différents, il n'aurait donc pas été possible de tout faire tenir sur un octet. Mais on a préféré préserver la "bonne propriété" du modèle un **caractère = un octet**, ceci afin de préserver le code existant qui aurait sinon dû être retouché ou récrit. 
+💡 **Solution temporaire :** Les encodages **ISO-8859** (appelés aussi **ISO-latin**) ont été développés dans les années 1990 pour différentes langues :
 
-Dès lors il n'y avait pas d'autre choix que de définir plusieurs encodages distincts; par exemple pour le **français** on a utilisé à l'époque **ISO-latin-1**; pour le russe ISO-latin-5. 
+- **ISO-8859-1** → Français, Allemand, Espagnol...
 
-### **<H3 STYLE="COLOR:GREEN;">7.3. Unicode<a name="_page17_x40.00_y54.92"></a></h3>** 
+- **ISO-8859-5** → Alphabet cyrillique (russe)...
 
-Il existe d'autres normes que l'ASCII, comme l'Unicode par exemple, qui présentent l'avantage de proposer une version unifiée des différents encodages de caractères complétant l'ASCII mais aussi de permettre l'encodage de caractères autres que ceux de l'alphabet latin. Unicode définit des dizaines de milliers de codes, mais les 128 premiers restent compatibles avec ASCII. 
+- **ISO-8859-7** → Alphabet grec...
 
-![](Copy of ASCII Character set.JPG)
+⚠️ **Problème :** Chaque langue avait son propre encodage, rendant **l’échange international compliqué** ! ✈️
+
+
+### **<H3 STYLE="COLOR:GREEN;">7.3. Unicode<a name="_page17_x40.00_y54.92"></a> et UTF-8 : La solution universelle !** 🌍🚀</h3>
+
+🎯 **L’objectif d’Unicode** est simple : **Créer un standard unique** pour représenter **toutes les écritures du monde** !  
+
+➡️ **Unicode** permet d’encoder plus de **140 000 caractères**, incluant les alphabets, les symboles, et même les **emojis !** 😃🔥
+
+📌 **Les formats Unicode :**
+
+- **UTF-8** : Codage flexible (1 à 4 octets par caractère). 📜 *Compatible ASCII !*
+
+- **UTF-16** : Utilisé pour les langues asiatiques. 🏯
+
+- **UTF-32** : Fixe (chaque caractère = 4 octets). 🔳
+
+🚀 **Pourquoi UTF-8 est le plus utilisé ?**  
+
+✅ Compatible avec ASCII  
+
+✅ Économie de mémoire pour les textes latins  
+
+✅ Lisible par la plupart des logiciels  
+
+💡 **Attention aux erreurs d’encodage !**  
+
+Si un texte en **UTF-8** est interprété en **ISO-8859-1**, vous verrez des caractères bizarres comme :
+> **"Ã©crit en UTF-8"** au lieu de **"écrit en UTF-8"**
+
+
 
 Dans le codage UTF-8, chaque point de code est codé sur une suite d'un à quatre octets. Il a été conçu pour être compatible avec certains logiciels originellement prévus pour traiter des caractères d'un seul octet. 
 
