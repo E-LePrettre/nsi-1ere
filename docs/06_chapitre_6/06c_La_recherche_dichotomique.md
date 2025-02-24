@@ -189,8 +189,8 @@ ALGORITHME recherche_dichotomique
 🔹 On cherche donc **combien de fois** on peut diviser **n** par **2** avant d’atteindre **1 élément**.
 
 📌 **Formule mathématique** :  
-$ n = 2^a $  
-$ a = log_2(n) $ 
+$n = 2^a$  
+$a = log_2(n)$ 
 
 Autrement dit, combien de fois faut-il diviser n par 2 pour obtenir 1?
 
