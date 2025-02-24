@@ -471,9 +471,8 @@ Une autre méthode consiste à :
 L'ordinateur utilise **le complément à 2** pour représenter les entiers négatifs.
 
 
-### **<H3 STYLE="COLOR:GREEN;">3.1. Principe<a name="_page6_x40.00_y773.92"></a> du complément à 2<sup>n</sup> :</h3>**
 
-#### **<H4 STYLE="COLOR:MAGENTA;">3.1.1. <a name="_page7_x40.00_y36.92"></a>Conversion décimal → binaire (nombre positif)</h4>**
+### **<H3 STYLE="COLOR:GREEN;">3.1. <a name="_page7_x40.00_y36.92"></a>Conversion décimal → binaire (nombre positif)</h3>**
 
 **Méthode :**
 
@@ -500,7 +499,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
         {{ terminal() }}
 
 
-#### **<H4 STYLE="COLOR:MAGENTA;">3.1.2. <a name="_page7_x40.00_y158.92"></a>Conversion décimal → binaire (nombre négatif)</H4>** 
+### **<H3 STYLE="COLOR:GREEN;">3..2. <a name="_page7_x40.00_y158.92"></a>Conversion décimal → binaire (nombre négatif)</H3>** 
 
 **Méthode du complément à 2 :**
 
@@ -534,7 +533,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
     ??? success "Python"
         {{ terminal() }}
 
-#### **<H4 STYLE="COLOR:MAGENTA;">3.1.3. <a name="_page7_x40.00_y335.92"></a>Addition en binaire avec des nombres signés</h4>** 
+### **<H3 STYLE="COLOR:GREEN;">3.3. <a name="_page7_x40.00_y335.92"></a>Addition en binaire avec des nombres signés</h3>** 
 
 📌 **Vérifions que** `27 + (-9) = 18` en binaire.
 
@@ -561,7 +560,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
     ??? success "Python"
         {{ terminal() }}
 
-#### **<H4 STYLE="COLOR:MAGENTA;">3.1.4. <a name="_page7_x40.00_y496.92"></a>Conversion binaire → décimal (nombre négatif)</h4>** 
+### **<H3 STYLE="COLOR:GREEN;">3.4. <a name="_page7_x40.00_y496.92"></a>Conversion binaire → décimal (nombre négatif)</h3>** 
 
 Si un nombre binaire commence par **1**, il est **négatif** en complément à 2.
 
