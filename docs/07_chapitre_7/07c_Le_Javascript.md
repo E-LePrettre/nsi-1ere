@@ -1,4 +1,4 @@
-﻿---
+---
 author: ELP
 title: 07c Le Javascript
 --- 
@@ -94,13 +94,13 @@ Pour une **meilleure organisation**, on peut **séparer** le JavaScript dans un 
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Logique sur les passoires</title>
 </head>
 <body>
     <h1>Bienvenue sur ma page</h1>
     <button id="monBouton">Cliquez-moi</button>
+    <script src="script.js"></script>
 </body>
 </html>
 ```
@@ -124,11 +124,11 @@ document.getElementById("monBouton").addEventListener("click", function() {
 
 **<H3 STYLE="COLOR:red;">Activité n°1 : </H3> Ajouter un fichier JavaScript externe** 
 
-1. **Dans `index.html`**, ajoutez cette ligne dans `<head>` :
+1. **Dans `index.html`**, ajoutez cette ligne juste à la fin du `<body>`, juste avant la fermeture de la balise `</body>`. :
 ```html
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 ```
-2. **Créez un fichier `script.js`** dans le dossier `js/` s'il n'existe pas encore.  
+2. **Créez un fichier `script.js`**   
 3. **Ajoutez ce code dans `script.js`** :
 ```js
 document.getElementById("monBouton").addEventListener("click", function() {
@@ -206,11 +206,11 @@ JavaScript propose **trois types de boîtes de dialogue** pour interagir avec l'
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
-    <script src="exo.js"></script>
     <title>Page de tests JavaScript</title>
 </head>
 <body>
     <h1>Page de tests du code JavaScript</h1>
+    <script src="exo.js"></script>
 </body>
 </html>
 ```
@@ -875,8 +875,8 @@ Nous allons voir comment JavaScript peut réagir aux **événements** comme un *
     <h1>Voici un titre</h1>
     <p id="important">Ceci est un texte important.</p>
     <button onclick="changeCouleur()">Cliquez ici</button>
+    <script src="interaction.js"></script>
 </body>
-<script src="interaction.js"></script>
 </html>
 ```
 ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.081.png)
