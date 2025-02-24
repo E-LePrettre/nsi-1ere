@@ -290,7 +290,7 @@ On utilise alors **les classes (`class`)** et **les identifiants (`id`)**.
 | `id` | Applique un style **à un seul élément unique** | **Un seul usage par page** |
 
 
-#### <H4 STYLE="COLOR:MAGENTA;">3.3.1. Définir une <a name="_page2_x40.00_y406.92"></a>classe (`class`)</H4>
+#### <H4 STYLE="COLOR:MAGENTA;">3.5.1. Définir une <a name="_page2_x40.00_y406.92"></a>classe (`class`)</H4>
 
 📌 **Exemple : Appliquer un style aux éléments avec la classe `.important`**  
 ```html
@@ -329,7 +329,7 @@ On utilise alors **les classes (`class`)** et **les identifiants (`id`)**.
 
 
 
-#### <H4 STYLE="COLOR:MAGENTA;">3.3.2. Définir un identifiant (`id`)<a name="_page2_x40.00_y639.92"></a></H4> 
+#### <H4 STYLE="COLOR:MAGENTA;">3.5.2. Définir un identifiant (`id`)<a name="_page2_x40.00_y639.92"></a></H4> 
 
 📌 **Exemple : Appliquer un style à un élément unique avec `id="titre"`**  
 ```html
