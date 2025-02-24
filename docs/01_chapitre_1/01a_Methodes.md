@@ -12,7 +12,9 @@ Bienvenue en spécialité **NSI** (Numérique et Sciences Informatiques) ! Cette
 ## <span style="color:blue;">1. Les Logiciels à Utiliser</span>
 
 ### <span style="color:green;">1.1. Environnement de Développement :</span>
+
 - **Thonny** : IDE simple pour débutants, idéal pour Python. [**Lien de téléchargement**](https://thonny.org/) 
+
 - **Visual Studio Code (VS Code)** : Éditeur puissant et personnalisable. [**Lien de téléchargement**](https://code.visualstudio.com/) 
 
 <details>
@@ -61,14 +63,20 @@ Explorez le site France IOI et complétez un premier exercice interactif !
 - **Utilisez un agenda** : Notez les dates des projets à rendre et des exercices à pratiquer.
 
 ### <span style="color:green;">3.2. Pratique Régulière :</span>
+
 - **Codez tous les jours** : Même 10 minutes par jour suffisent pour progresser.
+
 - **Travaillez sur des projets personnels** : Créez de petits programmes (exemple : jeux ou outils simples).
 
 <details>
 <summary><b>Idées de projets simples</b></summary>
+
 - Calculatrice basique en Python
+
 - Mini-jeu "Pierre, Papier, Ciseaux"
+
 - Gestionnaire de tâches
+
 </details>
 
 - **Participez à des compétitions** : Essayez des défis sur Codingame ou France IOI.
