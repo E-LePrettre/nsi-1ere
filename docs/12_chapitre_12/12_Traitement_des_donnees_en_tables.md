@@ -216,7 +216,7 @@ print(dico[811])  # 2. Nom du groupe en 812
 
 2️⃣ `dico[811]` : Affiche le groupe en **812e position** (indexation commence à 0).  
 
-### <H3 STYLE="COLOR:GREEN;">**3.3. Recherche de groupes par année</h3>** 
+### <H3 STYLE="COLOR:GREEN;">**4.3. Recherche de groupes par année</h3>** 
 
 **<H3 STYLE="COLOR:red;">Activité n°5.**</h3>  : 
 
@@ -231,7 +231,7 @@ print(f"Nombre de groupes formés en 1981 : {len(groupes_1981)}")
 
 - On affiche la **taille** de la liste filtrée.
 
-### <H3 STYLE="COLOR:GREEN;">**3.4. Liste des groupes de "Melodic Death</h3>** 
+### <H3 STYLE="COLOR:GREEN;">**4.4. Liste des groupes de "Melodic Death</h3>** 
 
 **<H3 STYLE="COLOR:red;">Activité n°6.**</h3>  : 
 
@@ -250,7 +250,7 @@ print(genres)
 
 - `set()` supprime automatiquement les doublons.
 
-### <H3 STYLE="COLOR:GREEN;">**3.5. Visualisation des groupes sur un graphique</h3>** 
+### <H3 STYLE="COLOR:GREEN;">**4.5. Visualisation des groupes sur un graphique</h3>** 
 
 **<H3 STYLE="COLOR:red;">Activité n°7.**</h3>  : 
 
@@ -275,7 +275,7 @@ plt.show()
 ```
 
 
-## <H2 STYLE="COLOR:BLUE;">**3.Tri des données<a name="_page7"></a></h2>**
+## <H2 STYLE="COLOR:BLUE;">**4.Tri des données<a name="_page7"></a></h2>**
 
 L’exploitation des données passe souvent par un **tri** afin de faciliter la recherche et l’analyse des informations.
 
@@ -287,7 +287,7 @@ L’exploitation des données passe souvent par un **tri** afin de faciliter la 
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**3.1. Fonction filtre : rechercher un groupe selon son genre<a name="_page7_x"></a></h3>** 
+### <H3 STYLE="COLOR:GREEN;">**4.1. Fonction filtre : rechercher un groupe selon son genre<a name="_page7_x"></a></h3>** 
 
 **<H3 STYLE="COLOR:red;">Activité n°8.:</h3> Développer une fonction `groupeGenre()` qui filtre les groupes par genre musical.**: 
 
@@ -314,7 +314,7 @@ print(groupeGenre('Extreme folk'))
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**3.2. Fonction de tri<a name="_page7_x40.00_y"></a></h3>** 
+### <H3 STYLE="COLOR:GREEN;">**4.2. Fonction de tri<a name="_page7_x40.00_y"></a></h3>** 
 
 Le tri permet d'ordonner les données selon un critère donné.  
 
