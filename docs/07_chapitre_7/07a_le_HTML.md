@@ -208,6 +208,7 @@ Exemples :
 ```
 
 📌 **Explication du code** :
+
 | Élément | Rôle |
 |---------|------|
 | `<!DOCTYPE html>` | Indique qu’on utilise HTML5 |
