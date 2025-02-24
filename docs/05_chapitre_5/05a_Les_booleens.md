@@ -231,28 +231,128 @@ La porte XOR est symbolisée par le schéma suivant :
 
 
 
+???+ question "Activité n°1 : Complétons les tables de vérité"
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** Écrivez les tables de vérité des expressions suivantes : 
+    Écrire les tables de vérité des expressions suivantes :
 
-- ![](Aimg07.png)
-- ![](Aimg08.png)
-- ![](Aimg09.png)
+    1. **A ⋅ B̅**  
+    2. **A + B ⋅ C**  
+    3. **A ⋅ B + (C ⊕ D)**  
 
-**<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** Voici un exemple de fonction booléenne : La fonction multiplexeur, notée mux.  
- 
-mux(x,y,z)=(not(x) and y)or (x and z) 
-1  Compléter le tableau 
+    ??? success "Solution"
 
-x y z not(x) not(x) and y x and z mux(x,y,z) 
-![](Aimg010.png)
+        **Table de vérité pour A ⋅ B̅ :**
 
-2 Montrer que (x and y) = not (not(x) or not(y))  
+        | A | B | B̅ | A ⋅ B̅ |
+        |---|---|---|------|
+        | 0 | 0 | 1 | 0    |
+        | 0 | 1 | 0 | 0    |
+        | 1 | 0 | 1 | 1    |
+        | 1 | 1 | 0 | 0    |
 
-3 Montrer que (x or y) = not (not(x) and not(y))  
+        **Table de vérité pour A + B ⋅ C :**
 
-4 Trouver l’expression  de  la  fonction  ssi(x,y)  à  l’aide  des  opérateurs booléens   
+        | A | B | C | B ⋅ C | A + (B ⋅ C) |
+        |---|---|---|-------|------------|
+        | 0 | 0 | 0 | 0     | 0          |
+        | 0 | 0 | 1 | 0     | 0          |
+        | 0 | 1 | 0 | 0     | 0          |
+        | 0 | 1 | 1 | 1     | 1          |
+        | 1 | 0 | 0 | 0     | 1          |
+        | 1 | 0 | 1 | 0     | 1          |
+        | 1 | 1 | 0 | 0     | 1          |
+        | 1 | 1 | 1 | 1     | 1          |
 
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.020.png)
+        **Table de vérité pour A ⋅ B + (C ⊕ D) :**
+
+        | A | B | C | D | C ⊕ D | A ⋅ B | A ⋅ B + (C ⊕ D) |
+        |---|---|---|---|-------|-----|----------------|
+        | 0 | 0 | 0 | 0 | 0     | 0   | 0              |
+        | 0 | 0 | 0 | 1 | 1     | 0   | 1              |
+        | 0 | 0 | 1 | 0 | 1     | 0   | 1              |
+        | 0 | 0 | 1 | 1 | 0     | 0   | 0              |
+        | 0 | 1 | 0 | 0 | 0     | 0   | 0              |
+        | 0 | 1 | 0 | 1 | 1     | 0   | 1              |
+        | 0 | 1 | 1 | 0 | 1     | 0   | 1              |
+        | 0 | 1 | 1 | 1 | 0     | 0   | 0              |
+        | 1 | 0 | 0 | 0 | 0     | 0   | 0              |
+        | 1 | 0 | 0 | 1 | 1     | 0   | 1              |
+        | 1 | 0 | 1 | 0 | 1     | 0   | 1              |
+        | 1 | 0 | 1 | 1 | 0     | 0   | 0              |
+        | 1 | 1 | 0 | 0 | 0     | 1   | 1              |
+        | 1 | 1 | 0 | 1 | 1     | 1   | 1              |
+        | 1 | 1 | 1 | 0 | 1     | 1   | 1              |
+        | 1 | 1 | 1 | 1 | 0     | 1   | 1              |
+
+
+
+???+ question "Activité n°2 : Compléter le tableau de vérité"
+
+    Voici un exemple de fonction booléenne : La fonction multiplexeur, notée `mux`.
+
+    La formule est donnée par :
+    $mux(x,y,z) = (\text{not}(x) \wedge y) \vee (x \wedge z)$
+
+    Compléter le tableau suivant :
+
+    | x | y | z | not(x) | not(x) and y | x and z | mux(x,y,z) |
+    |---|---|---|--------|--------------|---------|------------|
+    | 0 | 0 | 0 |        |              |         |            |
+    | 0 | 0 | 1 |        |              |         |            |
+    | 0 | 1 | 0 |        |              |         |            |
+    | 0 | 1 | 1 |        |              |         |            |
+    | 1 | 0 | 0 |        |              |         |            |
+    | 1 | 0 | 1 |        |              |         |            |
+    | 1 | 1 | 0 |        |              |         |            |
+    | 1 | 1 | 1 |        |              |         |            |
+
+    ??? success "Solution"
+
+        **Table complétée :**
+
+        | x | y | z | not(x) | not(x) and y | x and z | mux(x,y,z) |
+        |---|---|---|--------|--------------|---------|------------|
+        | 0 | 0 | 0 | 1      | 0            | 0       | 0          |
+        | 0 | 0 | 1 | 1      | 0            | 0       | 0          |
+        | 0 | 1 | 0 | 1      | 1            | 0       | 1          |
+        | 0 | 1 | 1 | 1      | 1            | 0       | 1          |
+        | 1 | 0 | 0 | 0      | 0            | 0       | 0          |
+        | 1 | 0 | 1 | 0      | 0            | 1       | 1          |
+        | 1 | 1 | 0 | 0      | 0            | 0       | 0          |
+        | 1 | 1 | 1 | 0      | 0            | 1       | 1          |
+    
+    2 Montrer que (x and y) = not (not(x) or not(y))  
+
+    ??? success "Solution"
+
+        **Solution** : C'est la **loi de De Morgan**. On peut démontrer cette équivalence en construisant la table de vérité.
+    
+    3 Montrer que (x or y) = not (not(x) and not(y))  
+
+    ??? success "Solution"
+
+        **Solution** : Encore une loi de **De Morgan**, qui se vérifie par la table de vérité.
+    
+    4 Trouver l’expression  de  la  fonction  ssi(x,y)  à  l’aide  des  opérateurs booléens   
+
+    ??? success "Solution"
+
+        **Solution** :  
+
+        La fonction `ssi(x,y)` (si et seulement si) est définie par :
+
+        $ssi(x,y) = (x \wedge y) \vee (\neg x \wedge \neg y)$
+
+        **Table de vérité de `ssi(x,y)` :**
+
+        | x | y | ssi(x,y) |
+        |---|---|----------|
+        | 0 | 0 | 1        |
+        | 0 | 1 | 0        |
+        | 1 | 0 | 0        |
+        | 1 | 1 | 1        |
+
+
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Quelques<a name="_page3_x40.00_y448.04"></a> propriétés</h2>** 
 ### **<H3 STYLE="COLOR:GREEN;">3.1. Associativité</h3>**
