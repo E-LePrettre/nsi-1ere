@@ -920,7 +920,7 @@ Le **code ASCII** (*American Standard Code for Information Interchange*, prononc
 
 ![](Copy of ASCII Character set.JPG)
 
-![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.101.jpeg)
+
 
 📌 **Comment ça marche ?**  
 Chaque caractère est associé à un nombre unique, codé en **binaire** sur **7 bits** :
@@ -936,16 +936,33 @@ Chaque caractère est associé à un nombre unique, codé en **binaire** sur **7
 Grâce à ASCII, les ordinateurs peuvent **échanger du texte** sans ambiguïté.
 
 
-**<H3 STYLE="COLOR:red;">Activité n° 6. : Python et la table ascii</h3>** Les fonctions chr et ord permettent d’accéder à la table 
+???+ question "Activité n°6 : Tester les fonctions `chr()` et `ord()`"
 
-Tester
-> chr(65) # caractère 65 (décimal) 
+    Utiliser les fonctions `chr()` et `ord()` en Python pour afficher le caractère correspondant à un code ASCII et inversement.
 
-> ord('A') # numéro décimal du A
+    **Tester :**
+    
+    ```python
+    print(chr(65))  # Doit afficher 'A'
+    print(ord('A')) # Doit afficher 65
+    ```
 
-???+ question "Faire ce qui est proposé"
+    ??? success "Python"
+        {{ IDE() }}
 
-    {{ terminal() }}
+    ??? success "Solution"
+
+        ```python
+        print(chr(65))  # Affiche 'A'
+        print(ord('A')) # Affiche 65
+        ```
+
+        **Résultat :**
+        ```
+        A
+        65
+        ```
+
 
 ### **<H3 STYLE="COLOR:GREEN;">7.2. Les<a name="_page16_x40.00_y611.92"></a> limites d’ASCII et l’arrivée des encodages ISO-latin** 🌍</h3>*
 
@@ -989,29 +1006,51 @@ Avec **seulement 128 caractères**, ASCII n'était pas suffisant pour représent
 Si un texte en **UTF-8** est interprété en **ISO-8859-1**, vous verrez des caractères bizarres comme :
 > **"Ã©crit en UTF-8"** au lieu de **"écrit en UTF-8"**
 
+![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.106.jpeg)
 
+*(Exemple d'erreur d'encodage : "é" mal affiché en ISO-8859-1)*
 
-Dans le codage UTF-8, chaque point de code est codé sur une suite d'un à quatre octets. Il a été conçu pour être compatible avec certains logiciels originellement prévus pour traiter des caractères d'un seul octet. 
+## **<H2 STYLE="COLOR:BLUE;">8. Représentation<a name="_page17_x40.00_y448.92"></a> des images : Pixels et couleurs !** 📸</h2>**
 
-Toutes  ces  normes  différentes  et  leurs  incompatibilités partielles sont la cause des problèmes que l'on rencontre parfois  avec  les  caractères  accentués.  C'est  pour  cette raison  qu'il  vaut  mieux,  quand  on  écrit  des  courriels  à l'étranger, n'utiliser que des caractères non accentués. 
-
-**Martine écrit en UTF-8** :  
-
-- La lettre é a été encodée en **UTF-8** (parce que 2 caractères sont affichés) 
-- En mémoire elle occupe 2 octets (elle n’est pas dans la table ascii) 
-- Ces deux octets ont été décodés en iso-latin1 (1 octet par caractère). 
-
-## **<H2 STYLE="COLOR:BLUE;">8. Représentation<a name="_page17_x40.00_y448.92"></a> des images</h2>**
-
-Une image peut être vue comme un quadrillage  rempli d'une multitude de petits cases appelées  pixels.
+Une **image numérique** est une **grille de petits carrés appelés pixels**. 🟩🟥🟦
 
 ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.107.png)
+*(Zoom sur une image pixelisée : chaque carré représente un pixel.)*
 
-Chaque pixel est un carré d'une couleur définie.  Cette  couleur  se  code  à  l'aide  d'une  combinaison de trois couleurs de base : rouge,  vert  et  bleu  (Red,  Green,  Blue  en  anglais  -  souvent  abrégé  en  RGB).  Chacune  des  trois  couleurs étant codée sur 8 bits, soit entre 0 et  255.  
+Chaque pixel est défini par une combinaison de trois couleurs :
+
+- **Rouge (Red)**
+
+- **Vert (Green)**
+
+- **Bleu (Blue)**
+
+➡️ Chacune de ces trois couleurs est codée sur **8 bits (0 à 255)**.  
+
+➡️ **Exemple :** Un pixel ayant **Rouge=50, Vert=214, Bleu=145** apparaîtra **vert-bleuté**.
 
 ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.108.png)
 
-Ainsi, le pixel grisé désigné sur la photo est codé comme la  combinaison de 174 de rouge (Red), 181 de vert (Green) et  190 de bleu (Blue). Chacun de ces trois nombres étant codé  sur 8 bits, il faut 3x8=24 bits au total pour coder un pixel.  En codant ainsi chaque pixel de l'image originale, on peut  ainsi traduire une image en série de bit. Et inversement, on  peut  reconstituer  une  image  à  partir  d'une  série  de  bits  donnée.  
+**Pourquoi toutes les images n'ont pas la même taille ?**
+
+1. **La résolution** *(nombre de pixels dans l'image)*
+
+2. **Le mode de compression** *(JPEG, PNG, BMP, GIF...)*
+
+| **Format**  | **Taille d’un pixel**  | **Compression ?** | **Utilisation** |
+|------------|-----------------|----------------|---------------|
+| **BMP**   | 24 bits (3 octets) | Aucune | Images brutes |
+| **JPEG**  | 24 bits           | Oui (perte) | Photos compressées |
+| **PNG**   | 24 bits (RVB) + 8 bits (transparence) | Oui (sans perte) | Images avec transparence |
+| **GIF**   | 8 bits (256 couleurs max) | Oui | Animations légères |
+
+🎯 **Pourquoi utiliser JPEG et pas BMP ?**  
+
+📌 **JPEG** réduit la taille en enlevant des détails **invisibles** à l'œil humain. 
+ 
+📌 **BMP** conserve chaque pixel sans compression, donc **fichiers très lourds !**  
+
+
 
 ## **<H2 STYLE="COLOR:BLUE;">9. Exercices<a name="_page18_x40.00_y36.92"></a></h2>** 
 
