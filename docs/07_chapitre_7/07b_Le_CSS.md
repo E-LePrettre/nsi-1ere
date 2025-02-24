@@ -863,6 +863,7 @@ La propriété `clear` permet **de forcer un retour à la ligne**.
 ```
 
 📌 **Explication :**  
+
 | Valeur | Effet |
 |--------|-------|
 | `clear: left;` | Le texte reprend après une image flottant à gauche. |
