@@ -102,6 +102,7 @@ En suivant ces conseils et en utilisant ces outils, vous serez bien équipé pou
 ## <span style="color:blue;">Annexes</span>
 
 **Liens Utiles :**
+
 - [Télécharger Thonny](https://thonny.org/)
 
 - [Télécharger VS Code](https://code.visualstudio.com/)
