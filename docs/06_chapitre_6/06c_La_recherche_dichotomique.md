@@ -15,19 +15,42 @@ title: 06c La recherche dichotomique
 
 ## <H2 STYLE="COLOR:BLUE;">1. Introduction<a name="_page0_x40.00_y275.92"></a></H2>
 
-La famille des algorithmes « diviser pour régner » fait appel à une technique algorithmique consistant à :
+Les algorithmes de la famille **"Diviser pour régner"** suivent une stratégie qui consiste à :
 
-1. **Diviser** : découper un problème initial en sous-problèmes
-2. **Régner** : résoudre les sous-problèmes (récursivement ou directement s'ils sont assez petits)
-3. **Combiner** : calculer une solution au problème initial à partir des solutions des sous-problèmes
+1️⃣ **Diviser** : Découper le problème en plusieurs sous-problèmes plus petits.
 
-Cette technique fournit des **algorithmes efficaces** pour de nombreux problèmes, comme la recherche d'un élément dans un tableau trié (recherche dichotomique) ou le tri (tri fusion, tri rapide) par exemple.
+2️⃣ **Régner** : Résoudre chaque sous-problème, soit récursivement, soit directement si celui-ci est suffisamment simple.  
 
-La **faible complexité** des algorithmes diviser pour régner est l'un de leurs principaux intérêts. Il existe plusieurs théorème facilitant le calcul des complexités des algorithmes de type diviser pour régner (le principal théorème est le [Master theorem](https://fr.wikipedia.org/wiki/Master_theorem)).
+3️⃣ **Combiner** : Fusionner les solutions des sous-problèmes pour obtenir la solution du problème initial.  
+
+✨ Pourquoi utiliser cette approche ?
+
+✅ Elle permet souvent d’obtenir **des algorithmes très efficaces** (faible complexité).  
+
+✅ Elle s’applique à **de nombreux problèmes** comme la recherche dichotomique ou le tri fusion.  
+
+✅ Elle est utilisée dans des **applications modernes**, comme la compression d’images, l’intelligence artificielle et le traitement des grandes quantités de données.
+
+🎯 **Exemples d’algorithmes utilisant "Diviser pour régner"** : 
+
+🔹 **Tri fusion** et **tri rapide** pour le tri de grandes listes.  
+
+🔹 **Recherche dichotomique** pour trouver efficacement un élément dans un tableau trié.  
+
+🔹 **Algorithme d’Euclide** pour trouver le plus grand commun diviseur (PGCD).  
+
+🔎 **Illustration** :
 
 ![](Aspose.Words.811dea78-cc24-44b0-94c9-7acd3bdf0560.004.png)
 
-La recherche dichotomique est formalisée dans un article de John Mauchly en 1946, mais l'idée d'utiliser une liste triée pour faciliter la recherche remonte à Babylone en -220. L'algorithme d'Euclide pour calculer le plus grand commun diviseur de deux nombres peut être vu comme un algorithme diviser pour régner (les deux nombres diminuent et on se ramène à un problème plus petit). John von Neumann invente le tri fusion en 1945. Knuth donne une méthode utilisée par les services postaux : les lettres sont triées et séparés en fonction des zones géographiques, puis en sous-zones géographiques, etc.
+💡 **Fait historique** :  
+
+- La **recherche dichotomique** a été formalisée en 1946 par **John Mauchly**, mais son principe remonte à **Babylone (-220 av. J.-C.)**.  
+
+- **John von Neumann** a inventé le **tri fusion** en 1945.  
+
+- L’algorithme d’**Euclide**, découvert en **-300 av. J.-C.**, peut être vu comme un exemple d’algorithme **Diviser pour régner**.
+
 
 ## <H2 STYLE="COLOR:BLUE;">2. TP<a name="_page0_x40.00_y599.92"></a></H2>
 
@@ -64,99 +87,116 @@ Animation : [https://www.infoforall.fr/art/algo/animation-de-la-recherche-dichot
 
 ### <H3 STYLE="COLOR:GREEN;">2.3. Application<a name="_page2_x40.00_y511.92"></a> de l’algorithme à un exemple</H3>
 
-Voici une bande de papier illustrant un tableau de nombres en mémoire
+🔍 **Problème**
+Imaginons que nous avons une liste triée de nombres et que nous devons **trouver rapidement** la position d’un nombre donné.
 
-![](Aimg9.png)
+**Exemple** : Nous avons la liste suivante triée et cherchons la position de **35**.
 
-Essayons de rechercher le nombre 35 et de connaitre son emplacement (indice) dans le tableau
+```
+[ 2, 7, 15, 22, 29, 33, 35, 40, 47, 50, 55, 60, 67, 72, 80, 91 ]
+```
 
-Le tableau contient 16 valeurs (indice de 0 à 15)
+💡 **Idée** : Plutôt que de parcourir toute la liste un élément après l’autre (**O(n)**), nous allons exploiter le fait qu’elle est triée pour diviser le problème en **deux moitiés** à chaque étape.
 
-**Etape 1** : Comment calculer la moitié ?
 
-|**Indice Bas1** |**Indice Haut1** |**Indice milieu1** |
-| - | - | - |
 
-**Etape 2** : Dans quelle partie se trouve la valeur 35 ?
+📌 **Étape 1 : Définition des bornes**
 
-| | | | | | | |
-| - | - | - | - | - | - | - |
+On commence avec :
 
-**Etape 3** : Comment calculer la moitié de la nouvelle partie du tableau ?
+- **Indice bas** = 0
 
-|**Indice Bas2** |**Indice Haut2** |**Indice milieu2** |
-| - | - | - |
+- **Indice haut** = 15
 
-**Etape 4** : Dans quelle partie se trouve la valeur 35 ?
+- **Indice milieu** = (0 + 15) // 2 = **7**
 
-| | | |
-| - | - | - |
+- Valeur au **milieu** = 40 ❌ (trop grand)
 
-| | | |
-| - | - | - |
+💡 **Le nombre 35 est plus petit que 40** 👉 Nous cherchons **dans la moitié gauche**.
 
-**Etape 5** : Comment calculer la moitié de la nouvelle partie du tableau ?
 
-|**Indice Bas3** |**Indice Haut3** |**Indice milieu3** |
-| - | - | - |
 
-**Etape 6** : Dans quelle partie se trouve la valeur 35 ?
+ 📌 **Étape 2 : Nouvelle division**
 
-**Etape 7** : Comment calculer la moitié de la nouvelle partie du tableau ?
+On ajuste les indices :
 
-|**Indice Bas4** |**Indice Haut4** |**Indice milieu4** |
-| - | - | - |
+- **Nouvel Indice bas** = 0
 
-**Etape 8** : le nombre 35 est trouvé, il se trouve à l’indice milieu4 = 6
+- **Nouvel Indice haut** = **6**
 
-Résumé : Chiffre à trouver 35
+- **Nouvel Indice milieu** = (0 + 6) // 2 = **3**
 
-![](Aimg10.png)
+- Valeur au **milieu** = 22 ❌ (trop petit)
 
-La valeur 35 se trouve à l’indice 6 (milieu) dans le tableau
+💡 **Le nombre 35 est plus grand que 22** 👉 Nous cherchons **dans la moitié droite**.
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:** Entrainez-vous avec la bande de papier fournie en complétant le tableau ci-dessous :</H3>
 
-![](Aimg11.png)
 
-Chiffre à trouver 72
+ 📌 **Étape 3 : Réduction de l’espace de recherche**
 
-![](Aimg12.png)
+On ajuste les indices :
 
-La valeur 72 se trouve à l’indice 13 (milieu) dans le tableau
+- **Nouvel Indice bas** = **4**
+
+- **Nouvel Indice haut** = **6**
+
+- **Nouvel Indice milieu** = (4 + 6) // 2 = **5**
+
+- Valeur au **milieu** = 33 ❌ (trop petit)
+
+💡 **Le nombre 35 est plus grand que 33** 👉 Nous cherchons **dans la moitié droite**.
+
+ 📌 **Étape 4 : Trouvé !**
+
+- **Nouvel Indice bas** = **6**
+
+- **Nouvel Indice haut** = **6**
+
+- **Nouvel Indice milieu** = **6**
+
+- Valeur au **milieu** = ✅ **35** 🎉
+
+**Le nombre 35 se trouve à l’indice 6 !**  
+
+🎯 **Résultat final :** Nombre trouvé en **4 étapes seulement**, au lieu de **16** avec une recherche classique !
+
 
 ## <H2 STYLE="COLOR:BLUE;">3. Le<a name="_page4_x40.00_y332.92"></a> pseudo-code (version itérative)</H2>
 
 ```
 ALGORITHME recherche_dichotomique
     PROCEDURE recherche_dichotomique(x, tableau)
-        gauche <- 1
-        droite <- taille du tableau
+        gauche ← 0
+        droite ← taille du tableau - 1
         TANT QUE gauche <= droite FAIRE
-            milieu <- (gauche + droite)/2   # on cherche l'élément central
-            si T[milieu] < x         # la recherche peut se restreindre à la partie droite du tableau
-                gauche = milieu + 1   # on modifie la valeur de gauche en conséquence
-            sinon si T[milieu] > x     # la recherche peut se restreindre à la partie gauche du tableau
-                droite = milieu-1     # on modifie la valeur de gauche en conséquence
-            sinon si T[milieu] = x
-                renvoyer milieu   #True     # on a trouvé la valeur
+            milieu ← (gauche + droite) // 2   # on cherche l'élément central
+            SI T[milieu] < x ALORS
+                gauche = milieu + 1  # Cherche à droite
+            SINON SI T[milieu] > x ALORS
+                droite = milieu - 1  # Cherche à gauche
+            SINON
+                renvoyer milieu  # On a trouvé l'élément iy True selon l'énoncé
         FIN TANT QUE
-        renvoyer None  #False     # gauche <= droite n'est plus vraie. La valeur x n'est pas dans T
+        renvoyer None  # L'élément n'est pas présent ou False selon l'énoncé
 ```
 
 ## <H2 STYLE="COLOR:BLUE;">4. Complexité<a name="_page4_x40.00_y600.92"></a></H2>
 
-Au niveau de la boucle, combien doit-on effectuer d'itérations pour un tableau de taille n dans le cas le plus défavorable (l'entier x n'est pas dans le tableau t) ?
 
-Sachant qu'**à chaque itération de la boucle on divise le tableau en 2**, cela revient donc à se demander combien de fois faut-il diviser le tableau en 2 pour obtenir, à la fin, un tableau comportant un seul entier.
 
-Autrement dit, combien de fois
+🔹 À **chaque itération**, on divise la taille du problème par **2**. 
 
- faut-il diviser n par 2 pour obtenir 1.
+🔹 On cherche donc **combien de fois** on peut diviser **n** par **2** avant d’atteindre **1 élément**.
+
+📌 **Formule mathématique** :  
+$ n = 2^a $  
+$ a = log_2(n) $ 
+
+Autrement dit, combien de fois faut-il diviser n par 2 pour obtenir 1?
 
 Mathématiquement cela se traduit par l'équation  $\frac {n }{ 2^a}  =1$ avec a le nombre de fois qu'il faut diviser n par 2 pour obtenir 1. Il faut donc trouver a.
 
-A ce stade il est nécessaire d'introduire une nouvelle notion mathématique : le "logarithme base 2" noté log<sub>2</sub>.  Par définition  log<sub>2</sub>(2<sup>x</sup>) = x . Nous avons donc :
+
 
 $\frac {n }{ 2^a}  =1$
 
@@ -168,82 +208,99 @@ log<sub>2</sub>(n) = a
 
 nous avons donc  a = log<sub>2</sub>(n)
 
-Nous pouvons donc dire que la complexité en temps dans le pire des cas de l'algorithme de recherche dichotomique est **O(log<sub>2</sub>(n))**
 
-L'algorithme de recherche dichotomique est **plus efficace** que l'algorithme de recherche qui consiste à parcourir l'ensemble du tableau.
+🎯 **Complexité de l’algorithme** : **O(log₂(n))**  
+
+🔹 **Beaucoup plus rapide** qu’une recherche séquentielle **O(n)** !  
 
 ## <H2 STYLE="COLOR:BLUE;">5. Preuve<a name="_page5_x40.00_y211.92"></a> de correction</H2>
 
 ### <H3 STYLE="COLOR:GREEN;">5.1. Correction partielle</H3>
 
-**Invariant de boucle** : À chaque début de la boucle while, si la cible est dans le tableau, alors elle se trouve entre les indices gauche et droite inclus.
+**Invariant** : Avant chaque itération, si la cible **x** est présente, alors elle se trouve entre les indices `gauche` et `droite`.
 
-1 **Initialisation** : Avant la première itération de la boucle, gauche est initialisé à 0 et droite à len(T) - 1. Donc, l’invariant est vrai car si la cible est dans le tableau, elle doit se trouver quelque part entre ces indices.
+✔ **Initialisation** :
 
-2 **Maintien** : Supposons que l’invariant est vrai au début d’une itération. La boucle while calcule milieu comme étant la moyenne de gauche et droite. Il y a trois cas à considérer :
+- Au départ, `gauche = 0` et `droite = len(T) - 1`, donc **toute la liste est prise en compte**.
 
-- Cas 1 : Si T[milieu] == x, alors l’algorithme retourne milieu, ce qui est correct et l’invariant reste vrai.
-- Cas 2 : Si T[milieu] < x, alors la cible, si elle est présente, doit être à droite de milieu. Nous mettons donc à jour gauche à milieu + 1. L’invariant reste vrai car nous avons réduit l’intervalle de recherche de manière correcte.
-- Cas 3 : Si T[milieu] > x, alors la cible, si elle est présente, doit être à gauche de milieu. Nous mettons donc à jour droite à milieu - 1. Encore une fois, l’invariant reste vrai car nous avons correctement réduit l’intervalle de recherche.
+- Si **x est présent**, il est forcément dans cet intervalle.
 
-3 **Terminaison** : La boucle se termine lorsque gauche > droite. À ce moment-là, si la cible était dans le tableau, elle aurait été trouvée dans une itération précédente, donc nous pouvons conclure que la cible n’est pas présente dans le tableau. Ainsi, l’algorithme retourne -1.
+✔ **Maintien** :  
+
+À chaque étape, on compare `T[milieu]` à **x** :
+
+  - Si `T[milieu] == x`, on a trouvé **x** et on le retourne.
+
+  - Si `T[milieu] < x`, **x** est forcément à droite, donc on met `gauche = milieu + 1`.
+
+  - Si `T[milieu] > x`, **x** est forcément à gauche, donc on met `droite = milieu - 1`.
+
+L'invariant est **conservé** car on réduit toujours la recherche **sans exclure x**.
+
+✔ **Terminaison** :  
+
+- La boucle s’arrête quand `gauche > droite`.  
+
+- Si **x** n’a pas été trouvé avant, c'est qu'il **n'est pas dans la liste**.
+
+✅ **Conclusion** : L'algorithme **renvoie bien l'indice correct si x est présent** et **None sinon**.
+
 
 ### <H3 STYLE="COLOR:GREEN;">5.2. Correction Totale</H3>
 
-Pour prouver la correction totale, nous devons également prouver que l’algorithme termine toujours. Cela peut être prouvé en utilisant un variant de boucle.
+📌 **Pourquoi l’algorithme termine toujours ?** 
 
-**Variant de Boucle** : Pour l’algorithme de recherche dichotomique, un variant de boucle approprié est la longueur de l’intervalle de recherche, c’est-à-dire droite - gauche.
+Il faut montrer que la boucle **while** ne tourne pas indéfiniment.
 
-1 **Définition du Variant** : Au début de chaque itération de la boucle while, le variant est droite - gauche.
+✔ **Définition du variant** :  
 
-2 **Initialisation** :
+Le **variant** est la longueur de l’intervalle `droite - gauche`, qui représente la zone de recherche.
 
-- Avant la première itération, gauche est initialisé à 0 et droite à len(T) - 1.
-- Ainsi, initialement, le variant est len(T) - 1.
+✔ **Diminution stricte**  
 
-3 **Maintien et Diminution du Variant** :
+À chaque itération :
 
-- À chaque itération de la boucle while, la variable milieu est calculée comme la moyenne de gauche et droite.
-- Ensuite, il y a trois cas :
-  - Cas 1 : Si T[milieu] == x, l’algorithme termine immédiatement.
-  - Cas 2 : Si T[milieu] < x, alors gauche est mis à jour à milieu + 1. La nouvelle longueur de l’intervalle de recherche est droite - (milieu + 1), ce qui est strictement inférieur à l’ancienne longueur.
-  - Cas 3 : Si T[milieu] > x, alors droite est mis à jour à milieu - 1. La nouvelle longueur de l’intervalle de recherche est (milieu - 1) - gauche, ce qui est strictement inférieur à l’ancienne longueur.
-- Dans les cas 2 et 3, la nouvelle valeur de droite - gauche est strictement inférieure à l’ancienne valeur, donc le variant décroît à chaque itération.
+  - Si `T[milieu] < x`, alors `gauche = milieu + 1` ⬅ Réduction de l'intervalle.
 
-4 **Borne Inférieure** :
+  - Si `T[milieu] > x`, alors `droite = milieu - 1` ⬅ Réduction de l'intervalle.
 
-- Le variant droite - gauche est toujours non négatif.
-- La boucle continue tant que gauche <= droite, donc droite - gauche est toujours au moins 0.
+Dans **tous les cas**, `droite - gauche` **diminue strictement**.
 
-5 **Terminaison** : Puisque le variant de boucle commence à une valeur positive et décroît strictement à chaque itération tout en étant borné inférieurement par 0, la boucle doit nécessairement terminer après un nombre fini d’itérations.
+✔ **Borne inférieure** : 
+
+- `droite - gauche` est toujours positif ou nul.
+
+- Quand `gauche > droite`, la boucle s'arrête.
+
+✅ **Conclusion** :  
+
+L’algorithme **ne peut pas entrer dans une boucle infinie** et **s'arrête toujours après au plus** **O(log₂(n))** **itérations**.
+
+
 
 ## <H2 STYLE="COLOR:BLUE;">6. Implémentation<a name="_page6_x40.00_y408.92"></a> en Python</H2>
 
 => CAPYTALE Le code vous sera donné par votre enseignant
 
-**<H3 STYLE="COLOR:red;">Activité n°2.:** compléter le script suivant</H3>
+???+ question "Activité n°1 : Complétez l’algorithme de recherche dichotomique"
 
-```python
-def rechercheDichotomique(T , x):
-    """
-    recherche l'indice d'un élément dans une liste triée
-    :param T: tableau d'entier
-    :param x: entier
-    :return: entier (indice de la valeur)
-    """
-    # à compléter
-```
+    ```python
+    def recherche_dichotomique(T, x):
+        """
+        Recherche l'indice d'un élément x dans une liste triée T
+        :param T: liste triée d'entiers
+        :param x: élément recherché
+        :return: indice de x ou None si absent
+        """
+        # à compléter
 
-**Tester avec (ajouter le script suivant à la suite)**
+    # Exemple d'utilisation
+    tableau = [2, 7, 15, 22, 29, 33, 35, 40, 47, 50]
+    print(recherche_dichotomique(tableau, 35))  # Affiche 6
+    print(recherche_dichotomique(tableau, 100))  # Affiche None
+    ```
 
-```python
-import random
-t1 = [random.randint(1,100_000_000) for _ in range(10_000)]
-t1.append(1)
-t1.sort()
-print(rechercheDichotomique(t1, 0))
-print(rechercheDichotomique(t1, 1))
-```
+
 
 **<H3 STYLE="COLOR:red;">Activité n°3.: Observation de durées</H3>**
 
