@@ -149,6 +149,7 @@ Autres outils pratiques :
 Un fichier **HTML** est composé de **balises** qui définissent les éléments de la page.
 
 📌 **Types de balises :**
+
 | Type de balise | Exemple | Description |
 |---------------|---------|-------------|
 | **Balises en paires** | `<p> ... </p>` | Début (`<p>`) et fin (`</p>`) |
