@@ -370,7 +370,7 @@ L'information récupérée grâce à un `input` est une **chaîne de caractères
         nom = input("Quel est votre nom ? ")
         age = input("Quel est votre âge ? ")
 
-        print(f"Bonjour je m'appelle {prenom} {nom}, j'ai {age} ans.")
+        print("Bonjour je m'appelle, prenom, nom", j'ai", age, "ans.")
         ```
 
         **Résultat (si vous entrez Alain, Térieur et 217) :**
