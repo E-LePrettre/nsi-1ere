@@ -244,7 +244,7 @@ On définit `m = n - i`, qui représente le nombre d’éléments restants à tr
 
 => CAPYTALE Le code vous sera donné par votre enseignant
 
-???+ question "Activité n°1 : Générer des données aléatoires"
+???+ question "Activité n°2 : Générer des données aléatoires"
 
     **Tester le code suivant :**
     
