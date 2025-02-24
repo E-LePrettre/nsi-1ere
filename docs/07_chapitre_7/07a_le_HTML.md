@@ -179,6 +179,7 @@ Exemples :
 ```
 
 📌 **Explication des attributs** :
+
 | Attribut | Rôle |
 |----------|------|
 | `href="..."` | Définit le lien d’une balise `<a>` |
