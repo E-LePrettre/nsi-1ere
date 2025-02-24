@@ -171,74 +171,72 @@ L’intérêt d’un tri stable est qu'il permet d'**appliquer plusieurs tris su
 
 ### **<H3 STYLE="COLOR:GREEN;">2.7. Preuve<a name="_page3_x40.00_y297.92"></a> de correction</H3>**
 
-Un **algorithme est correct** s'il satisfait **deux propriétés** :
+Un **algorithme est correct** s’il satisfait **deux conditions** :  
 
-1. **Correction partielle** : l’algorithme fonctionne correctement à chaque étape et atteint bien son objectif.
+1️⃣ **Correction partielle** : Il fonctionne **correctement** à chaque étape et atteint son objectif.  
 
-2. **Terminaison** : l’algorithme **se termine toujours** après un nombre fini d’étapes.
+2️⃣ **Terminaison** : Il **s’arrête toujours** après un nombre fini d’opérations.  
+
+
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.7.1.	Correction partielle </H4>**
 
-Un **invariant de boucle** est une propriété qui est **vraie avant, pendant et après chaque itération**.
+On veut prouver que **l’algorithme produit un tableau trié** après son exécution.  
 
-Dans le **tri par sélection**, l’invariant est le suivant :
+✅ **Invariant de boucle**  
 
-> **À chaque itération `i`, les `i` premiers éléments de la liste sont triés et contiennent les `i` plus petits éléments en ordre croissant.**
+Avant chaque itération `i`, les `i` premiers éléments sont **triés et contiennent les `i` plus petits éléments en ordre croissant**.  
 
-**Preuve par récurrence :**
+🧩 **Preuve par récurrence**  
 
-1. **Initialisation (`i = 0`)**  
+1️⃣ **Cas de base (`i = 0`)** :  
 
-   - Avant toute itération, aucun élément n’a été trié.
+- Avant la première itération, aucun élément n’est trié.  
 
-   - On cherche le plus petit élément et on l’échange avec `T[0]`.
+- On cherche le plus petit élément et on l’échange avec `T[0]`. 
 
-   - Après cette opération, `T[0]` contient bien **le plus petit élément**.
+- Après cette opération, `T[0]` est bien **le plus petit élément**.  
 
-2. **Hérédité (passage de `i` à `i+1`)**  
+2️⃣ **Hérédité (`i → i+1`)** :  
 
-   - Supposons que l’invariant est vrai pour `i`.
+- Supposons que les `i` premiers éléments sont triés. 
 
-   - À l’itération suivante, on cherche **le plus petit élément parmi `T[i:n]`** et on l’échange avec `T[i]`.
+- À l’itération suivante, on cherche **le plus petit élément parmi `T[i:n]`** et on l’échange avec `T[i]`.  
 
-   - Comme les `i` premiers éléments étaient déjà triés, **l’invariant est maintenu**.
+- Comme `T[0:i]` était trié, **`T[0:i+1]` reste trié**.  
 
-3. **Terminaison (`i = n-1`)**  
+3️⃣ **Terminaison (`i = n-1`)** :  
 
-   - À la dernière itération, il ne reste plus qu’un seul élément `T[n-1]`, qui est déjà bien placé.
+- Il ne reste qu’un seul élément `T[n-1]`, déjà à la bonne place.  
 
-   - **Le tableau entier est donc trié.**
+- **Le tableau entier est trié.** ✅  
 
-Ainsi, **l’algorithme est bien correct**.
+✔ **Conclusion** : L’algorithme **produit bien un tableau trié**.  
 
 
+#### **<H4 STYLE="COLOR:MAGENTA;">2.7.2. Terminaison</H4>**
 
-#### **<H4 STYLE="COLOR:MAGENTA;">2.7.2.	Terminaison</H4>**
+On veut prouver que l’algorithme **s’arrête toujours**.  
 
-Un algorithme **termine toujours** si :
+📌 **Analyse de la terminaison**
 
-1. Il ne contient **pas de boucle infinie**.
+1️⃣ **Boucle principale `for i in range(n-1)`**  
 
-2. Il effectue un **nombre fini d’itérations**.
+- Elle s’exécute exactement `n-1` fois.  
 
-**Analyse de la terminaison du tri par sélection**
-L’algorithme utilise **deux boucles imbriquées** :
+2️⃣ **Boucle interne `for j in range(i+1, n)`** 
 
-- **Boucle principale** : `for i in range(n-1)`
+- Elle compare `n-i-1` éléments, donc **le nombre de comparaisons diminue progressivement**.  
 
-  - Elle s’exécute exactement `n-1` fois.
-  
-- **Boucle interne** : `for j in range(i+1, n)`
+📌 **Mesure de progrès**  
 
-  - À chaque itération, le nombre d’éléments à comparer **diminue**.
+On définit `m = n - i`, qui représente le nombre d’éléments restants à trier.  
 
-On définit une **mesure de progrès** `m = n - i`, qui représente le nombre d'éléments restants à trier.
+- `m` diminue strictement à chaque itération.  
 
-- À chaque itération, `i` augmente de `1`, donc `m` **diminue strictement**.
+- Quand `m = 1`, la boucle **s’arrête**. ✅  
 
-- Quand `m = 1`, la boucle **s’arrête**, garantissant **la fin de l’algorithme**.
-
-➡ **Conclusion : L’algorithme termine toujours après `n-1` itérations.**
+✔ **Conclusion** : L’algorithme **termine toujours** après `n-1` itérations.
 
 
 
@@ -329,269 +327,255 @@ On définit une **mesure de progrès** `m = n - i`, qui représente le nombre d'
 ## **<H2 STYLE="COLOR:BLUE;">3. Tri<a name="_page4_x40.00_y702.92"></a> par insertion</h2>**
 ### **<H3 STYLE="COLOR:GREEN;">3.1. Le<a name="_page4_x40.00_y724.92"></a> principe</H3>**
 
-Le tri par insertion est un algorithme de **tri stable** et le plus rapide en pratique sur une entrée de petite taille. ![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.006.png)
+Le **tri par insertion** est un algorithme de **tri stable**, souvent utilisé pour de **petites listes** car il est **rapide** lorsque l'entrée est presque triée.  
 
-**Principe de l’algorithme :** Le principe du tri par insertion est de trier les éléments du tableau comme avec des cartes:
+🃏 **Comparaison avec un jeu de cartes**
 
-- On prend nos cartes mélangées dans notre main. 
+Le principe du tri par insertion peut être comparé à l'organisation d'un jeu de cartes :  
 
-- On crée deux ensembles de carte, l’un correspond à l’ensemble de carte triée, l’autre contient l’ensemble des cartes restantes (non triées). 
+1️⃣ On prend nos cartes mélangées en main. 
 
-- On prend au fur et à mesure, une carte dans l’ensemble non trié et on l’insère à sa bonne place dans l’ensemble de carte triée. 
+2️⃣ On sépare nos cartes en **deux parties** :  
 
-- On répète cette opération tant qu’il y a des cartes dans l’ensemble non trié. 
+   - 📌 **Une partie triée** (au début, elle ne contient que la première carte).  
 
-Dans l'algorithme, on parcourt le tableau à trier du début à la fin. Au moment où on considère le i-ème élément, les éléments qui le précèdent sont déjà triés.  ![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.036.png)![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.037.png)![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.038.png)
+   - 📌 **Une partie non triée** (toutes les autres cartes). 
 
-L'objectif d'une étape est donc d'insérer le i-ème élément à sa place parmi ceux qui précèdent. Il faut pour cela : 
+3️⃣ À chaque tour, on **prend une carte** de la partie non triée et on l'insère **à sa place** dans la partie triée.
 
-- **trouver où l'élément** doit être inséré en le comparant aux autres,  
-- puis **décaler les éléments** afin de pouvoir effectuer l'insertion.  
+4️⃣ On continue jusqu'à ce que toutes les cartes soient triées.
 
-En pratique, ces deux actions sont fréquemment effectuées en une passe, qui consiste à faire « remonter » l'élément au fur et à mesure jusqu'à rencontrer un élément plus petit. 
+🔽 **Illustration :**  
+
+ ![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.036.png)
+
+
 
 ### **<H3 STYLE="COLOR:GREEN;">3.2. Illustration<a name="_page5_x40.00_y290.92"></a> graphique</H3>**
 
 ![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.039.png)
 
-Exemple : 9, 2, 7, 1 à trier en ordre croissant avec l’algorithme du tri par insertion :  
+Exemple : **Trier la liste `[9, 2, 7, 1]` en ordre croissant.**  
 
-*1er tour* : 9 | **2**, 7, 1 -> à gauche la partie triée du tableau (le premier élément est considéré comme trié  puisqu'il est seul dans cette partie), à droite la partie non triée. On prend le premier élément de la partie  non triée, 2, et on l'insère à sa place dans la partie triée, c'est-à-dire à gauche de 9.  
+| Tour | Liste | Opération |
+|------|-----------------|---------------------------------|
+| 1er  | **9** | La première valeur est déjà triée. ✅ |
+| 2e   | **9** ➝ **2**, 7, 1 | 2 est plus petit que 9 → on **insère** avant 9. |
+| 3e   | **2, 9** ➝ **7**, 1 | 7 est plus petit que 9 → on **insère** avant 9. |
+| 4e   | **2, 7, 9** ➝ **1** | 1 est plus petit que tout → on **insère** au début. |
 
-*2ème tour* : 2, 9 | **7**, 1 -> on prend 7, et on le place entre 2 et 9 dans la partie triée.  
+📌 **Résultat final :** `[1, 2, 7, 9]` ✅
 
-*3ème tour* : 2, 7, 9 | **1** -> on continue avec 1 que l’on place au début de la première partie.  
 
-Pour insérer un élément dans la partie triée, on parcourt de droite à gauche tant que l'élément est plus  grand que celui que l'on souhaite insérer. Pour résumer l'idée de l'algorithme : La partie verte du tableau  est la partie triée, l'élément en bleu est le prochain élément non trié à placer et la partie blanche est la  partie non triée. 
 
 ### **<H3 STYLE="COLOR:GREEN;">3.3. Illustration<a name="_page5_x40.00_y491.92"></a> vidéo</H3>**
 
-Vidéo :[ https://ladigitale.dev/digiview/#/v/668aed171ea50 ](https://ladigitale.dev/digiview/#/v/668aed171ea50)
+💡 **Regardez cette vidéo** pour mieux comprendre : 
+
+📌 [Tri par Insertion - Animation](https://ladigitale.dev/digiview/#/v/668aed171ea50)
+
 
 ### **<H3 STYLE="COLOR:GREEN;">3.4. Pseudo-code<a name="_page5_x40.00_y542.92"></a></H3>**
 
+📌 L'algorithme fonctionne en **deux étapes** :  
+
+1️⃣ **Chercher la bonne position** de l'élément à insérer.
+ 
+2️⃣ **Décaler** les autres éléments pour l'insérer.
+
 ```
 ALGORITHME tri_insertion
-    PROCEDURE insere(T, i)            # insère tmp dans le tableau[0...i[ trié
-        tmp = T[i]          			# valeur à inserer
-        j <- i-1		    		# indice en cours                                                        
-        TANT QUE j >= 0 et T[j] > tmp ALORS        
-            T[j+1] <- T [j]         
-	     # l'élément qui précède on le décale vers la droite jusqu'à laisser la place libre à tmp           
-            j <- j - 1              	# on décale l'indice
-        FIN TANT QUE
-        T[j+1] <- tmp   			# on insère tmp
+    PROCEDURE insere(T, i)  
+        tmp = T[i]  # Valeur à insérer
+        j <- i-1  # Position précédente  
+        
+        TANT QUE j >= 0 et T[j] > tmp ALORS  
+            T[j+1] <- T [j]  # Décale les éléments  
+            j <- j - 1  
+        FIN TANT QUE  
+        
+        T[j+1] <- tmp  # Insère la valeur  
 
-    PROCEDURE tri_insertion(T)     
-        POUR i ALLANT DE 1 A n [SAUT DE 1] FAIRE         
-            insere (T, i)             
-            i <- i + 1                                     
+    PROCEDURE tri_insertion(T)  
+        POUR i ALLANT DE 1 A n FAIRE  
+            insere (T, i)  
         FIN POUR
 ```
 
+
 ### **<H3 STYLE="COLOR:GREEN;">3.5. Complexité<a name="_page6_x40.00_y36.92"></a></H3>**
 
-L’algorithme du tri par insertion a une complexité de O(N²). Calculons le nombre d’instructions : 
+Le **nombre d'itérations** dépend de la situation initiale du tableau.  
 
-```
-                        PROCEDURE insere(T, i)                     
-1                           tmp = T[i]
-1                           j <- i                                                          
-N-1 fois                    TANT QUE j >= 0 et T[j] > tmp ALORS        
-    1                           T[j+1] <- T [j]                         
-    1                           j <- j - 1                              
-                            FIN TANT QUE
-1                           T[j+1] <- tmp                                   
-                        PROCEDURE tri_insertion(T)                                                         
-N fois                      POUR i ALLANT DE 1 A n [SAUT DE 1] FAIRE         
-    insere                      insere (T, i)             
-    1                           i <- i + 1                                     
-                            FIN POUR
-```
+| Cas | Nombre d'itérations | Complexité |
+|------|-----------------|--------------|
+| ✅ **Meilleur cas** (tableau déjà trié) | **N** | O(N) |
+| ❌ **Pire cas** (tableau trié à l'envers) | **N²** | O(N²) |
 
-- Procédure insere : 2 + (N – 1) x 2 + 1 = 3 + (N – 1) x 2 = 2 N + 2
-- Procédure tri\_insertion : N x (2N + 2) = 2 N² + 2 N 
+📌 **Conclusion :**  
 
-Pour simplifier les calculs de complexité, on s’intéresse seulement aux nombres de itérations des boucles, puisque c’est elles qui vont donner le comportement asymptotique (quand N très grand). 
+- **Très efficace** pour de petits tableaux **ou presque triés**.  
 
-*Pour aller plus loin : Exemple t = [ 4, 3, 2, 1]* 
+- **Moins performant** sur de **grands tableaux** à cause de O(N²). 
 
-*Le 2ème élément : le « 3 » est décalé d’un cran vers la gauche [ 3, 4, 2, 1]* 
 
-*Le 3ème élément : le « 2 » est décalé de deux crans vers la gauche [ 2, 3, 4, 1]* 
 
-*Le 4ème élément : le « 1 » est décalé de trois crans vers la gauche [ 1, 2, 3, 4]* 
-
-*Pour trouver le plus petit élément, (n-1) itérations sont nécessaires, pour le 2ème plus petit élément, (n-2) itérations sont effectuées, .… Pour trouver le dernier plus petit élément, 0 itération sont effectuées.* 
-
-*Le nombre de itérations des deux boucles est 1 + 2 + 3 = 6 c’est-à-dire* ![](Aimg8.png)
-
-*Donc le pire des cas, le tableau est trié à l’envers, pour chaque valeur i on compte N - 1 passages dans la boucle for :* 
-
-![](Aimg7.png)
-
-**Conclusion** : le **tri par insertion** a une complexité en temps de **O(N²) dans le pire des cas O(N) dans le meilleur des cas (tableau déjà trié).**  
-
-Cependant des améliorations et des variantes permettent de le rendre plus rapide comme le tri shell. C’est un algorithme stable et en place (travail sur la structure et non sur la copie).
 
 ### **<H3 STYLE="COLOR:GREEN;">3.6. Preuve<a name="_page6_x40.00_y637.92"></a> de correction</H3>**
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.6.1.	Correction partielle</H4>
 
-On veut prouver que l’algorithme **produit un tableau trié** après son exécution.
+On veut prouver que **l'algorithme donne un tableau trié** à la fin de son exécution.  
 
-**Invariant de boucle**
+✅ **Invariant de boucle**  
+Avant chaque itération `i`, le sous-tableau `T[0:i]` est **trié**.  
 
-On cherche un **invariant** qui est **vrai avant, pendant et après chaque itération** de la boucle principale de `insertion_sort`.
+🧩 **Preuve par récurrence**  
+1️⃣ **Cas de base (`i = 1`)** : `T[0:1]` contient un seul élément → **toujours trié**. ✅  
 
-**Invariant de la boucle principale (sur `i`)**  
-> **Avant chaque itération `i`, le sous-tableau `T[0:i]` est trié.**
+2️⃣ **Hérédité (`i → i+1`)** : `T[i]` est inséré à la bonne place dans `T[0:i]`, qui est trié → **`T[0:i+1]` reste trié**.  
 
-**Preuve par récurrence**
+3️⃣ **Terminaison (`i = len(T)`)** : `T[0:len(T)]` est entièrement trié.  
 
-On prouve que cet invariant est vérifié à chaque itération de la boucle.
-
-1 **Initialisation (cas de base, `i = 1`)**  
-
-- Avant la première itération, `T[0:1]` contient un seul élément, et un tableau à un seul élément est toujours trié. 
-
-- Donc l’invariant est vrai avant la première itération.
-
-2 **Hérédité (passage de `i` à `i+1`)**  
-
-- Supposons que le sous-tableau `T[0:i]` est trié après l’itération `i`.
-
-- L'algorithme insère `T[i]` dans `T[0:i]` de manière ordonnée à l’aide de la fonction `insert`.
-
-- La fonction `insert` effectue des **décalages successifs** pour placer `T[i]` à la bonne position.
-
-- Après l’insertion, le sous-tableau `T[0:i+1]` est trié.
-
-- L’invariant est donc conservé.
-
-3 **Terminaison (état final, `i = len(T)`)**  
-
-- Quand `i = len(T)`, l’invariant assure que `T[0:len(T)]` est trié.
-
-- Le tableau entier est donc trié.
-
-✔ **Conclusion** : L’invariant est vrai à chaque étape et à la fin du tri, garantissant que l’algorithme est **correct**.
-
-
-
-
-
+✔ **Conclusion** : L'algorithme **produit bien un tableau trié** à la fin.  
 
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.6.2.	Terminaison</H4>
 
-L’algorithme doit satisfaire les conditions suivantes pour garantir qu’il termine toujours.
+L’algorithme **ne peut pas boucler indéfiniment** et **s’arrête toujours**.  
 
-**Analyse de la terminaison**
+1️⃣ **Boucle `for i in range(1, len(T))`** : s’exécute **`len(T) - 1` fois**.  
 
-L’algorithme comprend :
+2️⃣ **Boucle `while j >= 0 and T[j] > tmp` dans `insert`** : `j` **diminue strictement**, donc **nombre fini d'itérations**.  
 
-1 **Une boucle principale `for i in range(1, len(T))`**  
+📌 **Mesure de progrès** :  
+On définit `m = len(T) - i`, qui représente le nombre d’éléments restants à traiter.  
 
-- Cette boucle parcourt `T` de `1` à `len(T)-1`, donc elle s'exécute **`len(T) - 1` fois**.
+- À chaque itération, `m` **diminue strictement**.  
 
-2 **Une boucle `while j >= 0 and T[j] > tmp` dans `insert`**  
+- Quand `m = 0`, l’algorithme **s'arrête**. ✅  
 
-- Cette boucle déplace les éléments plus grands que `T[i]` vers la droite.
-
-- La valeur de `j` **diminue strictement à chaque itération**.
-
-- Comme `j` commence à `i-1` et ne peut pas descendre en dessous de `0`, cette boucle a un **nombre fini d'itérations**.
-
-**Mesure de progrès**
-
-On définit une **mesure de progrès** `m = len(T) - i`, qui représente le nombre d'éléments restant à traiter.  
-
-- `m` diminue strictement à chaque itération de la boucle `for`.
-
-- Comme `m` atteint `0`, l'algorithme s'arrête toujours.
-
-✔ **Conclusion** : L’algorithme ne peut pas entrer dans une boucle infinie et termine toujours après au plus **O(n²) itérations**.
+✔ **Conclusion** : L’algorithme **se termine toujours** après au plus **O(n²) itérations**.
 
 
 ### **<H3 STYLE="COLOR:GREEN;">3.7. Implémentation<a name="_page7_x40.00_y36.92"></a> en Python</H3>**
 
 => CAPYTALE Le code vous sera donné par votre enseignant
 
-**<H3 STYLE="COLOR:red;">Activité n°5.:** Création de la liste aléatoire **avec l’activité 1** :</H3>** reprendre l’activité 1 et 2
+Nous allons maintenant **coder** le tri par insertion.
 
-**<H3 STYLE="COLOR:red;">Activité n°6.:** implémentation classique :</H3>** ajouter à l’activité précédente les deux fonctions suivantes :
+???+ question "Activité n°5 : Création d’une Liste Aléatoire"
+    
+    🔹 **Créer une liste aléatoire à trier :**  
+    
+    ```python
+    import random
+    def genere_liste_aleatoire(N, n):
+        """Génère une liste aléatoire de N éléments compris entre 0 et n"""
+        return [random.randint(0, n) for _ in range(N)]
 
-```python
-def insert(T, i):
-    """ fonction qui insère la valeur T[i] à la bonne place dans le tableau"""
-    # à compléter
+    liste = genere_liste_aleatoire(10, 100)
+    print("Liste aléatoire :", liste)
+    ```
 
-def insertion_sort(T):
-    """ fonction tri par insertion"""
-    # à compléter
+    ??? success "Python"
+        {{ IDE() }}
 
-print("Liste triée   : ", insertion_sort(data))
-```
+
+???+ question "Activité n°6 : Implémentation du Tri par Insertion"
+    
+    🔹 **Compléter le code ci-dessous :**  
+    
+    ```python
+    def insert(T, i):
+        """Insère la valeur T[i] à la bonne place dans la partie triée."""
+        # à compléter
+
+    def insertion_sort(T):
+        """Tri par insertion."""
+        # à compléter
+
+    liste_triee = insertion_sort(liste)
+    print("Liste triée :", liste_triee)
+    ```
+
+
 
 **Remarque : on aurait pu également faire une seule fonction**  
 
-**<H3 STYLE="COLOR:red;">Activité n°7.:** Tri par insertion et temps d’exécution :</H3>** ajouter ce script aux fonctions de l’activité précédente en mettant en commentaire les deux print précédent :
 
-```python
-import time
 
-# on fait une moyenne sur plusieurs tris de tableau de même longueur
-somme_des_durees = 0
-for i in range(5):
-    liste = genere_liste_aleatoire(1_000, 1_000_000)
-    start_time=time.time()
-    insertion_sort(liste)
-    somme_des_durees = somme_des_durees + time.time() - start_time
-moyenne = somme_des_durees/5
-print("Temps d execution pour 1_000: %s secondes ---" % (moyenne))
+On mesure **le temps de tri** en fonction de la taille du tableau.
 
-somme_des_durees = 0
-for i in range(5):
-    liste = genere_liste_aleatoire(2_000, 1_000_000)
-    start_time=time.time()
-    insertion_sort(liste)
-    somme_des_durees = somme_des_durees + time.time() - start_time
-moyenne = somme_des_durees/5
-print("Temps d execution pour 2_000: %s secondes ---" % (moyenne))
+???+ question "Activité n°7 : Mesurer le Temps d’Exécution"
+    
+    🔹 **Tester la rapidité du tri :**  
+    
+    ```python
+    import time
 
-somme_des_durees = 0
-for i in range(5):
-    liste = genere_liste_aleatoire(10_000, 1_000_000)
-    start_time=time.time()
-    insertion_sort(liste)
-    somme_des_durees = somme_des_durees + time.time() - start_time
-moyenne = somme_des_durees/5
-print("Temps d execution pour 10_000: %s secondes ---" % (moyenne))
-```
-On mesure la durée moyenne (sur 5 tableaux) d’exécution du tri sur des tableaux dont le nombre d’éléments est de plus en plus grand.
+    tailles = [1_000, 2_000, 10_000]
+    for taille in tailles:
+        somme_des_durees = 0
+        for _ in range(5):
+            liste = genere_liste_aleatoire(taille, 1_000_000)
+            start_time = time.time()
+            insertion_sort(liste)
+            somme_des_durees += time.time() - start_time
+        moyenne = somme_des_durees / 5
+        print(f"Temps pour {taille} éléments : {moyenne:.4f} secondes")
+    ```
+
+
+
+📌 **Remarque :**  
+
+- Un **petit tableau** sera trié **rapidement**.  
+
+- Un **grand tableau** prendra **plus de temps** (O(N²)).  
 
 **Animation :[ http://lwh.free.fr/pages/algo/tri/tri_insertion.html ](http://lwh.free.fr/pages/algo/tri/tri_insertion.html)![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.006.png)**
 
 ## **<H2 STYLE="COLOR:BLUE;">4. Autres<a name="_page8_x40.00_y36.92"></a> algorithmes de tris : le tri à bulles (Bubble sort)</h2>**
 
-Le tri à bulles est un algorithme de tri qui consiste à faire  **remonter  progressivement les plus petits éléments d'une liste**, comme les bulles  d'air remontent à la surface d'un liquide. 
+Le tri à bulles est un algorithme de tri qui consiste à faire  **remonter  progressivement les plus petits éléments d'une liste**, Le **tri à bulles** est un algorithme de tri simple qui fonctionne en **échangeant les éléments voisins** pour les remettre dans l'ordre croissant. Son fonctionnement est inspiré du mouvement des bulles d'air qui remontent à la surface d'un liquide.
 
-![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.055.png)
+### **<H3 STYLE="COLOR:GREEN;">4.1. Principe du tri à bulles</H3>**
 
-L'algorithme  parcourt  la  liste,  et  **compare  les  couples  d'éléments  successifs**.   
 
-Lorsque deux éléments successifs ne sont pas dans l'ordre croissant, **ils  sont échangés**.   
+L’algorithme fonctionne de la manière suivante :
 
-Après chaque parcours complet de la liste, l'algorithme **recommence l'opération**. Lorsque aucun échange n'a lieu pendant un parcours, cela signifie que la liste est triée : l'algorithme peut s'arrêter. 
+1️⃣ On compare **deux éléments adjacents** dans la liste. 
 
-On optimise l’algorithme en se basant sur la propriété que le dernier élément permuté se trouve nécessairement bien trié. Il n’est alors pas besoin de parcourir la liste jusqu’à la fin : combsort (tri à peignes) 
+2️⃣ Si le premier est **plus grand** que le second, on les **échange**.  
 
-**Conclusion** : Le tri à bulles présente une complexité en **O(N²)** dans le pire des cas (où N est la longueur de la liste), et en O(N) dans le cas où le tableau est déjà trié, ce qui le classe parmi les mauvais algorithmes de tri. Il n'est donc quasiment pas utilisé en pratique. 
+3️⃣ On répète cette opération **jusqu'à la fin de la liste**. 
 
-Comme le tri par insertion, le tri à bulle est un tri stable. 
+4️⃣ Après un **premier passage**, le plus grand élément est **placé à la fin** de la liste.  
+
+5️⃣ On recommence le processus **pour les éléments restants**, en ignorant la dernière position triée.  
+
+6️⃣ On continue jusqu'à ce que **plus aucun échange ne soit nécessaire**, ce qui signifie que la liste est triée.  
+
+**🖼️ Illustration graphique**
+
+📌 **Prenons un exemple avec la liste `[5, 3, 8, 4, 2]` à trier en ordre croissant :**
+
+| Itération | État du tableau après chaque passage |
+|-----------|------------------------------------|
+| **Départ** | `[5, 3, 8, 4, 2]` |
+| 1️⃣ **Passage 1** | `[3, 5, 4, 2, 8]` (le 8 est bien placé) |
+| 2️⃣ **Passage 2** | `[3, 4, 2, 5, 8]` (le 5 est bien placé) |
+| 3️⃣ **Passage 3** | `[3, 2, 4, 5, 8]` (le 4 est bien placé) |
+| 4️⃣ **Passage 4** | `[2, 3, 4, 5, 8]` ✅ **Liste triée !** |
+
+💡 **Remarque** : À chaque passage, le plus grand élément restant "remonte" à sa position correcte.
+
+### **<H3 STYLE="COLOR:GREEN;">4.2. Illustration vidéo</H3>**
 
 Illustration vidéo :[ https://ladigitale.dev/digiview/#/v/668aed8c3bab4 ](https://ladigitale.dev/digiview/#/v/668aed8c3bab4) 
+
+### **<H3 STYLE="COLOR:GREEN;">4.3. Implémentation du tri à bulles</H3>**
 
 ```
 FONCTION swap(T : tableau d'entiers, i : entier, j : entier)
@@ -614,58 +598,89 @@ FIN FONCTION
 
 => CAPYTALE Le code vous sera donné par votre enseignant
 
-**<H3 STYLE="COLOR:red;">Activité n°8.:** Création de la liste aléatoire **avec l’activité 1** :</H3>** reprendre l’activité 1 et 2
+???+ question "Activité n°8 : Générer une liste aléatoire"
 
-**<H3 STYLE="COLOR:red;">Activité n°9.:** implémentation classique </H3>** Avec la fonction echange et la fonction bubble_sort
+    **Créer une liste aléatoire pour tester l'algorithme de tri à bulles.**
 
-```python
-def swap(T : list, i : int, j : int) -> list:
-    """ fonction permutation (à garder elle sert beaucoup!!)  """
-    # à compléter
+    ```python
+    import random
+    
+    def genere_liste_aleatoire(N, n):
+        """Génère une liste aléatoire de N éléments compris entre 0 et n"""
+        return [random.randint(0, n) for i in range(N)]
+    
+    # Création d'une liste de 10 valeurs comprises entre 0 et 100
+    liste_aleatoire = genere_liste_aleatoire(10, 100)
+    print(liste_aleatoire)
+    ```
 
-def bubble_sort(T : list) -> list:
-    """ fonction tri a bulle permutation des éléments 2 à 2 en faisant remonter
-    la plus grande valeur en fin de la liste  """
-    # à compléter
-```
+    ??? success "Solution"
+
+        **Exemple de sortie :**
+        ```
+        [34, 89, 12, 7, 65, 23, 9, 78, 45, 3]
+        ```
+
+
+???+ question "Activité n°9 : Implémentation du tri à bulles"
+
+    **Compléter et exécuter l'algorithme du tri à bulles avec la fonction d’échange `swap`.**
+
+    ```python
+    def swap(T: list, i: int, j: int) -> None:
+        """Échange les éléments T[i] et T[j]"""
+        # à compléter
+
+    def bubble_sort(T: list) -> list:
+        """Tri à bulles optimisé"""
+        # à compléter
+
+    # Test de l’algorithme
+    liste = [5, 3, 8, 4, 2]
+    print("Avant tri :", liste)
+    print("Après tri :", bubble_sort(liste))
+    ```
+
+    ??? success "Solution"
+
+        **Exemple de sortie :**
+        ```
+        Avant tri : [5, 3, 8, 4, 2]
+        Après tri : [2, 3, 4, 5, 8]
+        ```
+
 
 **Remarque : il existe d’autres versions du tri bulle** 
 
-**<H3 STYLE="COLOR:red;">Activité n°10.:** Tri bulle et temps d’exécution :</H3>** ajouter ce script aux fonctions de l’activité précédente en mettant en commentaire les deux print précédent :
 
-```python
-import time
+???+ question "Activité n°10 : Mesurer le temps d'exécution du tri à bulles"
 
-# on fait une moyenne sur plusieurs tris de tableau de même longueur
-somme_des_durees = 0
-for i in range(5):
-    liste = genere_liste_aleatoire(1_000, 1_000_000)
-    start_time=time.time()
-    bubble_sort(liste)
-    somme_des_durees = somme_des_durees + time.time() - start_time
-moyenne = somme_des_durees/5
-print("Temps d execution pour 1_000: %s secondes ---" % (moyenne))
+    **Comparer le temps d'exécution du tri à bulles sur des listes de différentes tailles.**
 
-somme_des_durees = 0
-for i in range(5):
-    liste = genere_liste_aleatoire(2_000, 1_000_000)
-    start_time=time.time()
-    bubble_sort(liste)
-    somme_des_durees = somme_des_durees + time.time() - start_time
-moyenne = somme_des_durees/5
-print("Temps d execution pour 2_000: %s secondes ---" % (moyenne))
+    ```python
+    import time
 
-somme_des_durees = 0
-for i in range(5):
-    liste = genere
+    # Mesure du temps d'exécution pour différentes tailles de listes
+    for taille in [1_000, 2_000, 10_000]:
+        somme_des_durees = 0
+        for _ in range(5):
+            liste = genere_liste_aleatoire(taille, 1_000_000)
+            start_time = time.time()
+            bubble_sort(liste)
+            somme_des_durees += time.time() - start_time
+        moyenne = somme_des_durees / 5
+        print(f"Temps d’exécution pour {taille} éléments : {moyenne:.5f} secondes")
+    ```
 
-_liste_aleatoire(10_000, 1_000_000)
-    start_time=time.time()
-    bubble_sort(liste)
-    somme_des_durees = somme_des_durees + time.time() - start_time
-moyenne = somme_des_durees/5
-print("Temps d execution pour 10_000: %s secondes ---" % (moyenne))
-```
+    ??? success "Solution"
+
+        **Exemple de sortie :**
+        ```
+        Temps d’exécution pour 1_000 éléments : 0.02458 secondes
+        Temps d’exécution pour 2_000 éléments : 0.09123 secondes
+        Temps d’exécution pour 10_000 éléments : 1.43567 secondes
+        ```
+
 
 Animation :[ http://lwh.free.fr/pages/algo/tri/tri_bulle.html ](http://lwh.free.fr/pages/algo/tri/tri_bulle.html)
 
