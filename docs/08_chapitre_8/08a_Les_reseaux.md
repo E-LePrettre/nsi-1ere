@@ -541,7 +541,7 @@ La règle est relativement simple : la première trame envoyée par A aura pour 
 
 - **Exemple** : Les transactions bancaires en ligne utilisent le chiffrement SSL/TLS pour sécuriser les données échangées entre le client et le serveur bancaire.
 
-## <H2 STYLE="COLOR:BLUE;">**7. Mesures de protection des réseaux<a name="#_titre7"></a>**</H2>
+## <H2 STYLE="COLOR:BLUE;">**7. Analyse de trame<a name="#_titre7"></a>**</H2>
 
 **<H3 STYLE="COLOR:red;">Activité n°3 :**</H3> Analyse d'une trame fictive
 
