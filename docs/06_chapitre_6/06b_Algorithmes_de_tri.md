@@ -160,7 +160,7 @@ Dans cet exemple :
 
 Un **tri stable** conserve l’ordre relatif des éléments identiques :
 
-![Bouteilles après tri stable](attachment:image3.png)
+![Bouteilles après tri stable](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.018.png)
 
 Ici, les bouteilles de même volume **restent dans le même ordre** qu’au départ.
 
