@@ -95,11 +95,17 @@ En suivant ces conseils et en utilisant ces outils, vous serez bien équipé pou
 
 **Liens Utiles :**
 - [Télécharger Thonny](https://thonny.org/)
+
 - [Télécharger VS Code](https://code.visualstudio.com/)
+
 - [OpenClassrooms](https://openclassrooms.com/)
+
 - [Codecademy](https://www.codecademy.com/)
+
 - [W3Schools](https://www.w3schools.com/)
+
 - [Stack Overflow](https://stackoverflow.com/)
+
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
 
 ---
