@@ -273,7 +273,7 @@ Une **variable** est un espace mémoire qui stocke une valeur.
         ```
 
 
-#### **<H4 STYLE="COLOR:MAGENTA;">4.4.4. Les<a name="_page5_x40.00_y196.92"></a> chaînes de caractères (str)</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">4.4.3. Les<a name="_page5_x40.00_y196.92"></a> chaînes de caractères (str)</h4>**
 
 
 ???+ question "Activité n°8 : Manipulation de chaînes"
