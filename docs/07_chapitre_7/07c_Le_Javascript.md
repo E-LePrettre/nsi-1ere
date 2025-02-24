@@ -279,7 +279,8 @@ console.log("Bonjour " + nom + " !");
 
 Une variable est **un espace mémoire** permettant de stocker une valeur.  
 
-📌 **Trois mots-clés pour déclarer une variable :**  
+📌 **Trois mots-clés pour déclarer une variable :**
+ 
 | Mot-clé | Portée | Peut être modifiée ? | Scope limité par bloc `{}` ? |
 |---------|--------|-----------------|------------------|
 | `var` | Globale ou locale (fonction) | ✅ Oui | ❌ Non |

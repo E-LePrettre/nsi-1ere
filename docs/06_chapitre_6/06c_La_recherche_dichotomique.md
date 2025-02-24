@@ -85,7 +85,7 @@ L'idée de base est simple :
 
 Animation : [https://www.infoforall.fr/art/algo/animation-de-la-recherche-dichotomique/](https://www.infoforall.fr/art/algo/animation-de-la-recherche-dichotomique/)
 
-### <H3 STYLE="COLOR:GREEN;">2.3. Application<a name="_page2_x40.00_y511.92"></a> de l’algorithme à un exemple</H3>
+### <H3 STYLE="COLOR:GREEN;">2.2. Application<a name="_page2_x40.00_y511.92"></a> de l’algorithme à un exemple</H3>
 
 🔍 **Problème**
 Imaginons que nous avons une liste triée de nombres et que nous devons **trouver rapidement** la position d’un nombre donné.
