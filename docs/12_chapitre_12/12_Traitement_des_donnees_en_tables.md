@@ -401,7 +401,7 @@ groupes_1980_1985(dico)
 
 
 
-## <H2 STYLE="COLOR:BLUE;">**4.Fusion de tables : Croisement des données CSV<a name="_page12"></a></h2>**
+## <H2 STYLE="COLOR:BLUE;">**5.Fusion de tables : Croisement des données CSV<a name="_page12"></a></h2>**
 
 Nous disposons de **trois fichiers CSV** contenant des informations sur les pays, langues et villes :
 
@@ -492,7 +492,7 @@ print(f"La capitale de {pays[72]['Name']} est {pays[72]['CapitalName']}.")
 
 Merci à Nicolas Revéret
 
-## <H2 STYLE="COLOR:BLUE;">**5.  Projet (démarche d’investigation)<a name="_page13_x40.00_y36.92"></a></h2>** 
+## <H2 STYLE="COLOR:BLUE;">**6.  Projet (démarche d’investigation)<a name="_page13_x40.00_y36.92"></a></h2>** 
 
 **<H3 STYLE="COLOR:red;">Projet 1** :</h3> ★**  **pandy pandas pas à pas** 
 
