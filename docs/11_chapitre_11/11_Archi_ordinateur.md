@@ -301,9 +301,7 @@ Ils permettent à l’ordinateur de communiquer avec l’extérieur (**clavier, 
 
 ### <H3 STYLE="COLOR:GREEN;"> **3.2. Le<a name="_page6_x297.92"></a> CPU** </H3>
 
-Le processeur (CPU, pour Central Processing Unit) est le cerveau de l’ordinateur. Il permet de manipuler, des données et des instructions codées sous forme binaires. Le processeur est composé de millions de transistors placés dans un boitier comportant des connecteurs d’entrée-sortie, surmonté d’un ventilateur. C’est un circuit électronique cadencé au rythme d’une horloge interne qui envoie des impulsions.
 
-### <H3 STYLE="COLOR:GREEN;"> **3.3. Le<a name="_page6_x426.92"></a> rôle de l’horloge CPU** </H3>
 
 Le **processeur** (CPU – Central Processing Unit) est le **cœur de l’ordinateur**.  
 
@@ -319,7 +317,7 @@ Le **processeur** (CPU – Central Processing Unit) est le **cœur de l’ordina
 
 
 
-### <H3 STYLE="COLOR:GREEN;"> **3.4. Le rôle de l’horloge CPU**  </H3>
+### <H3 STYLE="COLOR:GREEN;"> **3.3. Le rôle de l’horloge CPU**  </H3>
 
 Le **processeur est cadencé** par une **horloge interne**, qui envoie des **impulsions électriques** synchronisant ses opérations.  
 
@@ -339,7 +337,7 @@ Le **processeur est cadencé** par une **horloge interne**, qui envoie des **imp
 ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.027.png)
 ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.028.png)
 
-### <H3 STYLE="COLOR:GREEN;"> **3.5. Les<a name="_page7_x274.92"></a> limites** </H3>
+### <H3 STYLE="COLOR:GREEN;"> **3.4. Les<a name="_page7_x274.92"></a> limites** </H3>
 
 🔹 **Le principal problème : le goulet d’étranglement**  
 
@@ -514,7 +512,7 @@ Nous allons utiliser un **simulateur CPU** basé sur l’architecture **Von Neum
 
 
 
-### <H3 STYLE="COLOR:GREEN;"> **5.1. Configuration de la RAM<a name="_page11_x648.92"></a> RAM** </H3>
+### <H3 STYLE="COLOR:GREEN;"> **5.2. Configuration de la RAM<a name="_page11_x648.92"></a>** </H3>
 
 Par défaut le contenu des différentes cellules de la mémoire est en base 10 (entier signé), mais d'autres options sont possibles : base 10 (entier non-signé, "unsigned"), base 16 ("hex"), base 2 ("binary"). On accède à ces options à l'aide du bouton "OPTIONS" situé en bas dans la partie gauche du simulateur.
 
@@ -530,7 +528,7 @@ Par défaut le contenu des différentes cellules de la mémoire est en base 10 (
 
 
 
-### <H3 STYLE="COLOR:GREEN;"> **5.2. Le<a name="_page12_x73.92"></a> CPU** </H3>
+### <H3 STYLE="COLOR:GREEN;"> **5.3. Le<a name="_page12_x73.92"></a> CPU** </H3>
 
 Dans la partie centrale du simulateur, nous allons trouver en allant du haut vers le bas :
 
@@ -538,7 +536,7 @@ Dans la partie centrale du simulateur, nous allons trouver en allant du haut ver
 - le **bloc "unité de commande"** ("Control Unit") qui contient l'instruction machine en cours d'exécution (au format hexadécimal)
 - le **bloc "unité arithmétique et logique"** ("Arithmetic and Logic Unit")
 
-### <H3 STYLE="COLOR:GREEN;"> **5.3. Programmer<a name="_page12_x218.92"></a> en assembleur** </H3>
+### <H3 STYLE="COLOR:GREEN;"> **5.4. Programmer<a name="_page12_x218.92"></a> en assembleur** </H3>
 
 **<H3 STYLE="COLOR:red;">Activité n°11.:</H3>** 
 1️⃣ Dans l'éditeur **Assembly Language**, saisissez :  
