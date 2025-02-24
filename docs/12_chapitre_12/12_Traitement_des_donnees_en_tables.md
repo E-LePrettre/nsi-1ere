@@ -216,7 +216,7 @@ print(dico[811])  # 2. Nom du groupe en 812
 
 2️⃣ `dico[811]` : Affiche le groupe en **812e position** (indexation commence à 0).  
 
-### <H3 STYLE="COLOR:GREEN;">**4.3. Recherche de groupes par année</h3>** 
+### <H3 STYLE="COLOR:GREEN;">**3.3. Recherche de groupes par année</h3>** 
 
 **<H3 STYLE="COLOR:red;">Activité n°5.**</h3>  : 
 
@@ -231,7 +231,7 @@ print(f"Nombre de groupes formés en 1981 : {len(groupes_1981)}")
 
 - On affiche la **taille** de la liste filtrée.
 
-### <H3 STYLE="COLOR:GREEN;">**4.4. Liste des groupes de "Melodic Death</h3>** 
+### <H3 STYLE="COLOR:GREEN;">**3.4. Liste des groupes de "Melodic Death</h3>** 
 
 **<H3 STYLE="COLOR:red;">Activité n°6.**</h3>  : 
 
@@ -250,7 +250,7 @@ print(genres)
 
 - `set()` supprime automatiquement les doublons.
 
-### <H3 STYLE="COLOR:GREEN;">**4.5. Visualisation des groupes sur un graphique</h3>** 
+### <H3 STYLE="COLOR:GREEN;">**3.5. Visualisation des groupes sur un graphique</h3>** 
 
 **<H3 STYLE="COLOR:red;">Activité n°7.**</h3>  : 
 
