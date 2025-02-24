@@ -725,7 +725,9 @@ L’attribut `title` permet d’afficher une **infobulle** au survol de l’imag
 
 1. Cherchez **trois images** sur le Web (**passoire, casserole et autobus**).  
 
-2. Enregistrez-les dans un dossier .  
+(2. Enregistrez-les dans un dossier si vous n'êtes pas dans Capytale)
+
+2. Enregistrez-les à la racine  
 
 3. Insérez-les dans `index.html` en ajoutant une infobulle pour chacune.  
 
