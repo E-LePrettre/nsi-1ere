@@ -445,264 +445,437 @@ m = [[1, 3, 4],
      [7, 8, 15]]
 ```
 
+#### **<H4 STYLE="COLOR:MAGENTA;">1.3.2. Accéder aux éléments d'une Matrice</h4>**
 
 
-**<H3 STYLE="COLOR:red;">Activité n°14.: Travailler sur des listes de listes</H3>** 
+???+ question "Activité n°14 : Accéder aux éléments d'une Matrice"
 
-```python
-m = [[1, 3, 4], [5 ,6 ,8], [2, 1, 3], [7, 8, 15]]
-```
-Il est souvent plus pratique de présenter ces " listes de listes" comme suit :
+    🔹 **Tester :**  
 
-```python
-m = [[1, 3, 4],
- [5, 6, 8],
- [2, 1, 3],
- [7, 8, 15]]
-```
-Pour cibler un élément particulier de la matrice, on utilise la notation avec "doubles crochets" : m[ligne][colonne] (sans perdre de vu que la première ligne et la première colonne ont pour indice 0) 
+    ```python
+    m = [[1, 3, 4], 
+         [5, 6, 8], 
+         [2, 1, 3], 
+         [7, 8, 15]]
 
-Tester avec :
+    # Accéder à l'élément ligne 1, colonne 2 (sans oublier que l'indice commence à 0)
+    a = m[1][2]  
+    print(a)  # Doit afficher 8
+    ```
 
-> a = m[1][2] 
+    ??? success "Python"
+        {{ IDE() }}
 
-> a
+📌 **Remarque :**  
 
-??? success "Python"
+✅ **Les indices commencent à `0` !**  
 
-    {{ IDE() }}
+✅ `m[i][j]` renvoie l’élément de la **ligne `i` et colonne `j`**.
+
+#### **<H4 STYLE="COLOR:MAGENTA;">1.3.3. Parcourir une Matrice avec une Double Boucle `for`</h4>**
 
 
-**<H3 STYLE="COLOR:red;">Activité n°15.: Parcours de liste de listes</H3>** Il est possible de parcourir l'ensemble des éléments d'une matrice à l'aide d'une "double boucle for" :
+En Python, on peut parcourir tous les éléments d'une matrice **grâce à une double boucle**.
 
-```python
-m = [[1, 3, 4],
- [5, 6, 8],
- [2, 1, 3],
- [7, 8, 15]]
-nb_colonne, nb_ligne = 3, 4
-for i in range(0, nb_ligne):
-  for j in range(0, nb_colonne):
-    a = m[i][j]
-```
+???+ question "Activité n°15 : Parcourir une Matrice"
 
-??? success "Python"
+    🔹 **Tester :**  
 
-    {{ IDE() }}
+    ```python
+    m = [[1, 3, 4], 
+         [5, 6, 8], 
+         [2, 1, 3], 
+         [7, 8, 15]]
+
+    nb_lignes = len(m)  # Nombre de lignes
+    nb_colonnes = len(m[0])  # Nombre de colonnes (assumant que toutes les lignes ont la même longueur)
+
+    for i in range(nb_lignes):  # Parcours des lignes
+        for j in range(nb_colonnes):  # Parcours des colonnes
+            print(f"Élément à [{i},{j}] : {m[i][j]}")
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **Explication :**  
+
+✅ `len(m)` donne **le nombre de lignes**.  
+
+✅ `len(m[0])` donne **le nombre de colonnes** (assumant une matrice régulière). 
+
+✅ La **double boucle** parcourt chaque élément **ligne par ligne** et **colonne par colonne**.  
+
+
+
+🔥 **Pourquoi utiliser une Matrice en Python ?**  
+
+✅ **Manipulation simple** : Une **liste de listes** est une **solution efficace** pour gérer des données tabulaires.  
+
+✅ **Optimisation** : Python possède des **bibliothèques puissantes comme `numpy`** pour les matrices complexes.  
+
+✅ **Flexibilité** : Facile à modifier et adapter aux **besoins des programmes**.  
+
 
 
 ## **<H2 STYLE="COLOR:BLUE;">2.   Les<a name="_page6_x40.00_y36.92"></a> dictionnaires</h2>** 
 
-Comme les listes et les tuples, les dictionnaires permettent de stocker des données Une différence essentielle entre les listes et les dictionnaires est que les éléments d’une liste sont repérés par des indices 0, 1, 2, … alors que dans les dictionnaires ils sont remplacés par des objets de type str, float, tuples que l’on appelle clé et à chaque clé correspond une valeur. 
-**Ces clés ne sont pas ordonnées**. Chaque élément d’un dictionnaire est donc composé de 2 parties, on parle de pairs **« clé/valeur ».** 
+En Python, un **dictionnaire** est une structure de données qui permet de stocker des informations sous forme de **paires clé-valeur**.  
 
-### **<H3 STYLE="COLOR:GREEN;">2.1. Création<a name="_page6_x79.00_y161.92"></a> de dictionnaires</h3>** 
+🔹 **Différences entre Listes et Dictionnaires :**  
 
-Un dictionnaire est créé avec des accolades, les différents couples étant séparés par des virgules. La clé et la valeur correspondante d’un élément sont séparées par **deux-points.** 
+✅ Une **liste** stocke des valeurs repérées par **des indices** (`0, 1, 2...`). 
 
-Exemple : dico = {"A": 0, "B": 1, "C": 2, "D": 3}. 
-**<H3 STYLE="COLOR:red;">Activité  n°16.:  Création  d’un  dictionnaire</H3>**  :  Pour  ajouter  une  couple  de  clé,valeur  il  suffit  d'écrire  : d[nouvelle_clé]=nouvelle_valeur 
+✅ Un **dictionnaire** stocke des valeurs associées **à des clés** (**chaînes de caractères, nombres, tuples...**).  
 
-```python
-res={'nsi' :18,'maths':17,'svt':14,'français':14,'lv1':8,'physique':12,'HG':11}
-#Ajouter la moyenne de 12 en lv2.
-res['lv2'] = 12
-```
-Tester : 
+✅ **Les clés ne sont pas ordonnées** contrairement aux listes.  
 
-> res
-
-
-??? success "Python"
-
-    {{ IDE() }}
-
-
-
-
-
-**<H3 STYLE="COLOR:red;">Activité n°17.: Construction d’un dictionnaire en compréhension (comme avec les listes) :</h3>**  
+📌 **Exemple de dictionnaire :**  
 
 ```python
-dico1 = {x:x**2 for x in range(1,5)}
-jours = 'lundi','mardi','mercredi','jeudi','vendredi','samedi','dimanche'
-dico2 = {i+1:jours[i] for i in range(len(jours))}
-```
-Tester : 
-
-> dico1
-
-> dico2
-
-
-??? success "Python"
-
-    {{ IDE() }}
-
-
-**<H3 STYLE="COLOR:red;">Activité n°18.: Création de dictionnaire à partir d’une liste de listes avec la fonction dict :</h3>**  
-
-```python
-liste = [['A', 0], ['B', 1], ['C', 2]]
-d = dict(liste)
-```
-Tester : 
-
-> d
-
-
-??? success "Python"
-
-    {{ IDE() }}
-
-### **<H3 STYLE="COLOR:GREEN;">2.2. Accès<a name="_page7_x40.00_y36.92"></a> aux éléments</h3>** 
-
-
-
-**<H3 STYLE="COLOR:red;">Activité n°19.: Avec les méthodes keys() et values() :</h3>**
-
-
-```python
-turing={'nom':'Turing','prenom':('Alan','Mathison'),'nation':'anglaise','naissance' : 
-1912, 'mort':1954}
-print("Avec la méthode keys()")
-for i in turing.keys():
-  print(i)
-print("Avec la méthode values()")
-for i in turing.values():
-  print(i)
+dico = {"A": 0, "B": 1, "C": 2, "D": 3}
 ```
 
 
-??? success "Python"
 
-    {{ IDE() }}
+### **<H3 STYLE="COLOR:GREEN;">2.1. Création<a name="_page6_x79.00_y161.92"></a> et modification de dictionnaires</h3>** 
+
+Un dictionnaire est créé avec des **accolades `{}`**, et les paires clé/valeur sont séparées par des **virgules**.  
+Les clés et leurs valeurs sont séparées par **`:`**.
+
+???+ question "Activité n°16 : Création et Ajout de Clés dans un Dictionnaire"
+
+    🔹 **Tester :**  
+
+    ```python
+    res = {'nsi': 18, 'maths': 17, 'svt': 14, 'français': 14, 'lv1': 8, 'physique': 12, 'HG': 11}
+
+    # Ajouter la moyenne de 12 en LV2
+    res['lv2'] = 12  
+
+    print(res)  
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **Remarque :**  
+
+✅ Pour ajouter un élément : `dico[nouvelle_clé] = nouvelle_valeur`
+
+✅ Les **clés doivent être uniques** (pas de doublon possible !).  
+
+### **<H3 STYLE="COLOR:GREEN;">2.2. Construction d'un Dictionnaire en Compréhension</h3>** 
+
+Python permet de **créer un dictionnaire rapidement** grâce à une syntaxe **en compréhension**.
+
+???+ question "Activité n°17 : Dictionnaire en Compréhension"
+
+    🔹 **Tester :**  
+
+    ```python
+    # Dictionnaire contenant le carré des nombres de 1 à 4
+    dico1 = {x: x**2 for x in range(1, 5)}
+
+    # Dictionnaire associant un numéro aux jours de la semaine
+    jours = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']
+    dico2 = {i+1: jours[i] for i in range(len(jours))}
+
+    print(dico1)
+    print(dico2)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **Remarque :**  
+
+✅ **Compréhension de dictionnaire** = une manière rapide de **générer des dictionnaires** sans boucle.  
+
+✅ **Syntaxe** : `{clé: valeur for élément in séquence}`  
 
 
-**<H3 STYLE="COLOR:red;">Activité n°20.: Avec la méthode item() :</h3>** Accès à l’ensemble des couples clés-valeurs avec la méthode items
+### **<H3 STYLE="COLOR:GREEN;">2.3. Convertir une Liste de Listes en Dictionnaire</h3>** 
 
-```python
-turing={'nom':'Turing','prenom':('Alan','Mathison'),'nation':'anglaise','naissance' : 
-1912, 'mort':1954}
-print("Avec la méthode item()")
-for i in turing.items():
-  print(i)
-print("Avec la méthode item() version2")
-for key, value in turing.items() :
-  print("la clé {} contient la valeur {}.".format(key, value))
-```
+On peut créer un **dictionnaire à partir d’une liste** grâce à la **fonction `dict()`**.
 
+???+ question "Activité n°18 : Création d'un Dictionnaire depuis une Liste"
 
-??? success "Python"
+    🔹 **Tester :**  
 
-    {{ IDE() }}
+    ```python
+    liste = [['A', 0], ['B', 1], ['C', 2]]
 
+    # Convertir une liste de listes en dictionnaire
+    d = dict(liste)
 
+    print(d)
+    ```
 
-On obtient **des tuples**, pour la première méthode. 
-
-Remarque : dans le dernier exemple, on voit la chaine de caractère formatée avec la **méthode format** 
+    ??? success "Python"
+        {{ IDE() }}
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°21.: Test d’appartenance : avec l’opérateur in </h3>**
+### **<H3 STYLE="COLOR:GREEN;">2.4. Accès<a name="_page7_x40.00_y36.92"></a> aux éléments d'un dictionnaire</h3>** 
+
+
+
+On accède aux valeurs d’un dictionnaire via **les clés**.
+
+???+ question "Activité n°19 : Accéder aux Clés et aux Valeurs"
+
+    🔹 **Tester :**  
+
+    ```python
+    turing = {'nom': 'Turing', 'prenom': ('Alan', 'Mathison'), 'nation': 'anglaise', 'naissance': 1912, 'mort': 1954}
+
+    print("Avec la méthode keys() :")
+    for i in turing.keys():
+        print(i)
+
+    print("\nAvec la méthode values() :")
+    for i in turing.values():
+        print(i)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **Remarque :**  
+
+✅ `.keys()` → Renvoie toutes les **clés**.  
+
+✅ `.values()` → Renvoie toutes les **valeurs**.  
+
+
+### **<H3 STYLE="COLOR:GREEN;">2.5. Parcourir un Dictionnaire avec `.items()`</h3>** 
+
+On peut parcourir un dictionnaire **clé par clé** ou **avec `items()`** pour obtenir les **paires clé-valeur**.
+
+???+ question "Activité n°20 : Utilisation de `.items()`"
+
+    🔹 **Tester :**  
+
+    ```python
+    turing = {'nom': 'Turing', 'prenom': ('Alan', 'Mathison'), 'nation': 'anglaise', 'naissance': 1912, 'mort': 1954}
+
+    print("Avec la méthode items() :")
+    for i in turing.items():
+        print(i)
+
+    print("\nAvec la méthode items() version2 :")
+    for key, value in turing.items():
+        print(f"La clé {key} contient la valeur {value}.")
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **Remarque :**  
+
+✅ `.items()` renvoie **un tuple** `(clé, valeur)`.  
+
+✅ Permet un **parcours rapide** du dictionnaire.  
+
+
+### **<H3 STYLE="COLOR:GREEN;">2.6. Test d'Appartenance avec `in`</h3>** 
+
+
+On peut **vérifier si une clé ou une valeur** est présente dans un dictionnaire.
+
+???+ question "Activité n°21 : Vérifier l'Existence d'une Clé ou d'une Valeur"
+
+    🔹 **Tester :**  
+
+    ```python
+    d = {'A': 0, 'B': 1, 'C': 2}
+
+    print("A" in d)  # Vérifie si "A" est une clé
+    print(3 in d.values())  # Vérifie si 3 est une valeur
+    print(('C', 2) in d.items())  # Vérifie si ('C', 2) est une paire clé-valeur
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **Remarque :**  
+
+✅ `clé in dico` → Vérifie si la **clé** existe.  
+
+✅ `valeur in dico.values()` → Vérifie si la **valeur** existe.  
+
+### **<H3 STYLE="COLOR:GREEN;">2.7. Modifier un Dictionnaire</h3>** 
+
+
+On peut **changer une valeur** existante.
+
+???+ question "Activité n°22 : Modification d'une Valeur"
+
+    🔹 **Tester :**  
+
+    ```python
+    mes_fruits = {"poire": 3, "pomme": 4, "orange": 2}
+
+    # Modifier la valeur de "pomme"
+    mes_fruits["pomme"] -= 1  
+    print(mes_fruits)
+
+    # Modifier la valeur de "poire"
+    mes_fruits['poire'] = 10  
+    print(mes_fruits)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **Remarque :**  
+
+✅ On modifie une **valeur existante** en réassignant une **nouvelle valeur**.  
+
+
+### **<H3 STYLE="COLOR:GREEN;">2.8. Gestion des Erreurs avec la Méthode `get()`</h3>** 
+
+💡 **Problème :** Si on essaie d’accéder à une **clé qui n’existe pas**, Python **génère une erreur** :  
 
 ```python
 d = {'A': 0, 'B': 1, 'C': 2}
-print("A" in d) # teste si "A" est une clé
-print(3 in d.values()) # teste si 3 est une valeur
-print(('C', 2) in d.items()) # teste si ('C', 2) est un couple clé-valeur
+print(d["E"])  # 🔴 ERREUR : KeyError: 'E'
 ```
 
+✅ **Solution :** Utiliser la **méthode `.get()`**, qui renvoie `None` au lieu de provoquer une erreur.  
 
-??? success "Python"
+✅ On peut aussi **définir une valeur par défaut** si la clé n’existe pas.
 
-    {{ IDE() }}
+???+ question "Activité n°23 : Utilisation de `.get()`"
 
+    🔹 **Tester :**  
 
-**<H3 STYLE="COLOR:red;">Activité n°22.: Modification d’une valeur particulière</H3>**  
+    ```python
+    d = {'A': 0, 'B': 1, 'C': 2}
 
-```python
-mes_fruits = {"poire": 3, "pomme": 4, "orange": 2}
-mes_fruits["pomme"] = mes_fruits["pomme"] - 1
-print(mes_fruits)
-mes_fruits['poire'] = 10
-print(mes_fruits)
-```
+    # Accès classique (OK)
+    v = d.get("A")
+    print(v)  # Résultat : 0
 
+    # Accès à une clé inexistante (pas d'erreur)
+    v = d.get("E")
+    print(v)  # Résultat : None
 
-??? success "Python"
+    # Spécifier une valeur par défaut si la clé est absente
+    v = d.get("E", "Clé introuvable")
+    print(v)  # Résultat : Clé introuvable
+    ```
 
-    {{ IDE() }}
+    ??? success "Python"
+        {{ IDE() }}
 
+📌 **Remarque :**  
 
-**<H3 STYLE="COLOR:red;">Activité n°23. Méthode get :</h3>**
+✅ `.get("clé")` renvoie la valeur associée à `clé`, ou `None` si elle n'existe pas.  
 
-Une instruction comme v = d["E"] provoque **une erreur** car la clé ”E” n’existe pas. La méthode **get permet de gérer ce genre de problème.** 
-**Si** la clé n'existe pas la méthode get() ne génère pas d'erreur mais renvoie la valeur None.  
-
-```python
-d = {'A': 0, 'B': 1, 'C': 2}
-v = d.get("A")
-print(v)
-v = d.get("E")
-print(v)
-```
+✅ `.get("clé", valeur_par_défaut)` permet de **spécifier une valeur par défaut** en cas d'absence de la clé.  
 
 
-??? success "Python"
+### **<H3 STYLE="COLOR:GREEN;">2.9. Compter le Nombre d'Éléments avec `len()`</h3>** 
 
-    {{ IDE() }}
+✅ Pour connaître le **nombre d'éléments** dans un dictionnaire, on utilise **`len()`**.  
 
+???+ question "Activité n°24 : Nombre d'Éléments avec `len()`"
 
+    🔹 **Tester :**  
 
-**<H3 STYLE="COLOR:red;">Activité n°24.: fonction len() :</h3>** 
-Donner le nombre de couple clé-valeur d’un dictionnaire  
+    ```python
+    d = {'A': 0, 'B': 1, 'C': 2, 'D': 3}
 
-```python
-d = {'A': 0, 'B': 1, 'C': 2, 'D': 3}
-print(len(d)) 
-```
+    print(len(d))  # Résultat : 4
+    ```
 
+    ??? success "Python"
+        {{ IDE() }}
 
-??? success "Python"
+📌 **Remarque :** 
 
-    {{ IDE() }}
-
-
-**<H3 STYLE="COLOR:red;">Activité n°25.: Avec la fonction del() : </h3>**
-
-```python
-d = {'A': 0, 'B': 1, 'C': 2, 'D': 3}
-del d["D"]
-print(d)
-```
+✅ `len(dico)` renvoie le **nombre de paires clé-valeur** dans le dictionnaire.  
 
 
-??? success "Python"
 
-    {{ IDE() }}
+### **<H3 STYLE="COLOR:GREEN;">2.10. Supprimer un Élément avec `del()`</h3>** 
+
+???+ question "Activité n°25 : Suppression d'un Élément avec `del()`"
+
+    🔹 **Tester :**  
+
+    ```python
+    d = {'A': 0, 'B': 1, 'C': 2, 'D': 3}
+
+    del d["D"]  # Supprime la clé "D"
+    print(d)  # Résultat : {'A': 0, 'B': 1, 'C': 2}
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **Remarque :**  
+
+✅ `del d["clé"]` supprime une clé **et** sa valeur associée. 
+
+✅ **Erreur possible :** Si la clé n’existe pas, Python génère une **KeyError**.
 
 
-**<H3 STYLE="COLOR:red;">Activité n°26.: Exemple de formatage de chaine : </h3>**  
+### **<H3 STYLE="COLOR:GREEN;">2.11. Formatage de Texte avec les Dictionnaires</h3>** 
 
-```python
-mon_dico = {"nom": "Durand", "prenom": "Christophe", "date de naissance": "29/02/1981"} 
-print(f'Bonjour je suis {mon_dico["prenom"]} {mon_dico["nom"]}, je suis né le 
-{mon_dico["date de naissance"]}') 
-mon_dico['lieu naissance'] = "Bonneville" 
-print (f'à {mon_dico["lieu naissance"]}')
-```
+Python permet d’insérer **directement** des valeurs d’un dictionnaire dans une **chaîne formatée**.
+
+???+ question "Activité n°26 : Formatage de Chaînes avec un Dictionnaire"
+
+    🔹 **Tester :**  
+
+    ```python
+    mon_dico = {"nom": "Durand", "prenom": "Christophe", "date de naissance": "29/02/1981"}
+
+    print(f'Bonjour, je suis {mon_dico["prenom"]} {mon_dico["nom"]}, je suis né le {mon_dico["date de naissance"]}')
+
+    # Ajouter un élément
+    mon_dico['lieu naissance'] = "Bonneville"
+
+    print(f'à {mon_dico["lieu naissance"]}')
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+📌 **Remarque :**  
+
+✅ On utilise les **chaînes formatées `f"..."`** pour insérer des valeurs.  
+
+✅ **Syntaxe :** `{dico["clé"]}` permet d’accéder aux valeurs dans la chaîne.  
 
 
-??? success "Python"
 
-    {{ IDE() }}
+🚀 **Résumé : Pourquoi utiliser un Dictionnaire ?**  
+
+| **Opération** | **Syntaxe** | **Description** |
+|-------------|------------|---------------|
+| **Créer un dictionnaire** | `d = {"clé1": val1, "clé2": val2}` | Crée un dictionnaire avec des paires clé/valeur |
+| **Ajouter/modifier un élément** | `d["clé"] = valeur` | Ajoute une nouvelle clé ou met à jour une valeur |
+| **Supprimer une clé** | `del d["clé"]` | Supprime une clé et sa valeur |
+| **Vérifier une clé** | `"clé" in d` | Renvoie `True` si la clé existe, `False` sinon |
+| **Accéder à une valeur** | `d["clé"]` | Renvoie la valeur associée à la clé (Erreur si absente !) |
+| **Accéder à une valeur sans erreur** | `d.get("clé")` | Renvoie la valeur ou `None` si absente |
+| **Récupérer toutes les clés** | `d.keys()` | Retourne une liste des clés |
+| **Récupérer toutes les valeurs** | `d.values()` | Retourne une liste des valeurs |
+| **Parcourir le dictionnaire** | `for clé, valeur in d.items():` | Permet d’itérer sur les clés et valeurs |
 
 
-L’implémentation d’un dictionnaire optimise le coût en temps de la recherche d’un élément. 
+## 🏆 **Conclusion**  
 
-L’implémentation d’un dictionnaire **optimise le coût en temps** de la recherche d’un élément. 
+✅ Les dictionnaires sont **extrêmement puissants** et permettent d’accéder rapidement aux données. 
+
+✅ **Ils optimisent la recherche et la modification des éléments** grâce à leur implémentation basée sur les **tables de hachage**.  
+
+✅ Ils sont **largement utilisés** dans de nombreux domaines : **bases de données, manipulation de fichiers JSON, IA, API, et plus encore** ! 🚀  
+
 
 ## **<H2 STYLE="COLOR:BLUE;">3.   Exercices<a name="_page9_x40.00_y273.92"></a></h2>** 
 
