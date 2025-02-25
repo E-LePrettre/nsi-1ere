@@ -1,4 +1,4 @@
-﻿---
+---
 author: ELP
 title: 08a Les réseaux
 ---
@@ -217,9 +217,9 @@ C’est le **serveur DNS (Domain Name System)** qui est chargé de traduire le n
 
 **Processus DNS**
 
-1. Le navigateur vérifie d'abord dans **son cache** s'il possède déjà l'IP associée au site.
+1 Le navigateur vérifie d'abord dans **son cache** s'il possède déjà l'IP associée au site.
 
-2. S’il ne la trouve pas, il envoie une requête DNS à :
+2 S’il ne la trouve pas, il envoie une requête DNS à :
 
    - La **box internet** locale.
 
@@ -227,7 +227,7 @@ C’est le **serveur DNS (Domain Name System)** qui est chargé de traduire le n
 
    - Un **serveur DNS public** (ex : Google DNS `8.8.8.8`).
 
-3. Une fois l’IP récupérée, elle est renvoyée à l’ordinateur.
+3 Une fois l’IP récupérée, elle est renvoyée à l’ordinateur.
 
 **Exemple :** L’adresse IP de `www.nsi.fr` pourrait être `200.16.0.1`.
 
