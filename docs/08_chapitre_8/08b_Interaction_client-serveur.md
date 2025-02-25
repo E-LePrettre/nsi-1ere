@@ -1,4 +1,4 @@
-﻿---
+---
 author: ELP
 title: 08b Interaction client-serveur - Requête
 ---
@@ -396,7 +396,7 @@ Si on saisit les valeurs :
 ```
 
 
-- **Problème :** 
+**Problème :** 
 
   - Les données sont **visibles** dans l'URL, ce qui pose un problème de **sécurité**, notamment pour les mots de passe.
 
@@ -412,11 +412,11 @@ Dans ce cas, les données ne seront **pas visibles dans l’URL**, mais envoyée
 
 ✅ **Explication :**
 
-- Ici on demande de **modifier la méthode du formulaire** pour utiliser **POST** au lieu de **GET** :
+Ici on demande de **modifier la méthode du formulaire** pour utiliser **POST** au lieu de **GET** :
   ```html
   <form method="POST" action="./login">
   ```
-- **Différence avec GET :**
+**Différence avec GET :**
 
   - Avec POST, les données sont **transmises dans le corps de la requête** et **non visibles dans l'URL**.
 
