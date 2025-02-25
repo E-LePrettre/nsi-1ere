@@ -383,7 +383,7 @@ string
 boolean
 ```
 
-![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.031.png) 
+
 
 ### **<H3 STYLE="COLOR:GREEN;">5.5. Les<a name="_page3_x40.00_y706.92"></a> calculs**</H3>
 
