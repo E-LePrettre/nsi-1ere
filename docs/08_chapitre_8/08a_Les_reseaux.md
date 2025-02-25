@@ -509,37 +509,40 @@ La règle est relativement simple : la première trame envoyée par A aura pour 
 ## <H2 STYLE="COLOR:BLUE;">**6. Mesures de protection des réseaux<a name="#_titre6"></a>**</H2>
 
 ### <H3 STYLE="COLOR:GREEN;">**6.1. Firewalls**</H3>
-- **Description** : Un firewall est une barrière de sécurité qui surveille et contrôle le trafic réseau entrant et sortant en fonction de règles de sécurité prédéfinies. Il peut être matériel, logiciel, ou les deux.
 
-- **Fonctionnement** : 
+**Description** : Un firewall est une barrière de sécurité qui surveille et contrôle le trafic réseau entrant et sortant en fonction de règles de sécurité prédéfinies. Il peut être matériel, logiciel, ou les deux.
+
+**Fonctionnement** : 
 
   - **Filtrage des paquets** : Analyse chaque paquet de données entrant ou sortant et le bloque ou le permet en fonction des règles établies.
 
   - **Proxy** : Intercepte toutes les communications entre les utilisateurs et le réseau, les inspecte et les transfère si elles sont sûres.
 
-- **Exemple** : Un firewall bloque les tentatives de connexion non autorisées provenant d'adresses IP suspectes.
+**Exemple** : Un firewall bloque les tentatives de connexion non autorisées provenant d'adresses IP suspectes.
 
 ### <H3 STYLE="COLOR:GREEN;">**6.2. VPN (Virtual Private Network)**</H3>
-- **Description** : Un VPN crée une connexion sécurisée et chiffrée entre l'utilisateur et le réseau, permettant de masquer l'adresse IP de l'utilisateur et de protéger ses données contre les interceptions.
 
-- **Fonctionnement** :
+**Description** : Un VPN crée une connexion sécurisée et chiffrée entre l'utilisateur et le réseau, permettant de masquer l'adresse IP de l'utilisateur et de protéger ses données contre les interceptions.
+
+**Fonctionnement** :
 
   - **Tunneling** : Les données sont encapsulées dans un protocole de tunneling et chiffrées, rendant difficile pour les attaquants d'intercepter ou de lire les informations.
 
   - **Authentification** : Utilise des protocoles d'authentification pour s'assurer que seuls les utilisateurs autorisés peuvent accéder au réseau.
 
-- **Exemple** : Un employé utilise un VPN pour accéder aux ressources de l'entreprise en travaillant à distance, garantissant que les données transmises sont sécurisées.
+**Exemple** : Un employé utilise un VPN pour accéder aux ressources de l'entreprise en travaillant à distance, garantissant que les données transmises sont sécurisées.
 
 ### <H3 STYLE="COLOR:GREEN;">**6.3. Chiffrement**</H3>
-- **Description** : Le chiffrement transforme les données en une forme illisible pour toute personne non autorisée. Seules les parties possédant la clé de déchiffrement peuvent lire les données.
 
-- **Fonctionnement** :
+**Description** : Le chiffrement transforme les données en une forme illisible pour toute personne non autorisée. Seules les parties possédant la clé de déchiffrement peuvent lire les données.
+
+**Fonctionnement** :
 
   - **Chiffrement symétrique** : Utilise la même clé pour chiffrer et déchiffrer les données.
 
   - **Chiffrement asymétrique** : Utilise une paire de clés (publique et privée). La clé publique chiffre les données, et seule la clé privée correspondante peut les déchiffrer.
 
-- **Exemple** : Les transactions bancaires en ligne utilisent le chiffrement SSL/TLS pour sécuriser les données échangées entre le client et le serveur bancaire.
+**Exemple** : Les transactions bancaires en ligne utilisent le chiffrement SSL/TLS pour sécuriser les données échangées entre le client et le serveur bancaire.
 
 ## <H2 STYLE="COLOR:BLUE;">**7. Analyse de trame<a name="#_titre7"></a>**</H2>
 
@@ -565,7 +568,7 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
 **Remarque** pour faire une analyse de trame, on peut utiliser un logiciel type wiresharp
 **Installation et prise en main de Wireshark**
 
-1. **Installation de Wireshark**
+1 **Installation de Wireshark**
 
    - Aller sur le site officiel de Wireshark : [https://www.wireshark.org/](https://www.wireshark.org/).
 
@@ -573,7 +576,7 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
 
    - Suivre les instructions d'installation.
 
-2. **Premier lancement et configuration**
+2 **Premier lancement et configuration**
 
    - Ouvrir Wireshark.
 
@@ -584,13 +587,13 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
 
 **Capture et analyse de trames réseau**
 
-1. **Démarrer une capture réseau**
+1 **Démarrer une capture réseau**
 
    - Avec Wireshark ouvert et une capture en cours, ouvrir un navigateur web et visiter quelques sites web (ex. : www.google.com, www.wikipedia.org).
 
    - Retourner à Wireshark et arrêter la capture en cliquant sur le bouton "Stop capturing packets".
 
-2. **Analyse des trames capturées**
+2 **Analyse des trames capturées**
 
    - Dans la fenêtre principale de Wireshark, vous verrez une liste de trames capturées.
 
