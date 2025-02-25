@@ -685,11 +685,11 @@ On observe que les échanges entre le client et le serveur suivent **4 étapes**
 
 **<H3 STYLE="COLOR:red;">Activité n°7.:**</H3> Simulation du web avec adresse IP 
 
-- Installer un **serveur Web** et un **éditeur de texte** sur **1.12**.  
+Installer un **serveur Web** et un **éditeur de texte** sur **1.12**.  
 
-- Modifier le fichier **index.html** (situé dans `/root/webserver`).
+Modifier le fichier **index.html** (situé dans `/root/webserver`).
 
-- Ajouter **vos propres fichiers** :
+Ajouter **vos propres fichiers** :
 
   - `page1.html`
 
@@ -699,13 +699,13 @@ On observe que les échanges entre le client et le serveur suivent **4 étapes**
 
   - Images (`/images/`)
 
-- Renommer :
+Renommer :
 
   - `index.html` → `indexold.html`
 
   - `page1.html` → `index.html`
 
-- Sauvegarder les modifications.  
+Sauvegarder les modifications.  
 
 **Démarrer et tester le serveur Web**  
 
