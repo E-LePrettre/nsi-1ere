@@ -445,7 +445,7 @@ console.log(result);
 ```
 ➡ **Résultat attendu** : `Bonjour toi`
 
-![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.034.png)
+
 
  
 
