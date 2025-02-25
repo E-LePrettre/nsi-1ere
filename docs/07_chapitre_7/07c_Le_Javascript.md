@@ -831,7 +831,7 @@ Le **Document Object Model (DOM)** est une interface qui permet à JavaScript d'
 📌 **Sélection d'un élément par son ID**
 
 La méthode `getElementById()` permet de récupérer un élément HTML unique à partir de son **ID**.
-
+Créer une page test.html
 ```html
 <body>
     <p id="titre">Je suis un titre</p>
@@ -846,6 +846,7 @@ La méthode `getElementById()` permet de récupérer un élément HTML unique à
 📌 **Sélection des éléments par leur classe**
 
 La méthode `getElementsByClassName()` permet de récupérer **plusieurs éléments** qui partagent une même classe.
+Dans une page test.html
 
 ```html
 <body>
@@ -957,6 +958,9 @@ function resetCouleur() {
 
 **<H3 STYLE="COLOR:red;">Activité n°30 :**</H3>  
 📌 **Sélectionner le premier élément correspondant à une classe**
+
+Dans une page test.html
+
 ```html
 <body>
     <p class="paragraphe">Paragraphe 1</p>
@@ -970,6 +974,8 @@ function resetCouleur() {
 
 **<H3 STYLE="COLOR:red;">Activité n°31 :**</H3> 
 📌 **Sélectionner tous les éléments correspondants à une classe**
+
+Dans une page test.html
 ```html
 <body>
     <p class="paragraphe">Paragraphe 1</p>
@@ -990,6 +996,8 @@ function resetCouleur() {
 **<H3 STYLE="COLOR:red;">Activité n°32 :**</H3> 
 
 📌 **Remplacer le contenu d’un élément**
+
+Dans une page test.html
 ```html
 <body>
     <h1 id="titre">Ancien titre</h1>
@@ -1003,6 +1011,8 @@ function resetCouleur() {
 **<H3 STYLE="COLOR:red;">Activité n°33 :**</H3> 
 
 📌 **Ajouter du texte à un élément existant**
+
+Dans une page test.html
 ```html
 <body>
     <p id="paragraphe">Texte original.</p>
@@ -1020,6 +1030,8 @@ function resetCouleur() {
 **<H3 STYLE="COLOR:red;">Activité n°34 :**</H3> 
 
 📌 **Changer la couleur de fond**
+
+Dans une page test.html
 ```html
 <body>
     <p id="element">Paragraphe coloré</p>
@@ -1032,6 +1044,8 @@ function resetCouleur() {
 **<H3 STYLE="COLOR:red;">Activité n°35 :**</H3> 
 
 📌 **Changer plusieurs styles en même temps**
+
+Dans une page test.html
 ```html
 <body>
     <p id="element">Paragraphe stylisé</p>
@@ -1051,6 +1065,8 @@ function resetCouleur() {
 **<H3 STYLE="COLOR:red;">Activité n°36 :**</H3> 
  
 📌 **Ajout d'une classe CSS**
+
+Dans une page test.html
 ```html
 <body>
     <p id="element">Je vais devenir stylé !</p>
@@ -1063,7 +1079,11 @@ function resetCouleur() {
 **<H3 STYLE="COLOR:red;">Activité n°37 :**</H3> 
 
 📌 **Suppression d'une classe CSS**
-```js
+
+De la même manièren pour supprimer une classe on écrirait
+
+Dans une page test.html
+```html
 element.classList.remove("nouveauStyle");
 ```
 
@@ -1074,6 +1094,8 @@ element.classList.remove("nouveauStyle");
 **<H3 STYLE="COLOR:red;">Activité n°38 :**</H3> 
 
 📌 **Détecter un clic sur un bouton**
+
+Dans une page test.html
 ```html
 <body>
     <button id="bouton">Cliquez-moi</button>
@@ -1124,13 +1146,16 @@ JavaScript propose **différents types d'événements** :
 
 ### **<H3 STYLE="COLOR:GREEN;">11.2. <a name="_page14_x40.00_y550.92"></a> Manipuler les événements en JavaScript**</H3>
 
+**Dans toute la suite** :
+
+🔹 **Créer un fichier `evenement.html` et y insérer le code suivant** :
+
 **<H3 STYLE="COLOR:red;">Activité n°39 :**</H3> 
 
 📌 **Exécuter une alerte lors d’un clic**  
 
 Dans cet exemple, un simple **clic** sur le texte affichera une alerte.
 
-🔹 **Créer un fichier `evenement.html` et y insérer le code suivant** :
 
 ```html
 <body>
@@ -1198,6 +1223,8 @@ Dans cet exemple, un simple **clic** sur le texte affichera une alerte.
 
 ### **<H3 STYLE="COLOR:GREEN;">11.3. Le mot-clé `this` référence l’élément HTML qui a déclenché l’événement**.</H3>
 
+🔹 **Dans le fichier `evenement.html`**
+
 **<H3 STYLE="COLOR:red;">Activité n°43 :**</H3> 
 
 Le mot-clé `this` **référence l’élément HTML qui a déclenché l’événement**.
@@ -1218,14 +1245,14 @@ Le mot-clé `this` **référence l’élément HTML qui a déclenché l’évén
 
 ### **<H3 STYLE="COLOR:GREEN;">11.4. Ajouter plusieurs événements à un même élément**.</H3>
 
+🔹 **Dans le fichier `evenement.html`**
+
 On peut attacher plusieurs événements **à un seul élément**.
 
 **<H3 STYLE="COLOR:red;">Activité n°44 :**</H3> 
 
 📌 **Ajouter plusieurs événements avec `addEventListener()`**
 ```html
-<!DOCTYPE html>
-<html>
 <body>
     <button id="clickIt">Cliquez ici !</button> 
     <p id="hoverPara">Passez la souris sur ce texte !</p>
@@ -1252,7 +1279,7 @@ On peut attacher plusieurs événements **à un seul élément**.
         }
     </script>
 </body>
-</html>
+
 ```
 ✅ **Explication** :  
 
@@ -1266,6 +1293,8 @@ On peut attacher plusieurs événements **à un seul élément**.
 
 ### **<H3 STYLE="COLOR:GREEN;">11.5. Pour<a name="_page16_x40.00_y319.92"></a> aller plus loin : Supprimer un écouteur d’événement**</H3>
 
+🔹 **Dans le fichier `evenement.html`**
+
 Avec `removeEventListener()`, on peut **désactiver un événement**.
 
 **<H3 STYLE="COLOR:red;">Activité n°45 :**</H3>
@@ -1275,19 +1304,27 @@ Avec `removeEventListener()`, on peut **désactiver un événement**.
 <body>
     <button id="desactiver">Désactiver le clic</button>
     <button id="bouton">Cliquez ici !</button>
-    <script>
-        var bouton = document.getElementById("bouton");
-        var desactiver = document.getElementById("desactiver");
 
+    <script>
+        // Définition de la fonction en dehors de l'événement
         function afficherMessage() {
             console.log("Bouton cliqué !");
         }
 
-        bouton.addEventListener("click", afficherMessage);
+        document.addEventListener("DOMContentLoaded", function () {
+            var bouton = document.getElementById("bouton");
+            var desactiver = document.getElementById("desactiver");
 
-        desactiver.addEventListener("click", function() {
-            bouton.removeEventListener("click", afficherMessage);
-            console.log("L'événement a été supprimé !");
+            if (bouton && desactiver) {
+                bouton.addEventListener("click", afficherMessage);
+
+                desactiver.addEventListener("click", function () {
+                    bouton.removeEventListener("click", afficherMessage);
+                    console.log("L'événement a été supprimé !");
+                });
+            } else {
+                console.error("Un des boutons n'existe pas !");
+            }
         });
     </script>
 </body>
