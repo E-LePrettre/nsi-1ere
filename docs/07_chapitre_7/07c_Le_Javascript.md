@@ -232,6 +232,8 @@ alert('Hello world!');
 
 ✅ **Félicitations, vous avez relié un fichier JavaScript externe !** 🎉
 
+**Pour toutes les activités suivantes** : dans le fichier exo.js passer les lignes précédentes en commentaire ```//``` devant chaque ligne ou ```/*``` et ```*/```
+
 
 ## **<H2 STYLE="COLOR:BLUE;">4. La<a name="_page2_x40.00_y113.92"></a> console**</H2>
 
@@ -514,7 +516,7 @@ Pour pouvoir comparer 4 en tant que ```number``` et 4 en tant que string il faut
 
 **<H3 STYLE="COLOR:red;">Activité n°14 :**</H3> 
 
-Dans le fichier exo.js passer les lignes précédentes en commentaire ```//``` devant chaque ligne ou ```/*``` et ```*/``` et rajouter le script suivant. Enregistrer et observer le fichier exo_JS.html dans Firefox.
+Enregistrer et observer le fichier exo_JS.html
 
 ```JS
 var number = 4, text = '4', result;
@@ -532,7 +534,7 @@ console.log(result); // Affiche « false » car cet opérateur compare aussi les
 
 **<H3 STYLE="COLOR:red;">Activité n°15 :**</H3> 
 
-Dans le fichier exo.js passer les lignes précédentes en commentaire ```//``` devant chaque ligne ou ```/*``` et ```*/``` et rajouter le script suivant. Enregistrer et observer le fichier exo_JS.html dans Firefox.
+Enregistrer et observer le fichier exo_JS.html.
 
 ```JS
 var userName = prompt('Entrez votre prénom :');
@@ -548,7 +550,7 @@ La fonction ```confirm()``` permet d'afficher une boîte de confirmation et reto
 
 **<H3 STYLE="COLOR:red;">Activité n°16 :**</H3> 
 
-Dans le fichier exo.js passer les lignes précédentes en commentaire ```//``` devant chaque ligne ou ```/*``` et ```*/``` et rajouter le script suivant. Enregistrer et observer le fichier exo_JS.html dans Firefox.
+Enregistrer et observer le fichier exo_JS.html.
 
 ```JS
 if (confirm('Voulez-vous exécuter le code JavaScript de cette page ?')) {
