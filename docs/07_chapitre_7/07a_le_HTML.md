@@ -125,7 +125,7 @@ Autres outils pratiques :
 
 **=> CAPYTALE Le code vous sera donné par votre enseignant**
 
-**=> seules les activités sont à faire sur Capytale (pas les exemples)**
+**<p STYLE="COLOR:red;">=> seules les activités sont à faire sur Capytale (pas les exemples)</p>**
 
 **<H3 STYLE="COLOR:red;">Activité n°1. :</H3>** 
 ✅ Ouvrir **Capytale** et saisir ce code HTML minimal :
