@@ -527,6 +527,8 @@ Exemple :
 
 Un lien peut mener à une page située dans **un sous-dossier**.  
 
+**ON NE POURRA PAS LE FAIRE AVEC CAPYTALE**
+
 Exemple :  
 ```html
 <a href="contenu/page3.html">Accéder à la page 3</a>
@@ -542,6 +544,8 @@ Créer un fichier `page3.html` dans le même dossier que `index.html
 #### **<H4 STYLE="COLOR:MAGENTA;">4.6.4. Lien<a name="_page8_x40.00_y511.92"></a> relatif vers une page située dans un dossier parent**</H4>
 
 Si la page se trouve **dans un dossier parent**, on utilise `../` pour remonter d’un niveau. 
+
+**ON NE POURRA PAS LE FAIRE AVEC CAPYTALE**
 
 Exemple :  
 ```html
