@@ -742,6 +742,8 @@ L’attribut `title` permet d’afficher une **infobulle** au survol de l’imag
 
 1. Cherchez **trois images** sur le Web (**passoire, casserole et autobus**).  
 
+ATTENTION : sur Capytale dans la partie gauche (là où il y a "Fichiers") utiliser la flèche à droite de "Fichiers" pour importer les images!
+
 (2. Enregistrez-les dans un dossier si vous n'êtes pas dans Capytale)
 
 2. Enregistrez-les à la racine  
