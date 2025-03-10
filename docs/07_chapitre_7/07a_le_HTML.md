@@ -497,7 +497,7 @@ Un **lien absolu** mène vers une adresse **externe**, c’est-à-dire vers un a
 
 📌 **Remarque :**  
 
-Si une URL contient des **"&"**, il faut remplacer chaque **"&"** par **"&amp;"**.  
+Si une URL contient des **```"&"```**, il faut remplacer chaque **"&"** par **```"&amp;"```**.  
 
 Exemple :  
 ```html
