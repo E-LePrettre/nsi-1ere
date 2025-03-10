@@ -310,7 +310,7 @@ En **HTML**, les **retours à la ligne ne sont pas pris en compte automatiquemen
 
 ➡️ Il faut utiliser la **balise orpheline** `<br>` pour forcer un saut de ligne.
 
-**<H3 STYLE="COLOR:red;">Activité n°6. :</H3>** Modifier l’activité précédente pour **garder la mise en page** avec `<br>` au lieu de plusieurs `<p>`.
+**<H3 STYLE="COLOR:red;">Activité n°6. :</H3>** Modifier l’activité précédente pour **garder la mise en page** avec `<br>`.
 
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.018.jpeg)
