@@ -285,12 +285,23 @@ En **HTML**, le texte est généralement structuré sous forme de **paragraphes*
 Créer un paragraphe simple.
 
 ```html
-<body> 
-    <p>Bonjour et bienvenue sur ma page.</p>     
-</body> 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Les passoires</title>
+    </head>
+    <body>
+        <p>Bonjour et bienvenue sur ma page.</p>   
+    </body>
+</html>
 ```
 
+
 **<H3 STYLE="COLOR:red;">Activité n°5. :**</H3> 
+
+📌 **Attention** à partir de cette activité on ne va modifier **QUE** le **body**!!
+
 Je voudrais écrire le texte suivant exactement avec la même mise en page ci-dessous à la place de « Bonjour et bienvenue sur ma page ». **À vous de jouer !!**
 ```html
 <body>
