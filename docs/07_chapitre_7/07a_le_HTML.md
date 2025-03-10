@@ -517,6 +517,8 @@ Exemple :
 
 **<H3 STYLE="COLOR:red;">Activité n°17. :</H3>** 
 
+ATTENTION : sur Capytale dans la partie gauche (là où il y a "Fichiers") utiliser le ```+```pour ajouter une page!
+
 1. Créer un fichier `page2.html` dans le même dossier que `index.html`.  
 
 2. Ajouter un lien dans `page2.html` pour **revenir à `index.html`**. 
