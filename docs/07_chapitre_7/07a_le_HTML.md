@@ -302,7 +302,7 @@ Créer un paragraphe simple.
 
 **<H3 STYLE="COLOR:red;">Activité n°5. :**</H3> 
 
-📌 **Attention** à partir de cette activité on ne va modifier **QUE** le **body**!!
+📌 <p STYLE="COLOR:red;">**Attention** à partir de cette activité on ne va modifier **QUE** le **body**!! </p>
 
 Je voudrais écrire le texte suivant exactement avec la même mise en page ci-dessous à la place de « Bonjour et bienvenue sur ma page ». **À vous de jouer !!**
 ```html
