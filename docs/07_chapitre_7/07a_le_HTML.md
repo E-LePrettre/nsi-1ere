@@ -125,6 +125,8 @@ Autres outils pratiques :
 
 **=> CAPYTALE Le code vous sera donné par votre enseignant**
 
+**=> seules les activités sont à faire sur Capytale (pas les exemples)**
+
 **<H3 STYLE="COLOR:red;">Activité n°1. :</H3>** 
 ✅ Ouvrir **Capytale** et saisir ce code HTML minimal :
 
@@ -517,7 +519,7 @@ Exemple :
 
 **<H3 STYLE="COLOR:red;">Activité n°17. :</H3>** 
 
-ATTENTION : sur Capytale dans la partie gauche (là où il y a "Fichiers") utiliser le ```+```pour ajouter une page!
+**ATTENTION** : sur Capytale dans la partie gauche (là où il y a "Fichiers") utiliser le ```+```pour ajouter une page!
 
 1. Créer un fichier `page2.html` dans le même dossier que `index.html`.  
 
@@ -598,10 +600,8 @@ Pour faire un lien vers **une ancre située dans une autre page**, on précise l
 
 
 **<H3 STYLE="COLOR:red;">Activité n°19. :</H3>** Sur la page2.html, on va faire un lien vers l’ancre de la index.html.
-```html
-<h1 id="haut">Les passoires</h1>
-```
-On crée un lien en bas de la page pour remonter vers le haut. Rajouter tout en bas (mais dans le body) la référence avec #
+```<h1 id="haut">Les passoires</h1>```
+On crée un lien en bas de la page aller vers le haut de la page index.html. Rajouter tout en bas (mais dans le body) la référence avec #
 ```html
 <p>
     <a href="index.html#haut">Aller en haut de la page logique sur les passoires</a>
