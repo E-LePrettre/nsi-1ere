@@ -99,6 +99,8 @@ Un site web est **construit avec trois langages** principaux :
 
 ✅ **JavaScript** → Ajoute de l’interactivité
 
+![image html CSS JS](HTML.png){ width=400px .center }
+
 
 ### **<H3 STYLE="COLOR:GREEN;">2.3. Les<a name="_page1_x40.00_y687.92"></a> éditeurs et les logiciels conseillés** 🔎</H3>
 
