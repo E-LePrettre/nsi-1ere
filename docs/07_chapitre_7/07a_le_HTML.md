@@ -188,7 +188,8 @@ Exemples :
 | `src="..."` | Définit l’image affichée avec `<img>` |
 | `alt="..."` | Texte alternatif si l’image ne s’affiche pas |
 
-
+Si l'image ne s'affiche pas, le texte contenu dans le alt apparaîtra. 
+C'est essentiel pour les personne malvoyantes qui auront mis en route l'option lecture à haute voix de la page. 
 
 ### **<H3 STYLE="COLOR:GREEN;">3.4. Structure<a name="_page2_x40.00_y347.92"></a> de base d’une page HTML5**</H3>
 
@@ -611,12 +612,28 @@ Enregistrer et observer.
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.6.7. Lien<a name="_page9_x40.00_y195.92"></a> affichant une infobulle**</H4>
 
+Une infobulle est un petit texte d’information qui apparaît lorsqu’on passe la souris sur un élément d’une page web, sans avoir besoin de cliquer. 
+Elle permet d’afficher une explication, une définition ou toute autre information complémentaire. On peut mettre une infobulle sur différentes balises : texte, un lien, une image...
+
 L’attribut `title` permet d’afficher une **infobulle** lorsque l’utilisateur survole un lien.  
+
+**Exemple :**  
+```html
+<p title="Ceci est une infobulle">Passez la souris sur ce texte pour voir l'infobulle.</p>
+```
+Ici, si on survole le texte avec la souris, une boîte d’information s’affichera avec le message "Ceci est une infobulle".
+
+**Exemple :**  
+```html
+<img src="image.jpg" title="Ceci est une infobulle sur l'image">
+```
+Lorsque on passe la souris sur l’image, une infobulle contenant le texte "Ceci est une infobulle sur l'image" apparaît.
 
 **Exemple :**  
 ```html
 <a href="index.html#haut" title="Vous ne le regretterez pas !">Retour au début</a>
 ```
+Ici, si on survole le lien avec la souris, une boîte d’information s’affichera avec le message "Vous ne le regretterez pas !"
 
 **<H3 STYLE="COLOR:red;">Activité n°20. :</H3>** Sur la page2.html, on va faire une infobulle
 ```html
@@ -724,7 +741,7 @@ On utilise la balise **orpheline** `<img>`, qui nécessite **deux attributs obli
 
 ✔ **Éviter les noms d’images avec des espaces**.  
 
-✔ **Renseigner toujours l’attribut `alt`** pour l’accessibilité.  
+✔ **Renseigner toujours l’attribut `alt`** pour l’accessibilité des personnes malvoyantes.  
 
 
 
