@@ -736,7 +736,7 @@ On utilise la balise **orpheline** `<img>`, qui nécessite **deux attributs obli
 
 📌 **Exemple :**  
 ```html
-<img src="images/fleur.jpg" alt="Photo d'une fleur">
+<img src="fleur.jpg" alt="Photo d'une fleur">
 ```
 
 📌 **Bonnes pratiques :**  
@@ -753,7 +753,7 @@ L’attribut `title` permet d’afficher une **infobulle** au survol de l’imag
 
 📌 **Exemple :**
 ```html
-<img src="images/fleur.jpg" alt="Photo d'une fleur" title="C'est beau les fleurs !">
+<img src="fleur.jpg" alt="Photo d'une fleur" title="C'est beau les fleurs !">
 ```
 
 
@@ -786,8 +786,8 @@ Si une image est **trop grande**, on peut afficher une **version réduite** qui 
 
 📌 **Exemple :**
 ```html
-<a href="images/fleur.jpg">
-    <img src="images/fleur_mini.jpg" alt="Photo d'une fleur" title="Cliquez pour voir en grand !">
+<a href="fleur.jpg">
+    <img src="fleur_mini.jpg" alt="Photo d'une fleur" title="Cliquez pour voir en grand !">
 </a>
 ```
 
