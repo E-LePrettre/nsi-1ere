@@ -19,6 +19,12 @@ title: 07b Le CSS
 12. [Squelette de base HTML – CSS8](#_page17_x40.00_y239.92)
 
 
+Le CSS est un langage utilisé pour décrire l'apparence et la mise en forme des pages web. 
+Alors que le HTML structure le contenu d'une page (titres, paragraphes, images, etc.), le CSS permet de définir son **style** : la couleur des textes, la taille des polices, l'agencement des éléments, l'alignement, les marges, et bien plus encore. 
+Grâce au CSS, tu peux rendre une page web plus **attrayante** et **fonctionnelle** en jouant avec les styles visuels et les animations, et ce, tout en séparant la structure du contenu.
+
+**<H3 STYLE="COLOR:red;">Attention, dans le cours il y aura du langage html à mettre ou modifier => dans une page html et du langage CSS à mettre dans la page : style.css : SOYEZ VIGILANT</H3>** 
+
 ## **<H2 STYLE="COLOR:BLUE;">1. La<a name="_page0_x40.00_y671.92"></a> petite histoire du CSS**</H2>
 
 Le **CSS (Cascading Style Sheets)** permet de personnaliser **l’apparence visuelle** d’un site web.  
@@ -102,7 +108,7 @@ ou :
 
 - **Éviter de mettre du CSS directement dans le HTML**. 
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** **
+**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** 
 
 Dans le fichier **`index.html`**, ajoutez le lien vers `style.css` dans la section `<head>` :  
 
