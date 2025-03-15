@@ -239,42 +239,7 @@ C'est essentiel pour les personne malvoyantes qui auront mis en route l'option l
 <!-- Ceci est un commentaire en HTML -->
 ```
 
-### **<H3 STYLE="COLOR:GREEN;">3.5. Exemple d’une page HTML + CSS + JavaScript<a name="_page2_x40.00_y347.92"></a>**</H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°3. :</H3>**
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Exemple HTML + CSS + JS</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Fichier CSS -->
-    <script src="script.js"></script> <!-- Fichier JavaScript -->
-</head>
-<body>
-    <h1>Bienvenue sur ma page</h1>
-    <p>Ceci est un paragraphe.</p>
-    <a href="https://example.com">Un lien</a>
-</body>
-</html>
-```
-
-📌 **Ce qu’il faut retenir :**
-
-✔ `<!DOCTYPE html>` indique qu'on utilise **HTML5**. 
-
-✔ `<head>` contient le **titre**, les **styles** et les **scripts**.
-
-✔ `<body>` contient le **contenu visible**.  
-
-✔ On peut ajouter du **CSS** et du **JavaScript** pour enrichir la page.
-
-> 💡 **Astuce** :  
-
-> **Voir le code source d’une page Web** → **CTRL + U** (Firefox, Chrome, Edge)
-
-
-![DOM-model](DOM-model.svg.png)
 
 ## **<H2 STYLE="COLOR:BLUE;">4. L’organisation<a name="_page3_x40.00_y117.92"></a> d’une page HTML5** </H2>
 ### **<H3 STYLE="COLOR:GREEN;">4.1. Les<a name="_page3_x40.00_y139.92"></a> paragraphes** 🔎</H3>
@@ -286,7 +251,7 @@ En **HTML**, le texte est généralement structuré sous forme de **paragraphes*
 ✔️ **Un paragraphe doit toujours être inclus dans `<body>`**.  
 
 
-**<H3 STYLE="COLOR:red;">Activité n°4. :</H3>**
+**<H3 STYLE="COLOR:red;">Activité n°3. :</H3>**
 Créer un paragraphe simple.
 
 ```html
@@ -303,7 +268,7 @@ Créer un paragraphe simple.
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°5. :**</H3> 
+**<H3 STYLE="COLOR:red;">Activité n°4. :**</H3> 
 
 <p STYLE="COLOR:red;">📌 Attention à partir de cette activité on ne va modifier QUE le body!! </p>
 
@@ -326,7 +291,7 @@ En **HTML**, les **retours à la ligne ne sont pas pris en compte automatiquemen
 
 ➡️ Il faut utiliser la **balise orpheline** `<br>` pour forcer un saut de ligne.
 
-**<H3 STYLE="COLOR:red;">Activité n°6. :</H3>** Modifier l’activité précédente pour **garder la mise en page** avec `<br>`.
+**<H3 STYLE="COLOR:red;">Activité n°5. :</H3>** Modifier l’activité précédente pour **garder la mise en page** avec `<br>`.
 
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.018.jpeg)
@@ -347,13 +312,13 @@ HTML propose **6 niveaux de titres**, du plus important (`<h1>`) au moins import
 | `<h6>` | Niveau le plus bas |
 
 
-**<H3 STYLE="COLOR:red;">Activité n°7. :</H3>** Ajouter un titre à l’application précédente : Les passoires Puis un sous-titre : Le théorème des passoires,
+**<H3 STYLE="COLOR:red;">Activité n°6. :</H3>** Ajouter un titre à l’application précédente : Les passoires Puis un sous-titre : Le théorème des passoires,
 
 Ainsi, on aura :
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.022.jpeg)
 
-**<H3 STYLE="COLOR:red;">Activité n°8. :</H3>** Ajouter un autre paragraphe à la suite dont voici le texte :
+**<H3 STYLE="COLOR:red;">Activité n°7. :</H3>** Ajouter un autre paragraphe à la suite dont voici le texte :
 
 ```
 Les différents ordres de passoires
@@ -368,7 +333,7 @@ Ajouter les bonnes balises pour observer cela sur le navigateur.
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°9. :</H3>** Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
+**<H3 STYLE="COLOR:red;">Activité n°8. :</H3>** Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
 
 ```
 Les différents types de passoires du troisième ordre
@@ -384,7 +349,7 @@ Ajouter les bonnes balises pour observer cela sur le navigateur.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.029.jpeg)
 
-**<H3 STYLE="COLOR:red;">Activité n°10. :</H3>** Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
+**<H3 STYLE="COLOR:red;">Activité n°9. :</H3>** Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
 
 ```
 Les différents types de casseroles
@@ -407,18 +372,18 @@ En HTML, on peut **mettre en valeur du texte** de différentes manières :
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°11. :</H3>** utiliser les balises précédentes pour le mot passoire et théorème du premier paragraphe.
+**<H3 STYLE="COLOR:red;">Activité n°10. :</H3>** utiliser les balises précédentes pour le mot passoire et théorème du premier paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.033.png)
 
 
-**<H3 STYLE="COLOR:red;">Activité n°12. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du deuxième paragraphe.
+**<H3 STYLE="COLOR:red;">Activité 11. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du deuxième paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.036.jpeg)
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°13. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du troisième paragraphe.
+**<H3 STYLE="COLOR:red;">Activité n°12. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du troisième paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.038.jpeg)
 
@@ -458,7 +423,7 @@ Pour les créer, on utilise :
 </ul>
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°14. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du cinquième paragraphe.
+**<H3 STYLE="COLOR:red;">Activité n°13. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du cinquième paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.040.png)
 
@@ -478,7 +443,7 @@ Pour les créer, on remplace `<ul>` par `<ol>` (ordered list).
 </ol>
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°15. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du dernier paragraphe.
+**<H3 STYLE="COLOR:red;">Activité n°14. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du dernier paragraphe.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.043.jpeg)
 
@@ -496,7 +461,7 @@ Un **lien absolu** mène vers une adresse **externe**, c’est-à-dire vers un a
 <a href="https://fr.wikipedia.org/wiki/Passoire">Passoire</a>
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°16. :</H3>** Créer un lien vers la page **Wikipedia de "Casserole"** en utilisant `<a>`. comme ci-dessous.
+**<H3 STYLE="COLOR:red;">Activité n°15. :</H3>** Créer un lien vers la page **Wikipedia de "Casserole"** en utilisant `<a>`. comme ci-dessous.
 
 ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.046.jpeg)
 
@@ -520,7 +485,7 @@ Exemple :
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°17. :</H3>** 
+**<H3 STYLE="COLOR:red;">Activité n°16. :</H3>** 
 
 **ATTENTION** : sur Capytale dans la partie gauche (là où il y a "Fichiers") utiliser le ```+```pour ajouter une page!
 
@@ -576,7 +541,7 @@ Les **ancres** permettent de **naviguer à l’intérieur d’une même page**.
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°18. :</H3>** 
+**<H3 STYLE="COLOR:red;">Activité n°17. :</H3>** 
 
 Sur la index.html, on va faire une ancre sur le titre en haut de page
 ```html
@@ -602,7 +567,7 @@ Pour faire un lien vers **une ancre située dans une autre page**, on précise l
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°19. :</H3>** Sur la page2.html, on va faire un lien vers l’ancre de la index.html.
+**<H3 STYLE="COLOR:red;">Activité n°18. :</H3>** Sur la page2.html, on va faire un lien vers l’ancre de la index.html.
 ```<h1 id="haut">Les passoires</h1>```
 On crée un lien en bas de la page aller vers le haut de la page index.html. Rajouter tout en bas (mais dans le body) la référence avec #
 ```html
@@ -637,7 +602,7 @@ Lorsque on passe la souris sur l’image, une infobulle contenant le texte "Ceci
 ```
 Ici, si on survole le lien avec la souris, une boîte d’information s’affichera avec le message "Vous ne le regretterez pas !"
 
-**<H3 STYLE="COLOR:red;">Activité n°20. :</H3>** Sur la page2.html, on va faire une infobulle
+**<H3 STYLE="COLOR:red;">Activité n°19. :</H3>** Sur la page2.html, on va faire une infobulle
 ```html
 <p>
     <a href="index.html#haut" title="Vous ne le regretterez pas !">Aller en haut de la page logique sur les passoires</a>
@@ -655,7 +620,7 @@ L’attribut `target="_blank"` ouvre le lien **dans un nouvel onglet**.
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°21. :</H3>** Sur la page2.html, on va faire une infobulle
+**<H3 STYLE="COLOR:red;">Activité n°20. :</H3>** Sur la page2.html, on va faire une infobulle
 ```html
 <p>
     <a href="index.html#haut" title="Vous ne le regretterez pas !" target="_blank">Aller en haut de la page logique sur les passoires</a>
@@ -673,7 +638,7 @@ Un lien **mailto** ouvre automatiquement une fenêtre pour envoyer un e-mail.
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°22. :</H3>** Sur la index.html, on va faire un lien vers un mail
+**<H3 STYLE="COLOR:red;">Activité n°21. :</H3>** Sur la index.html, on va faire un lien vers un mail
 ```html
 <p>
     <a href="mailto:votrenom@bidule.com">Envoyez-moi un e-mail !</a>
@@ -757,7 +722,7 @@ L’attribut `title` permet d’afficher une **infobulle** au survol de l’imag
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°23 :</h3>**  
+**<H3 STYLE="COLOR:red;">Activité n°22 :</h3>**  
 
 1. Cherchez **trois images** sur le Web (**passoire, casserole et autobus**).  
 
@@ -797,7 +762,7 @@ Si une image est **trop grande**, on peut afficher une **version réduite** qui 
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°24 :**</h3>  
+**<H3 STYLE="COLOR:red;">Activité n°23 :**</h3>  
 1 Créez une miniature de votre **image de passoire**.  
 
 2 Liez la miniature à l’image **grande taille**.  
