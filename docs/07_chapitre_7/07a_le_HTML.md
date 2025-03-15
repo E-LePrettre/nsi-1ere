@@ -776,7 +776,7 @@ Il faut les placer toutes les deux dans le même dossier. On affiche la version 
 
 
 
-### <H3 STYLE="COLOR:GREEN;">5.5. Vérification du code HTML  
+### **<H3 STYLE="COLOR:GREEN;">5.5. Vérification du code HTML  **</h3>
 
 **Pourquoi valider son code HTML ?**  
 
