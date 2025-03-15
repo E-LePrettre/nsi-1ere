@@ -827,7 +827,7 @@ La propriété `float` permet **de positionner une image à gauche ou à droite 
 
 
 
-### **<H3 STYLE="COLOR:GREEN;"> **6.1. Flotter un élément à gauche ou à droite</h3>**  
+### **<H3 STYLE="COLOR:GREEN;"> 6.1. Flotter un élément à gauche ou à droite</h3>**  
 
 📌 **Exemple :**
 ```html
@@ -847,7 +847,7 @@ La propriété `float` permet **de positionner une image à gauche ou à droite 
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.050.png)
 
-### **<H3 STYLE="COLOR:GREEN;"> **6.2. Stopper l’effet `float` avec `clear`</h3>**  
+### **<H3 STYLE="COLOR:GREEN;"> 6.2. Stopper l’effet `float` avec `clear`</h3>**  
 
 Si on ne stoppe pas le `float`, **le texte continue à s’enrouler autour de l’image**.  
 
