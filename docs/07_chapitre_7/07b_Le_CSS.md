@@ -110,7 +110,7 @@ ou :
 
 **<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** 
 
-Dans le fichier **`index.html`**, ajoutez le lien vers `style.css` dans la section `<head>` :  
+Dans le fichier **`index.html`**, ajoutez le lien vers `style.css` dans la section `<head>` comme ceci (attention à recopier seulement la ligne concernée):  
 
 ```html
 <!DOCTYPE html>
@@ -133,11 +133,14 @@ Dans le fichier **`index.html`**, ajoutez le lien vers `style.css` dans la secti
 
 ✔ Désormais, **toute la mise en forme sera gérée depuis ce fichier CSS externe**.  
 
+puis ajouter ceci au fichier style.css
+
+![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.006.png)
+
 ✅ **Enregistrer et observer `index.html`.**  
 
 
 
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.006.png)
 
 
 
