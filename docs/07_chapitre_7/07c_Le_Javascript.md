@@ -135,7 +135,11 @@ document.getElementById("monBouton").addEventListener("click", function() {
     alert("Vous avez cliqué !");
 });
 ```
-4. **Enregistrez et testez la page `index.html` dans un navigateur**.
+4. **Dans le `index.html`**,ajoutez un bouton dans le `<body>`
+```html
+<button id="monBouton">Cliquez-moi</button>
+```
+5. **Enregistrez et testez la page `index.html` dans un navigateur**.
 
 ✅ **Vous avez maintenant un script JavaScript externe qui fonctionne !** 🎉
 
