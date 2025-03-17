@@ -1146,7 +1146,7 @@ JavaScript propose **différents types d'événements** :
 
 👉 Pour une **liste complète**, consultez la documentation :  
 
-🔗 [Liste des événements JavaScript](https://www.lehtml.com/js/even.htm)
+🔗 [Liste des événements JavaScript](https://www.devenir-webmaster.com/tuto/javascript/gestion-des-evenements/)
 
 ### **<H3 STYLE="COLOR:GREEN;">11.2. <a name="_page14_x40.00_y550.92"></a> Manipuler les événements en JavaScript**</H3>
 
