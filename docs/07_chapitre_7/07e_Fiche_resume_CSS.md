@@ -10,14 +10,21 @@ title: Fiche Résumée du CSS
         CSS (*Cascading Style Sheets*) est un langage qui permet de **mettre en forme** une page web.
 
         📌 **Le CSS permet de modifier :**
+
         - La **couleur** du texte et du fond.
+
         - La **taille et la police** des caractères.
+
         - L’**agencement des éléments**.
+
         - Les **marges, bordures et animations**.
 
         💡 **Pourquoi utiliser le CSS ?**
+
         - Il **sépare** le contenu (HTML) et la mise en forme.
+
         - Un fichier CSS peut modifier **plusieurs pages HTML en même temps**.
+        
         - Il facilite la maintenance et l’évolution d’un site web.
 
 ???+ question "2. Où écrire le CSS ?"

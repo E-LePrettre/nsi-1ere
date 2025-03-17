@@ -10,8 +10,11 @@ title: Fiche Résumée du JavaScript
         JavaScript est un **langage de programmation** utilisé pour rendre les pages web interactives.
 
         📌 **Caractéristiques principales :**
+
         - **Langage interprété** (exécuté par le navigateur)
+
         - **Interaction avec HTML et CSS**
+        
         - **Gestion des événements** (clics, formulaires, animations, etc.)
 
     ???+ question "b) Où écrire le JavaScript ?"
