@@ -1444,12 +1444,21 @@ document.getElementById('submitGuess').addEventListener(..., function() {
 **Code JavaScript de exo2.js à trous à compléter**
 ```javascript
 // exo2.js
-document.getElementById('calculate').addEventListener('click', function() {
-    let num1 = parseFloat(document.getElementById('num1').value);
-    let num2 = parseFloat(document.getElementById('num2').value);
-    let operation = document.getElementById('operation').value;
-    let result;
 
+// Question 1 : Comment ajouter un événement de clic au bouton "Calculer" ?
+document.getElementById(...).addEventListener('click', function() {
+
+    // Question 2 : Comment récupérer les valeurs des champs de saisie et les convertir en nombres ?
+    let num1 = parseFloat(document.getElementById(...).value);
+    let num2 = parseFloat(document.getElementById(...).value);
+
+    // Question 3 : Comment récupérer la valeur de l'opération sélectionnée dans le menu déroulant ?
+    let operation = document.getElementById(...).value;
+    
+    // Question 4 : Quelle variable devons-nous utiliser pour stocker le résultat du calcul ?
+    let ...;
+
+    
     if (operation === 'add') {
         result = num1 + num2;
     } else if (operation === 'subtract') {
@@ -1460,7 +1469,8 @@ document.getElementById('calculate').addEventListener('click', function() {
         result = num1 / num2;
     }
 
-    document.getElementById('result').textContent = 'Résultat : ' + result;
+    // Question 5 : Où devons-nous afficher le résultat du calcul ?
+    document.getElementById(...).textContent = 'Résultat : ' + result;
 });
 ```
 
@@ -1559,22 +1569,34 @@ document.getElementById('addTask').addEventListener(..., function() {
 **Code JavaScript de exo4.js à trous à compléter**
 ```javascript
 // exo4.js
-document.getElementById('submitQuiz').addEventListener('click', function() {
-    let score = 0;
-    let totalQuestions = 2;
 
+// Question 1 : Comment ajouter un événement de clic au bouton "Soumettre" ?
+document.getElementById('submitQuiz').addEventListener(..., function() {
+
+    // Question 2 : Quelle variable devons-nous utiliser pour stocker le score ?
+    let score = ...;
+
+    // Question 3 : Quelle variable devons-nous utiliser pour stocker le nombre total de questions ?
+    let totalQuestions = ...;
+
+    // on récupère la réponse sélectionnée pour la première question 
     let q1 = document.querySelector('input[name="q1"]:checked');
+
     let q2 = document.querySelector('input[name="q2"]:checked');
 
-    if (q1 && q1.value === 'Paris') {
+    // Question 4 : Comment vérifier si la réponse à la première question est correcte ?
+    if (q1 && q1.... === 'Paris') {
         score++;
     }
 
-    if (q2 && q2.value === 'Berlin') {
+    // Question 5 : Comment vérifier si la réponse à la deuxième question est correcte ?
+    if (q2 && q2.... === 'Berlin') {
         score++;
     }
 
-    let result = document.getElementById('result');
+    // Question 6 : Où devons-nous afficher le résultat du quiz ?
+    let result = document.getElementById(...);
     result.textContent = `Vous avez obtenu ${score} sur ${totalQuestions}`;
 });
+
 ```
