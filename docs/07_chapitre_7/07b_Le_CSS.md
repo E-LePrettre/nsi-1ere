@@ -992,7 +992,7 @@ h1 {
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°14.:</H3>** ### ✏️ **Activité n°14 : Ajouter une ombre au théorème**  
+**<H3 STYLE="COLOR:red;">Activité n°14.:</H3>**  Ajouter une ombre au théorème**  
 
 Dans `style.css`, ajoutez :
 ```css
