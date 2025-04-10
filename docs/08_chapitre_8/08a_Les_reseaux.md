@@ -675,7 +675,7 @@ On observe que les échanges entre le client et le serveur suivent **4 étapes**
 
   - **Réseau 1** : `192.168.1.1`
 
-  - **Réseau 2** : `192.168.1.2`
+  - **Réseau 2** : `192.168.2.1`
 
 - Ajouter la passerelle correspondante sur **chaque ordinateur** (`1.x` et `2.x`). 
 
