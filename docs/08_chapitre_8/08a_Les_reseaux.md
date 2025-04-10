@@ -689,7 +689,7 @@ Installer un **serveur Web** et un **éditeur de texte** sur **1.12**.
 
 Modifier le fichier **index.html** (situé dans `/root/webserver`).
 
-Ajouter **vos propres fichiers** :
+Ajouter **vos propres fichiers** en installant un explorateur de document et en important dans `/root/webserver` par exemple :
 
   - `page1.html`
 
