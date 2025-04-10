@@ -758,7 +758,7 @@ Sur Internet, on utilise des **noms de domaine** au lieu d’adresses IP. Le **s
 
 **<H3 STYLE="COLOR:red;">Activité n°9.:**</H3> Chemin d’un client à un serveur 
 
-- Ouvrir le fichier `snt_sim_res.fls`.  
+- Télécharger le fichier `snt_sim_res.fls` :[snt_sim_res.fls](https://pixees.fr/informatiquelycee/n_site/asset/snt_sim_res.fls).  
 
 - Lancer un **traceroute** entre **M14** et **M9** :  
   ```bash
