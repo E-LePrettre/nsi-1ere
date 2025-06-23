@@ -11,6 +11,7 @@ title: 01a Révision Les bases
 ## <span style="color:blue;">Un algorithme c'est quoi ?</span>
 
 Pour faire exécuter une tâche par ordinateur, il faut tout d’abord, **détailler** suffisamment les étapes de résolution du problème, pour qu’elle soit exécutable par l’homme. Ensuite, transférer la résolution en une suite d’étapes si élémentaire et simple à exécuter, pouvant être codée en un programme dans un langage compréhensible par ordinateur. 
+
 **Toute suite d’étapes si élémentaire et simple à exécuter s’appelle un ALGORITHME**. 
 
 ![image_cuisine](image5.png)
