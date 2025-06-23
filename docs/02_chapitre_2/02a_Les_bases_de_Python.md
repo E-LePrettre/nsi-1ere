@@ -787,10 +787,15 @@ en 3 coups !
 2  Quelle est la stratégie la plus efficace ? 
 
 3  Question bonus : Montrer que l’on peut deviner un nombre en 7 coups maximum. 
+
 Bibliographie :[ La dichotomie ](http://fr.wikipedia.org/wiki/Dichotomie)
+
 Remarques :  
+
 -  l’algorithme de Dichotomie est au programme de première NSI. 
+
 -  pour créer un nombre entier aléatoire entre 1 et 100 : 
+
 ```python
 import random 
 nombre = random.randint(1,100)
