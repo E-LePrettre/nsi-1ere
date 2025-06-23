@@ -58,9 +58,9 @@ En Python, une fonction est définie avec l’instruction `def`. Une fonction pe
     def parite(nombre): 
         """ Affiche la parité d'un nombre entier """ 
         if nombre % 2 != 0:  # L'opérateur % donne le reste d'une division 
-            return f"{nombre} est impair" 
+            return str(nombre) + " est impair" 
         else: 
-            return f"{nombre} est pair"
+            return str(nombre) + " est pair"
     ```
 
     **Exécuter :**
@@ -373,25 +373,22 @@ Python permet d’utiliser des expressions **booléennes**, qui ne peuvent être
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
-**<H3 STYLE="COLOR:red;">Exercice 1</H3>**★ Le numéro de sécurité sociale est constitué de 13 chiffres auquel s’ajoute la clé de contrôle (2 chiffres). La clé de contrôle est calculée par la formule : 97 - (numéro de sécurité sociale modulo 97) 
-
-Ecrire un script qui contrôle la validité d’un numéro de sécurité sociale. On pourra utiliser la fonction int() 
-
-pour convertir le type str en type int. Numéro de sécurité social valide : 1 89 11 26 108 268 91. Exemple : 
-```
->>> secu(1891126108268, 91)
-Votre numéro de sécurité sociale est valide.
->>> secu(2891126108268, 91)
-Votre numéro de sécurité sociale est INVALIDE !
-```
+**<H3 STYLE="COLOR:red;">Exercice 1</H3>**★  Écrire une fonction maximum(x,y) qui renvoie le maximum de deux nombres x et y. Attention : vous n'avez pas le droit d'utiliser la fonction built-in max().  
 
 
+**<H3 STYLE="COLOR:red;">Exercice 2</H3>**★Ecrire et tester une fonction compare(a,b) qui retourne :  
 
+- -1 si a < b,  
+
+- 0 si a = b,  
+
+- 1 si a > b.  
+
+**<H3 STYLE="COLOR:red;">Exercice 3</H3>**★ : Écrire une fonction de deux variables réelles a, b qui résout l’équation ax + b = 0.
 
 
 
-
-**<H3 STYLE="COLOR:red;">Exercice 2.</H3>**★ Ecrire une fonction mention(note) qui affichera la mention correspondante à la note obtenue.  Les mentions sont obtenues 
+**<H3 STYLE="COLOR:red;">Exercice 4.</H3>**★ Ecrire une fonction mention(note) qui affichera la mention correspondante à la note obtenue.  Les mentions sont obtenues 
 
 - Une mention "assez bien" si sa moyenne est égale ou supérieure à 12/20 et inférieure à 14/20. 
 - Une mention "bien" si sa moyenne est au moins égale à 14/20 et inférieure à 16/20. 
@@ -417,7 +414,7 @@ Par exemple :
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 3.</H3>**★ Ecrire une fonction IMC(poids, taille) qui calcule l’indice de masse corporelle (IMC) d’un adulte et qui en donne l’interprétation (corpulence normale, surpoids…). 
+**<H3 STYLE="COLOR:red;">Exercice 5.</H3>**★ Ecrire une fonction IMC(poids, taille) qui calcule l’indice de masse corporelle (IMC) d’un adulte et qui en donne l’interprétation (corpulence normale, surpoids…). 
 
 Il se calcule simplement en divisant le poids (en kg) par le carré de la taille (m). Indice de masse corporelle (IMC) Interprétation (d'après l'OMS) ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.036.png)
 
@@ -439,7 +436,7 @@ Exemple :
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 4.</H3>**★★: Ecrire une fonction annee\_bissextile(annee) qui indique qu’il s’agit d’une année bissextile. On rappelle qu’une année est bissextile si elle est multiple de 4 mais pas multiple de 100, ou si elle est multiple de 400. 
+**<H3 STYLE="COLOR:red;">Exercice 6.</H3>**★★: Ecrire une fonction annee\_bissextile(annee) qui indique qu’il s’agit d’une année bissextile. On rappelle qu’une année est bissextile si elle est multiple de 4 mais pas multiple de 100, ou si elle est multiple de 400. 
 
 Exemple : 
 ```
@@ -454,7 +451,7 @@ Exemple :
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 5.</H3>**★★ - Niveau première en mathématiques - Ecrire un script qui résout l'équation du second degré : ax² + bx + c = 0  
+**<H3 STYLE="COLOR:red;">Exercice 7.</H3>**★★ - Niveau première en mathématiques - Ecrire un script qui résout l'équation du second degré : ax² + bx + c = 0  
 
 Pour revoir les formules à appliquer :[ https://www.maths-et-tiques.fr/telech/Secondegre2.pdf ](https://www.maths-et-tiques.fr/telech/Secondegre2.pdf)
 
@@ -753,13 +750,9 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
-**<H3 STYLE="COLOR:red;">Exercice 5</H3>**★ Ecrire une fonction moyenne(liste) qui calcule la moyenne d’une série de notes. On pourra utiliser une variable qui contient la somme intermédiaire des notes.
-```
->>> moyenne([15, 11.5, 16])
-14.17
-```
 
-**<H3 STYLE="COLOR:red;">Exercice 6</H3>**★ 
+
+**<H3 STYLE="COLOR:red;">Exercice 8</H3>**★ 
 
 1  Avec une boucle for, écrire une fonction nombre_de_z(chaine) qui compte le nombre de lettres z dans une chaîne de caractères. Par exemple : 
 ```
@@ -773,7 +766,7 @@ méthode count() de la classe str. Pour obtenir de l’aide sur cette méthode :
 help(str.count)
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 7</H3>**★ 
+**<H3 STYLE="COLOR:red;">Exercice 9</H3>**★ 
 
 1  Ecrire la fonction devinette(proposition) du jeu de devinette suivant : 
 
@@ -803,7 +796,7 @@ import random
 nombre = random.randint(1,100)
 ``` 
 
-**<H3 STYLE="COLOR:red;">Exercice 8</H3>**★★ Code de César 
+**<H3 STYLE="COLOR:red;">Exercice 10</H3>**★★ Code de César 
 En cryptographie, le code de César est une technique de chiffrement élémentaire qui consiste à décaler une lettre de 3 rangs vers la droite : 
 
 A → D 
@@ -814,7 +807,7 @@ B → E
 
 Z → C 
 
-1. Ecrire une fonction message_a_coder(message) qui permet de coder un message passé en argument.Par exemple : 
+1 Ecrire une fonction message_a_coder(message) qui permet de coder un message passé en argument.Par exemple : 
 
 ```
 >>> message_a_coder('abcdefghijklmnopqrstuvwxyz')
@@ -833,7 +826,7 @@ On pourra utiliser la chaîne 'abcdefghijklmnopqrstuvwxyz',  la méthode find() 
 ```
 
 
-2. Ecrire la fonction message_a_decoder(message) qui permet le décodage. Par exemple : 
+2 Ecrire la fonction message_a_decoder(message) qui permet le décodage. Par exemple : 
 
 ```
 >> message_a_decoder('obfhh mhdq fdvvdljqh fodvvh gh qvl')
@@ -842,7 +835,7 @@ On pourra utiliser la chaîne 'abcdefghijklmnopqrstuvwxyz',  la méthode find() 
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 9</H3>**★ Geralt de Riv kiffe ses cheveux. 
+**<H3 STYLE="COLOR:red;">Exercice 11</H3>**★ Geralt de Riv kiffe ses cheveux. 
 
 Pour ne pas être dérangé dans ses aventures il décide de les couper chaque fois qu’ils font plus de 40 cm. Ce matin Geralt a coupé ses cheveux et ils mesurent 17 cm. Chaque jour la longueur de ses cheveux augmente d’un pour cent (leur longueur est multipliée par 1.01). 
 
@@ -850,7 +843,7 @@ Pour ne pas être dérangé dans ses aventures il décide de les couper chaque f
 
 **Les exercices suivants nécessitent quelques (peu quand même) aptitudes en mathématiques…** 
 
-**<H3 STYLE="COLOR:red;">Exercice 10</H3>**★★ Ecrire une méthode heron(U, n) qui donne la valeur de la suite pour un rang n (méthode de Héron) : La méthode de Héron permet d’approcher la valeur de la racine carrée d’un nombre. Nous allons l’appliquer pour déterminer la valeur approchée de la racine de 2. Elle est définie par la suite : 
+**<H3 STYLE="COLOR:red;">Exercice 12</H3>**★★ Ecrire une méthode heron(U, n) qui donne la valeur de la suite pour un rang n (méthode de Héron) : La méthode de Héron permet d’approcher la valeur de la racine carrée d’un nombre. Nous allons l’appliquer pour déterminer la valeur approchée de la racine de 2. Elle est définie par la suite : 
 
 
 $U_0=k$, k étant une valeur initiale
@@ -875,7 +868,7 @@ Aide :
 
 - Utiliser seulement  n et U comme variable, 
 
-**<H3 STYLE="COLOR:red;">Exercice 11</H3>**★★ Fraction continue infinie  
+**<H3 STYLE="COLOR:red;">Exercice 13</H3>**★★ Fraction continue infinie  
 ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.086.jpeg)
 
 Le nombre d’or est un célèbre nombre irrationnel :[ Wikipédia.](https://fr.wikipedia.org/wiki/Nombre_d%27or)  
@@ -904,7 +897,7 @@ la valeur de (1+math.sqrt(5))/2 est : 1.618033988749895
 ```
 
 
-**<H3 STYLE="COLOR:red;">Exercice 12</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 14</H3>**
 
 ★ Ecrire une fonction premier(nombre) qui détermine si un nombre entier est premier ou pas. 
 
@@ -1132,7 +1125,7 @@ def carre(nombre: int) -> int:
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
-**<H3 STYLE="COLOR:red;">Exercice 13</H3>**☆ 
+**<H3 STYLE="COLOR:red;">Exercice 15</H3>**☆ 
 
 1.Ecrire une fonction carre() qui retourne le carré d’un nombre : 
 
@@ -1177,9 +1170,9 @@ def carre(nombre: int) -> int:
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 14</H3>**☆ 
+**<H3 STYLE="COLOR:red;">Exercice 16</H3>**☆ 
 
-1.Ecrire une fonction qui retourne l’aire de la surface d’un disque de rayon R. Exemple : 
+Ecrire une fonction qui retourne l’aire de la surface d’un disque de rayon R. Exemple : 
 
 ```
 >>> airedisque(2.5)
@@ -1188,18 +1181,10 @@ def carre(nombre: int) -> int:
 
 
 
-2.Ajouter un paramètre qui précise l’unité de mesure : 
-
-Aide on ne peut faire de l’affichage facilement qu’en concaténant les chaines de caractères… 
-
-```
->>> airedisque2(4.2, 'cm')
-'55.41769440932395 cm²'
-```
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 15</H3>**★ 
+**<H3 STYLE="COLOR:red;">Exercice 17</H3>**★ 
 
 1.Ecrire une fonction qui retourne la factorielle d’un nombre entier N. On rappelle que : factorielle de N est noté N! 
 
@@ -1227,7 +1212,7 @@ Exemple :
 
 2.Comparez avec le résultat de la fonction[ factorial() ](http://docs.python.org/3/library/math.html)du module math. 
 
-**<H3 STYLE="COLOR:red;">Exercice 16</H3>**★ 
+**<H3 STYLE="COLOR:red;">Exercice 18</H3>**★ 
 
 1.A l’aide de la fonction randint() du module random, écrire une fonction qui retourne un mot de passe de longueur N (chiffres, lettres minuscules ou majuscules).  
 
@@ -1261,7 +1246,7 @@ Lien utile :[ https://www.motdepasse.xyz/ ](https://www.motdepasse.xyz/)![](Aspo
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 17</H3>**★★ Ecrire une fonction qui retourne une grille de numéros du jeu  Euro Millions. On utilisera la fonction sample() du module random.  
+**<H3 STYLE="COLOR:red;">Exercice 19</H3>**★★ Ecrire une fonction qui retourne une grille de numéros du jeu  Euro Millions. On utilisera la fonction sample() du module random.  
 ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.114.png)
 
 ```
@@ -1269,7 +1254,7 @@ Lien utile :[ https://www.motdepasse.xyz/ ](https://www.motdepasse.xyz/)![](Aspo
 '43 31 35 41 39 22 14 ' 
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 18</H3>**  
+**<H3 STYLE="COLOR:red;">Exercice 20</H3>**  
 
 1.★ Ecrire une fonction qui retourne la valeur de la fonction  mathématique f(x)= 27x^3 - 27x^2 - 18x + 8 :  
 
