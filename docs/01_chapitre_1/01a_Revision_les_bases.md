@@ -8,8 +8,14 @@ title: 01a Révision Les bases
 
 **Programmer**, c'est **créer des programmes** (suite d'ordres donnés à l'ordinateur). Un ordinateur sans programme ne sait rien faire.
 
+## <span style="color:blue;">Un algorithme c'est quoi ?</span>
 
+Pour faire exécuter une tâche par ordinateur, il faut tout d’abord, **détailler** suffisamment les étapes de résolution du problème, pour qu’elle soit exécutable par l’homme. Ensuite, transférer la résolution en une suite d’étapes si élémentaire et simple à exécuter, pouvant être codée en un programme dans un langage compréhensible par ordinateur. 
+**Toute suite d’étapes si élémentaire et simple à exécuter s’appelle un ALGORITHME**. 
 
+![image_cuisine](image5.png)
+
+![image_cuisine](image6.png)
 
 
 ## <span style="color:blue;">Débuter avec Basthon </span>
@@ -66,8 +72,17 @@ Dans un second temps, nous utiliserons également **Capytale**, un environnement
 
 ## <span style="color:blue;">Les variables et les affectations</span>
 
+Pour fonctionner, un algorithme a besoin de mémoriser des données (saisies par l’utilisateur, résultats à afficher, résultats intermédiaires lors d’un traitement…) afin de pouvoir les réutiliser. Pour cela il utilise ce qu’on appelle une variable. 
 
-Une **variable** est l'association d'un espace de la mémoire de l'ordinateur, accessible par son **nom**, et d'une **valeur** que l'on y **stocke**. En Python, l'affectation se réalise avec l'opérateur `=`.
+Une **variable** est l'association d'un espace de la mémoire de l'ordinateur, accessible par son **nom**, et d'une **valeur** que l'on y **stocke**. 
+
+ 
+Le rangement d’une donnée dans une variable (un contenant) s’appelle **l’affectation**.  
+On peut se représenter une variable comme une boîte portant une étiquette ("le nom de la variable") à l'intérieur de laquelle on peut placer un contenu (la valeur de la variable).   
+
+![image_boite](image7.png)
+
+**En Python, l'affectation se réalise avec l'opérateur `=`.**
 
 ```python
 a = 5
