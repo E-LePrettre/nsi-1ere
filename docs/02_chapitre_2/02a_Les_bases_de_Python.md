@@ -1,6 +1,6 @@
 ﻿---
 author: ELP
-title: 02b Les bases de Python
+title: 02a Les bases de Python
 ---
 
 
