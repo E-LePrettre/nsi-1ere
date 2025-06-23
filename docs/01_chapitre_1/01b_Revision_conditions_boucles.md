@@ -145,7 +145,57 @@ _Remarque : Attention à ne pas confondre :_
 - `a = 2` stocke la valeur 2 dans la variable `a`.
 - `a == 2` teste si `a` est égal à l'entier 2.
 
-???+ question "Activité n°3 : if ... elif"
+
+???+ question "Activité n°3 : Comparaisons booléennes"
+
+    **Tester :**
+
+    ```python
+    b = 10
+    print(b > 8)
+    print(b == 5)
+    print(b != 10)
+    print(0 <= b <= 20)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        True
+        False
+        False
+        True
+        ```
+
+
+
+???+ question "Activité n°4 : Opérateurs logiques"
+
+    **Tester :**
+
+    ```python
+    note = 13.0
+    print(note >= 12.0 and note < 14.0)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        True
+        ```
+
+
+
+
+
+
+???+ question "Activité n°5 : if ... elif"
 
     **Écrire un script** qui demande à l’utilisateur sa note en informatique.
 
@@ -201,7 +251,7 @@ _Remarque : Attention à ne pas confondre :_
 
     
 
-???+ question "Activité n°4 : Condiions"
+???+ question "Activité n°6 : Condiions"
 
     **Écrire un script** qui demande une couleur à l’utilisateur.
 
@@ -368,7 +418,7 @@ Dans cette boucle, `i` prendra les valeurs de `0` à `n-1`. Toutes les instructi
 
 Dans cette structure, on connait à l'avance le nombre de répétitions. Dans notre cas, il est égal à `n`.
 
-???+ question "Activité n°5 : ❤️ Boucle avec compteur i ❤️"
+???+ question "Activité n°7 : ❤️ Boucle avec compteur i ❤️"
 
     Avec l'éditeur de script, **testez le code suivant :**
 
@@ -396,7 +446,7 @@ Dans cette structure, on connait à l'avance le nombre de répétitions. Dans no
 
 _Remarque :_ On note `range(11)` pour indiquer que la boucle `print(i)` va s'exécuter 11 fois, mais `i` prendra toutes les valeurs entières entre `0` et `10` inclus.
 
-???+ question "Activité n°6 : ❤️ Algorithme donnant une somme ❤️"
+???+ question "Activité n°8 : ❤️ Algorithme donnant une somme ❤️"
 
     Avec l'éditeur de script, **testez le code suivant :**
 
@@ -439,7 +489,7 @@ for elmt in iterable:
 
 Dans cette boucle, `elmt` va parcourir les éléments de `iterable`. `iterable` peut être une chaîne de caractères ou une liste.
 
-???+ question "Activité n°7 : ❤️ Boucle de parcours de chaîne ❤️."
+???+ question "Activité n°9 : ❤️ Boucle de parcours de chaîne ❤️."
 
     Avec l'éditeur de script, **testez le code suivant :**
 
@@ -467,7 +517,7 @@ Dans cette boucle, `elmt` va parcourir les éléments de `iterable`. `iterable` 
 
 _Modifiez la chaîne pour tester d'autres phrases._
 
-???+ question "Activité n°8 : Boucle for et condition"
+???+ question "Activité n°10 : Boucle for et condition"
 
     Avec l'éditeur de script, **testez le code suivant :**
 
@@ -645,7 +695,7 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
 
 - Si la condition ne change jamais de valeur, la boucle ne s'arrêtera pas et l'algorithme restera bloqué sur le `while`.
 
-???+ question "Activité n°9 : ❤️ Algorithme de seuil ❤️"
+???+ question "Activité n°11 : ❤️ Algorithme de seuil ❤️"
 
     Une balle part d'une hauteur de 2 mètres et perd 10% de sa hauteur à chaque rebond. On cherche le nombre de rebonds pour que la balle atteigne un maximum de 1,5 mètre de hauteur.
 
@@ -678,7 +728,7 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
 
         **Test :** Modifier les valeurs pour que la balle démarre à 3 mètres et atteigne 2 mètres.
 
-???+ question "A faire vous-même Activité n°10 : Boucle while"
+???+ question "A faire vous-même Activité n°12 : Boucle while"
 
     Faire un programme qui demande la note d'un élève. Tant que sa note est strictement inférieure à 18, le programme affichera "Il faut travailler". Chaque fois que ce message apparaît, la note de l'élève augmente de 1 point.
 

@@ -278,8 +278,38 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         ```
         Ce programme affiche `1` car 13 divisé par 4 donne un reste de 1.
 
+    **Explication :**
+    - `//` représente la **division entière** (quotient sans décimale).
+    - `%` permet d’obtenir le **reste de la division**.
 
-???+ question "Activité n°10 : Incrémentation d'une variable"
+La division entière permet de déterminer la valeur tronquée de la division et le modulo permet de déterminer la valeur du reste. 
+
+On souhaite effectuer la division de 3395  par 99.  
+
+![](Aspose.Words.7488426a-f593-4c9d-89c4-e8b91637fe20.019.jpeg)
+
+On s’est arrêté car 29 est plus petit que 99 et qu’on ne souhaitait pas aller plus loin et se retrouver avec un nombre à virgule. On a effectué une division dite division entière. On en déduit donc que 3395 = 99 \* 34 + 29
+
+???+ question "Activité n°10 : Puissance (exponentiation)"
+
+    **Tester :**
+
+    ```python
+    3 ** 2
+    2 ** 3
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+        ```
+        9
+        8
+        ```
+
+???+ question "Activité n°11 : Incrémentation d'une variable"
 
     **Que fait ce programme ?**
 
@@ -304,7 +334,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
 
 ## <span style="color:blue;">Affichage en Python</span>
 
-???+ question "Activité n°11 : Variable"
+???+ question "Activité n°12 : Variable"
 
     **Tester :**
 
@@ -324,7 +354,7 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         Mon prénom est : Bob
         ```
 
-???+ question "Activité n°12 : Variable"
+???+ question "Activité n°13 : Variable"
 
     Réalisez un script qui contient trois variables : `prenom`, `nom` et `age` et qui doit afficher :
 
@@ -357,7 +387,7 @@ La **fonction** `input` permet d'ouvrir une boîte de dialogue et de **récupér
 
 L'information récupérée grâce à un `input` est une **chaîne de caractères**.
 
-???+ question "Activité n°13 : Dialogue"
+???+ question "Activité n°14 : Dialogue"
 
     **Tester :**
 
@@ -375,7 +405,7 @@ L'information récupérée grâce à un `input` est une **chaîne de caractères
         Alice
         ```
 
-???+ question "Activité n°14 : Dialogue"
+???+ question "Activité n°15 : Dialogue"
 
     Écrire un script en Python qui demande à l'utilisateur son prénom, son nom et son âge, puis qui doit afficher :
 
@@ -404,7 +434,7 @@ L'information récupérée grâce à un `input` est une **chaîne de caractères
         Bonjour je m'appelle Alain Térieur, j'ai 217 ans.
         ```
 
-???+ question "Activité n°15 : Dialogue avec un entier"
+???+ question "Activité n°16 : Dialogue avec un entier"
 
     Un boulanger désire un programme qui demande à l'utilisateur le nombre de baguettes qu'il désire, qui calcule le prix total (sachant qu'une baguette coûte 1.10 €) et qui affiche le prix que l'utilisateur doit payer.
 
@@ -455,7 +485,7 @@ L'instruction `int` permet de convertir certaines chaînes de caractères en un 
 
 L'instruction `float` permet de convertir certaines chaînes de caractères en un **flottant**, c'est-à-dire un "nombre à virgule".
 
-???+ question "Activité n°16 : Dialogue avec un entier"
+???+ question "Activité n°17 : Dialogue avec un entier"
 
     Vous êtes chargé(e) de mettre en place une borne automatique pour régler les droits d’entrée à un parc d’attractions.
 
@@ -486,7 +516,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 
 ## <span style="color:blue;">Les chaines de caractères</span>
 
-???+ question "Activité n°17 : Délimiter les chaines de caractères"
+???+ question "Activité n°18 : Délimiter les chaines de caractères"
     
     Affichez des chaînes de caractères délimitées par des apostrophes et des guillemets.
 
@@ -507,7 +537,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         une chaine délimitée par des guillemets
         ```
 
-???+ question "Activité n°18 : Délimiter les chaines de caractères"
+???+ question "Activité n°19 : Délimiter les chaines de caractères"
 
     Faire afficher exactement :
     - C'est bientôt Noël
@@ -530,7 +560,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         ```
 
 
-???+ question "Activité n°19 : Test d'appartenance"
+???+ question "Activité n°20 : Test d'appartenance"
 
     Testez l'appartenance d'un caractère dans une chaîne avec l'opérateur `in`.
 
@@ -554,7 +584,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         **Pourquoi ?**
         La recherche est sensible à la casse. 'b' minuscule n'est pas dans "Bonjour", tandis que 'B' majuscule l'est.
 
-???+ question "Activité n°20 : Concaténation"
+???+ question "Activité n°21 : Concaténation"
 
     Concaténez deux chaînes de caractères avec l'opérateur `+`.
 
@@ -574,7 +604,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         Bonjour à tous.
         ```
 
-???+ question "Activité n°21 : Concaténation"
+???+ question "Activité n°22 : Concaténation"
 
     À partir de deux chaînes de caractères :
 
@@ -601,7 +631,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         Aujourd'hui se dit "Today"
         ```
 
-???+ question "Activité n°22 : Fonction len()"
+???+ question "Activité n°23 : Fonction len()"
 
     Utilisez la fonction `len` pour obtenir le nombre de caractères dans une chaîne.
 
@@ -622,7 +652,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 
         Les espaces et la ponctuation comptent également comme des caractères.
 
-???+ question "Activité n°23 : Lecture de Caractères dans une Chaîne avec des Indices"
+???+ question "Activité n°24 : Lecture de Caractères dans une Chaîne avec des Indices"
 
     Lisez un caractère dans une chaîne avec `chaine[index]`.
 
@@ -649,7 +679,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         u
         ```
 
-???+ question "Activité n°24 : Lecture de Caractères dans une Chaîne avec des Indices"
+???+ question "Activité n°25 : Lecture de Caractères dans une Chaîne avec des Indices"
 
     À partir de :
     ```python
@@ -671,7 +701,11 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         Bnu
         ```
 
-???+ question "Activité n°25 : Extraction de Sous-chaînes avec le Slicing"
+Un **slice** permet le découpage de structures de données séquentielles (comme les chaînes de caractères ou les listes). La syntaxe utilisée est : **[début:fin:pas].** 
+
+NB : si pas < 0, la liste est parcourue dans le sens inverse. 
+
+???+ question "Activité n°26 : Extraction de Sous-chaînes avec le Slicing"
 
     Utilisez le **slicing** pour lire une sous-chaîne avec `chaine[debut:fin:pas]`.
 
@@ -700,7 +734,7 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         ruojnoB
         ```
 
-???+ question "Activité n°26 : Extraction de Sous-chaînes avec le Slicing"
+???+ question "Activité n°27 : Extraction de Sous-chaînes avec le Slicing"
 
     À partir de :
     ```python
@@ -740,6 +774,104 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
         Noël
         lëoN
         ```
+
+
+
+
+
+
+???+ question "Activité n°28 : Attention aux apostrophes"
+
+    **Tester :**
+
+    ```python
+    chaine = 'Aujourd\'hui'   # Séquence d'échappement \'
+    print(chaine) 
+
+    chaine = "Aujourd'hui"    # Utilisation des guillemets
+    print(chaine)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+
+
+???+ question "Activité n°29 : Les sauts de ligne"
+
+    **Tester :**
+
+    ```python
+    chaine = 'Premiere ligne\nDeuxieme ligne' 
+    print(chaine)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+---
+
+???+ question "Activité n°30 : Problème d'addition entre chaînes et nombres"
+
+    **Tester :**
+
+    ```python
+    chaine = 'a' 
+    # chaine = chaine + 2  # Provoque une erreur
+    chaine2 = chaine + str(2)  # Solution correcte
+    print(chaine2)  # Résultat : 'a2'
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+    **Remarque :**  
+    - Python **ne peut pas additionner directement** une chaîne (str) et un entier (int).  
+    - La conversion explicite avec **str()** permet de résoudre ce problème.
+
+
+???+ question "Activité n°31 : Conversion en minuscules"
+
+    **Tester :**
+
+    ```python
+    chaine = "BONJOUR"
+    chaine2 = chaine.lower()   # Convertit en minuscules
+    print(chaine2) 
+    print(chaine) 
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+
+???+ question "Activité n°32 : Séparer une phrase en mots"
+
+    **Tester :**
+
+    ```python
+    texte = "Il est important de construire"
+    print(texte)
+
+    mots = texte.split(' ')  # Découpe la phrase en mots
+    print(mots)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
+
+
+
+???+ question "Activité n°33 : Fusionner une liste en chaîne"
+
+    **Tester :**
+
+    ```python
+    texte = "Il est important de construire"
+    
+    liste1 = ' '.join(texte)  # Séparé par un espace
+    print(liste1) 
+
+    liste2 = ','.join(texte)  # Séparé par une virgule
+    print(liste2)
+    ```
+    ??? success "Python"
+        {{ IDE() }}
 
 
 
