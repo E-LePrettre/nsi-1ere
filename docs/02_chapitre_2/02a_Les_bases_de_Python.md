@@ -384,7 +384,7 @@ Python permet d’utiliser des expressions **booléennes**, qui ne peuvent être
 
 - 1 si a > b.  
 
-**<H3 STYLE="COLOR:red;">Exercice 3</H3>**★ : Écrire une fonction de deux variables réelles a, b qui résout l’équation ax + b = 0.
+**<H3 STYLE="COLOR:red;">Exercice 3</H3>**★ Écrire une fonction resout(a,b) avec les deux variables réelles a, b qui résout l’équation ax + b = 0.
 
 
 
