@@ -1,6 +1,6 @@
 ---
 author: ELP
-title: 01a Méthode pour Réussir en NSI
+title: 00a Méthode pour Réussir en NSI
 ---
 
 # <span style="color:blue;">Fiche Méthode pour Réussir en NSI</span>
