@@ -1,6 +1,6 @@
 ﻿---
 author: ELP
-title: 01c Révision Les bases
+title: 01a Révision Les bases
 ---
 
 
@@ -19,6 +19,16 @@ Dans un nouvel onglet du navigateur internet, aller sur [basthon.fr](https://bas
 1. Aller sur le site [Basthon](https://basthon.fr).
 2. Choisir l'option "Console" pour exécuter du code Python.
 3. Vous pouvez également utiliser l'éditeur de scripts pour écrire des programmes plus complexes.
+
+👉 Cependant, dans ce cours, nous utiliserons principalement **l’éditeur intégré** à la page du cours, qui est un notebook interactif et permet d’écrire et d’exécuter directement du code Python. Pour cela il faut ouvrir la partie Python
+
+![image_python](image2.png)
+
+![image_python](image3.png)
+
+![image_python](image4.png)
+
+Dans un second temps, nous utiliserons également **Capytale**, un environnement collaboratif adapté à l’enseignement.
 
 ## <span style="color:blue;">Affichage</span>
 
