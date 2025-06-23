@@ -279,7 +279,9 @@ Cela met en mémoire la chaîne de caractères "easy" dans la variable `a`.
         Ce programme affiche `1` car 13 divisé par 4 donne un reste de 1.
 
     **Explication :**
+
     - `//` représente la **division entière** (quotient sans décimale).
+    
     - `%` permet d’obtenir le **reste de la division**.
 
 La division entière permet de déterminer la valeur tronquée de la division et le modulo permet de déterminer la valeur du reste. 
