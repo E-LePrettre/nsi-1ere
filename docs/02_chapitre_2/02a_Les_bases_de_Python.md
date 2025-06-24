@@ -406,7 +406,7 @@ Par exemple :
 'recalé'
 ```
 
-`  `
+
 
 
 
@@ -418,17 +418,17 @@ Par exemple :
 
 Il se calcule simplement en divisant le poids (en kg) par le carré de la taille (m). Indice de masse corporelle (IMC) Interprétation (d'après l'OMS) ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.036.png)
 
-moins de 18,5 Insuffisance pondérale (maigreur) 
+- moins de 18,5 Insuffisance pondérale (maigreur) 
 
-18,5 à 24,9  Corpulence normale 
+- 18,5 à 24,9  Corpulence normale 
 
-25 à 29,9  Surpoids 
+- 25 à 29,9  Surpoids 
 
-30 à 39,9  Obésité  
+- 30 à 39,9  Obésité  
 
-plus de 40  Obésité morbide ou massive 
+- plus de 40  Obésité morbide ou massive 
 
-Exemple : 
+Exemple d'utilisation: 
 ```
 >>> IMC(68.5, 1.70)
 'IMC = 23.7: Interprétation : Corpulence normale'
@@ -540,9 +540,9 @@ Le discriminant vaut : 0
 
 L'instruction `for` permet de parcourir une **séquence** (liste, chaîne de caractères, etc.).
 
-```
-for élément in séquence :     
-    bloc d'instructions 
+```python
+for elmt in séquence :     
+    ... 
 ```
 
 
