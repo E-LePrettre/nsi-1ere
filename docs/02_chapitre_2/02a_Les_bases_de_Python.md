@@ -506,11 +506,6 @@ $$
 
 
 
-![](1.png)
-![](2.png)
-Par exemple : 
-![](3.png)
-
 Aide : Il faut importer la fonction racine :
 
 ```python
