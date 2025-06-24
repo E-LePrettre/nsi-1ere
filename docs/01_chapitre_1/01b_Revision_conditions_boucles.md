@@ -10,19 +10,14 @@ title: 01b Révision Les conditions et les boucles
 ## <span style="color:blue;">Les conditions</span>
 
 
-Une *instruction conditionnelle* est composée d’un **test** puis d'un **bloc d'instructions**.
+En Python, une *instruction conditionnelle* commence par **if condition:**.
 
-En **Python**, le *test* commence par le mot clef `if condition` et se termine par le symbole `:`.
-
-Le bloc d’instructions qui suit s'exécute si et seulement si le **test** a pour valeur `True` (est vraie).
-
-En **Python**, un *bloc d'instructions* commence à la première ligne suivant le symbole `:` et son imbrication dans le reste du programme est caractérisée par son niveau d'*indentation*. Toutes les instructions d'un même bloc doivent avoir le **même niveau d'indentation**.
+Le bloc d'instructions *indenté* juste après s'exécute uniquement si la condition est *True*.
+Toutes les lignes du bloc doivent avoir la **même indentation**.
 
 ```python
-# Bloc conditions 
-
-if condition:
-    # bloc d'instructions exécuté si la valeur de condition est True
+if ... :
+    ...
 ```
 
 C'est **l'indentation** (=décalage) qui délimite le bloc d'instructions.
@@ -30,12 +25,10 @@ C'est **l'indentation** (=décalage) qui délimite le bloc d'instructions.
 Si la condition du **test** est `False` (n'est pas vérifiée), on peut prévoir l'exécution d'un bloc d'instructions alternatif après un `else:`.
 
 ```python
-# Bloc conditions si ... sinon : 
-
-if condition:
-    # bloc d'instructions exécuté si la valeur de condition est True
-else:
-    # bloc d'instructions exécuté si la valeur de condition est False
+if ... :
+    ...
+else :
+    ...
 ```
 
 _Remarque :_ Le bloc `else` n'est pas obligatoire.
@@ -78,19 +71,17 @@ _Remarque :_ Le bloc `else` n'est pas obligatoire.
 
 
 
-On peut aussi tester d'autres conditions : chaque condition testée dans un `elif condition:` commande un bloc d'instructions.
+On peut aussi tester d'autres conditions : chaque condition testée dans un **`elif condition:`** commande un bloc d'instructions.
 
 ```python
-# Bloc conditions si ... sinon si ... sinon :
-
-if condition1:
-    # bloc d'instructions exécuté si la valeur de condition1 est True
-elif condition2:
-    # bloc d'instructions exécuté si condition2 est True (et condition1 est False)
-elif condition3:
-    # bloc d'instructions exécuté si condition3 est True (et condition1 et condition2 sont False)
-else:
-    # bloc d'instructions exécuté si toutes les conditions précédentes sont False
+if ... :
+    ...
+elif ... :
+    ...
+elif ... :
+    ...
+else :
+    ...
 ```
 
 ???+ question "Activité n°2 : if ... elif ... else"
@@ -404,19 +395,18 @@ _Remarque : Attention à ne pas confondre :_
 
 
 
-### Boucle `for` avec `range`
+### <span style="color:red;">Boucle `for` avec `range`</span>
 
 Une *boucle* **pour** permet de répéter un bloc d'instructions **un certain nombre de fois**.
 
 ```python
-# Bloc pour
 for i in range(n):
-    # bloc d'instructions
+    ...
 ```
 
 Dans cette boucle, `i` prendra les valeurs de `0` à `n-1`. Toutes les instructions dans la boucle seront appliquées pour chaque valeur de `i`.
 
-Dans cette structure, on connait à l'avance le nombre de répétitions. Dans notre cas, il est égal à `n`.
+Dans cette structure, **on connait à l'avance** le nombre de répétitions. Dans notre cas, il est égal à `n`.
 
 ???+ question "Activité n°7 : ❤️ Boucle avec compteur i ❤️"
 
@@ -480,14 +470,14 @@ _Remarque :_ Lors de l'instruction `for i in range(m, n)`, `i` prend toutes les 
 
 Exemple : ❤️`for i in range(2, 10, 2)` donne `2, 4, 6, 8`❤️.
 
-###  Boucle `for` avec `in`
+###  <span style="color:red;">Boucle `for` avec `in`</span>
 
 ```python
-for elmt in iterable:
-    # instructions
+for elmt in ...:
+    ...
 ```
 
-Dans cette boucle, `elmt` va parcourir les éléments de `iterable`. `iterable` peut être une chaîne de caractères ou une liste.
+Dans cette boucle, **`elmt`** va parcourir les éléments de `iterable`. `iterable` peut être une **chaîne de caractères** ou une **liste**.
 
 ???+ question "Activité n°9 : ❤️ Boucle de parcours de chaîne ❤️."
 
@@ -682,9 +672,8 @@ _Modifiez la chaîne pour tester d'autres phrases._
 Une *boucle **tant que*** permet de répéter un bloc d'instructions **jusqu'à ce que la condition soit fausse**.
 
 ```python
-# Bloc tant que
-while condition:
-    # bloc d'instructions
+while ... :
+    ...
 ```
 
 Tant que la `condition` est vraie, les instructions sont exécutées.
@@ -697,38 +686,42 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
 
 ???+ question "Activité n°11 : ❤️ Algorithme de seuil ❤️"
 
-    Une balle part d'une hauteur de 2 mètres et perd 10% de sa hauteur à chaque rebond. On cherche le nombre de rebonds pour que la balle atteigne un maximum de 1,5 mètre de hauteur.
+    Une grenouille saute depuis un nénuphar haut perché. À chaque saut, elle perd 10% de sa hauteur. Combien de sauts lui faudra-t-il pour descendre sous 1,5 mètre ?
 
    
 
     ```python
-    hauteur = 2
-    rebond = 0
-    seuil = 1.5
-    while hauteur > seuil:
-        rebond = rebond + 1
-        hauteur = hauteur * 0.9
-    print(rebond)
+    hauteur = 2  # départ à 2 mètres
+    sauts = 0    # compteur de sauts
+
+    while hauteur > 1.5:
+        hauteur *= 0.9  # la grenouille descend un peu
+        sauts += 1      # on compte le saut
+
+    print(sauts)
+
     ```
+
+    **Test :** Modifie la valeur de départ pour que la grenouille commence à 3 mètres et qu’elle descende jusqu’à 2 mètres.
 
     ??? success "Python"
         {{ IDE() }}
 
     ??? success "Solution"
 
-        Ce script compte le nombre de rebonds nécessaires pour que la hauteur de la balle descende en dessous de 1,5 mètre.
+        Ce script compte le nombre de sauts nécessaires pour que la grenouille descende en dessous de 1,5 mètre.
 
         **Explication :**
 
-        - La balle commence à 2 mètres.
+        - La grenouille commence à 2 mètres de hauteur (sur son nénuphar magique).
 
-        - À chaque rebond, la hauteur est multipliée par 0.9 (perte de 10%).
+        - À chaque saut, elle descend un peu : sa hauteur est multipliée par 0.9 (elle perd 10%).
 
-        - La boucle s'arrête dès que la hauteur est inférieure ou égale à 1.5 m.
+        - La boucle s'arrête dès que la hauteur est inférieure ou égale à 1,5 mètre.
 
-        **Test :** Modifier les valeurs pour que la balle démarre à 3 mètres et atteigne 2 mètres.
+        
 
-???+ question "A faire vous-même Activité n°12 : Boucle while"
+???+ question "Activité n°12 : Boucle while"
 
     Faire un programme qui demande la note d'un élève. Tant que sa note est strictement inférieure à 18, le programme affichera "Il faut travailler". Chaque fois que ce message apparaît, la note de l'élève augmente de 1 point.
 
@@ -741,6 +734,9 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
         note = note + 1
     print("Bravo, votre note est maintenant", note)
     ```
+
+    **Test :** Commencez avec une note de 15.
+
     ??? success "Python"
         {{ IDE() }}
 
@@ -754,7 +750,7 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
 
         - Quand la note atteint 18, le programme félicite l'élève.
 
-        **Test :** Commencez avec une note de 15.
+        
 
 ## <span style="color:blue;"> Exercices sur les boucles</span>
 
