@@ -473,7 +473,7 @@ Exemple : ❤️`for i in range(2, 10, 2)` donne `2, 4, 6, 8`❤️.
 ###  <span style="color:red;">Boucle `for` avec `in`</span>
 
 ```python
-for elmt in ...:
+for elmt in iterable:
     ...
 ```
 
