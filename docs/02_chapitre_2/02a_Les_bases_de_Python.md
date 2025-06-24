@@ -1353,9 +1353,7 @@ Ecrire le script correspondant. On recherche d’un zéro dans l’intervalle [a
 
 Annexe  :  représentation graphique  de  la  fonction f(x)= 27x^3 - 27x^2 - 18x  + 8 (graphique  réalisé  avec  la  librairie[ matplotlib ](http://matplotlib.org/examples/pylab_examples/axes_props.html)de  Python)  
 
-[QCM sur les fonctions ](http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_python_function) 
-Source :[ Fabrice  ](http://fsincere.free.fr/isn/python/cours_python_ch4.php)
-[Sincère ](http://fsincere.free.fr/isn/python/cours_python_ch4.php)-[ Contenu sous  licence CC BY-NC-SA 3.0 ](http://creativecommons.org/licenses/by-nc-sa/3.0/fr/) 
+
 
 
 
