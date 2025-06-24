@@ -455,12 +455,69 @@ Exemple :
 
 Pour revoir les formules à appliquer :[ https://www.maths-et-tiques.fr/telech/Secondegre2.pdf ](https://www.maths-et-tiques.fr/telech/Secondegre2.pdf)
 
+🟥 Définition — Équation du second degré
+
+> **Définition :**
+> Une équation du second degré est une équation de la forme :
+> *ax² + bx + c = 0*
+> où *a*, *b* et *c* sont des réels, avec *a ≠ 0*.
+
+> Une **solution** de cette équation s'appelle une **racine** du trinôme *ax² + bx + c*.
+
+🟥 Définition — Discriminant
+
+> **Définition :**
+> On appelle **discriminant** du trinôme *ax² + bx + c* le nombre réel, noté **Δ**, défini par la formule :
+> **Δ = b² - 4ac**
+
+🟥 Propriété — Nombre de solutions selon Δ
+
+> **Propriété :**
+> Soit **Δ** le discriminant du trinôme *ax² + bx + c*.
+
+* Si **Δ < 0** : l'équation *ax² + bx + c = 0* n'a **pas de solution réelle**.
+* Si **Δ = 0** : l'équation *ax² + bx + c = 0* a **une unique solution** :
+  *x₀ = -b / 2a*
+* Si **Δ > 0** : l'équation *ax² + bx + c = 0* a **deux solutions distinctes** :
+
+$$
+x_1 = \frac{-b - \sqrt{\Delta}}{2a} \quad \text{et} \quad x_2 = \frac{-b + \sqrt{\Delta}}{2a}
+$$
+
+
+
+🧮 Exemple — Résolution d'une équation du second degré
+
+> **Calculons le discriminant de l'équation** :
+> *2x² - x - 6 = 0*
+
+* a = 2, b = -1, c = -6
+* Δ = b² - 4ac = (-1)² - 4 × 2 × (-6) = 1 + 48 = **49**
+
+> Comme **Δ > 0**, l'équation possède **deux solutions distinctes** :
+
+$$
+x_1 = \frac{-(-1) - \sqrt{49}}{2 \times 2} = \frac{1 - 7}{4} = \frac{-6}{4} = \frac{-3}{2}
+$$
+
+$$
+x_2 = \frac{-(-1) + \sqrt{49}}{2 \times 2} = \frac{1 + 7}{4} = \frac{8}{4} = 2
+$$
+
+
+
 ![](1.png)
 ![](2.png)
 Par exemple : 
 ![](3.png)
 
-Il faut importer la fonction racine  from math import sqrt Exemple : 
+Aide : Il faut importer la fonction racine :
+
+```python
+from math import sqrt
+```
+
+Exemple d'utilisation : 
 ```
 >>> racine(1, -3, 2)
 Le discriminant vaut : 1
@@ -476,7 +533,7 @@ Le discriminant vaut : 0
 
 
 
-QCM :[ http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_python3x_2 ](http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_python3x_2)![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.006.png)
+
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Les<a name="_page7_x40.00_y36.92"></a> boucles</h2>** 
 ### **<H3 STYLE="COLOR:GREEN;">3.1. L’instruction<a name="_page7_x40.00_y58.92"></a> for…in</h3>**
