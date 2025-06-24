@@ -505,31 +505,36 @@ x_2 = \frac{-(-1) + \sqrt{49}}{2 \times 2} = \frac{1 + 7}{4} = \frac{8}{4} = 2
 $$
 
 
-
-Aide : Il faut importer la fonction racine :
+Aide : Il faut importer la fonction racine 
 
 ```python
 from math import sqrt
 ```
 
 Exemple :
+
 ```python
 print(racine(1, -3, 2))
 ```
+
 ```
 'Le discriminant vaut :  1'
 'Il y a deux solutions : 1.0 et 2.0'
 ```
+
 ```python
 print(racine(2, 1.5, 4))
 ```
+
 ```
 'Le discriminant vaut :  -29.75'
 "Il n'y a pas de solution"
 ```
+
 ```python
 print(racine(1, -6, 9))
 ```
+
 ```
 'Le discriminant vaut :  0'
 'Il y a une solution : 3.0'
