@@ -1834,7 +1834,7 @@ assert compare(('Valet', 'coeur'), (1, 'coeur'), forces) == (1, 'coeur')
 assert compare((9, 'pique'), (7, 'pique'), forces) == (9, 'pique')
 ```
 
-8. Implémenter la fonction qui calcule la distance entre deux cartes</h3>
+8 Implémenter la fonction qui calcule la distance entre deux cartes</h3>
 
 ```python
 def distance(carte1: tuple, carte2: tuple) -> int:
@@ -1931,7 +1931,6 @@ Résultat attendu :
 
 **<H3 STYLE="COLOR:red;">Exercice 43 :** ★★★ **format EXIF Introduction</h3>** => Thonny
 
-![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.072.png)
 
 L’Exchangeable  Image  File  Format  ou  EXIF  est  une  spécification  de  format  de  fichier  pour  les  images  utilisées  par  les  appareils  photographiques  numériques.  Il  a  été  établi  par  le  Japan  Electronic  Industry Development Association (JEIDA). Cette spécification repose sur  des formats existants tels que JPEG, TIFF version 6.0 et RIFF format de  fichier audio WAVE, en y ajoutant des balises de métadonnées.  
 
@@ -1953,6 +1952,169 @@ Ces données EXIF peuvent avoir des utilisations inattendues comme par exemple e
 **Lecture du format EXIF** 
 
 La plupart des appareils photos récents et téléphones portables enregistrent les photographies avec des données géographiques (longitude, latitude, mais aussi altitude). Si ces données sont lisibles avec la majorité des logiciels photos et d’explorateurs de fichiers, il est également possible d’y accéder avec Python. 
+
+
+
+🏜️ Voici la photo à analyser
+
+![valley.jpg](valley.jpg)
+
+1 Écrire une fonction qui lise les données EXIF contenues dans une image. On donne le prototype de la fonction : 
+
+```get_exif(filename : str) -> dict ```
+
+- filename -- fichier image 
+- la fonction retourne les données EXIF si ok, ou None si erreur 
+
+**Aide :**  
+
+- On utilisera Image de la bibliothèque PIL :  
+
+```from PIL import Image```
+
+- On utilisera la bibliothèque PIL ainsi que les méthodes associées _getexif() et get().  
+```from PIL.ExifTags import TAGS, GPSTAGS``` 
+- L’appel à _getexif() se fait de la façon suivante : 
+```python
+image = Image.open(filename) 
+exif = image._getexif() 
+```
+
+- Cependant, on obtient par ce biais un dictionnaire indexé avec des identifiants numériques. Pour avoir les noms correspondants, on utilise ExifTags et on renommera les clefs du dictionnaire : 
+
+```new_key = TAGS.get(key, key) ```
+
+- Ne pas oublier de fermer l’image 
+
+```image.close() ```
+
+**Rappels : **
+
+- on utilisera la syntaxe  
+```
+try : 
+  # bloc à coder 
+except IOError : 
+  return None 
+return #ledictionnaire
+``` 
+
+**Données EXIF fournies (simulées dans `gps_dict`)**
+
+> 💡 Ces données ont été extraites automatiquement. Tu les as déjà sous forme de dictionnaire dans ton script. Tu ne dois **pas ouvrir le fichier image**, tout est **déjà prêt** :
+
+```python
+gps_dict = {
+    'GPSLatitudeRef': 'N',
+    'GPSLatitude': ((47, 1), (37, 1), (29107360, 1000000)),
+    'GPSLongitudeRef': 'W',
+    'GPSLongitude': ((3, 1), (25, 1), (42976570, 1000000)),
+    'GPSAltitude': (4766, 100),
+    'GPSTimeStamp': ((12, 1), (39, 1), (42, 1)),
+    'GPSDateStamp': '2018:08:28',
+    'Make': 'Canon',
+    'Model': 'Canon EOS 6D',
+    'BodySerialNumber': '2506446',
+    'Artist': 'John Doe'
+}
+```
+
+---
+
+## 🔧 Travail demandé
+
+### 1. 👀 Affichage lisible des données EXIF
+
+**Implémente** la fonction suivante :
+
+```python
+def afficher_exif(d: dict):
+    """
+    Affiche chaque donnée du dictionnaire EXIF proprement,
+    sous la forme : Clé : Valeur
+    """
+    pass  # à compléter
+```
+
+📌 *Aide : utilise une boucle `for` pour parcourir les paires clé/valeur.*
+
+---
+
+### 2. 📍 Conversion des coordonnées GPS en format DMS lisible
+
+**Implémente** la fonction suivante :
+
+```python
+def get_coordinates(GPSinfo: dict) -> list:
+    """
+    Transforme les données GPS du dictionnaire en une liste contenant
+    la latitude et la longitude au format DMS (degrés, minutes, secondes).
+    """
+    pass  # à compléter
+```
+
+📌 Aide :
+
+* Chaque position (latitude/longitude) est un **tuple de 3 fractions** → convertir en degrés, minutes, secondes ;
+* Ne pas oublier le **N/S/E/W** à la fin de chaque coordonnée.
+
+🧪 Exemple attendu :
+
+```python
+['47°37′29.107″N', '3°25′42.977″W']
+```
+
+---
+
+### 3. 🧪 Tests unitaires à ajouter dans ton script
+
+```python
+assert gps_dict["Artist"] == "John Doe"
+assert gps_dict["Make"] == "Canon"
+assert gps_dict["BodySerialNumber"] == "2506446"
+assert get_coordinates(gps_dict) == ['47°37′29.107″N', '3°25′42.977″W']
+```
+
+---
+
+### 4. 🧠 BONUS : ajouter une altitude lisible
+
+Ajoute une fonction optionnelle :
+
+```python
+def get_altitude(GPSinfo: dict) -> float:
+    """
+    Calcule l'altitude en mètres à partir du tuple (valeur, diviseur).
+    """
+    pass  # à compléter
+```
+
+Exemple attendu :
+
+```python
+get_altitude(gps_dict)  # retourne environ 47.66
+```
+
+---
+
+## ✅ Résultat attendu
+
+Une fois tout terminé, ton script devra afficher quelque chose comme :
+
+```
+Make : Canon
+Model : Canon EOS 6D
+Artist : John Doe
+GPSLatitude : 47°37′29.107″N
+GPSLongitude : 3°25′42.977″W
+GPSAltitude : 47.66 m
+Date de la photo : 2018:08:28
+```
+
+---
+
+Souhaites-tu que je te génère un modèle prêt à coller sur Capytale (cellules Markdown + Python) ?
+
 
 1 Créer un fichier exif.py.
 
