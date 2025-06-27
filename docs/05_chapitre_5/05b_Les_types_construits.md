@@ -206,7 +206,7 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
 
 ### **<H3 STYLE="COLOR:GREEN;">1.2.  Les<a name="_page2_x40.00_y419.92"></a> tableaux en Python : Les Listes</h3>** 
 
-n Python, **les tableaux sont appelés des listes**. Une liste est une **séquence mutable**, ce qui signifie qu'on peut **modifier son contenu après sa création**.  
+En Python, **les tableaux sont appelés des listes**. Une liste est une **séquence mutable**, ce qui signifie qu'on peut **modifier son contenu après sa création**.  
 
 📌 **Définition :**  
 
@@ -242,7 +242,7 @@ Une liste est une **collection d’éléments** séparés par des virgules et en
 
 📌 **Remarque :**  
 
-🔹 `range(a, b, p)` crée une **suite de nombres** de `a` à `b` (exclu) avec un pas `p`.  
+🔹 `range(a, b, p)` crée une **suite de nombres** de `a` à `b` **exclu** avec un pas `p`.  
 
 🔹 **ATTENTION** : La borne inférieure est incluse, mais **la borne supérieure est exclue**.  
 
@@ -853,7 +853,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
 
 
-🚀 **Résumé : Pourquoi utiliser un Dictionnaire ?**  
+🚀 **Résumé : ❤️ Syntaxe Dictionnaire ❤️**  
 
 | **Opération** | **Syntaxe** | **Description** |
 |-------------|------------|---------------|
@@ -866,6 +866,8 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 | **Récupérer toutes les clés** | `d.keys()` | Retourne une liste des clés |
 | **Récupérer toutes les valeurs** | `d.values()` | Retourne une liste des valeurs |
 | **Parcourir le dictionnaire** | `for clé, valeur in d.items():` | Permet d’itérer sur les clés et valeurs |
+| **Parcourir le dictionnaire** | `for clé in d.keys():` | Permet d’itérer sur les clés |
+| **Parcourir le dictionnaire** | `for valeur in d.items():` | Permet d’itérer sur valeurs |
 
 
 ## 🏆 **Conclusion**  

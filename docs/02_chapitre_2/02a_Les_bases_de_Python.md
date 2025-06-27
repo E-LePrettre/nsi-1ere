@@ -773,6 +773,8 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
 ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.065.png)Attention aux programmes qui cyclent (bouclent) : selon la condition de continuation on peut se retrouver sur une **boucle infinie.** Par exemple avec l’application précédente, avec une condition du type compteur > 0, condition qui sera toujours vrai, le programme exécute la boucle sans jamais s’arrêter.  
 
+**Attention : Boucle non bornée = danger !**
+
 
 ### **<H3 STYLE="COLOR:GREEN;">3.4. L’instruction<a name="_page9_x40.00_y446.92"></a> break</h3>**
 
