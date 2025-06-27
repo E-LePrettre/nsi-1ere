@@ -231,6 +231,11 @@ jours_2=('samedi','dimanche')
 En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) renvoie un tuple.
  
 
+**Remarque** : on codera la fonction `est_dans(element,tple)` de 2 manières
+
+- classiquement
+
+- à l'aide du fonction lambda 
 
 
 
@@ -1159,8 +1164,8 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
 ✅ Ils sont **largement utilisés** dans de nombreux domaines : **bases de données, manipulation de fichiers JSON, IA, API, et plus encore** ! 🚀  
 
+### **<H3 STYLE="COLOR:GREEN;">2.12. Exercices</h3>** 
 
-## **<H2 STYLE="COLOR:BLUE;">3.   Exercices<a name="_page9_x40.00_y273.92"></a></h2>** 
 
 **<H3 STYLE="COLOR:red;">Exercice 23 :**  **Affichage des valeurs :</H3>**
 Écrire une fonction `afficher_valeurs(d)` qui **affiche** uniquement les **valeurs** du dictionnaire, une par ligne.
@@ -1285,7 +1290,7 @@ Test :
 assert moyenne({"maths": 15, "nsi": 18, "français": 12}) == 15.0
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 24 :**  **Création d’un dictionnaire simple :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 32 :**  **Création d’un dictionnaire simple :</H3>**
 Écrire une fonction `creer_dico(nom, age, classe)` qui prend en paramètre le nom, l'age et la classe et qui **renvoie** le dictionnaire suivant :
 
 ```python
@@ -1302,26 +1307,13 @@ assert creer_dico() == {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
 
 
 
+## **<H2 STYLE="COLOR:BLUE;">3.   Exercices<a name="_page9_x40.00_y273.92"></a></h2>** 
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 2 :** ★ **Test d’appartenance :</H3>** En utilisant un parcours de tuple avec la présence d'un indice, écrire une fonction `est_dans(element,tple)` qui en argument reçoit un entiers ( élément) et un tuple d'entier ( tple) qui renvoie un booleen indiquant la présence de élément dans tuple. On testera la fonction sur les scripts suivants : 
-
-- **est_dans(4,(1,2,3,4,5,6))** #qui devrait renvoyer True** 
-
-- **est_dans(9,(1,2,3,4,5,6))** #qui devrait renvoyer False** 
-
-En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) renvoie un tuple.
- 
-
-**Remarque** : on codera la fonction `est_dans(element,tple)` de 2 manières
-
-- classiquement
-
-- à l'aide du fonction lambda 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 20 :** ★★ **Carré magique  :</h3>** 
+**<H3 STYLE="COLOR:red;">Exercice 33 :** ★★ **Carré magique  :</h3>** 
 
 
 Un **carré magique d’ordre 3** est une grille de 3×3 contenant **les entiers de 1 à 9, chacun une seule fois**, et telle que **la somme des éléments de chaque ligne, de chaque colonne et des deux diagonales soit la même**.
@@ -1382,7 +1374,7 @@ L = [
 print(carre_magique(L))  # Doit afficher True 
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 4 :** ★**  **Dictionnaire et fonction</H3>**   
+**<H3 STYLE="COLOR:red;">Exercice 34 :** ★**  **Dictionnaire et fonction</H3>**   
 
 1 Ecrire une fonction const_dico(cle,valeur) qui renvoie le dictionnaire définie par les clés et les valeurs entrées en argument.** 
 On donne des listes de certains joueurs de League Of Legend ainsi que leur classement et leur nombre de points :** 
@@ -1396,7 +1388,7 @@ classement=[(12,1406),(1,1613),(4,1507),(9,1429),(16,1341),(11,1416)]
 
 3 Appliquer votre fonction const_dico(cle,valeur) sur les joueurs de LOL. 
 
-**<H3 STYLE="COLOR:red;">Exercice 5</h3>** ★ Ecrire une fonction qui retourne une carte (au hasard) d’un jeu de Poker à 52 cartes. On utilisera la fonction choice() ou randint() du module random. On donne : 
+**<H3 STYLE="COLOR:red;">Exercice 35</h3>** ★ Ecrire une fonction qui retourne une carte (au hasard) d’un jeu de Poker à 52 cartes. On utilisera la fonction choice() ou randint() du module random. On donne : 
 
 ListeCarte = ['2s','2h','2d','2c','3s','3h','3d','3c','4s','4h','4d','4c','5s','5h','5d','5c', '6s','6h','6d','6c','7s','7h','7d','7c','8s','8h','8d','8c','9s','9h','9d','9c', 'Ts','Th','Td','Tc','Js','Jh','Jd','Jc','Qs','Qh','Qd','Qc','Ks','Kh','Kd','Kc','As','Ah','Ad','Ac'] 
 
@@ -1407,7 +1399,7 @@ ListeCarte = ['2s','2h','2d','2c','3s','3h','3d','3c','4s','4h','4d','4c','5s','
 '7c' 
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 6</h3>** ★★   
+**<H3 STYLE="COLOR:red;">Exercice 36</h3>** ★★   
 
 1.Ecrire une fonction qui retourne une liste de N cartes **différentes** d’un jeu de Poker à 52 cartes. Noter qu’une fonction peut appeler une fonction : on peut donc réutiliser la fonction tiragecarte() de l’exercice précédent. Exemple : 
 
@@ -1423,7 +1415,7 @@ ListeCarte = ['2s','2h','2d','2c','3s','3h','3d','3c','4s','4h','4d','4c','5s','
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 7 :** ★★ **Le chiffrement de César (version light)** : Cryptographie</h3> 
+**<H3 STYLE="COLOR:red;">Exercice 37 :** ★★ **Le chiffrement de César (version light)** : Cryptographie</h3> 
 
 1 la fonction chr() 
 
@@ -1463,24 +1455,8 @@ c. Ecrire une fonction en Python codage(mot) qui prend en argument un chaine de 
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 10:** ★ **avec les chaine de caractères  :</H3>** 
 
-Python considère une phrase comme une séquence. Vous pouvez réaliser des essais avec cette citation célèbre du philosophe Confusius : "Je ne cherche pas à connaître les réponses, je cherche à comprendre les questions." De quelle type de séquence se rapproche-t-on? De la liste et/ou du tuple ? Faire des tests à partir de vos connaissances en python. 
-
-```python
-# -*- coding: utf-8 -*-
-citation="Je ne cherche pas à connaître les réponses, je cherche à comprendre les questi
-ons."
-# à faire :
-citation[3]
-citation[4]='z'
-citation.append('!')
-```
-
-
-En utilisant la méthode count(), compter le nombre de 'a' dans la citation. 
-
-**<H3 STYLE="COLOR:red;">Exercice 11 :** ★★ **Jeu de cartes :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 38 :** ★★ **Jeu de cartes :</H3>**
 
 Un jeu de 32 cartes est composé de :  
 
@@ -1577,7 +1553,7 @@ print("carte 2 :", carte2)
 print("la distance entre les deux cartes est :", distance(carte1,carte2))
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 12** ★★ **Tracé graphique</h3>**  
+**<H3 STYLE="COLOR:red;">Exercice 39** ★★ **Tracé graphique</h3>**  
 
 Matplotlib est une bibliothèque du langage de programmation Python destinée à tracer et visualiser des données sous formes de graphiques. Elle peut être combinée avec les bibliothèques python de calcul scientifique NumPy et SciPy. L’avantage de cette librairie est qu’elle est très simple d’utilisation et permet en quelques lignes de tracer des courbes par exemple. Il n’est donc pas nécessaire de passer par la phase (éventuellement longue et fastidieuse) de conception et de développement d’interfaces graphiques, pour des besoins de représentation qui peuvent être ponctuels par ailleurs. 
 
@@ -1628,7 +1604,7 @@ On souhaite tracer une deuxième courbe sur le même graphique précédent dont 
 Résultat attendu :  
 ![](Aimg021.png)
 
-**<H3 STYLE="COLOR:red;">Exercice 13 :** ★★ **Bulletins de vote Génération des votes:</h3>**  
+**<H3 STYLE="COLOR:red;">Exercice 40 :** ★★ **Bulletins de vote Génération des votes:</h3>**  
 
 On souhaite réaliser le comptage automatique d’un dépouillement d’une élection. Votre startup reçoit un fichier texte qui contient ligne par ligne les noms des candidats qui ont reçu le vote des électeurs. 
 
@@ -1723,7 +1699,7 @@ print(read_ballots("votes.txt"))
 
 - On pourra utiliser la fonction sum.  [https://www.programiz.com/python-programming/methods/built-in/sum ](https://www.programiz.com/python-programming/methods/built-in/sum)![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.010.png)
 
-**<H3 STYLE="COLOR:red;">Exercice 14 :** ★★★ **format EXIF Introduction</h3>** => Thonny
+**<H3 STYLE="COLOR:red;">Exercice 41 :** ★★★ **format EXIF Introduction</h3>** => Thonny
 
 ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.072.png)
 
@@ -1958,7 +1934,7 @@ except KeyboardInterrupt:
 
 21 Vérifier que toutes les fonctions soient bien documentées (docstring). 
 
-**<H3 STYLE="COLOR:red;">Exercice 15 :** ★★★ **Le chiffrement de Caesar</h3>** 
+**<H3 STYLE="COLOR:red;">Exercice 42 :** ★★★ **Le chiffrement de Caesar</h3>** 
 
 ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.089.png)
 
@@ -2083,7 +2059,7 @@ Le chiffrement de César a été utilisé mais avec une clef différente de 1.
 - Ne pas oublier d’importer le module caesar et la fonction caesar()
 - La clef de chiffrement étant inconnue, il faut faire une boucle qui les teste toutes (technique de l’attaque par force brute). 
 
-**<H3 STYLE="COLOR:red;">Exercice 16 :** ★★★ **Le chiffrement de Vigenère</h3>** => THONNY
+**<H3 STYLE="COLOR:red;">Exercice 43 :** ★★★ **Le chiffrement de Vigenère</h3>** => THONNY
 
 Le chiffre de Vigenère est un système de chiffrement polyalphabétique, c’est un chiffrement par substitution, mais une même lettre du message clair peut, suivant sa position dans celui-ci, être remplacée par des lettres différentes, contrairement à un système de chiffrement mono alphabétique comme le chiffre de César (qu'il utilise cependant comme composant). Cette méthode résiste ainsi à l'analyse de fréquences, ce qui est un avantage décisif sur les chiffrements mono alphabétiques. Cependant le chiffre de Vigenère a été percé par le major prussien Friedrich Kasiski qui a publié sa méthode en 1863. Depuis cette époque, il n‘offre plus aucune sécurité. 
 
@@ -2337,7 +2313,7 @@ ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV X
 - Mettre  à la fin du script un print() indenté comme la dernière boucle for (pour un retour à la ligne) 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 17 :** ★★★ **Séquences nucléiques  Acide nucléique</h3>** 
+**<H3 STYLE="COLOR:red;">Exercice 44 :** ★★★ **Séquences nucléiques  Acide nucléique</h3>** 
 
 ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.116.png)
 ![](Aimg023.png)
