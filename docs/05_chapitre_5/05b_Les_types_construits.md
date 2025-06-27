@@ -447,7 +447,7 @@ assert longueur([]) == 0
 Exemple :
 ```python
 assert dansTab( [3,5,7,0] , 4) == False
-assert dansTab( [3,5,7,0] , 3) == True
+assert dansTab( [3,5,7] , 3) == True
 ```
 
 **<H3 STYLE="COLOR:red;">Exercice 5 :**  **Somme :</H3>**
@@ -476,7 +476,7 @@ En faisant appel à la fonction somme précédente, écrire la fonction moyenne 
 Exemple :
 ```python
 assert moyenne([1,5,9,5]) == 5 
-assert moyenne([1,4,6,5]) == 4
+assert moyenne([2,4,6]) == 4
 ```
 
 **<H3 STYLE="COLOR:red;">Exercice 7 :**  **Produit :</H3>**
@@ -486,7 +486,7 @@ assert moyenne([1,4,6,5]) == 4
 Exemple :
 ```python
 assert produit([2,3,2]) == 12
-assert produit([3,3,2]) == 18
+assert produit([3,2]) == 6
 ```
 
 **<H3 STYLE="COLOR:red;">Exercice 8 :**  **Le plus grand élément :</H3>**
@@ -497,7 +497,7 @@ assert produit([3,3,2]) == 18
 Exemple :
 ```python
 assert maximum([1,5,9,6]) == 9
-assert maximum([-1,-5,-9,-6]) == -1
+assert maximum([-1,-5,-9,-6,-2]) == -1
 ```
 
 **<H3 STYLE="COLOR:red;">Exercice 9 :**  **Le plus petit élément :</H3>**
@@ -506,9 +506,31 @@ assert maximum([-1,-5,-9,-6]) == -1
 Exemple :
 ```python
 assert minimum([1,5,9,6]) == (1,0)
-assert minimum([-1,-5,-9,-6]) == (-9, 2)
+assert minimum([-1,-5,-9,-6,-2]) == (-9, 2)
+```
 
-### **<H3 STYLE="COLOR:GREEN;">1.3.  Les<a name="_page5_x40.00_y36.92"></a> tableaux de tableaux</h3>** 
+**<H3 STYLE="COLOR:red;">Exercice 10 :**  **Nombre de fois :</H3>**
+Écrire une fonction nbre_de_fois(T,a) qui prend en argument  une liste T et une valeur a et renvoie 
+en sortie le nombre de fois où cette valeur a, est présente dans la liste T.
+
+Exemple :
+```python
+assert nbre_de_fois([1,5,9,6],5) == 2
+assert nbre_de_fois([-1,-5,-9,-6,-2], 5) == 0
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 11 :**  **Renversement de tableau :</H3>**
+Écrire une fonction renverse(tab) qui renverse un tableau tab(la première valeur devient la dernière, la deuxième l’avant dernière, etc) **de deux manières différentes**.
+
+Par exemple, si le tableau est trié en ordre croissant au début de la fonction il doit être trié en ordre décroissant par l’algorithme. 
+
+Exemple :
+```python
+assert renverse([1,5,9,6]) == [6,9,5,1]
+assert renverse([1,2,3]) == [3,2,1]
+```
+
+### **<H3 STYLE="COLOR:GREEN;">1.5.  Les<a name="_page5_x40.00_y36.92"></a> tableaux de tableaux</h3>** 
 
 En Python, **les tableaux peuvent contenir d'autres tableaux**.  
 Ce type de structure est appelé une **matrice** et est utilisé dans de nombreux domaines comme :  
@@ -521,7 +543,7 @@ Ce type de structure est appelé une **matrice** et est utilisé dans de nombreu
 
 ✅ **Intelligence Artificielle & Machine Learning** : Utilisation d’algèbre linéaire.
 
-#### **<H4 STYLE="COLOR:MAGENTA;">1.3.1. Définition et Notation des Matrices</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">1.5.1. Définition et Notation des Matrices</h4>**
 
 
 On appelle **matrice** un **tableau de tableaux**, où chaque tableau **a la même longueur**.  
@@ -553,7 +575,7 @@ m = [[1, 3, 4],
      [7, 8, 15]]
 ```
 
-#### **<H4 STYLE="COLOR:MAGENTA;">1.3.2. Accéder aux éléments d'une Matrice</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">1.5.2. Accéder aux éléments d'une Matrice</h4>**
 
 
 ???+ question "Activité n°14 : Accéder aux éléments d'une Matrice"
@@ -623,6 +645,144 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 ✅ **Optimisation** : Python possède des **bibliothèques puissantes comme `numpy`** pour les matrices complexes.  
 
 ✅ **Flexibilité** : Facile à modifier et adapter aux **besoins des programmes**.  
+
+### **<H3 STYLE="COLOR:GREEN;">1.6.  Exercices</h3>** 
+
+**<H3 STYLE="COLOR:red;">Exercice 12 :** **Affichage de matrice :</H3>**
+Ecrire la fonction affichage(M) qui prend en paramètre une matrice de taille quelconque et **l’affiche** ligne par ligne
+
+Exemple :
+```python
+m = [[1, 3, 4], 
+     [5, 6, 8], 
+     [2, 1, 3], 
+     [7, 8, 15]]
+print(affichage(m))
+```
+On obient:
+```
+[1, 3, 4]
+[5, 6, 8]
+[2, 1, 3]
+[7, 8, 15]
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 13 :** **Affichage de coefficient de matrice :</H3>**
+Ecrire la fonction affichagecoeff(M) qui prend en paramètre une matrice de taille quelconque et **affiche** tous ces coefficients dans le sens de la lecture
+
+Exemple :
+```python
+m = [[1, 3], 
+     [5, 6], 
+     [2, 1], ]
+print(affichagecoeff(m))
+```
+On obient:
+```
+1
+3
+5
+6
+2
+1
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 14 :** **Affichage d'une ligne de matrice :</H3>**
+Ecrire la fonction affichage_ligne(M,i) qui prend en paramètre une matrice de taille quelconque et **affiche**, lorsque cela est possible la ligne i de cette matrice 
+
+Exemple :
+```python
+m = [[1, 3, 4], 
+     [5, 6, 8], 
+     [2, 1, 3], 
+     [7, 8, 15]]
+print(affichage_ligne(m, 1))
+```
+On obient:
+```
+[5, 6, 8]
+```
+**<H3 STYLE="COLOR:red;">Exercice 15 :** **Affichage d'une colonne de matrice :</H3>**
+Ecrire la fonction affichage_colonne(M,j) qui prend en paramètre une matrice de taille quelconque et 
+**affiche** en colonne, lorsque cela est possible, la colonne j de cette matrice
+
+Exemple :
+```python
+m = [[1, 3, 4], 
+     [5, 6, 8], 
+     [2, 1, 3], 
+     [7, 8, 15]]
+print(affichage_colonne(m, 1))
+```
+On obient:
+```
+3
+6
+1
+8
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 15 :** **Croix :</H3>**
+Ecrire la fonction croix(n,i,j) qui crée et renvoie la matrice de taille n×n remplie de 0 et dont la ligne i et la colonne j sont remplie de 1.
+
+Exemple :
+```python
+assert croix(3,1,2) ==[[0,0,1], [1,1,1], [0,0,1]]
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 16 :** **Nombre de zéros :</H3>**
+Ecrire la fonction nbzéros(M) qui prend en paramètre une matrice de taille quelconque et renvoie le 
+nombre de zéros qu’elle contient
+
+Exemple :
+```python
+m = [[1, 3, 4], 
+     [5, 0, 0], 
+     [0, 1, 3], 
+     [0, 8, 15]]
+assert nbzéros(m) == 4
+```
+**<H3 STYLE="COLOR:red;">Exercice 17 :** **Maximum d'une matrice :</H3>** 
+Ecrire la fonction maxi(M) qui prend en paramètre une matrice de taille quelconque et renvoie le plus grand de ses éléments 
+
+Exemple :
+```python
+m = [[1, 3, 4], 
+     [5, 16, 8], 
+     [2, 1, 3], 
+     [7, 8, 15]]
+assert maxi(m) == 16
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 18 :** **Maximum de la plus grand somme d'une ligne d'une matrice :</H3>** 
+Ecrire la fonction maxi2(M) qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la ligne qui a la plus grande somme 
+
+Exemple :
+```python
+m = [[1, 3, 4], 
+     [5, 16, 8], 
+     [2, 1, 3], 
+     [7, 8, 15]]
+assert maxi2(m) == 3
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 18 :** **Maximum de la plus grand somme d'une colonne d'une matrice :</H3>** 
+Ecrire la fonction maxi3(M) qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la colonne qui a la plus grande somme 
+
+Exemple :
+```python
+m = [[1, 3, 4], 
+     [5, 16, 8], 
+     [2, 1, 3], 
+     [7, 8, 15]]
+assert maxi3(m) == 2
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 19 :** ★ **Création de matrice  :</h3>** 
+Ecrire une fonction ```matriceAlea(n:int,m:int)->list``` Python qui renvoie une matrice à n lignes et m colonnes d'entiers aléatoires entre 0 et 100. Créer la fonction qui utilise la création en compréhension 
+
+
+Aide : ne pas oublier d’importer le module random 
 
 
 
@@ -1008,22 +1168,67 @@ En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) r
 
 - à l'aide du fonction lambda 
 
-**<H3 STYLE="COLOR:red;">Exercice 3 :** ★★**Tuple et fonction :</H3>** Ecrire une fonction triangle(n) qui renvoie un tuple ou chaque élément est un tuple de longueur trois. Ces tuples sont constitués de trois entiers a, b,c tels que 0<a≤b≤c<n et le triangle de cotés a, b et c soit rectangle.  
 
-Aide :  
+**<H3 STYLE="COLOR:red;">Exercice 20 :** ★★ **Carré magique  :</h3>** 
+
+
+Un **carré magique d’ordre 3** est une grille de 3×3 contenant **les entiers de 1 à 9, chacun une seule fois**, et telle que **la somme des éléments de chaque ligne, de chaque colonne et des deux diagonales soit la même**.
+
+Voici un exemple de carré magique :
+
 ```python
-for a in range(1, n):
-  for b in range(a, n):
-    for c in range(b, n):
+L = [
+    [6, 1, 8],
+    [7, 5, 3],
+    [2, 9, 4]
+]
 ```
 
-Ces triplets sont appelés triplets pythagoricien 
-
-Par exemple :  
-
-```assert triangle(15)== [(3, 4, 5), (5, 12, 13), (6, 8, 10)]``` 
 
 
+🎯 **Objectif** : Écrire un programme Python qui vérifie si une grille 3x3 est un carré magique.
+
+
+
+💡 **Aide visuelle : somme des lignes, colonnes et diagonales**
+
+![](Aimg020.png)
+
+
+✅ **Exécution attendue du programme**
+
+Si la grille est magique, le programme doit afficher :
+
+*entrée : 
+![](Aimg018.png)
+
+*sortie : 
+![](Aimg019.png)
+
+
+
+🔧 **Aide – Fonctions conseillées à créer**
+
+| Fonction                         | Rôle attendu                                                        |
+| -------------------------------- | ------------------------------------------------------------------- |
+| `somme(tab)`                     | renvoie la somme des éléments de la liste `tab`                     |
+| `recup_colonne(tab, indice_col)` | renvoie une liste contenant les éléments de la colonne `indice_col` |
+| `diagonale1(tab)`                | renvoie la diagonale principale (de `tab[0][0]` à `tab[2][2]`)      |
+| `diagonale2(tab)`                | renvoie la diagonale secondaire (de `tab[0][2]` à `tab[2][0]`)      |
+| `carre_magique(tab)`             | renvoie `True` si la grille est magique, `False` sinon              |
+
+
+
+🧪 **À tester avec :**
+
+```python
+L = [
+    [6, 1, 8],
+    [7, 5, 3],
+    [2, 9, 4]
+]
+print(carre_magique(L))  # Doit afficher True 
+```
 
 **<H3 STYLE="COLOR:red;">Exercice 4 :** ★**  **Dictionnaire et fonction</H3>**   
 
@@ -1103,74 +1308,6 @@ a. Reprendre votre dictionnaire d et tester :
 b. Dans le script précédent quel est le statut de 'A', 'D' et 'E'? Clé ou valeur? 
 
 c. Ecrire une fonction en Python codage(mot) qui prend en argument un chaine de caractère écrit en lettre capitale et qui renvoie le mot codé par le chiffrement de César. 
-
-**<H3 STYLE="COLOR:red;">Exercice 8 :** ★ **Création de matrice  :</h3>** Ecrire une fonction ```matriceAlea(n:int,m:int)->list``` Python qui renvoie une matrice à n lignes et m colonnes d'entiers aléatoires entre 0 et 100. Créer la fonction qui utilise la création en compréhension 
-
-
-Aide : ne pas oublier d’importer le module random 
-
-**<H3 STYLE="COLOR:red;">Exercice 9 :** ★★ **Carré magique  :</h3>** 
-
-
-Un **carré magique d’ordre 3** est une grille de 3×3 contenant **les entiers de 1 à 9, chacun une seule fois**, et telle que **la somme des éléments de chaque ligne, de chaque colonne et des deux diagonales soit la même**.
-
-Voici un exemple de carré magique :
-
-```python
-L = [
-    [6, 1, 8],
-    [7, 5, 3],
-    [2, 9, 4]
-]
-```
-
-
-
-🎯 **Objectif** : Écrire un programme Python qui vérifie si une grille 3x3 est un carré magique.
-
-
-
-💡 **Aide visuelle : somme des lignes, colonnes et diagonales**
-
-![](Aimg020.png)
-
-
-✅ **Exécution attendue du programme**
-
-Si la grille est magique, le programme doit afficher :
-
-*entrée : 
-![](Aimg018.png)
-
-*sortie : 
-![](Aimg019.png)
-
-
-
-🔧 **Aide – Fonctions conseillées à créer**
-
-| Fonction                         | Rôle attendu                                                        |
-| -------------------------------- | ------------------------------------------------------------------- |
-| `somme(tab)`                     | renvoie la somme des éléments de la liste `tab`                     |
-| `recup_colonne(tab, indice_col)` | renvoie une liste contenant les éléments de la colonne `indice_col` |
-| `diagonale1(tab)`                | renvoie la diagonale principale (de `tab[0][0]` à `tab[2][2]`)      |
-| `diagonale2(tab)`                | renvoie la diagonale secondaire (de `tab[0][2]` à `tab[2][0]`)      |
-| `carre_magique(tab)`             | renvoie `True` si la grille est magique, `False` sinon              |
-
-
-
-🧪 **À tester avec :**
-
-```python
-L = [
-    [6, 1, 8],
-    [7, 5, 3],
-    [2, 9, 4]
-]
-print(carre_magique(L))  # Doit afficher True 
-```
-
-
 
 
 
