@@ -202,9 +202,40 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
 
 📌 **Attention :** Contrairement aux listes, les tuples **ne peuvent pas être modifiés** après leur création.
 
+#### **<H4 STYLE="COLOR:MAGENTA;">1.2.   Exercices</h4>** 
+
+=> **CAPYTALE Le code vous sera donné par votre enseignant**
+
+**<H3 STYLE="COLOR:red;">Exercice 1 :</H3>** ★ **Utilisation des opérations et méthodes :**  en utilisant le code ci-dessous, compléter .   
+
+jours_1=('lundi','mardi','mercredi','jeudi','vendredi') 
+
+jours_2=('samedi','dimanche')
 
 
-### **<H3 STYLE="COLOR:GREEN;">1.2.  Les<a name="_page2_x40.00_y419.92"></a> tableaux en Python : Les Listes</h3>** 
+- Tester si samedi est un élément de jours\_1
+- Donner la longueur de jours\_2 
+- Tester si jours\_1 est égal à jours\_2
+- Donner le deuxième élément de jours\_1 au sens mathématique
+- Donner la partie de jours\_1 entre le deuxième élément et le quatrième élément compris (au sens mathématique)
+- renvoyer l'indice de dimanche dans jours\_2
+- Renvoyer le nombre de samedi dans jours\_2
+- Créer un tuple semaine par concaténation de jours\_1 et de jours\_2
+
+**<H3 STYLE="COLOR:red;">Exercice 2 :** ★ **Test d’appartenance :</H3>** En utilisant un parcours de tuple avec la présence d'un indice, écrire une fonction `est_dans(element,tple)` qui en argument reçoit un entiers ( élément) et un tuple d'entier ( tple) qui renvoie un booleen indiquant la présence de élément dans tuple. On testera la fonction sur les scripts suivants : 
+
+- **est_dans(4,(1,2,3,4,5,6))** #qui devrait renvoyer True** 
+
+- **est_dans(9,(1,2,3,4,5,6))** #qui devrait renvoyer False** 
+
+En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) renvoie un tuple.
+ 
+
+
+
+
+
+### **<H3 STYLE="COLOR:GREEN;">1.3.  Les<a name="_page2_x40.00_y419.92"></a> tableaux en Python : Les Listes</h3>** 
 
 En Python, **les tableaux sont appelés des listes**. Une liste est une **séquence mutable**, ce qui signifie qu'on peut **modifier son contenu après sa création**.  
 
@@ -221,7 +252,7 @@ Une liste est une **collection d’éléments** séparés par des virgules et en
 ✅ **Hétérogènes** : Une liste peut contenir des éléments de **différents types** (nombres, chaînes, booléens…).  
 
 
-#### **<H4 STYLE="COLOR:MAGENTA;">1.2.1. Création de listes en Python</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">1.3.1. Création de listes en Python</h4>**
 
 ???+ question "Activité n°8 : Création de listes"
 
@@ -246,7 +277,7 @@ Une liste est une **collection d’éléments** séparés par des virgules et en
 
 🔹 **ATTENTION** : La borne inférieure est incluse, mais **la borne supérieure est exclue**.  
 
-#### **<H4 STYLE="COLOR:MAGENTA;">1.2.2. Construction de listes par compréhension</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">1.3.2. Construction de listes par compréhension</h4>**
 
 Python permet de créer des listes de manière **optimisée et élégante** grâce aux **list comprehensions**.
 
@@ -276,7 +307,7 @@ for i in range(11):
     carres.append(i * i)  # Ajout manuel (moins optimal)
 ```
 
-#### **<H4 STYLE="COLOR:MAGENTA;">1.2.3. Exemples avancés de compréhension de liste</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">1.3.3. Exemples avancés de compréhension de liste</h4>**
 
 ???+ question "Activité n°10 : Création avancée de listes"
 
@@ -310,7 +341,7 @@ for i in range(11):
         {{ IDE() }}
 
 
-#### **<H4 STYLE="COLOR:MAGENTA;">1.2.4. Copier une liste en Python</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">1.3.4. Copier une liste en Python</h4>**
 
 En Python, copier une liste **correctement** est important pour éviter les erreurs !
 
@@ -336,7 +367,7 @@ En Python, copier une liste **correctement** est important pour éviter les erre
 
 Si on fait `liste6 = liste5`, on ne crée **pas une nouvelle liste**, mais un **lien** entre `liste6` et `liste5`. Toute modification sur l’une **affectera l’autre** !  
 
-#### **<H4 STYLE="COLOR:MAGENTA;">1.2.5. Ajouter et supprimer des éléments d'une liste</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">1.3.5. Ajouter et supprimer des éléments d'une liste</h4>**
 
 ???+ question "Activité n°12 : Ajouter et supprimer des éléments"
 
@@ -354,7 +385,7 @@ Si on fait `liste6 = liste5`, on ne crée **pas une nouvelle liste**, mais un **
     ??? success "Python"
         {{ IDE() }}
 
-#### **<H4 STYLE="COLOR:MAGENTA;">1.2.6. Manipuler des chaînes avec les listes</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">1.3.6. Manipuler des chaînes avec les listes</h4>**
 
 Les listes sont **très utiles** pour manipuler des chaînes de caractères grâce aux méthodes `.split()` et `.join()`.
 
@@ -376,7 +407,7 @@ Les listes sont **très utiles** pour manipuler des chaînes de caractères grâ
         {{ IDE() }}
 
 
-#### **<H4 STYLE="COLOR:MAGENTA;">1.2.7. Méthodes spécifiques aux listes</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">1.3.7. Méthodes spécifiques aux listes</h4>**
 
 |Contrairement aux tuples, les listes possèdent **des méthodes supplémentaires** :
 
@@ -399,6 +430,83 @@ Les listes sont **très utiles** pour manipuler des chaînes de caractères grâ
 
 ✅ **Les tuples sont protégés contre les modifications accidentelles.**  
 
+### **<H3 STYLE="COLOR:GREEN;">1.4. Exercices</h3>** 
+
+**<H3 STYLE="COLOR:red;">Exercice 3 :**  **Longueur d'une liste :</H3>**
+Ecrire une fonction longueur(tab) qui prend un tableau tab en paramètre et qui renvoie la longueur de ce tableau
+
+Exemple :
+```python
+assert longueur([0,1,2,3,4]) == 5
+assert longueur([]) == 0
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 4 :**  **Appartenance :</H3>**
+Écrire fonction dansTab de paramètres T : un tableau et a : un élèment, qui indique si l’élément donné a appartient à un tableau T ou pas. 
+
+Exemple :
+```python
+assert dansTab( [3,5,7,0] , 4) == False
+assert dansTab( [3,5,7,0] , 3) == True
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 5 :**  **Somme :</H3>**
+Compléter le code python de la fonction somme qui prend en paramètre une liste L de flottants et qui renvoie la somme des éléments de cette liste. 
+
+**Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
+
+```python
+def somme (L) : 
+  s=0 
+  …………. 
+    ………… 
+return s
+```
+Exemple :
+```python
+assert somme([1,5,9,5]) == 20 
+assert somme([]) == 0 
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 6 :**  **Moyenne :</H3>**
+En faisant appel à la fonction somme précédente, écrire la fonction moyenne qui prend en paramètre une liste L et qui renvoie la moyenne m des éléments de cette liste. 
+
+**Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
+
+Exemple :
+```python
+assert moyenne([1,5,9,5]) == 5 
+assert moyenne([1,4,6,5]) == 4
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 7 :**  **Produit :</H3>**
+Écrire une fonction qui prend en argument  un tableau  T d’entiers et renvoie le produit des éléments de T. 
+
+
+Exemple :
+```python
+assert produit([2,3,2]) == 12
+assert produit([3,3,2]) == 18
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 8 :**  **Le plus grand élément :</H3>**
+Écrire une fonction maximum qui prend en argument un tableau T d’entiers non vide et renvoie le plus grand élément de ce tableau. 
+
+**Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : max()
+
+Exemple :
+```python
+assert maximum([1,5,9,6]) == 9
+assert maximum([-1,-5,-9,-6]) == -1
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 9 :**  **Le plus petit élément :</H3>**
+Écrire une fonction minimum qui recherche la valeur minimum d’un tableau T d’entiers non vide et renvoie également son indice comme valeur de retour.
+
+Exemple :
+```python
+assert minimum([1,5,9,6]) == (1,0)
+assert minimum([-1,-5,-9,-6]) == (-9, 2)
 
 ### **<H3 STYLE="COLOR:GREEN;">1.3.  Les<a name="_page5_x40.00_y36.92"></a> tableaux de tableaux</h3>** 
 
@@ -883,21 +991,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:red;">Exercice 1 :</H3>** ★ **Utilisation des opérations et méthodes :**  en utilisant le code ci-dessous, compléter .   
 
-jours_1=('lundi','mardi','mercredi','jeudi','vendredi') 
-
-jours_2=('samedi','dimanche')
-
-
-- Tester si samedi est un élément de jours\_1
-- Donner la longueur de jours\_2 
-- Tester si jours\_1 est égal à jours\_2
-- Donner le deuxième élément de jours\_1 au sens mathématique
-- Donner la partie de jours\_1 entre le deuxième élément et le quatrième élément compris (au sens mathématique)
-- renvoyer l'indice de dimanche dans jours\_2
-- Renvoyer le nombre de samedi dans jours\_2
-- Créer un tuple semaine par concaténation de jours\_1 et de jours\_2
 
 **<H3 STYLE="COLOR:red;">Exercice 2 :** ★ **Test d’appartenance :</H3>** En utilisant un parcours de tuple avec la présence d'un indice, écrire une fonction `est_dans(element,tple)` qui en argument reçoit un entiers ( élément) et un tuple d'entier ( tple) qui renvoie un booleen indiquant la présence de élément dans tuple. On testera la fonction sur les scripts suivants : 
 
@@ -914,7 +1008,7 @@ En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) r
 
 - à l'aide du fonction lambda 
 
-**<H3 STYLE="COLOR:red;">Exercice 3 :** ★**Tuple et fonction :</H3>** Ecrire une fonction triangle(n) qui renvoie un tuple ou chaque élément est un tuple de longueur trois. Ces tuples sont constitués de trois entiers a, b,c tels que 0<a≤b≤c<n et le triangle de cotés a, b et c soit rectangle.  
+**<H3 STYLE="COLOR:red;">Exercice 3 :** ★★**Tuple et fonction :</H3>** Ecrire une fonction triangle(n) qui renvoie un tuple ou chaque élément est un tuple de longueur trois. Ces tuples sont constitués de trois entiers a, b,c tels que 0<a≤b≤c<n et le triangle de cotés a, b et c soit rectangle.  
 
 Aide :  
 ```python
@@ -928,6 +1022,8 @@ Ces triplets sont appelés triplets pythagoricien
 Par exemple :  
 
 ```assert triangle(15)== [(3, 4, 5), (5, 12, 13), (6, 8, 10)]``` 
+
+
 
 **<H3 STYLE="COLOR:red;">Exercice 4 :** ★**  **Dictionnaire et fonction</H3>**   
 
@@ -1073,7 +1169,6 @@ L = [
 ]
 print(carre_magique(L))  # Doit afficher True 
 ```
-
 
 
 
