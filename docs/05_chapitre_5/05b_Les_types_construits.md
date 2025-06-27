@@ -450,7 +450,20 @@ assert dansTab( [3,5,7,0] , 4) == False
 assert dansTab( [3,5,7] , 3) == True
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 5 :**  **Somme :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 5 :**  **Liste aléatoire :</H3>**
+Ecrire une fonction list_alea(n) qui prend en paramètre n et qui renvoie une liste de nombre aléatoire compris entre 0 et 9 de taille n
+
+Exemple :
+```python
+print(list_alea(3))
+```
+renvoie
+```
+[2,4,9]
+```
+
+
+**<H3 STYLE="COLOR:red;">Exercice 6 :**  **Somme :</H3>**
 Compléter le code python de la fonction somme qui prend en paramètre une liste L de flottants et qui renvoie la somme des éléments de cette liste. 
 
 **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
@@ -468,7 +481,7 @@ assert somme([1,5,9,5]) == 20
 assert somme([]) == 0 
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 6 :**  **Moyenne :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 7 :**  **Moyenne :</H3>**
 En faisant appel à la fonction somme précédente, écrire la fonction moyenne qui prend en paramètre une liste L et qui renvoie la moyenne m des éléments de cette liste. 
 
 **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
@@ -479,7 +492,7 @@ assert moyenne([1,5,9,5]) == 5
 assert moyenne([2,4,6]) == 4
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 7 :**  **Produit :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 8 :**  **Produit :</H3>**
 Écrire une fonction qui prend en argument  un tableau  T d’entiers et renvoie le produit des éléments de T. 
 
 
@@ -489,7 +502,7 @@ assert produit([2,3,2]) == 12
 assert produit([3,2]) == 6
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 8 :**  **Le plus grand élément :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 9 :**  **Le plus grand élément :</H3>**
 Écrire une fonction maximum qui prend en argument un tableau T d’entiers non vide et renvoie le plus grand élément de ce tableau. 
 
 **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : max()
@@ -500,7 +513,7 @@ assert maximum([1,5,9,6]) == 9
 assert maximum([-1,-5,-9,-6,-2]) == -1
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 9 :**  **Le plus petit élément :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 10 :**  **Le plus petit élément :</H3>**
 Écrire une fonction minimum qui recherche la valeur minimum d’un tableau T d’entiers non vide et renvoie également son indice comme valeur de retour.
 
 Exemple :
@@ -509,7 +522,7 @@ assert minimum([1,5,9,6]) == (1,0)
 assert minimum([-1,-5,-9,-6,-2]) == (-9, 2)
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 10 :**  **Nombre de fois :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 11 :**  **Nombre de fois :</H3>**
 Écrire une fonction nbre_de_fois(T,a) qui prend en argument  une liste T et une valeur a et renvoie 
 en sortie le nombre de fois où cette valeur a, est présente dans la liste T.
 
@@ -519,7 +532,7 @@ assert nbre_de_fois([1,5,9,6],5) == 2
 assert nbre_de_fois([-1,-5,-9,-6,-2], 5) == 0
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 11 :**  **Renversement de tableau :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 12 :**  **Renversement de tableau :</H3>**
 Écrire une fonction renverse(tab) qui renverse un tableau tab(la première valeur devient la dernière, la deuxième l’avant dernière, etc) **de deux manières différentes**.
 
 Par exemple, si le tableau est trié en ordre croissant au début de la fonction il doit être trié en ordre décroissant par l’algorithme. 
@@ -648,7 +661,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 ### **<H3 STYLE="COLOR:GREEN;">1.6.  Exercices</h3>** 
 
-**<H3 STYLE="COLOR:red;">Exercice 12 :** **Affichage de matrice :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 13 :** **Affichage de matrice :</H3>**
 Ecrire la fonction affichage(M) qui prend en paramètre une matrice de taille quelconque et **l’affiche** ligne par ligne
 
 Exemple :
@@ -667,7 +680,7 @@ On obient:
 [7, 8, 15]
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 13 :** **Affichage de coefficient de matrice :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 14 :** **Affichage de coefficient de matrice :</H3>**
 Ecrire la fonction affichagecoeff(M) qui prend en paramètre une matrice de taille quelconque et **affiche** tous ces coefficients dans le sens de la lecture
 
 Exemple :
@@ -687,7 +700,7 @@ On obient:
 1
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 14 :** **Affichage d'une ligne de matrice :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 15 :** **Affichage d'une ligne de matrice :</H3>**
 Ecrire la fonction affichage_ligne(M,i) qui prend en paramètre une matrice de taille quelconque et **affiche**, lorsque cela est possible la ligne i de cette matrice 
 
 Exemple :
@@ -702,7 +715,7 @@ On obient:
 ```
 [5, 6, 8]
 ```
-**<H3 STYLE="COLOR:red;">Exercice 15 :** **Affichage d'une colonne de matrice :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 16 :** **Affichage d'une colonne de matrice :</H3>**
 Ecrire la fonction affichage_colonne(M,j) qui prend en paramètre une matrice de taille quelconque et 
 **affiche** en colonne, lorsque cela est possible, la colonne j de cette matrice
 
@@ -722,7 +735,7 @@ On obient:
 8
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 15 :** **Croix :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 17 :** **Croix :</H3>**
 Ecrire la fonction croix(n,i,j) qui crée et renvoie la matrice de taille n×n remplie de 0 et dont la ligne i et la colonne j sont remplie de 1.
 
 Exemple :
@@ -730,7 +743,7 @@ Exemple :
 assert croix(3,1,2) ==[[0,0,1], [1,1,1], [0,0,1]]
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 16 :** **Nombre de zéros :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 18 :** **Nombre de zéros :</H3>**
 Ecrire la fonction nbzéros(M) qui prend en paramètre une matrice de taille quelconque et renvoie le 
 nombre de zéros qu’elle contient
 
@@ -742,7 +755,7 @@ m = [[1, 3, 4],
      [0, 8, 15]]
 assert nbzéros(m) == 4
 ```
-**<H3 STYLE="COLOR:red;">Exercice 17 :** **Maximum d'une matrice :</H3>** 
+**<H3 STYLE="COLOR:red;">Exercice 19 :** **Maximum d'une matrice :</H3>** 
 Ecrire la fonction maxi(M) qui prend en paramètre une matrice de taille quelconque et renvoie le plus grand de ses éléments 
 
 Exemple :
@@ -754,7 +767,7 @@ m = [[1, 3, 4],
 assert maxi(m) == 16
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 18 :** **Maximum de la plus grand somme d'une ligne d'une matrice :</H3>** 
+**<H3 STYLE="COLOR:red;">Exercice 20 :** **Maximum de la plus grand somme d'une ligne d'une matrice :</H3>** 
 Ecrire la fonction maxi2(M) qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la ligne qui a la plus grande somme 
 
 Exemple :
@@ -766,7 +779,7 @@ m = [[1, 3, 4],
 assert maxi2(m) == 3
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 18 :** **Maximum de la plus grand somme d'une colonne d'une matrice :</H3>** 
+**<H3 STYLE="COLOR:red;">Exercice 21 :** **Maximum de la plus grand somme d'une colonne d'une matrice :</H3>** 
 Ecrire la fonction maxi3(M) qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la colonne qui a la plus grande somme 
 
 Exemple :
@@ -778,7 +791,7 @@ m = [[1, 3, 4],
 assert maxi3(m) == 2
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 19 :** ★ **Création de matrice  :</h3>** 
+**<H3 STYLE="COLOR:red;">Exercice 22 :** ★ **Création de matrice  :</h3>** 
 Ecrire une fonction ```matriceAlea(n:int,m:int)->list``` Python qui renvoie une matrice à n lignes et m colonnes d'entiers aléatoires entre 0 et 100. Créer la fonction qui utilise la création en compréhension 
 
 
@@ -1149,7 +1162,146 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
 ## **<H2 STYLE="COLOR:BLUE;">3.   Exercices<a name="_page9_x40.00_y273.92"></a></h2>** 
 
-=> **CAPYTALE Le code vous sera donné par votre enseignant**
+**<H3 STYLE="COLOR:red;">Exercice 23 :**  **Affichage des valeurs :</H3>**
+Écrire une fonction `afficher_valeurs(d)` qui **affiche** uniquement les **valeurs** du dictionnaire, une par ligne.
+
+Exemple :
+
+```python
+d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+afficher_valeurs(d)
+```
+
+Résultat attendu :
+
+```
+Alice
+17
+1ère NSI
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 24 :**  **Affichage des clés :</H3>**
+Écrire une fonction `afficher_cles(d)` qui affiche toutes les **clés** du dictionnaire.
+
+Exemple :
+
+```python
+d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+afficher_cles(d)
+```
+
+Résultat attendu :
+
+```
+nom
+âge
+classe
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 25 :**  **Affichage des paires clé-valeur:</H3>**
+Écrire une fonction `afficher_dico(d)` qui **affiche** chaque **clé et sa valeur** sur une ligne.
+
+Exemple :
+
+```python
+d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+afficher_dico(d)
+```
+
+Résultat attendu :
+
+```
+nom : Alice
+âge : 17
+classe : 1ère NSI
+```
+
+
+**<H3 STYLE="COLOR:red;">Exercice 26 :**  **accès à une valeur:</H3>**
+Écrire une fonction `age(d)` qui renvoie l’âge contenu dans le dictionnaire `d`.
+
+Test :
+
+```python
+d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+assert age(d) == 17
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 27 :**  **Ajout d'un élément:</H3>**
+Écrire une fonction `ajouter_email(d)` qui ajoute au dictionnaire une clé `"email"` de valeur `"alice@nsi.fr"` puis le renvoie.
+
+Test :
+
+```python
+d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+assert ajouter_email(d) == {"nom": "Alice", "âge": 17, "classe": "1ère NSI", "email": "alice@nsi.fr"}
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 28 :**  **Compter les éléments d'un dictionnaire:</H3>**
+Écrire une fonction `taille_dico(d)` qui renvoie **le nombre d’éléments** (paires clé-valeur) contenus dans le dictionnaire.
+
+Test :
+
+```python
+d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+assert taille_dico(d) == 3
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 29 :**  **Vérification d'une clé:</H3>**
+Écrire une fonction `contient(d, cle)` qui renvoie `True` si la clé est présente dans le dictionnaire, et `False` sinon.
+
+Test :
+
+```python
+d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+assert contient(d, "âge") == True
+assert contient(d, "adresse") == False
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 30 :**  **Suppression d'une clé:</H3>**
+Écrire une fonction `supprimer(d, cle)` qui supprime la clé `cle` si elle est présente dans `d`, puis renvoie le dictionnaire.
+
+Test :
+
+```python
+d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+assert supprimer(d, "âge") == {"nom": "Alice", "classe": "1ère NSI"}
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 31 :**  **Moyenne des notes:</H3>**
+Un dictionnaire `notes` contient des noms de matières et des notes.
+
+Exemple :
+
+```python
+notes = {"maths": 15, "nsi": 18, "français": 12}
+```
+
+Écrire la fonction `moyenne(notes)` qui renvoie la moyenne des notes (arrondie à 1 décimale).
+
+Test :
+
+```python
+assert moyenne({"maths": 15, "nsi": 18, "français": 12}) == 15.0
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 24 :**  **Création d’un dictionnaire simple :</H3>**
+Écrire une fonction `creer_dico(nom, age, classe)` qui prend en paramètre le nom, l'age et la classe et qui **renvoie** le dictionnaire suivant :
+
+```python
+{"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+```
+
+Test :
+
+```python
+assert creer_dico() == {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+```
+
+
+
+
+
 
 
 
