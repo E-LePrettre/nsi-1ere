@@ -206,27 +206,79 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:red;">Exercice 1 :</H3>** ★ **Utilisation des opérations et méthodes :**  en utilisant le code ci-dessous, compléter .   
+**<H3 STYLE="COLOR:red;">Exercice 1 : Accès aux éléments</H3>**  
 
-jours_1=('lundi','mardi','mercredi','jeudi','vendredi') 
+Écrire une fonction `deuxieme(t)` qui renvoie le **deuxième élément** du tuple `t`.
 
-jours_2=('samedi','dimanche')
+Test :
+
+```python
+t = ("Alice", 17, "1ère NSI")
+assert deuxieme(t) == 17
+```
+**<H3 STYLE="COLOR:red;">Exercice 2 : longueur d'un tuple</H3>** 
+Écrire une fonction `taille(t)` qui renvoie le **nombre d’éléments** dans le tuple `t`.
+
+Test :
+
+```python
+assert taille(("a", "b", "c")) == 3
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 3 : Concaténation de tuples</H3>** 
+Écrire une fonction `concat(t1, t2)` qui renvoie la **concaténation** de deux tuples.
+
+Test :
+
+```python
+assert concat((1, 2), (3, 4)) == (1, 2, 3, 4)
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 4 : Extraction de sous-tuples</H3>** 
+Écrire une fonction `sous_tuple(t)` qui renvoie un **sous-tuple contenant les deux premiers éléments**.
+
+Test :
+
+```python
+assert sous_tuple((10, 20, 30, 40)) == (10, 20)
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 5 : parcours d'un tuple</H3>** 
+Écrire une fonction `afficher(t)` qui **affiche chaque élément du tuple `t` sur une ligne différente**.
+
+Exemple :
+
+```python
+afficher(("maths", "nsi", "anglais"))
+```
+
+Affichage attendu :
+
+```
+maths
+nsi
+anglais
+```
+
+**<H3 STYLE="COLOR:red;">Exercice 6 : Tuple et boucle</H3>** 
+Écrire une fonction `moyenne(t)` qui renvoie la **moyenne** des nombres contenus dans un tuple `t`.
+
+Test :
+
+```python
+assert moyenne((12, 13, 14)) == 13.0
+```
 
 
-- Tester si samedi est un élément de jours\_1
-- Donner la longueur de jours\_2 
-- Tester si jours\_1 est égal à jours\_2
-- Donner le deuxième élément de jours\_1 au sens mathématique
-- Donner la partie de jours\_1 entre le deuxième élément et le quatrième élément compris (au sens mathématique)
-- renvoyer l'indice de dimanche dans jours\_2
-- Renvoyer le nombre de samedi dans jours\_2
-- Créer un tuple semaine par concaténation de jours\_1 et de jours\_2
 
-**<H3 STYLE="COLOR:red;">Exercice 2 :** ★ **Test d’appartenance :</H3>** En utilisant un parcours de tuple avec la présence d'un indice, écrire une fonction `est_dans(element,tple)` qui en argument reçoit un entiers ( élément) et un tuple d'entier ( tple) qui renvoie un booleen indiquant la présence de élément dans tuple. On testera la fonction sur les scripts suivants : 
+**<H3 STYLE="COLOR:red;">Exercice 7 :**  **Test d’appartenance :</H3>** En utilisant un parcours de tuple avec la présence d'un indice, écrire une fonction `est_dans(element,tple)` qui en argument reçoit un entiers ( élément) et un tuple d'entier ( tple) qui renvoie un booleen indiquant la présence de élément dans tuple. On testera la fonction sur les scripts suivants : 
 
-- **est_dans(4,(1,2,3,4,5,6))** #qui devrait renvoyer True** 
+Par exemple:
+```python
+assert est_dans(4,(1,2,3,4,5,6)) == True
 
-- **est_dans(9,(1,2,3,4,5,6))** #qui devrait renvoyer False** 
+assert est_dans(9,(1,2,3,4,5,6)) == False
+```
 
 En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) renvoie un tuple.
  
@@ -243,6 +295,8 @@ En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) r
 ### **<H3 STYLE="COLOR:GREEN;">1.3.  Les<a name="_page2_x40.00_y419.92"></a> tableaux en Python : Les Listes</h3>** 
 
 En Python, **les tableaux sont appelés des listes**. Une liste est une **séquence mutable**, ce qui signifie qu'on peut **modifier son contenu après sa création**.  
+
+Contrairement à certains langages où les tableaux ont une **taille fixe** et contiennent des éléments d’un type unique (comme en C), les listes Python peuvent contenir des éléments de types différents et être redimensionnées dynamiquement.
 
 📌 **Définition :**  
 
@@ -437,8 +491,8 @@ Les listes sont **très utiles** pour manipuler des chaînes de caractères grâ
 
 ### **<H3 STYLE="COLOR:GREEN;">1.4. Exercices</h3>** 
 
-**<H3 STYLE="COLOR:red;">Exercice 3 :**  **Longueur d'une liste :</H3>**
-Ecrire une fonction longueur(tab) qui prend un tableau tab en paramètre et qui renvoie la longueur de ce tableau
+**<H3 STYLE="COLOR:red;">Exercice 8 :**  **Longueur d'une liste :</H3>**
+Ecrire une fonction `longueur(tab)` qui prend un tableau tab en paramètre et qui renvoie la longueur de ce tableau
 
 Exemple :
 ```python
@@ -446,8 +500,8 @@ assert longueur([0,1,2,3,4]) == 5
 assert longueur([]) == 0
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 4 :**  **Appartenance :</H3>**
-Écrire fonction dansTab de paramètres T : un tableau et a : un élèment, qui indique si l’élément donné a appartient à un tableau T ou pas. 
+**<H3 STYLE="COLOR:red;">Exercice 9 :**  **Appartenance :</H3>**
+Écrire fonction `dansTab` de paramètres T : un tableau et a : un élèment, qui indique si l’élément donné a appartient à un tableau T ou pas. 
 
 Exemple :
 ```python
@@ -455,8 +509,8 @@ assert dansTab( [3,5,7,0] , 4) == False
 assert dansTab( [3,5,7] , 3) == True
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 5 :**  **Liste aléatoire :</H3>**
-Ecrire une fonction list_alea(n) qui prend en paramètre n et qui renvoie une liste de nombre aléatoire compris entre 0 et 9 de taille n
+**<H3 STYLE="COLOR:red;">Exercice 10 :**  **Liste aléatoire :</H3>**
+Ecrire une fonction `list_alea(n)` qui prend en paramètre n et qui renvoie une liste de nombre aléatoire compris entre 0 et 9 de taille n
 
 Exemple :
 ```python
@@ -468,8 +522,8 @@ renvoie
 ```
 
 
-**<H3 STYLE="COLOR:red;">Exercice 6 :**  **Somme :</H3>**
-Compléter le code python de la fonction somme qui prend en paramètre une liste L de flottants et qui renvoie la somme des éléments de cette liste. 
+**<H3 STYLE="COLOR:red;">Exercice 11 :**  **Somme :</H3>**
+Compléter le code python de la fonction `somme` qui prend en paramètre une liste L de flottants et qui renvoie la somme des éléments de cette liste. 
 
 **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
 
@@ -486,8 +540,8 @@ assert somme([1,5,9,5]) == 20
 assert somme([]) == 0 
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 7 :**  **Moyenne :</H3>**
-En faisant appel à la fonction somme précédente, écrire la fonction moyenne qui prend en paramètre une liste L et qui renvoie la moyenne m des éléments de cette liste. 
+**<H3 STYLE="COLOR:red;">Exercice 12 :**  **Moyenne :</H3>**
+En faisant appel à la fonction `somme` précédente, écrire la fonction `moyenne` qui prend en paramètre une liste L et qui renvoie la moyenne m des éléments de cette liste. 
 
 **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
 
@@ -497,8 +551,8 @@ assert moyenne([1,5,9,5]) == 5
 assert moyenne([2,4,6]) == 4
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 8 :**  **Produit :</H3>**
-Écrire une fonction qui prend en argument  un tableau  T d’entiers et renvoie le produit des éléments de T. 
+**<H3 STYLE="COLOR:red;">Exercice 13 :**  **Produit :</H3>**
+Écrire une fonction `produit(T)` qui prend en argument  un tableau  T d’entiers et renvoie le produit des éléments de T. 
 
 
 Exemple :
@@ -507,8 +561,8 @@ assert produit([2,3,2]) == 12
 assert produit([3,2]) == 6
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 9 :**  **Le plus grand élément :</H3>**
-Écrire une fonction maximum qui prend en argument un tableau T d’entiers non vide et renvoie le plus grand élément de ce tableau. 
+**<H3 STYLE="COLOR:red;">Exercice 14 :**  **Le plus grand élément :</H3>**
+Écrire une fonction `maximum` qui prend en argument un tableau T d’entiers non vide et renvoie le plus grand élément de ce tableau. 
 
 **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : max()
 
@@ -518,8 +572,8 @@ assert maximum([1,5,9,6]) == 9
 assert maximum([-1,-5,-9,-6,-2]) == -1
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 10 :**  **Le plus petit élément :</H3>**
-Écrire une fonction minimum qui recherche la valeur minimum d’un tableau T d’entiers non vide et renvoie également son indice comme valeur de retour.
+**<H3 STYLE="COLOR:red;">Exercice 15 :**  **Le plus petit élément :</H3>**
+Écrire une fonction `minimum` qui recherche la valeur minimum d’un tableau T d’entiers non vide et renvoie également son indice comme valeur de retour.
 
 Exemple :
 ```python
@@ -527,8 +581,8 @@ assert minimum([1,5,9,6]) == (1,0)
 assert minimum([-1,-5,-9,-6,-2]) == (-9, 2)
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 11 :**  **Nombre de fois :</H3>**
-Écrire une fonction nbre_de_fois(T,a) qui prend en argument  une liste T et une valeur a et renvoie 
+**<H3 STYLE="COLOR:red;">Exercice 16 :**  **Nombre de fois :</H3>**
+Écrire une fonction `nbre_de_fois(T,a)` qui prend en argument  une liste T et une valeur a et renvoie 
 en sortie le nombre de fois où cette valeur a, est présente dans la liste T.
 
 Exemple :
@@ -537,8 +591,8 @@ assert nbre_de_fois([1,5,9,6],5) == 2
 assert nbre_de_fois([-1,-5,-9,-6,-2], 5) == 0
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 12 :**  **Renversement de tableau :</H3>**
-Écrire une fonction renverse(tab) qui renverse un tableau tab(la première valeur devient la dernière, la deuxième l’avant dernière, etc) **de deux manières différentes**.
+**<H3 STYLE="COLOR:red;">Exercice 17 :**  **Renversement de tableau :</H3>**
+Écrire une fonction `renverse(tab)` qui renverse un tableau tab(la première valeur devient la dernière, la deuxième l’avant dernière, etc) **de deux manières différentes**.
 
 Par exemple, si le tableau est trié en ordre croissant au début de la fonction il doit être trié en ordre décroissant par l’algorithme. 
 
@@ -666,8 +720,8 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 ### **<H3 STYLE="COLOR:GREEN;">1.6.  Exercices</h3>** 
 
-**<H3 STYLE="COLOR:red;">Exercice 13 :** **Affichage de matrice :</H3>**
-Ecrire la fonction affichage(M) qui prend en paramètre une matrice de taille quelconque et **l’affiche** ligne par ligne
+**<H3 STYLE="COLOR:red;">Exercice 18 :** **Affichage de matrice :</H3>**
+Ecrire la fonction `affichage(M)` qui prend en paramètre une matrice de taille quelconque et **l’affiche** ligne par ligne
 
 Exemple :
 ```python
@@ -677,7 +731,7 @@ m = [[1, 3, 4],
      [7, 8, 15]]
 print(affichage(m))
 ```
-On obient:
+On obtient:
 ```
 [1, 3, 4]
 [5, 6, 8]
@@ -685,8 +739,8 @@ On obient:
 [7, 8, 15]
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 14 :** **Affichage de coefficient de matrice :</H3>**
-Ecrire la fonction affichagecoeff(M) qui prend en paramètre une matrice de taille quelconque et **affiche** tous ces coefficients dans le sens de la lecture
+**<H3 STYLE="COLOR:red;">Exercice 19 :** **Affichage de coefficient de matrice :</H3>**
+Ecrire la fonction `affichagecoeff(M)` qui prend en paramètre une matrice de taille quelconque et **affiche** tous ces coefficients dans le sens de la lecture
 
 Exemple :
 ```python
@@ -695,7 +749,7 @@ m = [[1, 3],
      [2, 1], ]
 print(affichagecoeff(m))
 ```
-On obient:
+On obtient:
 ```
 1
 3
@@ -705,8 +759,8 @@ On obient:
 1
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 15 :** **Affichage d'une ligne de matrice :</H3>**
-Ecrire la fonction affichage_ligne(M,i) qui prend en paramètre une matrice de taille quelconque et **affiche**, lorsque cela est possible la ligne i de cette matrice 
+**<H3 STYLE="COLOR:red;">Exercice 20 :** **Affichage d'une ligne de matrice :</H3>**
+Ecrire la fonction `affichage_ligne(M,i)` qui prend en paramètre une matrice de taille quelconque et **affiche**, lorsque cela est possible la ligne i de cette matrice 
 
 Exemple :
 ```python
@@ -716,12 +770,12 @@ m = [[1, 3, 4],
      [7, 8, 15]]
 print(affichage_ligne(m, 1))
 ```
-On obient:
+On obtient:
 ```
 [5, 6, 8]
 ```
-**<H3 STYLE="COLOR:red;">Exercice 16 :** **Affichage d'une colonne de matrice :</H3>**
-Ecrire la fonction affichage_colonne(M,j) qui prend en paramètre une matrice de taille quelconque et 
+**<H3 STYLE="COLOR:red;">Exercice 21 :** **Affichage d'une colonne de matrice :</H3>**
+Ecrire la fonction `affichage_colonne(M,j)` qui prend en paramètre une matrice de taille quelconque et 
 **affiche** en colonne, lorsque cela est possible, la colonne j de cette matrice
 
 Exemple :
@@ -732,7 +786,7 @@ m = [[1, 3, 4],
      [7, 8, 15]]
 print(affichage_colonne(m, 1))
 ```
-On obient:
+On obtient:
 ```
 3
 6
@@ -740,16 +794,16 @@ On obient:
 8
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 17 :** **Croix :</H3>**
-Ecrire la fonction croix(n,i,j) qui crée et renvoie la matrice de taille n×n remplie de 0 et dont la ligne i et la colonne j sont remplie de 1.
+**<H3 STYLE="COLOR:red;">Exercice 22 :** **Croix :</H3>**
+Ecrire la fonction `croix(n,i,j)` qui crée et renvoie la matrice de taille n×n remplie de 0 et dont la ligne i et la colonne j sont remplie de 1.
 
 Exemple :
 ```python
 assert croix(3,1,2) ==[[0,0,1], [1,1,1], [0,0,1]]
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 18 :** **Nombre de zéros :</H3>**
-Ecrire la fonction nbzéros(M) qui prend en paramètre une matrice de taille quelconque et renvoie le 
+**<H3 STYLE="COLOR:red;">Exercice 23 :** **Nombre de zéros :</H3>**
+Ecrire la fonction `nbzéros(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le 
 nombre de zéros qu’elle contient
 
 Exemple :
@@ -760,8 +814,8 @@ m = [[1, 3, 4],
      [0, 8, 15]]
 assert nbzéros(m) == 4
 ```
-**<H3 STYLE="COLOR:red;">Exercice 19 :** **Maximum d'une matrice :</H3>** 
-Ecrire la fonction maxi(M) qui prend en paramètre une matrice de taille quelconque et renvoie le plus grand de ses éléments 
+**<H3 STYLE="COLOR:red;">Exercice 24 :** **Maximum d'une matrice :</H3>** 
+Ecrire la fonction `maxi(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le plus grand de ses éléments 
 
 Exemple :
 ```python
@@ -772,8 +826,8 @@ m = [[1, 3, 4],
 assert maxi(m) == 16
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 20 :** **Maximum de la plus grand somme d'une ligne d'une matrice :</H3>** 
-Ecrire la fonction maxi2(M) qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la ligne qui a la plus grande somme 
+**<H3 STYLE="COLOR:red;">Exercice 25 :** **Maximum de la plus grand somme d'une ligne d'une matrice :</H3>** 
+Ecrire la fonction `maxi2(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la ligne qui a la plus grande somme 
 
 Exemple :
 ```python
@@ -784,8 +838,8 @@ m = [[1, 3, 4],
 assert maxi2(m) == 3
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 21 :** **Maximum de la plus grand somme d'une colonne d'une matrice :</H3>** 
-Ecrire la fonction maxi3(M) qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la colonne qui a la plus grande somme 
+**<H3 STYLE="COLOR:red;">Exercice 26 :** **Maximum de la plus grand somme d'une colonne d'une matrice :</H3>** 
+Ecrire la fonction `maxi3(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la colonne qui a la plus grande somme 
 
 Exemple :
 ```python
@@ -796,7 +850,7 @@ m = [[1, 3, 4],
 assert maxi3(m) == 2
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 22 :** ★ **Création de matrice  :</h3>** 
+**<H3 STYLE="COLOR:red;">Exercice 27 :** ★ **Création de matrice  :</h3>** 
 Ecrire une fonction ```matriceAlea(n:int,m:int)->list``` Python qui renvoie une matrice à n lignes et m colonnes d'entiers aléatoires entre 0 et 100. Créer la fonction qui utilise la création en compréhension 
 
 
@@ -1167,7 +1221,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 ### **<H3 STYLE="COLOR:GREEN;">2.12. Exercices</h3>** 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 23 :**  **Affichage des valeurs :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 28 :**  **Affichage des valeurs :</H3>**
 Écrire une fonction `afficher_valeurs(d)` qui **affiche** uniquement les **valeurs** du dictionnaire, une par ligne.
 
 Exemple :
@@ -1185,7 +1239,7 @@ Alice
 1ère NSI
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 24 :**  **Affichage des clés :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 29 :**  **Affichage des clés :</H3>**
 Écrire une fonction `afficher_cles(d)` qui affiche toutes les **clés** du dictionnaire.
 
 Exemple :
@@ -1203,7 +1257,7 @@ nom
 classe
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 25 :**  **Affichage des paires clé-valeur:</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 30 :**  **Affichage des paires clé-valeur:</H3>**
 Écrire une fonction `afficher_dico(d)` qui **affiche** chaque **clé et sa valeur** sur une ligne.
 
 Exemple :
@@ -1222,7 +1276,7 @@ classe : 1ère NSI
 ```
 
 
-**<H3 STYLE="COLOR:red;">Exercice 26 :**  **accès à une valeur:</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 31 :**  **accès à une valeur:</H3>**
 Écrire une fonction `age(d)` qui renvoie l’âge contenu dans le dictionnaire `d`.
 
 Test :
@@ -1232,7 +1286,7 @@ d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
 assert age(d) == 17
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 27 :**  **Ajout d'un élément:</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 32 :**  **Ajout d'un élément:</H3>**
 Écrire une fonction `ajouter_email(d)` qui ajoute au dictionnaire une clé `"email"` de valeur `"alice@nsi.fr"` puis le renvoie.
 
 Test :
@@ -1242,7 +1296,7 @@ d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
 assert ajouter_email(d) == {"nom": "Alice", "âge": 17, "classe": "1ère NSI", "email": "alice@nsi.fr"}
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 28 :**  **Compter les éléments d'un dictionnaire:</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 33 :**  **Compter les éléments d'un dictionnaire:</H3>**
 Écrire une fonction `taille_dico(d)` qui renvoie **le nombre d’éléments** (paires clé-valeur) contenus dans le dictionnaire.
 
 Test :
@@ -1252,7 +1306,7 @@ d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
 assert taille_dico(d) == 3
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 29 :**  **Vérification d'une clé:</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 34 :**  **Vérification d'une clé:</H3>**
 Écrire une fonction `contient(d, cle)` qui renvoie `True` si la clé est présente dans le dictionnaire, et `False` sinon.
 
 Test :
@@ -1263,7 +1317,7 @@ assert contient(d, "âge") == True
 assert contient(d, "adresse") == False
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 30 :**  **Suppression d'une clé:</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 35 :**  **Suppression d'une clé:</H3>**
 Écrire une fonction `supprimer(d, cle)` qui supprime la clé `cle` si elle est présente dans `d`, puis renvoie le dictionnaire.
 
 Test :
@@ -1273,7 +1327,7 @@ d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
 assert supprimer(d, "âge") == {"nom": "Alice", "classe": "1ère NSI"}
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 31 :**  **Moyenne des notes:</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 36 :**  **Moyenne des notes:</H3>**
 Un dictionnaire `notes` contient des noms de matières et des notes.
 
 Exemple :
@@ -1290,7 +1344,7 @@ Test :
 assert moyenne({"maths": 15, "nsi": 18, "français": 12}) == 15.0
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 32 :**  **Création d’un dictionnaire simple :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 37 :**  **Création d’un dictionnaire simple :</H3>**
 Écrire une fonction `creer_dico(nom, age, classe)` qui prend en paramètre le nom, l'age et la classe et qui **renvoie** le dictionnaire suivant :
 
 ```python
@@ -1313,7 +1367,7 @@ assert creer_dico() == {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 33 :** ★★ **Carré magique  :</h3>** 
+**<H3 STYLE="COLOR:red;">Exercice 38 :** ★★ **Carré magique  :</h3>** 
 
 
 Un **carré magique d’ordre 3** est une grille de 3×3 contenant **les entiers de 1 à 9, chacun une seule fois**, et telle que **la somme des éléments de chaque ligne, de chaque colonne et des deux diagonales soit la même**.
@@ -1374,332 +1428,508 @@ L = [
 print(carre_magique(L))  # Doit afficher True 
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 34 :** ★**  **Dictionnaire et fonction</H3>**   
+**<H3 STYLE="COLOR:red;">Exercice 39 :** ★  **Gestion de carnet de notes</H3>**   
 
-1 Ecrire une fonction const_dico(cle,valeur) qui renvoie le dictionnaire définie par les clés et les valeurs entrées en argument.** 
-On donne des listes de certains joueurs de League Of Legend ainsi que leur classement et leur nombre de points :** 
+On souhaite créer un petit programme qui **gère un carnet de notes** pour un élève.
+Ce carnet sera représenté par un **dictionnaire**, dont les **clés** sont les matières, et les **valeurs** sont les moyennes obtenues dans ces matières.
+
+🔢 Exemple :
+
 ```python
-pseudo=['Major Alexander','KBM Wiz', 'FNC MagiFelix','Avalanche','love camile','Nobody'] 
-
-classement=[(12,1406),(1,1613),(4,1507),(9,1429),(16,1341),(11,1416)]
+notes = {
+    "maths": 15.5,
+    "nsi": 18.0,
+    "anglais": 12.5,
+    "histoire": 13.0
+}
 ```
 
-2 Quel est le type de chacun des éléments?
+1 Implémenter la fonction suivante `afficher_notes(d)`
 
-3 Appliquer votre fonction const_dico(cle,valeur) sur les joueurs de LOL. 
-
-**<H3 STYLE="COLOR:red;">Exercice 35</h3>** ★ Ecrire une fonction qui retourne une carte (au hasard) d’un jeu de Poker à 52 cartes. On utilisera la fonction choice() ou randint() du module random. On donne : 
-
-ListeCarte = ['2s','2h','2d','2c','3s','3h','3d','3c','4s','4h','4d','4c','5s','5h','5d','5c', '6s','6h','6d','6c','7s','7h','7d','7c','8s','8h','8d','8c','9s','9h','9d','9c', 'Ts','Th','Td','Tc','Js','Jh','Jd','Jc','Qs','Qh','Qd','Qc','Ks','Kh','Kd','Kc','As','Ah','Ad','Ac'] 
+Affiche chaque matière suivie de la note, sous la forme :
 
 ```
->>> tiragecarte() 
-'9s' 
->>> tiragecarte() 
-'7c' 
+maths : 15.5
+nsi : 18.0
+anglais : 12.5
+histoire : 13.0
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 36</h3>** ★★   
+2  Implémenter la fonction suivante `ajouter_matiere(d, matiere, note)`
 
-1.Ecrire une fonction qui retourne une liste de N cartes **différentes** d’un jeu de Poker à 52 cartes. Noter qu’une fonction peut appeler une fonction : on peut donc réutiliser la fonction tiragecarte() de l’exercice précédent. Exemple : 
+Ajoute une nouvelle matière `matiere` avec la note `note` au dictionnaire `d`.
 
+Test :
+
+```python
+notes = {"maths": 15.5}
+ajouter_matiere(notes, "svt", 14)
+# Résultat attendu : {"maths": 15.5, "svt": 14}
 ```
->>> tirage_n_carte(2)
-'5h 8c'
->>> tirage_n_carte(10)
-'3c 4s 7c 7h 8d 4c Qd As Jd Jd'
+
+3  Implémenter la fonction suivante `supprimer_matiere(d, matiere)`
+
+Supprime une matière si elle existe dans le dictionnaire. Ne fait rien sinon.
+
+Test :
+
+```python
+notes = {"maths": 15.5, "svt": 14}
+supprimer_matiere(notes, "svt")
+# Résultat attendu : {"maths": 15.5}
 ```
 
-2.Simplifier le script avec la fonction shuffle()` `et sample()` `du module random. 
+4  Implémenter la fonction suivante `moyenne_generale(d)`
+
+Renvoie la **moyenne générale** de toutes les notes (arrondie à 2 décimales si tu veux).
+
+Test :
+
+```python
+notes = {"maths": 15.5, "nsi": 18.0, "anglais": 12.5}
+assert moyenne_generale(notes) == 15.33
+```
+
+5  Implémenter la fonction suivante `matiere_max(d)`
+
+Renvoie la **matière** dans laquelle la note est la plus élevée.
+
+Test :
+
+```python
+notes = {"maths": 15.5, "nsi": 18.0, "anglais": 12.5}
+assert matiere_max(notes) == "nsi"
+```
+
+6  Implémenter la fonction suivante `recherche(d, note)`
+
+Renvoie la **liste des matières** pour lesquelles la note est exactement égale à `note`.
+
+Test :
+
+```python
+notes = {"maths": 12, "nsi": 14, "anglais": 12}
+assert recherche(notes, 12) == ["maths", "anglais"]
+```
+
+
+
+**<H3 STYLE="COLOR:red;">Exercice 40</h3>** ★ **Simuler un tirage de cartes de poker</h3>**
+
+1 Tirage d’une carte au hasard
+
+On donne la liste `ListeCartes` représentant les **52 cartes** d’un jeu de Poker (valeurs de 2 à As, et couleurs : pique (s), cœur (h), carreau (d), trèfle (c)).
+
+```python
+ListeCartes = ['2s','2h','2d','2c','3s','3h','3d','3c',
+               '4s','4h','4d','4c','5s','5h','5d','5c',
+               '6s','6h','6d','6c','7s','7h','7d','7c',
+               '8s','8h','8d','8c','9s','9h','9d','9c',
+               'Ts','Th','Td','Tc','Js','Jh','Jd','Jc',
+               'Qs','Qh','Qd','Qc','Ks','Kh','Kd','Kc',
+               'As','Ah','Ad','Ac']
+```
+
+
+
+Écrire une fonction `tirage_carte()` qui retourne **une seule carte au hasard** de cette liste.
+
+> 💡 On pourra utiliser la fonction `random.choice()`.
+
+Exemple attendu :
+
+```python
+>>> tirage_carte()
+'9s'
+```
+
+2 Tirage de N cartes différentes : Écrire une fonction `tirage_n_cartes(n)` qui retourne une **liste de `n` cartes différentes**, tirées au hasard **sans doublon**.
+
+> ⚠️ Le tirage doit respecter la règle du Poker : **on ne peut pas avoir deux fois la même carte**.
+
+> 💡 On pourra copier la liste `ListeCartes`, tirer une carte aléatoire, la retirer de la liste, et recommencer.
+
+Exemple attendu :
+
+```python
+>>> tirage_n_cartes(3)
+['8c', 'Qs', '3h']
+```
+3 Version optimisée avec `sample()` : Python propose la fonction `random.sample(liste, n)` qui renvoie directement `n` éléments **différents** pris au hasard dans `liste`.
+
+Réécrire la fonction précédente sous le nom `tirage_n_cartes_v2(n)` en utilisant cette fonction.
+
+Exemple :
+
+```python
+>>> tirage_n_cartes_v2(5)
+['2c', 'Kd', 'Jc', '6s', 'Th']
+```
 
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 37 :** ★★ **Le chiffrement de César (version light)** : Cryptographie</h3> 
 
-1 la fonction chr() 
+**<H3 STYLE="COLOR:red;">Exercice 41 :** ★★ **Le chiffrement de César (version light)** : Cryptographie</h3> 
 
-Pour cet exercice nous allons utiliser la fonction chr de Python qui prend en argument un entier (codé en décimal) et qui renvoie le caractère ASCII associé. 
+🔹 **Partie 1 – La fonction `chr()` et le codage ASCII**
 
-Voici une table ASCII :  ![](Figure-1-15.png)
+Python permet de manipuler les **codes numériques des caractères** grâce aux fonctions :
 
-a. Quels sont les entiers qui code l'alphabet en lettre capitale? 
+* `chr(entier)` : retourne le caractère ASCII correspondant à l'entier.
+* `ord(caractère)` : retourne l'entier ASCII correspondant au caractère.
 
-b. Quels scripts faut-il écrire pour obtenir l'affichage de la lettre A et du mot NSI? 
 
-c. Ecrire le script Python qui permet d'obtenir une structure de données de type dict qui doit être :  
+1.a.  **Quels sont les entiers qui codent l’alphabet en lettres majuscules ?**
 
+> 💡 Aide : on pourra tester la fonction `ord()` sur `'A'`, `'B'`, ..., `'Z'`.
+
+
+
+1.b.  **Quels scripts écrire pour obtenir l’affichage :**
+
+* de la lettre `'A'` ?
+* du mot `'NSI'` ?
+
+> 💡 Aide : utiliser `chr()` avec les bons entiers ASCII.
+
+
+1.c.  **Créer un dictionnaire qui associe chaque lettre majuscule à un nombre de 0 à 25**
+
+Ce dictionnaire doit être de la forme suivante :
+
+```python
+{'A': 0, 'B': 1, 'C': 2, ..., 'Z': 25}
+```
+
+> 💡 Aide : utiliser une boucle et `chr()` avec `range(65, 91)`
+
+📌 Résultat attendu (extrait) : 
 ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.052.png)
 
-2 Le chiffrement de César 
+🔹 **Partie 2 – Le chiffrement de César**
 
-A chaque lettre de l'alphabet on associe un nombre de à 0 à 25. On ajoute à ce nombre un nombre choisi par exemple 7. Le reste de la division euclidienne du nombre obtenue par 26 correspond au chiffre qui codera la lettre initiale. La lettre Y est associée à 24, on lui ajoute 7 on obtient 31. Le reste de la division euclidienne de 31 par 26 est 5. Ce qui donne F. Y est donc codé par F. 
+Le **chiffrement de César** consiste à **décaler chaque lettre** d’un mot d’un certain nombre fixe.
+Exemple avec un **décalage de +7** :
 
-a. Quels scripts écrire pour obtenir le code de la lettre A et du mot NSI avec un décalage de 7. Rappel : le reste de la division euclidienne de a par b s'obtient en Python ainsi : a%b 
+* `'A'` devient `'H'`
+* `'Y'` devient `'F'` car `(24 + 7) % 26 = 5` → `'F'`
 
-b. Quel script écrire pour obtenir le dictionnaire de la table de codage/décodage de l'alphabet avec la méthode du chiffrement de César avec un décalage de 7? On stockera ce dictionnaire dans une variable nommée d. 
+2.a. **Quels scripts permettent d’obtenir :**
 
-3 Une fonction de codage 
+* le codage de la lettre `'A'` ?
+* le codage du mot `'NSI'` avec un décalage de 7 ?
 
-a. Reprendre votre dictionnaire d et tester : 
-
-> d['A'] 
-
-> d['D'] 
-
-> d['E'] 
-
-b. Dans le script précédent quel est le statut de 'A', 'D' et 'E'? Clé ou valeur? 
-
-c. Ecrire une fonction en Python codage(mot) qui prend en argument un chaine de caractère écrit en lettre capitale et qui renvoie le mot codé par le chiffrement de César. 
+> 💡 Utiliser le dictionnaire de la question 1c, le modulo `%` pour la rotation, et `chr()` pour revenir au caractère.
 
 
+2.b. **Créer un dictionnaire de codage (clé = lettre d’origine, valeur = lettre codée)**
+
+Ce dictionnaire stocke le résultat du **chiffrement de César avec un décalage de 7**.
+
+> 💡 À stocker dans une variable `d`.
+
+Résultat attendu (extrait) :
+
+```python
+{'A': 'H', 'B': 'I', ..., 'Y': 'F', 'Z': 'G'}
+```
+
+🔹 Partie 3 – Une fonction de codage</h3>
+
+3.a.  Tester le dictionnaire obtenu :
+
+```python
+print(d['A'])
+print(d['D'])
+print(d['E'])
+```
+
+3.b.  Question de réflexion :
+
+Dans `d['A']`, `d['D']`, `d['E']` :
+
+* `'A'`, `'D'`, `'E'` sont-ils des **clés** ou des **valeurs** du dictionnaire `d` ?
+
+3.c. 🛠️ Écrire une fonction `codage(mot)` qui renvoie le mot codé avec César
+
+La fonction :
+
+* prend une **chaîne en lettres majuscules** (sans espace ni accents),
+* retourne une **nouvelle chaîne codée** avec le **décalage de 7**.
+
+Exemple :
+
+```python
+>>> codage("NSI")
+'UZP'
+```
+
+> 💡 Utiliser le dictionnaire `d` créé plus tôt.
 
 
-**<H3 STYLE="COLOR:red;">Exercice 38 :** ★★ **Jeu de cartes :</H3>**
+**<H3 STYLE="COLOR:red;">Exercice 42 :** ★★ **Jeu de cartes :</H3>**
 
-Un jeu de 32 cartes est composé de :  
 
-- quatre couleurs : pique, cœur, carreau, trèfle  
-- huit valeurs : roi, dame, valet,1,10,9,8,7 
+**Partie 1 – Modélisation et construction du jeu de 32 cartes**
+
+📌 Règles :
+
+Un jeu de 32 cartes comprend :
+
+* **4 couleurs** : pique, cœur, carreau, trèfle
+* **8 valeurs** : Roi, Dame, Valet, 1 (As), 10, 9, 8, 7
 
 ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.060.png)
 
-**Modélisation du problème**.  
 
-- Comment modéliser une carte en Python?  
-- Comment modéliser un jeu de cartes?  
+1 Implémenter la fonction qui crée un jeu de 32 cartes par compréhesion 
 
-**Implémentation en Python.**  
-
-Le but est d'implémenter un jeu de 32 cartes et se  doter de fonctions qui permettent interagir avec ce  jeu. 
-
-Lorsque vous écrivez des fonctions : 
-
-- Il faut typer vos fonctions. Exemple : ```creation_jeu32(couleur:tuple, valeur32:tuple)->list ```
-- Il faut écrire une aide explicative docstring, entre " ", ou entre """ """" (si l'aide fait plusieurs lignes). 
-
-1 Créer une fonction ```creation_jeu32(couleur:tuple, valeur32:tuple)->list``` qui retourne un liste de 32  cartes  sous  forme  de  **liste  de  tuples** : [('Roi',  'pique'),  ('Roi',  'coeur'),  ('Roi', 'carreau'),…]
-
-**Aide :**  
 ```python
-couleur = ("pique", "coeur", "carreau", "trèfle") 
-
-valeur32 = ("Roi", "Dame", "Valet", 1, 10, 9, 8, 7) 
+def creation_jeu32(couleur: tuple, valeur32: tuple) -> list:
+    """
+    Retourne la liste des 32 cartes d’un jeu sous forme de tuples (valeur, couleur).
+    """
+    pass
 ```
-2 Vérifier que le jeu possède 32 cartes 
+
+**Données à utiliser :**
+
+```python
+couleur = ("pique", "coeur", "carreau", "trèfle")
+valeur32 = ("Roi", "Dame", "Valet", 1, 10, 9, 8, 7)
+```
+
+**Retour :**
+```
+[('Roi', 'pique'), ('Roi', 'coeur'), ('Roi', 'carreau'), ('Roi', 'trèfle'), ('Dame', 'pique'), ('Dame', 'coeur'), ('Dame', 'carreau'), ('Dame', 'trèfle'), ('Valet', 'pique'), ('Valet', 'coeur'), ('Valet', 'carreau'), ('Valet', 'trèfle'), (1, 'pique'), (1, 'coeur'), (1, 'carreau'), (1, 'trèfle'), (10, 'pique'), (10, 'coeur'), (10, 'carreau'), (10, 'trèfle'), (9, 'pique'), (9, 'coeur'), (9, 'carreau'), (9, 'trèfle'), (8, 'pique'), (8, 'coeur'), (8, 'carreau'), (8, 'trèfle'), (7, 'pique'), (7, 'coeur'), (7, 'carreau'), (7, 'trèfle')]
+```
+
+
+**Test :**
+
 ```python
 jeu32 = creation_jeu32(couleur, valeur32)
-print("Jeu de 32 cartes : ",jeu32)
-
+print("Jeu de 32 cartes :", jeu32)
 assert len(jeu32) == 32
 ```
 
-3 On veut pouvoir mélanger le jeu de 32 cartes. Il existe une fonction shuffle(liste)  qui mélange les éléments d'une liste. Ecrire une fonction ```melange(jeu:list)->list``` qui renvoie le jeu de cartes mélangé. Penser à importer random 
+2 Implémenter la fonction qui mélange le jeu
+
+```python
+import random
+
+def melange(jeu: list) -> list:
+    """
+    Mélange le jeu (en place) et le retourne.
+    """
+    pass
+```
+
+**Test :**
+
 ```python
 melange(jeu32)
-print("mélange",jeu32)
+print("Jeu mélangé :", jeu32)
 ```
 
-4 On veut pouvoir tirer une carte au hasard du jeu. Si le jeu est mélangé, cela peut être la première carte. Il faut penser à retirer la carte du jeu. ```carte_hasard(jeu:list)-> tuple````
+3 Implémenter la fonction qui tire une carte au hasard
 
 ```python
-print("sorti au hasard d'une carte",carte_hasard(jeu32))
-print("nombre de cartes en jeu",len(jeu32))
+def carte_hasard(jeu: list) -> tuple:
+    """
+    Tire et supprime une carte du jeu. Renvoie un tuple (valeur, couleur).
+    """
+    pass
 ```
 
-5 On veut pouvoir créer une "main" d’un certain nombre de cartes. Une main signifie un ensemble de cartes. Ecrire une fonction ```main(nombre_cartes: int,jeu:list)->list:``` qui renvoie une main formée du nombre de cartes. Il faut penser à retirer la main créée du jeu de 32 cartes. 
-```python
-main5=main(5,jeu32)
-print("Main de cinq cartes :",main5)
-print("nombre de cartes en jeu",len(jeu32))
-```
-
-**Vers une autre structure de données construites**. 
-
-On veut pouvoir comparer des cartes pour réaliser par exemple des jeux. 
-
-**Modélisation** 
-
-- Comment modéliser la "force" d'une carte? 
-- Comment modéliser le jeu de cartes avec la force de chaque carte? 
-
-**Implémentation en Python** 
-
-6 Ecrire une fonction force(carte:tuple)->int: qui renvoie la "force" de la carte. 
-
-on supposera que le 7 -> 7, ..., V -> 11, D -> 12, R -> 13, 1 -> 14
+**Test :**
 
 ```python
-print("force du roi de pique",force(('Roi', 'pique')))
+jeu32 = creation_jeu32(couleur, valeur32)
+c = carte_hasard(jeu32)
+print("Carte tirée :", c)
+assert isinstance(c, tuple)
+assert len(jeu) == 31
 ```
-
-7 Ecrire une fonction ```jeu_force(jeu : list) -> dict:``` qui renvoie le jeu des cartes associées à leur force.
-```python
-print("jeu en fonction de la force de la carte",jeu_force(jeu32))
-```
-
-8 On  veut  comparer  deux  cartes.  Ecrire  une  fonction  en  Python ```compare(carte1:tuple,carte2:tuple,jeu_force:dict)->tuple``` qui renvoie la carte avec la force la plus élevée.
-```python
-print("compare le valet de coeur à l'as de coeur :",compare(('Valet', 'coeur'), (1, 'coeur'),jeu_force(jeu32)))
-```
-
-9 Inventer  une  notion  de  distance  entre  deux  cartes.  Ecrire  une  fonction ```distance(carte1:tuple,carte2:tuple)->int``` qui renvoie la "distance" entre deux cartes. 
-```python
-carte1 = carte_hasard(jeu32)
-carte2 = carte_hasard(jeu32)
-print("carte 1 :", carte1)
-print("carte 2 :", carte2)
-print("la distance entre les deux cartes est :", distance(carte1,carte2))
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 39** ★★ **Tracé graphique</h3>**  
-
-Matplotlib est une bibliothèque du langage de programmation Python destinée à tracer et visualiser des données sous formes de graphiques. Elle peut être combinée avec les bibliothèques python de calcul scientifique NumPy et SciPy. L’avantage de cette librairie est qu’elle est très simple d’utilisation et permet en quelques lignes de tracer des courbes par exemple. Il n’est donc pas nécessaire de passer par la phase (éventuellement longue et fastidieuse) de conception et de développement d’interfaces graphiques, pour des besoins de représentation qui peuvent être ponctuels par ailleurs. 
-
-Matplotlib est distribuée librement et gratuitement sous une licence de style BSD. 
-
-1 Créer un fichier Python graphics.py.
-
-2 Écrire une fonction f, qui à x → x² + x – 4, et dont le prototype est le suivant : 
-```f(x : float) ->  float ```
-
-3 Compléter le code ci-dessous en utilisant une **compréhension de liste** pour liste_x et liste_y.
-
-- liste_x contient les éléments  ∈ [−3,0;3,0] par intervalle de 0,1. **Attention : la fonction range() n’accepte que les nombres entiers**
-
-- liste_y contient les images de x par f.
+4 Implémenter la fonction qui crée une main
 
 ```python
-import matplotlib.pyplot as plt 
-
-def f(x : float) -> float: 
-  # à compléter 
-
-#à compléter 
-liste_x =  
-liste_y =  
-
-plt.plot(liste_x, liste_y, "b-", label="x² + x - 4", linewidth=3) 
-plt.legend() 
-plt.show() 
+def main(nombre_cartes: int, jeu: list) -> list:
+    """
+    Tire un certain nombre de cartes du jeu et les retourne sous forme de liste.
+    Les cartes sont retirées du jeu.
+    """
+    pass
 ```
 
-Résultat attendu : 
+**Test :**
 
-![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.064.png)
+```python
+jeu32 = creation_jeu32(couleur, valeur32)
+main5 = main(5, jeu32)
+print("Main de 5 cartes :", main5)
+assert len(main5) == 5
+assert len(jeu) == 27
+```
 
-*courbe : x² + x – 4* 
+5 Implémenter la fonction qui calcule la force d'une carte
 
-On souhaite tracer une deuxième courbe sur le même graphique précédent dont l’équation est y = x<sup>3</sup> – 3x + 2. 
+```python
+def force(carte: tuple) -> int:
+    """
+    Renvoie la force d’une carte :
+    7 → 7, ..., Valet → 11, Dame → 12, Roi → 13, 1 (As) → 14
+    """
+    pass
+```
 
-4 Modifier votre programme en rajoutant une fonction f2 qui renvoie l’image de x pour l’équation ci-dessus. 
+**Test :**
 
-5 Mettre à jour une troisième liste liste_y2 à l’aide d’une compréhension de liste. 
+```python
+assert force((7, "pique")) == 7
+assert force((10, "coeur")) == 10
+assert force(('Valet', "trèfle")) == 11
+assert force(('Roi', "carreau")) == 13
+assert force((1, "pique")) == 14
+```
 
-6 Modifier les paramètres de la fonction plot() pour obtenir le résultat ci-dessous. 
+6 Implémenter la fonction qui associe chaque carte à sa force
 
-7 Rajouter la légende sur le graphique.  
+```python
+def jeu_force(jeu: list) -> dict:
+    """
+    Renvoie un dictionnaire {carte: force} pour toutes les cartes du jeu.
+    """
+    pass
+```
 
+**Test :**
+
+```python
+jeu = creation_jeu32(couleur, valeur32)
+forces = jeu_force(jeu)
+print("Forces des cartes :", forces)
+assert isinstance(forces, dict)
+```
+
+
+7 Implémenter la fonction qui compare deux cartes
+
+```python
+def compare(carte1: tuple, carte2: tuple, forces: dict) -> tuple:
+    """
+    Compare deux cartes à l'aide d’un dictionnaire de forces.
+    Renvoie la carte la plus forte.
+    """
+    pass
+```
+
+**Test :**
+
+```python
+jeu = creation_jeu32(couleur, valeur32)
+forces = jeu_force(jeu)
+assert compare(('Valet', 'coeur'), (1, 'coeur'), forces) == (1, 'coeur')
+assert compare((9, 'pique'), (7, 'pique'), forces) == (9, 'pique')
+```
+
+8. Implémenter la fonction qui calcule la distance entre deux cartes</h3>
+
+```python
+def distance(carte1: tuple, carte2: tuple) -> int:
+    """
+    Renvoie la différence de force absolue entre deux cartes.
+    """
+    pass
+```
+
+**Test :**
+
+```python
+assert distance((10, "coeur"), (7, "pique")) == 3
+assert distance((1, "trèfle"), ('Roi', "trèfle")) == 1
+```
+
+
+
+**<H3 STYLE="COLOR:red;">Exercice 43** ★★ **Tracé graphique</h3>**  
+
+1 Importation 
+
+```python
+import matplotlib.pyplot as plt
+```
+
+2 Définir la fonction f(x)
+
+```python
+def f(x: float) -> float:
+    """
+    Fonction polynomiale de degré 2 : f(x) = x² + x - 4
+    """
+    pass
+
+# Tests
+assert abs(f(0) - (-4)) < 1e-6
+assert abs(f(1) - (-2)) < 1e-6
+assert abs(f(-2) - (-6)) < 1e-6
+```
+
+3 Générer les données de la courbe
+
+```python
+# Liste des abscisses x allant de -3.0 à 3.0 par pas de 0.1
+liste_x = [x / 10 for x in range(-30, 31)]
+
+# Liste des ordonnées associées à la fonction f
+liste_y = [f(x) for x in liste_x]
+```
+
+4 Tracer la première courbe
+
+```python
+plt.plot(liste_x, liste_y, "b-", label="x² + x - 4", linewidth=3)
+plt.legend()
+plt.grid()
+plt.show()
+```
+
+5 Définir une deuxième fonction f2(x)
+
+```python
+def f2(x: float) -> float:
+    """
+    Fonction polynomiale de degré 3 : f2(x) = x³ - 3x + 2
+    """
+    pass
+
+# Tests
+assert abs(f2(0) - 2) < 1e-6
+assert abs(f2(1) - 0) < 1e-6
+assert abs(f2(-1) - ( -1 + 3 + 2)) < 1e-6  # = 4
+```
+
+6 Tracer les deux courbes ensemble
+
+```python
+# Ordonnées de la seconde fonction
+liste_y2 = [f2(x) for x in liste_x]
+
+# Tracé des deux courbes
+plt.plot(liste_x, liste_y, "b-", label="x² + x - 4", linewidth=3)
+plt.plot(liste_x, liste_y2, "r--", label="x³ - 3x + 2", linewidth=3)
+plt.legend()
+plt.grid()
+plt.show()
+```
 Résultat attendu :  
 ![](Aimg021.png)
 
-**<H3 STYLE="COLOR:red;">Exercice 40 :** ★★ **Bulletins de vote Génération des votes:</h3>**  
-
-On souhaite réaliser le comptage automatique d’un dépouillement d’une élection. Votre startup reçoit un fichier texte qui contient ligne par ligne les noms des candidats qui ont reçu le vote des électeurs. 
-
-Il n’y a qu’un seul nom par ligne. Vous êtes chargé de fournir au client le nombre de votes et le total des votes reçus par candidats présents dans le fichier. 
-
-1 Créer un fichier Python votes.py. 
-
-On souhaite générer une liste de votes factices à partir d’une liste de noms. 
-
-2 Ecrire une fonction qui crée un fichier texte (vote.txt) avec un nom par ligne qui a été tiré aléatoirement depuis une liste de noms. 
-
-```generate_ballots(total : int, noise : int) -> bool ```
-
-- total -- nombre de bulletins 
-- noise -- numero de bulletin "bruité" . Le bulletin bruité est un vote étranger (ie : d’un candidat pirate)  qui ne fait pas partie de la liste « officielle ». 
-- la fonction renvoie True si Ok, ou False si erreur 
-
-**Aide** :  
-
-- la liste des noms :
-
-```python
-ballots  = ['Pikachu','Pikachu','Pikachu','Fantomas','Fantomas','Dark Vador','Dark Vador','Saruman','Saruman','Saruman'] 
-
-stranger = 'Sex Pistols' 
-```
-
-**Rappels** :  
-
-- on utilisera la fonction open() avec l’attribut "w"
-- on utilisera la syntaxe : 
-
-```
-try : 
-  # bloc à coder 
-except IOError : 
-  return False 
-return True
-``` 
-
-- on utilisera le module random sur la liste ballots pour écrire un nom au hasard dans le fichier vote.txt  
-- ne pas oublier "\n" à la fin de chaque ligne écrite et de fermer le fichier texte avec la méthode close()
-
-3 Tester cette fonction avec total 10 et noise 2. 
-
-4 Documenter la fonction. 
-
-**Dépouillement :** 
-
-5 Ajouter une fonction qui permet de dénombrer le nombre de votes pour un candidat donné. On donne le prototype de la fonction : 
 
 
-```read_ballots(filename : str) -> dict ```
-- filename -- nom du fichier texte 
 
-- la fonction retourne un dictionnaire sous la forme {nom du candidat:nbr de votes}, ou None si erreur 
-
-**Aide :**
-
-- La méthode strip() et la méthode rstrip("\n") pour enlever le symbole. Les deux méthodes peuvent s’écrire sur la même ligne 
-
-[https://www.w3schools.com/python/ref_string_strip.asp ](https://www.w3schools.com/python/ref_string_strip.asp)[https://www.w3schools.com/python/ref_string_rstrip.asp ](https://www.w3schools.com/python/ref_string_rstrip.asp)
-
-**Rappels** :  
-
-- on utilisera la fonction open() avec l’attribut "r" 
-- on utilisera la syntaxe  
-
-```
-try : 
-  # bloc à coder 
-except IOError : 
-  return None       
-return #le dictionnaire
-``` 
-
-- Ne pas oublier de fermer le fichier texte
-
-6 Documenter la fonction (docstring). 
-
-7 Tester les fonctions avec  
-```python
-generate_ballots(5000, 3951) 
-print(read_ballots("votes.txt"))
-```
-
-8 Déterminer les intrus qui se sont glissés dans le fichier et supprimer les du dictionnaire sans utiliser 'Sex Pistols' on pourra imaginer que tous les intrus ont qu’un seul vote. 
-
-9 Afficher le nombre de votants à l’aide d’une compréhension de liste faite sur le dictionnaire retourné par la fonction read_ballots().
-
-**Aide :**  
-
-- On pourra utiliser la fonction sum.  [https://www.programiz.com/python-programming/methods/built-in/sum ](https://www.programiz.com/python-programming/methods/built-in/sum)![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.010.png)
-
-**<H3 STYLE="COLOR:red;">Exercice 41 :** ★★★ **format EXIF Introduction</h3>** => Thonny
+**<H3 STYLE="COLOR:red;">Exercice 43 :** ★★★ **format EXIF Introduction</h3>** => Thonny
 
 ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.072.png)
 
