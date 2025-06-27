@@ -1013,32 +1013,35 @@ c. Ecrire une fonction en Python codage(mot) qui prend en argument un chaine de 
 
 Aide : ne pas oublier d’importer le module random 
 
-**<H3 STYLE="COLOR:red;">Exercice 9 :** ★★ **Carré magique  :</h3>** Un carré magique d’ordre 3 est une matrice de 3 lignes et de 3 dans laquelle des nombres sont placés de telle sorte que la somme des nombres de chaque colonne, chaque ligne et de chacune des deux diagonales soit la même. De plus, le carré doit contenir une fois chaque nombre, de 1 au nombre de cases de la grille. Ecrire un script Python qui vérifie que ce carré est magique. On pourra utiliser : 
+**<H3 STYLE="COLOR:red;">Exercice 9 :** ★★ **Carré magique  :</h3>** 
+
+
+Un **carré magique d’ordre 3** est une grille de 3×3 contenant **les entiers de 1 à 9, chacun une seule fois**, et telle que **la somme des éléments de chaque ligne, de chaque colonne et des deux diagonales soit la même**.
+
+Voici un exemple de carré magique :
 
 ```python
-L=[ [2,7,6],
- [9,5,1],
- [4,3,8]]
+L = [
+    [6, 1, 8],
+    [7, 5, 3],
+    [2, 9, 4]
+]
 ```
 
 
-Pour aller plus loin : problème France-IOI (niveau 3 → 5 -tableaux avancés): 
 
-Un carré magique est une grille carrée dans laquelle des nombres sont placés de telle sorte que la somme des nombres de chaque colonne, chaque ligne et de chacune des deux diagonales soit la même. De plus, Le carré doit contenir une fois chaque nombre, de 1 au nombre de cases de la grille. 
+🎯 **Objectif** : Écrire un programme Python qui vérifie si une grille 3x3 est un carré magique.
 
-Ecrivez un programme qui vérifie si une grille de nombres est un carré magique. 
 
-**Entrée** 
 
-La première ligne de l'entrée contient un entier *N* : le nombre de cases du côté de la grille de nombres. 
+💡 **Aide visuelle : somme des lignes, colonnes et diagonales**
 
-Chacune des *N* lignes suivantes contient *N* entiers séparés par des espaces : les nombres d'une ligne de la grille. 
+![](Aimg020.png)
 
-**Sortie** 
 
-Vous devez afficher une ligne sur la sortie, contenant le mot "yes" si le carré fourni est un carré magique, et "no" sinon. 
+✅ **Exécution attendue du programme**
 
-**Exemple** 
+Si la grille est magique, le programme doit afficher :
 
 *entrée : 
 ![](Aimg018.png)
@@ -1047,72 +1050,34 @@ Vous devez afficher une ligne sur la sortie, contenant le mot "yes" si le carré
 ![](Aimg019.png)
 
 
-**Commentaires** 
 
-Chacun des chiffres de 1 à 9 apparaît exactement une fois dans la grille. De plus, toutes les colonnes, lignes et les deux diagonales de cette grille ont pour somme 15. En effet : 
+🔧 **Aide – Fonctions conseillées à créer**
 
-![](Aimg020.png)
+| Fonction                         | Rôle attendu                                                        |
+| -------------------------------- | ------------------------------------------------------------------- |
+| `somme(tab)`                     | renvoie la somme des éléments de la liste `tab`                     |
+| `recup_colonne(tab, indice_col)` | renvoie une liste contenant les éléments de la colonne `indice_col` |
+| `diagonale1(tab)`                | renvoie la diagonale principale (de `tab[0][0]` à `tab[2][2]`)      |
+| `diagonale2(tab)`                | renvoie la diagonale secondaire (de `tab[0][2]` à `tab[2][0]`)      |
+| `carre_magique(tab)`             | renvoie `True` si la grille est magique, `False` sinon              |
 
-**Aide**
-on pourra s'aider de fonctions auxiliaires par **exemple**
 
-- **somme(tab)**
 
-Rôle : calcule la somme des nombres contenus dans une liste.
+🧪 **À tester avec :**
 
-Paramètre : tab, une liste d’entiers (ex : [2,7,6])
+```python
+L = [
+    [6, 1, 8],
+    [7, 5, 3],
+    [2, 9, 4]
+]
+print(carre_magique(L))  # Doit afficher True 
+```
 
-Renvoie : un entier qui est la somme de tous les éléments de tab.
 
-Exemple : somme([2,7,6]) renvoie 15.
 
-- **recup_colonne(tab, indice_col)**
 
-Rôle : extraire la colonne numéro indice_col d’un tableau 3x3.
 
-Paramètres :
-
-tab, un tableau 3x3 (une liste de listes, par exemple [[2,7,6],[9,5,1],[4,3,8]])
-
-indice_col, un entier représentant l’indice de la colonne (0, 1 ou 2)
-
-Renvoie : une liste contenant les 3 éléments de la colonne demandée.
-
-Exemple : recup_colonne([[2,7,6],[9,5,1],[4,3,8]],0) renvoie [2,9,4].
-
-- **diagonale1(tab)**
-
-Rôle : récupérer la diagonale "principale" d’un tableau 3x3, c’est-à-dire en partant de l'élément tab[0][0].
-
-Paramètre : tab, un tableau 3x3.
-
-Renvoie : une liste de 3 éléments correspondant à la diagonale principale.
-
-Exemple : diagonale1([[2,7,6],[9,5,1],[4,3,8]]) renvoie [2,5,8].
-
-- **diagonale2(tab)**
-
-Rôle : récupérer la diagonale "secondaire" d’un tableau 3x3, c’est-à-dire en partant de l'élément tab[0][2].
-
-Paramètre : tab, un tableau 3x3.
-
-Renvoie : une liste de 3 éléments correspondant à la diagonale secondaire.
-
-Exemple : diagonale2([[2,7,6],[9,5,1],[4,3,8]]) renvoie [6,5,4].
-
-- **carre_magique(tab)**
-
-Rôle : déterminer si un tableau 3x3 est un carré magique. Un carré magique est un tableau où la somme des 3 lignes, la somme des 3 colonnes et la somme des 2 diagonales sont toutes égales.
-
-Paramètre : tab, un tableau 3x3.
-
-Renvoie :
-
-True (Vrai) si c’est un carré magique
-
-False (Faux) sinon.
-
-Exemple : carre_magique([[2,7,6],[9,5,1],[4,3,8]]) renvoie True (si c’est magique) ou False (si ce ne l’est pas).
 
 **<H3 STYLE="COLOR:red;">Exercice 10:** ★ **avec les chaine de caractères  :</H3>** 
 
