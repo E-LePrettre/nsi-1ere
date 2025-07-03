@@ -1444,7 +1444,7 @@ notes = {
 }
 ```
 
-1 Implémenter la fonction suivante `afficher_notes(d)`
+**1** Implémenter la fonction suivante `afficher_notes(d)`
 
 Affiche chaque matière suivie de la note, sous la forme :
 
@@ -1455,7 +1455,7 @@ anglais : 12.5
 histoire : 13.0
 ```
 
-2  Implémenter la fonction suivante `ajouter_matiere(d, matiere, note)`
+**2**  Implémenter la fonction suivante `ajouter_matiere(d, matiere, note)`
 
 Ajoute une nouvelle matière `matiere` avec la note `note` au dictionnaire `d`.
 
@@ -1467,7 +1467,7 @@ ajouter_matiere(notes, "svt", 14)
 # Résultat attendu : {"maths": 15.5, "svt": 14}
 ```
 
-3  Implémenter la fonction suivante `supprimer_matiere(d, matiere)`
+**3**  Implémenter la fonction suivante `supprimer_matiere(d, matiere)`
 
 Supprime une matière si elle existe dans le dictionnaire. Ne fait rien sinon.
 
@@ -1479,7 +1479,7 @@ supprimer_matiere(notes, "svt")
 # Résultat attendu : {"maths": 15.5}
 ```
 
-4  Implémenter la fonction suivante `moyenne_generale(d)`
+**4**  Implémenter la fonction suivante `moyenne_generale(d)`
 
 Renvoie la **moyenne générale** de toutes les notes (arrondie à 2 décimales si tu veux).
 
@@ -1490,7 +1490,7 @@ notes = {"maths": 15.5, "nsi": 18.0, "anglais": 12.5}
 assert moyenne_generale(notes) == 15.33
 ```
 
-5  Implémenter la fonction suivante `matiere_max(d)`
+**5**  Implémenter la fonction suivante `matiere_max(d)`
 
 Renvoie la **matière** dans laquelle la note est la plus élevée.
 
@@ -1501,7 +1501,7 @@ notes = {"maths": 15.5, "nsi": 18.0, "anglais": 12.5}
 assert matiere_max(notes) == "nsi"
 ```
 
-6  Implémenter la fonction suivante `recherche(d, note)`
+**6**  Implémenter la fonction suivante `recherche(d, note)`
 
 Renvoie la **liste des matières** pour lesquelles la note est exactement égale à `note`.
 
@@ -1516,7 +1516,7 @@ assert recherche(notes, 12) == ["maths", "anglais"]
 
 **<H3 STYLE="COLOR:red;">Exercice 40</h3>** ★ **Simuler un tirage de cartes de poker</h3>**
 
-1 Tirage d’une carte au hasard
+**1** Tirage d’une carte au hasard
 
 On donne la liste `ListeCartes` représentant les **52 cartes** d’un jeu de Poker (valeurs de 2 à As, et couleurs : pique (s), cœur (h), carreau (d), trèfle (c)).
 
@@ -1543,7 +1543,7 @@ Exemple attendu :
 '9s'
 ```
 
-2 Tirage de N cartes différentes : Écrire une fonction `tirage_n_cartes(n)` qui retourne une **liste de `n` cartes différentes**, tirées au hasard **sans doublon**.
+**2** Tirage de N cartes différentes : Écrire une fonction `tirage_n_cartes(n)` qui retourne une **liste de `n` cartes différentes**, tirées au hasard **sans doublon**.
 
 > ⚠️ Le tirage doit respecter la règle du Poker : **on ne peut pas avoir deux fois la même carte**.
 
@@ -1555,7 +1555,7 @@ Exemple attendu :
 >>> tirage_n_cartes(3)
 ['8c', 'Qs', '3h']
 ```
-3 Version optimisée avec `sample()` : Python propose la fonction `random.sample(liste, n)` qui renvoie directement `n` éléments **différents** pris au hasard dans `liste`.
+**3** Version optimisée avec `sample()` : Python propose la fonction `random.sample(liste, n)` qui renvoie directement `n` éléments **différents** pris au hasard dans `liste`.
 
 Réécrire la fonction précédente sous le nom `tirage_n_cartes_v2(n)` en utilisant cette fonction.
 
@@ -1639,7 +1639,7 @@ Résultat attendu (extrait) :
 {'A': 'H', 'B': 'I', ..., 'Y': 'F', 'Z': 'G'}
 ```
 
-🔹 Partie 3 – Une fonction de codage</h3>
+🔹 **Partie 3 – Une fonction de codage
 
 3.a.  Tester le dictionnaire obtenu :
 
@@ -1689,7 +1689,7 @@ Un jeu de 32 cartes comprend :
 ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.060.png)
 
 
-1 Implémenter la fonction qui crée un jeu de 32 cartes par compréhesion 
+**1** Implémenter la fonction qui crée un jeu de 32 cartes par compréhesion 
 
 ```python
 def creation_jeu32(couleur: tuple, valeur32: tuple) -> list:
@@ -1720,7 +1720,7 @@ print("Jeu de 32 cartes :", jeu32)
 assert len(jeu32) == 32
 ```
 
-2 Implémenter la fonction qui mélange le jeu
+**2** Implémenter la fonction qui mélange le jeu
 
 ```python
 import random
@@ -1739,7 +1739,7 @@ melange(jeu32)
 print("Jeu mélangé :", jeu32)
 ```
 
-3 Implémenter la fonction qui tire une carte au hasard
+**3** Implémenter la fonction qui tire une carte au hasard
 
 ```python
 def carte_hasard(jeu: list) -> tuple:
@@ -1758,7 +1758,7 @@ print("Carte tirée :", c)
 assert isinstance(c, tuple)
 assert len(jeu) == 31
 ```
-4 Implémenter la fonction qui crée une main
+**4** Implémenter la fonction qui crée une main
 
 ```python
 def main(nombre_cartes: int, jeu: list) -> list:
@@ -1779,7 +1779,7 @@ assert len(main5) == 5
 assert len(jeu) == 27
 ```
 
-5 Implémenter la fonction qui calcule la force d'une carte
+**5** Implémenter la fonction qui calcule la force d'une carte
 
 ```python
 def force(carte: tuple) -> int:
@@ -1800,7 +1800,7 @@ assert force(('Roi', "carreau")) == 13
 assert force((1, "pique")) == 14
 ```
 
-6 Implémenter la fonction qui associe chaque carte à sa force
+**6** Implémenter la fonction qui associe chaque carte à sa force
 
 ```python
 def jeu_force(jeu: list) -> dict:
@@ -1820,7 +1820,7 @@ assert isinstance(forces, dict)
 ```
 
 
-7 Implémenter la fonction qui compare deux cartes
+**7** Implémenter la fonction qui compare deux cartes
 
 ```python
 def compare(carte1: tuple, carte2: tuple, forces: dict) -> tuple:
@@ -1840,7 +1840,7 @@ assert compare(('Valet', 'coeur'), (1, 'coeur'), forces) == (1, 'coeur')
 assert compare((9, 'pique'), (7, 'pique'), forces) == (9, 'pique')
 ```
 
-8 Implémenter la fonction qui calcule la distance entre deux cartes</h3>
+**8** Implémenter la fonction qui calcule la distance entre deux cartes</h3>
 
 ```python
 def distance(carte1: tuple, carte2: tuple) -> int:
@@ -1861,13 +1861,13 @@ assert distance((1, "trèfle"), ('Roi', "trèfle")) == 1
 
 **<H3 STYLE="COLOR:red;">Exercice 43** ★★ **Tracé graphique</h3>**  
 
-1 Importation 
+**1** Importation 
 
 ```python
 import matplotlib.pyplot as plt
 ```
 
-2 Définir la fonction f(x)
+**2** Définir la fonction f(x)
 
 ```python
 def f(x: float) -> float:
@@ -1882,7 +1882,7 @@ assert abs(f(1) - (-2)) < 1e-6
 assert abs(f(-2) - (-6)) < 1e-6
 ```
 
-3 Générer les données de la courbe
+**3** Générer les données de la courbe
 
 ```python
 # Liste des abscisses x allant de -3.0 à 3.0 par pas de 0.1
@@ -1892,7 +1892,7 @@ liste_x = [x / 10 for x in range(-30, 31)]
 liste_y = [f(x) for x in liste_x]
 ```
 
-4 Tracer la première courbe
+**4** Tracer la première courbe
 
 ```python
 plt.plot(liste_x, liste_y, "b-", label="x² + x - 4", linewidth=3)
@@ -1901,7 +1901,7 @@ plt.grid()
 plt.show()
 ```
 
-5 Définir une deuxième fonction f2(x)
+**5** Définir une deuxième fonction f2(x)
 
 ```python
 def f2(x: float) -> float:
@@ -1913,10 +1913,10 @@ def f2(x: float) -> float:
 # Tests
 assert abs(f2(0) - 2) < 1e-6
 assert abs(f2(1) - 0) < 1e-6
-assert abs(f2(-1) - ( -1 + 3 + 2)) < 1e-6  # = 4
+assert abs(f2(-1) - ( -1 + 3 + 2)) < 1e-**6**  # = 4
 ```
 
-6 Tracer les deux courbes ensemble
+**6** Tracer les deux courbes ensemble
 
 ```python
 # Ordonnées de la seconde fonction
@@ -1968,7 +1968,7 @@ La plupart des appareils photos récents et téléphones portables enregistrent 
 
 ![valley.jpg](valley.jpg)
 
-1 Écrire une fonction qui lise les données EXIF contenues dans une image. On donne le prototype de la fonction : 
+**1** Écrire une fonction qui lise les données EXIF contenues dans une image. On donne le prototype de la fonction : 
 
 ```get_exif(filename : str) -> dict ```
 
@@ -2032,9 +2032,9 @@ def get_exif(filename : str) -> dict:
 
 print(get_exif('valley.jpg'))
 ```
-2 Indiquer l’auteur de la photo : 'Artist', 'Fabricant' et 'Numero de série' de l’appareil. Attention aux majuscules / minuscules  
+**2** Indiquer l’auteur de la photo : 'Artist', 'Fabricant' et 'Numero de série' de l’appareil. Attention aux majuscules / minuscules  
 
-3 Ajouter une fonction qui récupère les données GPS du format EXIF. On donne le prototype de la fonction : 
+**3** Ajouter une fonction qui récupère les données GPS du format EXIF. On donne le prototype de la fonction : 
 ```GPS_read(filename : str) -> dict ```
 - filename -- fichier image 
 - la fonction retourne les informations GPS si ok, ou None si erreur 
@@ -2092,7 +2092,7 @@ Par rapport au plan équatorial, la latitude est complétée d’une lettre N (h
 
 Remarque : pour obtenir un traitement automatisé des données géographiques, un format décimal est souvent plus pratique. On divise les minutes par 60 et les secondes par 3600 et on additionne le tout. La latitude est négative dans l’hémisphère Sud (S), et à l’Ouest du méridien de Greenwich (W). 
 
-4 A partir des données GPS récupérées précédemment, écrire une fonction qui indique les coordonnées GPS[^1]. On donne le prototype de la fonction : 
+**4** A partir des données GPS récupérées précédemment, écrire une fonction qui indique les coordonnées GPS[^1]. On donne le prototype de la fonction : 
 
 ```get_coordinates(GPSinfo : dict) -> list ```
 
@@ -2197,13 +2197,13 @@ Le code ASCII de la lettre ‘A’ a pour valeur 65, celui de la lettre ‘Z’ 
 
 Méthode : 
 
-1 ([65 ; 90] – 65) → [0 ; 25]  on soustrait 65 pour être dans un intervalle [0 ; 25] 
+**1** ([65 ; 90] – 65) → [0 ; 25]  on soustrait 65 pour être dans un intervalle [0 ; 25] 
 
-2 ([0 ; 25] + clef) → [clef ; 25 + clef]  on décale selon la clef 
+**2** ([0 ; 25] + clef) → [clef ; 25 + clef]  on décale selon la clef 
 
-3 [clef ; 25 + clef] modulo 26 → [0 ; 25]   le modulo permet de rester dans l’intervalle [0 ; 25] 
+**3** [clef ; 25 + clef] modulo 26 → [0 ; 25]   le modulo permet de rester dans l’intervalle [0 ; 25] 
 
-4 ([0 ; 25] + 65) → [65 ; 90]  on ajoute 65 pour revenir dans un intervalle [‘A’; ‘Z’] 
+**4** ([0 ; 25] + 65) → [65 ; 90]  on ajoute 65 pour revenir dans un intervalle [‘A’; ‘Z’] 
 
 On appelle modulo d’un nombre x par N, l’opérateur qui renvoie le reste de la division entière de x par N. 
 
@@ -2211,7 +2211,7 @@ On appelle modulo d’un nombre x par N, l’opérateur qui renvoie le reste de 
 
 
 
-1 Écrire une fonction qui utilise la méthode de César pour crypter un message. 
+**1** Écrire une fonction qui utilise la méthode de César pour crypter un message. 
 
 Le prototype de la fonction est : ```caesar_encode(text : str, key : int = 1) -> str```
 
@@ -2242,7 +2242,7 @@ assert caesar_encode("ATTAQUEZ DEMAIN")== 'BUUBRVFA EFNBJO'
 
 ```
 
-2 Écrire un programme qui permet de déchiffrer le texte chiffré précédemment. Le prototype de la fonction est : ```caesar_decode(code : str, key : int = 1) -> str```
+**2** Écrire un programme qui permet de déchiffrer le texte chiffré précédemment. Le prototype de la fonction est : ```caesar_decode(code : str, key : int = 1) -> str```
 
 - code représente le texte à déchiffrer, 
 
@@ -2267,7 +2267,7 @@ def caesar_decode(code : str, key : str = 1) -> str:
 assert caesar_encode('BUUBRVFA EFNBJO')== 'ATTAQUEZ DEMAIN'
 ```
 
-3 Factoriser le code des deux fonctions précédentes pour obtenir une fonction qui chiffre ou déchiffre. Le prototype de la fonction est : ```caesar(str_in : str, key : int) -> str```
+**3** Factoriser le code des deux fonctions précédentes pour obtenir une fonction qui chiffre ou déchiffre. Le prototype de la fonction est : ```caesar(str_in : str, key : int) -> str```
 
 - str_in représente le texte à chiffrer/déchiffrer, 
 - key représente la clef de chiffrement. Si key > 0 c’est un chiffrage si key < 0 c’est un déchiffrement.  
@@ -2291,7 +2291,7 @@ assert caesar('BUUBRVFA EFNBJO', -1)== 'ATTAQUEZ DEMAIN'
 
 
 
-4 Tests de cohérence. Écrire une série de tests unitaires qui vérifie les conditions suivantes : 
+**4** Tests de cohérence. Écrire une série de tests unitaires qui vérifie les conditions suivantes : 
 
 Tests à compléter
 ```python
@@ -2320,7 +2320,7 @@ EZ KFLK R WRZK LEV RLKIV, VK D’RZDV VK DV TFDGIVEU.
 
 Le chiffrement de César a été utilisé mais avec une clef différente de 1. 
 
-5 Écrire un programme afin de donner le nom de l’auteur du message crypté. 
+**5** Écrire un programme afin de donner le nom de l’auteur du message crypté. 
 
 **Aide :**  
 - La clef de chiffrement étant inconnue, il faut faire une boucle qui les teste toutes (technique de l’attaque par force brute). 
@@ -2379,7 +2379,7 @@ D’après les statistiques P et Z devraient se décrypter en A et I (ou I et A)
 
 En réfléchissant un petit peu, on décrypte le message : CECI EST UN ESSAI DE PHRASE VRAIE 
 
-1 Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un texte. On donne le prototype :  
+**1** Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un texte. On donne le prototype :  
 
 ```letter_count(text : str) -> list```
 
@@ -2419,7 +2419,7 @@ assert letter_count("Être ou ne pas Être, telle est la question.") == [['e', 7
 ```
 
 
-2 Modifier la fonction pour que les lettres accentuées soient considérées comme non accentuées. On ajoutera avant une fonction ```strip_accent(text : str) -> str```
+**2** Modifier la fonction pour que les lettres accentuées soient considérées comme non accentuées. On ajoutera avant une fonction ```strip_accent(text : str) -> str```
 
 - text : lettre accentuée 
 
@@ -2458,7 +2458,7 @@ assert letter_count("ETRE OU NE PAS ETRE TELLE EST LA QUESTION.") == [['e', 9], 
 assert letter_count("Être ou ne pas Être, telle est la question.") == [['e', 9], ['t', 5], ['s', 3], ['l', 3], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
 ```
 
-3 Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un fichier texte. 
+**3** Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un fichier texte. 
 
 On donne le prototype : ```count_in_file(file : str, encode = 'utf-8') -> list```
 
@@ -2489,7 +2489,7 @@ def count_in_file(file : str, encode = 'utf-8') -> list:
 assert count_in_file("book_vh.txt") == [['e', 139996], ['a', 67618], ['s', 60385], ['i', 59208], ['t', 58033], ['u', 52989], ['r', 52377], ['n', 51021], ['l', 48412], ['o', 41961], ['d', 30221], ['c', 25215], ['m', 21676], ['p', 21393], ['v', 13206], ['q', 9631], ['g', 8972], ['f', 8856], ['h', 8542], ['b', 8187], ['j', 3882], ['x', 3161], ['y', 2425], ['z', 1319], ['ç', 458], ['æ', 38], ['k', 23], ['w', 3], ['ñ', 1], ['á', 1]]
 ```
 
-4 Modifier la fonction pour traiter le cas d’une éventuelle erreur à l’ouverture du fichier (nom incorrect, problème de droits, …). On utilisera le gestionnaire de contexte (context manager). 
+**4** Modifier la fonction pour traiter le cas d’une éventuelle erreur à l’ouverture du fichier (nom incorrect, problème de droits, …). On utilisera le gestionnaire de contexte (context manager). 
 ```
 try : 
   # bloc à coder 
@@ -2515,7 +2515,7 @@ def count_in_file(file : str, encode = 'utf-8') -> list:
 assert count_in_file("book_vh.txt") == [['e', 139996], ['a', 67618], ['s', 60385], ['i', 59208], ['t', 58033], ['u', 52989], ['r', 52377], ['n', 51021], ['l', 48412], ['o', 41961], ['d', 30221], ['c', 25215], ['m', 21676], ['p', 21393], ['v', 13206], ['q', 9631], ['g', 8972], ['f', 8856], ['h', 8542], ['b', 8187], ['j', 3882], ['x', 3161], ['y', 2425], ['z', 1319], ['ç', 458], ['æ', 38], ['k', 23], ['w', 3], ['ñ', 1], ['á', 1]]
 ```
 
-5 Écrire une fonction qui va filtrer la liste de valeurs [lettre, occurrences] sur les lettres. On donne le prototype : ```occurrence(sorted_list : list) -> list```
+**5** Écrire une fonction qui va filtrer la liste de valeurs [lettre, occurrences] sur les lettres. On donne le prototype : ```occurrence(sorted_list : list) -> list```
 
 - sorted_list :  liste  de  valeurs  [lettre,  occurrences],  triée  par  ordre  décroissant  selon  le  nombre d’occurrences de chaque lettre. 
 
@@ -2627,7 +2627,7 @@ Algorithme vigenere
 
 Le texte (en français) suivant a été chiffré par un code mono alphabétique. Déterminer l’auteur de ce texte. eposal, epg r’sjnp, s r’upjdp cj nrsliuaq rs isohsmlp, vp hsdqadsa. bcag-qj, vp gsag tjp qj o’sqqpleg. 
 
-6 Écrire un programme qui substitue les lettres de la liste entree par celles de la liste sortie en fonctions des occurrences rencontrées. 
+**6** Écrire un programme qui substitue les lettres de la liste entree par celles de la liste sortie en fonctions des occurrences rencontrées. 
 
 **Aide :**  
 
@@ -2662,7 +2662,7 @@ ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV X
 
 **Indice** : le texte en clair contient le mot SAINT. 
 
-7 Implémenter l’algorithme précédent. 
+**7** Implémenter l’algorithme précédent. 
 
 **Aide :**  
 
@@ -2757,7 +2757,7 @@ Les processus du dogme central de la biologie moléculaire, réalisés par les c
 
 **Les séquences ADN** 
 
-1 Écrire une fonction qui vérifie si une chaîne de caractères correspond à un brin d’ADN :  cette chaîne ne doit contenir aucun autre caractère que les quatre bases A, C, G et T. Le prototype de la fonction est le suivant : 
+**1** Écrire une fonction qui vérifie si une chaîne de caractères correspond à un brin d’ADN :  cette chaîne ne doit contenir aucun autre caractère que les quatre bases A, C, G et T. Le prototype de la fonction est le suivant : 
 
 ```is_DNA_strand(strand : str) -> bool```
 - strand : brin d’ADN (de 1 à n bases)
@@ -2783,7 +2783,7 @@ assert is_DNA_strand(0) == False
 
 Il est possible de générer aléatoirement une séquence ADN. La version naïve suppose que les 4 bases ont la même probabilité d'apparaître à une position donnée. 
 
-2 Écrire une fonction qui renvoie un brin d’ADN généré aléatoirement. Le prototype de la fonction est le suivant : ```generate_DNA_strand(size : int) -> str```
+**2** Écrire une fonction qui renvoie un brin d’ADN généré aléatoirement. Le prototype de la fonction est le suivant : ```generate_DNA_strand(size : int) -> str```
 
 - size : taille du brin d’ADN (≥ 2) 
 
@@ -2811,7 +2811,7 @@ assert is_DNA_strand(generate_DNA_strand(1024)) == True
 
 Certaines parties spécifiques de l'ADN sont transcrites en ARN. La transcription consiste en l'assemblage de nucléotides ARN en suivant le modèle ADN et en prenant les bases complémentaires. Dans l'ADN, les bases A et T sont complémentaires, ainsi que les bases G et C. Pour passer de l'ADN à l'ARN, le A est transformé en U, le T en A, le G en C et le C en G. 
 
-3 Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
+**3** Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
 
 ```complementary_base(base : str, type : str) -> st```
 
@@ -2853,7 +2853,7 @@ assert complementary_base('K', 'ADN') == None
 assert complementary_base('G', 'ABC') == None
 ```
 
-4 Écrire une fonction qui renvoie l'ARN construit à partir de la sous-séquence d'un brin d’ADN comprise entre les deux positions passées en paramètre, incluses. Le prototype de la fonction est le suivant : 
+**4** Écrire une fonction qui renvoie l'ARN construit à partir de la sous-séquence d'un brin d’ADN comprise entre les deux positions passées en paramètre, incluses. Le prototype de la fonction est le suivant : 
 
 ```transcription(strand : str, start : int, end : int) -> str```
 
@@ -2933,7 +2933,7 @@ Les acides aminés sont désignés par une lettre qui représente la forme du no
 ```
 
 
-5 Écrire une fonction qui renvoie l'acide aminé correspondant au codon (ou \* pour les codons Stop). Le prototype de la fonction est le suivant : 
+**5** Écrire une fonction qui renvoie l'acide aminé correspondant au codon (ou \* pour les codons Stop). Le prototype de la fonction est le suivant : 
 
 ```genetic_code(codon: str) -> str```
 
@@ -2968,7 +2968,7 @@ assert genetic_code(0) == None
 
 
 
-6 Écrire une fonction qui renvoie la séquence protéique obtenue par la traduction de la séquence ARN. Cette traduction se fait à partir du premier nucléotide de la séquence ARN. Le prototype de la fonction est le suivant : 
+**6** Écrire une fonction qui renvoie la séquence protéique obtenue par la traduction de la séquence ARN. Cette traduction se fait à partir du premier nucléotide de la séquence ARN. Le prototype de la fonction est le suivant : 
 
 ```traduction(arn : str) -> str``` 
 
@@ -3000,7 +3000,7 @@ L'ADN de chaque brin d'une double hélice est recopié de telle sorte que deux n
 
 De  simples  chaînes  de  caractères  permettent  de  représenter  les  séquences  biologiques  et  les  fonctions programmées vont reproduire les processus. 
 
-7 Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
+**7** Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
 
 ```replication(strand : str) -> str``` 
 
