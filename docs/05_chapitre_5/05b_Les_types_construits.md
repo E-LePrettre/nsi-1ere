@@ -2724,43 +2724,61 @@ Les processus du dogme central de la biologie moléculaire, réalisés par les c
 
 **Les séquences ADN** 
 
-1 Créer un fichier dna.py.
-
-2 Écrire une fonction qui vérifie si une chaîne de caractères correspond à un brin d’ADN :  cette chaîne ne doit contenir aucun autre caractère que les quatre bases A, C, G et T. Le prototype de la fonction est le suivant : 
+1 Écrire une fonction qui vérifie si une chaîne de caractères correspond à un brin d’ADN :  cette chaîne ne doit contenir aucun autre caractère que les quatre bases A, C, G et T. Le prototype de la fonction est le suivant : 
 
 ```is_DNA_strand(strand : str) -> bool```
 - strand : brin d’ADN (de 1 à n bases)
 - la fonction renvoie True si la chaîne est un brin d’ADN, False sinon 
 
-3 Documenter la fonction 
-
-4 Créer un fichier dna_test.py et valider les tests unitaires suivants : 
+Fonction à compléter :
 ```python
-is_DNA_strand("ATGCGATC") == True 
-is_DNA_strand("ACKT") == False 
-is_DNA_strand("") == False 
-is_DNA_strand(0) == False 
+def is_DNA_strand(strand : str) -> bool :
+    """
+    Fonction qui vérifie si une chaine est un brin d'ADN
+    :param strand: str
+    :return: bool
+    """
+    # à compléter
+
+assert is_DNA_strand("ATGCGATC") == True 
+assert is_DNA_strand("ACKT") == False 
+assert is_DNA_strand("") == False 
+assert is_DNA_strand(0) == False 
+
 ```
+
 
 Il est possible de générer aléatoirement une séquence ADN. La version naïve suppose que les 4 bases ont la même probabilité d'apparaître à une position donnée. 
 
-5 Écrire une fonction qui renvoie un brin d’ADN généré aléatoirement. Le prototype de la fonction est le suivant : ```generate_DNA_strand(size : int) -> str```
+2 Écrire une fonction qui renvoie un brin d’ADN généré aléatoirement. Le prototype de la fonction est le suivant : ```generate_DNA_strand(size : int) -> str```
 
 - size : taille du brin d’ADN (≥ 2) 
 
 - la fonction renvoie un brin d’ADN généré aléatoirement 
 
-6 Documenter la fonction 
+Fonction à compléter:
+```python
+import random
 
-7 Valider les tests unitaires suivants : 
+def generate_DNA_strand(size : int) -> str:
+    """
+    la fonction renvoie un brin d’ADN généré aléatoirement
+    :param size: int
+    :return:str
+    """
+    # à compléter
 
-```is_DNA_strand(generate_DNA_strand(x))``` pour différentes valeurs de x (au choix). 
+print(generate_DNA_strand(5))
+assert is_DNA_strand(generate_DNA_strand(1024)) == True
+```
+
+ 
 
 **La transcription** 
 
 Certaines parties spécifiques de l'ADN sont transcrites en ARN. La transcription consiste en l'assemblage de nucléotides ARN en suivant le modèle ADN et en prenant les bases complémentaires. Dans l'ADN, les bases A et T sont complémentaires, ainsi que les bases G et C. Pour passer de l'ADN à l'ARN, le A est transformé en U, le T en A, le G en C et le C en G. 
 
-8 Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
+3 Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
 ```complementary_base(base : str, type : str) -> st```
 
 - base : nucléotide (A, T, G ou C) 
@@ -2775,18 +2793,31 @@ except #exception à trouver:
   #bloc à coder 
 ```
 
-9 Documenter la fonction
-
-10 Valider les tests unitaires suivants :
-
+Fonction à compléter:
 ```python
+def complementary_base(base : str, type : str) -> str:
+    """
+    une fonction qui renvoie la base complémentaire d'un brin d'ADN ou de ARN
+    :param base:str
+    :param type:str
+    :return:str
+    """
+    nucleotide = ['A', 'T', 'G', 'C']
+    transcription_adn = ['T', 'A', 'C', 'G']
+    transcription_arn = ['U', 'A', 'C', 'G']
+    try :
+        # à compléter
+
+    except ValueError:
+        return None
+
 complementary_base('G', 'ADN') == 'C' 
 complementary_base('A', 'ARN') == 'U' 
 complementary_base('K', 'ADN') == None 
 complementary_base('G', 'ABC') == None
-``` 
+```
 
-11 Écrire une fonction qui renvoie l'ARN construit à partir de la sous-séquence d'un brin d’ADN comprise entre les deux positions passées en paramètre, incluses. Le prototype de la fonction est le suivant : 
+4 Écrire une fonction qui renvoie l'ARN construit à partir de la sous-séquence d'un brin d’ADN comprise entre les deux positions passées en paramètre, incluses. Le prototype de la fonction est le suivant : 
 
 ```transcription(strand : str, start : int, end : int) -> str```
 - strand : brin d’ADN 
@@ -2803,17 +2834,30 @@ try :
 except #exception à trouver: 
   # bloc à coder 
 ```
-
-12 Documenter la fonction 
-
-13 Valider les tests unitaires suivants : 
+Fonction à compléter :
 ```python
+def transcription(strand : str, start : int, end : int) -> str:
+    """
+    fonction renvoie  la séquence complémentaire du brin d’ADN transcrit, ou None si erreur
+    :param strand:str
+    :param start:int
+    :param end:int
+    :return:str
+    """
+    try :
+        # à compléter
+
+
+    except AssertionError:
+        return None
 transcription('TTCTTCTTCGTAC', 4, 10) == 'AAGAAGC' 
 transcription('TTCTTCTTCGTAC', 4, 3) == None 
 transcription('TTCTTCTTCGTAC', 10, 40) == 'CAUG' 
 transcription('TTCTTCTTCGTAC', -4, 0) == None 
 transcription('TTCTTCTTCGTAC', -4, 4) == None 
 ```
+
+
 
 **La traduction** 
 
@@ -2848,37 +2892,62 @@ Les acides aminés sont désignés par une lettre qui représente la forme du no
 ```
 
 
-14 Écrire une fonction qui renvoie l'acide aminé correspondant au codon (ou \* pour les codons Stop). Le prototype de la fonction est le suivant : 
+5 Écrire une fonction qui renvoie l'acide aminé correspondant au codon (ou \* pour les codons Stop). Le prototype de la fonction est le suivant : 
 ```genetic_code(codon: str) -> str```
 
 - codon : codon (succession de trois lettres (voir ci-dessus)) 
 - la fonction renvoie  l'acide aminé sous la forme du nom abrévié, ou None si erreur
 
-15 Documenter la fonction 
 
-16 Valider les tests unitaires suivants : 
+Fonction à compléter:
 ```python
-genetic_code('UGA') == '*' 
-genetic_code('AAAA') == None 
-genetic_code('XYZ') == None 
-genetic_code(0) == None 
+def genetic_code(codon: str) -> str :
+    """
+    fonction renvoie  l'acide aminé sous la forme du nom abrévié
+    :param codon:str
+    :return:str
+    """
+    if len(str(codon))!=3:
+        return None
+
+    # à compléter
+
+
+    else:
+        return None
+
+assert genetic_code('UGA') == '*' 
+assert genetic_code('AAAA') == None 
+assert genetic_code('XYZ') == None 
+assert genetic_code(0) == None 
+
 ```
 
 
-17 Écrire une fonction qui renvoie la séquence protéique obtenue par la traduction de la séquence ARN. Cette traduction se fait à partir du premier nucléotide de la séquence ARN. Le prototype de la fonction est le suivant : 
+
+6 Écrire une fonction qui renvoie la séquence protéique obtenue par la traduction de la séquence ARN. Cette traduction se fait à partir du premier nucléotide de la séquence ARN. Le prototype de la fonction est le suivant : 
 
 ```traduction(arn : str) -> str``` 
 - arn : structure ARN 
 - la fonction renvoie la séquence protéique c’est-à-dire les noms abrégés pour chaque codon, ou None si erreur 
 
-18 Documenter la fonction
-
-19 Valider les tests unitaires suivants : 
+Fonction à compléter:
 ```python
-traduction('AUGCGAAGCCGAAAGAACACCGGCUAA') == 'MRSRKNTG*' 
-traduction('AUGCGAAGCCGAAAGAACACCGGCUA') == None 
-traduction(0) == None 
+def traduction(arn : str) -> str:
+    """
+    fonction renvoie la séquence protéique
+    :param arn:str
+    :return:str
+    """
+    if len(str(arn))%3 != 0:
+        return None
+    # à compléter
+
+assert traduction('AUGCGAAGCCGAAAGAACACCGGCUAA') == 'MRSRKNTG*' 
+assert traduction('AUGCGAAGCCGAAAGAACACCGGCUA') == None 
+assert traduction(0) == None 
 ```
+
 
 **La réplication** 
 
@@ -2886,31 +2955,38 @@ L'ADN de chaque brin d'une double hélice est recopié de telle sorte que deux n
 
 De  simples  chaînes  de  caractères  permettent  de  représenter  les  séquences  biologiques  et  les  fonctions programmées vont reproduire les processus. 
 
-20 Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
+7 Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
 
 ```replication(strand : str) -> str``` 
 - strand : brin d’ADN 
 - la fonction renvoie la séquence ADN complémentaire et inversée (A et C sont complémentaires, T et G sont complémentaires), ou None si erreur 
 
-21 Documenter la fonction 
-
-22 Valider les tests unitaires suivants : 
-
+Fonction à compléter :
 ```python
-replication('ACTG') == 'CAGT' 
-replication('') == None 
-replication(0) == None 
+def replication(strand : str) -> str:
+    """
+    fonction renvoie la séquence ADN complémentaire et inversée
+    :param strand:str
+    :return:str
+    """
+    replication_adn = ''
+    nucleotide = ['A', 'T', 'C', 'G']
+    replication = ['C', 'G', 'A', 'T']
+    if strand =='':
+        return None
+    try :
+        # à compléter
+
+
+    except:
+        return None
+
+assert replication('ACTG') == 'CAGT'
+assert replication('') == None 
+assert replication(0) == None 
 ```
 
-23 Créer un fichier dna_main.py.
 
-24 Écrire un programme qui demande de façon interactive de saisir une séquence ARN et afficher la séquence d’acides aminés correspondante. Par exemple :
-
-```
->>> entrez une séquence ARN>? AUGCGAAGCCGAAAGAACACCGGCUAA 
-
-MRSRKNTG* 
-```
 
 
 [^1]: Depuis la fin 2018, la bibliothèque Python GPSPhoto permet d’obtenir directement les coordonnées géographiques d’une photo. 
