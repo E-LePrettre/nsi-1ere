@@ -216,7 +216,7 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
 t = ("Alice", 17, "1ère NSI")
 assert deuxieme(t) == 17
 ```
-**<H3 STYLE="COLOR:red;">Exercice 2 : longueur d'un tuple</H3>** 
+**<H3 STYLE="COLOR:red;">Exercice 2 : longueur d'un tuple**</H3> 
 Écrire une fonction `taille(t)` qui renvoie le **nombre d’éléments** dans le tuple `t`.
 
 **Test** :
