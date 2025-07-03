@@ -1577,6 +1577,7 @@ Réécrire la fonction précédente sous le nom `tirage_n_cartes_v2(n)` en utili
 Python permet de manipuler les **codes numériques des caractères** grâce aux fonctions :
 
 * `chr(entier)` : retourne le caractère ASCII correspondant à l'entier.
+
 * `ord(caractère)` : retourne l'entier ASCII correspondant au caractère.
 
 
@@ -1589,6 +1590,7 @@ Python permet de manipuler les **codes numériques des caractères** grâce aux 
 1.b.  **Quels scripts écrire pour obtenir l’affichage :**
 
 * de la lettre `'A'` ?
+
 * du mot `'NSI'` ?
 
 > 💡 Aide : utiliser `chr()` avec les bons entiers ASCII.
@@ -1613,11 +1615,13 @@ Le **chiffrement de César** consiste à **décaler chaque lettre** d’un mot d
 Exemple avec un **décalage de +7** :
 
 * `'A'` devient `'H'`
+
 * `'Y'` devient `'F'` car `(24 + 7) % 26 = 5` → `'F'`
 
 2.a. **Quels scripts permettent d’obtenir :**
 
 * le codage de la lettre `'A'` ?
+
 * le codage du mot `'NSI'` avec un décalage de 7 ?
 
 > 💡 Utiliser le dictionnaire de la question 1c, le modulo `%` pour la rotation, et `chr()` pour revenir au caractère.
@@ -1656,6 +1660,7 @@ Dans `d['A']`, `d['D']`, `d['E']` :
 La fonction :
 
 * prend une **chaîne en lettres majuscules** (sans espace ni accents),
+
 * retourne une **nouvelle chaîne codée** avec le **décalage de 7**.
 
 **Exemple** :
@@ -1678,6 +1683,7 @@ La fonction :
 Un jeu de 32 cartes comprend :
 
 * **4 couleurs** : pique, cœur, carreau, trèfle
+
 * **8 valeurs** : Roi, Dame, Valet, 1 (As), 10, 9, 8, 7
 
 ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.060.png)
@@ -1937,8 +1943,11 @@ L’Exchangeable  Image  File  Format  ou  EXIF  est  une  spécification  de  f
 Les  balises  de  métadonnées  définies  dans  le  format  EXIF  standard  couvrent un large éventail de données, dont :  
 
 - Information de la date et de l’heure.  
+
 - Marque et le modèle de l’appareil et des informations variables  telles  que  l’orientation,  l’ouverture,  la  vitesse  d’obturation,  la  longueur de focale, la sensibilité…  
+
 - Informations  géographiques  provenant  d’un  éventuel  système  GPS connecté à l’appareil.  
+
 - Description et information des droits d’auteur.  
 
 *Source : wikipedia*  
@@ -1964,6 +1973,7 @@ La plupart des appareils photos récents et téléphones portables enregistrent 
 ```get_exif(filename : str) -> dict ```
 
 - filename -- fichier image 
+
 - la fonction retourne les données EXIF si ok, ou None si erreur 
 
 **Aide :**  
@@ -1971,6 +1981,7 @@ La plupart des appareils photos récents et téléphones portables enregistrent 
 - On utilisera Image de la bibliothèque PIL :  ```from PIL import Image```
 
 - On utilisera la bibliothèque PIL ainsi que les méthodes associées _getexif() et get().  ```from PIL.ExifTags import TAGS, GPSTAGS``` 
+
 - L’appel à _getexif() se fait de la façon suivante : 
 ```python
 image = Image.open(filename) 
@@ -2086,12 +2097,15 @@ Remarque : pour obtenir un traitement automatisé des données géographiques, u
 ```get_coordinates(GPSinfo : dict) -> list ```
 
 - GPSinfo -- données GPS 
+
 - la fonction retourne les coordonnées GPS au format DMS si ok, ou None si erreur sous la forme d’une liste de liste ['valeurLatitude', 'valeurLongitude']
 
 **Aide** : 
 
 - Pour connaitre les données à utiliser reportez vous à la ligne 3 et la ligne 4 du tableau ci-dessus 
+
 - Le  dictionnaire  précédent  renvoie  les  clés :   'GPSLatitudeRef',  'GPSLatitude', 'GPSLongitudeRef' et 'GPSLongitude' 
+
 - Pour accéder à une valeur particulière : 
 
 ```
@@ -2110,7 +2124,9 @@ b'\x00', 'GPSAltitude': (92709, 191), 'GPSTimeStamp': ((13, 1), (18, 1), (42000,
 
 
 - Convertir chaque donnée en str pour pouvoir faire une présentation des coordonnées de ce type : '63.0°40.9847‘0.0"N'' 
+
 - Pour coder le symbole de minute "‘" 
+
 - Pour écrire une instruction sur plusieurs lignes on met \ à la fin de chaque ligne 
 
 **Rappel** :  
@@ -2206,7 +2222,9 @@ Le prototype de la fonction est : ```caesar_encode(text : str, key : int = 1) ->
 **Aide :** 
 
 - les caractères (lettres ou signes de ponctuations) qui ne figurent pas dans l’alphabet [A..Z] **restent inchangés**. 
+
 - Utilisez les méthodes upper() (pour mettre en majuscule) et isalpha() (pour tester si c’est une lettre alphabétique)  
+
 - Utilisez les fonction chr(#nombre) pour convertir en caractère et ord(‘#la lettre’) pour convertir en code ASCII 
 
 🎟️ **Fonction à compléter** :
@@ -2329,8 +2347,9 @@ On regarde la correspondance et on remplace la lettre E par la lettre X, puis la
 
 Le message crypté est alors : XGKX DR SX OFV XGKX GXWWX XVG WF ZRXVGPDS Pour le décrypter, en connaissant les substitutions, on fait l’opération inverse. 
 
-- Avantage : nous allons voir que l’espace des clés est gigantesque et qu’il n’est plus question d’énumérer toutes les possibilités. 
-- Inconvénients : la clé à retenir est beaucoup plus longue, puisqu’il faut partager la clé constituée des 26 lettres "FQBMX...". Mais surtout, nous allons voir que finalement ce protocole de chiffrement est assez simple à « craquer ». 
+- **Avantage** : nous allons voir que l’espace des clés est gigantesque et qu’il n’est plus question d’énumérer toutes les possibilités. 
+
+- **Inconvénients** : la clé à retenir est beaucoup plus longue, puisqu’il faut partager la clé constituée des 26 lettres "FQBMX...". Mais surtout, nous allons voir que finalement ce protocole de chiffrement est assez simple à « craquer ». 
 
 **Attaque statistique** 
 
@@ -2401,7 +2420,9 @@ assert letter_count("Être ou ne pas Être, telle est la question.") == [['e', 7
 
 
 2 Modifier la fonction pour que les lettres accentuées soient considérées comme non accentuées. On ajoutera avant une fonction ```strip_accent(text : str) -> str```
+
 - text : lettre accentuée 
+
 - la fonction renvoie lettre sans accent 
 
 **Aide** :  
@@ -2442,12 +2463,15 @@ assert letter_count("Être ou ne pas Être, telle est la question.") == [['e', 9
 On donne le prototype : ```count_in_file(file : str, encode = 'utf-8') -> list```
 
 - file: nom du fichier texte 
+
 - encode : type d’encodage du fichier (défaut utf-8) 
+
 - la fonction renvoie une liste de valeurs [lettre, occurrences], triée par ordre décroissant selon le nombre d’occurrences de chaque lettre ou liste vide si erreur. 
 
 **Aide :** 
 
 - ouvrir le fichier avec la fonction open() et l’attribut ‘r’, ne pas oublier l’encodage du fichier 
+
 - On utilisera la méthode rstrip("\n") pour enlever le symbole.  [https://www.w3schools.com/python/ref_string_rstrip.asp ](https://www.w3schools.com/python/ref_string_rstrip.asp)![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.010.png)
 
 🎟️ **Fonctions à compléter**:
@@ -2492,12 +2516,15 @@ assert count_in_file("book_vh.txt") == [['e', 139996], ['a', 67618], ['s', 60385
 ```
 
 5 Écrire une fonction qui va filtrer la liste de valeurs [lettre, occurrences] sur les lettres. On donne le prototype : ```occurrence(sorted_list : list) -> list```
+
 - sorted_list :  liste  de  valeurs  [lettre,  occurrences],  triée  par  ordre  décroissant  selon  le  nombre d’occurrences de chaque lettre. 
+
 - La fonction renvoie une liste de lettres triées par ordre décroissant de fréquence d’apparition.  
 
 **Aide :** 
 
 - la liste renvoyée par la fonction letter_count() est déjà triées par ordre décroissant  ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.105.png)
+
 - modifier la fonction count_in_file() pour qu’elle renvoie la liste de lettres triées par ordre décroissant de fréquence d’apparition en combinant les fonctions 
 
 🎟️ **Fonction à compléter** : 
@@ -2547,15 +2574,21 @@ Si k est la longueur d’un bloc, alors on choisit une clé constituée de k nom
 Le chiffrement consiste à effectuer un chiffrement de César, dont le décalage dépend du rang de la lettre dans le bloc: 
 
 - un décalage de n 1 pour la première lettre de chaque bloc, 
+
 - un décalage de n 2 pour la deuxième lettre de chaque bloc, 
+
 - ... 
+
 - un décalage de n k pour la k-ème et dernière lettre de chaque bloc. 
 
 Pour notre exemple, si on choisit comme clé (3,1,5,2) alors pour le premier bloc "CETT" : 
 
 - un décalage de 3 pour C donne F, 
+
 - un décalage de 1 pour E donne F, 
+
 - un décalage de 5 pour le premier T donne Y, 
+
 - un décalage de 2 pour le deuxième T donne V. 
 
 Ainsi "CETT" de vient "FFYV". Vous remarquez que les deux lettres T ne sont pas cryptées par la même lettre et que les deux F ne cryptent pas la même lettre. On continue ensuite avec le deuxième bloc... 
@@ -2599,6 +2632,7 @@ Le texte (en français) suivant a été chiffré par un code mono alphabétique.
 **Aide :**  
 
 - On pourra utiliser la méthode index()
+
 - il est possible que l’ordre des occurrences de la liste de sortie ne coïncide pas totalement avec les occurrences de la liste d’entrée. 
 
 🎟️ **Fonction à compléter** :
@@ -2633,7 +2667,9 @@ ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV X
 **Aide :**  
 
 - ne pas revenir à la ligne après chaque print (afficher) 
+
 - utiliser la fonction caesar() développée dans le module de l’activité précédente. 
+
 - Mettre  à la fin du script un print() indenté comme la dernière boucle for (pour un retour à la ligne) 
 
 🎟️ **Fonctions à compléter** :
@@ -2706,8 +2742,11 @@ La  **séquence**  d'un [ acide  nucléique ](https://fr.wikipedia.org/wiki/Acid
 Les molécules représentées dans ce schéma sont :  
 
 - l'**ADN**  :  support  stable  et  transmissible  de  l'information  génétique. Il est composé des 4 nucléotides suivants (appelés aussi  bases) : A = adénine, T = thymine, G = guanine et C = cytosine.  Dans les cellules vivantes, l'ADN est sous la forme double brin,  c'est-à-dire que 2 séquences ADN se font face. Une séquence est  lue de gauche à droite et l'autre de droite à gauche. De plus, les  bases complémentaires l'une de l'autre se font face (A et T sont  complémentaires, G et C sont complémentaires). Un brin est donc  complémentaire et inversé par rapport à l'autre.  
+
 - l'**ARN**  :  support  temporaire  permettant  l'expression  de  l'information génétique. Il est composé des 4 nucléotides suivants  
-  - A = adénine, U = uracile, G = guanine et C = cytosine.  
+
+- A = adénine, U = uracile, G = guanine et C = cytosine.  
+
 - les **protéines** : outils de la cellule (enzymes, transporteurs, etc.).  Elles sont composées de 20 acides aminés différents.  
 
 Les processus du dogme central de la biologie moléculaire, réalisés par les cellules sont les suivants : 
@@ -2773,10 +2812,13 @@ assert is_DNA_strand(generate_DNA_strand(1024)) == True
 Certaines parties spécifiques de l'ADN sont transcrites en ARN. La transcription consiste en l'assemblage de nucléotides ARN en suivant le modèle ADN et en prenant les bases complémentaires. Dans l'ADN, les bases A et T sont complémentaires, ainsi que les bases G et C. Pour passer de l'ADN à l'ARN, le A est transformé en U, le T en A, le G en C et le C en G. 
 
 3 Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
+
 ```complementary_base(base : str, type : str) -> st```
 
 - base : nucléotide (A, T, G ou C) 
+
 - type de séquence : 'ADN' ou 'ARN' 
+
 - la fonction renvoie la base complémentaire, ou None si erreur
 
 **Aide :** 
