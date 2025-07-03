@@ -210,7 +210,7 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
 
 Écrire une fonction `deuxieme(t)` qui renvoie le **deuxième élément** du tuple `t`.
 
-Test :
+**Test** :
 
 ```python
 t = ("Alice", 17, "1ère NSI")
@@ -219,7 +219,7 @@ assert deuxieme(t) == 17
 **<H3 STYLE="COLOR:red;">Exercice 2 : longueur d'un tuple</H3>** 
 Écrire une fonction `taille(t)` qui renvoie le **nombre d’éléments** dans le tuple `t`.
 
-Test :
+**Test** :
 
 ```python
 assert taille(("a", "b", "c")) == 3
@@ -228,7 +228,7 @@ assert taille(("a", "b", "c")) == 3
 **<H3 STYLE="COLOR:red;">Exercice 3 : Concaténation de tuples</H3>** 
 Écrire une fonction `concat(t1, t2)` qui renvoie la **concaténation** de deux tuples.
 
-Test :
+**Test** :
 
 ```python
 assert concat((1, 2), (3, 4)) == (1, 2, 3, 4)
@@ -237,7 +237,7 @@ assert concat((1, 2), (3, 4)) == (1, 2, 3, 4)
 **<H3 STYLE="COLOR:red;">Exercice 4 : Extraction de sous-tuples</H3>** 
 Écrire une fonction `sous_tuple(t)` qui renvoie un **sous-tuple contenant les deux premiers éléments**.
 
-Test :
+**Test** :
 
 ```python
 assert sous_tuple((10, 20, 30, 40)) == (10, 20)
@@ -246,7 +246,7 @@ assert sous_tuple((10, 20, 30, 40)) == (10, 20)
 **<H3 STYLE="COLOR:red;">Exercice 5 : parcours d'un tuple</H3>** 
 Écrire une fonction `afficher(t)` qui **affiche chaque élément du tuple `t` sur une ligne différente**.
 
-Exemple :
+**Exemple** :
 
 ```python
 afficher(("maths", "nsi", "anglais"))
@@ -263,7 +263,7 @@ anglais
 **<H3 STYLE="COLOR:red;">Exercice 6 : Tuple et boucle</H3>** 
 Écrire une fonction `moyenne(t)` qui renvoie la **moyenne** des nombres contenus dans un tuple `t`.
 
-Test :
+**Test** :
 
 ```python
 assert moyenne((12, 13, 14)) == 13.0
@@ -494,7 +494,7 @@ Les listes sont **très utiles** pour manipuler des chaînes de caractères grâ
 **<H3 STYLE="COLOR:red;">Exercice 8 :**  **Longueur d'une liste :</H3>**
 Ecrire une fonction `longueur(tab)` qui prend un tableau tab en paramètre et qui renvoie la longueur de ce tableau
 
-Exemple :
+**Exemple** :
 ```python
 assert longueur([0,1,2,3,4]) == 5
 assert longueur([]) == 0
@@ -503,7 +503,7 @@ assert longueur([]) == 0
 **<H3 STYLE="COLOR:red;">Exercice 9 :**  **Appartenance :</H3>**
 Écrire fonction `dansTab` de paramètres T : un tableau et a : un élèment, qui indique si l’élément donné a appartient à un tableau T ou pas. 
 
-Exemple :
+**Exemple** :
 ```python
 assert dansTab( [3,5,7,0] , 4) == False
 assert dansTab( [3,5,7] , 3) == True
@@ -512,7 +512,7 @@ assert dansTab( [3,5,7] , 3) == True
 **<H3 STYLE="COLOR:red;">Exercice 10 :**  **Liste aléatoire :</H3>**
 Ecrire une fonction `list_alea(n)` qui prend en paramètre n et qui renvoie une liste de nombre aléatoire compris entre 0 et 9 de taille n
 
-Exemple :
+**Exemple** :
 ```python
 print(list_alea(3))
 ```
@@ -534,7 +534,7 @@ def somme (L) :
     ………… 
 return s
 ```
-Exemple :
+**Exemple** :
 ```python
 assert somme([1,5,9,5]) == 20 
 assert somme([]) == 0 
@@ -545,7 +545,7 @@ En faisant appel à la fonction `somme` précédente, écrire la fonction `moyen
 
 **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
 
-Exemple :
+**Exemple** :
 ```python
 assert moyenne([1,5,9,5]) == 5 
 assert moyenne([2,4,6]) == 4
@@ -555,7 +555,7 @@ assert moyenne([2,4,6]) == 4
 Écrire une fonction `produit(T)` qui prend en argument  un tableau  T d’entiers et renvoie le produit des éléments de T. 
 
 
-Exemple :
+**Exemple** :
 ```python
 assert produit([2,3,2]) == 12
 assert produit([3,2]) == 6
@@ -566,7 +566,7 @@ assert produit([3,2]) == 6
 
 **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : max()
 
-Exemple :
+**Exemple** :
 ```python
 assert maximum([1,5,9,6]) == 9
 assert maximum([-1,-5,-9,-6,-2]) == -1
@@ -575,7 +575,7 @@ assert maximum([-1,-5,-9,-6,-2]) == -1
 **<H3 STYLE="COLOR:red;">Exercice 15 :**  **Le plus petit élément :</H3>**
 Écrire une fonction `minimum` qui recherche la valeur minimum d’un tableau T d’entiers non vide et renvoie également son indice comme valeur de retour.
 
-Exemple :
+**Exemple** :
 ```python
 assert minimum([1,5,9,6]) == (1,0)
 assert minimum([-1,-5,-9,-6,-2]) == (-9, 2)
@@ -585,7 +585,7 @@ assert minimum([-1,-5,-9,-6,-2]) == (-9, 2)
 Écrire une fonction `nbre_de_fois(T,a)` qui prend en argument  une liste T et une valeur a et renvoie 
 en sortie le nombre de fois où cette valeur a, est présente dans la liste T.
 
-Exemple :
+**Exemple** :
 ```python
 assert nbre_de_fois([1,5,9,6],5) == 2
 assert nbre_de_fois([-1,-5,-9,-6,-2], 5) == 0
@@ -596,7 +596,7 @@ assert nbre_de_fois([-1,-5,-9,-6,-2], 5) == 0
 
 Par exemple, si le tableau est trié en ordre croissant au début de la fonction il doit être trié en ordre décroissant par l’algorithme. 
 
-Exemple :
+**Exemple** :
 ```python
 assert renverse([1,5,9,6]) == [6,9,5,1]
 assert renverse([1,2,3]) == [3,2,1]
@@ -723,7 +723,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 **<H3 STYLE="COLOR:red;">Exercice 18 :** **Affichage de matrice :</H3>**
 Ecrire la fonction `affichage(M)` qui prend en paramètre une matrice de taille quelconque et **l’affiche** ligne par ligne
 
-Exemple :
+**Exemple** :
 ```python
 m = [[1, 3, 4], 
      [5, 6, 8], 
@@ -742,7 +742,7 @@ On obtient:
 **<H3 STYLE="COLOR:red;">Exercice 19 :** **Affichage de coefficient de matrice :</H3>**
 Ecrire la fonction `affichagecoeff(M)` qui prend en paramètre une matrice de taille quelconque et **affiche** tous ces coefficients dans le sens de la lecture
 
-Exemple :
+**Exemple** :
 ```python
 m = [[1, 3], 
      [5, 6], 
@@ -762,7 +762,7 @@ On obtient:
 **<H3 STYLE="COLOR:red;">Exercice 20 :** **Affichage d'une ligne de matrice :</H3>**
 Ecrire la fonction `affichage_ligne(M,i)` qui prend en paramètre une matrice de taille quelconque et **affiche**, lorsque cela est possible la ligne i de cette matrice 
 
-Exemple :
+**Exemple** :
 ```python
 m = [[1, 3, 4], 
      [5, 6, 8], 
@@ -778,7 +778,7 @@ On obtient:
 Ecrire la fonction `affichage_colonne(M,j)` qui prend en paramètre une matrice de taille quelconque et 
 **affiche** en colonne, lorsque cela est possible, la colonne j de cette matrice
 
-Exemple :
+**Exemple** :
 ```python
 m = [[1, 3, 4], 
      [5, 6, 8], 
@@ -797,7 +797,7 @@ On obtient:
 **<H3 STYLE="COLOR:red;">Exercice 22 :** **Croix :</H3>**
 Ecrire la fonction `croix(n,i,j)` qui crée et renvoie la matrice de taille n×n remplie de 0 et dont la ligne i et la colonne j sont remplie de 1.
 
-Exemple :
+**Exemple** :
 ```python
 assert croix(3,1,2) ==[[0,0,1], [1,1,1], [0,0,1]]
 ```
@@ -806,7 +806,7 @@ assert croix(3,1,2) ==[[0,0,1], [1,1,1], [0,0,1]]
 Ecrire la fonction `nbzéros(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le 
 nombre de zéros qu’elle contient
 
-Exemple :
+**Exemple** :
 ```python
 m = [[1, 3, 4], 
      [5, 0, 0], 
@@ -817,7 +817,7 @@ assert nbzéros(m) == 4
 **<H3 STYLE="COLOR:red;">Exercice 24 :** **Maximum d'une matrice :</H3>** 
 Ecrire la fonction `maxi(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le plus grand de ses éléments 
 
-Exemple :
+**Exemple** :
 ```python
 m = [[1, 3, 4], 
      [5, 16, 8], 
@@ -829,7 +829,7 @@ assert maxi(m) == 16
 **<H3 STYLE="COLOR:red;">Exercice 25 :** **Maximum de la plus grand somme d'une ligne d'une matrice :</H3>** 
 Ecrire la fonction `maxi2(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la ligne qui a la plus grande somme 
 
-Exemple :
+**Exemple** :
 ```python
 m = [[1, 3, 4], 
      [5, 16, 8], 
@@ -841,7 +841,7 @@ assert maxi2(m) == 3
 **<H3 STYLE="COLOR:red;">Exercice 26 :** **Maximum de la plus grand somme d'une colonne d'une matrice :</H3>** 
 Ecrire la fonction `maxi3(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la colonne qui a la plus grande somme 
 
-Exemple :
+**Exemple** :
 ```python
 m = [[1, 3, 4], 
      [5, 16, 8], 
@@ -854,7 +854,7 @@ assert maxi3(m) == 2
 Ecrire une fonction ```matriceAlea(n:int,m:int)->list``` Python qui renvoie une matrice à n lignes et m colonnes d'entiers aléatoires entre 0 et 100. Créer la fonction qui utilise la création en compréhension 
 
 
-Aide : ne pas oublier d’importer le module random 
+**Aide** : ne pas oublier d’importer le module random 
 
 
 
@@ -1224,14 +1224,14 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 **<H3 STYLE="COLOR:red;">Exercice 28 :**  **Affichage des valeurs :</H3>**
 Écrire une fonction `afficher_valeurs(d)` qui **affiche** uniquement les **valeurs** du dictionnaire, une par ligne.
 
-Exemple :
+**Exemple** :
 
 ```python
 d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
 afficher_valeurs(d)
 ```
 
-Résultat attendu :
+**Résultat attendu** :
 
 ```
 Alice
@@ -1242,14 +1242,14 @@ Alice
 **<H3 STYLE="COLOR:red;">Exercice 29 :**  **Affichage des clés :</H3>**
 Écrire une fonction `afficher_cles(d)` qui affiche toutes les **clés** du dictionnaire.
 
-Exemple :
+**Exemple** :
 
 ```python
 d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
 afficher_cles(d)
 ```
 
-Résultat attendu :
+**Résultat attendu** :
 
 ```
 nom
@@ -1260,14 +1260,14 @@ classe
 **<H3 STYLE="COLOR:red;">Exercice 30 :**  **Affichage des paires clé-valeur:</H3>**
 Écrire une fonction `afficher_dico(d)` qui **affiche** chaque **clé et sa valeur** sur une ligne.
 
-Exemple :
+**Exemple** :
 
 ```python
 d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
 afficher_dico(d)
 ```
 
-Résultat attendu :
+**Résultat attendu** :
 
 ```
 nom : Alice
@@ -1279,7 +1279,7 @@ classe : 1ère NSI
 **<H3 STYLE="COLOR:red;">Exercice 31 :**  **accès à une valeur:</H3>**
 Écrire une fonction `age(d)` qui renvoie l’âge contenu dans le dictionnaire `d`.
 
-Test :
+**Test** :
 
 ```python
 d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
@@ -1289,7 +1289,7 @@ assert age(d) == 17
 **<H3 STYLE="COLOR:red;">Exercice 32 :**  **Ajout d'un élément:</H3>**
 Écrire une fonction `ajouter_email(d)` qui ajoute au dictionnaire une clé `"email"` de valeur `"alice@nsi.fr"` puis le renvoie.
 
-Test :
+**Test** :
 
 ```python
 d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
@@ -1299,7 +1299,7 @@ assert ajouter_email(d) == {"nom": "Alice", "âge": 17, "classe": "1ère NSI", "
 **<H3 STYLE="COLOR:red;">Exercice 33 :**  **Compter les éléments d'un dictionnaire:</H3>**
 Écrire une fonction `taille_dico(d)` qui renvoie **le nombre d’éléments** (paires clé-valeur) contenus dans le dictionnaire.
 
-Test :
+**Test** :
 
 ```python
 d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
@@ -1309,7 +1309,7 @@ assert taille_dico(d) == 3
 **<H3 STYLE="COLOR:red;">Exercice 34 :**  **Vérification d'une clé:</H3>**
 Écrire une fonction `contient(d, cle)` qui renvoie `True` si la clé est présente dans le dictionnaire, et `False` sinon.
 
-Test :
+**Test** :
 
 ```python
 d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
@@ -1320,7 +1320,7 @@ assert contient(d, "adresse") == False
 **<H3 STYLE="COLOR:red;">Exercice 35 :**  **Suppression d'une clé:</H3>**
 Écrire une fonction `supprimer(d, cle)` qui supprime la clé `cle` si elle est présente dans `d`, puis renvoie le dictionnaire.
 
-Test :
+**Test** :
 
 ```python
 d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
@@ -1330,7 +1330,7 @@ assert supprimer(d, "âge") == {"nom": "Alice", "classe": "1ère NSI"}
 **<H3 STYLE="COLOR:red;">Exercice 36 :**  **Moyenne des notes:</H3>**
 Un dictionnaire `notes` contient des noms de matières et des notes.
 
-Exemple :
+**Exemple** :
 
 ```python
 notes = {"maths": 15, "nsi": 18, "français": 12}
@@ -1338,7 +1338,7 @@ notes = {"maths": 15, "nsi": 18, "français": 12}
 
 Écrire la fonction `moyenne(notes)` qui renvoie la moyenne des notes (arrondie à 1 décimale).
 
-Test :
+**Test** :
 
 ```python
 assert moyenne({"maths": 15, "nsi": 18, "français": 12}) == 15.0
@@ -1351,7 +1351,7 @@ assert moyenne({"maths": 15, "nsi": 18, "français": 12}) == 15.0
 {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
 ```
 
-Test :
+**Test** :
 
 ```python
 assert creer_dico() == {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
@@ -1433,7 +1433,7 @@ print(carre_magique(L))  # Doit afficher True
 On souhaite créer un petit programme qui **gère un carnet de notes** pour un élève.
 Ce carnet sera représenté par un **dictionnaire**, dont les **clés** sont les matières, et les **valeurs** sont les moyennes obtenues dans ces matières.
 
-🔢 Exemple :
+🔢 **Exemple** :
 
 ```python
 notes = {
@@ -1459,7 +1459,7 @@ histoire : 13.0
 
 Ajoute une nouvelle matière `matiere` avec la note `note` au dictionnaire `d`.
 
-Test :
+**Test** :
 
 ```python
 notes = {"maths": 15.5}
@@ -1471,7 +1471,7 @@ ajouter_matiere(notes, "svt", 14)
 
 Supprime une matière si elle existe dans le dictionnaire. Ne fait rien sinon.
 
-Test :
+**Test** :
 
 ```python
 notes = {"maths": 15.5, "svt": 14}
@@ -1483,7 +1483,7 @@ supprimer_matiere(notes, "svt")
 
 Renvoie la **moyenne générale** de toutes les notes (arrondie à 2 décimales si tu veux).
 
-Test :
+**Test** :
 
 ```python
 notes = {"maths": 15.5, "nsi": 18.0, "anglais": 12.5}
@@ -1494,7 +1494,7 @@ assert moyenne_generale(notes) == 15.33
 
 Renvoie la **matière** dans laquelle la note est la plus élevée.
 
-Test :
+**Test** :
 
 ```python
 notes = {"maths": 15.5, "nsi": 18.0, "anglais": 12.5}
@@ -1505,7 +1505,7 @@ assert matiere_max(notes) == "nsi"
 
 Renvoie la **liste des matières** pour lesquelles la note est exactement égale à `note`.
 
-Test :
+**Test** :
 
 ```python
 notes = {"maths": 12, "nsi": 14, "anglais": 12}
@@ -1559,7 +1559,7 @@ Exemple attendu :
 
 Réécrire la fonction précédente sous le nom `tirage_n_cartes_v2(n)` en utilisant cette fonction.
 
-Exemple :
+**Exemple** :
 
 ```python
 >>> tirage_n_cartes_v2(5)
@@ -1658,7 +1658,7 @@ La fonction :
 * prend une **chaîne en lettres majuscules** (sans espace ni accents),
 * retourne une **nouvelle chaîne codée** avec le **décalage de 7**.
 
-Exemple :
+**Exemple** :
 
 ```python
 >>> codage("NSI")
@@ -1923,7 +1923,7 @@ plt.legend()
 plt.grid()
 plt.show()
 ```
-Résultat attendu :  
+**Résultat attendu** :  
 ![](Aimg021.png)
 
 
@@ -1985,7 +1985,7 @@ exif = image._getexif()
 
 ```image.close() ```
 
-**Rappels : **
+**Rappels :**
 
 - on utilisera la syntaxe  
 ```
@@ -1998,7 +1998,7 @@ return #ledictionnaire
 
 
 
-🎟️ Fonction à compléter :
+🎟️ **Fonction à compléter** :
 ```python
 from PIL import Image
 from PIL.ExifTags import TAGS, GPSTAGS
@@ -2028,7 +2028,7 @@ print(get_exif('valley.jpg'))
 - filename -- fichier image 
 - la fonction retourne les informations GPS si ok, ou None si erreur 
 
-**Aides : **
+**Aides :**
 
 - La variable exif contient l’ensemble des métadonnées de l’image : objectif, ouverture, vitesse, auteur…  
 
@@ -2053,7 +2053,7 @@ except KeyError :
   return None
 ``` 
 
-🎟️ Fonction à compléter :
+🎟️ **Fonction à compléter** :
 ```python
 def GPS_read(filename : str) -> dict:
     """
@@ -2123,7 +2123,7 @@ except TypeError :
 ```
 
 
-🎟️ Fonction à compléter :
+🎟️ **Fonction à compléter** :
 ```python
 def get_coordinates(GPSinfo : dict) -> list:
     """
@@ -2189,7 +2189,9 @@ Méthode :
 
 4 ([0 ; 25] + 65) → [65 ; 90]  on ajoute 65 pour revenir dans un intervalle [‘A’; ‘Z’] 
 
-On appelle modulo d’un nombre x par N, l’opérateur qui renvoie le reste de la division entière de x par N. Exemple : 11 modulo 5 = 1 (en Python, le modulo est notée %). 
+On appelle modulo d’un nombre x par N, l’opérateur qui renvoie le reste de la division entière de x par N. 
+
+**Exemple** : 11 modulo 5 = 1 (en Python, le modulo est notée %). 
 
 
 
@@ -2207,7 +2209,7 @@ Le prototype de la fonction est : ```caesar_encode(text : str, key : int = 1) ->
 - Utilisez les méthodes upper() (pour mettre en majuscule) et isalpha() (pour tester si c’est une lettre alphabétique)  
 - Utilisez les fonction chr(#nombre) pour convertir en caractère et ord(‘#la lettre’) pour convertir en code ASCII 
 
-🎟️ Fonction à compléter :
+🎟️ **Fonction à compléter** :
 ```python
 def caesar_encode(text : str, key : str = 1) -> str:
     """
@@ -2233,7 +2235,7 @@ assert caesar_encode("ATTAQUEZ DEMAIN")== 'BUUBRVFA EFNBJO'
 **Aide :** 
 - Le decodage de la lettre S avec une key = 19 donne Z.
 
-🎟️ Fonction à compléter
+🎟️ **Fonction à compléter**
 ```python
 def caesar_decode(code : str, key : str = 1) -> str:
     """
@@ -2253,7 +2255,7 @@ assert caesar_encode('BUUBRVFA EFNBJO')== 'ATTAQUEZ DEMAIN'
 - key représente la clef de chiffrement. Si key > 0 c’est un chiffrage si key < 0 c’est un déchiffrement.  
 - La fonction doit renvoyer le texte déchiffré/chiffré. 
 
-🎟️ Fonction à compléter :
+🎟️ **Fonction à compléter** :
 ```python 
 def caesar(str_in : str, key : int) -> str:
     """
@@ -2366,17 +2368,23 @@ En réfléchissant un petit peu, on décrypte le message : CECI EST UN ESSAI DE 
 - la fonction renvoie une liste de valeurs [lettre, occurrences], triée par ordre décroissant selon le nombre d’occurrences de chaque lettre. 
 
 **Aide** :  
+
 - penser à mettre tout le texte en minuscules 
+
 - utiliser  la  méthode  isalpha  pour  ne  sélectionner  que  les  lettres  alphabétiques :[https://www.geeksforgeeks.org/python-string-isalpha-application/ ](https://www.geeksforgeeks.org/python-string-isalpha-application/)
+
 - utiliser un dictionnaire pour compter les occurrences de chaque lettre puis créer une liste de listes à partir du dictionnaire 
+
 - on utilisera une fonction lambda et la méthode sort() pour trier la liste par ordre décroissant de nombre d’occurrences
+
 ```python 
 a.sort(key=lambda x: x[1]) => tri la liste a par ordre croissant des nombres en indice 1
 a.sort(key=lambda x: -x[1]) => tri la liste a par ordre décroissant des nombres en indice 1
 ```
+
 [https://www.science-emergence.com/Articles/Comment-trier-une-liste-de-tuple-par-rapport-a-un-](https://www.science-emergence.com/Articles/Comment-trier-une-liste-de-tuple-par-rapport-a-un-element-donnee-en-python-/)
 
-🎟️ Fonction à compléter:
+🎟️ **Fonction à compléter**:
 ```python
 
 def letter_count(text : str) -> list:
@@ -2400,7 +2408,7 @@ assert letter_count("Être ou ne pas Être, telle est la question.") == [['e', 7
 
 - passer en revue chaque lettre accentuée possible 
 
-Fonctions à compléter :
+🎟️ **Fonctions à compléter** :
 ```python
 def strip_accent(text : str) -> str:
     """
@@ -2442,7 +2450,7 @@ On donne le prototype : ```count_in_file(file : str, encode = 'utf-8') -> list``
 - ouvrir le fichier avec la fonction open() et l’attribut ‘r’, ne pas oublier l’encodage du fichier 
 - On utilisera la méthode rstrip("\n") pour enlever le symbole.  [https://www.w3schools.com/python/ref_string_rstrip.asp ](https://www.w3schools.com/python/ref_string_rstrip.asp)![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.010.png)
 
-Fonctions à compléter:
+🎟️ **Fonctions à compléter**:
 ```python
 
 def count_in_file(file : str, encode = 'utf-8') -> list:
@@ -2464,7 +2472,7 @@ try :
 except FileNotFoundError:          
   return [] 
 ```
-🎟️ Fonction à compléter :
+🎟️ **Fonction à compléter** :
 ```python
 def count_in_file(file : str, encode = 'utf-8') -> list:
     """
@@ -2492,7 +2500,7 @@ assert count_in_file("book_vh.txt") == [['e', 139996], ['a', 67618], ['s', 60385
 - la liste renvoyée par la fonction letter_count() est déjà triées par ordre décroissant  ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.105.png)
 - modifier la fonction count_in_file() pour qu’elle renvoie la liste de lettres triées par ordre décroissant de fréquence d’apparition en combinant les fonctions 
 
-🎟️ Fonction à compléter : 
+🎟️ **Fonction à compléter** : 
 ```python
 def occurrence(sorted_list : list) -> list:
     """
@@ -2593,7 +2601,7 @@ Le texte (en français) suivant a été chiffré par un code mono alphabétique.
 - On pourra utiliser la méthode index()
 - il est possible que l’ordre des occurrences de la liste de sortie ne coïncide pas totalement avec les occurrences de la liste d’entrée. 
 
-🎟️ Fonction à compléter :
+🎟️ **Fonction à compléter** :
 ```python
 text = 'eposal, epg r’sjnp, s r’upjdp cj nrsliuaq rs isohsmlp, vp hsdqadsa. bcag-qj, vp gsag tjp qj o’sqqpleg.'
 
@@ -2628,7 +2636,7 @@ ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV X
 - utiliser la fonction caesar() développée dans le module de l’activité précédente. 
 - Mettre  à la fin du script un print() indenté comme la dernière boucle for (pour un retour à la ligne) 
 
-Fonctions à compléter :
+🎟️ **Fonctions à compléter** :
 ```python
 
 def caesar_encode(text : str, key : str = 1) -> str:
@@ -2716,7 +2724,7 @@ Les processus du dogme central de la biologie moléculaire, réalisés par les c
 - strand : brin d’ADN (de 1 à n bases)
 - la fonction renvoie True si la chaîne est un brin d’ADN, False sinon 
 
-🎟️ Fonction à compléter :
+🎟️ **Fonction à compléter** :
 ```python
 def is_DNA_strand(strand : str) -> bool :
     """
@@ -2742,7 +2750,7 @@ Il est possible de générer aléatoirement une séquence ADN. La version naïve
 
 - la fonction renvoie un brin d’ADN généré aléatoirement 
 
-🎟️ Fonction à compléter:
+🎟️ **Fonction à compléter**:
 ```python
 import random
 
@@ -2779,7 +2787,7 @@ except #exception à trouver:
   #bloc à coder 
 ```
 
-🎟️ Fonction à compléter:
+🎟️ **Fonction à compléter**:
 ```python
 def complementary_base(base : str, type : str) -> str:
     """
@@ -2806,9 +2814,13 @@ assert complementary_base('G', 'ABC') == None
 4 Écrire une fonction qui renvoie l'ARN construit à partir de la sous-séquence d'un brin d’ADN comprise entre les deux positions passées en paramètre, incluses. Le prototype de la fonction est le suivant : 
 
 ```transcription(strand : str, start : int, end : int) -> str```
+
 - strand : brin d’ADN 
+
 - start : position de départ dans la séquence du brin d’ADN
+
 - end : position de fin dans la séquence du brin d’ADN 
+
 - la fonction renvoie  la séquence complémentaire du brin d’ADN transcript, ou None si erreur
 
 **Aide** : 
@@ -2820,7 +2832,7 @@ try :
 except #exception à trouver: 
   # bloc à coder 
 ```
-🎟️ Fonction à compléter :
+🎟️ **Fonction à compléter** :
 ```python
 def transcription(strand : str, start : int, end : int) -> str:
     """
@@ -2880,13 +2892,15 @@ Les acides aminés sont désignés par une lettre qui représente la forme du no
 
 
 5 Écrire une fonction qui renvoie l'acide aminé correspondant au codon (ou \* pour les codons Stop). Le prototype de la fonction est le suivant : 
+
 ```genetic_code(codon: str) -> str```
 
 - codon : codon (succession de trois lettres (voir ci-dessus)) 
+
 - la fonction renvoie  l'acide aminé sous la forme du nom abrévié, ou None si erreur
 
 
-🎟️ Fonction à compléter:
+🎟️ **Fonction à compléter**:
 ```python
 def genetic_code(codon: str) -> str :
     """
@@ -2915,10 +2929,12 @@ assert genetic_code(0) == None
 6 Écrire une fonction qui renvoie la séquence protéique obtenue par la traduction de la séquence ARN. Cette traduction se fait à partir du premier nucléotide de la séquence ARN. Le prototype de la fonction est le suivant : 
 
 ```traduction(arn : str) -> str``` 
+
 - arn : structure ARN 
+
 - la fonction renvoie la séquence protéique c’est-à-dire les noms abrégés pour chaque codon, ou None si erreur 
 
-🎟️ Fonction à compléter:
+🎟️ **Fonction à compléter**:
 ```python
 def traduction(arn : str) -> str:
     """
@@ -2945,10 +2961,12 @@ De  simples  chaînes  de  caractères  permettent  de  représenter  les  séqu
 7 Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
 
 ```replication(strand : str) -> str``` 
+
 - strand : brin d’ADN 
+
 - la fonction renvoie la séquence ADN complémentaire et inversée (A et C sont complémentaires, T et G sont complémentaires), ou None si erreur 
 
-🎟️ Fonction à compléter :
+🎟️ **Fonction à compléter** :
 ```python
 def replication(strand : str) -> str:
     """
