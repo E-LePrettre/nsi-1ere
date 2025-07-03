@@ -1998,7 +1998,7 @@ return #ledictionnaire
 
 
 
-Fonction à compléter :
+🎟️ Fonction à compléter :
 ```python
 from PIL import Image
 from PIL.ExifTags import TAGS, GPSTAGS
@@ -2053,7 +2053,7 @@ except KeyError :
   return None
 ``` 
 
-Fonction à compléter :
+🎟️ Fonction à compléter :
 ```python
 def GPS_read(filename : str) -> dict:
     """
@@ -2123,7 +2123,7 @@ except TypeError :
 ```
 
 
-Fonction à compléter :
+🎟️ Fonction à compléter :
 ```python
 def get_coordinates(GPSinfo : dict) -> list:
     """
@@ -2207,7 +2207,7 @@ Le prototype de la fonction est : ```caesar_encode(text : str, key : int = 1) ->
 - Utilisez les méthodes upper() (pour mettre en majuscule) et isalpha() (pour tester si c’est une lettre alphabétique)  
 - Utilisez les fonction chr(#nombre) pour convertir en caractère et ord(‘#la lettre’) pour convertir en code ASCII 
 
-Fonction à compléter :
+🎟️ Fonction à compléter :
 ```python
 def caesar_encode(text : str, key : str = 1) -> str:
     """
@@ -2233,7 +2233,7 @@ assert caesar_encode("ATTAQUEZ DEMAIN")== 'BUUBRVFA EFNBJO'
 **Aide :** 
 - Le decodage de la lettre S avec une key = 19 donne Z.
 
-Fonction à compléter
+🎟️ Fonction à compléter
 ```python
 def caesar_decode(code : str, key : str = 1) -> str:
     """
@@ -2253,7 +2253,7 @@ assert caesar_encode('BUUBRVFA EFNBJO')== 'ATTAQUEZ DEMAIN'
 - key représente la clef de chiffrement. Si key > 0 c’est un chiffrage si key < 0 c’est un déchiffrement.  
 - La fonction doit renvoyer le texte déchiffré/chiffré. 
 
-Fonction à compléter :
+🎟️ Fonction à compléter :
 ```python 
 def caesar(str_in : str, key : int) -> str:
     """
@@ -2376,7 +2376,7 @@ a.sort(key=lambda x: -x[1]) => tri la liste a par ordre décroissant des nombres
 ```
 [https://www.science-emergence.com/Articles/Comment-trier-une-liste-de-tuple-par-rapport-a-un-](https://www.science-emergence.com/Articles/Comment-trier-une-liste-de-tuple-par-rapport-a-un-element-donnee-en-python-/)
 
-Fonction à compléter:
+🎟️ Fonction à compléter:
 ```python
 
 def letter_count(text : str) -> list:
@@ -2464,7 +2464,7 @@ try :
 except FileNotFoundError:          
   return [] 
 ```
-Fonction à compléter :
+🎟️ Fonction à compléter :
 ```python
 def count_in_file(file : str, encode = 'utf-8') -> list:
     """
@@ -2492,7 +2492,7 @@ assert count_in_file("book_vh.txt") == [['e', 139996], ['a', 67618], ['s', 60385
 - la liste renvoyée par la fonction letter_count() est déjà triées par ordre décroissant  ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.105.png)
 - modifier la fonction count_in_file() pour qu’elle renvoie la liste de lettres triées par ordre décroissant de fréquence d’apparition en combinant les fonctions 
 
-Fonction à compléter : 
+🎟️ Fonction à compléter : 
 ```python
 def occurrence(sorted_list : list) -> list:
     """
@@ -2593,7 +2593,7 @@ Le texte (en français) suivant a été chiffré par un code mono alphabétique.
 - On pourra utiliser la méthode index()
 - il est possible que l’ordre des occurrences de la liste de sortie ne coïncide pas totalement avec les occurrences de la liste d’entrée. 
 
-Fonction à compléter :
+🎟️ Fonction à compléter :
 ```python
 text = 'eposal, epg r’sjnp, s r’upjdp cj nrsliuaq rs isohsmlp, vp hsdqadsa. bcag-qj, vp gsag tjp qj o’sqqpleg.'
 
@@ -2630,20 +2630,6 @@ ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV X
 
 Fonctions à compléter :
 ```python
-#!/usr/bin/env python3
-# coding : utf-8
-
-"""
-    module      : occurrences.py
-    projet      : chiffrement de Vigenere, recherche statistique d'occurrences dans un fichier
-
-    version     : 2.0
-    auteur      : prof NSI
-    création    : 30/08/2020
-    modif       :
-"""
-
-#from Chap09_ex13_partie07_caesar import caesar
 
 def caesar_encode(text : str, key : str = 1) -> str:
     """
@@ -2730,7 +2716,7 @@ Les processus du dogme central de la biologie moléculaire, réalisés par les c
 - strand : brin d’ADN (de 1 à n bases)
 - la fonction renvoie True si la chaîne est un brin d’ADN, False sinon 
 
-Fonction à compléter :
+🎟️ Fonction à compléter :
 ```python
 def is_DNA_strand(strand : str) -> bool :
     """
@@ -2756,7 +2742,7 @@ Il est possible de générer aléatoirement une séquence ADN. La version naïve
 
 - la fonction renvoie un brin d’ADN généré aléatoirement 
 
-Fonction à compléter:
+🎟️ Fonction à compléter:
 ```python
 import random
 
@@ -2793,7 +2779,7 @@ except #exception à trouver:
   #bloc à coder 
 ```
 
-Fonction à compléter:
+🎟️ Fonction à compléter:
 ```python
 def complementary_base(base : str, type : str) -> str:
     """
@@ -2811,10 +2797,10 @@ def complementary_base(base : str, type : str) -> str:
     except ValueError:
         return None
 
-complementary_base('G', 'ADN') == 'C' 
-complementary_base('A', 'ARN') == 'U' 
-complementary_base('K', 'ADN') == None 
-complementary_base('G', 'ABC') == None
+assert complementary_base('G', 'ADN') == 'C' 
+assert complementary_base('A', 'ARN') == 'U' 
+assert complementary_base('K', 'ADN') == None 
+assert complementary_base('G', 'ABC') == None
 ```
 
 4 Écrire une fonction qui renvoie l'ARN construit à partir de la sous-séquence d'un brin d’ADN comprise entre les deux positions passées en paramètre, incluses. Le prototype de la fonction est le suivant : 
@@ -2834,7 +2820,7 @@ try :
 except #exception à trouver: 
   # bloc à coder 
 ```
-Fonction à compléter :
+🎟️ Fonction à compléter :
 ```python
 def transcription(strand : str, start : int, end : int) -> str:
     """
@@ -2850,11 +2836,12 @@ def transcription(strand : str, start : int, end : int) -> str:
 
     except AssertionError:
         return None
-transcription('TTCTTCTTCGTAC', 4, 10) == 'AAGAAGC' 
-transcription('TTCTTCTTCGTAC', 4, 3) == None 
-transcription('TTCTTCTTCGTAC', 10, 40) == 'CAUG' 
-transcription('TTCTTCTTCGTAC', -4, 0) == None 
-transcription('TTCTTCTTCGTAC', -4, 4) == None 
+
+assert transcription('TTCTTCTTCGTAC', 4, 10) == 'AAGAAGC' 
+assert transcription('TTCTTCTTCGTAC', 4, 3) == None 
+assert transcription('TTCTTCTTCGTAC', 10, 40) == 'CAUG' 
+assert transcription('TTCTTCTTCGTAC', -4, 0) == None 
+assert transcription('TTCTTCTTCGTAC', -4, 4) == None 
 ```
 
 
@@ -2899,7 +2886,7 @@ Les acides aminés sont désignés par une lettre qui représente la forme du no
 - la fonction renvoie  l'acide aminé sous la forme du nom abrévié, ou None si erreur
 
 
-Fonction à compléter:
+🎟️ Fonction à compléter:
 ```python
 def genetic_code(codon: str) -> str :
     """
@@ -2931,7 +2918,7 @@ assert genetic_code(0) == None
 - arn : structure ARN 
 - la fonction renvoie la séquence protéique c’est-à-dire les noms abrégés pour chaque codon, ou None si erreur 
 
-Fonction à compléter:
+🎟️ Fonction à compléter:
 ```python
 def traduction(arn : str) -> str:
     """
@@ -2961,7 +2948,7 @@ De  simples  chaînes  de  caractères  permettent  de  représenter  les  séqu
 - strand : brin d’ADN 
 - la fonction renvoie la séquence ADN complémentaire et inversée (A et C sont complémentaires, T et G sont complémentaires), ou None si erreur 
 
-Fonction à compléter :
+🎟️ Fonction à compléter :
 ```python
 def replication(strand : str) -> str:
     """
