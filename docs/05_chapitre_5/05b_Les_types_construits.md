@@ -1968,12 +1968,9 @@ La plupart des appareils photos récents et téléphones portables enregistrent 
 
 **Aide :**  
 
-- On utilisera Image de la bibliothèque PIL :  
+- On utilisera Image de la bibliothèque PIL :  ```from PIL import Image```
 
-```from PIL import Image```
-
-- On utilisera la bibliothèque PIL ainsi que les méthodes associées _getexif() et get().  
-```from PIL.ExifTags import TAGS, GPSTAGS``` 
+- On utilisera la bibliothèque PIL ainsi que les méthodes associées _getexif() et get().  ```from PIL.ExifTags import TAGS, GPSTAGS``` 
 - L’appel à _getexif() se fait de la façon suivante : 
 ```python
 image = Image.open(filename) 
@@ -1999,182 +1996,34 @@ except IOError :
 return #ledictionnaire
 ``` 
 
-**Données EXIF fournies (simulées dans `gps_dict`)**
 
-> 💡 Ces données ont été extraites automatiquement. Tu les as déjà sous forme de dictionnaire dans ton script. Tu ne dois **pas ouvrir le fichier image**, tout est **déjà prêt** :
 
+Fonction à compléter :
 ```python
-gps_dict = {
-    'GPSLatitudeRef': 'N',
-    'GPSLatitude': ((47, 1), (37, 1), (29107360, 1000000)),
-    'GPSLongitudeRef': 'W',
-    'GPSLongitude': ((3, 1), (25, 1), (42976570, 1000000)),
-    'GPSAltitude': (4766, 100),
-    'GPSTimeStamp': ((12, 1), (39, 1), (42, 1)),
-    'GPSDateStamp': '2018:08:28',
-    'Make': 'Canon',
-    'Model': 'Canon EOS 6D',
-    'BodySerialNumber': '2506446',
-    'Artist': 'John Doe'
-}
+from PIL import Image
+from PIL.ExifTags import TAGS, GPSTAGS
+
+
+def get_exif(filename : str) -> dict:
+    data = {}
+
+    try:
+        image = Image.open(filename)
+        exif = image._getexif()
+        ...
+        ...
+        ...
+        image.close()
+    except IOError:
+        return None
+
+    return data
+
+print(get_exif('valley.jpg'))
 ```
+2 Indiquer l’auteur de la photo : 'Artist', 'Fabricant' et 'Numero de série' de l’appareil. Attention aux majuscules / minuscules  
 
-
-
-🔧 Travail demandé
-
-1. 👀 Affichage lisible des données EXIF
-
-**Implémente** la fonction suivante :
-
-```python
-def afficher_exif(d: dict):
-    """
-    Affiche chaque donnée du dictionnaire EXIF proprement,
-    sous la forme : Clé : Valeur
-    """
-    pass  # à compléter
-```
-
-📌 *Aide : utilise une boucle `for` pour parcourir les paires clé/valeur.*
-
-2. 📍 Conversion des coordonnées GPS en format DMS lisible
-
-**Implémente** la fonction suivante :
-
-```python
-def get_coordinates(GPSinfo: dict) -> list:
-    """
-    Transforme les données GPS du dictionnaire en une liste contenant
-    la latitude et la longitude au format DMS (degrés, minutes, secondes).
-    """
-    pass  # à compléter
-```
-
-📌 Aide :
-
-* Chaque position (latitude/longitude) est un **tuple de 3 fractions** → convertir en degrés, minutes, secondes ;
-* Ne pas oublier le **N/S/E/W** à la fin de chaque coordonnée.
-
-🧪 Exemple attendu :
-
-```python
-['47°37′29.107″N', '3°25′42.977″W']
-```
-
- 3. 🧪 Tests unitaires à ajouter dans ton script
-
-```python
-assert gps_dict["Artist"] == "John Doe"
-assert gps_dict["Make"] == "Canon"
-assert gps_dict["BodySerialNumber"] == "2506446"
-assert get_coordinates(gps_dict) == ['47°37′29.107″N', '3°25′42.977″W']
-```
-
- 4. 🧠 BONUS : ajouter une altitude lisible
-
-Ajoute une fonction optionnelle :
-
-```python
-def get_altitude(GPSinfo: dict) -> float:
-    """
-    Calcule l'altitude en mètres à partir du tuple (valeur, diviseur).
-    """
-    pass  # à compléter
-```
-
-Exemple attendu :
-
-```python
-get_altitude(gps_dict)  # retourne environ 47.66
-```
-
-✅ Résultat attendu
-
-Une fois tout terminé, ton script devra afficher quelque chose comme :
-
-```
-Make : Canon
-Model : Canon EOS 6D
-Artist : John Doe
-GPSLatitude : 47°37′29.107″N
-GPSLongitude : 3°25′42.977″W
-GPSAltitude : 47.66 m
-Date de la photo : 2018:08:28
-```
-
-
-
-
-1 Créer un fichier exif.py.
-
-2 Écrire une fonction qui lise les données EXIF contenues dans une image. On donne le prototype de la fonction : 
-
-```get_exif(filename : str) -> dict ```
-
-- filename -- fichier image 
-- la fonction retourne les données EXIF si ok, ou None si erreur 
-
-**Aide :**  
-
-- On utilisera Image de la bibliothèque PIL :  
-
-```from PIL import Image```
-
-- On utilisera la bibliothèque PIL ainsi que les méthodes associées _getexif() et get().  
-```from PIL.ExifTags import TAGS, GPSTAGS``` 
-- L’appel à _getexif() se fait de la façon suivante : 
-```python
-image = Image.open(filename) 
-exif = image._getexif() 
-```
-
-- Cependant, on obtient par ce biais un dictionnaire indexé avec des identifiants numériques. Pour avoir les noms correspondants, on utilise ExifTags et on renommera les clefs du dictionnaire : 
-
-```new_key = TAGS.get(key, key) ```
-
-- Ne pas oublier de fermer l’image 
-
-```image.close() ```
-
-**Rappels : **
-
-- on utilisera la syntaxe  
-```
-try : 
-  # bloc à coder 
-except IOError : 
-  return None 
-return #ledictionnaire
-``` 
-
-3 Tester la fonction avec le fichier 'valley.jpg' du dossier Ressources (à enregistrer au même endroit que le fichier exif.py). 
-
-4 Documenter la fonction 
-
-5 Indiquer l’auteur de la photo : 'Artist', le fabricant et le numéro de série de l’appareil. Attention aux majuscules / minuscules  
-
-6 Ouvrir le fichier valley.jpg avec un éditeur de texte (Notepad++). Conclure. 
-
-Comme vous pouvez le constater, nous avons un système clé:valeur (à chaque clé correspond une valeur). La clé "GPSInfo" n'est pas tout le temps présente puisqu'il s'agit des coordonnées (latitude, longitude) de la prise de vue, il faut donc que l'appareil photo intègre un GPS (ce qui est le cas des smartphones) : 
-
-![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.079.png)
-
-Les lignes 1, 2, 3 et 4 vont particulièrement nous intéresser : 
-
-- ligne 1 : précise que nous sommes dans l'hémisphère Nord 
-- ligne 2 : nous avons la latitude ((47, 1), (37, 1), (29107360, 1000000)) nous avons ici une latitude en degrés,minute, seconde. Ici : 
-
-47/1=47 degrés  
-37/1 minutes  
-et 29107360/1000000 secondes,  
-
-aussi noté 47°37'29,107360" 
-
-- ligne 3 : précise que nous sommes à l'ouest (W) du méridien de Greenwich 
-- ligne 4 : nous avons la longitude ((3, 1), (25, 1), (42976570, 1000000)) ici aussi la longitude est donnée en degrés, minute, seconde (ici : 3°25'42,976570") 
-
-7 Ajouter une fonction qui récupère les données GPS du format EXIF. On donne le prototype de la fonction : 
+3 Ajouter une fonction qui récupère les données GPS du format EXIF. On donne le prototype de la fonction : 
 ```GPS_read(filename : str) -> dict ```
 - filename -- fichier image 
 - la fonction retourne les informations GPS si ok, ou None si erreur 
@@ -2204,9 +2053,27 @@ except KeyError :
   return None
 ``` 
 
-8 Tester la fonction avec le fichier 'mountain.jpg' du dossier Ressources (à enregistrer au même endroit que le fichier exif.py). 
-
-9 Compléter le docstring de la fonction 
+Fonction à compléter :
+```python
+def GPS_read(filename : str) -> dict:
+    """
+    fonction qui retourne toutes les données GPS à partir d'une photo
+    :param filename:str
+    :return:dict
+    """
+    gps = {}
+    try:
+        exif = get_exif(filename)
+        if exif is not None and 'GPSInfo' in exif:
+            ...
+            ...
+            ...
+            return gps
+        return None
+    except KeyError:
+        return None
+print(GPS_read('mountain.jpg'))
+```
 
 Les coordonnées géographiques sont habituellement exprimées dans le système sexagésimal, ou DMS pour degrés (°), minutes (′) et secondes (″). L’unité est le degré d’angle (1 tour = 360°), puis la minute d’angle (1° = 60′), puis la seconde d’angle (1° = 3 600″). 
 
@@ -2214,7 +2081,7 @@ Par rapport au plan équatorial, la latitude est complétée d’une lettre N (h
 
 Remarque : pour obtenir un traitement automatisé des données géographiques, un format décimal est souvent plus pratique. On divise les minutes par 60 et les secondes par 3600 et on additionne le tout. La latitude est négative dans l’hémisphère Sud (S), et à l’Ouest du méridien de Greenwich (W). 
 
-10 A partir des données GPS récupérées précédemment, écrire une fonction qui indique les coordonnées GPS[^1]. On donne le prototype de la fonction : 
+4 A partir des données GPS récupérées précédemment, écrire une fonction qui indique les coordonnées GPS[^1]. On donne le prototype de la fonction : 
 
 ```get_coordinates(GPSinfo : dict) -> list ```
 
@@ -2255,66 +2122,36 @@ except TypeError :
   return None 
 ```
 
-11 Tester la fonction précédente avec le dictionnaire GPSinfo précédent 
 
-12 Compléter le docstring de la fonction 
+Fonction à compléter :
+```python
+def get_coordinates(GPSinfo : dict) -> list:
+    """
+    fonction qui retourne une liste avec les coordonnées GPS de la photo
+    :param GPSinfo: dict
+    :return: list
+    """
+    try :
+        coordinate=[0 for x in range(2)]
+        if 'GPSLatitude' in GPSinfo and 'GPSLongitude' in GPSinfo:
+            coordinate[0] = str(GPSinfo['GPSLatitude'][0][0]/GPSinfo['GPSLatitude'][0][1])+'°'\
+                               + str(GPSinfo['GPSLatitude'][1][0]/GPSinfo['GPSLatitude'][1][1])+"‘" \
+                               + str(GPSinfo['GPSLatitude'][2][0]/GPSinfo['GPSLatitude'][2][1])+'"' \
+                               + GPSinfo['GPSLatitudeRef']
+            coordinate[1]= ...
 
-On souhaite combiner les fonctions pour obtenir les coordonnées GPS d’une image 
+        else :
+            return None
+        return coordinate
+    except TypeError:
+        return None
 
-13 Ecrire une fonction qui combine les autres fonctions et qui retourne les coordonnées GPS de l’image entrée en argument. Le prototypage de la fonction  
-
-```def coordonnee_GPS_image(image:str) -> list: ```
-
-14 tester la fonction avec 'mountain.jpg'
-
-15 documenter la fonction 
-
-16 Créer un fichier exif_test.py.
-
-17 Valider les tests unitaires suivants : 
-```
-xif.get_coordinates(exif.GPS_read("mountain.jpg")) == ['63.0°40.9847‘0.0"N', '19.0°31.8565‘0.0"W']
-exif.get_coordinates(exif.GPS_read("turing.jpg")) == None
-exif.get_coordinates(exif.GPS_read("mountain.png")) == None
-exif.get_exif("valley.jpg")['BodySerialNumber'] == "2506446"
-```
-
-
-**Rappel :**  
-
-- Ne pas oublier d’importer exif 
-
-On souhaite avoir un programme qui extrait toutes les EXIF d’une photo entrée en input 
-
-18 Créer un fichier exif_main.py
-
-19 Le programme doit demander la photo et retourner chaque donnée EXIF ligne par ligne : 
+GPSinfo = {'GPSLatitudeRef': 'N', 'GPSLatitude': ((63, 1), (409847, 10000), (0, 1)), 'GPSLongitudeRef': 'W', 'GPSLongitude': ((19, 1), (318565, 10000), (0, 1)), 'GPSAltitudeRef': b'\x00', 'GPSAltitude': (92709, 191), 'GPSTimeStamp': ((13, 1), (18, 1), (42000, 1000)), 'GPSSpeedRef': 'K', 'GPSSpeed': (23, 25), 'GPSImgDirectionRef': 'M', 'GPSImgDirection': (57107, 192), 'GPSDestBearingRef': 'M', 'GPSDestBearing': (57107, 192), 'GPSDateStamp': '2018:09:03', 'GPSHPositioningError': (10, 1)}
+print(get_coordinates(GPSinfo))
 
 ```
-indiquez un fichier>? mountain.jpg
-ExifVersion b'0230'
-ShutterSpeedValue (10167418, 1000000)
-ApertureValue (1695994, 1000000)
-DateTimeOriginal 2018:09:03 15:18:55
-DateTimeDigitized 2018:09:03 15:18:55
-BrightnessValue (17587, 1827)
-etc…
-```
 
 
-
-**Rappel :** 
-
-```
-try : 
-  # bloc à coder 
-except KeyboardInterrupt:         
-  pass 
-```
-
-20 Tester avec le fichier mountain.jpg
-
-21 Vérifier que toutes les fonctions soient bien documentées (docstring). 
 
 **<H3 STYLE="COLOR:red;">Exercice 42 :** ★★★ **Le chiffrement de Caesar</h3>** 
 
