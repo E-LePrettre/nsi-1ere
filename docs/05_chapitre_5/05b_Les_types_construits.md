@@ -2358,9 +2358,7 @@ D’après les statistiques P et Z devraient se décrypter en A et I (ou I et A)
 
 En réfléchissant un petit peu, on décrypte le message : CECI EST UN ESSAI DE PHRASE VRAIE 
 
-1 Créer un fichier occurrences.py.
-
-2 Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un texte. On donne le prototype :  
+1 Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un texte. On donne le prototype :  
 
 ```letter_count(text : str) -> list```
 
@@ -2378,14 +2376,23 @@ a.sort(key=lambda x: -x[1]) => tri la liste a par ordre décroissant des nombres
 ```
 [https://www.science-emergence.com/Articles/Comment-trier-une-liste-de-tuple-par-rapport-a-un-](https://www.science-emergence.com/Articles/Comment-trier-une-liste-de-tuple-par-rapport-a-un-element-donnee-en-python-/)
 
+Fonction à compléter:
+```python
 
-3 Documenter la fonction 
+def letter_count(text : str) -> list:
+    """
+    Fonction qui compte le nombre d'occurrences de chaque lettre dans un texte
+    :param text: str
+    :return: list
+    """
+    
 
-4 Tester la fonction avec le message : ETRE OU NE PAS ETRE TELLE EST LA QUESTION. 
+assert letter_count("ETRE OU NE PAS ETRE TELLE EST LA QUESTION.") == [['e', 9], ['t', 5], ['s', 3], ['l', 3], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
+assert letter_count("Être ou ne pas Être, telle est la question.") == [['e', 7], ['t', 5], ['s', 3], ['l', 3], ['ê', 2], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
+```
 
-5 Tester la fonction avec le message : Être ou ne pas Être, telle est la question. 
 
-6 Modifier la fonction pour que les lettres accentuées soient considérées comme non accentuées. On ajoutera avant une fonction ```strip_accent(text : str) -> str```
+2 Modifier la fonction pour que les lettres accentuées soient considérées comme non accentuées. On ajoutera avant une fonction ```strip_accent(text : str) -> str```
 - text : lettre accentuée 
 - la fonction renvoie lettre sans accent 
 
@@ -2393,11 +2400,36 @@ a.sort(key=lambda x: -x[1]) => tri la liste a par ordre décroissant des nombres
 
 - passer en revue chaque lettre accentuée possible 
 
-7 Documenter la fonction 
+Fonctions à compléter :
+```python
+def strip_accent(text : str) -> str:
+    """
+    Fonction qui transforme la lettre accentuée en lettre non accentuées
+    :param text:str
+    :return:str
+    """
+    accents = {'a': ['à', 'â'],
+               'e': ['é', 'è', 'ê', 'ë'],
+               'i': ['î', 'ï'],
+               'u': ['ù', 'ü', 'û'],
+               'o': ['ô', 'ö']}
 
-8 Tester la fonction avec le message : Être ou ne pas Être, telle est la question.
+    # à compléter
 
-9 Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un fichier texte. 
+
+def letter_count(text : str) -> list:
+    """
+    Fonction qui compte le nombre d'occurrences de chaque lettre dans un texte
+    :param text: str
+    :return: list
+    """
+    #à compléter
+
+assert letter_count("ETRE OU NE PAS ETRE TELLE EST LA QUESTION.") == [['e', 9], ['t', 5], ['s', 3], ['l', 3], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
+assert letter_count("Être ou ne pas Être, telle est la question.") == [['e', 9], ['t', 5], ['s', 3], ['l', 3], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
+```
+
+3 Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un fichier texte. 
 
 On donne le prototype : ```count_in_file(file : str, encode = 'utf-8') -> list```
 
@@ -2410,22 +2442,48 @@ On donne le prototype : ```count_in_file(file : str, encode = 'utf-8') -> list``
 - ouvrir le fichier avec la fonction open() et l’attribut ‘r’, ne pas oublier l’encodage du fichier 
 - On utilisera la méthode rstrip("\n") pour enlever le symbole.  [https://www.w3schools.com/python/ref_string_rstrip.asp ](https://www.w3schools.com/python/ref_string_rstrip.asp)![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.010.png)
 
-10 Documenter la fonction
+Fonctions à compléter:
+```python
 
-11 Tester la fonction avec le fichier « book_vh.txt » dans le dossier Ressources.
+def count_in_file(file : str, encode = 'utf-8') -> list:
+    """
+    Fonction qui compte le nombre d'occurrences de chaque lettre dans un fichier texte
+    :param file: str
+    :param encode: list
+    :return:
+    """
+    # à compléter
 
+assert count_in_file("book_vh.txt") == [['e', 139996], ['a', 67618], ['s', 60385], ['i', 59208], ['t', 58033], ['u', 52989], ['r', 52377], ['n', 51021], ['l', 48412], ['o', 41961], ['d', 30221], ['c', 25215], ['m', 21676], ['p', 21393], ['v', 13206], ['q', 9631], ['g', 8972], ['f', 8856], ['h', 8542], ['b', 8187], ['j', 3882], ['x', 3161], ['y', 2425], ['z', 1319], ['ç', 458], ['æ', 38], ['k', 23], ['w', 3], ['ñ', 1], ['á', 1]]
+```
 
-**Résultat attendu** : [['e', 139996], ['a', 67618], ['s', 60385], ['i', 59208], ['t', 58033], ['u', 52989], ['r', 52377], ['n', 51021], ['l', 48412], ['o', 41961], ['d', 30221], ['c', 25215], ['m', 21676], ['p', 21393], ['v', 13206], ['q', 9631], ['g', 8972], ['f', 8856],...]
-
-12 Modifier la fonction pour traiter le cas d’une éventuelle erreur à l’ouverture du fichier (nom incorrect, problème de droits, …). On utilisera le gestionnaire de contexte (context manager). 
+4 Modifier la fonction pour traiter le cas d’une éventuelle erreur à l’ouverture du fichier (nom incorrect, problème de droits, …). On utilisera le gestionnaire de contexte (context manager). 
 ```
 try : 
   # bloc à coder 
 except FileNotFoundError:          
   return [] 
 ```
+Fonction à compléter :
+```python
+def count_in_file(file : str, encode = 'utf-8') -> list:
+    """
+    Fonction qui compte le nombre d'occurrences de chaque lettre dans un fichier texte
+    :param file: str
+    :param encode: list
+    :return:
+    """
+    ligne_caractere =''
+    try :
+        ...
+    except FileNotFoundError:
+        return []
 
-13 Écrire une fonction qui va filtrer la liste de valeurs [lettre, occurrences] sur les lettres. On donne le prototype : ```occurrence(sorted_list : list) -> list```
+
+assert count_in_file("book_vh.txt") == [['e', 139996], ['a', 67618], ['s', 60385], ['i', 59208], ['t', 58033], ['u', 52989], ['r', 52377], ['n', 51021], ['l', 48412], ['o', 41961], ['d', 30221], ['c', 25215], ['m', 21676], ['p', 21393], ['v', 13206], ['q', 9631], ['g', 8972], ['f', 8856], ['h', 8542], ['b', 8187], ['j', 3882], ['x', 3161], ['y', 2425], ['z', 1319], ['ç', 458], ['æ', 38], ['k', 23], ['w', 3], ['ñ', 1], ['á', 1]]
+```
+
+5 Écrire une fonction qui va filtrer la liste de valeurs [lettre, occurrences] sur les lettres. On donne le prototype : ```occurrence(sorted_list : list) -> list```
 - sorted_list :  liste  de  valeurs  [lettre,  occurrences],  triée  par  ordre  décroissant  selon  le  nombre d’occurrences de chaque lettre. 
 - La fonction renvoie une liste de lettres triées par ordre décroissant de fréquence d’apparition.  
 
@@ -2434,25 +2492,36 @@ except FileNotFoundError:
 - la liste renvoyée par la fonction letter_count() est déjà triées par ordre décroissant  ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.105.png)
 - modifier la fonction count_in_file() pour qu’elle renvoie la liste de lettres triées par ordre décroissant de fréquence d’apparition en combinant les fonctions 
 
-14 Documenter la fonction précédente 
-
-15 Tester la fonction avec le fichier « book_vh.txt ». 
-
-**Résultat attendu** : ['e', 'a', 's', 'i', 't', 'u', 'r', 'n',  ...] 
-
-16 Modifier le corps principal du programme pour appeler la fonction occurrence avec tous les fichiers texte d’extension .txt présents dans le répertoire. Conclure. 
-
-**Super Aide :** 
-
-- On codera de cette manière : 
+Fonction à compléter : 
 ```python
-import os
-if __name__ == '__main__':
-    files = [ f for f in os.listdir('.') if os.path.isfile(f) and f.startswith("book") and f.endswith(".txt") ]
+def occurrence(sorted_list : list) -> list:
+    """
+    La fonction renvoie une liste de lettres triées par ordre décroissant de fréquence d’apparition
+    :param sorted_list:list
+    :return:list
+    """
+    #à compléter
 
-    for f in files:
-        print(f, ":", count_in_file(f))
-```
+def count_in_file(file : str, encode = 'utf-8') -> list:
+    """
+    Fonction qui compte le nombre d'occurrences de chaque lettre dans un fichier texte
+    :param file: str
+    :param encode: list
+    :return:
+    """
+    ligne_caractere =''
+    try :
+        #à compléter
+
+        return occurrence(letter_count(ligne_caractere))
+    except FileNotFoundError:
+        return []
+
+
+assert count_in_file("book_vh.txt") == ['e', 'a', 's', 'i', 't', 'u', 'r', 'n', 'l', 'o', 'd', 'c', 'm', 'p', 'v', 'q', 'g', 'f', 'h', 'b', 'j', 'x', 'y', 'z', 'ç', 'æ', 'k', 'w', 'ñ', 'á']
+``` 
+
+
 
 
 **Le chiffrement de Vigenère** 
@@ -2517,28 +2586,31 @@ Algorithme vigenere
 
 Le texte (en français) suivant a été chiffré par un code mono alphabétique. Déterminer l’auteur de ce texte. eposal, epg r’sjnp, s r’upjdp cj nrsliuaq rs isohsmlp, vp hsdqadsa. bcag-qj, vp gsag tjp qj o’sqqpleg. 
 
-17 Créer un fichier substitution.py.
-
-18 Afficher les occurrences des lettres du texte chiffré ci-dessus à l’aide de la fonction letter_count() du et la fonction occurrence() module occurrences.py.
-
-**Résultat attendu** : [['s', 11], ['p', 10],…]
-
-**Aide :** 
-
-- Importer les fonctions letter_count() et occurrence()
-
-19 Enregistrer ces occurrences dans une liste : entree.
-
-20 Enregistrer les occurrences usuelles pour un texte en français dans une liste**  
-
-```sortie = ['a', 'e', 'i', 't', 'u', 's', 'l', 'n', 'd', 'm', 'r', 'b', 'h', 'p', 'c', 'o', 'j', 'g', 'q', 'v']```
-
-21 Écrire un programme qui substitue les lettres de la liste entree par celles de la liste sortie en fonctions des occurrences rencontrées. 
+6 Écrire un programme qui substitue les lettres de la liste entree par celles de la liste sortie en fonctions des occurrences rencontrées. 
 
 **Aide :**  
 
 - On pourra utiliser la méthode index()
 - il est possible que l’ordre des occurrences de la liste de sortie ne coïncide pas totalement avec les occurrences de la liste d’entrée. 
+
+Fonction à compléter :
+```python
+text = 'eposal, epg r’sjnp, s r’upjdp cj nrsliuaq rs isohsmlp, vp hsdqadsa. bcag-qj, vp gsag tjp qj o’sqqpleg.'
+
+entree = occurrence(letter_count(text))
+
+sortie = ['a', 'e', 'i', 't', 'u', 's', 'l', 'n', 'd', 'm', 'r', 'b', 'h', 'p', 'c', 'o', 'j', 'g', 'q', 'v']
+
+
+for lettre in text:
+    if lettre in entree :
+        print (..., end='')
+    else:
+        print (lettre, end='')
+```
+
+
+ 
 
 **Chiffrement de Vigenère avec clef** 
 
@@ -2548,9 +2620,7 @@ ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV X
 
 **Indice** : le texte en clair contient le mot SAINT. 
 
-22 Créer un fichier vigenere.py.
-
-23 Implémenter l’algorithme précédent. 
+7 Implémenter l’algorithme précédent. 
 
 **Aide :**  
 
@@ -2558,6 +2628,79 @@ ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV X
 - utiliser la fonction caesar() développée dans le module de l’activité précédente. 
 - Mettre  à la fin du script un print() indenté comme la dernière boucle for (pour un retour à la ligne) 
 
+Fonctions à compléter :
+```python
+#!/usr/bin/env python3
+# coding : utf-8
+
+"""
+    module      : occurrences.py
+    projet      : chiffrement de Vigenere, recherche statistique d'occurrences dans un fichier
+
+    version     : 2.0
+    auteur      : prof NSI
+    création    : 30/08/2020
+    modif       :
+"""
+
+#from Chap09_ex13_partie07_caesar import caesar
+
+def caesar_encode(text : str, key : str = 1) -> str:
+    """
+    fonction qui utilise la méthode de César pour crypter
+    :param text: str
+    :param key: int
+    :return: str
+    """
+    text = text.upper()
+    text_code = ''
+    for lettre in text :
+        if lettre.isalpha():
+            text_code = text_code + chr((((ord(lettre)-65)+key)%26)+65)
+        else :
+            text_code = text_code + lettre
+    return text_code
+
+def caesar_decode(code : str, key : str = 1) -> str:
+    """
+    fonction qui utilise la méthode de César pour décrypter
+    :param code: str
+    :param key: int
+    :return: str
+    """
+    text_decode = ''
+    for lettre in code :
+        if lettre.isalpha():
+            if ord(lettre) - 65 - key <0:
+                text_decode = text_decode + chr((((ord(lettre) - 65) + 26) - key) + 65)
+            else:
+                text_decode = text_decode + chr(((ord(lettre) - 65) - key) + 65)
+        else :
+            text_decode = text_decode + lettre
+    return text_decode
+
+def caesar(str_in : str, key : int) -> str:
+    """
+    Fonction qui chiffre ou déchiffre avec la méthode de César
+    :param str_in:str
+    :param key : int
+    :return:str
+    """
+    if key>=0:
+        return caesar_encode(str_in, key)
+    else:
+        return caesar_decode(str_in, abs(key))
+
+texte_code = " ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV XHGSZ CALE XHKSAG JZVJSNJ LUY UCNUG JA UFPPY ZCJUU FCGH"
+for i in range(26):
+    for j in range(26):
+        for k in range(26):
+            clef = [i, j, k]
+            # à compléter
+
+
+            print()
+```
 
 **<H3 STYLE="COLOR:red;">Exercice 44 :** ★★★ **Séquences nucléiques  Acide nucléique</h3>** 
 
