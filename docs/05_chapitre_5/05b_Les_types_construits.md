@@ -2191,9 +2191,9 @@ Méthode :
 
 On appelle modulo d’un nombre x par N, l’opérateur qui renvoie le reste de la division entière de x par N. Exemple : 11 modulo 5 = 1 (en Python, le modulo est notée %). 
 
-1 Créer un fichier caesar.py.
 
-2 Écrire une fonction qui utilise la méthode de César pour crypter un message. 
+
+1 Écrire une fonction qui utilise la méthode de César pour crypter un message. 
 
 Le prototype de la fonction est : ```caesar_encode(text : str, key : int = 1) -> str```
 
@@ -2207,11 +2207,22 @@ Le prototype de la fonction est : ```caesar_encode(text : str, key : int = 1) ->
 - Utilisez les méthodes upper() (pour mettre en majuscule) et isalpha() (pour tester si c’est une lettre alphabétique)  
 - Utilisez les fonction chr(#nombre) pour convertir en caractère et ord(‘#la lettre’) pour convertir en code ASCII 
 
-3 Documenter la fonction 
+Fonction à compléter :
+```python
+def caesar_encode(text : str, key : str = 1) -> str:
+    """
+    fonction qui utilise la méthode de César pour crypter
+    :param text: str
+    :param key: int
+    :return: str
+    """
+    #à compléter
 
-4 Tester la fonction avec le message suivant : "ATTAQUEZ DEMAIN" avec la clé par défaut. Résultat attendu : BUUBRVFA EFNBJO
+assert caesar_encode("ATTAQUEZ DEMAIN")== 'BUUBRVFA EFNBJO'
 
-5 Écrire un programme qui permet de déchiffrer le texte chiffré précédemment. Le prototype de la fonction est : ```caesar_decode(code : str, key : int = 1) -> str```
+```
+
+2 Écrire un programme qui permet de déchiffrer le texte chiffré précédemment. Le prototype de la fonction est : ```caesar_decode(code : str, key : int = 1) -> str```
 
 - code représente le texte à déchiffrer, 
 
@@ -2222,38 +2233,58 @@ Le prototype de la fonction est : ```caesar_encode(text : str, key : int = 1) ->
 **Aide :** 
 - Le decodage de la lettre S avec une key = 19 donne Z.
 
-6 Documenter la fonction 
+Fonction à compléter
+```python
+def caesar_decode(code : str, key : str = 1) -> str:
+    """
+    fonction qui utilise la méthode de César pour décrypter
+    :param code: str
+    :param key: int
+    :return: str
+    """
+    # à compléter
 
-7 Factoriser le code des deux fonctions précédentes pour obtenir une fonction qui chiffre ou déchiffre. Le prototype de la fonction est : ```caesar(str_in : str, key : int) -> str```
+assert caesar_encode('BUUBRVFA EFNBJO')== 'ATTAQUEZ DEMAIN'
+```
+
+3 Factoriser le code des deux fonctions précédentes pour obtenir une fonction qui chiffre ou déchiffre. Le prototype de la fonction est : ```caesar(str_in : str, key : int) -> str```
 
 - str_in représente le texte à chiffrer/déchiffrer, 
 - key représente la clef de chiffrement. Si key > 0 c’est un chiffrage si key < 0 c’est un déchiffrement.  
 - La fonction doit renvoyer le texte déchiffré/chiffré. 
-8 Documenter la fonction 
 
-Une fonction est basée sur le modèle de la boite noire ; les sorties n’étant fonction que des entrées. Cette boite noire doit être à la fois cohérente (des entrées supposées fournir un résultat juste doivent donner un résultat juste, des entrées supposées donner un résultat faux doivent donner un résultat faux) et stable (le programme doit terminer, ne pas « crasher » ou avoir un comportement erratique). La vérification de ces deux critères se fait à travers des tests unitaires. 
+Fonction à compléter :
+```python 
+def caesar(str_in : str, key : int) -> str:
+    """
+    Fonction qui chiffre ou déchiffre avec la méthode de César
+    :param str_in:str
+    :param key : int
+    :return:str
+    """
+    # à compléter
 
-9 Créer un fichier caesar_test.py. 
 
-10 Tests de cohérence. Écrire une série de tests unitaires qui vérifie les conditions suivantes : 
-
-```
-pour key = 0 et str_in = ‘A’ : sortie = ‘A’ 
-pour key = 1 et str_in = ‘Z’ : sortie = ‘A’ 
-pour key = 2 et str_in = ‘Y’ : sortie = ‘A’ 
-pour key = 26 et str_in = ‘A’ : sortie = ‘A’ 
-pour key = 26*2 et str_in = ‘A’ : sortie = ‘A’ 
-pour key = -26 et str_in = ‘A’ : sortie = ‘A’ 
-pour key = 1 et str_in = ‘’ : sortie = ‘’ 
-pour key = 0, str_in = ‘a’ : sortie = ‘A’ 
+assert caesar("ATTAQUEZ DEMAIN", 1)== 'BUUBRVFA EFNBJO'
+assert caesar('BUUBRVFA EFNBJO', -1)== 'ATTAQUEZ DEMAIN'
 ```
 
-**Aide :** 
 
-- utiliser l’instruction assert. 
-- Ecrire une fonction pour chaque test. Par exemple : test_caesar_rot0():
-- Ne pas oublier d’importer le module caesar et la fonction caesar()
-- Prévoir une fonction d’appel unit_test() pour appeler chaque fonction test_caesar…
+
+4 Tests de cohérence. Écrire une série de tests unitaires qui vérifie les conditions suivantes : 
+
+Tests à compléter
+```python
+assert caesar('A', 0) == ...
+assert caesar('Z', 1) == ...
+assert caesar('Y', 2) == ...
+assert caesar('A', 26) == ...
+assert caesar('A', 26*2) == ...
+assert caesar('A', -26) == ...
+assert caesar('', 1) == ...
+assert caesar('a', 0) == ...
+```
+
 
 **Décryptage** 
 
@@ -2269,13 +2300,9 @@ EZ KFLK R WRZK LEV RLKIV, VK D’RZDV VK DV TFDGIVEU.
 
 Le chiffrement de César a été utilisé mais avec une clef différente de 1. 
 
-11 Créer un fichier caesar_main.py.
-
-12 Écrire un programme afin de donner le nom de l’auteur du message crypté. 
+5 Écrire un programme afin de donner le nom de l’auteur du message crypté. 
 
 **Aide :**  
-
-- Ne pas oublier d’importer le module caesar et la fonction caesar()
 - La clef de chiffrement étant inconnue, il faut faire une boucle qui les teste toutes (technique de l’attaque par force brute). 
 
 **<H3 STYLE="COLOR:red;">Exercice 43 :** ★★★ **Le chiffrement de Vigenère</h3>** => THONNY
