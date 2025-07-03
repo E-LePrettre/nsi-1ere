@@ -1929,7 +1929,7 @@ Résultat attendu :
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 43 :** ★★★ **format EXIF Introduction</h3>** => Thonny
+**<H3 STYLE="COLOR:red;">Exercice 43 :** ★★★ **format EXIF Introduction</h3>** 
 
 
 L’Exchangeable  Image  File  Format  ou  EXIF  est  une  spécification  de  format  de  fichier  pour  les  images  utilisées  par  les  appareils  photographiques  numériques.  Il  a  été  établi  par  le  Japan  Electronic  Industry Development Association (JEIDA). Cette spécification repose sur  des formats existants tels que JPEG, TIFF version 6.0 et RIFF format de  fichier audio WAVE, en y ajoutant des balises de métadonnées.  
@@ -2019,11 +2019,11 @@ gps_dict = {
 }
 ```
 
----
 
-## 🔧 Travail demandé
 
-### 1. 👀 Affichage lisible des données EXIF
+🔧 Travail demandé
+
+1. 👀 Affichage lisible des données EXIF
 
 **Implémente** la fonction suivante :
 
@@ -2038,9 +2038,7 @@ def afficher_exif(d: dict):
 
 📌 *Aide : utilise une boucle `for` pour parcourir les paires clé/valeur.*
 
----
-
-### 2. 📍 Conversion des coordonnées GPS en format DMS lisible
+2. 📍 Conversion des coordonnées GPS en format DMS lisible
 
 **Implémente** la fonction suivante :
 
@@ -2064,9 +2062,7 @@ def get_coordinates(GPSinfo: dict) -> list:
 ['47°37′29.107″N', '3°25′42.977″W']
 ```
 
----
-
-### 3. 🧪 Tests unitaires à ajouter dans ton script
+ 3. 🧪 Tests unitaires à ajouter dans ton script
 
 ```python
 assert gps_dict["Artist"] == "John Doe"
@@ -2075,9 +2071,7 @@ assert gps_dict["BodySerialNumber"] == "2506446"
 assert get_coordinates(gps_dict) == ['47°37′29.107″N', '3°25′42.977″W']
 ```
 
----
-
-### 4. 🧠 BONUS : ajouter une altitude lisible
+ 4. 🧠 BONUS : ajouter une altitude lisible
 
 Ajoute une fonction optionnelle :
 
@@ -2095,9 +2089,7 @@ Exemple attendu :
 get_altitude(gps_dict)  # retourne environ 47.66
 ```
 
----
-
-## ✅ Résultat attendu
+✅ Résultat attendu
 
 Une fois tout terminé, ton script devra afficher quelque chose comme :
 
@@ -2111,9 +2103,7 @@ GPSAltitude : 47.66 m
 Date de la photo : 2018:08:28
 ```
 
----
 
-Souhaites-tu que je te génère un modèle prêt à coller sur Capytale (cellules Markdown + Python) ?
 
 
 1 Créer un fichier exif.py.
