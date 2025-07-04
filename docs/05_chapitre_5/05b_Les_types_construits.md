@@ -2169,7 +2169,7 @@ print(get_coordinates(GPSinfo))
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 42 :** ★★★ **Le chiffrement de Caesar</h3>** 
+**<H3 STYLE="COLOR:red;">Exercice 45 :** ★★★ **Le chiffrement de Caesar</h3>** 
 
 ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.089.png)
 
@@ -2325,7 +2325,7 @@ Le chiffrement de César a été utilisé mais avec une clef différente de 1.
 **Aide :**  
 - La clef de chiffrement étant inconnue, il faut faire une boucle qui les teste toutes (technique de l’attaque par force brute). 
 
-**<H3 STYLE="COLOR:red;">Exercice 43 :** ★★★ **Le chiffrement de Vigenère</h3>** => THONNY
+**<H3 STYLE="COLOR:red;">Exercice 46 :** ★★★ **Le chiffrement de Vigenère</h3>** => THONNY
 
 Le chiffre de Vigenère est un système de chiffrement polyalphabétique, c’est un chiffrement par substitution, mais une même lettre du message clair peut, suivant sa position dans celui-ci, être remplacée par des lettres différentes, contrairement à un système de chiffrement mono alphabétique comme le chiffre de César (qu'il utilise cependant comme composant). Cette méthode résiste ainsi à l'analyse de fréquences, ce qui est un avantage décisif sur les chiffrements mono alphabétiques. Cependant le chiffre de Vigenère a été percé par le major prussien Friedrich Kasiski qui a publié sa méthode en 1863. Depuis cette époque, il n‘offre plus aucune sécurité. 
 
@@ -2732,7 +2732,7 @@ for i in range(26):
             print()
 ```
 
-**<H3 STYLE="COLOR:red;">Exercice 44 :** ★★★ **Séquences nucléiques  Acide nucléique</h3>** 
+**<H3 STYLE="COLOR:red;">Exercice 47 :** ★★★ **Séquences nucléiques  Acide nucléique</h3>** 
 
 ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.116.png)
 ![](Aimg023.png)
