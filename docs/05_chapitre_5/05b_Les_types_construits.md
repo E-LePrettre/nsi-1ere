@@ -1594,11 +1594,7 @@ Python permet de manipuler les **codes numériques des caractères** grâce aux 
 
 1.c.  **Créer un dictionnaire qui associe chaque lettre majuscule à un nombre de 0 à 25**
 
-Ce dictionnaire doit être de la forme suivante :
 
-```python
-{'A': 0, 'B': 1, 'C': 2, ..., 'Z': 25}
-```
 
 > 💡 Aide : utiliser une boucle et `chr()` avec `range(65, 91)`
 
