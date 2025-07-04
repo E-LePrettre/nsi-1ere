@@ -66,6 +66,18 @@ Rendre **8€** 💶
 🚨 **L’algorithme glouton donne ici une solution non optimale**, car il ne prévoit **pas les étapes suivantes**.
 
 
+
+🧠 **Complexité des algorithmes gloutons**
+
+Les algorithmes gloutons sont souvent très efficaces car ils **n’explorent pas toutes les solutions possibles**, mais choisissent à chaque étape la meilleure option locale. Cela leur permet d’avoir une **complexité en temps généralement faible**, souvent **linéaire ou linéaire en fonction du nombre d’éléments**.
+
+Par exemple, dans le problème du rendu de monnaie, l’algorithme glouton **parcourt une seule fois la liste des pièces** (déjà triée), ce qui donne une **complexité en O(n)**, avec *n* le nombre de types de pièces. Cette rapidité en fait un bon choix pour des problèmes où le temps d’exécution est crucial.
+
+Cependant, cette efficacité a un prix : **la solution obtenue n’est pas toujours optimale**, car l’algorithme **ne revient jamais sur ses choix**. Il est donc important de vérifier si la méthode gloutonne est **adaptée au problème étudié**.
+
+
+
+
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 **<H3 STYLE="COLOR:RED;">Activité n°1.**</H3> 
@@ -129,6 +141,8 @@ print(renduMonnaie(somme,pieces))
 ```
 
 Soit 30 euros, l’algorithme ne fonctionne plus, car il manque une pièce de 1 euro. 
+
+
 
 ### <H3 STYLE="COLOR:GREEN;"> **1.2. Le<a name="_page2_x51.00_y32.00"></a> problème du sac à dos**</H3> 
 
