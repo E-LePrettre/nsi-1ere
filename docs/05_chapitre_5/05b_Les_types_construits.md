@@ -3028,7 +3028,3 @@ assert replication('') == None
 assert replication(0) == None 
 ```
 
-
-
-
-[^1]: Depuis la fin 2018, la bibliothèque Python GPSPhoto permet d’obtenir directement les coordonnées géographiques d’une photo. 
