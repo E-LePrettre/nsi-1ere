@@ -276,7 +276,7 @@ Fonction remplirSacRatio(objets : liste de [valeur, poids, nom], poidsMax : floa
     Retourner objets_choisis
 ```
 
-🧪 **Test à faire en autonomie**
+🧪 **Test**
 
 ```python
 objets = [
