@@ -2320,7 +2320,7 @@ Le chiffrement de César a été utilisé mais avec une clef différente de 1.
 **Aide :**  
 - La clef de chiffrement étant inconnue, il faut faire une boucle qui les teste toutes (technique de l’attaque par force brute). 
 
-**<H3 STYLE="COLOR:red;">Exercice 46 :** ★★★ **Le chiffrement de Vigenère</h3>** => THONNY
+**<H3 STYLE="COLOR:red;">Exercice 46 :** ★★★ **Le chiffrement de Vigenère</h3>** 
 
 Le chiffre de Vigenère est un système de chiffrement polyalphabétique, c’est un chiffrement par substitution, mais une même lettre du message clair peut, suivant sa position dans celui-ci, être remplacée par des lettres différentes, contrairement à un système de chiffrement mono alphabétique comme le chiffre de César (qu'il utilise cependant comme composant). Cette méthode résiste ainsi à l'analyse de fréquences, ce qui est un avantage décisif sur les chiffrements mono alphabétiques. Cependant le chiffre de Vigenère a été percé par le major prussien Friedrich Kasiski qui a publié sa méthode en 1863. Depuis cette époque, il n‘offre plus aucune sécurité. 
 
