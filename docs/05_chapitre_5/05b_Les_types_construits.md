@@ -1397,11 +1397,7 @@ L = [
 
 Si la grille est magique, le programme doit afficher :
 
-*entrée : 
-![](Aimg018.png)
-
-*sortie : 
-![](Aimg019.png)
+True ou Vrai
 
 
 
