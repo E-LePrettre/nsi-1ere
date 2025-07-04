@@ -225,7 +225,83 @@ print(remplirSacDico(objets, poidsMax))
 {'chaussures': 1, 'habits': 1, 'trousse de toilette': 1, 'crèmes': 1, 'livres': 1, 'guide touristique': 1}
 ``` 
 
-### <H3 STYLE="COLOR:GREEN;"> **1.4. Conclusion**</H3> 
+Parfait, vous avez tout à fait raison : en Première NSI, **la fonction `lambda` peut être trop abstraite** si elle n’a pas encore été introduite.
+
+### <H3 STYLE="COLOR:GREEN;"> **1.4. Variante : Méthode gloutonne avec ratio valeur/poids**</H3> 
+
+
+**<H3 STYLE="COLOR:RED;">Activité n°4.**: Sac à dos et ratio</H3> 
+
+
+
+
+📌 **Objectif :** Implémenter une stratégie gloutonne **basée sur le ratio valeur/poids**.
+
+
+
+🧠 **Principe du problème**
+
+On veut remplir une **valise de 23 kg** avec des objets de voyage.
+Chaque objet a :
+
+* une **valeur** (utilité, confort, importance…),
+* un **poids**,
+* un **nom**.
+
+🎯 But : choisir **les objets les plus utiles par kilo**, c’est-à-dire avec le **meilleur ratio**
+$\text{ratio} = \frac{\text{valeur}}{\text{poids}}$
+
+🧮 **Pseudo-code à traduire**
+
+```plaintext
+Fonction remplirSacRatio(objets : liste de [valeur, poids, nom], poidsMax : float) → dictionnaire des objets pris
+
+    Étape 1 : Calculer la liste des ratios
+        Pour chaque objet de la liste :
+            Calculer le ratio valeur/poids
+            Ajouter [valeur, poids, nom, ratio] à une nouvelle liste
+
+    Étape 2 : Trier cette nouvelle liste manuellement (du plus grand au plus petit ratio)
+        (utiliser une méthode simple comme le tri par sélection ou insertion)
+
+    Étape 3 : Remplir le sac avec les objets triés par ratio
+        Initialiser poids_total ← 0
+        Initialiser objets_choisis ← dictionnaire vide
+
+        Pour chaque objet de la liste triée :
+            Si poids_total + poids ≤ poidsMax :
+                Ajouter nom à objets_choisis avec la valeur 1
+                Ajouter poids à poids_total
+
+    Retourner objets_choisis
+```
+
+🧪 **Test à faire en autonomie**
+
+```python
+objets = [
+    [6, 5.0, 'chaussures'],
+    [5, 5.0, 'habits'],
+    [4.5, 2.0, 'trousse de toilette'],
+    [4, 2.0, 'crèmes'],
+    [3, 8.0, 'livres'],
+    [2, 2.0, 'palmes tuba'],
+    [1, 0.5, 'guide touristique']
+]
+
+poidsMax = 23
+print(remplirSacRatio(objets, poidsMax))
+```
+
+🧠 **Aide**
+
+* 💡 Pour trier, créer une nouvelle liste `objetsAvecRatio = [[valeur, poids, nom, ratio], …]` puis la **trier à la main** (ex : tri par sélection).
+
+
+
+
+
+### <H3 STYLE="COLOR:GREEN;"> **1.5. Conclusion**</H3> 
 
 
 - **Les algorithmes gloutons sont rapides et simples**, mais ils ne garantissent pas toujours une solution optimale.
