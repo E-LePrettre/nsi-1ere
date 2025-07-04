@@ -1397,7 +1397,7 @@ L = [
 
 Si la grille est magique, le programme doit afficher :
 
-True ou Vrai
+**True** ou **Vrai**
 
 
 
@@ -1602,8 +1602,11 @@ Ce dictionnaire doit être de la forme suivante :
 
 > 💡 Aide : utiliser une boucle et `chr()` avec `range(65, 91)`
 
-📌 Résultat attendu (extrait) : 
-![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.052.png)
+📌 Résultat attendu  : 
+```python
+{'A': 0,  'B': 1,  'C': 2,  'D': 3,  'E': 4,  'F': 5,  'G': 6,  'H': 7, 'I': 8,  'J': 9,  'K': 10, 'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18, 'T': 19, 'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24, 'Z': 25}
+ ```
+
 
 🔹 **Partie 2 – Le chiffrement de César**
 
