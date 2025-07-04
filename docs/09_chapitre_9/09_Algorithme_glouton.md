@@ -225,7 +225,7 @@ print(remplirSacDico(objets, poidsMax))
 {'chaussures': 1, 'habits': 1, 'trousse de toilette': 1, 'crèmes': 1, 'livres': 1, 'guide touristique': 1}
 ``` 
 
-Parfait, vous avez tout à fait raison : en Première NSI, **la fonction `lambda` peut être trop abstraite** si elle n’a pas encore été introduite.
+
 
 ### <H3 STYLE="COLOR:GREEN;"> **1.4. Variante : Méthode gloutonne avec ratio valeur/poids**</H3> 
 
