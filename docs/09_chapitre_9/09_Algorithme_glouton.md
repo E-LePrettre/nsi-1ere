@@ -314,7 +314,116 @@ print(remplirSacRatio(objets, poidsMax))
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-★ **<H3 STYLE="COLOR:RED;">Rendu de monnaie**</h3> 
+★ **<H3 STYLE="COLOR:RED;">Exercice 1 : Le voyageur**</h3> 
+
+
+🟢 Étape 1 – Force brute très simple (3 stations)
+
+🚗 Contexte :
+
+```python
+distance = [40, 30, 20]  # Entre les stations
+autonomie = 100
+```
+
+✍️ Question 1:
+
+> Liste toutes les **combinaisons possibles d'arrêts** (0, 1, 2 arrêts), et indique lesquelles permettent d'atteindre la fin sans panne.
+
+
+
+
+🟡 Étape 2 – Force brute plus complexe (6 stations)
+
+🚗 Contexte :
+
+```python
+distance = [23, 40, 12, 44, 21, 9]
+autonomie = 100
+```
+
+✍️ Question 2 :
+
+> Énumère toutes les **séquences d’arrêts possibles** (par exemple : \[3], \[2, 5], etc.) et teste si elles permettent de finir le trajet.
+> Indique la **meilleure séquence**, celle qui utilise **le moins d’arrêts**.
+
+🔶 Étape 3 – Force brute infaisable (17 stations)
+
+🚗 Contexte :
+
+```python
+distance = [23, 40, 12, 44, 21, 9, 67, 32, 51, 30, 11, 55, 24, 64, 32, 57, 12, 80]
+autonomie = 100
+```
+
+✍️ Question 3 :
+
+> Estime **le nombre de combinaisons possibles d’arrêts**.
+> Est-il **raisonnable** de toutes les tester par un programme ou à la main ?
+> Propose une **méthode pour aller plus vite**.
+
+
+🔴 Étape 4 – Introduction de la **méthode gloutonne**
+
+✍️ Enoncé :
+
+> Propose une **stratégie efficace** qui :
+>
+> * ne teste pas toutes les combinaisons,
+> * mais **choisit intelligemment** les stations où s’arrêter **au fur et à mesure du trajet**.
+
+
+
+
+
+🔴 Étape 5 – Mise en œuvre de la méthode gloutonne
+
+
+
+✍️ Activité 
+
+```python
+distance = [23, 40, 12, 44, 21, 9]
+autonomie = 100
+```
+
+1. Calcule les **distances cumulées** à chaque étape.
+2. Repère à quel moment la **station suivante** est **inaccessible** (trop loin).
+3. Propose une **règle locale** : quand faut-il faire un arrêt ?
+4. Note les stations où tu t’arrêterais.
+
+
+
+5.  Maintenant, traduis cette stratégie en Python.
+
+
+```python
+def voyage_glouton(distance: list, autonomie: int) -> list:
+    """
+    Détermine les stations où s'arrêter pour ne jamais dépasser l'autonomie.
+    distance : liste des distances entre les stations
+    autonomie : distance maximale que l’on peut parcourir avec un plein
+    Retourne la liste des stations où on s’arrête (indices)
+    """
+    pass
+```
+
+
+
+🧪 Test : 
+
+```python
+distance = [23, 40, 12, 44, 21, 9]
+autonomie = 100
+print(voyage_glouton(distance, autonomie))
+# Résultat attendu : [3] → arrêt à la station 3 avant de dépasser l'autonomie
+```
+
+
+
+
+★ **<H3 STYLE="COLOR:RED;">Exercice 2 : Rendu de monnaie**</h3> 
+
 
 Étant donné un système de monnaie (pièces et billets), comment rendre une somme donnée de façon optimale, c'est-à- dire avec le nombre minimal de pièces et billets ? 
 
@@ -334,14 +443,14 @@ Pour rendre toute somme inférieure à 500€ pièces il faut au plus 3 pièces 
 
 Ainsi, 2019 = 500×4 + 19 = 500×4 + 10×1 + 5×1 + 2×2, soit 4+1+1+2 = 6 billets et 2 pièces. 
 
-1 Écrire **l’algorithme de rendu de monnaie en pseudo-code** pour une valeur** v à rendre avec un système de pièces S, trié par ordre croissant.  
+**1** Écrire **l’algorithme de rendu de monnaie en pseudo-code** pour une valeur** v à rendre avec un système de pièces S, trié par ordre croissant.  
 
 **Aide :** 
 
 - Noter les entrées et le(s) sortie(s).  
 - S’inspirer de l’algorithme en pseudo-code de recherche dichotomique 
 
-2 Montrer que l’algorithme termine. 
+**2** Montrer que l’algorithme termine. 
 
 **Rappels :** 
 
@@ -353,7 +462,7 @@ Pour s'assurer qu'un algorithme est correct, il faut démontrer deux choses :
 
 La conjonction de la **correction partielle et de la terminaison** s'appelle la **correction totale.** 
 
-3 Implémenter cet algorithme en langage Python. On donne le prototype de la fonction : 
+**3** Implémenter cet algorithme en langage Python. On donne le prototype de la fonction : 
 
 ```rendu(S : list, valeur : int) -> list``` 
 
@@ -363,25 +472,25 @@ La conjonction de la **correction partielle et de la terminaison** s'appelle la 
 
 - la fonction retourne la liste des pièces à rendre 
 
-4 Documenter la fonction  
+**4** Documenter la fonction  
 
-5 Tester le programme pour deux systèmes de monnaies : 
+**5** Tester le programme pour deux systèmes de monnaies : 
 
 - européen : ```S = (1, 2, 5, 10, 20, 50, 100, 200, 500)```
 
 - royaume uni : ```S = (1, 3, 4, 10, 30, 40, 100, 300, 400)```[^2] on prendra 2019 pour somme à rendre 
 
-★★ **<H3 STYLE="COLOR:RED;">le voyageur**</h3>
+★★ **<H3 STYLE="COLOR:RED;">Exercice n° 3 : le voyageur**</h3>
 
 Une route comporte n+1 stations-service, numérotées dans l'ordre du parcours, de 0 à n. La première est à une distance d[0] du départ, la deuxième est à une distance d[1] de la première, la troisième à une distance d[2] de la deuxième, etc. La fin de la route est à une distance d[n] de la n-ième et dernière station-service. 
 
 Un automobiliste prend le départ de la route avec une voiture dont le réservoir d'essence est plein. Il désire faire le plein le moins souvent possible. Sa voiture possède une autonomie notée autonomie avec un plein. 
 
-1 Écrire l’algorithme qui détermine à quelles stations-service il doit s'arrêter avec la distance parcourue. 
+**1** Écrire l’algorithme qui détermine à quelles stations-service il doit s'arrêter avec la distance parcourue. 
 
-2 Montrer que l’algorithme termine. 
+**2** Montrer que l’algorithme termine. 
 
-3 Implémenter cet algorithme en langage Python. On donne le prototype de la fonction : 
+**3** Implémenter cet algorithme en langage Python. On donne le prototype de la fonction : 
 ```voyage(distance : list, autonomie : int) -> list```
 
 - ```distance``` -- liste des distances entre les stations-service 
@@ -390,9 +499,9 @@ Un automobiliste prend le départ de la route avec une voiture dont le réservoi
 
 - la fonction retourne la liste de tuple (numéro de la station, distance parcourue depuis le début) 
 
-4 Documenter la fonction 
+**4** Documenter la fonction 
 
-5 Tester le programme : 
+**5** Tester le programme : 
 
 - 17 stations-service avec 
 
@@ -401,20 +510,20 @@ distance = [23, 40, 12, 44, 21, 9, 67, 32, 51, 30, 11, 55, 24, 64, 32, 57, 12, 8
 autonomie = 100 
 ```
 
-★★★ **<H3 STYLE="COLOR:RED;">le cambrioleur**</h3> 
+★★★ **<H3 STYLE="COLOR:RED;">Exercice 4 : le cambrioleur**</h3> 
 
 Un cambrioleur entre par effraction dans une maison. Il n'est capable de porter qu’une masse limitée : il lui faudra donc choisir entre les différents objets de valeur, afin d'amasser le plus gros magot possible. 
 
-1 Écrire un algorithme qui donne un choix optimal pour le voleur. 
+**1** Écrire un algorithme qui donne un choix optimal pour le voleur. 
 
 **Aide** : 
 
 - Pour amasser le plus gros butin, il suffit de considérer le rapport prix/masse. A chaque fois, on en prend le rapport maximal. 
 - il faut rajouter ce critère à la liste [prix, poids] et la trier sur ce critère par ordre décroissant. 
 
-2 Montrer que cet algorithme termine.
+**2** Montrer que cet algorithme termine.
 
-3 Programmez une fonction remplir dont le prototype est le suivant : 
+**3** Programmez une fonction remplir dont le prototype est le suivant : 
 ```voleur(articles : list, masse : int) -> list```
 
 - ```articles``` -- liste des articles (masse, valeur)  
@@ -425,11 +534,11 @@ Un cambrioleur entre par effraction dans une maison. Il n'est capable de porter 
 
 - Le programme ou la fonction précédente retournera aussi** la masse totale **et** la valeur totale 
 
-4 Documenter la fonction 
+**4** Documenter la fonction 
 
 On dispose d’une liste d’objets de masses ```m = [9, 10, 12, 14, 11, 5, 7, 5, 6, 2]``` ainsi que de leurs valeurs associées ```v = [10, 8, 7, 7, 5, 4, 3, 2, 2, 1]```.
 
-5 Tester le programme pour une masse maximale de 22 kg. Conclure. 
+**5** Tester le programme pour une masse maximale de 22 kg. Conclure. 
 
 ## <H2 STYLE="COLOR:BLUE;"> **3.  Problème : TSP - Le voyageur de commerce<a name="_page9_x51.00_y32.00"></a>**</H2> 
 
@@ -446,13 +555,13 @@ Les domaines d’application sont nombreux : problèmes  de logistique, de trans
 
 **<H3 STYLE="COLOR:RED;">Exercice 1 :**</H3> 
 
-1- Pour un ensemble de 4 villes, combien existe t-il de chemins différents possibles ?  
+**1**- Pour un ensemble de 4 villes, combien existe t-il de chemins différents possibles ?  
 
-2- Pour un ensemble de 5 villes, combien existe t-il de chemins possibles ?
+**2**- Pour un ensemble de 5 villes, combien existe t-il de chemins possibles ?
 
-3- Pour un ensemble de 71 villes, combien existe t-il de chemins différents possibles ?
+**3**- Pour un ensemble de 71 villes, combien existe t-il de chemins différents possibles ?
 
-4- Sachant que mon ordinateur est capable de traiter 10 000 000 de trajets par seconde, en combien de temps aura t-il traité le problème des 71 villes ? 
+**4**- Sachant que mon ordinateur est capable de traiter 10 000 000 de trajets par seconde, en combien de temps aura t-il traité le problème des 71 villes ? 
 
 **L'objectif de ce TP est de réaliser un algorithme glouton pour résoudre le TSP** en considérons les villes nommées succinctement A, B, C, D, E, F et G dont ont connaît les coordonnées géographiques (longitude, latitude) :
 
