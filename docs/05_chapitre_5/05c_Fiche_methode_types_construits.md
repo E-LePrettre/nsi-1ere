@@ -1,4 +1,4 @@
-﻿---
+---
 author: ELP
 title: 05c Fiche méthode Types construits
 ---
@@ -321,9 +321,79 @@ title: 05c Fiche méthode Types construits
         ```
         {{ IDE() }}
 
+???+ question "12. Boucles `for` **❤️ Boucle `for` sur chaque indice  d'une chaîne : ❤️**""
+
+    ```python
+    for i in range(len(chaine_de_caractere)):
+        print(chaine_de_caractere[i])
+    ```
+
+    ??? success "Exemple"
+        ```python
+        texte = "Python"
+        for i in range(len(texte)):
+            print(texte[i])
+        ```
+        *Affiche :*
+        ```
+        P
+        y
+        t
+        h
+        o
+        n
+        ```
+        {{ IDE() }}
+
+???+ question "13. Boucles `for` **❤️ Boucle `for` sur chaque indice d'une liste : ❤️**""
+
+    ```python
+    for i in range(len(la_liste)):
+        print(la_liste[i])
+    ```
+
+    ??? success "Exemple"
+
+        ```python
+        nombres = [10, 20, 30, 40]
+        for i in range(len(nombres)):
+            print(nombres[i])
+        ```
+        *Affiche :*
+        ```
+        10
+        20
+        30
+        40
+        ```
+        
+        {{ IDE() }}
+
+???+ question "14. Boucles `for` **❤️ Boucle `for` sur chaque indice d'un tuple  ❤️**""
+
+    ```python
+    for i in range(len(le_tuple)):
+        print(le_tuple[i])
+    ```
+
+    ??? success "Exemple"
+
+        ```python
+        couleurs = ("rouge", "vert", "bleu")
+        for i in in range(len(couleurs)):
+            print(couleurs[i])
+        ```
+        *Affiche :*
+        ```
+        rouge
+        vert
+        bleu
+        ```
+        {{ IDE() }}
+
 ## <span style="color:blue;">La boucle while les listes/tuples</span>
 
-???+ question "12. Boucle `while`"
+???+ question "15. Boucle `while`"
 
     La boucle `while` répète des instructions tant qu'une condition est vraie.
 
@@ -367,6 +437,10 @@ title: 05c Fiche méthode Types construits
         bleu
         ```
         {{ IDE() }}
+
+
+
+
 
 ## <span style="color:blue;">Exercices sur les listes/tuples</span>
 
@@ -559,7 +633,7 @@ title: 05c Fiche méthode Types construits
 
 ## <span style="color:blue;">join() et split() sur les chaine de caractère</span>
 
-???+ question "13. Utiliser join et split sur les chaînes de caractères"
+???+ question "16. Utiliser join et split sur les chaînes de caractères"
 
     Les méthodes **`join`** et **`split`** permettent de manipuler des chaînes de caractères et des listes.
 
@@ -600,7 +674,7 @@ title: 05c Fiche méthode Types construits
 
 ## <span style="color:blue;">Les dictionnaires</span>
 
-???+ question "14. Les dictionnaires"
+???+ question "17. Les dictionnaires"
 
     Les **dictionnaires** sont des collections de paires *clé-valeur*.
 
@@ -621,7 +695,7 @@ title: 05c Fiche méthode Types construits
         ```
         {{ IDE() }}
 
-???+ question "15. Ajouter une valeur à un dictionnaire"
+???+ question "18. Ajouter une valeur à un dictionnaire"
 
     Vous pouvez ajouter une nouvelle paire *clé-valeur* à un dictionnaire.
 
@@ -643,7 +717,7 @@ title: 05c Fiche méthode Types construits
         ```
         {{ IDE() }}
 
-???+ question "16. Création d'un dictionnaire par compréhension"
+???+ question "19. Création d'un dictionnaire par compréhension"
 
     Vous pouvez créer des dictionnaires à l'aide de **compréhensions**.
 
@@ -664,7 +738,7 @@ title: 05c Fiche méthode Types construits
         ```
         {{ IDE() }}
 
-???+ question "17. Parcourir un dictionnaire avec keys(), values() et items()"
+???+ question "20. Parcourir un dictionnaire avec keys(), values() et items()"
 
     Vous pouvez parcourir les clés, les valeurs ou les paires *clé-valeur* d'un dictionnaire.
 
@@ -719,7 +793,7 @@ title: 05c Fiche méthode Types construits
         ```
         {{ IDE() }}
 
-???+ question "18. Opérateur in, fonction len, suppression avec del"
+???+ question "21. Opérateur in, fonction len, suppression avec del"
 
     Vous pouvez vérifier l'existence d'une clé, mesurer la taille d'un dictionnaire et supprimer des paires *clé-valeur*.
 
