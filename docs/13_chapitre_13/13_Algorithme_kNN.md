@@ -29,7 +29,7 @@ L’**apprentissage automatique** (*machine learning*) est un domaine de l’**i
 
 💡 **Deep Learning** (ou apprentissage profond) : une **technique particulière** du machine learning, qui utilise des **réseaux de neurones artificiels**, notamment dans le traitement d’images ou de sons.
 
----
+![](Image22_20_36.png)
 
 ### <span style="color:green;">1.2 L’algorithme des k plus proches voisins (k-NN)</span>
 
@@ -45,7 +45,7 @@ Le **k-NN (k Nearest Neighbors)** est un **algorithme simple et efficace** d’a
 
 🎥 Exemple visuel :
 
-> (Insérer ici un petit graphique ou animation en classe : un point gris à classer parmi des points rouges et bleus)
+![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.009.png)
 
 > 💡 Choix de **k** :
 >
@@ -54,64 +54,7 @@ Le **k-NN (k Nearest Neighbors)** est un **algorithme simple et efficace** d’a
 
 
 
-### <span style="color:green;">1.3 Les distances</span>
 
-L’algorithme k-NN repose sur une **notion mathématique fondamentale** : la distance entre deux points.
-
-Voici **quelques types de distances** utilisées :
-
-| Nom de la distance | Formule                                      | Illustration intuitive      |   |             |     |                                    |
-| ------------------ | -------------------------------------------- | --------------------------- | - | ----------- | --- | ---------------------------------- |
-| **Euclidienne**    | \$\sqrt{(x\_1 - x\_2)^2 + (y\_1 - y\_2)^2}\$ | Distance « à vol d’oiseau » |   |             |     |                                    |
-| **Manhattan**      | \$                                           | x\_1 - x\_2                 | + | y\_1 - y\_2 | \$  | Distance en « angles droits »      |
-| **Tchebychev**     | \$\max(                                      | x\_1 - x\_2                 | , | y\_1 - y\_2 | )\$ | Distance selon le plus grand écart |
-
-
-
-## <H2 STYLE="COLOR:BLUE;"> **1. Algorithmes<a name="_page0_x61.00_y296.92"></a> des k plus proches voisins (k Nearest Neighbors : k-NN)** </H2>
-### <H3 STYLE="COLOR:GREEN;"> **1.1. Introduction au Machine Learning<a name="_page0_x40.00_y318.92"></a>** </H3>
-
-Le **machine learning** (apprentissage automatique) est une discipline de l'intelligence artificielle où l'ordinateur apprend à partir de données pour faire des prédictions ou des décisions. Il existe **trois grandes catégories** d’apprentissage machine :
-
-1 **Apprentissage supervisé**  
-
-   - On fournit à l’algorithme des exemples avec leurs réponses correctes.  
-
-   - Exemple : Prédiction de la météo, reconnaissance d’images, diagnostic médical.
-
-2 **Apprentissage non supervisé**  
-
-   - L’algorithme analyse un grand nombre de données non étiquetées pour repérer des tendances.  
-
-   - Exemple : Regroupement de clients en fonction de leur comportement d’achat.
-
-3 **Apprentissage par renforcement**  
-
-   - Un agent prend des décisions et apprend grâce à des récompenses ou punitions.  
-
-   - Exemple : L’IA jouant aux échecs ou au jeu de go (AlphaZero).
-
-Le **deep learning** (apprentissage profond) est un sous-domaine du machine learning basé sur des réseaux de neurones profonds.
-
- 
-
-![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.008.jpeg)
-
-### <H3 STYLE="COLOR:GREEN;"> **1.2. Le<a name="_page1_x40.00_y258.92"></a> principe de l’algorithme k-NN** </H3>
-
-L’algorithme **k-NN (k Nearest Neighbors)** est un **algorithme de classification** basé sur la proximité entre les points. Il est utilisé par des services comme **Amazon, Netflix ou Spotify** pour recommander du contenu.
-
-**Principe :**
-
-1. On calcule les distances entre la donnée à classer et les données existantes.
-
-2. On sélectionne les **k** points les plus proches.
-
-3. On attribue à la nouvelle donnée la classe majoritaire parmi ces **k** points.
-
-![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.009.png)
-
-💡 **Important** : Le choix de la **valeur de k** est crucial. Une valeur trop petite risque de rendre l’algorithme sensible au bruit, alors qu’une valeur trop grande peut brouiller la classification.
 
 
 ### <H3 STYLE="COLOR:GREEN;"> 1.3. **Distances entre les points<a name="_page1_x40.00_y681.92"></a>** </H3>
