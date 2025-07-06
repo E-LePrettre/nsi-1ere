@@ -9,6 +9,65 @@ title: 13 Algorithme des k plus proches voisins
 2. [**EXERCICES**](#_page12_x40.00_y36.92)
 3. [**PROBLEME : ANALYSE DE TEXTE**](#_page14_x40.00_y36.92)
 
+
+
+## <span style="color:blue;">1. Le machine learning : quand la machine apprend</span>
+
+L’**apprentissage automatique** (*machine learning*) est un domaine de l’**intelligence artificielle (IA)** dans lequel on programme **non pas des règles fixes**, mais des **méthodes d’apprentissage à partir de données**.
+
+🎯 **Objectif** : la machine généralise ce qu’elle a “compris” à partir des exemples.
+
+
+
+### <span style="color:green;">1.1 Trois grandes familles d’apprentissage</span>
+
+| Type d’apprentissage | Description                                               | Exemple                                   |
+| -------------------- | --------------------------------------------------------- | ----------------------------------------- |
+| **Supervisé**        | Données **étiquetées** (avec réponses connues)            | Prédire la météo, reconnaître un chiffre  |
+| **Non supervisé**    | Données **sans étiquette**, la machine cherche des motifs | Regrouper des profils clients             |
+| **Par renforcement** | L’agent agit et reçoit des **récompenses ou punitions**   | Apprendre à jouer à un jeu (ex : AlphaGo) |
+
+💡 **Deep Learning** (ou apprentissage profond) : une **technique particulière** du machine learning, qui utilise des **réseaux de neurones artificiels**, notamment dans le traitement d’images ou de sons.
+
+---
+
+### <span style="color:green;">1.2 L’algorithme des k plus proches voisins (k-NN)</span>
+
+Le **k-NN (k Nearest Neighbors)** est un **algorithme simple et efficace** d’apprentissage supervisé.
+
+> 🔍 **But** : Classer un nouvel élément selon les exemples connus les plus proches.
+
+🧮 Principe :
+
+1. Calculer la **distance** entre le point à classer et les autres points.
+2. Sélectionner les **k plus proches voisins**.
+3. Attribuer à l’élément la **classe majoritaire** parmi ces voisins.
+
+🎥 Exemple visuel :
+
+> (Insérer ici un petit graphique ou animation en classe : un point gris à classer parmi des points rouges et bleus)
+
+> 💡 Choix de **k** :
+>
+> * Trop petit → trop sensible au bruit
+> * Trop grand → lisse trop les différences
+
+
+
+### <span style="color:green;">1.3 Les distances</span>
+
+L’algorithme k-NN repose sur une **notion mathématique fondamentale** : la distance entre deux points.
+
+Voici **quelques types de distances** utilisées :
+
+| Nom de la distance | Formule                                      | Illustration intuitive      |   |             |     |                                    |
+| ------------------ | -------------------------------------------- | --------------------------- | - | ----------- | --- | ---------------------------------- |
+| **Euclidienne**    | \$\sqrt{(x\_1 - x\_2)^2 + (y\_1 - y\_2)^2}\$ | Distance « à vol d’oiseau » |   |             |     |                                    |
+| **Manhattan**      | \$                                           | x\_1 - x\_2                 | + | y\_1 - y\_2 | \$  | Distance en « angles droits »      |
+| **Tchebychev**     | \$\max(                                      | x\_1 - x\_2                 | , | y\_1 - y\_2 | )\$ | Distance selon le plus grand écart |
+
+
+
 ## <H2 STYLE="COLOR:BLUE;"> **1. Algorithmes<a name="_page0_x61.00_y296.92"></a> des k plus proches voisins (k Nearest Neighbors : k-NN)** </H2>
 ### <H3 STYLE="COLOR:GREEN;"> **1.1. Introduction au Machine Learning<a name="_page0_x40.00_y318.92"></a>** </H3>
 
