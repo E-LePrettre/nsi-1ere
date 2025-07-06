@@ -29,7 +29,7 @@ L’**apprentissage automatique** (*machine learning*) est un domaine de l’**i
 
 💡 **Deep Learning** (ou apprentissage profond) : une **technique particulière** du machine learning, qui utilise des **réseaux de neurones artificiels**, notamment dans le traitement d’images ou de sons.
 
-![](Image22_20_36.png)
+![](Image22_20_36.png){width=60%}
 
 ### <span style="color:green;">1.2 L’algorithme des k plus proches voisins (k-NN)</span>
 
