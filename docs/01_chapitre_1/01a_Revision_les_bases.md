@@ -81,7 +81,7 @@ Une **variable** est l'association d'un espace de la mémoire de l'ordinateur, a
 Le rangement d’une donnée dans une variable (un contenant) s’appelle **l’affectation**.  
 On peut se représenter une variable comme une boîte portant une étiquette ("le nom de la variable") à l'intérieur de laquelle on peut placer un contenu (la valeur de la variable).   
 
-![image_boite](image7.png)
+![image_boite](image7.png){width=60%}
 
 **En Python, l'affectation se réalise avec l'opérateur `=`.**
 
