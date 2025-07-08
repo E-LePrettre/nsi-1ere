@@ -14,9 +14,9 @@ Pour faire exécuter une tâche par ordinateur, il faut tout d’abord, **détai
 
 **Toute suite d’étapes si élémentaire et simple à exécuter s’appelle un ALGORITHME**. 
 
-![image_cuisine](image5.png)
+![image_cuisine](image5.png){width=60%}
 
-![image_cuisine](image6.png)
+![image_cuisine](image6.png){width=60%}
 
 
 ## <span style="color:blue;">Débuter avec Basthon </span>
@@ -29,11 +29,11 @@ Dans un nouvel onglet du navigateur internet, aller sur [basthon.fr](https://bas
 
 👉 Cependant, dans ce cours, nous utiliserons principalement **l’éditeur intégré** à la page du cours, qui est un notebook interactif et permet d’écrire et d’exécuter directement du code Python. Pour cela il faut ouvrir la partie Python
 
-![image_python](image2.png)
+![image_python](image2.png){width=60%}
 
-![image_python](image3.png)
+![image_python](image3.png){width=60%}
 
-![image_python](image4.png)
+![image_python](image4.png){width=60%}
 
 Dans un second temps, nous utiliserons également **Capytale**, un environnement collaboratif adapté à l’enseignement.
 
