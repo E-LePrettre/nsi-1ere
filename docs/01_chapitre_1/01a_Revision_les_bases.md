@@ -14,9 +14,9 @@ Pour faire exécuter une tâche par ordinateur, il faut tout d’abord, **détai
 
 **Toute suite d’étapes si élémentaire et simple à exécuter s’appelle un ALGORITHME**. 
 
-![image_cuisine](image5.png){width=60%}
+![image_cuisine](image5.png){width=50%}
 
-![image_cuisine](image6.png){width=60%}
+![image_cuisine](image6.png){width=50%}
 
 
 ## <span style="color:blue;">Débuter avec Basthon </span>
@@ -29,11 +29,11 @@ Dans un nouvel onglet du navigateur internet, aller sur [basthon.fr](https://bas
 
 👉 Cependant, dans ce cours, nous utiliserons principalement **l’éditeur intégré** à la page du cours, qui est un notebook interactif et permet d’écrire et d’exécuter directement du code Python. Pour cela il faut ouvrir la partie Python
 
-![image_python](image2.png){width=60%}
+![image_python](image2.png){width=50%}
 
-![image_python](image3.png){width=60%}
+![image_python](image3.png){width=50%}
 
-![image_python](image4.png){width=60%}
+![image_python](image4.png){width=50%}
 
 Dans un second temps, nous utiliserons également **Capytale**, un environnement collaboratif adapté à l’enseignement.
 
@@ -81,7 +81,7 @@ Une **variable** est l'association d'un espace de la mémoire de l'ordinateur, a
 Le rangement d’une donnée dans une variable (un contenant) s’appelle **l’affectation**.  
 On peut se représenter une variable comme une boîte portant une étiquette ("le nom de la variable") à l'intérieur de laquelle on peut placer un contenu (la valeur de la variable).   
 
-![image_boite](image7.png){width=60%}
+![image_boite](image7.png){width=50%}
 
 **En Python, l'affectation se réalise avec l'opérateur `=`.**
 
