@@ -70,8 +70,7 @@ Exemple :
 ### **<H3 STYLE="COLOR:GREEN;">2.2. La<a name="_page1_x40.00_y677.92"></a> base 2 ou base binaire</h3>** 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.1. Le<a name="_page1_x40.00_y697.92"></a> binaire</h4>**
 
-**Remarque** : Il faut toujours indiquer la base dans laquelle un nombre est exprimé (sauf, par usage et commodité, en base 10) : 
-1010<sub>2</sub> ou %1010. La base par défaut du code Python est la base 10. 
+**Remarque** : Il faut toujours indiquer la base dans laquelle un nombre est exprimé (sauf, par usage et commodité, en base 10) : 1010<sub>2</sub> ou %1010. La base par défaut du code Python est la base 10. 
 
 📌 **La base 2 utilise uniquement deux chiffres** : `0` et `1`. 
 
@@ -156,7 +155,7 @@ Autre exemple :
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.4. <a name="_page2_x40.00_y722.92"></a>Conversion binaire → décimal</h4>**
 
 📌 **Méthode des puissances de 2 :**  
-Exemple : Convertir `1011<sub>2</sub>` en décimal :
+Exemple : Convertir `1011`<sub>2</sub> en décimal :
 
 1 × 2³ + 0 × 2² + 1 × 2¹ + 1 × 2⁰ = **8 + 0 + 2 + 1 = 11<sub>10</sub>**
 
@@ -293,11 +292,11 @@ La **multiplication binaire** suit le même principe que la multiplication en ba
 
 📌 **Méthode : regrouper les bits par paquet de 4**
 
-- `10111010<sub>2</sub>` → `1011 1010`
+- `10111010`<sub>2</sub> → `1011 1010`
 
 - `1011 = B`, `1010 = A`
 
-- Résultat : `BA<sub>16</sub>`
+- Résultat : `BA`<sub>16</sub>
 
 Remarque : 
 Si le nombre binaire de départ n'a pas un nombre de bits multiple de 4, **il faut ajouter des zéros en tête** (ce qui ne change pas sa valeur) afin de pouvoir les regrouper 4 par 4. 
@@ -317,7 +316,7 @@ Si le nombre binaire de départ n'a pas un nombre de bits multiple de 4, **il fa
 
 📌 **Méthode des puissances de 16 :**  
 
-Exemple : Convertir `12B7<sub>16</sub>` en décimal :
+Exemple : Convertir `12B7`<sub>16</sub> en décimal :
 
 1 × 16³ + 2 × 16² + B × 16¹ + 7 × 16⁰ 
 
