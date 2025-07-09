@@ -435,7 +435,7 @@ Exemple : Source : [Académie de Limoges](http://pedagogie.ac-limoges.fr/sti_si/
     ??? success "Python"
         {{ terminal() }}
 
-???+ question Activité n°18 :
+???+ question "Activité n°18 :"
 
     $(1256)_{10}  = (?)_{16 }$ 
 
