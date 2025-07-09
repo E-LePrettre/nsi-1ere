@@ -506,7 +506,7 @@ L’addition en **base 16** suit le même principe que l’addition en base 10 :
 | Valeur finale | 151<sub>16</sub> |
 
 ![](Aimg5.png){ width=50% }
-![](Aimg6.png){ width=50% }
+![](Aimg6.png){ width=40% }
 
 💡 **Interprétation** : 
 
