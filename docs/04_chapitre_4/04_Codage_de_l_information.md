@@ -152,6 +152,31 @@ Autre exemple :
 
 57 = 0b111001  
 
+???+ question "Activité n°2 :"
+
+    convertir 23 écrit en décimal en binaire
+
+    ??? success "Solution"
+
+	    10111
+
+	    ![23](div_succ.jpg){ width=30%; : .center }
+
+???+ question "Activité n°3 :"
+
+    234 est écrit en base 10. L'écrire en binaire
+
+    ??? success "Solution"
+
+	    Le nombre 234 écrit en base dix, s'écrit 11101010 en base deux .
+
+???+ question "Activité n°4 :"
+
+    On peut aussi convertir un nombre décimal en binaire en utilisant un tableau.
+
+    [Utiliser un tableau](https://wims.univ-cotedazur.fr/wims/wims.cgi?session=I6E9356CF1.3&lang=fr&cmd=new&module=H3%2Fcoding%2Foefbin.fr&exo=binary3&qnum=1&scoredelay=&seedrepeat=0&qcmlevel=1&special_parm2=&special_parm4=){ .md-button target="_blank" rel="noopener" }
+
+
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.4. <a name="_page2_x40.00_y722.92"></a>Conversion binaire → décimal</h4>**
 
 📌 **Méthode des puissances de 2 :**  
@@ -163,7 +188,7 @@ Exemple : Convertir `1011`<sub>2</sub> en décimal :
 
 ✅ **Convertir avec Python :**
 
-???+ question "Activité n°2 :"
+???+ question "Activité n°5 :"
 
     ```python
     print(int("1011", 2))  # Affiche 11
@@ -171,6 +196,17 @@ Exemple : Convertir `1011`<sub>2</sub> en décimal :
 
     ??? success "Python"
         {{ terminal() }}
+
+???+ question "Activité n°6 :"
+
+    1110010 est écrit en base 2. L'écrire en base 10.
+
+    ??? success "Solution"
+
+	    $(1110010)_2 = 0 \times 2^0 + 1 \times 2^1 + 0 \times 2^2 + 0 \times 2^3 + 1\times 2^4 + 1 \times 2^5 + 1 \times 2^6 = 2 + 16 + 32 + 64  =  (114)_{10}$
+
+	    1110010 en binaire s'écrit 114 en décimal.
+
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.5. Addition<a name="_page3_x40.00_y258.92"></a> de deux nombres binaires</h4>** 
 
@@ -195,7 +231,7 @@ L'**addition binaire** suit les mêmes règles que l'addition en base 10, avec q
 
 ✅ **Tester avec Python** :
 
-???+ question "Activité n°3 :"
+???+ question "Activité n°7 :"
 
     ```python
     # Addition binaire en Python
@@ -231,7 +267,7 @@ La **multiplication binaire** suit le même principe que la multiplication en ba
 
 ✅ **Tester avec Python** :
 
-???+ question "Activité n°4 :"
+???+ question "Activité n°8 :"
 
     ```python
     # Multiplication binaire en Python
@@ -276,9 +312,44 @@ La **multiplication binaire** suit le même principe que la multiplication en ba
 
 **Remarque** : Il faut toujours indiquer la base dans laquelle un nombre est exprimé (sauf, par usage et commodité, en base 10) : A9<sub>16</sub> ou $A9 ou #A9. La base par défaut du code Python est la base 10. 
 
+???+ question "Activité n°9 :"
+
+    Vous avez compris le principe. Ecrivez les 20 entiers écrits en hexadécimal qui suivent 21 qui est écrit en hexadécimal.
+
+    ??? success "Solution"
+
+        22 - 23 - 24 - 25 - 26 - 27 - 28 - 29 - 2A - 2B - 2C - 2D - 2E - 2F - 30 - 31 - 32 - 33 - 34 - 35
+
+
+???+ question "Activité n°10 :"
+
+    Quel est l'entier écrit en hexadécimal **qui suit** le nombre FF (c'est à dire FF + 1) écrit en hexadécimal ?
+
+    ??? success "Solution"
+
+        $100_{16}$
+
+
+???+ question "Activité n°11 :"
+
+    Quel est l'entier écrit en hexadécimal qui suit le nombre FFF (c'est à dire FFF + 1) écrit en hexadécimal ?
+
+    ??? success "Solution"
+
+        $1000_{16}$
+
+
+???+ question "Activité n°12 :"
+
+    Quel est l'entier écrit en hexadécimal qui suit le nombre 2FFF écrit en hexadécimal ?
+
+    ??? success "Solution"
+
+        $3000_{16}$
+
 ✅ **Afficher un nombre en hexadécimal avec Python :**
 
-???+ question "Activité n°5 :"
+???+ question "Activité n°13 :"
 
     ```python
     print(hex(185))  # Affiche 0xb9
@@ -303,7 +374,7 @@ Si le nombre binaire de départ n'a pas un nombre de bits multiple de 4, **il fa
 
 ✅ **Vérifier avec Python :**
 
-???+ question "Activité n°6 :"
+???+ question "Activité n°14 :"
 
     ```python
     print(hex(int("10111010", 2)))  # Affiche 0xba
@@ -312,42 +383,71 @@ Si le nombre binaire de départ n'a pas un nombre de bits multiple de 4, **il fa
     ??? success "Python"
         {{ terminal() }}
 
-#### **<H4 STYLE="COLOR:MAGENTA;">2.3.3. <a name="_page4_x40.00_y309.92"></a>Conversion hexadécimal → décimal</h4>**  
+???+ question "Activité n°15 :"
 
-📌 **Méthode des puissances de 16 :**  
+    $(AB5)_{16} = (?)_2$
 
-Exemple : Convertir `12B7`<sub>16</sub> en décimal :
+    ??? success "Solution"
 
-1 × 16³ + 2 × 16² + B × 16¹ + 7 × 16⁰ 
+        $(A)_{16} =(10)_{10}=(1010)_2$
 
-= 1 × 4096 + 2 × 256 + 11 × 16 + 7  
+        $(B)_{16} =(11)_{10}=(1011)_2$
 
-= **4791<sub>10</sub>**
+        $(5)_{16} =(5)_{10}=(0101)_2$
+
+        Donc $(AB5)_{16} = (1010\ 1011\ 0101)_2$
+
+???+ question "Activité n°16 :"
+
+    $(1111\ 0100\ 1010)_{2} = (?)_{16}$
+
+    ??? success "Solution"
+
+        $(1111)_2 = (15)_{10} = (F)_{16}$
+
+        $(0100)_2 = =(4)_{10} = (4)_{16}$
+
+        $(1010)_2 = (10)_{10} = (A)_{16}$
+
+        $(1111\ 0100\ 1010)_{2} = (F4A)_{16}$
+
+#### **<H4 STYLE="COLOR:MAGENTA;">2.3.3. <a name="_page4_x40.00_y309.92"></a>Conversion décimal → hexadécimal</h4>**
+
+📌 **Méthode des divisions successives par 16 :**
+
+Exemple : Source : [Académie de Limoges](http://pedagogie.ac-limoges.fr/sti_si/accueil/FichesConnaissances/Sequence2SSi/co/ConvDecimalHexadecimal.html){:target="_blank" }
+
+![divisions](conv_dec_hexa.png){ width=60% }
+
+
+✅ En lisant les restes de **bas en haut**, on obtient : **2 7 E 9**
+
+👉 Donc : **10217<sub>10</sub> = 27E9<sub>16</sub>**
 
 ✅ **Vérifier avec Python :**
 
-???+ question "Activité n°7 :"
+???+ question "Activité n°17 :"
 
     ```python
-    print(int("12B7", 16))  # Affiche 4791
+    print(hex(10217))  # Affiche 0x27E9
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+    {{ terminal() }}
+
+???+ question Activité n°18 :
+
+    $(1256)_{10}  = (?)_{16 }$ 
+
+    ??? success "Solution"
+
+	    4E8
+
+
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.3.4. Passage<a name="_page4_x40.00_y569.92"></a> du système hexadécimal au décimal</h4>** 
 
-🔢 **Correspondance entre lettres hexadécimales et chiffres décimaux**
-En base 16, les chiffres de **10 à 15** sont représentés par des lettres :
 
-| Hexadécimal | Décimal |
-|------------|--------|
-| A          | 10     |
-| B          | 11     |
-| C          | 12     |
-| D          | 13     |
-| E          | 14     |
-| F          | 15     |
 
 📌 **Principe de conversion**
 Pour convertir un nombre hexadécimal en **base 10**, on utilise la **notation polynomiale**, comme en binaire.
@@ -365,7 +465,7 @@ Python permet de **convertir directement** un nombre hexadécimal en décimal av
 
 ✅ **Tester la conversion de 12B7<sub>16</sub> en décimal** :
 
-???+ question "Activité n°8 :"
+???+ question "Activité n°19 :"
 
     ```python
     # Conversion hexadécimal -> décimal en Python
@@ -378,6 +478,13 @@ Python permet de **convertir directement** un nombre hexadécimal en décimal av
     ??? success "Python"
         {{ terminal() }}
 
+???+ question "Activité n°20 :"
+
+    Convertir en décimal : $(E26A)_{16}$
+
+    ??? success "Solution"
+
+        $(14 \times 16^3 + 2 \times 16^2 + 6 \times 16^1 + 10 \times 16^0 )_{10} = (57962)_{10}$
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.3.5. Addition<a name="_page5_x40.00_y90.92"></a> de deux nombres en base 16</H4>** 
 
@@ -398,8 +505,8 @@ L’addition en **base 16** suit le même principe que l’addition en base 10 :
 | Résultat | 14 (E) | 17 (1 retenue, reste 1) |
 | Valeur finale | 151<sub>16</sub> |
 
-![](Aimg5.png)
-![](Aimg6.png)
+![](Aimg5.png){ width=50% }
+![](Aimg6.png){ width=50% }
 
 💡 **Interprétation** : 
 
@@ -415,7 +522,7 @@ $1 \times 16^2 + 5 \times 16^1 + 1 \times 16^0 = 256 + 80 + 1 = 337$
 
 💡 **Vérification avec Python** :
 
-???+ question "Activité n°9 :"
+???+ question "Activité n°21 :"
 
     ```python
     # Addition en hexadécimal
@@ -488,7 +595,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
 
 ✅ **Tester avec Python :**
 
-???+ question "Activité n°10 :"
+???+ question "Activité n°22 :"
 
     ```python
     print(bin(27))  # Affiche 0b11011
@@ -521,7 +628,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
 
 ✅ **Tester avec Python :**
 
-???+ question "Activité n°11:"
+???+ question "Activité n°23:"
 
     ```python
     def complement_a_2(n):
@@ -532,6 +639,31 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
 
     ??? success "Python"
         {{ terminal() }}
+
+???+ question "Activité n°24:"
+
+    Utiliser la méthode du complément à 2 pour coder sur 8 bits : - 36
+
+    ??? success "Solution"
+
+        * 36 sur 8 bits : 0010 0100
+        * Inversion des bits : 1101 1011
+        * Ajout de 1 : 1101 1100
+
+        👉 La réponse est donc : 1101 1100
+
+
+???+ question "Activité n°25:"
+
+    Utiliser la méthode du complément à 2 pour coder sur 8 bits : - 75
+
+    ??? success "Solution"
+
+        * 75 sur 8 bits : 0100 1011
+        * Inversion des bits : 1011 0100
+        * Ajout de 1 : 1011 0101
+        
+        👉 La réponse est 1011 0101
 
 ### **<H3 STYLE="COLOR:GREEN;">3.3. <a name="_page7_x40.00_y335.92"></a>Addition en binaire avec des nombres signés</h3>** 
 
@@ -549,7 +681,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
 
 ✅ **Tester avec Python :**
 
-???+ question "Activité n°12 :"
+???+ question "Activité n°26 :"
 
     ```python
     print(complement_a_2(27))   # 00011011
@@ -586,7 +718,7 @@ Si un nombre binaire commence par **1**, il est **négatif** en complément à 2
 
 ✅ **Tester avec Python :**
 
-???+ question "Activité n°13 :"
+???+ question "Activité n°27 :"
 
     ```python
     def binaire_vers_decimal(binaire):
@@ -811,7 +943,7 @@ Les ordinateurs utilisent la **norme IEEE 754** pour stocker les nombres réels 
 
 💡 **Exemple :** Tester en Python
 
-???+ question "Activité n+14 :"
+???+ question "Activité n+28 :"
 
     ```python
     print(0.1 + 0.2)  # Résultat inattendu : 0.30000000000000004
@@ -936,7 +1068,7 @@ Chaque caractère est associé à un nombre unique, codé en **binaire** sur **7
 Grâce à ASCII, les ordinateurs peuvent **échanger du texte** sans ambiguïté.
 
 
-???+ question "Activité n°6 : Tester les fonctions `chr()` et `ord()`"
+???+ question "Activité n°29 : Tester les fonctions `chr()` et `ord()`"
 
     Utiliser les fonctions `chr()` et `ord()` en Python pour afficher le caractère correspondant à un code ASCII et inversement.
 
@@ -1050,7 +1182,7 @@ Chaque pixel est défini par une combinaison de trois couleurs :
  
 📌 **BMP** conserve chaque pixel sans compression, donc **fichiers très lourds !**  
 
-
+<iframe width="560" height="316" src="https://www.youtube.com/embed/HsS7kaFDrXg" title="Magie en base deux (Christian Mercat)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## **<H2 STYLE="COLOR:BLUE;">9. Exercices<a name="_page18_x40.00_y36.92"></a></h2>** 
 
