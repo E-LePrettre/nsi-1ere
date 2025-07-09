@@ -433,7 +433,7 @@ Exemple : Source : [Académie de Limoges](http://pedagogie.ac-limoges.fr/sti_si/
     ```
 
     ??? success "Python"
-    {{ terminal() }}
+        {{ terminal() }}
 
 ???+ question Activité n°18 :
 
