@@ -102,7 +102,7 @@ Chaque position représente une **puissance de 2**.
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+        {{ IDE() }}
 
 En Python on peut écrire les nombres entiers directement en binaire. Il suffit pour cela de faire précéder cette écriture par **0b**.  
 
@@ -243,7 +243,7 @@ L'**addition binaire** suit les mêmes règles que l'addition en base 10, avec q
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+        {{ IDE() }}
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.2.6. Multiplication<a name="_page3_x40.00_y462.92"></a> de deux nombres binaires</h4>**  
 
@@ -279,7 +279,7 @@ La **multiplication binaire** suit le même principe que la multiplication en ba
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+        {{ IDE() }}
 
 ### **<H3 STYLE="COLOR:GREEN;">2.3. La<a name="_page3_x40.00_y727.92"></a> base 16 ou base hexadécimal</h3>** 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.3.1. L’hexadécimal<a name="_page3_x40.00_y747.92"></a></h4>** 
@@ -357,7 +357,7 @@ La **multiplication binaire** suit le même principe que la multiplication en ba
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+        {{ IDE() }}
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.3.2. <a name="_page4_x40.00_y103.92"></a>Conversion binaire → hexadécimal</h4>**
 
@@ -476,7 +476,7 @@ Python permet de **convertir directement** un nombre hexadécimal en décimal av
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+        {{ IDE() }}
 
 ???+ question "Activité n°20 :"
 
@@ -531,7 +531,7 @@ $1 \times 16^2 + 5 \times 16^1 + 1 \times 16^0 = 256 + 80 + 1 = 337$
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+        {{ IDE() }}
 
 
 ### **<H3 STYLE="COLOR:GREEN;">2.4. Une<a name="_page5_x40.00_y421.92"></a> base quelconque</h3>** 
@@ -603,7 +603,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+        {{ IDE() }}
 
 
 ### **<H3 STYLE="COLOR:GREEN;">3..2. <a name="_page7_x40.00_y158.92"></a>Conversion décimal → binaire (nombre négatif)</H3>** 
@@ -638,7 +638,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+        {{ IDE() }}
 
 ???+ question "Activité n°24:"
 
@@ -690,7 +690,7 @@ L'ordinateur utilise **le complément à 2** pour représenter les entiers néga
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+        {{ IDE() }}
 
 ### **<H3 STYLE="COLOR:GREEN;">3.4. <a name="_page7_x40.00_y496.92"></a>Conversion binaire → décimal (nombre négatif)</h3>** 
 
@@ -730,7 +730,7 @@ Si un nombre binaire commence par **1**, il est **négatif** en complément à 2
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+        {{ IDE() }}
 
 ## **<H2 STYLE="COLOR:BLUE;">4. Exercices<a name="_page9_x40.00_y36.92"></a></h2>** 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
