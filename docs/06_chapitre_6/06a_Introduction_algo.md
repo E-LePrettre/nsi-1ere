@@ -9,7 +9,7 @@ title: 06a Introduction à l’algorithmique
 2. [Efficacité d’un algorithme](#_page1_x40.00_y36.92)
 3. [Création d’un algorithme](#_page1_x40.00_y488.92)
 4. [Complexité](#_page3_x40.00_y361.92)
-5. [Exercices](#_page7_x40.00_y36.92)
+5. [!!! abstractcices](#_page7_x40.00_y36.92)
 
 L'**algorithmique** regroupe l'ensemble des règles et techniques permettant de concevoir et de structurer des algorithmes. Ces derniers sont au cœur de l'informatique, mais aussi présents dans de nombreux autres domaines : mathématiques, logistique, intelligence artificielle, etc.
 
@@ -509,84 +509,98 @@ RESSOURCES :
 
 => CAPYTALE Le code vous sera donné par votre enseignant
 
-**<H3 STYLE="COLOR:red;">Exercice 1** : Calculer le coût de cet algorithme</H3>**
+!!! abstract "Exercice 1 :" 
 
-```
-largeur <- LireEntier() 
-longueur <- LireEntier() 
-aire <- largeur * longueur 
-perimetre <- (largeur + longueur) * 2 
-Afficher aire 
-Afficher perimetre 
-```
+    Calculer le coût de cet algorithme
 
-**<H3 STYLE="COLOR:red;">Exercice 2** : Calculer le coût de cet algorithme</H3>**
+    ```
+    largeur <- LireEntier() 
+    longueur <- LireEntier() 
+    aire <- largeur * longueur 
+    perimetre <- (largeur + longueur) * 2 
+    Afficher aire 
+    Afficher perimetre 
+    ```
 
-```
-nbLivres <- LireEntier() 
-Si nbLivres < 10 
-    prix <- nbLivres * 10 
-Sinon 
-    prix <- nbLivres * 9 
-Afficher prix 
-```
+!!! abstract "Exercice 2 :" 
 
-**<H3 STYLE="COLOR:red;">Exercice 3** : Calculer le coût de cet algorithme</H3>**
+    Calculer le coût de cet algorithme
 
-```
-X <- 1 
-Tant que X <= 100 
-    Afficher "Bonjour !"    
-    X <- X + 1 
-```
+    ```
+    nbLivres <- LireEntier() 
+    Si nbLivres < 10 
+        prix <- nbLivres * 10 
+    Sinon 
+        prix <- nbLivres * 9 
+    Afficher prix 
+    ```
 
-**<H3 STYLE="COLOR:red;">Exercice 4** : Calculer le coût de cet algorithme</H3>**
+!!! abstract "Exercice 3 :" 
 
-```
-total <- 0 
-i <- 1 
-Tant que i <= 100 
-    total <- total + i    
-    i <- i + 1 
-Afficher total 
-```
+    Calculer le coût de cet algorithme
 
-**<H3 STYLE="COLOR:red;">Exercice 5** : Calculer le coût de cet algorithme</H3>**
+    ```
+    X <- 1 
+    Tant que X <= 100 
+        Afficher "Bonjour !"    
+        X <- X + 1 
+    ```
 
-```
-iMax <- LireEntier() 
-total <- 0 
-i <- 1 
-Tant que i <= iMax 
-    total <- total + i    
-    i <- i + 1 
-Afficher total 
-```
+!!! abstract "Exercice 4 :" 
 
-**<H3 STYLE="COLOR:red;">Exercice 6** : Calculer le coût de cet algorithme</H3>**
+    Calculer le coût de cet algorithme
 
-```
-iMax <- LireEntier() 
-total <- 0 
-Tant que iMax > 0 
-    total <- total + iMax    
-    iMax <- iMax - 1 
-Afficher total 
-```
+    ```
+    total <- 0 
+    i <- 1 
+    Tant que i <= 100 
+        total <- total + i    
+        i <- i + 1 
+    Afficher total 
+    ```
 
-**<H3 STYLE="COLOR:red;">Exercice 7** : Calculer le coût de cet algorithme</H3>**
+!!! abstract "Exercice 5 :" 
 
-```
-taille <- LireEntier()			1
-X <- 0						    2
-Tant que X < taille				3
-   Y <- 0					    4
-   Tant que Y < taille			5
-      Si X = Y					6
-         Afficher "X"			7
-      Sinon					    8
-         Afficher "."			9		
-      Y <- Y + 1				10
-   Retour à la ligne			11
-   X <- X + 1		            12
-```
+    Calculer le coût de cet algorithme
+
+    ```
+    iMax <- LireEntier() 
+    total <- 0 
+    i <- 1 
+    Tant que i <= iMax 
+        total <- total + i    
+        i <- i + 1 
+    Afficher total 
+    ```
+
+!!! abstract "Exercice 6 :" 
+
+    Calculer le coût de cet algorithme
+
+    ```
+    iMax <- LireEntier() 
+    total <- 0 
+    Tant que iMax > 0 
+        total <- total + iMax    
+        iMax <- iMax - 1 
+    Afficher total 
+    ```
+
+!!! abstract "Exercice 7 :" 
+
+    Calculer le coût de cet algorithme
+
+    ```
+    taille <- LireEntier()			1
+    X <- 0						    2
+    Tant que X < taille				3
+    Y <- 0					    4
+    Tant que Y < taille			5
+        Si X = Y					6
+            Afficher "X"			7
+        Sinon					    8
+            Afficher "."			9		
+        Y <- Y + 1				10
+    Retour à la ligne			11
+    X <- X + 1		            12
+    ```
