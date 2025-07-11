@@ -219,14 +219,7 @@ La porte XOR est symbolisée par le schéma suivant :
 
 |Symbole |Table de vérité |Opération |
 | - | - | - |
-|![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.018.png)|
-| E1 | E2 | S |
-|----|----|---|
-| 0  | 0  | 1 |
-| 0  | 1  | 1 |
-| 1  | 0  | 1 |
-| 1  | 1  | 0 |
-|![](Aimg03.png) |
+|![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.018.png)|| E1 | E2 | S ||----|----|---|| 0  | 0  | 1 || 0  | 1  | 1 || 1  | 0  | 1 || 1  | 1  | 0 ||![](Aimg03.png) |
 
 
 
