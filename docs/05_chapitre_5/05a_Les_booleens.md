@@ -453,116 +453,121 @@ Le  complément  d’un  produit  logique  (non  arithmétique)  est  égal  à 
 
     4 Par quel circuit comprenant seulement deux portes peut-on remplacer le circuit étudié ? 
 
-**<H3 STYLE="COLOR:red;">Exercice n°2</H3>** ★ :  On considère le circuit logique ci-dessous 
+!!! abstract "Exercice n°2 ★ :" 
 
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.024.png)
+    On considère le circuit logique ci-dessous 
 
-1 Donner l’expression booléenne de S en fonction des variables A, B et C. 
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.024.png)
 
-2 Compléter la table de vérité ci-dessous 
+    1 Donner l’expression booléenne de S en fonction des variables A, B et C. 
 
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.025.jpeg)
+    2 Compléter la table de vérité ci-dessous 
 
-3 En déduire une formule pour S qui ne dépend que des variables A et B. 
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.025.jpeg)
 
-**<H3 STYLE="COLOR:red;">Exercice n°3</H3>** ★ : On considère les circuits logiques ci-dessous 
+    3 En déduire une formule pour S qui ne dépend que des variables A et B. 
 
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.026.png)![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.027.png)![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.027.png)
+!!! abstract "Exercice n°3 ★ :"
 
+    On considère les circuits logiques ci-dessous 
 
-
-1 Donner les expressions booléennes de U et V en fonction des variables A, B et C. 
-
-2 Compléter les tables de vérité ci-dessous. 
-
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.028.jpeg)
-
-3 Les expressions booléennes U et V sont-elles équivalentes ? 
-
-**<H3 STYLE="COLOR:red;">Exercice n°4</H3>** ★– (circuit MUX-2) : On considère le circuit logique suivant.
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.026.png)![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.027.png)![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.027.png)
 
 
+    1 Donner les expressions booléennes de U et V en fonction des variables A, B et C. 
 
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.029.png)
+    2 Compléter les tables de vérité ci-dessous. 
 
-1. Donner l’expression de Out en fonction  de E1 et E2. 
-2. Compléter le tableau de vérité de ce circuit. 
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.028.jpeg)
 
-Le circuit étudié est appelé multiplexeur à 2 entrées. Selon la valeur de la commande (C), il permet de  reproduire en sortie (Out) : 
+    3 Les expressions booléennes U et V sont-elles équivalentes ? 
 
-- le signal E1 si C est à 0. 
-- le signal E2 si C est à 1. 
+!!! abstract "Exercice n°4 ★ (circuit MUX-2) :"
 
-![](Aimg014.png) 
+    On considère le circuit logique suivant.
 
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.029.png)
 
+    1. Donner l’expression de Out en fonction  de E1 et E2. 
+    2. Compléter le tableau de vérité de ce circuit. 
 
-**<H3 STYLE="COLOR:red;">Exercice  n°5</H3>**  (circuit MUX-4)  
+    Le circuit étudié est appelé multiplexeur à 2 entrées. Selon la valeur de la commande (C), il permet de  reproduire en sortie (Out) : 
 
-On  considère  un  multiplexeur  à  4  entrées, dont le circuit  est  représenté  ci- dessous.  
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.035.jpeg)
+    - le signal E1 si C est à 0. 
+    - le signal E2 si C est à 1. 
 
-1. Par analyse du circuit, déterminer l’expression booléenne de Out en fonction des entrées E1,  E2, E3, E4 et des commandes C0 et C1. 
+    ![](Aimg014.png) 
 
-2. Quelles sont les valeurs des commandes C0 et C1 qui permettent de sélectionner en sortie (Out) : 
+!!! abstract "Exercice  n°5 circuit MUX-4" 
 
-- l’entrée E1 ? 
-- l’entrée E2 ? 
-- l’entrée E3 ? 
-- l’entrée E4 ? 
+    On  considère  un  multiplexeur  à  4  entrées, dont le circuit  est  représenté  ci- dessous.  
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.035.jpeg)
 
-**<H3 STYLE="COLOR:red;">Exercice n °6</H3>** ★★– (Half adder) Le circuit étudié, appelé  demi-additionneur, permet d’additionner deux bits A et B.  Il  comporte  deux  sorties  C  et  S  qui  représentent  deux  expressions booléennes.  
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.037.png)
+    1. Par analyse du circuit, déterminer l’expression booléenne de Out en fonction des entrées E1,  E2, E3, E4 et des commandes C0 et C1. 
 
-1 Donner les expressions booléennes de C et S  en  fonction de A et B.  
-2 Compléter la table de vérité de C et S. 
+    2. Quelles sont les valeurs des commandes C0 et C1 qui permettent de sélectionner en sortie (Out) : 
 
-![](Aimg015.png) 
+    - l’entrée E1 ? 
+    - l’entrée E2 ? 
+    - l’entrée E3 ? 
+    - l’entrée E4 ? 
 
-3 Quel est le rôle des sorties C et S dans la fonction  du circuit ? 
+!!! abstract "Exercice n °6 ★★ (Half adder)" 
 
+    Le circuit étudié, appelé  demi-additionneur, permet d’additionner deux bits A et B.  Il  comporte  deux  sorties  C  et  S  qui  représentent  deux  expressions booléennes.  
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.037.png)
 
-Le choix de la lettre C vient du fait qu’en anglais,  « retenue»se dit«carry».  
+    1 Donner les expressions booléennes de C et S  en  fonction de A et B.  
+    2 Compléter la table de vérité de C et S. 
 
-**<H3 STYLE="COLOR:red;">Exercice  n°7</H3>**  ★★–  *(Full adder)* Le circuit étudié dans cet  exercice  permet  d’additionner  deux bits en tenant compte d’une  retenue Cin. 
+    ![](Aimg015.png) 
 
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.053.jpeg)
-
-Réaliser ce circuit à l’aide du logiciel Logisim et compléter la table de vérité ci-dessous. 
-
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.054.jpeg)
-
+    3 Quel est le rôle des sorties C et S dans la fonction  du circuit ? 
 
 
-**<H3 STYLE="COLOR:red;">Exercice n°8</H3>** ★★**:** Soit le circuit ci-dessous : 
+    Le choix de la lettre C vient du fait qu’en anglais,  « retenue» se dit «carry».  
 
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.055.png)
+!!! abstract "Exercice  n°7 ★★  *(Full adder)*" 
 
-1. Écrivez l'équation de ce circuit. 
-2. Établissez la table de vérité de ce circuit. 
+    Le circuit étudié dans cet  exercice  permet  d’additionner  deux bits en tenant compte d’une  retenue Cin. 
 
-**<H3 STYLE="COLOR:red;">Exercice n°9 ★★★ :</H3>** 
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.053.jpeg)
 
-Un pont peut supporter 10 tonnes au maximum. La route menant au pont est strictement interdite aux véhicules de plus de 10 tonnes. À chaque extrémité du pont se trouve une barrière et une bascule pour mesurer le poids (a ou b) des véhicules. 
+    Réaliser ce circuit à l’aide du logiciel Logisim et compléter la table de vérité ci-dessous. 
 
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.056.jpeg)
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.054.jpeg)
 
-Si un seul véhicule attend devant le pont, la barrière devant lui (A ou B) s'ouvre (étape initiale). Sinon : 
+!!! abstract "Exercice n°8 ★★" 
 
-- Si a + b ≤ 10 tonnes, les barrières A et B s'ouvrent. 
-- Si a + b > 10 tonnes, seule la barrière correspondant au véhicule le plus léger s'ouvre. 
+    Soit le circuit ci-dessous : 
 
-L'autre véhicule attend que le premier ait franchi le pont, puis le protocole d'ouverture des barrières recommence à l'étape initiale. 
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.055.png)
 
-- Si a = b, la barrière A s'ouvre en priorité. 
+    1. Écrivez l'équation de ce circuit. 
+    2. Établissez la table de vérité de ce circuit. 
 
-Indication : a et b n'étant pas des variables binaires, il convient de créer deux variables binaires x et y et de reformuler l'énoncé du problème. 
+!!! abstract "Exercice n°9 ★★★ :"
 
-Aide : on posera x= a + b <= 10  et  y = a > b 
+    Un pont peut supporter 10 tonnes au maximum. La route menant au pont est strictement interdite aux véhicules de plus de 10 tonnes. À chaque extrémité du pont se trouve une barrière et une bascule pour mesurer le poids (a ou b) des véhicules. 
 
-1. Écrivez la table de vérité pour l'ouverture des barrières A et B. 
-2. Donnez les équations logiques pour l'ouverture des barrières A puis pour l’ouverture de la barrière B. 
-3. Dessinez le circuit logique déterminant l'ouverture des barrières. 
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.056.jpeg)
+
+    Si un seul véhicule attend devant le pont, la barrière devant lui (A ou B) s'ouvre (étape initiale). Sinon : 
+
+    - Si a + b ≤ 10 tonnes, les barrières A et B s'ouvrent. 
+    - Si a + b > 10 tonnes, seule la barrière correspondant au véhicule le plus léger s'ouvre. 
+
+    L'autre véhicule attend que le premier ait franchi le pont, puis le protocole d'ouverture des barrières recommence à l'étape initiale. 
+
+    - Si a = b, la barrière A s'ouvre en priorité. 
+
+    Indication : a et b n'étant pas des variables binaires, il convient de créer deux variables binaires x et y et de reformuler l'énoncé du problème. 
+
+    Aide : on posera x= a + b <= 10  et  y = a > b 
+
+    1. Écrivez la table de vérité pour l'ouverture des barrières A et B. 
+    2. Donnez les équations logiques pour l'ouverture des barrières A puis pour l’ouverture de la barrière B. 
+    3. Dessinez le circuit logique déterminant l'ouverture des barrières. 
 
 
 [^1]: ` `*A Programming Language* : langage adapté aux calculs statistiques 
