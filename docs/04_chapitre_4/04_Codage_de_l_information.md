@@ -736,116 +736,122 @@ Si un nombre binaire commence par **1**, il est **négatif** en complément à 2
 ## **<H2 STYLE="COLOR:BLUE;">4. Exercices<a name="_page9_x40.00_y36.92"></a></h2>** 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:red;">Exercice 1 :</H3>** ★ On suppose toujours nos entiers encodés sur un octet. 
+???+ question "Exercice 1"  
 
-- Donner la représentation binaire 12, 100 et 88 
+    On suppose toujours nos entiers encodés sur un octet. 
 
-- Réaliser l’addition binaire bit à bit de ces 3 nombres. 
+    - Donner la représentation binaire 12, 100 et 88 
 
-**<H3 STYLE="COLOR:red;">Exercice 2 :</H3>** ★ On suppose toujours nos entiers encodés sur un octet. Donner les compléments à 2 de -12, -100 et -88. 
+    - Réaliser l’addition binaire bit à bit de ces 3 nombres. 
 
-**<H3 STYLE="COLOR:red;">Exercice 3 :</H3>** ★
+???+ question "Exercice 2" 
 
-- Réaliser l’addition binaire des compléments à 2 des nombres 12 et -100. 
+    On suppose toujours nos entiers encodés sur un octet. Donner les compléments à 2 de -12, -100 et -88. 
 
-- Vérifier qu’on retrouve bien le résultat précédent pour -88. 
+???+ question "Exercice 3 ★" 
 
-**<H3 STYLE="COLOR:red;">Exercice 4 :</H3>** ★ Donner les notations décimales des binaires signés sur un octet suivant : 
+    - Réaliser l’addition binaire des compléments à 2 des nombres 12 et -100. 
 
-- 0b1111 1111 
+    - Vérifier qu’on retrouve bien le résultat précédent pour -88. 
 
-- 0b1000 0000 
+???+ question "Exercice 4 ★"  
 
-- 0b0111 1111 
+    Donner les notations décimales des binaires signés sur un octet suivant : 
 
-- 0b1010 0011 
+    - 0b1111 1111 
 
-**<H3 STYLE="COLOR:red;">Exercice 5 :</H3>** Conversion décimal – binaire 
+    - 0b1000 0000 
 
-1 ★ Écrire un programme qui convertisse un nombre décimal en binaire. Utiliser une fonction dec2bin. On donne l’algorithme suivant : 
+    - 0b0111 1111 
 
-```
-Algorithme dec2bin
-	fonction(nombre : entier) renvoie un string
-		binaire := nombre modulo 2	# binaire étant un string 
-		tantque nombre ≥ 2 faire
-			nombre := nombre / 2
-			binaire := ajout(nombre modulo 2) devant 
-		tantque longueur(binaire)<7
-			binaire : = ajout(0) devant
-	    renvoyer(binaire)
-```
+    - 0b1010 0011 
 
+???+ question "Exercice 5  ★ : Conversion décimal – binaire"
 
-Tout au début du programme, ne pas oublier cette ligne : # coding: utf-8
+    1 ★ Écrire un programme qui convertisse un nombre décimal en binaire. Utiliser une fonction dec2bin. On donne l’algorithme suivant : 
 
-2 Vérifier les conversions suivantes:
-
-- dec2bin(1843) == '11100110011' 
-
-- dec2bin(43) == '0101011'
-
-3 Convertir -2 et conclure. 
-
-4 ★★ Modifier le programme pour coder un nombre négatif : pour cela, on rajoutera une deuxième fonction dec2bin_negatif(nombre : int)-> str qui convertit un nombre négatif en binaire
-
-**Aide :** 
-
-- 	Les nombres entiers positifs sont codés sur 1 octet donc on peut les coder entre 0 et et 255. Les nombres entiers signés sont également codés sur 1 octet entre -128 à 127. 
-
--  Les nombres positifs commence par 0
-
--  Les nombres négatifs commence par 1.
-
--  Le complément à 2 peut être calculer par une autre méthode : 
-
-Sur 8 bits, -88 en complément à 2 correspond au nombre binaire suivant :
-
-* 2<sup>7</sup> – 88 = 40 
-
-* 40 en binaire => 010 1000 
-
-Le bit de signe donne donc **1**010 1000 
+    ```
+    Algorithme dec2bin
+        fonction(nombre : entier) renvoie un string
+            binaire := nombre modulo 2	# binaire étant un string 
+            tantque nombre ≥ 2 faire
+                nombre := nombre / 2
+                binaire := ajout(nombre modulo 2) devant 
+            tantque longueur(binaire)<7
+                binaire : = ajout(0) devant
+            renvoyer(binaire)
+    ```
 
 
-5	Vérifier les conversions suivantes
+    Tout au début du programme, ne pas oublier cette ligne : # coding: utf-8
 
-- dec2bin_negatif(-2) == '11111110'
+    2 Vérifier les conversions suivantes:
 
-- dec2bin_negatif(-1) == '11111111'
+    - dec2bin(1843) == '11100110011' 
+
+    - dec2bin(43) == '0101011'
+
+    3 Convertir -2 et conclure. 
+
+    4 ★★ Modifier le programme pour coder un nombre négatif : pour cela, on rajoutera une deuxième fonction dec2bin_negatif(nombre : int)-> str qui convertit un nombre négatif en binaire
+
+    **Aide :** 
+
+    - 	Les nombres entiers positifs sont codés sur 1 octet donc on peut les coder entre 0 et et 255. Les nombres entiers signés sont également codés sur 1 octet entre -128 à 127. 
+
+    -  Les nombres positifs commence par 0
+
+    -  Les nombres négatifs commence par 1.
+
+    -  Le complément à 2 peut être calculer par une autre méthode : 
+
+    Sur 8 bits, -88 en complément à 2 correspond au nombre binaire suivant :
+
+    * 2<sup>7</sup> – 88 = 40 
+
+    * 40 en binaire => 010 1000 
+
+    Le bit de signe donne donc **1**010 1000 
 
 
-6 Faire une troisième fonction **conversion(nombre : int)-> str** qui teste si le nombre entré est positif ou négatif et qui fait appel aux deux autres fonctions codées et qui renverra la conversion du nombre positif ou négatif en binaire.
+    5	Vérifier les conversions suivantes
 
-7 Vérifier les conversions suivantes :
+    - dec2bin_negatif(-2) == '11111110'
 
-- conversion(88) == '01011000'
+    - dec2bin_negatif(-1) == '11111111'
 
-- conversion(-88) == '10101000'
 
-8	Convertir -1.1 et conclure.
+    6 Faire une troisième fonction **conversion(nombre : int)-> str** qui teste si le nombre entré est positif ou négatif et qui fait appel aux deux autres fonctions codées et qui renverra la conversion du nombre positif ou négatif en binaire.
+
+    7 Vérifier les conversions suivantes :
+
+    - conversion(88) == '01011000'
+
+    - conversion(-88) == '10101000'
+
+    8	Convertir -1.1 et conclure.
  
 
-Pour éviter que le programme « crash » sur une erreur de valeur d’entrée (ValueError), une façon de gérer cette erreur est d’intercepter le message d’erreur et de le traiter correctement à l’aide des instructions try et except. 
+    Pour éviter que le programme « crash » sur une erreur de valeur d’entrée (ValueError), une façon de gérer cette erreur est d’intercepter le message d’erreur et de le traiter correctement à l’aide des instructions try et except. 
 
-La syntaxe est la suivante : 
+    La syntaxe est la suivante : 
 
-```
-try:
-    # bloc d’instructions à exécuter
-except ValueError:
-    # afficher « erreur de valeur »
-```
-Ou 
-```
-assert isinstance(nombre, int), « phrase à écrire »
-```
-Ou 
-```
-assert type(nombre)== int, « phrase à écrire »
-```
+    ```
+    try:
+        # bloc d’instructions à exécuter
+    except ValueError:
+        # afficher « erreur de valeur »
+    ```
+    Ou 
+    ```
+    assert isinstance(nombre, int), « phrase à écrire »
+    ```
+    Ou 
+    ```
+    assert type(nombre)== int, « phrase à écrire »
+    ```
 
-9 ★★ Modifier le programme précédent en conséquence. 
+    9 ★★ Modifier le programme précédent en conséquence. 
 
 
 Convertisseur en ligne :[ https://www.exploringbinary.com/twos-complement-converter/ ](https://www.exploringbinary.com/twos-complement-converter/)
@@ -997,50 +1003,57 @@ $1 \quad 10000010 \quad 01000100000000000000000$
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:red;">Exercice 6 </h3>** convertir en base 10  
+???+ question "Exercice 6 "  
 
-1. 0,0101010101<sub>2</sub>  
-2. 11100,10001<sub>2</sub> 
+    Convertir en base 10  
 
-**<H3 STYLE="COLOR:red;">Exercice 7 :</H3>** Convertir en binaire puis en norme IEEE-754 
+    1. 0,0101010101<sub>2</sub>  
+    2. 11100,10001<sub>2</sub> 
 
-1. 5,1875
-2. 4,3125
-3. 0,3125 
+???+ question "Exercice 7 ★" 
 
-**<H3 STYLE="COLOR:red;">Exercice 8 : </h3>**  **conversion des flottants** 
+    Convertir en binaire puis en norme IEEE-754 
 
-On souhaite transformer un nombre binaire décimal en base 10. Pour simplifier, on va déjà écrire un programme qui transforme **la partie décimale en binaire**, **puis** dans un deuxième temps on transformera **la partie entière**. 
+    1. 5,1875
+    2. 4,3125
+    3. 0,3125 
+
+???+ question "Exercice 8 ★ : conversion des flottants" 
+
+    On souhaite transformer un nombre binaire décimal en base 10. Pour simplifier, on va déjà écrire un programme qui transforme **la partie décimale en binaire**, **puis** dans un deuxième temps on transformera **la partie entière**. 
 
 
-1	★ Écrire un programme **decimal(nombre : str) -> float** qui convertisse la partie décimale d’un nombre binaire en flottant.
+    1	★ Écrire un programme **decimal(nombre : str) -> float** qui convertisse la partie décimale d’un nombre binaire en flottant.
 
-**Aide** : on pourra utiliser la méthode split() de l’objet str pour récupérer la partie décimale. 
-On utilisera le séparateur ','. Attention ce n’est pas une méthode en place donc il faut la réaffecter : [https://www.w3schools.com/python/ref_string_split.asp](https://www.w3schools.com/python/ref_string_split.asp)
+    **Aide** : on pourra utiliser la méthode split() de l’objet str pour récupérer la partie décimale. 
+    On utilisera le séparateur ','. Attention ce n’est pas une méthode en place donc il faut la réaffecter : [https://www.w3schools.com/python/ref_string_split.asp](https://www.w3schools.com/python/ref_string_split.asp)
 
-On pourra s’aider de ce bout de script :
+    On pourra s’aider de ce bout de script :
 
-```
-nombre = str(nombre) # on convertit le nombre en string
-x = nombre.split(',') # on le sépare en 2 selon la place de la virgule
-decimal = x[1] # partie décimale qui sera un str
-entier = x[0] # partie entière qui sera un str
-```
-on n’utilisera pas la variable « entier » dans cette fonction
+    ```
+    nombre = str(nombre) # on convertit le nombre en string
+    x = nombre.split(',') # on le sépare en 2 selon la place de la virgule
+    decimal = x[1] # partie décimale qui sera un str
+    entier = x[0] # partie entière qui sera un str
+    ```
+    on n’utilisera pas la variable « entier » dans cette fonction
 
-2	Vérifier les conversions suivantes :
+    2	Vérifier les conversions suivantes :
 
-- decimal('0,0101010101') == 0.3330078125
-- decimal('11100,10001') == 0.53125
+    - decimal('0,0101010101') == 0.3330078125
 
-3	★ Ajouter une fonction qui convertisse en base 10 la partie entière du binaire. 
-Le prototype est le suivant : **entiere(nombre : str) -> int**
-Aide : Penser à utiliser la méthode split comme précédemment
+    - decimal('11100,10001') == 0.53125
 
-4	Vérifier que **entiere('11100,10001') == 28**
-5	★ Enchaîner les appels successifs des 2 autres fonctions pour transformer un nombre binaire décimal en base 10. On utilisera une fonction avec le prototype suivant :
-**bin2float(nombre : str) -> float**
-6	Vérifier que **bin2float('11100,10001') == 28.53125**
+    3	★ Ajouter une fonction qui convertisse en base 10 la partie entière du binaire. 
+    Le prototype est le suivant : **entiere(nombre : str) -> int**
+    Aide : Penser à utiliser la méthode split comme précédemment
+
+    4	Vérifier que **entiere('11100,10001') == 28**
+
+    5	★ Enchaîner les appels successifs des 2 autres fonctions pour transformer un nombre binaire décimal en base 10. On utilisera une fonction avec le prototype suivant :
+    **bin2float(nombre : str) -> float**
+
+    6	Vérifier que **bin2float('11100,10001') == 28.53125**
 
 
 
@@ -1189,67 +1202,65 @@ Chaque pixel est défini par une combinaison de trois couleurs :
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:red;">Exercice 9 : Image matricielle </h3>**
+???+ question "Exercice 9 : Image matricielle"
 
-L’objectif de cet exercice est de dessiner une image matricielle dans le quadrillage 8x8 en page 1, ci-dessous, grâce à vos réponses aux différentes questions de conversions entre les bases numériques. 
+    L’objectif de cet exercice est de dessiner une image matricielle dans le quadrillage 8x8 en page 1, ci-dessous, grâce à vos réponses aux différentes questions de conversions entre les bases numériques. 
 
-Chaque case de l’image correspond à un bit. Une ligne de l’image fait 8 cases, soit 8 bits, soit 1 octet. Pour remplir les cases de l’image, vous devrez donc passer par la valeur binaire de la conversion afin de pouvoir appliquer cette règle de coloriage, même si la réponse n’aboutit pas à du binaire. Lorsque le bit est à 1 alors la case est noire, lorsque le bit est à 0 alors la case est blanche. 
+    Chaque case de l’image correspond à un bit. Une ligne de l’image fait 8 cases, soit 8 bits, soit 1 octet. Pour remplir les cases de l’image, vous devrez donc passer par la valeur binaire de la conversion afin de pouvoir appliquer cette règle de coloriage, même si la réponse n’aboutit pas à du binaire. Lorsque le bit est à 1 alors la case est noire, lorsque le bit est à 0 alors la case est blanche. 
 
-Exemple : 
+    Exemple : 
 
-![](Aimg13.png)
-
-
-Quadrillage pour l’image matricielle de 8x8 : 
-
-![](Aimg14.png)
+    ![](Aimg13.png)
 
 
+    Quadrillage pour l’image matricielle de 8x8 : 
 
-**Traduire** la première ligne de l’image en valeur en binaire. 
-
-1. **Convertir** la valeur binaire de la première ligne en décimal : 
-2. **Convertir** la valeur hexadécimale 0x66 en binaire : 
-3. **Convertir** la valeur hexadécimale 0x3C en décimal : 
-4. **Convertir** la valeur binaire de la ligne N°4 en hexadécimal : 
-5. **Convertir** la valeur décimale 24 en binaire : 
-6. **Convertir** la valeur décimale 60 en hexadécimal : 
-7. **Colorier** la ligne N°7 de l’image avec la valeur binaire suivante :  **0b01100110**
-8. **Convertir** la valeur binaire 0b11111111 en hexadécimal : 
-
-RAPPELS :   Un nombre binaire s’écrit ainsi : **1011<sub>(2)</sub>** ou **0b1011** ou **%1011** ou **1011b**
-
-Un nombre hexadécimal s’écrit ainsi : **9A<sub>(16)</sub>** ou **0x9A** ou **$9A** ou **9Ah**
+    ![](Aimg14.png)
 
 
+    **Traduire** la première ligne de l’image en valeur en binaire. 
 
-**<H3 STYLE="COLOR:red;">Exercice 10 L’heure en binaire ????</h3>**  
+    1. **Convertir** la valeur binaire de la première ligne en décimal : 
+    2. **Convertir** la valeur hexadécimale 0x66 en binaire : 
+    3. **Convertir** la valeur hexadécimale 0x3C en décimal : 
+    4. **Convertir** la valeur binaire de la ligne N°4 en hexadécimal : 
+    5. **Convertir** la valeur décimale 24 en binaire : 
+    6. **Convertir** la valeur décimale 60 en hexadécimal : 
+    7. **Colorier** la ligne N°7 de l’image avec la valeur binaire suivante :  **0b01100110**
+    8. **Convertir** la valeur binaire 0b11111111 en hexadécimal : 
 
-![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.109.png)
+    RAPPELS :   Un nombre binaire s’écrit ainsi : **1011<sub>(2)</sub>** ou **0b1011** ou **%1011** ou **1011b**
 
-Cette montre affiche l’heure en binaire :  
-
-- une ligne affiche les minutes,  
-- une autre ligne affiche les heures.  
-1. Quelle est la valeur maximale en décimal que peut afficher la ligne  du haut ? en binaire ? en hexadécimal ?  
-2. Quelle est la valeur maximale en décimal que peut afficher la ligne  du bas ? en binaire ? en hexadécimal ?  
-3. En déduire quelle ligne indique les minutes et quelle ligne indique  les heures ?  
-4. Dans quel format les heures sont-elles données au 12H (am/pm) ou  24H ?  
-5. Quelle valeur maximale en décimal sera réellement affichée sur la  ligne des heures ? en binaire ? en hexadécimal ?  
-6. Quelle valeur maximale en décimal sera réellement affichée sur la  ligne des minutes ? en binaire ? en hexadécimal ?  
-7. Quelle est l’heure donnée par les montre ci-dessous ?  
+    Un nombre hexadécimal s’écrit ainsi : **9A<sub>(16)</sub>** ou **0x9A** ou **$9A** ou **9Ah**
 
 
-![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.110.png)
+???+ question "Exercice 10 : L’heure en binaire ????" 
+
+    ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.109.png)
+
+    Cette montre affiche l’heure en binaire :  
+
+    - une ligne affiche les minutes,  
+    - une autre ligne affiche les heures.  
+    1. Quelle est la valeur maximale en décimal que peut afficher la ligne  du haut ? en binaire ? en hexadécimal ?  
+    2. Quelle est la valeur maximale en décimal que peut afficher la ligne  du bas ? en binaire ? en hexadécimal ?  
+    3. En déduire quelle ligne indique les minutes et quelle ligne indique  les heures ?  
+    4. Dans quel format les heures sont-elles données au 12H (am/pm) ou  24H ?  
+    5. Quelle valeur maximale en décimal sera réellement affichée sur la  ligne des heures ? en binaire ? en hexadécimal ?  
+    6. Quelle valeur maximale en décimal sera réellement affichée sur la  ligne des minutes ? en binaire ? en hexadécimal ?  
+    7. Quelle est l’heure donnée par les montre ci-dessous ?  
 
 
-8. Complétez les cadrans suivants dans le cas où la montre indique : 
-
-![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.111.png)
+    ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.110.png)
 
 
-9. Quelle modification faudrait-il faire pour que les heures soient affichées sur un format 24h ? 
-10. Quelle modification faudrait-il faire pour afficher également les secondes ? 
+    8. Complétez les cadrans suivants dans le cas où la montre indique : 
+
+    ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.111.png)
+
+
+    9. Quelle modification faudrait-il faire pour que les heures soient affichées sur un format 24h ? 
+    10. Quelle modification faudrait-il faire pour afficher également les secondes ? 
 
 
 [^1]: [1https://physics.nist.gov/cuu/Units/binary.html ](https://physics.nist.gov/cuu/Units/binary.html)
