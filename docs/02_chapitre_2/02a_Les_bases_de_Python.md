@@ -373,12 +373,12 @@ Python permet d’utiliser des expressions **booléennes**, qui ne peuvent être
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
-???+ question "Exercice 1 ★"  
+!!! abstract "Exercice 1 ★"  
     
     Écrire une fonction maximum(x,y) qui renvoie le maximum de deux nombres x et y. Attention : vous n'avez pas le droit d'utiliser la fonction built-in max().  
 
 
-???+ question "Exercice 2 ★" 
+!!! abstract "Exercice 2 ★" 
 
     Ecrire et tester une fonction compare(a,b) qui retourne :  
 
@@ -388,13 +388,13 @@ Python permet d’utiliser des expressions **booléennes**, qui ne peuvent être
 
         - 1 si a > b.  
 
-???+ question "Exercice 3 ★" 
+!!! abstract "Exercice 3 ★" 
 
     Écrire une fonction resout(a,b) avec les deux variables réelles a, b qui résout l’équation ax + b = 0.
 
 
 
-???+ question "Exercice 4 ★"  
+!!! abstract "Exercice 4 ★"  
 
     Ecrire une fonction mention(note) qui affichera la mention correspondante à la note obtenue.  Les mentions sont obtenues 
 
@@ -416,7 +416,7 @@ Python permet d’utiliser des expressions **booléennes**, qui ne peuvent être
     'recalé'
     ```
 
-???+ question "Exercice 5 ★" 
+!!! abstract "Exercice 5 ★" 
 
     Ecrire une fonction IMC(poids, taille) qui calcule l’indice de masse corporelle (IMC) d’un adulte et qui en donne l’interprétation (corpulence normale, surpoids…). 
 
@@ -438,7 +438,7 @@ Python permet d’utiliser des expressions **booléennes**, qui ne peuvent être
     'IMC = 23.7: Interprétation : Corpulence normale'
     ```
 
-???+ question "Exercice 6 ★★"  
+!!! abstract "Exercice 6 ★★"  
 
     Ecrire une fonction annee\_bissextile(annee) qui indique qu’il s’agit d’une année bissextile. On rappelle qu’une année est bissextile si elle est multiple de 4 mais pas multiple de 100, ou si elle est multiple de 400. 
 
@@ -450,7 +450,7 @@ Python permet d’utiliser des expressions **booléennes**, qui ne peuvent être
     "L'année 2000 est bissextile"
     ```
 
-???+ question "Exercice 7 ★★" 
+!!! abstract "Exercice 7 ★★" 
 
     - Niveau première en mathématiques 
     
@@ -820,7 +820,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
 
 
-???+ question "Exercice 8 ★★"  
+!!! abstract "Exercice 8 ★★"  
 
     1  Avec une boucle for, écrire une fonction nombre_de_z(chaine) qui compte le nombre de lettres z dans une chaîne de caractères. Par exemple : 
     ```
@@ -834,7 +834,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
     help(str.count)
     ```
 
-???+ question "Exercice 9 ★★" 
+!!! abstract "Exercice 9 ★★" 
 
     1  Ecrire la fonction devinette(proposition) du jeu de devinette suivant : 
 
@@ -869,7 +869,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
     nombre = random.randint(1,100)
     ``` 
 
-???+ question "Exercice 10 ★★ : Code César" 
+!!! abstract "Exercice 10 ★★ : Code César" 
 
     En cryptographie, le code César est une technique de chiffrement élémentaire qui consiste à décaler une lettre de 3 rangs vers la droite : 
 
@@ -906,7 +906,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
     ```
 
 
-???+ question "Exercice 11 ★ : Geralt de Riv kiffe ses cheveux."  
+!!! abstract "Exercice 11 ★ : Geralt de Riv kiffe ses cheveux."  
 
     Pour ne pas être dérangé dans ses aventures il décide de les couper chaque fois qu’ils font plus de 40 cm. Ce matin Geralt a coupé ses cheveux et ils mesurent 17 cm. Chaque jour la longueur de ses cheveux augmente d’un pour cent (leur longueur est multipliée par 1.01). 
 
@@ -914,7 +914,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
 **Les exercices suivants nécessitent quelques (peu quand même) aptitudes en mathématiques…** 
 
-???+ question "Exercice 12 ★★"  
+!!! abstract "Exercice 12 ★★"  
     Ecrire une méthode heron(U, n) qui donne la valeur de la suite pour un rang n (méthode de Héron) : La méthode de Héron permet d’approcher la valeur de la racine carrée d’un nombre. Nous allons l’appliquer pour déterminer la valeur approchée de la racine de 2. Elle est définie par la suite : 
 
 
@@ -941,7 +941,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
     - Utiliser seulement  n et U comme variable, 
 
 
-???+ question "Exercice 13 ★★ : Fraction continue infinie"   
+!!! abstract "Exercice 13 ★★ : Fraction continue infinie"   
     
     ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.086.jpeg)
 
@@ -969,7 +969,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
     1.618034447821682
     ```
 
-???+ question "Exercice 14 ★★"  
+!!! abstract "Exercice 14 ★★"  
 
     Ecrire une fonction premier(nombre) qui détermine si un nombre entier est premier ou pas. 
 
@@ -1195,7 +1195,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
-???+ question "Exercice 15 ☆"   
+!!! abstract "Exercice 15 ☆"   
 
     1.Ecrire une fonction carre() qui retourne le carré d’un nombre : 
 
@@ -1220,7 +1220,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
     100 ^2 = 10000
     ```
 
-???+ question "Exercice 16 ☆"
+!!! abstract "Exercice 16 ☆"
 
     Ecrire une fonction qui retourne l’aire de la surface d’un disque de rayon R. Exemple : 
 
@@ -1229,7 +1229,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
     19.634954084936208
     ```
 
-???+ question "Exercice 17 ★" 
+!!! abstract "Exercice 17 ★" 
 
     1.Ecrire une fonction qui retourne la factorielle d’un nombre entier N. On rappelle que : factorielle de N est noté N! 
 
@@ -1251,7 +1251,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
     
     2.Comparez avec le résultat de la fonction[ factorial() ](http://docs.python.org/3/library/math.html)du module math. 
 
-???+ question "Exercice 18 ★" 
+!!! abstract "Exercice 18 ★" 
 
     1.A l’aide de la fonction randint() du module random, écrire une fonction qui retourne un mot de passe de longueur N (chiffres, lettres minuscules ou majuscules).  
 
@@ -1281,7 +1281,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
 
 
-???+ question "Exercice 19 ★★" 
+!!! abstract "Exercice 19 ★★" 
 
     Ecrire une fonction qui retourne une grille de numéros du jeu  Euro Millions. On utilisera la fonction sample() du module random.  
     ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.114.png)
@@ -1291,7 +1291,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
     '43 31 35 41 39 22 14 ' 
     ```
 
-???+ question "Exercice 20"  
+!!! abstract "Exercice 20"  
 
     1.★ Ecrire une fonction qui retourne la valeur de la fonction  mathématique f(x)= 27x^3 - 27x^2 - 18x + 8 :  
 
