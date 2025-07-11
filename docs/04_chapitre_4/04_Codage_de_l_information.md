@@ -561,7 +561,7 @@ Une autre méthode consiste à :
 
 4. **Lire les restes à l’envers**.
 
-![](Aimg7.png)
+![](Aimg7.png){ width=70% }
  
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Le<a name="_page5_x40.00_y574.92"></a> codage des nombres entiers signés en binaire</h2>** 
