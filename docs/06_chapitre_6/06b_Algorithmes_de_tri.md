@@ -688,22 +688,30 @@ Animation :[ http://lwh.free.fr/pages/algo/tri/tri_bulle.html ](http://lwh.free.
 
 => CAPYTALE Le code vous sera donné par votre enseignant
 
-**<H3 STYLE="COLOR:red;">Exercice n°1** </H3>**: Créer une fonction selection_sort_desc() qui permet trier avec l’algorithme de tri par sélection une liste aléatoire par valeurs décroissantes.
+!!! abstract "Exercice n°1 :"
 
-**<H3 STYLE="COLOR:red;">Exercice n°2** </H3>**: Créer une fonction selection\_sort\_asc\_partir\_fin() qui permet trier avec l’algorithme de tri par sélection une liste aléatoire par valeurs croissantes de manière à compléter l’algorithme suivant :
+    Créer une fonction selection_sort_desc() qui permet trier avec l’algorithme de tri par sélection une liste aléatoire par valeurs décroissantes.
 
-```python
-def selection_sort_asc_partir_fin(T):
-    for i in range(…, 0, …):
-        maxi = …
-        for j in range(…):
-            if T[j]> T[…]:
-                maxi = j
-        if maxi !=i:
-            …
-    return T
-```
+!!! abstract "Exercice n°2 :" 
 
-**<H3 STYLE="COLOR:red;">Exercice n°3** </H3>**: Créer une fonction selection_sort_desc_partir_fin() qui permet trier avec l’algorithme de tri par sélection et l’algorithme de l’exercice 2, une liste aléatoire par valeurs décroissantes.
+    Créer une fonction selection\_sort\_asc\_partir\_fin() qui permet trier avec l’algorithme de tri par sélection une liste aléatoire par valeurs croissantes de manière à compléter l’algorithme suivant :
 
-**<H3 STYLE="COLOR:red;">Exercice n°4** :</H3>** Créer une fonction bubble_sort_desc() qui permet trier avec l’algorithme de tri à bulles une liste aléatoire par valeurs décroissantes.
+    ```python
+    def selection_sort_asc_partir_fin(T):
+        for i in range(…, 0, …):
+            maxi = …
+            for j in range(…):
+                if T[j]> T[…]:
+                    maxi = j
+            if maxi !=i:
+                …
+        return T
+    ```
+
+!!! abstract "Exercice n°3 :" 
+
+    Créer une fonction selection_sort_desc_partir_fin() qui permet trier avec l’algorithme de tri par sélection et l’algorithme de l’exercice 2, une liste aléatoire par valeurs décroissantes.
+
+!!! abstract "Exercice n°4 :" 
+
+    Créer une fonction bubble_sort_desc() qui permet trier avec l’algorithme de tri à bulles une liste aléatoire par valeurs décroissantes.
