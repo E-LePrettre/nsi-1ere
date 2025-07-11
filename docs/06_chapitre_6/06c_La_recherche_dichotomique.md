@@ -282,7 +282,9 @@ L’algorithme **ne peut pas entrer dans une boucle infinie** et **s'arrête tou
 
 => CAPYTALE Le code vous sera donné par votre enseignant
 
-???+ question "Activité n°1 : Complétez l’algorithme de recherche dichotomique"
+???+ question "Activité n°1 :" 
+
+    Complétez l’algorithme de recherche dichotomique
 
     ```python
     def recherche_dichotomique(T, x):
@@ -302,87 +304,87 @@ L’algorithme **ne peut pas entrer dans une boucle infinie** et **s'arrête tou
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°3.: Observation de durées</H3>**
+???+ question "Activité n°2.: Observation de durées"
 
-On peut mesurer les durées pour trouver une valeur dans un tableau déjà trié. Comme les temps d’exécution sont très faibles, et que la fonction time est peu précise il faut avoir recours à la fonction magique %timeit de iPython. Voilà un exemple de script pour mesurer les durées sur des tableaux de longueurs différentes :
+    On peut mesurer les durées pour trouver une valeur dans un tableau déjà trié. Comme les temps d’exécution sont très faibles, et que la fonction time est peu précise il faut avoir recours à la fonction magique %timeit de iPython. Voilà un exemple de script pour mesurer les durées sur des tableaux de longueurs différentes :
 
-```python
-# construction d'un tableau par compréhension
-import random
-t1 = [random.randint(1,100_000_000) for _ in range(10_000)]
-t1.sort()
+    ```python
+    # construction d'un tableau par compréhension
+    import random
+    t1 = [random.randint(1,100_000_000) for _ in range(10_000)]
+    t1.sort()
 
-t2 = [random.randint(1,100_000_000) for _ in range(100_000)]
-t2.sort()
+    t2 = [random.randint(1,100_000_000) for _ in range(100_000)]
+    t2.sort()
 
-t3 = [random.randint(1,100_000_000) for _ in range(1_000_000)]
-t3.sort()
+    t3 = [random.randint(1,100_000_000) for _ in range(1_000_000)]
+    t3.sort()
 
-t4 = [random.randint(1,100_000_000) for _ in range(2_000_000)]
-t4.sort()
+    t4 = [random.randint(1,100_000_000) for _ in range(2_000_000)]
+    t4.sort()
 
-t5 = [random.randint(1,100_000_000) for _ in range(4_000_000)]
-t5.sort()
-```
+    t5 = [random.randint(1,100_000_000) for _ in range(4_000_000)]
+    t5.sort()
+    ```
 
-Observer et commenter
+    Observer et commenter
 
-```
-%timeit rechercheDichotomique(t1, 0)
-2.69 µs ± 144 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    ```
+    %timeit rechercheDichotomique(t1, 0)
+    2.69 µs ± 144 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
-%timeit rechercheDichotomique(t2, 0)
-2.9 µs ± 105 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    %timeit rechercheDichotomique(t2, 0)
+    2.9 µs ± 105 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
-%timeit rechercheDichotomique(t3, 0)
-4.02 µs ± 425 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    %timeit rechercheDichotomique(t3, 0)
+    4.02 µs ± 425 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
-%timeit rechercheDichotomique(t4, 0)
-4.37 µs ± 457 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    %timeit rechercheDichotomique(t4, 0)
+    4.37 µs ± 457 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
-%timeit rechercheDichotomique(t5, 0)
-4.64 µs ± 256 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
-```
+    %timeit rechercheDichotomique(t5, 0)
+    4.64 µs ± 256 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    ```
 
 ## <H2 STYLE="COLOR:BLUE;">7. Exercices<a name="_page7_x40.00_y407.92"></a></H2>
 
 => CAPYTALE Le code vous sera donné par votre enseignant
 
-**<H3 STYLE="COLOR:red;">Exercice 1 : Recherche d’un maximum dans une liste de n éléments**</H3> : 
+!!! abstract "Exercice 1 : Recherche d’un maximum dans une liste de n éléments :" 
 
-1. Ecrire l’algorithme en pseudo – code
-2. Calculer la complexité de cet algorithme
-3. L’implémenter en Python
-4. Modifier le programme pour créer une fonction ```maximum(T :list) -> int```
-5. Tester la fonction avec une liste aléatoire de 20 valeurs
+    1. Ecrire l’algorithme en pseudo – code
+    2. Calculer la complexité de cet algorithme
+    3. L’implémenter en Python
+    4. Modifier le programme pour créer une fonction ```maximum(T :list) -> int```
+    5. Tester la fonction avec une liste aléatoire de 20 valeurs
 
-**<H3 STYLE="COLOR:red;">Exercice 2 : Recherche de la moyenne des éléments d’une liste de n éléments**</H3> : 
+!!! abstract "Exercice 2 : Recherche de la moyenne des éléments d’une liste de n éléments:"
 
-1. Ecrire l’algorithme en pseudo – code
-2. Calculer la complexité de cet algorithme
-3. L’implémenter en Python
-4. Modifier le programme pour créer une fonction ```moyenne(T :list) -> int```
-5. Tester la fonction avec une liste aléatoire de 20 valeurs
+    1. Ecrire l’algorithme en pseudo – code
+    2. Calculer la complexité de cet algorithme
+    3. L’implémenter en Python
+    4. Modifier le programme pour créer une fonction ```moyenne(T :list) -> int```
+    5. Tester la fonction avec une liste aléatoire de 20 valeurs
 
-**<H3 STYLE="COLOR:red;">Exercice 3 : Recherche en table**</H3>
+!!! abstract "Exercice 3 : Recherche en table"
 
-Si on utilisait une méthode séquentielle pour chercher un nom dans un annuaire, on ouvrirait celui-ci à la première page et on comparerait le nom recherché au premier nom de l’annuaire, puis au deuxième, puis au troisième, etc., jusqu’à trouver le nom recherché, ou arriver au dernier nom de l’annuaire. Un annuaire contenant 30.000 noms et une comparaison prenant 100 ms, il faudrait, dans le pire des cas, 3.000 secondes, soit 50 minutes, pour trouver le nom recherché ou se convaincre qu’il n’appartient pas à l‘annuaire.
+    Si on utilisait une méthode séquentielle pour chercher un nom dans un annuaire, on ouvrirait celui-ci à la première page et on comparerait le nom recherché au premier nom de l’annuaire, puis au deuxième, puis au troisième, etc., jusqu’à trouver le nom recherché, ou arriver au dernier nom de l’annuaire. Un annuaire contenant 30.000 noms et une comparaison prenant 100 ms, il faudrait, dans le pire des cas, 3.000 secondes, soit 50 minutes, pour trouver le nom recherché ou se convaincre qu’il n’appartient pas à l‘annuaire.
 
-Bien entendu, ce n’est pas ainsi que l’on procède : on ouvre l‘annuaire au milieu, on compare le nom recherché au nom médian. Si le nom recherché est avant le nom médian dans l’ordre alphabétique, on élimine la seconde moitié de l’annuaire, sans même la regarder ; s’il est après le nom médian, on élimine la première moitié. En recommençant avec le demi-annuaire restant, on élimine ensuite un demi-demi-annuaire et on continue jusqu’à trouver le nom en question ou obtenir l’ensemble vide.
+    Bien entendu, ce n’est pas ainsi que l’on procède : on ouvre l‘annuaire au milieu, on compare le nom recherché au nom médian. Si le nom recherché est avant le nom médian dans l’ordre alphabétique, on élimine la seconde moitié de l’annuaire, sans même la regarder ; s’il est après le nom médian, on élimine la première moitié. En recommençant avec le demi-annuaire restant, on élimine ensuite un demi-demi-annuaire et on continue jusqu’à trouver le nom en question ou obtenir l’ensemble vide.
 
-1. Compléter le tableau ci-dessous pour rechercher un nom dans un annuaire de 30.000 noms :
+    1. Compléter le tableau ci-dessous pour rechercher un nom dans un annuaire de 30.000 noms :
 
-|**Comparaison** |**Ensemble de recherche (mots)** |
-| - | - |
-|1 |15\.000 |
-|2 |7\.500 |
-|... |... |
+    |**Comparaison** |**Ensemble de recherche (mots)** |
+    | - | - |
+    |1 |15\.000 |
+    |2 |7\.500 |
+    |... |... |
 
-2. En déduire le temps de recherche dans le pire des cas et conclure.
+    2. En déduire le temps de recherche dans le pire des cas et conclure.
 
-On appelle logarithme à base 2, log<sub>2</sub>(x) d’un nombre x ≥ 1, le nombre de fois qu’il faut le diviser x par 2 pour obtenir un nombre inférieur ou égal à 1.
+    On appelle logarithme à base 2, log<sub>2</sub>(x) d’un nombre x ≥ 1, le nombre de fois qu’il faut le diviser x par 2 pour obtenir un nombre inférieur ou égal à 1.
 
-Sur la calculatrice, log<sub>2</sub>(x) = $\frac{ln(x)}{ln(2)}$
+    Sur la calculatrice, log<sub>2</sub>(x) = $\frac{ln(x)}{ln(2)}$
 
-3. A partir du logarithme à base 2, retrouver le résultat obtenu à la question 1.
-4. Calculer le temps nécessaire pour rechercher un nom dans l’annuaire français pour n = 60 millions d’entrées.
+    3. A partir du logarithme à base 2, retrouver le résultat obtenu à la question 1.
+    4. Calculer le temps nécessaire pour rechercher un nom dans l’annuaire français pour n = 60 millions d’entrées.
