@@ -97,7 +97,7 @@ L'algèbre de Boole est à la base des **circuits logiques** utilisés dans les 
 
 ✅ **La sortie est l'inverse de l'entrée.**
 
-???+ question "Tester :"
+???+ question "Activité 1"
 
     ```python
     def NOT(a):
@@ -129,7 +129,7 @@ La porte NON est symbolisée par le schéma suivant :
 
 ✅ **La sortie est 1 si au moins une des entrées est 1.**
 
-???+ question "Tester :"
+???+ question "Activité 2"
 
     ```python
     def OR(a, b):
@@ -160,7 +160,7 @@ La porte OU est symbolisée par le schéma suivant :
 
 ✅ **La sortie est 1 uniquement si les deux entrées sont 1.**
 
-???+ question "Tester :"
+???+ question "Activité 3"
 
     ```python
     def AND(a, b):
@@ -194,7 +194,7 @@ La porte ET est symbolisée par le schéma suivant :
 
 ✅ **La sortie est 1 uniquement si les entrées sont différentes.**
 
-???+ question "Tester :"
+???+ question "Activité 4"
 
     ```python
     def XOR(a, b):
@@ -219,13 +219,14 @@ La porte XOR est symbolisée par le schéma suivant :
 
 |Symbole |Table de vérité |Opération |
 | - | - | - |
-|![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.018.png)|| E1 | E2 | S |
+|![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.018.png)|
+| E1 | E2 | S |
 |----|----|---|
 | 0  | 0  | 1 |
 | 0  | 1  | 1 |
 | 1  | 0  | 1 |
 | 1  | 1  | 0 |
-![](Aimg03.png) |
+|![](Aimg03.png) |
 
 
 
@@ -237,7 +238,7 @@ La porte XOR est symbolisée par le schéma suivant :
 
 
 
-???+ question "Activité n°1 : Complétons les tables de vérité"
+???+ question "Activité n°5 : Complétons les tables de vérité"
 
     Écrire les tables de vérité des expressions suivantes :
 
@@ -292,7 +293,7 @@ La porte XOR est symbolisée par le schéma suivant :
 
 
 
-???+ question "Activité n°2 : Compléter le tableau de vérité"
+???+ question "Activité n°6 : Compléter le tableau de vérité"
 
     Voici un exemple de fonction booléenne : La fonction multiplexeur, notée `mux`.
 
@@ -405,7 +406,7 @@ Le  complément  d’un  produit  logique  (non  arithmétique)  est  égal  à 
 
 ✅ **Les lois de De Morgan permettent de transformer une opération en son opposée.**
 
-???+ question "Tester :"
+???+ question "Activité 7"
 
     ```python
     def de_morgan_1(a, b):
