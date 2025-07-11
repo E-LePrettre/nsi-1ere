@@ -971,7 +971,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
 ???+ question "Exercice 14 ★★"  
 
-    ★ Ecrire une fonction premier(nombre) qui détermine si un nombre entier est premier ou pas. 
+    Ecrire une fonction premier(nombre) qui détermine si un nombre entier est premier ou pas. 
 
     **Rappel :** un nombre **premier** est un entier naturel qui n’a que deux diviseurs : 1 et lui-même. Ex : 3 est premier mais 6 ne l’est pas car 2\*3=6. Par exemple : 
 
