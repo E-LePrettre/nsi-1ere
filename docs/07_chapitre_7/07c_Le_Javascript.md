@@ -122,24 +122,26 @@ document.getElementById("monBouton").addEventListener("click", function() {
 📌 **Résultat :** Quand on clique sur le bouton, une **alerte apparaît avec un message**.
 
 
-**<H3 STYLE="COLOR:red;">Activité n°1 : </H3> Ajouter un fichier JavaScript externe** 
+???+ question "Activité n°1 : " 
+    
+    Ajouter un fichier JavaScript externe** 
 
-1. **Dans `index.html`**, ajoutez cette ligne juste à la fin du `<body>`, juste avant la fermeture de la balise `</body>`. :
-```html
-<script src="script.js"></script>
-```
-2. **Créez un fichier `script.js`**   
-3. **Ajoutez ce code dans `script.js`** :
-```js
-document.getElementById("monBouton").addEventListener("click", function() {
-    alert("Vous avez cliqué !");
-});
-```
-4. **Dans le `index.html`**,ajoutez un bouton dans le `<body>`
-```html
-<button id="monBouton">Cliquez-moi</button>
-```
-5. **Enregistrez et testez la page `index.html` dans un navigateur**.
+    1. **Dans `index.html`**, ajoutez cette ligne juste à la fin du `<body>`, juste avant la fermeture de la balise `</body>`. :
+    ```html
+    <script src="script.js"></script>
+    ```
+    2. **Créez un fichier `script.js`**   
+    3. **Ajoutez ce code dans `script.js`** :
+    ```js
+    document.getElementById("monBouton").addEventListener("click", function() {
+        alert("Vous avez cliqué !");
+    });
+    ```
+    4. **Dans le `index.html`**,ajoutez un bouton dans le `<body>`
+    ```html
+    <button id="monBouton">Cliquez-moi</button>
+    ```
+    5. **Enregistrez et testez la page `index.html` dans un navigateur**.
 
 ✅ **Vous avez maintenant un script JavaScript externe qui fonctionne !** 🎉
 
@@ -165,74 +167,74 @@ JavaScript propose **trois types de boîtes de dialogue** pour interagir avec l'
 | `prompt()` | Demande **une saisie de l'utilisateur** | `prompt("Quel est votre nom ?");` |
 
 
-**<H3 STYLE="COLOR:red;">Activité n°2 :**</H3>
+???+ question "Activité n°2 :"
 
-1️⃣ **Créer un nouveau fichier HTML** appelé **`exo_JS.html`**  
+    1️⃣ **Créer un nouveau fichier HTML** appelé **`exo_JS.html`**  
 
-2️⃣ **Ajouter ce code dans `exo_JS.html`** :
+    2️⃣ **Ajouter ce code dans `exo_JS.html`** :
 
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8" />
-    <title>Page de tests JavaScript</title>
-</head>
-<body>
-    <h1>Page de tests du code JavaScript</h1>
-</body>
-</html>
-```
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Page de tests JavaScript</title>
+    </head>
+    <body>
+        <h1>Page de tests du code JavaScript</h1>
+    </body>
+    </html>
+    ```
 
-✅ **Enregistrer et ouvrir dans un navigateur**.
+    ✅ **Enregistrer et ouvrir dans un navigateur**.
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°3 :**</H3>
+???+ question "Activité n°3 :"
 
-1️⃣ **Dans `exo_JS.html`**, ajouter ce code **dans `<body>`** :
-```html
-<script>
-    alert('Hello world!');
-</script>
-```
-2️⃣ **Enregistrer et observer** :  
+    1️⃣ **Dans `exo_JS.html`**, ajouter ce code **dans `<body>`** :
+    ```html
+    <script>
+        alert('Hello world!');
+    </script>
+    ```
+    2️⃣ **Enregistrer et observer** :  
 
-➡ Une **boîte d’alerte** doit apparaître avec le message `"Hello world!"`.
+    ➡ Une **boîte d’alerte** doit apparaître avec le message `"Hello world!"`.
 
  
 
-**<H3 STYLE="COLOR:red;">Activité n°4 :**</H3> 
+???+ question "Activité n°4 :"
 
-1️⃣ **Dans `exo_JS.html`**, modifier le code pour **ajouter un fichier externe `exo.js`** :
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8" />
-    <title>Page de tests JavaScript</title>
-</head>
-<body>
-    <h1>Page de tests du code JavaScript</h1>
-    <script src="exo.js"></script>
-</body>
-</html>
-```
+    1️⃣ **Dans `exo_JS.html`**, modifier le code pour **ajouter un fichier externe `exo.js`** :
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Page de tests JavaScript</title>
+    </head>
+    <body>
+        <h1>Page de tests du code JavaScript</h1>
+        <script src="exo.js"></script>
+    </body>
+    </html>
+    ```
 
-2️⃣ **Créer un nouveau fichier `exo.js`** dans le même dossier.
+    2️⃣ **Créer un nouveau fichier `exo.js`** dans le même dossier.
 
 
-**<H3 STYLE="COLOR:red;">Activité n°5 :**</H3> 
+???+ question "Activité n°5 :" 
 
-1️⃣ **Dans `exo.js`**, ajouter ce code :
-```js
-alert('Hello world!');
-```
-2️⃣ **Dans `exo_JS.html`**, **supprimer** l'ancien `<script>` qui contenait `alert()`.  
+    1️⃣ **Dans `exo.js`**, ajouter ce code :
+    ```js
+    alert('Hello world!');
+    ```
+    2️⃣ **Dans `exo_JS.html`**, **supprimer** l'ancien `<script>` qui contenait `alert()`.  
 
-3️⃣ **Enregistrer et observer** : 
+    3️⃣ **Enregistrer et observer** : 
 
-➡ L’alerte **s’affiche toujours**, mais maintenant grâce à **`exo.js`**.
+    ➡ L’alerte **s’affiche toujours**, mais maintenant grâce à **`exo.js`**.
 
 ✅ **Félicitations, vous avez relié un fichier JavaScript externe !** 🎉
 
@@ -243,22 +245,21 @@ alert('Hello world!');
 
 La **console JavaScript** permet d'afficher des messages utiles pour **déboguer** un programme.
 
+???+ question "Activité n°6 :"
 
-**<H3 STYLE="COLOR:red;">Activité n°6 :**</H3> 
+    1️⃣ **Dans `exo.js`**, remplacez `alert()` par :
+    ```js
+    console.log('Hello world!');
+    ```
+    2️⃣ **Enregistrer et ouvrir `exo_JS.html` dans un navigateur**. 
 
-1️⃣ **Dans `exo.js`**, remplacez `alert()` par :
-```js
-console.log('Hello world!');
-```
-2️⃣ **Enregistrer et ouvrir `exo_JS.html` dans un navigateur**. 
+    3️⃣ **Ouvrir la console JavaScript** :  
 
-3️⃣ **Ouvrir la console JavaScript** :  
+    - **Firefox / Edge** : `Ctrl + Maj + I` puis **onglet "Console"**  
 
-   - **Firefox / Edge** : `Ctrl + Maj + I` puis **onglet "Console"**  
+    - **Chrome** : `F12` puis **onglet "Console"**  
 
-   - **Chrome** : `F12` puis **onglet "Console"**  
-
-➡ **Résultat attendu** : `"Hello world!"` s’affiche dans la console.
+    ➡ **Résultat attendu** : `"Hello world!"` s’affiche dans la console.
 
 
 
@@ -300,25 +301,27 @@ let maVariable2 = "Bonjour";  // Déclarée avec let
 const MA_CONSTANTE = 3.14;  // Déclarée avec const (non modifiable)
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°7 :</H3> Déclarer et afficher une variable** 
+???+ question "Activité n°7 :" 
 
-1️⃣ **Dans `exo.js`**, ajoutez ce code :
-```js
-var myVariable = 5.5;
-alert(myVariable);
-```
-2️⃣ **Enregistrer et observer** dans `exo_JS.html`.
+    Déclarer et afficher une variable** 
 
-➡ **Résultat** : Une boîte d’alerte s’affiche avec la valeur **5.5**.
-   
-![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.024.png)
+    1️⃣ **Dans `exo.js`**, ajoutez ce code :
+    ```js
+    var myVariable = 5.5;
+    alert(myVariable);
+    ```
+    2️⃣ **Enregistrer et observer** dans `exo_JS.html`.
 
-📌 **Remplacez maintenant `alert()` par `console.log()`** :
-```js
-var myVariable = 5.5;
-console.log(myVariable);
-```
-➡ **Résultat** : Ouvrez la console (`Ctrl + Maj + I`), la valeur **5.5** apparaît.
+    ➡ **Résultat** : Une boîte d’alerte s’affiche avec la valeur **5.5**.
+    
+    ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.024.png)
+
+    📌 **Remplacez maintenant `alert()` par `console.log()`** :
+    ```js
+    var myVariable = 5.5;
+    console.log(myVariable);
+    ```
+    ➡ **Résultat** : Ouvrez la console (`Ctrl + Maj + I`), la valeur **5.5** apparaît.
 
 
 
@@ -344,17 +347,18 @@ console.log(typeof true);       // "boolean"
 ### **<H3 STYLE="COLOR:GREEN;">5.3. Les<a name="_page3_x40.00_y247.92"></a> chaines de caractères**</H3>
 
 
+???+ question "Activité n°8 :"
 
-**<H3 STYLE="COLOR:red;">Activité n°8 :</H3> Tester les chaînes de caractères et caractères spéciaux** 
+    Tester les chaînes de caractères et caractères spéciaux** 
 
-1️⃣ **Dans `exo.js`**, ajoutez ce code :
-```js
-var message1 = "Ceci est un \"petit\" test.";
-var message2 = 'Un autre "petit" test (attention à l\'apostrophe).';
-console.log(message1);
-console.log(message2);
-```
-➡ **Résultat** : Les messages s’affichent dans la console.
+    **Dans `exo.js`**, ajoutez ce code :
+    ```js
+    var message1 = "Ceci est un \"petit\" test.";
+    var message2 = 'Un autre "petit" test (attention à l\'apostrophe).';
+    console.log(message1);
+    console.log(message2);
+    ```
+    ➡ **Résultat** : Les messages s’affichent dans la console.
 
 📌 **Autres caractères spéciaux utiles :** 
 
@@ -369,25 +373,25 @@ console.log(message2);
 ### **<H3 STYLE="COLOR:GREEN;">5.4. Tester<a name="_page3_x40.00_y503.92"></a> l’existence de variables avec typeof ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.029.png)**</H3>
 
 
-**<H3 STYLE="COLOR:red;">Activité n°9 :**</H3> 
+???+ question "Activité n°9 :"
 
-1️⃣ **Dans `exo.js`**, ajoutez ce code :
-```js
-var number = 2;
-console.log(typeof number); 
+    **Dans `exo.js`**, ajoutez ce code :
+    ```js
+    var number = 2;
+    console.log(typeof number); 
 
-var text = 'Mon texte';
-console.log(typeof text); 
+    var text = 'Mon texte';
+    console.log(typeof text); 
 
-var aBoolean = false;
-console.log(typeof aBoolean);
-```
-➡ **Résultat attendu** :  
-```
-number
-string
-boolean
-```
+    var aBoolean = false;
+    console.log(typeof aBoolean);
+    ```
+    ➡ **Résultat attendu** :  
+    ```
+    number
+    string
+    boolean
+    ```
 
 
 
@@ -416,19 +420,19 @@ console.log(a % b);  // 1
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°10 :**</H3> 
+???+ question "Activité n°10 :"
 
-1️⃣ **Dans `exo.js`**, ajoutez ce code :
-```js
-var divisor = 3, result1, result2, result3; 
-result1 = (16 + 8) / 2 - 2; 
-result2 = result1 / divisor; 
-result3 = result1 % divisor; 
+    **Dans `exo.js`**, ajoutez ce code :
+    ```js
+    var divisor = 3, result1, result2, result3; 
+    result1 = (16 + 8) / 2 - 2; 
+    result2 = result1 / divisor; 
+    result3 = result1 % divisor; 
 
-console.log(result2); 
-console.log(result3);
-```
-➡ **Résultat attendu** : Affichage des valeurs calculées.
+    console.log(result2); 
+    console.log(result3);
+    ```
+    ➡ **Résultat attendu** : Affichage des valeurs calculées.
 
 
 ### **<H3 STYLE="COLOR:GREEN;">5.6. La<a name="_page4_x40.00_y154.92"></a> concaténation**</H3>
@@ -441,15 +445,15 @@ console.log(salutation + " " + nom);  // Bonjour Alice
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°11 :**</H3> 
+???+ question "Activité n°11 :"
 
-1️⃣ **Dans `exo.js`**, ajoutez ce code :
-```js
-var hi = 'Bonjour ', name = 'toi', result; 
-result = hi + name;  
-console.log(result);
-```
-➡ **Résultat attendu** : `Bonjour toi`
+    **Dans `exo.js`**, ajoutez ce code :
+    ```js
+    var hi = 'Bonjour ', name = 'toi', result; 
+    result = hi + name;  
+    console.log(result);
+    ```
+    ➡ **Résultat attendu** : `Bonjour toi`
 
 
 
@@ -465,22 +469,20 @@ console.log("Bonjour " + userName);
 ```
 ➡ **L’utilisateur entre un texte, puis celui-ci est affiché.**
 
+???+ question "Activité n°12 :"
+
+    **Dans `exo.js`**, ajoutez ce code :
+    ```js
+    var start = 'Bonjour ', name, end = ' !', result; 
+
+    name = prompt('Quel est votre prénom ?'); 
+    result = start + name + end; 
+    console.log(result);
+    ```
+    ➡ **Résultat attendu** : `Bonjour [Prénom] !`
 
 
-**<H3 STYLE="COLOR:red;">Activité n°12 :**</H3> 
-
-1️⃣ **Dans `exo.js`**, ajoutez ce code :
-```js
-var start = 'Bonjour ', name, end = ' !', result; 
-
-name = prompt('Quel est votre prénom ?'); 
-result = start + name + end; 
-console.log(result);
-```
-➡ **Résultat attendu** : `Bonjour [Prénom] !`
-
-
-![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.036.png)
+    ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.036.png)
 
 
 
@@ -496,18 +498,17 @@ var age = prompt("Quel est votre âge ?");
 console.log(parseInt(age) + 5);  // Convertit l’entrée en nombre et ajoute 5
 ```
 
+???+ question "Activité n°13 :"
 
-**<H3 STYLE="COLOR:red;">Activité n°13 :**</H3> 
-
-1️⃣ **Dans `exo.js`**, ajoutez ce code :
-```js
-var first, second, result;  
-first = prompt('Entrez le premier chiffre :');  
-second = prompt('Entrez le second chiffre :');  
-result = parseInt(first) + parseInt(second);  
-console.log(result);
-```
-➡ **L’utilisateur entre deux nombres, la somme s’affiche dans la console.**
+    **Dans `exo.js`**, ajoutez ce code :
+    ```js
+    var first, second, result;  
+    first = prompt('Entrez le premier chiffre :');  
+    second = prompt('Entrez le second chiffre :');  
+    result = parseInt(first) + parseInt(second);  
+    console.log(result);
+    ```
+    ➡ **L’utilisateur entre deux nombres, la somme s’affiche dans la console.**
 
 
 
@@ -518,103 +519,103 @@ Les opérations de comparaison classiques sont les mêmes : ```==``` ; ```!= ```
 
 Pour pouvoir comparer 4 en tant que ```number``` et 4 en tant que string il faut utiliser d’autres opérateurs :
 
-**<H3 STYLE="COLOR:red;">Activité n°14 :**</H3> 
+???+ question "Activité n°14 :"
 
-Enregistrer et observer le fichier exo_JS.html
+    Enregistrer et observer le fichier exo_JS.html
 
-```JS
-var number = 4, text = '4', result;
+    ```JS
+    var number = 4, text = '4', result;
 
-result = number == text;
-console.log(result); // Affiche  « true » alors que « number » est un nombre et « text » une chaîne de caractères
+    result = number == text;
+    console.log(result); // Affiche  « true » alors que « number » est un nombre et « text » une chaîne de caractères
 
-result = number === text;
-console.log(result); // Affiche « false » car cet opérateur compare aussi les types des variables en plus de leurs valeurs
-```
+    result = number === text;
+    console.log(result); // Affiche « false » car cet opérateur compare aussi les types des variables en plus de leurs valeurs
+    ```
 
 
 ### **<H3 STYLE="COLOR:GREEN;">6.2. Les<a name="_page5_x40.00_y167.92"></a> structures conditionnelles**</H3>
 #### **<H4 STYLE="COLOR:ORANGE;">6.2.1. La<a name="_page5_x40.00_y186.92"></a> condition « if else »</H4>****
 
-**<H3 STYLE="COLOR:red;">Activité n°15 :**</H3> 
+???+ question "Activité n°15 :"
 
-Enregistrer et observer le fichier exo_JS.html.
+    Enregistrer et observer le fichier exo_JS.html.
 
-```JS
-var userName = prompt('Entrez votre prénom :');
+    ```JS
+    var userName = prompt('Entrez votre prénom :');
 
-if (2 < 8 && 8 >= 4) { // Cette condition renvoie « true », le code est donc exécuté     
-console.log('La condition est bien vérifiée.');
-}
-console.log(userName);  
-```
+    if (2 < 8 && 8 >= 4) { // Cette condition renvoie « true », le code est donc exécuté     
+    console.log('La condition est bien vérifiée.');
+    }
+    console.log(userName);  
+    ```
 
 La fonction ```confirm()``` permet d'afficher une boîte de confirmation et retourne un booléen en fonction de l’action de l’utilisateur.
  
 
-**<H3 STYLE="COLOR:red;">Activité n°16 :**</H3> 
+???+ question "Activité n°16 :"
 
-Enregistrer et observer le fichier exo_JS.html.
+    Enregistrer et observer le fichier exo_JS.html.
 
-```JS
-if (confirm('Voulez-vous exécuter le code JavaScript de cette page ?')) {
-   console.log('Le code a bien été exécuté !')};
-```
+    ```JS
+    if (confirm('Voulez-vous exécuter le code JavaScript de cette page ?')) {
+    console.log('Le code a bien été exécuté !')};
+    ```
 
-La structure ```else``` permet d’exécuter un certain code si la condition n’a pas été vérifiée.
+    La structure ```else``` permet d’exécuter un certain code si la condition n’a pas été vérifiée.
 
-```JS
-if ( /* condition */ ) {
-    // Du code…
-} else {
-    // Du code…
-}
-```
+    ```JS
+    if ( /* condition */ ) {
+        // Du code…
+    } else {
+        // Du code…
+    }
+    ```
 
-La structure ```else if``` peut être utilisée ainsi :
+    La structure ```else if``` peut être utilisée ainsi :
 
-```JS
-if ( /* condition */ ) {
-    // Du code…
-} else if ( /* condition */ ) {
-    // Du code…
-} else {
-    // Du code…
-}
-```
+    ```JS
+    if ( /* condition */ ) {
+        // Du code…
+    } else if ( /* condition */ ) {
+        // Du code…
+    } else {
+        // Du code…
+    }
+    ```
 
 
 #### **<H4 STYLE="COLOR:ORANGE;">6.2.2. La<a name="_page5_x40.00_y659.92"></a> condition ```switch```</H4>**
 
 
-**<H3 STYLE="COLOR:red;">Activité n°17 :**</H3> 
+???+ question "Activité n°17 :" 
 
-Dans le fichier exo.js passer les lignes précédentes en commentaire et rajouter le script suivant.
+    Dans le fichier exo.js passer les lignes précédentes en commentaire et rajouter le script suivant.
 
-```JS
-var tiroir = parseInt(prompt('Choisissez le tiroir à ouvrir (1 à 4) :'));
+    ```JS
+    var tiroir = parseInt(prompt('Choisissez le tiroir à ouvrir (1 à 4) :'));
 
-switch (tiroir) {
-    case 1:
-        console.log('Contient divers outils pour dessiner : du papier, des crayons, etc.');
-    break;
+    switch (tiroir) {
+        case 1:
+            console.log('Contient divers outils pour dessiner : du papier, des crayons, etc.');
+        break;
 
-    case 2:
-        console.log('Contient du matériel informatique : des câbles, des composants, etc.');
-    break;
+        case 2:
+            console.log('Contient du matériel informatique : des câbles, des composants, etc.');
+        break;
 
-    case 3:
-        console.log('Ah ? Ce tiroir est fermé à clé ! Dommage !');
-    break;
+        case 3:
+            console.log('Ah ? Ce tiroir est fermé à clé ! Dommage !');
+        break;
 
-    case 4:
-        console.log('Contient des vêtements : des chemises, des pantalons, etc.');
-    break;
+        case 4:
+            console.log('Contient des vêtements : des chemises, des pantalons, etc.');
+        break;
 
-    default:
-        console.log("Le meuble ne contient que 4 tiroirs.");
-}
-```
+        default:
+            console.log("Le meuble ne contient que 4 tiroirs.");
+    }
+    ```
 
 Tout ce qui suit les deux points d’un ```case``` sera exécuté si la variable analysée par le ```switch``` contient la valeur du ```case```.
 
@@ -636,17 +637,17 @@ Les boucles permettent d'exécuter plusieurs fois un même bloc de code tant qu'
 
 L’incrémentation permet **d’ajouter une unité** à un nombre, tandis que la décrémentation permet **d’en soustraire une unité**. 
 
-**<H3 STYLE="COLOR:red;">Activité n°18 :**</H3> 
+???+ question "Activité n°18 :"
 
-```js
-let number1 = 0, number2 = 10;
+    ```js
+    let number1 = 0, number2 = 10;
 
-number1++;  // Ajoute 1 à number1
-console.log(number1); // Affiche 1
+    number1++;  // Ajoute 1 à number1
+    console.log(number1); // Affiche 1
 
-number2--;  // Soustrait 1 à number2
-console.log(number2); // Affiche 9
-```
+    number2--;  // Soustrait 1 à number2
+    console.log(number2); // Affiche 9
+    ```
 
 ⚠️ Attention à la différence entre pré-incrémentation et post-incrémentation :**
 ```js
@@ -668,17 +669,17 @@ console.log(number2); // Affiche 1 (valeur après incrémentation)
 
 La boucle `while` permet d’exécuter du code tant qu’une condition est remplie.
 
-**<H3 STYLE="COLOR:red;">Activité n°19 :**</H3> 
+???+ question "Activité n°19 :"
 
-```js
-let number = 1;
+    ```js
+    let number = 1;
 
-while (number < 5) {  
-    console.log("Itération numéro : " + number);
-    number++; // Incrémentation importante pour éviter une boucle infinie
-}
-console.log("Boucle terminée !");
-```
+    while (number < 5) {  
+        console.log("Itération numéro : " + number);
+        number++; // Incrémentation importante pour éviter une boucle infinie
+    }
+    console.log("Boucle terminée !");
+    ```
 
 **⚠️ Attention :** Toujours s'assurer que la condition de sortie est bien gérée pour éviter une **boucle infinie**.
 
@@ -686,29 +687,30 @@ console.log("Boucle terminée !");
 
 Contrairement à `while`, la boucle `do while` **s'exécute au moins une fois**, même si la condition n'est pas remplie.
 
-**<H3 STYLE="COLOR:red;">Activité n°20 :**</H3>
-```js
-let count = 5;
+???+ question "Activité n°20 :"
+    
+    ```js
+    let count = 5;
 
-do {
-    console.log("Valeur actuelle : " + count);
-    count++;
-} while (count < 3); // Bien que la condition soit fausse, l'instruction s'exécute une fois
-```
+    do {
+        console.log("Valeur actuelle : " + count);
+        count++;
+    } while (count < 3); // Bien que la condition soit fausse, l'instruction s'exécute une fois
+    ```
 
 ### **<H3 STYLE="COLOR:GREEN;">8.4. La<a name="_page7_x40.00_y446.92"></a> boucle for**</H3>
 
 La boucle `for` est souvent utilisée lorsque l’on connaît **le nombre exact d’itérations**.
 
 
-**<H3 STYLE="COLOR:red;">Activité n°21 :**</H3> 
+???+ question "Activité n°21 :" 
 
-```js
-for (let i = 0; i < 5; i++) { 
-    console.log('Itération n°' + i);
-}
-console.log("Boucle terminée !");
-```
+    ```js
+    for (let i = 0; i < 5; i++) { 
+        console.log('Itération n°' + i);
+    }
+    console.log("Boucle terminée !");
+    ```
 
 **Explication des paramètres :**
 
@@ -731,15 +733,15 @@ function nomDeLaFonction(arguments) {
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°22 : Exemple de fonction sans argument :**</H3> 
+???+ question "Activité n°22 : Exemple de fonction sans argument :" 
 
-```js
-function showMessage() { 
-    console.log("Ceci est une fonction sans argument !");
-} 
+    ```js
+    function showMessage() { 
+        console.log("Ceci est une fonction sans argument !");
+    } 
 
-showMessage(); // On exécute la fonction
-```
+    showMessage(); // On exécute la fonction
+    ```
 
 **Explication :**  
 
@@ -747,36 +749,35 @@ showMessage(); // On exécute la fonction
 
 - Elle ne prend aucun argument. 
 
-**<H3 STYLE="COLOR:red;">Activité n°23 : Exemple de fonction avec argument :**</H3> 
+???+ question "Activité n°23 : Exemple de fonction avec argument :"
 
-Une fonction peut recevoir des **arguments** pour traiter des valeurs différentes à chaque appel.
-```js
-function greetUser(name) { 
-    console.log("Bonjour " + name + " !");
-} 
+    Une fonction peut recevoir des **arguments** pour traiter des valeurs différentes à chaque appel.
+    ```js
+    function greetUser(name) { 
+        console.log("Bonjour " + name + " !");
+    } 
 
-greetUser("Alice"); // Affiche : Bonjour Alice !
-greetUser("Bob");   // Affiche : Bonjour Bob !
-```
+    greetUser("Alice"); // Affiche : Bonjour Alice !
+    greetUser("Bob");   // Affiche : Bonjour Bob !
+    ```
 
 **Explication :**  
 
 - La fonction `greetUser()` prend un argument `name` et affiche un message personnalisé.
 
 
+???+ question "Activité n°24 : Exemple de fonction avec** ```prompt()``` :"
 
-**<H3 STYLE="COLOR:red;">Activité n°24 : Exemple de fonction avec** ```prompt()``` :</h3> 
+    On peut utiliser `prompt()` pour **demander une saisie** à l’utilisateur.
 
-On peut utiliser `prompt()` pour **demander une saisie** à l’utilisateur.
+    ```js
+    function askName() { 
+        let userName = prompt("Quel est votre prénom ?");
+        console.log("Bonjour " + userName + " !");
+    }
 
-```js
-function askName() { 
-    let userName = prompt("Quel est votre prénom ?");
-    console.log("Bonjour " + userName + " !");
-}
-
-askName(); // Demande un nom à l'utilisateur et l'affiche
-```
+    askName(); // Demande un nom à l'utilisateur et l'affiche
+    ```
 
 **Explication :**  
 
@@ -788,19 +789,19 @@ askName(); // Demande un nom à l'utilisateur et l'affiche
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°25 : Exemple de fonction avec un ```return``` :**</H3> 
+???+ question "Activité n°25 : Exemple de fonction avec un ```return``` :"
 
-La fonction peut renvoyer une **valeur utilisable ailleurs** grâce à `return`.
+    La fonction peut renvoyer une **valeur utilisable ailleurs** grâce à `return`.
 
-### **Exemple 4️⃣ : Fonction avec `return`**
-```js
-function addition(a, b) {
-    return a + b; // Retourne la somme des deux nombres
-}
+    **Exemple 4️⃣ : Fonction avec `return`**
+    ```js
+    function addition(a, b) {
+        return a + b; // Retourne la somme des deux nombres
+    }
 
-let resultat = addition(5, 7); // Stocke le résultat
-console.log("Résultat de l'addition : " + resultat); // Affiche 12
-```
+    let resultat = addition(5, 7); // Stocke le résultat
+    console.log("Résultat de l'addition : " + resultat); // Affiche 12
+    ```
 
 **Explication :**  
 
@@ -830,118 +831,120 @@ Le **Document Object Model (DOM)** est une interface qui permet à JavaScript d'
 
 ### **<H3 STYLE="COLOR:GREEN;">10.1. Manipuler<a name="_page8_x40.00_y578.92"></a> les éléments HTML**</H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°26 :**</H3> 
+???+ question "Activité n°26 :" 
 
-📌 **Sélection d'un élément par son ID**
+    📌 **Sélection d'un élément par son ID**
 
-La méthode `getElementById()` permet de récupérer un élément HTML unique à partir de son **ID**.
-Créer une page test.html
-```html
-<body>
-    <p id="titre">Je suis un titre</p>
-    <script>
-        var titre = document.getElementById("titre");
-        titre.style.color = "blue"; // Change la couleur du texte
-    </script>
-</body>
-```
+    La méthode `getElementById()` permet de récupérer un élément HTML unique à partir de son **ID**.
+    Créer une page test.html
+    ```html
+    <body>
+        <p id="titre">Je suis un titre</p>
+        <script>
+            var titre = document.getElementById("titre");
+            titre.style.color = "blue"; // Change la couleur du texte
+        </script>
+    </body>
+    ```
 
-**<H3 STYLE="COLOR:red;">Activité n°27 :**</H3> 
-📌 **Sélection des éléments par leur classe**
+???+ question "Activité n°27 :"
 
-La méthode `getElementsByClassName()` permet de récupérer **plusieurs éléments** qui partagent une même classe.
-Dans une page test.html
+    📌 **Sélection des éléments par leur classe**
 
-```html
-<body>
-    <p class="paragraphe">Premier paragraphe</p>
-    <p class="paragraphe">Deuxième paragraphe</p>
-    <script>
-        var paragraphes = document.getElementsByClassName("paragraphe");
-        for (var i = 0; i < paragraphes.length; i++) {
-            paragraphes[i].style.backgroundColor = "yellow"; // Change le fond
-        }
-    </script>
-</body>
-```
+    La méthode `getElementsByClassName()` permet de récupérer **plusieurs éléments** qui partagent une même classe.
+    Dans une page test.html
 
-
-**<H3 STYLE="COLOR:red;">Activité n°28 :</H3> Changer la couleur d'un texte au clic** 
-
-Nous allons voir comment JavaScript peut réagir aux **événements** comme un **clic sur un bouton**.
-
-**1️⃣ Créer un fichier `interaction.html` avec le code suivant :**
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Interaction avec JS</title>
-</head>
-<body>
-    <h1>Voici un titre</h1>
-    <p id="important">Ceci est un texte important.</p>
-    <button onclick="changeCouleur()">Cliquez ici</button>
-    <script src="interaction.js"></script>
-</body>
-</html>
-```
-![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.081.png)
+    ```html
+    <body>
+        <p class="paragraphe">Premier paragraphe</p>
+        <p class="paragraphe">Deuxième paragraphe</p>
+        <script>
+            var paragraphes = document.getElementsByClassName("paragraphe");
+            for (var i = 0; i < paragraphes.length; i++) {
+                paragraphes[i].style.backgroundColor = "yellow"; // Change le fond
+            }
+        </script>
+    </body>
+    ```
 
 
-**2️⃣ Créer le fichier `interaction.js` et ajouter le code suivant :**
-```js
-function changeCouleur() {
-    var paragraphe = document.getElementById("important");
-    paragraphe.style.color = "red"; // Change la couleur en rouge
-}
-```
+???+ question "Activité n°28 : Changer la couleur d'un texte au clic"
 
-**3️⃣ Résultat :** En cliquant sur le bouton, le texte deviendra **rouge**.
+    Nous allons voir comment JavaScript peut réagir aux **événements** comme un **clic sur un bouton**.
+
+    **1️⃣ Créer un fichier `interaction.html` avec le code suivant :**
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Interaction avec JS</title>
+    </head>
+    <body>
+        <h1>Voici un titre</h1>
+        <p id="important">Ceci est un texte important.</p>
+        <button onclick="changeCouleur()">Cliquez ici</button>
+        <script src="interaction.js"></script>
+    </body>
+    </html>
+    ```
+    ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.081.png)
 
 
+    **2️⃣ Créer le fichier `interaction.js` et ajouter le code suivant :**
+    ```js
+    function changeCouleur() {
+        var paragraphe = document.getElementById("important");
+        paragraphe.style.color = "red"; // Change la couleur en rouge
+    }
+    ```
 
-![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.086.png)
+    **3️⃣ Résultat :** En cliquant sur le bouton, le texte deviendra **rouge**.
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°29 :</H3> Amélioration : Ajouter une classe CSS au lieu de modifier directement le style** 
-
-**1️⃣ Créer un fichier `interaction.css` avec le code suivant :**
-```css
-.rouge { 
-    color: red;
-    font-size: 30px;
-}
-```
-![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.091.png)
-
-**2️⃣ Modifier `interaction.html` pour inclure le fichier CSS :**
-```html
-<link rel="stylesheet" href="interaction.css">
-```
+    ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.086.png)
 
 
-**3️⃣ Modifier `interaction.js` :**
-```js
-function changeCouleur() {
-    var paragraphe = document.getElementById("important");
-    paragraphe.classList.add("rouge"); // Ajoute la classe CSS
-}
-```
 
-**4️⃣ Ajouter un bouton pour réinitialiser la couleur :**
-```html
-<button onclick="resetCouleur()">Réinitialiser</button>
-```
+    
+???+ question "Activité n°29 : Amélioration : Ajouter une classe CSS au lieu de modifier directement le style"
 
-**5️⃣ Ajouter la fonction correspondante dans `interaction.js` :**
-```js
-function resetCouleur() {
-    var paragraphe = document.getElementById("important");
-    paragraphe.classList.remove("rouge"); // Supprime la classe CSS
-}
-```
+    **1️⃣ Créer un fichier `interaction.css` avec le code suivant :**
+    ```css
+    .rouge { 
+        color: red;
+        font-size: 30px;
+    }
+    ```
+    ![](Aspose.Words.e9d0b6b1-5c5b-49ac-81ba-f1da180d728c.091.png)
+
+    **2️⃣ Modifier `interaction.html` pour inclure le fichier CSS :**
+    ```html
+    <link rel="stylesheet" href="interaction.css">
+    ```
+
+
+    **3️⃣ Modifier `interaction.js` :**
+    ```js
+    function changeCouleur() {
+        var paragraphe = document.getElementById("important");
+        paragraphe.classList.add("rouge"); // Ajoute la classe CSS
+    }
+    ```
+
+    **4️⃣ Ajouter un bouton pour réinitialiser la couleur :**
+    ```html
+    <button onclick="resetCouleur()">Réinitialiser</button>
+    ```
+
+    **5️⃣ Ajouter la fonction correspondante dans `interaction.js` :**
+    ```js
+    function resetCouleur() {
+        var paragraphe = document.getElementById("important");
+        paragraphe.classList.remove("rouge"); // Supprime la classe CSS
+    }
+    ```
 
 ✅ **Avantage** : Séparer la logique du design en utilisant **CSS** au lieu de modifier directement les styles avec JavaScript.
 
@@ -960,157 +963,161 @@ function resetCouleur() {
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°30 :**</H3>  
-📌 **Sélectionner le premier élément correspondant à une classe**
+???+ question "Activité n°30 :" 
 
-Dans une page test.html
+    📌 **Sélectionner le premier élément correspondant à une classe**
 
-```html
-<body>
-    <p class="paragraphe">Paragraphe 1</p>
-    <p class="paragraphe">Paragraphe 2</p>
-    <script>
-        var premierParagraphe = document.querySelector(".paragraphe");
-        premierParagraphe.style.fontWeight = "bold"; // Met en gras le premier paragraphe
-    </script>
-</body>
-```
+    Dans une page test.html
 
-**<H3 STYLE="COLOR:red;">Activité n°31 :**</H3> 
-📌 **Sélectionner tous les éléments correspondants à une classe**
+    ```html
+    <body>
+        <p class="paragraphe">Paragraphe 1</p>
+        <p class="paragraphe">Paragraphe 2</p>
+        <script>
+            var premierParagraphe = document.querySelector(".paragraphe");
+            premierParagraphe.style.fontWeight = "bold"; // Met en gras le premier paragraphe
+        </script>
+    </body>
+    ```
 
-Dans une page test.html
-```html
-<body>
-    <p class="paragraphe">Paragraphe 1</p>
-    <p class="paragraphe">Paragraphe 2</p>
-    <p class="paragraphe">Paragraphe 3</p>
-    <script>
-        var tousLesParagraphes = document.querySelectorAll(".paragraphe");
-        for (var i = 0; i < tousLesParagraphes.length; i++) {
-            tousLesParagraphes[i].style.textAlign = "center"; // Centre tous les paragraphes
-        }
-    </script>
-</body>
-```
+???+ question "Activité n°31 :"
+
+    📌 **Sélectionner tous les éléments correspondants à une classe**
+
+    Dans une page test.html
+    ```html
+    <body>
+        <p class="paragraphe">Paragraphe 1</p>
+        <p class="paragraphe">Paragraphe 2</p>
+        <p class="paragraphe">Paragraphe 3</p>
+        <script>
+            var tousLesParagraphes = document.querySelectorAll(".paragraphe");
+            for (var i = 0; i < tousLesParagraphes.length; i++) {
+                tousLesParagraphes[i].style.textAlign = "center"; // Centre tous les paragraphes
+            }
+        </script>
+    </body>
+    ```
 
 
 ### **<H3 STYLE="COLOR:GREEN;">10.3. Modification<a name="_page11_x40.00_y265.92"></a> de contenu de la page HTML avec la propriété ```innerHTML```**</H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°32 :**</H3> 
+???+ question "Activité n°32 :"
 
-📌 **Remplacer le contenu d’un élément**
+    📌 **Remplacer le contenu d’un élément**
 
-Dans une page test.html
-```html
-<body>
-    <h1 id="titre">Ancien titre</h1>
-    <script>
-        var titre = document.getElementById("titre");
-        titre.innerHTML = "Nouveau titre";
-    </script>
-</body>
-```
+    Dans une page test.html
+    ```html
+    <body>
+        <h1 id="titre">Ancien titre</h1>
+        <script>
+            var titre = document.getElementById("titre");
+            titre.innerHTML = "Nouveau titre";
+        </script>
+    </body>
+    ```
 
-**<H3 STYLE="COLOR:red;">Activité n°33 :**</H3> 
+???+ question "Activité n°33 :"
 
-📌 **Ajouter du texte à un élément existant**
+    📌 **Ajouter du texte à un élément existant**
 
-Dans une page test.html
-```html
-<body>
-    <p id="paragraphe">Texte original.</p>
-    <script>
-        var paragraphe = document.getElementById("paragraphe");
-        paragraphe.innerHTML += " Texte ajouté.";
-    </script>
-</body>
-```
+    Dans une page test.html
+    ```html
+    <body>
+        <p id="paragraphe">Texte original.</p>
+        <script>
+            var paragraphe = document.getElementById("paragraphe");
+            paragraphe.innerHTML += " Texte ajouté.";
+        </script>
+    </body>
+    ```
 
 
 
 ### **<H3 STYLE="COLOR:GREEN;">10.4. Modification<a name="_page12_x40.00_y111.92"></a> de modification de style de la page HTML avec la propriété style**</H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°34 :**</H3> 
+???+ question "Activité n°34 :"
 
-📌 **Changer la couleur de fond**
+    📌 **Changer la couleur de fond**
 
-Dans une page test.html
-```html
-<body>
-    <p id="element">Paragraphe coloré</p>
-    <script>
-        var element = document.getElementById("element");
-        element.style.backgroundColor = "yellow";
-    </script>
-</body>
-```
-**<H3 STYLE="COLOR:red;">Activité n°35 :**</H3> 
+    Dans une page test.html
+    ```html
+    <body>
+        <p id="element">Paragraphe coloré</p>
+        <script>
+            var element = document.getElementById("element");
+            element.style.backgroundColor = "yellow";
+        </script>
+    </body>
+    ```
 
-📌 **Changer plusieurs styles en même temps**
+???+ question "Activité n°35 :"
 
-Dans une page test.html
-```html
-<body>
-    <p id="element">Paragraphe stylisé</p>
-    <script>
-        var element = document.getElementById("element");
-        element.style.backgroundColor = "yellow";
-        element.style.color = "blue";
-        element.style.fontSize = "20px";
-    </script>
-</body>
-```
+    📌 **Changer plusieurs styles en même temps**
+
+    Dans une page test.html
+    ```html
+    <body>
+        <p id="element">Paragraphe stylisé</p>
+        <script>
+            var element = document.getElementById("element");
+            element.style.backgroundColor = "yellow";
+            element.style.color = "blue";
+            element.style.fontSize = "20px";
+        </script>
+    </body>
+    ```
 
 
 
 ### **<H3 STYLE="COLOR:GREEN;">10.5. Ajouter<a name="_page13_x40.00_y67.92"></a> et supprimer des classes CSS dynamiquement**</H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°36 :**</H3> 
+???+ question "Activité n°36 :"
  
-📌 **Ajout d'une classe CSS**
+    📌 **Ajout d'une classe CSS**
 
-Dans une page test.html
-```html
-<body>
-    <p id="element">Je vais devenir stylé !</p>
-    <script>
-        var element = document.getElementById("element");
-        element.classList.add("nouveauStyle"); // Ajoute une classe CSS
-    </script>
-</body>
-```
-**<H3 STYLE="COLOR:red;">Activité n°37 :**</H3> 
+    Dans une page test.html
+    ```html
+    <body>
+        <p id="element">Je vais devenir stylé !</p>
+        <script>
+            var element = document.getElementById("element");
+            element.classList.add("nouveauStyle"); // Ajoute une classe CSS
+        </script>
+    </body>
+    ```
 
-📌 **Suppression d'une classe CSS**
+???+ question "Activité n°37 :"
 
-De la même manièren pour supprimer une classe on écrirait
+    📌 **Suppression d'une classe CSS**
 
-Dans une page test.html
-```html
-element.classList.remove("nouveauStyle");
-```
+    De la même manièren pour supprimer une classe on écrirait
+
+    Dans une page test.html
+    ```html
+    element.classList.remove("nouveauStyle");
+    ```
 
 ### **<H3 STYLE="COLOR:GREEN;">10.6. Ajouter<a name="_page13_x40.00_y67.92"></a> des événements dynamiquement**</H3>
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°38 :**</H3> 
+???+ question "Activité n°38 :"
 
-📌 **Détecter un clic sur un bouton**
+    📌 **Détecter un clic sur un bouton**
 
-Dans une page test.html
-```html
-<body>
-    <button id="bouton">Cliquez-moi</button>
-    <script>
-        var bouton = document.getElementById("bouton");
-        bouton.addEventListener("click", function() {
-            console.log("Le bouton a été cliqué !");
-        });
-    </script>
-</body>
-```
+    Dans une page test.html
+    ```html
+    <body>
+        <button id="bouton">Cliquez-moi</button>
+        <script>
+            var bouton = document.getElementById("bouton");
+            bouton.addEventListener("click", function() {
+                console.log("Le bouton a été cliqué !");
+            });
+        </script>
+    </body>
+    ```
 
 
 ## **<H2 STYLE="COLOR:BLUE;">11. Interactions<a name="_page14_x40.00_y95.92"></a> avec l’utilisateur 🖱️⌨️**</H2>
@@ -1154,71 +1161,71 @@ JavaScript propose **différents types d'événements** :
 
 🔹 **Créer un fichier `evenement.html` et y insérer le code suivant** :
 
-**<H3 STYLE="COLOR:red;">Activité n°39 :**</H3> 
+???+ question "Activité n°39 :"
 
-📌 **Exécuter une alerte lors d’un clic**  
+    📌 **Exécuter une alerte lors d’un clic**  
 
-Dans cet exemple, un simple **clic** sur le texte affichera une alerte.
+    Dans cet exemple, un simple **clic** sur le texte affichera une alerte.
 
 
-```html
-<body>
-    <span onclick="alert('Hello')">Cliquez ici !</span>
-</body>
-```
+    ```html
+    <body>
+        <span onclick="alert('Hello')">Cliquez ici !</span>
+    </body>
+    ```
 ✅ **Explication** : Lorsqu’on clique sur le texte, l’alerte `"Hello"` s’affiche.
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°40 :**</H3> 
+???+ question "Activité n°40 :"
 
-📌 **Utiliser `addEventListener()` pour un clic sur un bouton**
-```html
-<body>
-    <button id="bouton">Cliquez ici !</button>
-    <script>
-        var bouton = document.getElementById("bouton");
-        bouton.addEventListener("click", function() {
-            console.log("Bouton cliqué !");
-        });
-    </script>
-</body>
-```
+    📌 **Utiliser `addEventListener()` pour un clic sur un bouton**
+    ```html
+    <body>
+        <button id="bouton">Cliquez ici !</button>
+        <script>
+            var bouton = document.getElementById("bouton");
+            bouton.addEventListener("click", function() {
+                console.log("Bouton cliqué !");
+            });
+        </script>
+    </body>
+    ```
 ✅ **Explication** :  
 
 - `getElementById("bouton")` cible le bouton.
 
 - `addEventListener("click", function() {...})` écoute le clic et exécute la fonction.
 
-**<H3 STYLE="COLOR:red;">Activité n°41 :**</H3> 
+???+ question "Activité n°41 :"
 
-**Changer la couleur d’un élément lorsque la souris passe dessus**
-```html
-<body>
-    <p id="maDiv">Passez la souris ici !</p>
-    <script>
-        var div = document.getElementById("maDiv");
-        div.addEventListener("mouseover", function() {
-            div.style.backgroundColor = "red";
-        });
-    </script>
-</body>
-```
+    **Changer la couleur d’un élément lorsque la souris passe dessus**
+    ```html
+    <body>
+        <p id="maDiv">Passez la souris ici !</p>
+        <script>
+            var div = document.getElementById("maDiv");
+            div.addEventListener("mouseover", function() {
+                div.style.backgroundColor = "red";
+            });
+        </script>
+    </body>
+    ```
 ✅ **Explication** : Lorsque la souris **survole** l'élément, son fond devient **rouge**.
 
-**<H3 STYLE="COLOR:red;">Activité n°42 :**</H3> 
+???+ question "Activité n°42 :"
 
-📌 **Détecter la touche appuyée sur le clavier**
-```html
-<body>
-    <p>Appuyez sur une touche...</p>
-    <script>
-        document.addEventListener("keydown", function(event) {
-            console.log("Touche pressée : " + event.key);
-        });
-    </script>
-</body>
-```
+    📌 **Détecter la touche appuyée sur le clavier**
+    ```html
+    <body>
+        <p>Appuyez sur une touche...</p>
+        <script>
+            document.addEventListener("keydown", function(event) {
+                console.log("Touche pressée : " + event.key);
+            });
+        </script>
+    </body>
+    ```
 ✅ **Explication** :  
 
 - `keydown` détecte une touche **enfoncée**.
@@ -1229,18 +1236,18 @@ Dans cet exemple, un simple **clic** sur le texte affichera une alerte.
 
 🔹 **Dans le fichier `evenement.html`**
 
-**<H3 STYLE="COLOR:red;">Activité n°43 :**</H3> 
+???+ question "Activité n°43 :"
 
-Le mot-clé `this` **référence l’élément HTML qui a déclenché l’événement**.
+    Le mot-clé `this` **référence l’élément HTML qui a déclenché l’événement**.
 
-📌 **Modifier un champ de texte au focus et blur**
-```html
-<body>
-    <input type="text" id="input" size="50" value="Cliquez ici"
-           onfocus="this.value = 'Écrivez quelque chose...'"
-           onblur="this.value = 'Cliquez ici !'">
-</body>
-```
+    📌 **Modifier un champ de texte au focus et blur**
+    ```html
+    <body>
+        <input type="text" id="input" size="50" value="Cliquez ici"
+            onfocus="this.value = 'Écrivez quelque chose...'"
+            onblur="this.value = 'Cliquez ici !'">
+    </body>
+    ```
 ✅ **Explication** :  
 
 - **`onfocus`** → Quand l'utilisateur clique sur le champ, le texte change.
@@ -1253,38 +1260,37 @@ Le mot-clé `this` **référence l’élément HTML qui a déclenché l’évén
 
 On peut attacher plusieurs événements **à un seul élément**.
 
-**<H3 STYLE="COLOR:red;">Activité n°44 :**</H3> 
+???+ question "Activité n°44 :"
 
-📌 **Ajouter plusieurs événements avec `addEventListener()`**
-```html
-<body>
-    <button id="clickIt">Cliquez ici !</button> 
-    <p id="hoverPara">Passez la souris sur ce texte !</p>
-    <b id="effect"></b>
+    📌 **Ajouter plusieurs événements avec `addEventListener()`**
+    ```html
+    <body>
+        <button id="clickIt">Cliquez ici !</button> 
+        <p id="hoverPara">Passez la souris sur ce texte !</p>
+        <b id="effect"></b>
 
-    <script>
-        const bouton = document.getElementById("clickIt");
-        const texte = document.getElementById("hoverPara");
+        <script>
+            const bouton = document.getElementById("clickIt");
+            const texte = document.getElementById("hoverPara");
 
-        bouton.addEventListener("click", RespondClick);
-        texte.addEventListener("mouseover", RespondMouseOver);
-        texte.addEventListener("mouseout", RespondMouseOut);
+            bouton.addEventListener("click", RespondClick);
+            texte.addEventListener("mouseover", RespondMouseOver);
+            texte.addEventListener("mouseout", RespondMouseOut);
 
-        function RespondClick() {
-            document.getElementById("effect").innerHTML += "Clic détecté !<br>";
-        }
+            function RespondClick() {
+                document.getElementById("effect").innerHTML += "Clic détecté !<br>";
+            }
 
-        function RespondMouseOver() {
-            document.getElementById("effect").innerHTML += "MouseOver détecté !<br>";
-        }
+            function RespondMouseOver() {
+                document.getElementById("effect").innerHTML += "MouseOver détecté !<br>";
+            }
 
-        function RespondMouseOut() {
-            document.getElementById("effect").innerHTML += "MouseOut détecté !<br>";
-        }
-    </script>
-</body>
-
-```
+            function RespondMouseOut() {
+                document.getElementById("effect").innerHTML += "MouseOut détecté !<br>";
+            }
+        </script>
+    </body>
+    ```
 ✅ **Explication** :  
 
 - **Le bouton** déclenche un message `"Clic détecté !"`.
@@ -1301,38 +1307,39 @@ On peut attacher plusieurs événements **à un seul élément**.
 
 Avec `removeEventListener()`, on peut **désactiver un événement**.
 
-**<H3 STYLE="COLOR:red;">Activité n°45 :**</H3>
+???+ question "Activité n°45 :"
 
-📌 **Supprimer un événement après un clic**
-```html
-<body>
-    <button id="desactiver">Désactiver le clic</button>
-    <button id="bouton">Cliquez ici !</button>
+    📌 **Supprimer un événement après un clic**
+    ```html
+    <body>
+        <button id="desactiver">Désactiver le clic</button>
+        <button id="bouton">Cliquez ici !</button>
 
-    <script>
-        // Définition de la fonction en dehors de l'événement
-        function afficherMessage() {
-            console.log("Bouton cliqué !");
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            var bouton = document.getElementById("bouton");
-            var desactiver = document.getElementById("desactiver");
-
-            if (bouton && desactiver) {
-                bouton.addEventListener("click", afficherMessage);
-
-                desactiver.addEventListener("click", function () {
-                    bouton.removeEventListener("click", afficherMessage);
-                    console.log("L'événement a été supprimé !");
-                });
-            } else {
-                console.error("Un des boutons n'existe pas !");
+        <script>
+            // Définition de la fonction en dehors de l'événement
+            function afficherMessage() {
+                console.log("Bouton cliqué !");
             }
-        });
-    </script>
-</body>
-```
+
+            document.addEventListener("DOMContentLoaded", function () {
+                var bouton = document.getElementById("bouton");
+                var desactiver = document.getElementById("desactiver");
+
+                if (bouton && desactiver) {
+                    bouton.addEventListener("click", afficherMessage);
+
+                    desactiver.addEventListener("click", function () {
+                        bouton.removeEventListener("click", afficherMessage);
+                        console.log("L'événement a été supprimé !");
+                    });
+                } else {
+                    console.error("Un des boutons n'existe pas !");
+                }
+            });
+        </script>
+    </body>
+    ```
+
 ✅ **Explication** :  
 
 - `removeEventListener("click", afficherMessage)` **désactive l'événement**.
@@ -1345,258 +1352,260 @@ Avec `removeEventListener()`, on peut **désactiver un événement**.
 
 => CAPYTALE Le code vous sera donné par votre enseignant 
 
-**<H3 STYLE="COLOR:red;">Exercice 1 : Jeu de devinette de nombre**</H3>
+!!! abstract "Exercice 1 : Jeu de devinette de nombre"
 
-**But du jeu :** L'utilisateur doit deviner un nombre aléatoire entre 1 et 100.
+    **But du jeu :** L'utilisateur doit deviner un nombre aléatoire entre 1 et 100.
 
-**Étapes :**
-1. **HTML :** Créez une structure de base avec un champ de saisie pour entrer la supposition et un bouton pour soumettre la supposition.
-2. **JavaScript :**
-   - Générer un nombre aléatoire entre 1 et 100.
-   - Ajouter un événement de clic au bouton de soumission.
-   - Lorsque le bouton est cliqué, récupérer la supposition de l'utilisateur et vérifier si elle est correcte, trop élevée ou trop basse.
-   - Afficher un message indiquant si la supposition est correcte, trop élevée ou trop basse.
-   - Utiliser une boucle pour permettre plusieurs essais jusqu'à ce que l'utilisateur devine correctement.
+    **Étapes :**
+    1. **HTML :** Créez une structure de base avec un champ de saisie pour entrer la supposition et un bouton pour soumettre la supposition.
+    2. **JavaScript :**
+    - Générer un nombre aléatoire entre 1 et 100.
+    - Ajouter un événement de clic au bouton de soumission.
+    - Lorsque le bouton est cliqué, récupérer la supposition de l'utilisateur et vérifier si elle est correcte, trop élevée ou trop basse.
+    - Afficher un message indiquant si la supposition est correcte, trop élevée ou trop basse.
+    - Utiliser une boucle pour permettre plusieurs essais jusqu'à ce que l'utilisateur devine correctement.
 
-**Code HTML de exo1.html**
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Jeu de Devinette</title>
-</head>
-<body>
-    <h1>Devinez le nombre</h1>
-    <p>Je pense à un nombre entre 1 et 100. Pouvez-vous le deviner ?</p>
-    <input type="number" id="guess" placeholder="Entrez votre supposition">
-    <button id="submitGuess">Soumettre</button>
-    <p id="result"></p>
-    <script src="exo1.js"></script>
-</body>
-</html>
-```
-
-**Code JavaScript de exo1.js à trous à compléter**
-```javascript
-// exo1.js
-
-// Question 1 : Quelle méthode permet de
-
- générer un nombre aléatoire entre 1 et 100 ?
-// Remplissez le blanc avec la bonne méthode pour générer un nombre aléatoire.
-// Indice : Utilisez Math.random() et Math.floor().
-let randomNumber = ...(... * 100) + 1;
-
-let guesses = 0;
-
-// Question 2 : Comment ajouter un événement de clic au bouton "Soumettre" ?
-document.getElementById('submitGuess').addEventListener(..., function() {
-
-    let userGuess = parseInt(document.getElementById('guess').value);
-    guesses++;
-    
-    // Question 3 : Où devons-nous afficher le résultat du jeu ?
-    let result = document.getElementById(...);
-
-    // Question 4 : Comment vérifier si la supposition de l'utilisateur est correcte ?
-    if (... === randomNumber) {
-        result.textContent = `Félicitations ! Vous avez deviné le nombre en ${guesses} essais.`;
-    } else if (userGuess < randomNumber) {
-        // Question 5 : Complétez le message à afficher lorsque la supposition est trop basse.
-        result.textContent = ...;
-    } else {
-        // Question 6 : Complétez le message à afficher lorsque la supposition est trop haute.
-        result.textContent = ...;
-    }
-});
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 2 : Calculatrice de base**</H3>
-**Concepts : Variables, opérateurs, fonctions**
-- **Mise en contexte :** Développez une calculatrice simple où les utilisateurs peuvent entrer deux nombres et choisir une opération (addition, soustraction, multiplication, division) pour obtenir le résultat.
-
-**Code HTML de exo2.html**
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Calculatrice</title>
-</head>
-<body>
-    <h1>Calculatrice Simple</h1>
-    <input type="number" id="num1" placeholder="Nombre 1">
-    <input type="number" id="num2" placeholder="Nombre 2">
-    <select id="operation">
-        <option value="add">Addition</option>
-        <option value="subtract">Soustraction</option>
-        <option value="multiply">Multiplication</option>
-        <option value="divide">Division</option>
-    </select>
-    <button id="calculate">Calculer</button>
-    <p id="result"></p>
-    <script src="exo2.js"></script>
-</body>
-</html>
-```
-
-**Code JavaScript de exo2.js à trous à compléter**
-```javascript
-// exo2.js
-
-// Question 1 : Comment ajouter un événement de clic au bouton "Calculer" ?
-document.getElementById(...).addEventListener('click', function() {
-
-    // Question 2 : Comment récupérer les valeurs des champs de saisie et les convertir en nombres ?
-    let num1 = parseFloat(document.getElementById(...).value);
-    let num2 = parseFloat(document.getElementById(...).value);
-
-    // Question 3 : Comment récupérer la valeur de l'opération sélectionnée dans le menu déroulant ?
-    let operation = document.getElementById(...).value;
-    
-    // Question 4 : Quelle variable devons-nous utiliser pour stocker le résultat du calcul ?
-    let ...;
-
-    
-    if (operation === 'add') {
-        result = num1 + num2;
-    } else if (operation === 'subtract') {
-        result = num1 - num2;
-    } else if (operation === 'multiply') {
-        result = num1 * num2;
-    } else if (operation === 'divide') {
-        result = num1 / num2;
-    }
-
-    // Question 5 : Où devons-nous afficher le résultat du calcul ?
-    document.getElementById(...).textContent = 'Résultat : ' + result;
-});
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 3 : Liste de tâches (To-Do List)**</H3>
-**Concepts : Manipulation du DOM, événements, boucles**
-- **Mise en contexte :** Créez une application où les utilisateurs peuvent ajouter des tâches, les marquer comme complétées, et les supprimer.
-
-**Code HTML de exo3.html**
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Liste de Tâches</title>
-</head>
-<body>
-    <h1>Liste de Tâches</h1>
-    <input type="text" id="taskInput" placeholder="Nouvelle tâche">
-    <button id="addTask">Ajouter</button>
-    <ul id="taskList"></ul>
-    <script src="exo3.js"></script>
-</body>
-</html>
-```
-
-**Code JavaScript de exo3.js à trous à compléter**
-```javascript
-// exo3.js
-// Question 1 : Comment ajouter un événement de clic au bouton "Ajouter" ?
-document.getElementById('addTask').addEventListener(..., function() {
-
-    // Question 2 : Comment récupérer la valeur du champ de saisie ?
-    let taskInput = document.getElementById('taskInput');
-    let taskText = taskInput....;
-
-    taskInput.value = '';
-
-    // Question 3 : Comment créer un nouvel élément de liste (li) pour la nouvelle tâche ?
-    let li = document.createElement(...);
-    li.textContent = taskText;
-
-    // Question 4 : Comment créer un bouton pour marquer la tâche comme complétée ?
-    let completeButton = document.createElement(...);
-    completeButton.textContent = 'Compléter';
-    completeButton.addEventListener('click', function() {
-        li.style.textDecoration = 'line-through';
-    });
-
-    // Question 5 : Comment créer un bouton pour supprimer la tâche ?
-    let deleteButton = document.createElement(...);
-    deleteButton.textContent = 'Supprimer';
-    deleteButton.addEventListener('click', function() {
-        li.remove();
-    });
-
-    // Question 6 : Comment ajouter les boutons à l'élément de liste ?
-    li.appendChild(...);
-    li.appendChild(...);
-
-    // Question 7 : Comment ajouter l'élément de liste à la liste de tâches ?
-    document.getElementById(...).appendChild(li);
-});
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 4 : Quiz interactif**</H3>
-**Concepts : Conditions, boucles, manipulation du DOM**
-- **Mise en contexte :** Créez un quiz où les utilisateurs répondent à une série de questions et reçoivent une note à la fin.
-
-**Code HTML de exo4.html**
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Quiz Interactif</title>
-</head>
-<body>
-    <h1>Quiz Interactif</h1>
-    <div id="quiz">
-        <p>1. Quelle est la capitale de la France ?</p>
-        <input type="radio" name="q1" value="Paris"> Paris<br>
-        <input type="radio" name="q1" value="Londres"> Londres<br>
-        <input type="radio" name="q1" value="Berlin"> Berlin<br>
-        <p>2. Quelle est la capitale de l'Allemagne ?</p>
-        <input type="radio" name="q2" value="Paris"> Paris<br>
-        <input type="radio" name="q2" value="Londres"> Londres<br>
-        <input type="radio" name="q2" value="Berlin"> Berlin<br>
-        <button id="submitQuiz">Soumettre</button>
+    **Code HTML de exo1.html**
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Jeu de Devinette</title>
+    </head>
+    <body>
+        <h1>Devinez le nombre</h1>
+        <p>Je pense à un nombre entre 1 et 100. Pouvez-vous le deviner ?</p>
+        <input type="number" id="guess" placeholder="Entrez votre supposition">
+        <button id="submitGuess">Soumettre</button>
         <p id="result"></p>
-    </div>
-    <script src="exo4.js"></script>
-</body>
-</html>
-```
+        <script src="exo1.js"></script>
+    </body>
+    </html>
+    ```
 
-**Code JavaScript de exo4.js à trous à compléter**
-```javascript
-// exo4.js
+    **Code JavaScript de exo1.js à trous à compléter**
+    ```javascript
+    // exo1.js
 
-// Question 1 : Comment ajouter un événement de clic au bouton "Soumettre" ?
-document.getElementById('submitQuiz').addEventListener(..., function() {
+    // Question 1 : Quelle méthode permet de
 
-    // Question 2 : Quelle variable devons-nous utiliser pour stocker le score ?
-    let score = ...;
+    générer un nombre aléatoire entre 1 et 100 ?
+    // Remplissez le blanc avec la bonne méthode pour générer un nombre aléatoire.
+    // Indice : Utilisez Math.random() et Math.floor().
+    let randomNumber = ...(... * 100) + 1;
 
-    // Question 3 : Quelle variable devons-nous utiliser pour stocker le nombre total de questions ?
-    let totalQuestions = ...;
+    let guesses = 0;
 
-    // on récupère la réponse sélectionnée pour la première question 
-    let q1 = document.querySelector('input[name="q1"]:checked');
+    // Question 2 : Comment ajouter un événement de clic au bouton "Soumettre" ?
+    document.getElementById('submitGuess').addEventListener(..., function() {
 
-    let q2 = document.querySelector('input[name="q2"]:checked');
+        let userGuess = parseInt(document.getElementById('guess').value);
+        guesses++;
+        
+        // Question 3 : Où devons-nous afficher le résultat du jeu ?
+        let result = document.getElementById(...);
 
-    // Question 4 : Comment vérifier si la réponse à la première question est correcte ?
-    if (q1 && q1.... === 'Paris') {
-        score++;
-    }
+        // Question 4 : Comment vérifier si la supposition de l'utilisateur est correcte ?
+        if (... === randomNumber) {
+            result.textContent = `Félicitations ! Vous avez deviné le nombre en ${guesses} essais.`;
+        } else if (userGuess < randomNumber) {
+            // Question 5 : Complétez le message à afficher lorsque la supposition est trop basse.
+            result.textContent = ...;
+        } else {
+            // Question 6 : Complétez le message à afficher lorsque la supposition est trop haute.
+            result.textContent = ...;
+        }
+    });
+    ```
 
-    // Question 5 : Comment vérifier si la réponse à la deuxième question est correcte ?
-    if (q2 && q2.... === 'Berlin') {
-        score++;
-    }
+!!! abstract "Exercice 2 : Calculatrice de base"
 
-    // Question 6 : Où devons-nous afficher le résultat du quiz ?
-    let result = document.getElementById(...);
-    result.textContent = `Vous avez obtenu ${score} sur ${totalQuestions}`;
-});
+    **Concepts : Variables, opérateurs, fonctions**
+    - **Mise en contexte :** Développez une calculatrice simple où les utilisateurs peuvent entrer deux nombres et choisir une opération (addition, soustraction, multiplication, division) pour obtenir le résultat.
 
-```
+    **Code HTML de exo2.html**
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculatrice</title>
+    </head>
+    <body>
+        <h1>Calculatrice Simple</h1>
+        <input type="number" id="num1" placeholder="Nombre 1">
+        <input type="number" id="num2" placeholder="Nombre 2">
+        <select id="operation">
+            <option value="add">Addition</option>
+            <option value="subtract">Soustraction</option>
+            <option value="multiply">Multiplication</option>
+            <option value="divide">Division</option>
+        </select>
+        <button id="calculate">Calculer</button>
+        <p id="result"></p>
+        <script src="exo2.js"></script>
+    </body>
+    </html>
+    ```
+
+    **Code JavaScript de exo2.js à trous à compléter**
+    ```javascript
+    // exo2.js
+
+    // Question 1 : Comment ajouter un événement de clic au bouton "Calculer" ?
+    document.getElementById(...).addEventListener('click', function() {
+
+        // Question 2 : Comment récupérer les valeurs des champs de saisie et les convertir en nombres ?
+        let num1 = parseFloat(document.getElementById(...).value);
+        let num2 = parseFloat(document.getElementById(...).value);
+
+        // Question 3 : Comment récupérer la valeur de l'opération sélectionnée dans le menu déroulant ?
+        let operation = document.getElementById(...).value;
+        
+        // Question 4 : Quelle variable devons-nous utiliser pour stocker le résultat du calcul ?
+        let ...;
+
+        
+        if (operation === 'add') {
+            result = num1 + num2;
+        } else if (operation === 'subtract') {
+            result = num1 - num2;
+        } else if (operation === 'multiply') {
+            result = num1 * num2;
+        } else if (operation === 'divide') {
+            result = num1 / num2;
+        }
+
+        // Question 5 : Où devons-nous afficher le résultat du calcul ?
+        document.getElementById(...).textContent = 'Résultat : ' + result;
+    });
+    ```
+
+!!! abstract "Exercice 3 : Liste de tâches (To-Do List)"
+
+    **Concepts : Manipulation du DOM, événements, boucles**
+    - **Mise en contexte :** Créez une application où les utilisateurs peuvent ajouter des tâches, les marquer comme complétées, et les supprimer.
+
+    **Code HTML de exo3.html**
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Liste de Tâches</title>
+    </head>
+    <body>
+        <h1>Liste de Tâches</h1>
+        <input type="text" id="taskInput" placeholder="Nouvelle tâche">
+        <button id="addTask">Ajouter</button>
+        <ul id="taskList"></ul>
+        <script src="exo3.js"></script>
+    </body>
+    </html>
+    ```
+
+    **Code JavaScript de exo3.js à trous à compléter**
+    ```javascript
+    // exo3.js
+    // Question 1 : Comment ajouter un événement de clic au bouton "Ajouter" ?
+    document.getElementById('addTask').addEventListener(..., function() {
+
+        // Question 2 : Comment récupérer la valeur du champ de saisie ?
+        let taskInput = document.getElementById('taskInput');
+        let taskText = taskInput....;
+
+        taskInput.value = '';
+
+        // Question 3 : Comment créer un nouvel élément de liste (li) pour la nouvelle tâche ?
+        let li = document.createElement(...);
+        li.textContent = taskText;
+
+        // Question 4 : Comment créer un bouton pour marquer la tâche comme complétée ?
+        let completeButton = document.createElement(...);
+        completeButton.textContent = 'Compléter';
+        completeButton.addEventListener('click', function() {
+            li.style.textDecoration = 'line-through';
+        });
+
+        // Question 5 : Comment créer un bouton pour supprimer la tâche ?
+        let deleteButton = document.createElement(...);
+        deleteButton.textContent = 'Supprimer';
+        deleteButton.addEventListener('click', function() {
+            li.remove();
+        });
+
+        // Question 6 : Comment ajouter les boutons à l'élément de liste ?
+        li.appendChild(...);
+        li.appendChild(...);
+
+        // Question 7 : Comment ajouter l'élément de liste à la liste de tâches ?
+        document.getElementById(...).appendChild(li);
+    });
+    ```
+
+!!! abstract "Exercice 4 : Quiz interactif"
+    **Concepts : Conditions, boucles, manipulation du DOM**
+    - **Mise en contexte :** Créez un quiz où les utilisateurs répondent à une série de questions et reçoivent une note à la fin.
+
+    **Code HTML de exo4.html**
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Quiz Interactif</title>
+    </head>
+    <body>
+        <h1>Quiz Interactif</h1>
+        <div id="quiz">
+            <p>1. Quelle est la capitale de la France ?</p>
+            <input type="radio" name="q1" value="Paris"> Paris<br>
+            <input type="radio" name="q1" value="Londres"> Londres<br>
+            <input type="radio" name="q1" value="Berlin"> Berlin<br>
+            <p>2. Quelle est la capitale de l'Allemagne ?</p>
+            <input type="radio" name="q2" value="Paris"> Paris<br>
+            <input type="radio" name="q2" value="Londres"> Londres<br>
+            <input type="radio" name="q2" value="Berlin"> Berlin<br>
+            <button id="submitQuiz">Soumettre</button>
+            <p id="result"></p>
+        </div>
+        <script src="exo4.js"></script>
+    </body>
+    </html>
+    ```
+
+    **Code JavaScript de exo4.js à trous à compléter**
+    ```javascript
+    // exo4.js
+
+    // Question 1 : Comment ajouter un événement de clic au bouton "Soumettre" ?
+    document.getElementById('submitQuiz').addEventListener(..., function() {
+
+        // Question 2 : Quelle variable devons-nous utiliser pour stocker le score ?
+        let score = ...;
+
+        // Question 3 : Quelle variable devons-nous utiliser pour stocker le nombre total de questions ?
+        let totalQuestions = ...;
+
+        // on récupère la réponse sélectionnée pour la première question 
+        let q1 = document.querySelector('input[name="q1"]:checked');
+
+        let q2 = document.querySelector('input[name="q2"]:checked');
+
+        // Question 4 : Comment vérifier si la réponse à la première question est correcte ?
+        if (q1 && q1.... === 'Paris') {
+            score++;
+        }
+
+        // Question 5 : Comment vérifier si la réponse à la deuxième question est correcte ?
+        if (q2 && q2.... === 'Berlin') {
+            score++;
+        }
+
+        // Question 6 : Où devons-nous afficher le résultat du quiz ?
+        let result = document.getElementById(...);
+        result.textContent = `Vous avez obtenu ${score} sur ${totalQuestions}`;
+    });
+
+    ```
