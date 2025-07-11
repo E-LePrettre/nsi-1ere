@@ -155,7 +155,7 @@ L’instruction `assert` est utilisée pour **vérifier rapidement** que le prog
 
 - La condition `if __name__ == '__main__':` garantit que ces tests ne s’exécutent **que si le fichier est exécuté directement**.
 
-???+ question "Activité n°3 : Vérifier une division euclidienne"
+???+ question "Activité n°4 : Vérifier une division euclidienne"
 
     **Tester :**
 
@@ -192,7 +192,7 @@ L’instruction `assert` est utilisée pour **vérifier rapidement** que le prog
 
 `doctest` permet de **vérifier automatiquement** que les exemples donnés dans la docstring sont corrects.
 
-???+ question "Activité n°4 : Tester avec `doctest`"
+???+ question "Activité n°5 : Tester avec `doctest`"
 
     **Tester :**
 
@@ -234,7 +234,7 @@ L’instruction `assert` est utilisée pour **vérifier rapidement** que le prog
 
 ---
 
-???+ question "Activité n°5 : Introduire une erreur dans `doctest`"
+???+ question "Activité n°6 : Introduire une erreur dans `doctest`"
 
     **Tester :**
 
@@ -274,7 +274,7 @@ L’instruction `assert` est utilisée pour **vérifier rapidement** que le prog
 
 ---
 
-???+ question "Activité n°6 : Activer le mode `verbose` dans `doctest`"
+???+ question "Activité n°7 : Activer le mode `verbose` dans `doctest`"
 
     **Tester :**
 
@@ -322,7 +322,7 @@ L’instruction `assert` est utilisée pour **vérifier rapidement** que le prog
 
 Les assertions permettent de **vérifier les résultats** tout au long de l'exécution d'un programme, et pas seulement **test par test**.
 
-???+ question "Activité n°7 :"
+???+ question "Activité n°8 :"
 
     **Tester :**
 
@@ -405,7 +405,7 @@ On peut noter les 2 manières d’importer le module :
 >>> randrange(10,20,3) #retourne un entier entre 10 et 19 et un pas =3 
 ```
 
-???+ question "Activité n°8 :"
+???+ question "Activité n°9 :"
 
     **Tester :**
 
@@ -443,7 +443,7 @@ Ce sont les erreurs que peut rencontrer Python en exécutant le programme. Ces e
 
 Une **exception** est une erreur qui se produit lors de l’exécution du programme. Si elle n'est pas gérée, **le programme s’arrête brutalement**.
  
-???+ question "Activité n°8 :"
+???+ question "Activité n°10 :"
 
     **Tester :**
 
@@ -469,7 +469,7 @@ On peut **éviter l'arrêt brutal** d'un programme en capturant les erreurs avec
 
 #### **<H4 STYLE="COLOR:MAGENTA;">5.2.1. Forme<a name="_page10_x40.00_y106.92"></a> minimale du bloc try</h4>**
 
-???+ question "Activité n°9 : Gestion des erreurs d’entrée utilisateur"
+???+ question "Activité n°11 : Gestion des erreurs d’entrée utilisateur"
 
     ```python
     annee = input('Entrer une année : ')
@@ -499,7 +499,7 @@ On peut **éviter l'arrêt brutal** d'un programme en capturant les erreurs avec
 
 On peut capturer **différents types d’erreurs** séparément.
 
-???+ question "Activité n°10 : Gérer plusieurs erreurs"
+???+ question "Activité n°12 : Gérer plusieurs erreurs"
 
     ```python
     numerateur = input('Numérateur ? ')
@@ -595,7 +595,7 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
 ## **<H2 STYLE="COLOR:BLUE;">6. Exercices<a name="_page13_x40.00_y375.92"></a></h2>** 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-???+ question "Exercice 1"  
+!!! abstract "Exercice 1"  
     On considère la fonction multiplier_par_deux(x) qui prend en paramètre x et qui renvoie son double. Ecrire un script de cette fonction avec : 
 
 
@@ -605,7 +605,7 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
 
 
 
-???+ question "Exercice 2" 
+!!! abstract "Exercice 2" 
 
     On considère une fonction somme_carres(x) qui prend en paramètre x (entier strictement positif) et renvoie la somme des x premiers carrés non nuls.  
 
@@ -617,7 +617,7 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
     - 3 tests en assert (comme dans l’activité 3) : avec 1, avec 2 et avec 3 
 
 
-???+ question "Exercice 3" 
+!!! abstract "Exercice 3" 
 
     La fonction précédente à pour condition d’utilisation : x doit être strictement positif. Déclencher une exception et capturer là si le nombre entrée est 0 ou négatif. 
 
@@ -635,7 +635,7 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
 
 
 
-???+ question "Exercice 4"  
+!!! abstract "Exercice 4"  
     
     On part du script suivant qui permet d’inverser un nombre 
 
@@ -671,7 +671,7 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
 
     Aide : penser à une boucle infinie et au mot clé break.  
 
-???+ question "Exercice 5" 
+!!! abstract "Exercice 5" 
 
     Ecrire un script qui calcule la racine carrée d’un nombre, avec gestion des exceptions. Utiliser la fonction sqrt() du module math.  
 
