@@ -278,7 +278,7 @@ _Remarque : Attention à ne pas confondre :_
 
 ## <span style="color:blue;"> Exercices sur les conditions </span>
 
-???+ question "Exercice 1 : Couleur et Nombre"
+!!! abstract "Exercice 1 : Couleur et Nombre"
 
     Écrire un script qui demande une couleur et un nombre à l’utilisateur.
 
@@ -329,7 +329,7 @@ _Remarque : Attention à ne pas confondre :_
 
 
 
-???+ question "Exercice 2 : Triangle"
+!!! abstract "Exercice 2 : Triangle"
 
     1. Écrire un programme qui demande à l'utilisateur les longueurs des côtés d'un triangle (ces longueurs étant entières) et qui indique si ce triangle est **équilatéral** ou pas.
 
@@ -552,7 +552,7 @@ _Modifiez la chaîne pour tester d'autres phrases._
 
 ## <span style="color:blue;">Exercices sur la boucle for</span>
 
-???+ question "Exercice 1 : Afficher les 100 premiers nombres entiers"
+!!! abstract "Exercice 1 : Afficher les 100 premiers nombres entiers"
 
     Écrire un script qui permet d’afficher les 100 premiers nombres entiers NON NULS.
 
@@ -571,7 +571,7 @@ _Modifiez la chaîne pour tester d'autres phrases._
         **Explication :**
         - La boucle commence à 1 et s'arrête à 100.
 
-???+ question "Exercice 2 : Calculer des sommes"
+!!! abstract "Exercice 2 : Calculer des sommes"
 
     Écrire un programme en Python pour calculer :
 
@@ -612,7 +612,7 @@ _Modifiez la chaîne pour tester d'autres phrases._
         - Pour **a)**, on additionne tous les nombres de 1 à 100.
         - Pour **b)**, on additionne tous les nombres impairs de 1 à 99.
 
-???+ question "Exercice 3 : Construire une pyramide"
+!!! abstract "Exercice 3 : Construire une pyramide"
 
     Inès veut construire une pyramide à base carrée. La pyramide sur la photo a 7 étages.
 
@@ -754,7 +754,7 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
 
 ## <span style="color:blue;"> Exercices sur les boucles</span>
 
-???+ question "Exercice 1 : Riche comme Crésus"
+!!! abstract "Exercice 1 : Riche comme Crésus"
 
     À la naissance de Crésus, son grand-père Midas lui ouvre un compte bancaire. Ensuite, à chaque anniversaire, son grand-père verse sur son compte 100 €, auxquels il ajoute le double de l’âge de Crésus.
 
@@ -791,7 +791,7 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
 
  
 
-???+ question "Exercice 2 : Calculer des produits"
+!!! abstract "Exercice 2 : Calculer des produits"
 
     Écrire un programme Python qui calcule le produit des 100 premiers entiers.
 
@@ -842,7 +842,7 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
 
         - La version avec `for` utilise un compteur automatique, tandis que la version avec `while` gère le compteur manuellement.
 
-???+ question "Exercice 3 : Pliage"
+!!! abstract "Exercice 3 : Pliage"
 
     On dispose d’une feuille de papier d’épaisseur 0,1 mm. Combien de fois doit-on la plier au minimum pour que l’épaisseur dépasse 400 mm ?
 
