@@ -736,7 +736,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
         while compt < 5:
             print(compt)
             compt += 1  # Incrémentation
-        return f"Le compteur vaut {compt} à la fin de la boucle."
+        return "Le compteur vaut", compt, "à la fin de la boucle."
     ```
 
     **Exécuter :**
@@ -1144,7 +1144,7 @@ Il est parfois utile de donner **une valeur par défaut** aux paramètres.
 
     ```python
     def vetement(couleur_pull='rouge', couleur_pantalon='bleu'): 
-        return f"Le pull est {couleur_pull} et le pantalon est {couleur_pantalon}"
+        return "Le pull est", couleur_pull, "et le pantalon est",couleur_pantalon
     ```
 
     **Exécuter :**
@@ -1177,21 +1177,20 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
 📌 **Exemple : une fonction qui calcule le carré d’un nombre entier** :
 
-```python
-def carre(nombre: int) -> int:
-    return nombre ** 2
-```
+???+ question "Activité n°23 : Valeurs par défaut"
+    ```python
+    def carre(nombre: int) -> int:
+        return nombre ** 2
+    ```
 
-✅ **Tester :**
-
-???+ question "Tester :"
+    **Tester :**
 
     ```python
     print(carre(5))  # Affiche 25
     ```
 
     ??? success "Python"
-        {{ terminal() }}
+        {{ IDE() }}
 
 
 
