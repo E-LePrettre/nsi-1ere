@@ -151,9 +151,9 @@ L’instruction `assert` est utilisée pour **vérifier rapidement** que le prog
 
 **Explication :**
 
-    - `assert` teste plusieurs cas et arrête le programme **si un test échoue**.
+- `assert` teste plusieurs cas et arrête le programme **si un test échoue**.
 
-    - La condition `if __name__ == '__main__':` garantit que ces tests ne s’exécutent **que si le fichier est exécuté directement**.
+- La condition `if __name__ == '__main__':` garantit que ces tests ne s’exécutent **que si le fichier est exécuté directement**.
 
 ???+ question "Activité n°3 : Vérifier une division euclidienne"
 
@@ -379,9 +379,9 @@ Une bibliothèque est une **collection de modules**. C'est un ensemble plus larg
 Voici un exemple d’utilisation d’une bibliothèque Python standard, le module ```math``` qui contient des fonctions mathématiques comme sqrt() (racine carrée) ou ```random``` qui contient randint.
 On peut noter les 2 manières d’importer le module : 
 
-- import nom_du_module 
+- import `nom_du_module`
 
-- from nom_du_module import nom_de_la_fonction
+- from `nom_du_module` import `nom_de_la_fonction`
 
 
 ```
@@ -595,97 +595,105 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
 ## **<H2 STYLE="COLOR:BLUE;">6. Exercices<a name="_page13_x40.00_y375.92"></a></h2>** 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:red;">Exercice 1 :</H3>** On considère la fonction multiplier_par_deux(x) qui prend en paramètre x et qui renvoie son double. Ecrire un script de cette fonction avec : 
+???+ question "Exercice 1"  
+    On considère la fonction multiplier_par_deux(x) qui prend en paramètre x et qui renvoie son double. Ecrire un script de cette fonction avec : 
 
 
-- Sa documentation dans le docstring comme dans le cours. Ne pas mettre d’exemples 
+    - Sa documentation dans le docstring comme dans le cours. Ne pas mettre d’exemples 
 
-- 4 tests en assert  : avec 0, avec -1, avec 3.2 et avec ‘a’ 
-
-
-
-**<H3 STYLE="COLOR:red;">Exercice 2:</H3>** : On considère une fonction somme_carres(x) qui prend en paramètre x (entier strictement positif) et renvoie la somme des x premiers carrés non nuls.  
-
-Ecrire un script de cette fonction avec : 
-
-
-- Sa documentation dans le docstring comme dans l’activité 1. Ne pas mettre d’exemples 
-
-- 3 tests en assert (comme dans l’activité 3) : avec 1, avec 2 et avec 3 
+    - 4 tests en assert  : avec 0, avec -1, avec 3.2 et avec ‘a’ 
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 3:</H3>** : La fonction précédente à pour condition d’utilisation : x doit être strictement positif. Déclencher une exception et capturer là si le nombre entrée est 0 ou négatif. 
+???+ question "Exercice 2" 
 
-Exemple : 
-```
->>> somme_carres(5)
-55
+    On considère une fonction somme_carres(x) qui prend en paramètre x (entier strictement positif) et renvoie la somme des x premiers carrés non nuls.  
 
->>> somme_carres(0)
-Le nombre entré est nul ou négatif
-
->>> somme_carres(-2)
-Le nombre entré est nul ou négatif
-```
+    Ecrire un script de cette fonction avec : 
 
 
+    - Sa documentation dans le docstring comme dans l’activité 1. Ne pas mettre d’exemples 
 
-**<H3 STYLE="COLOR:red;">Exercice 4 :</H3>** On part du script suivant qui permet d’inverser un nombre 
-
-```python
-try:
-    chaine = input('Entrer un nombre : ') # permet de pouvoir gérer l’exception ValueError
-    nombre = float(chaine)
-    inverse = 1.0/nombre
-except ValueError:
-    #ce bloc est exécuté si une exception de type ValueError est levée dans le bloc try
-    print(chaine, "n'est pas un nombre !")
-
-except ZeroDivisionError:
-#ce bloc est exécuté si une exception de type ZeroDivisionError est levée dans le bloc try
-    print("Division par zéro !")
-else:
-    #on arrive ici si aucune exception n'est levée dans le bloc try
-    print("L'inverse de", nombre, "est :", inverse) 
-```
+    - 3 tests en assert (comme dans l’activité 3) : avec 1, avec 2 et avec 3 
 
 
-Compléter le script précédent de manière à ressaisir le nombre en cas d’erreur. On pourra englober le script dans une boucle while. Par exemple : 
+???+ question "Exercice 3" 
 
-Tester avec :
+    La fonction précédente à pour condition d’utilisation : x doit être strictement positif. Déclencher une exception et capturer là si le nombre entrée est 0 ou négatif. 
 
-- 'a'
+    Exemple : 
+    ```
+    >>> somme_carres(5)
+    55
 
-- relancer le programme et tester avec => 'salut !'
+    >>> somme_carres(0)
+    Le nombre entré est nul ou négatif
 
-- relancer le programme et tester avec => 0
+    >>> somme_carres(-2)
+    Le nombre entré est nul ou négatif
+    ```
 
-- relancer le programme et tester avec => 2
 
-Aide : penser à une boucle infinie et au mot clé break.  
 
-**<H3 STYLE="COLOR:red;">Exercice 5 :</H3>** Ecrire un script qui calcule la racine carrée d’un nombre, avec gestion des exceptions. Utiliser la fonction sqrt() du module math.  
+???+ question "Exercice 4"  
+    
+    On part du script suivant qui permet d’inverser un nombre 
 
-Par exemple : 
-``` 
-Entrer un nombre : >? go
-go n'est pas un nombre valide !
-Entrer un nombre : >? -5.26
--5.26 n'est pas un nombre valide !
-Entrer un nombre : >? 16
-La racine de  16.0 est : 4.0
-```
+    ```python
+    try:
+        chaine = input('Entrer un nombre : ') # permet de pouvoir gérer l’exception ValueError
+        nombre = float(chaine)
+        inverse = 1.0/nombre
+    except ValueError:
+        #ce bloc est exécuté si une exception de type ValueError est levée dans le bloc try
+        print(chaine, "n'est pas un nombre !")
 
-Tester avec :
+    except ZeroDivisionError:
+    #ce bloc est exécuté si une exception de type ZeroDivisionError est levée dans le bloc try
+        print("Division par zéro !")
+    else:
+        #on arrive ici si aucune exception n'est levée dans le bloc try
+        print("L'inverse de", nombre, "est :", inverse) 
+    ```
 
-- "go"
 
-- relancer le programme et tester avec => -5.26
+    Compléter le script précédent de manière à ressaisir le nombre en cas d’erreur. On pourra englober le script dans une boucle while. Par exemple : 
 
-- relancer le programme et tester avec => 16
+    Tester avec :
 
-Remarquez bien qu’on demande le nombre à l’utilisateur *jusqu'à* ce qu’il convienne. 
+    - 'a'
+
+    - relancer le programme et tester avec => 'salut !'
+
+    - relancer le programme et tester avec => 0
+
+    - relancer le programme et tester avec => 2
+
+    Aide : penser à une boucle infinie et au mot clé break.  
+
+???+ question "Exercice 5" 
+
+    Ecrire un script qui calcule la racine carrée d’un nombre, avec gestion des exceptions. Utiliser la fonction sqrt() du module math.  
+
+    Par exemple : 
+    ``` 
+    Entrer un nombre : >? go
+    go n'est pas un nombre valide !
+    Entrer un nombre : >? -5.26
+    -5.26 n'est pas un nombre valide !
+    Entrer un nombre : >? 16
+    La racine de  16.0 est : 4.0
+    ```
+
+    Tester avec :
+
+    - "go"
+
+    - relancer le programme et tester avec => -5.26
+
+    - relancer le programme et tester avec => 16
+
+    Remarquez bien qu’on demande le nombre à l’utilisateur *jusqu'à* ce qu’il convienne. 
 
 [Documentation sur les exceptions ](http://docs.python.org/3/tutorial/errors.html#exceptions)
 Source :[ Fabrice Sincère ](http://fsincere.free.fr/isn/python/cours_python_ch5.php)-[ Contenu sous licence CC BY-NC-SA 3.0 ](http://creativecommons.org/licenses/by-nc-sa/3.0/fr/)
