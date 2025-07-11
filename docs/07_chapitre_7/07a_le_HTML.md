@@ -129,22 +129,23 @@ Autres outils pratiques :
 
 **<p STYLE="COLOR:red;">=> seules les activités sont à faire sur Capytale (pas les exemples)</p>**
 
-**<H3 STYLE="COLOR:red;">Activité n°1. :</H3>** 
-✅ Ouvrir **Capytale** et saisir ce code HTML minimal :
+???+ question "Activité n°1. :"
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Ma première page HTML</title>
-  </head>
-  <body>
-    <p>Bonjour, voici ma première page web !</p>
-  </body>
-</html>
-```
-➡ **Ouvrir la page dans un navigateur** et observer le résultat.
+    ✅ Ouvrir **Capytale** et saisir ce code HTML minimal :
+
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ma première page HTML</title>
+    </head>
+    <body>
+        <p>Bonjour, voici ma première page web !</p>
+    </body>
+    </html>
+    ```
+    ➡ **Oserver le résultat.
 
 
 
@@ -195,22 +196,23 @@ C'est essentiel pour les personne malvoyantes qui auront mis en route l'option l
 
 ### **<H3 STYLE="COLOR:GREEN;">3.4. Structure<a name="_page2_x40.00_y347.92"></a> de base d’une page HTML5**</H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°2. :</H3>**
-✅ Recopier ce code et l’afficher dans le navigateur :
+???+ question "Activité n°2. :"
 
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Première page HTML</title>
-    </head>
-    <body>
-        <h1>Bonjour tout le monde</h1>
-        <p>Ceci est ma première page HTML.</p>
-    </body>
-</html>
-```
+    ✅ Recopier ce code et l’afficher dans le navigateur :
+
+    ```html
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Première page HTML</title>
+        </head>
+        <body>
+            <h1>Bonjour tout le monde</h1>
+            <p>Ceci est ma première page HTML.</p>
+        </body>
+    </html>
+    ```
 
 📌 **Explication du code** :
 
@@ -251,38 +253,39 @@ En **HTML**, le texte est généralement structuré sous forme de **paragraphes*
 ✔️ **Un paragraphe doit toujours être inclus dans `<body>`**.  
 
 
-**<H3 STYLE="COLOR:red;">Activité n°3. :</H3>**
-Créer un paragraphe simple.
+???+ question "Activité n°3. :"
+    
+    Créer un paragraphe simple.
 
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Les passoires</title>
-    </head>
-    <body>
-        <p>Bonjour et bienvenue sur ma page.</p>   
-    </body>
-</html>
-```
-
-
-**<H3 STYLE="COLOR:red;">Activité n°4. :**</H3> 
+    ```html
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Les passoires</title>
+        </head>
+        <body>
+            <p>Bonjour et bienvenue sur ma page.</p>   
+        </body>
+    </html>
+    ```
 
 <p STYLE="COLOR:red;">📌 Attention à partir de cette activité on ne va modifier QUE le body!! </p>
 
-Je voudrais écrire le texte suivant exactement avec la même mise en page ci-dessous à la place de « Bonjour et bienvenue sur ma page ». **À vous de jouer !!**
-```html
-<body>
-    <p>
-        On appelle passoire tout instrument sur lequel on peut définir trois sous-ensembles : l’intérieur, l’extérieur, et les trous.
-        L’intérieur est généralement placé au-dessus de l’extérieur et se compose le plus souvent de nouilles et d’eau.
-        Les trous ne sont pas importants. En effet, une expérience simple permet de se rendre compte que l’on ne change pas notablement les qualités de l’instrument en réduisant de moitié le nombre des trous, puis en réduisant cette moitié de moitié… etc… etc… et à la limite jusqu’à ce qu’il n’y ait plus de trous du tout. D’où le théorème :
-        La notion de passoires est indépendante de la notion de trous et réciproquement.
-    </p>
-</body>
-```
+???+ question "Activité n°4. :"
+
+    Je voudrais écrire le texte suivant exactement avec la même mise en page ci-dessous à la place de « Bonjour et bienvenue sur ma page ». **À vous de jouer !!**
+    ```html
+    <body>
+        <p>
+            On appelle passoire tout instrument sur lequel on peut définir trois sous-ensembles : l’intérieur, l’extérieur, et les trous.
+            L’intérieur est généralement placé au-dessus de l’extérieur et se compose le plus souvent de nouilles et d’eau.
+            Les trous ne sont pas importants. En effet, une expérience simple permet de se rendre compte que l’on ne change pas notablement les qualités de l’instrument en réduisant de moitié le nombre des trous, puis en réduisant cette moitié de moitié… etc… etc… et à la limite jusqu’à ce qu’il n’y ait plus de trous du tout. D’où le théorème :
+            La notion de passoires est indépendante de la notion de trous et réciproquement.
+        </p>
+    </body>
+    ```
+    
 📝 Conseil : Indentez bien votre code pour qu’il soit lisible et compréhensible !
 
 ### **<H3 STYLE="COLOR:GREEN;">4.2. La<a name="_page3_x40.00_y481.92"></a> balise retour à la ligne `<br>`** 🔎</H3>
@@ -291,10 +294,11 @@ En **HTML**, les **retours à la ligne ne sont pas pris en compte automatiquemen
 
 ➡️ Il faut utiliser la **balise orpheline** `<br>` pour forcer un saut de ligne.
 
-**<H3 STYLE="COLOR:red;">Activité n°5. :</H3>** Modifier l’activité précédente pour **garder la mise en page** avec `<br>`.
+???+ question "Activité n°5. :" 
+    
+    Modifier l’activité précédente pour **garder la mise en page** avec `<br>`.
 
-
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.018.jpeg)
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.018.jpeg)
 
 
 
@@ -312,53 +316,61 @@ HTML propose **6 niveaux de titres**, du plus important (`<h1>`) au moins import
 | `<h6>` | Niveau le plus bas |
 
 
-**<H3 STYLE="COLOR:red;">Activité n°6. :</H3>** Ajouter un titre à l’application précédente : Les passoires Puis un sous-titre : Le théorème des passoires,
+???+ question "Activité n°6. :" 
 
-Ainsi, on aura :
+    Ajouter un titre à l’application précédente : Les passoires Puis un sous-titre : Le théorème des passoires,
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.022.jpeg)
+    Ainsi, on aura :
 
-**<H3 STYLE="COLOR:red;">Activité n°7. :</H3>** Ajouter un autre paragraphe à la suite dont voici le texte :
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.022.jpeg)
 
-```
-Les différents ordres de passoires
-On appelle passoires du premier ordre les passoires qui ne laissent passer ni les nouilles ni l'eau. 
-On appelle passoires du second ordre les passoires qui laissent passer et les nouilles et l'eau.
-On appelle passoires du troisième ordre, ou passoires complexes, les passoires qui laissent passer quelquefois l'un ou l'autre et quelquefois pas.   
-```
+???+ question "Activité n°7. :" 
 
-Ajouter les bonnes balises pour observer cela sur le navigateur.
+    Ajouter un autre paragraphe à la suite dont voici le texte :
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.025.jpeg)
+    ```
+    Les différents ordres de passoires
+    On appelle passoires du premier ordre les passoires qui ne laissent passer ni les nouilles ni l'eau. 
+    On appelle passoires du second ordre les passoires qui laissent passer et les nouilles et l'eau.
+    On appelle passoires du troisième ordre, ou passoires complexes, les passoires qui laissent passer quelquefois l'un ou l'autre et quelquefois pas.   
+    ```
+
+    Ajouter les bonnes balises pour observer cela sur le navigateur.
+
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.025.jpeg)
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°8. :</H3>** Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
+???+ question "Activité n°8. :" 
 
-```
-Les différents types de passoires du troisième ordre
-Pour qu'une passoire complexe laisse passer l'eau et pas les nouilles, il faut et il suffit que le diamètre des trous soit notablement inférieur au diamètre des nouilles.
-Pour qu'une passoire complexe laisse passer les nouilles et pas l'eau, il faut et il suffit que le diamètre des trous soit notablement inférieur au diamètre de l'eau.
-Les différents types de passoire du premier ordre
-Quant aux passoires du premier ordre qui ne laissent passer ni les nouilles ni l'eau, il y en a de deux sortes : 
-Les passoires qui ne laissent passer ni les nouilles ni l'eau ni dans un sens ni dans l'autre et celles qui ne laissent passer ni les nouilles ni l'eau que dans un sens unique. 
-Ces passoires là on les appelle des casseroles.
-```
+    Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
 
-Ajouter les bonnes balises pour observer cela sur le navigateur.
+    ```
+    Les différents types de passoires du troisième ordre
+    Pour qu'une passoire complexe laisse passer l'eau et pas les nouilles, il faut et il suffit que le diamètre des trous soit notablement inférieur au diamètre des nouilles.
+    Pour qu'une passoire complexe laisse passer les nouilles et pas l'eau, il faut et il suffit que le diamètre des trous soit notablement inférieur au diamètre de l'eau.
+    Les différents types de passoire du premier ordre
+    Quant aux passoires du premier ordre qui ne laissent passer ni les nouilles ni l'eau, il y en a de deux sortes : 
+    Les passoires qui ne laissent passer ni les nouilles ni l'eau ni dans un sens ni dans l'autre et celles qui ne laissent passer ni les nouilles ni l'eau que dans un sens unique. 
+    Ces passoires là on les appelle des casseroles.
+    ```
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.029.jpeg)
+    Ajouter les bonnes balises pour observer cela sur le navigateur.
 
-**<H3 STYLE="COLOR:red;">Activité n°9. :</H3>** Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.029.jpeg)
 
-```
-Les différents types de casseroles
-Il y a trois sortes de casseroles. Les casseroles avec la queue à droite, les casseroles avec la queue à gauche, et les casseroles avec pas de queues du tout. Mais celles-là on les appelle des autobus.
-Les différents types d'autobus
-Il y a trois sortes d'autobus : les autobus qui marchent à droite ; les autobus qui marchent à gauche et les autobus qui ne marchent ni d'un côté ni de l'autre. Mais ceux-là, on les appelle des casseroles.
-```
+???+ question "Activité n°9. :" 
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.031.png)
+    Ajouter des titres d’ordre inférieurs et des paragraphes correspondants, dont voici le texte :
+
+    ```
+    Les différents types de casseroles
+    Il y a trois sortes de casseroles. Les casseroles avec la queue à droite, les casseroles avec la queue à gauche, et les casseroles avec pas de queues du tout. Mais celles-là on les appelle des autobus.
+    Les différents types d'autobus
+    Il y a trois sortes d'autobus : les autobus qui marchent à droite ; les autobus qui marchent à gauche et les autobus qui ne marchent ni d'un côté ni de l'autre. Mais ceux-là, on les appelle des casseroles.
+    ```
+
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.031.png)
 
 ### **<H3 STYLE="COLOR:GREEN;">4.4. Mettre<a name="_page5_x40.00_y676.92"></a> en valeur** 🔎</H3>
 
@@ -372,20 +384,25 @@ En HTML, on peut **mettre en valeur du texte** de différentes manières :
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°10. :</H3>** utiliser les balises précédentes pour le mot passoire et théorème du premier paragraphe.
+???+ question "Activité n°10. :" 
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.033.png)
+    utiliser les balises précédentes pour le mot passoire et théorème du premier paragraphe.
 
-
-**<H3 STYLE="COLOR:red;">Activité 11. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du deuxième paragraphe.
-
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.036.jpeg)
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.033.png)
 
 
+???+ question "Activité 11. :"
 
-**<H3 STYLE="COLOR:red;">Activité n°12. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du troisième paragraphe.
+    Utiliser les balises précédentes pour les mots ci-dessous du deuxième paragraphe.
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.038.jpeg)
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.036.jpeg)
+
+
+???+ question "Activité n°12. :" 
+
+    Utiliser les balises précédentes pour les mots ci-dessous du troisième paragraphe.
+
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.038.jpeg)
 
 **Pourquoi structurer correctement son HTML ?**  
 
@@ -423,9 +440,11 @@ Pour les créer, on utilise :
 </ul>
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°13. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du cinquième paragraphe.
+???+ question "Activité n°13. :" 
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.040.png)
+    Utiliser les balises précédentes pour les mots ci-dessous du cinquième paragraphe.
+
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.040.png)
 
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.5.2. Les listes ordonnées (listes numérotées)** </h4>
@@ -443,9 +462,11 @@ Pour les créer, on remplace `<ul>` par `<ol>` (ordered list).
 </ol>
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°14. :</H3>** utiliser les balises précédentes pour les mots ci-dessous du dernier paragraphe.
+???+ question "Activité n°14. :" 
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.043.jpeg)
+    Utiliser les balises précédentes pour les mots ci-dessous du dernier paragraphe.
+
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.043.jpeg)
 
 ### **<H3 STYLE="COLOR:GREEN;">4.6. Les<a name="_page7_x40.00_y697.92"></a> liens hypertexte** 🔎</H3>
 
@@ -461,9 +482,11 @@ Un **lien absolu** mène vers une adresse **externe**, c’est-à-dire vers un a
 <a href="https://fr.wikipedia.org/wiki/Passoire">Passoire</a>
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°15. :</H3>** Créer un lien vers la page **Wikipedia de "Casserole"** en utilisant `<a>`. comme ci-dessous.
+???+ question "Activité n°15. :" 
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.046.jpeg)
+    Créer un lien vers la page **Wikipedia de "Casserole"** en utilisant `<a>`. comme ci-dessous.
+
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.046.jpeg)
 
 📌 **Remarque :**  
 
@@ -485,13 +508,13 @@ Exemple :
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°16. :</H3>** 
+???+ question "Activité n°16. :" 
 
-**ATTENTION** : sur Capytale dans la partie gauche (là où il y a "Fichiers") utiliser le ```+```pour ajouter une page!
+    **ATTENTION** : sur Capytale dans la partie gauche (là où il y a "Fichiers") utiliser le ```+```pour ajouter une page!
 
-1. Créer un fichier `page2.html` dans le même dossier que `index.html`.  
+    1. Créer un fichier `page2.html` dans le même dossier que `index.html`.  
 
-2. Ajouter un lien dans `page2.html` pour **revenir à `index.html`**. 
+    2. Ajouter un lien dans `page2.html` pour **revenir à `index.html`**. 
 
 
 
@@ -541,20 +564,20 @@ Les **ancres** permettent de **naviguer à l’intérieur d’une même page**.
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°17. :</H3>** 
+???+ question "Activité n°17. :"
 
-Sur la index.html, on va faire une ancre sur le titre en haut de page
-```html
-<h1 id="haut">Les passoires</h1>
-```
+    Sur la index.html, on va faire une ancre sur le titre en haut de page
+    ```html
+    <h1 id="haut">Les passoires</h1>
+    ```
 
-On crée un lien en bas de la page pour remonter vers le haut. Rajouter tout en bas (mais dans le body) la référence avec `#`
-```html
-<p>
-    <a href="#haut">Aller en haut</a>
-</p>
-```
-Enregistrer et observer. S’il ne se passe rien, augmenter le zoom afin de faire apparaître les barres de défilement sur le côté.
+    On crée un lien en bas de la page pour remonter vers le haut. Rajouter tout en bas (mais dans le body) la référence avec `#`
+    ```html
+    <p>
+        <a href="#haut">Aller en haut</a>
+    </p>
+    ```
+    Enregistrer et observer. S’il ne se passe rien, augmenter le zoom afin de faire apparaître les barres de défilement sur le côté.
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.6.6. Lien<a name="_page9_x40.00_y36.92"></a> vers une ancre sur une autre page**</H4>
 
@@ -567,15 +590,17 @@ Pour faire un lien vers **une ancre située dans une autre page**, on précise l
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°18. :</H3>** Sur la page2.html, on va faire un lien vers l’ancre de la index.html.
-```<h1 id="haut">Les passoires</h1>```
-On crée un lien en bas de la page aller vers le haut de la page index.html. Rajouter tout en bas (mais dans le body) la référence avec #
-```html
-<p>
-    <a href="index.html#haut">Aller en haut de la page logique sur les passoires</a>
-</p>
-```
-Enregistrer et observer.
+???+ question "Activité n°18. :" 
+
+    Sur la page2.html, on va faire un lien vers l’ancre de la index.html.
+    ```<h1 id="haut">Les passoires</h1>```
+    On crée un lien en bas de la page aller vers le haut de la page index.html. Rajouter tout en bas (mais dans le body) la référence avec #
+    ```html
+    <p>
+        <a href="index.html#haut">Aller en haut de la page logique sur les passoires</a>
+    </p>
+    ```
+    Enregistrer et observer.
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.6.7. Lien<a name="_page9_x40.00_y195.92"></a> affichant une infobulle**</H4>
 
@@ -602,13 +627,15 @@ Lorsque on passe la souris sur l’image, une infobulle contenant le texte "Ceci
 ```
 Ici, si on survole le lien avec la souris, une boîte d’information s’affichera avec le message "Vous ne le regretterez pas !"
 
-**<H3 STYLE="COLOR:red;">Activité n°19. :</H3>** Sur la page2.html, on va faire une infobulle
-```html
-<p>
-    <a href="index.html#haut" title="Vous ne le regretterez pas !">Aller en haut de la page logique sur les passoires</a>
-</p>
-```
-Enregistrer et observer.
+???+ question "Activité n°19. :" 
+
+    Sur la page2.html, on va faire une infobulle
+    ```html
+    <p>
+        <a href="index.html#haut" title="Vous ne le regretterez pas !">Aller en haut de la page logique sur les passoires</a>
+    </p>
+    ```
+    Enregistrer et observer.
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.6.8. Lien<a name="_page9_x40.00_y316.92"></a> qui ouvre une nouvelle fenêtre**</H4>
 
@@ -620,13 +647,15 @@ L’attribut `target="_blank"` ouvre le lien **dans un nouvel onglet**.
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°20. :</H3>** Sur la page2.html, on va faire une infobulle
-```html
-<p>
-    <a href="index.html#haut" title="Vous ne le regretterez pas !" target="_blank">Aller en haut de la page logique sur les passoires</a>
-</p>
-```
-Enregistrer et observer.
+???+ question "Activité n°20. :" 
+
+    Sur la page2.html, on va faire une infobulle
+    ```html
+    <p>
+        <a href="index.html#haut" title="Vous ne le regretterez pas !" target="_blank">Aller en haut de la page logique sur les passoires</a>
+    </p>
+    ```
+    Enregistrer et observer.
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.6.9. Un<a name="_page9_x40.00_y437.92"></a> lien pour envoyer un e-mail**</H4>
 
@@ -638,13 +667,15 @@ Un lien **mailto** ouvre automatiquement une fenêtre pour envoyer un e-mail.
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°21. :</H3>** Sur la index.html, on va faire un lien vers un mail
-```html
-<p>
-    <a href="mailto:votrenom@bidule.com">Envoyez-moi un e-mail !</a>
-</p>
-```
-Enregistrer et observer.
+???+ question "Activité n°21. :" 
+
+    Sur la index.html, on va faire un lien vers un mail
+    ```html
+    <p>
+        <a href="mailto:votrenom@bidule.com">Envoyez-moi un e-mail !</a>
+    </p>
+    ```
+    Enregistrer et observer.
 
 #### **<H4 STYLE="COLOR:MAGENTA;">4.6.10. Un<a name="_page9_x40.00_y544.92"></a> lien pour télécharger un fichier**</H4>
 
@@ -722,28 +753,26 @@ L’attribut `title` permet d’afficher une **infobulle** au survol de l’imag
 ```
 
 
-**<H3 STYLE="COLOR:red;">Activité n°22 :</h3>**  
+???+ question "Activité n°22 :"
 
-1. Cherchez **trois images** sur le Web (**passoire, casserole et autobus**).  
+    1. Cherchez **trois images** sur le Web (**passoire, casserole et autobus**).  
 
-ATTENTION : sur Capytale dans la partie gauche (là où il y a "Fichiers") utiliser la flèche à droite de "Fichiers" pour importer les images!
+    ATTENTION : sur Capytale dans la partie gauche (là où il y a "Fichiers") utiliser la flèche à droite de "Fichiers" pour importer les images!
 
-(2. Enregistrez-les dans un dossier si vous n'êtes pas dans Capytale)
+    (2. Enregistrez-les dans un dossier si vous n'êtes pas dans Capytale)
 
-2. Enregistrez-les à la racine  
+    2. Enregistrez-les à la racine  
 
-3. Insérez-les dans `index.html` en ajoutant une infobulle pour chacune.  
-
-
+    3. Insérez-les dans `index.html` en ajoutant une infobulle pour chacune.  
 
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.063.jpeg)
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.063.jpeg)
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.064.png)
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.064.png)
 
-![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.065.png)
+    ![Exemple](Aspose.Words.69e325b4-61fe-496b-8990-a642022b14d2.065.png)
 
-Enregistrer et observer.
+    Enregistrer et observer.
 
 ### **<H3 STYLE="COLOR:GREEN;">5.4. Créer une miniature cliquable**</h3>
 
@@ -762,10 +791,11 @@ Si une image est **trop grande**, on peut afficher une **version réduite** qui 
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°23 :**</h3>  
-1 Créez une miniature de votre **image de passoire**.  
+???+ question "Activité n°23 :"
 
-2 Liez la miniature à l’image **grande taille**.  
+    1 Créez une miniature de votre **image de passoire**.  
+
+    2 Liez la miniature à l’image **grande taille**.  
 
 
 On peut proposer une miniature cliquable pour des images très grosses :
