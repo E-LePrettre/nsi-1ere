@@ -206,89 +206,93 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:red;">Exercice 1 : Accès aux éléments</H3>**  
+!!! abstract "Exercice 1 : Accès aux éléments"  
 
-Écrire une fonction `deuxieme(t)` qui renvoie le **deuxième élément** du tuple `t`.
+    Écrire une fonction `deuxieme(t)` qui renvoie le **deuxième élément** du tuple `t`.
 
-**Test** :
+    **Test** :
 
-```python
-t = ("Alice", 17, "1ère NSI")
-assert deuxieme(t) == 17
+    ```python
+    t = ("Alice", 17, "1ère NSI")
+    assert deuxieme(t) == 17
 ```
-**<H3 STYLE="COLOR:red;">Exercice 2 : longueur d'un tuple**</H3> 
-Écrire une fonction `taille(t)` qui renvoie le **nombre d’éléments** dans le tuple `t`.
+!!! abstract "Exercice 2 : longueur d'un tuple"
 
-**Test** :
+    Écrire une fonction `taille(t)` qui renvoie le **nombre d’éléments** dans le tuple `t`.
 
-```python
-assert taille(("a", "b", "c")) == 3
-```
+    **Test** :
 
-**<H3 STYLE="COLOR:red;">Exercice 3 : Concaténation de tuples</H3>** 
-Écrire une fonction `concat(t1, t2)` qui renvoie la **concaténation** de deux tuples.
+    ```python
+    assert taille(("a", "b", "c")) == 3
+    ```
 
-**Test** :
+!!! abstract "Exercice 3 : Concaténation de tuples"
 
-```python
-assert concat((1, 2), (3, 4)) == (1, 2, 3, 4)
-```
+    Écrire une fonction `concat(t1, t2)` qui renvoie la **concaténation** de deux tuples.
 
-**<H3 STYLE="COLOR:red;">Exercice 4 : Extraction de sous-tuples</H3>** 
-Écrire une fonction `sous_tuple(t)` qui renvoie un **sous-tuple contenant les deux premiers éléments**.
+    **Test** :
 
-**Test** :
+    ```python
+    assert concat((1, 2), (3, 4)) == (1, 2, 3, 4)
+    ```
 
-```python
-assert sous_tuple((10, 20, 30, 40)) == (10, 20)
-```
+!!! abstract "Exercice 4 : Extraction de sous-tuples"
 
-**<H3 STYLE="COLOR:red;">Exercice 5 : parcours d'un tuple</H3>** 
-Écrire une fonction `afficher(t)` qui **affiche chaque élément du tuple `t` sur une ligne différente**.
+    Écrire une fonction `sous_tuple(t)` qui renvoie un **sous-tuple contenant les deux premiers éléments**.
 
-**Exemple** :
+    **Test** :
 
-```python
-afficher(("maths", "nsi", "anglais"))
-```
+    ```python
+    assert sous_tuple((10, 20, 30, 40)) == (10, 20)
+    ```
 
-Affichage attendu :
+!!! abstract "Exercice 5 : parcours d'un tuple"
 
-```
-maths
-nsi
-anglais
-```
+    Écrire une fonction `afficher(t)` qui **affiche chaque élément du tuple `t` sur une ligne différente**.
 
-**<H3 STYLE="COLOR:red;">Exercice 6 : Tuple et boucle</H3>** 
-Écrire une fonction `moyenne(t)` qui renvoie la **moyenne** des nombres contenus dans un tuple `t`.
+    **Exemple** :
 
-**Test** :
+    ```python
+    afficher(("maths", "nsi", "anglais"))
+    ```
 
-```python
-assert moyenne((12, 13, 14)) == 13.0
-```
+    Affichage attendu :
 
+    ```
+    maths
+    nsi
+    anglais
+    ```
 
+!!! abstract "Exercice 6 : Tuple et boucle"
 
-**<H3 STYLE="COLOR:red;">Exercice 7 :**  **Test d’appartenance :</H3>** En utilisant un parcours de tuple avec la présence d'un indice, écrire une fonction `est_dans(element,tple)` qui en argument reçoit un entiers ( élément) et un tuple d'entier ( tple) qui renvoie un booleen indiquant la présence de élément dans tuple. On testera la fonction sur les scripts suivants : 
+    Écrire une fonction `moyenne(t)` qui renvoie la **moyenne** des nombres contenus dans un tuple `t`.
 
-Par exemple:
-```python
-assert est_dans(4,(1,2,3,4,5,6)) == True
+    **Test** :
 
-assert est_dans(9,(1,2,3,4,5,6)) == False
-```
+    ```python
+    assert moyenne((12, 13, 14)) == 13.0
+    ```
 
-En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) renvoie un tuple.
- 
+!!! abstract "Exercice 7 : Test d’appartenance :"
 
-**Remarque** : on codera la fonction `est_dans(element,tple)` de 2 manières
+    En utilisant un parcours de tuple avec la présence d'un indice, écrire une fonction `est_dans(element,tple)` qui en argument reçoit un entiers ( élément) et un tuple d'entier ( tple) qui renvoie un booleen indiquant la présence de élément dans tuple. On testera la fonction sur les scripts suivants : 
 
-- classiquement
+    Par exemple:
+    ```python
+    assert est_dans(4,(1,2,3,4,5,6)) == True
 
-- à l'aide du fonction lambda 
+    assert est_dans(9,(1,2,3,4,5,6)) == False
+    ```
 
+    En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) renvoie un tuple.
+    
+
+    **Remarque** : on codera la fonction `est_dans(element,tple)` de 2 manières
+
+    - classiquement
+
+    - à l'aide du fonction lambda 
 
 
 
@@ -491,116 +495,124 @@ Les listes sont **très utiles** pour manipuler des chaînes de caractères grâ
 
 ### **<H3 STYLE="COLOR:GREEN;">1.4. Exercices</h3>** 
 
-**<H3 STYLE="COLOR:red;">Exercice 8 :**  **Longueur d'une liste :</H3>**
-Ecrire une fonction `longueur(tab)` qui prend un tableau tab en paramètre et qui renvoie la longueur de ce tableau
+!!! abstract "Exercice 8 : Longueur d'une liste :"
 
-**Exemple** :
-```python
-assert longueur([0,1,2,3,4]) == 5
-assert longueur([]) == 0
-```
+    Ecrire une fonction `longueur(tab)` qui prend un tableau tab en paramètre et qui renvoie la longueur de ce tableau
 
-**<H3 STYLE="COLOR:red;">Exercice 9 :**  **Appartenance :</H3>**
-Écrire fonction `dansTab` de paramètres T : un tableau et a : un élèment, qui indique si l’élément donné a appartient à un tableau T ou pas. 
+    **Exemple** :
+    ```python
+    assert longueur([0,1,2,3,4]) == 5
+    assert longueur([]) == 0
+    ```
 
-**Exemple** :
-```python
-assert dansTab( [3,5,7,0] , 4) == False
-assert dansTab( [3,5,7] , 3) == True
-```
+!!! abstract "Exercice 9 : Appartenance :"
 
-**<H3 STYLE="COLOR:red;">Exercice 10 :**  **Liste aléatoire :</H3>**
-Ecrire une fonction `list_alea(n)` qui prend en paramètre n et qui renvoie une liste de nombre aléatoire compris entre 0 et 9 de taille n
+    Écrire fonction `dansTab` de paramètres T : un tableau et a : un élèment, qui indique si l’élément donné a appartient à un tableau T ou pas. 
 
-**Exemple** :
-```python
-print(list_alea(3))
-```
-renvoie
-```
-[2,4,9]
-```
+    **Exemple** :
+    ```python
+    assert dansTab( [3,5,7,0] , 4) == False
+    assert dansTab( [3,5,7] , 3) == True
+    ```
+
+!!! abstract "Exercice 10 : Liste aléatoire :"
+    
+    Ecrire une fonction `list_alea(n)` qui prend en paramètre n et qui renvoie une liste de nombre aléatoire compris entre 0 et 9 de taille n
+
+    **Exemple** :
+    ```python
+    print(list_alea(3))
+    ```
+    renvoie
+    ```
+    [2,4,9]
+    ```
+!!! abstract "Exercice 11 : Somme :"
+
+    Compléter le code python de la fonction `somme` qui prend en paramètre une liste L de flottants et qui renvoie la somme des éléments de cette liste. 
+
+    **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
+
+    ```python
+    def somme (L) : 
+    s=0 
+    …………. 
+        ………… 
+    return s
+    ```
+    **Exemple** :
+    ```python
+    assert somme([1,5,9,5]) == 20 
+    assert somme([]) == 0 
+    ```
+
+!!! abstract "Exercice 12 : Moyenne :"
+
+    En faisant appel à la fonction `somme` précédente, écrire la fonction `moyenne` qui prend en paramètre une liste L et qui renvoie la moyenne m des éléments de cette liste. 
+
+    **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
+
+    **Exemple** :
+    ```python
+    assert moyenne([1,5,9,5]) == 5 
+    assert moyenne([2,4,6]) == 4
+    ```
+
+!!! abstract "Exercice 13 : Produit :"
+
+    Écrire une fonction `produit(T)` qui prend en argument  un tableau  T d’entiers et renvoie le produit des éléments de T. 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 11 :**  **Somme :</H3>**
-Compléter le code python de la fonction `somme` qui prend en paramètre une liste L de flottants et qui renvoie la somme des éléments de cette liste. 
+    **Exemple** :
+    ```python
+    assert produit([2,3,2]) == 12
+    assert produit([3,2]) == 6
+    ```
 
-**Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
+!!! abstract "Exercice 14 : Le plus grand élément :"
 
-```python
-def somme (L) : 
-  s=0 
-  …………. 
-    ………… 
-return s
-```
-**Exemple** :
-```python
-assert somme([1,5,9,5]) == 20 
-assert somme([]) == 0 
-```
+    Écrire une fonction `maximum` qui prend en argument un tableau T d’entiers non vide et renvoie le plus grand élément de ce tableau. 
 
-**<H3 STYLE="COLOR:red;">Exercice 12 :**  **Moyenne :</H3>**
-En faisant appel à la fonction `somme` précédente, écrire la fonction `moyenne` qui prend en paramètre une liste L et qui renvoie la moyenne m des éléments de cette liste. 
+    **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : max()
 
-**Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
+    **Exemple** :
+    ```python
+    assert maximum([1,5,9,6]) == 9
+    assert maximum([-1,-5,-9,-6,-2]) == -1
+    ```
 
-**Exemple** :
-```python
-assert moyenne([1,5,9,5]) == 5 
-assert moyenne([2,4,6]) == 4
-```
+!!! abstract "Exercice 15 : Le plus petit élément :"
 
-**<H3 STYLE="COLOR:red;">Exercice 13 :**  **Produit :</H3>**
-Écrire une fonction `produit(T)` qui prend en argument  un tableau  T d’entiers et renvoie le produit des éléments de T. 
+    Écrire une fonction `minimum` qui recherche la valeur minimum d’un tableau T d’entiers non vide et renvoie également son indice comme valeur de retour.
 
+    **Exemple** :
+    ```python
+    assert minimum([1,5,9,6]) == (1,0)
+    assert minimum([-1,-5,-9,-6,-2]) == (-9, 2)
+    ```
 
-**Exemple** :
-```python
-assert produit([2,3,2]) == 12
-assert produit([3,2]) == 6
-```
+!!! abstract "Exercice 16 : Nombre de fois :"
+    
+    Écrire une fonction `nbre_de_fois(T,a)` qui prend en argument  une liste T et une valeur a et renvoie 
+    en sortie le nombre de fois où cette valeur a, est présente dans la liste T.
 
-**<H3 STYLE="COLOR:red;">Exercice 14 :**  **Le plus grand élément :</H3>**
-Écrire une fonction `maximum` qui prend en argument un tableau T d’entiers non vide et renvoie le plus grand élément de ce tableau. 
+    **Exemple** :
+    ```python
+    assert nbre_de_fois([1,5,9,6],5) == 2
+    assert nbre_de_fois([-1,-5,-9,-6,-2], 5) == 0
+    ```
 
-**Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : max()
+!!! abstract "Exercice 17 : Renversement de tableau :"
 
-**Exemple** :
-```python
-assert maximum([1,5,9,6]) == 9
-assert maximum([-1,-5,-9,-6,-2]) == -1
-```
+    Écrire une fonction `renverse(tab)` qui renverse un tableau tab(la première valeur devient la dernière, la deuxième l’avant dernière, etc) **de deux manières différentes**.
 
-**<H3 STYLE="COLOR:red;">Exercice 15 :**  **Le plus petit élément :</H3>**
-Écrire une fonction `minimum` qui recherche la valeur minimum d’un tableau T d’entiers non vide et renvoie également son indice comme valeur de retour.
+    Par exemple, si le tableau est trié en ordre croissant au début de la fonction il doit être trié en ordre décroissant par l’algorithme. 
 
-**Exemple** :
-```python
-assert minimum([1,5,9,6]) == (1,0)
-assert minimum([-1,-5,-9,-6,-2]) == (-9, 2)
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 16 :**  **Nombre de fois :</H3>**
-Écrire une fonction `nbre_de_fois(T,a)` qui prend en argument  une liste T et une valeur a et renvoie 
-en sortie le nombre de fois où cette valeur a, est présente dans la liste T.
-
-**Exemple** :
-```python
-assert nbre_de_fois([1,5,9,6],5) == 2
-assert nbre_de_fois([-1,-5,-9,-6,-2], 5) == 0
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 17 :**  **Renversement de tableau :</H3>**
-Écrire une fonction `renverse(tab)` qui renverse un tableau tab(la première valeur devient la dernière, la deuxième l’avant dernière, etc) **de deux manières différentes**.
-
-Par exemple, si le tableau est trié en ordre croissant au début de la fonction il doit être trié en ordre décroissant par l’algorithme. 
-
-**Exemple** :
-```python
-assert renverse([1,5,9,6]) == [6,9,5,1]
-assert renverse([1,2,3]) == [3,2,1]
-```
+    **Exemple** :
+    ```python
+    assert renverse([1,5,9,6]) == [6,9,5,1]
+    assert renverse([1,2,3]) == [3,2,1]
+    ```
 
 ### **<H3 STYLE="COLOR:GREEN;">1.5.  Les<a name="_page5_x40.00_y36.92"></a> tableaux de tableaux</h3>** 
 
@@ -720,143 +732,149 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 ### **<H3 STYLE="COLOR:GREEN;">1.6.  Exercices</h3>** 
 
-**<H3 STYLE="COLOR:red;">Exercice 18 :** **Affichage de matrice :</H3>**
-Ecrire la fonction `affichage(M)` qui prend en paramètre une matrice de taille quelconque et **l’affiche** ligne par ligne
+!!! abstract "Exercice 18 : Affichage de matrice :"
+    Ecrire la fonction `affichage(M)` qui prend en paramètre une matrice de taille quelconque et **l’affiche** ligne par ligne
 
-**Exemple** :
-```python
-m = [[1, 3, 4], 
-     [5, 6, 8], 
-     [2, 1, 3], 
-     [7, 8, 15]]
-print(affichage(m))
-```
-On obtient:
-```
-[1, 3, 4]
-[5, 6, 8]
-[2, 1, 3]
-[7, 8, 15]
-```
+    **Exemple** :
+    ```python
+    m = [[1, 3, 4], 
+        [5, 6, 8], 
+        [2, 1, 3], 
+        [7, 8, 15]]
+    print(affichage(m))
+    ```
+    On obtient:
+    ```
+    [1, 3, 4]
+    [5, 6, 8]
+    [2, 1, 3]
+    [7, 8, 15]
+    ```
 
-**<H3 STYLE="COLOR:red;">Exercice 19 :** **Affichage de coefficient de matrice :</H3>**
-Ecrire la fonction `affichagecoeff(M)` qui prend en paramètre une matrice de taille quelconque et **affiche** tous ces coefficients dans le sens de la lecture
+!!! abstract "Exercice 19 : Affichage de coefficient de matrice :"
 
-**Exemple** :
-```python
-m = [[1, 3], 
-     [5, 6], 
-     [2, 1], ]
-print(affichagecoeff(m))
-```
-On obtient:
-```
-1
-3
-5
-6
-2
-1
-```
+    Ecrire la fonction `affichagecoeff(M)` qui prend en paramètre une matrice de taille quelconque et **affiche** tous ces coefficients dans le sens de la lecture
 
-**<H3 STYLE="COLOR:red;">Exercice 20 :** **Affichage d'une ligne de matrice :</H3>**
-Ecrire la fonction `affichage_ligne(M,i)` qui prend en paramètre une matrice de taille quelconque et **affiche**, lorsque cela est possible la ligne i de cette matrice 
+    **Exemple** :
+    ```python
+    m = [[1, 3], 
+        [5, 6], 
+        [2, 1], ]
+    print(affichagecoeff(m))
+    ```
+    On obtient:
+    ```
+    1
+    3
+    5
+    6
+    2
+    1
+    ```
 
-**Exemple** :
-```python
-m = [[1, 3, 4], 
-     [5, 6, 8], 
-     [2, 1, 3], 
-     [7, 8, 15]]
-print(affichage_ligne(m, 1))
-```
-On obtient:
-```
-[5, 6, 8]
-```
-**<H3 STYLE="COLOR:red;">Exercice 21 :** **Affichage d'une colonne de matrice :</H3>**
-Ecrire la fonction `affichage_colonne(M,j)` qui prend en paramètre une matrice de taille quelconque et 
-**affiche** en colonne, lorsque cela est possible, la colonne j de cette matrice
+!!! abstract "Exercice 20 : Affichage d'une ligne de matrice :"
 
-**Exemple** :
-```python
-m = [[1, 3, 4], 
-     [5, 6, 8], 
-     [2, 1, 3], 
-     [7, 8, 15]]
-print(affichage_colonne(m, 1))
-```
-On obtient:
-```
-3
-6
-1
-8
-```
+    Ecrire la fonction `affichage_ligne(M,i)` qui prend en paramètre une matrice de taille quelconque et **affiche**, lorsque cela est possible la ligne i de cette matrice 
 
-**<H3 STYLE="COLOR:red;">Exercice 22 :** **Croix :</H3>**
-Ecrire la fonction `croix(n,i,j)` qui crée et renvoie la matrice de taille n×n remplie de 0 et dont la ligne i et la colonne j sont remplie de 1.
+    **Exemple** :
+    ```python
+    m = [[1, 3, 4], 
+        [5, 6, 8], 
+        [2, 1, 3], 
+        [7, 8, 15]]
+    print(affichage_ligne(m, 1))
+    ```
+    On obtient:
+    ```
+    [5, 6, 8]
+    ```
 
-**Exemple** :
-```python
-assert croix(3,1,2) ==[[0,0,1], [1,1,1], [0,0,1]]
-```
+!!! abstract "Exercice 21 : Affichage d'une colonne de matrice :"
 
-**<H3 STYLE="COLOR:red;">Exercice 23 :** **Nombre de zéros :</H3>**
-Ecrire la fonction `nbzéros(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le 
-nombre de zéros qu’elle contient
+    Ecrire la fonction `affichage_colonne(M,j)` qui prend en paramètre une matrice de taille quelconque et **affiche** en colonne, lorsque cela est possible, la colonne j de cette matrice
 
-**Exemple** :
-```python
-m = [[1, 3, 4], 
-     [5, 0, 0], 
-     [0, 1, 3], 
-     [0, 8, 15]]
-assert nbzéros(m) == 4
-```
-**<H3 STYLE="COLOR:red;">Exercice 24 :** **Maximum d'une matrice :</H3>** 
-Ecrire la fonction `maxi(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le plus grand de ses éléments 
+    **Exemple** :
+    ```python
+    m = [[1, 3, 4], 
+        [5, 6, 8], 
+        [2, 1, 3], 
+        [7, 8, 15]]
+    print(affichage_colonne(m, 1))
+    ```
+    On obtient:
+    ```
+    3
+    6
+    1
+    8
+    ```
 
-**Exemple** :
-```python
-m = [[1, 3, 4], 
-     [5, 16, 8], 
-     [2, 1, 3], 
-     [7, 8, 15]]
-assert maxi(m) == 16
-```
+!!! abstract "Exercice 22 : Croix :"
 
-**<H3 STYLE="COLOR:red;">Exercice 25 :** **Maximum de la plus grand somme d'une ligne d'une matrice :</H3>** 
-Ecrire la fonction `maxi2(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la ligne qui a la plus grande somme 
+    Ecrire la fonction `croix(n,i,j)` qui crée et renvoie la matrice de taille n×n remplie de 0 et dont la ligne i et la colonne j sont remplie de 1.
 
-**Exemple** :
-```python
-m = [[1, 3, 4], 
-     [5, 16, 8], 
-     [2, 1, 3], 
-     [7, 8, 15]]
-assert maxi2(m) == 3
-```
+    **Exemple** :
+    ```python
+    assert croix(3,1,2) ==[[0,0,1], [1,1,1], [0,0,1]]
+    ```
 
-**<H3 STYLE="COLOR:red;">Exercice 26 :** **Maximum de la plus grand somme d'une colonne d'une matrice :</H3>** 
-Ecrire la fonction `maxi3(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la colonne qui a la plus grande somme 
+!!! abstract "Exercice 23 :Nombre de zéros :"
+    Ecrire la fonction `nbzéros(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le 
+    nombre de zéros qu’elle contient
 
-**Exemple** :
-```python
-m = [[1, 3, 4], 
-     [5, 16, 8], 
-     [2, 1, 3], 
-     [7, 8, 15]]
-assert maxi3(m) == 2
-```
+    **Exemple** :
+    ```python
+    m = [[1, 3, 4], 
+        [5, 0, 0], 
+        [0, 1, 3], 
+        [0, 8, 15]]
+    assert nbzéros(m) == 4
+    ```
 
-**<H3 STYLE="COLOR:red;">Exercice 27 :** ★ **Création de matrice  :</h3>** 
-Ecrire une fonction ```matriceAlea(n:int,m:int)->list``` Python qui renvoie une matrice à n lignes et m colonnes d'entiers aléatoires entre 0 et 100. Créer la fonction qui utilise la création en compréhension 
+!!! abstract "Exercice 24 : Maximum d'une matrice :"
 
+    Ecrire la fonction `maxi(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le plus grand de ses éléments 
 
-**Aide** : ne pas oublier d’importer le module random 
+    **Exemple** :
+    ```python
+    m = [[1, 3, 4], 
+        [5, 16, 8], 
+        [2, 1, 3], 
+        [7, 8, 15]]
+    assert maxi(m) == 16
+    ```
 
+!!! abstract "Exercice 25 : Maximum de la plus grand somme d'une ligne d'une matrice :"
 
+    Ecrire la fonction `maxi2(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la ligne qui a la plus grande somme 
+
+    **Exemple** :
+    ```python
+    m = [[1, 3, 4], 
+        [5, 16, 8], 
+        [2, 1, 3], 
+        [7, 8, 15]]
+    assert maxi2(m) == 3
+    ```
+
+!!! abstract "Exercice 26 : Maximum de la plus grand somme d'une colonne d'une matrice :"
+
+    Ecrire la fonction `maxi3(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la colonne qui a la plus grande somme 
+
+    **Exemple** :
+    ```python
+    m = [[1, 3, 4], 
+        [5, 16, 8], 
+        [2, 1, 3], 
+        [7, 8, 15]]
+    assert maxi3(m) == 2
+    ```
+
+!!! abstract "Exercice 27 : ★ Création de matrice  :"
+
+    Ecrire une fonction ```matriceAlea(n:int,m:int)->list``` Python qui renvoie une matrice à n lignes et m colonnes d'entiers aléatoires entre 0 et 100. Créer la fonction qui utilise la création en compréhension 
+
+    **Aide** : ne pas oublier d’importer le module random 
 
 ## **<H2 STYLE="COLOR:BLUE;">2.   Les<a name="_page6_x40.00_y36.92"></a> dictionnaires</h2>** 
 
@@ -1221,1810 +1239,1774 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 ### **<H3 STYLE="COLOR:GREEN;">2.12. Exercices</h3>** 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 28 :**  **Affichage des valeurs :</H3>**
-Écrire une fonction `afficher_valeurs(d)` qui **affiche** uniquement les **valeurs** du dictionnaire, une par ligne.
+!!! abstract "Exercice 28 : Affichage des valeurs :"
 
-**Exemple** :
+    Écrire une fonction `afficher_valeurs(d)` qui **affiche** uniquement les **valeurs** du dictionnaire, une par ligne.
 
-```python
-d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
-afficher_valeurs(d)
-```
+    **Exemple** :
 
-**Résultat attendu** :
+    ```python
+    d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+    afficher_valeurs(d)
+    ```
 
-```
-Alice
-17
-1ère NSI
-```
+    **Résultat attendu** :
 
-**<H3 STYLE="COLOR:red;">Exercice 29 :**  **Affichage des clés :</H3>**
-Écrire une fonction `afficher_cles(d)` qui affiche toutes les **clés** du dictionnaire.
+    ```
+    Alice
+    17
+    1ère NSI
+    ```
 
-**Exemple** :
+!!! abstract "Exercice 29 : Affichage des clés :"
 
-```python
-d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
-afficher_cles(d)
-```
+    Écrire une fonction `afficher_cles(d)` qui affiche toutes les **clés** du dictionnaire.
 
-**Résultat attendu** :
+    **Exemple** :
 
-```
-nom
-âge
-classe
-```
+    ```python
+    d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+    afficher_cles(d)
+    ```
 
-**<H3 STYLE="COLOR:red;">Exercice 30 :**  **Affichage des paires clé-valeur:</H3>**
-Écrire une fonction `afficher_dico(d)` qui **affiche** chaque **clé et sa valeur** sur une ligne.
+    **Résultat attendu** :
 
-**Exemple** :
+    ```
+    nom
+    âge
+    classe
+    ```
 
-```python
-d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
-afficher_dico(d)
-```
+!!! abstract "Exercice 30 : Affichage des paires clé-valeur:"
 
-**Résultat attendu** :
+    Écrire une fonction `afficher_dico(d)` qui **affiche** chaque **clé et sa valeur** sur une ligne.
 
-```
-nom : Alice
-âge : 17
-classe : 1ère NSI
-```
+    **Exemple** :
 
+    ```python
+    d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+    afficher_dico(d)
+    ```
 
-**<H3 STYLE="COLOR:red;">Exercice 31 :**  **accès à une valeur:</H3>**
-Écrire une fonction `age(d)` qui renvoie l’âge contenu dans le dictionnaire `d`.
+    **Résultat attendu** :
 
-**Test** :
-
-```python
-d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
-assert age(d) == 17
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 32 :**  **Ajout d'un élément:</H3>**
-Écrire une fonction `ajouter_email(d)` qui ajoute au dictionnaire une clé `"email"` de valeur `"alice@nsi.fr"` puis le renvoie.
-
-**Test** :
-
-```python
-d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
-assert ajouter_email(d) == {"nom": "Alice", "âge": 17, "classe": "1ère NSI", "email": "alice@nsi.fr"}
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 33 :**  **Compter les éléments d'un dictionnaire:</H3>**
-Écrire une fonction `taille_dico(d)` qui renvoie **le nombre d’éléments** (paires clé-valeur) contenus dans le dictionnaire.
-
-**Test** :
-
-```python
-d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
-assert taille_dico(d) == 3
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 34 :**  **Vérification d'une clé:</H3>**
-Écrire une fonction `contient(d, cle)` qui renvoie `True` si la clé est présente dans le dictionnaire, et `False` sinon.
-
-**Test** :
-
-```python
-d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
-assert contient(d, "âge") == True
-assert contient(d, "adresse") == False
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 35 :**  **Suppression d'une clé:</H3>**
-Écrire une fonction `supprimer(d, cle)` qui supprime la clé `cle` si elle est présente dans `d`, puis renvoie le dictionnaire.
-
-**Test** :
-
-```python
-d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
-assert supprimer(d, "âge") == {"nom": "Alice", "classe": "1ère NSI"}
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 36 :**  **Moyenne des notes:</H3>**
-Un dictionnaire `notes` contient des noms de matières et des notes.
-
-**Exemple** :
-
-```python
-notes = {"maths": 15, "nsi": 18, "français": 12}
-```
-
-Écrire la fonction `moyenne(notes)` qui renvoie la moyenne des notes (arrondie à 1 décimale).
-
-**Test** :
-
-```python
-assert moyenne({"maths": 15, "nsi": 18, "français": 12}) == 15.0
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 37 :**  **Création d’un dictionnaire simple :</H3>**
-Écrire une fonction `creer_dico(nom, age, classe)` qui prend en paramètre le nom, l'age et la classe et qui **renvoie** le dictionnaire suivant :
-
-```python
-{"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
-```
-
-**Test** :
-
-```python
-assert creer_dico() == {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
-```
+    ```
+    nom : Alice
+    âge : 17
+    classe : 1ère NSI
+    ```
 
 
+!!! abstract "Exercice 31 : accès à une valeur:"
+    
+    Écrire une fonction `age(d)` qui renvoie l’âge contenu dans le dictionnaire `d`.
+
+    **Test** :
+
+    ```python
+    d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+    assert age(d) == 17
+    ```
+
+!!! abstract "Exercice 32 : Ajout d'un élément:"
+
+    Écrire une fonction `ajouter_email(d)` qui ajoute au dictionnaire une clé `"email"` de valeur `"alice@nsi.fr"` puis le renvoie.
+
+    **Test** :
+
+    ```python
+    d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+    assert ajouter_email(d) == {"nom": "Alice", "âge": 17, "classe": "1ère NSI", "email": "alice@nsi.fr"}
+    ```
+
+!!! abstract "Exercice 33 : Compter les éléments d'un dictionnaire:"
+
+    Écrire une fonction `taille_dico(d)` qui renvoie **le nombre d’éléments** (paires clé-valeur) contenus dans le dictionnaire.
+
+    **Test** :
+
+    ```python
+    d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+    assert taille_dico(d) == 3
+    ```
+
+!!! abstract "Exercice 34 : Vérification d'une clé:"
+
+    Écrire une fonction `contient(d, cle)` qui renvoie `True` si la clé est présente dans le dictionnaire, et `False` sinon.
+
+    **Test** :
+
+    ```python
+    d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+    assert contient(d, "âge") == True
+    assert contient(d, "adresse") == False
+    ```
+
+!!! abstract "Exercice 35 : Suppression d'une clé:"
+
+    Écrire une fonction `supprimer(d, cle)` qui supprime la clé `cle` si elle est présente dans `d`, puis renvoie le dictionnaire.
+
+    **Test** :
+
+    ```python
+    d = {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+    assert supprimer(d, "âge") == {"nom": "Alice", "classe": "1ère NSI"}
+    ```
+
+!!! abstract "Exercice 36 : Moyenne des notes:"
+
+    Un dictionnaire `notes` contient des noms de matières et des notes.
+
+    **Exemple** :
+
+    ```python
+    notes = {"maths": 15, "nsi": 18, "français": 12}
+    ```
+
+    Écrire la fonction `moyenne(notes)` qui renvoie la moyenne des notes (arrondie à 1 décimale).
+
+    **Test** :
+
+    ```python
+    assert moyenne({"maths": 15, "nsi": 18, "français": 12}) == 15.0
+    ```
+
+!!! abstract "Exercice 37 : Création d’un dictionnaire simple :"
+
+    Écrire une fonction `creer_dico(nom, age, classe)` qui prend en paramètre le nom, l'age et la classe et qui **renvoie** le dictionnaire suivant :
+
+    ```python
+    {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+    ```
+
+    **Test** :
+
+    ```python
+    assert creer_dico() == {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+    ```
 
 
 
 ## **<H2 STYLE="COLOR:BLUE;">3.   Exercices<a name="_page9_x40.00_y273.92"></a></h2>** 
 
 
+!!! abstract "Exercice 38 : ★★ Carré magique  :"
 
 
+    Un **carré magique d’ordre 3** est une grille de 3×3 contenant **les entiers de 1 à 9, chacun une seule fois**, et telle que **la somme des éléments de chaque ligne, de chaque colonne et des deux diagonales soit la même**.
 
-**<H3 STYLE="COLOR:red;">Exercice 38 :** ★★ **Carré magique  :</h3>** 
+    Voici un exemple de carré magique :
 
+    ```python
+    L = [
+        [6, 1, 8],
+        [7, 5, 3],
+        [2, 9, 4]
+    ]
+    ```
 
-Un **carré magique d’ordre 3** est une grille de 3×3 contenant **les entiers de 1 à 9, chacun une seule fois**, et telle que **la somme des éléments de chaque ligne, de chaque colonne et des deux diagonales soit la même**.
+    🎯 **Objectif** : Écrire un programme Python qui vérifie si une grille 3x3 est un carré magique.
 
-Voici un exemple de carré magique :
+    💡 **Aide visuelle : somme des lignes, colonnes et diagonales**
 
-```python
-L = [
-    [6, 1, 8],
-    [7, 5, 3],
-    [2, 9, 4]
-]
-```
+    ![](Aimg020.png)
 
 
+    ✅ **Exécution attendue du programme**
 
-🎯 **Objectif** : Écrire un programme Python qui vérifie si une grille 3x3 est un carré magique.
+    Si la grille est magique, le programme doit afficher :
 
+    **True** ou **Vrai**
 
+    🔧 **Aide – Fonctions conseillées à créer**
 
-💡 **Aide visuelle : somme des lignes, colonnes et diagonales**
+    | Fonction                         | Rôle attendu                                                        |
+    | -------------------------------- | ------------------------------------------------------------------- |
+    | `somme(tab)`                     | renvoie la somme des éléments de la liste `tab`                     |
+    | `recup_colonne(tab, indice_col)` | renvoie une liste contenant les éléments de la colonne `indice_col` |
+    | `diagonale1(tab)`                | renvoie la diagonale principale (de `tab[0][0]` à `tab[2][2]`)      |
+    | `diagonale2(tab)`                | renvoie la diagonale secondaire (de `tab[0][2]` à `tab[2][0]`)      |
+    | `carre_magique(tab)`             | renvoie `True` si la grille est magique, `False` sinon              |
 
-![](Aimg020.png)
 
+    🧪 **À tester avec :**
 
-✅ **Exécution attendue du programme**
+    ```python
+    L = [
+        [6, 1, 8],
+        [7, 5, 3],
+        [2, 9, 4]
+    ]
+    print(carre_magique(L))  # Doit afficher True 
+    ```
 
-Si la grille est magique, le programme doit afficher :
+!!! abstract "Exercice 39 : ★ Gestion de carnet de notes"  
 
-**True** ou **Vrai**
+    On souhaite créer un petit programme qui **gère un carnet de notes** pour un élève.
+    Ce carnet sera représenté par un **dictionnaire**, dont les **clés** sont les matières, et les **valeurs** sont les moyennes obtenues dans ces matières.
 
+    🔢 **Exemple** :
 
+    ```python
+    notes = {
+        "maths": 15.5,
+        "nsi": 18.0,
+        "anglais": 12.5,
+        "histoire": 13.0
+    }
+    ```
 
-🔧 **Aide – Fonctions conseillées à créer**
+    **1** Implémenter la fonction suivante `afficher_notes(d)`
 
-| Fonction                         | Rôle attendu                                                        |
-| -------------------------------- | ------------------------------------------------------------------- |
-| `somme(tab)`                     | renvoie la somme des éléments de la liste `tab`                     |
-| `recup_colonne(tab, indice_col)` | renvoie une liste contenant les éléments de la colonne `indice_col` |
-| `diagonale1(tab)`                | renvoie la diagonale principale (de `tab[0][0]` à `tab[2][2]`)      |
-| `diagonale2(tab)`                | renvoie la diagonale secondaire (de `tab[0][2]` à `tab[2][0]`)      |
-| `carre_magique(tab)`             | renvoie `True` si la grille est magique, `False` sinon              |
+    Affiche chaque matière suivie de la note, sous la forme :
 
+    ```
+    maths : 15.5
+    nsi : 18.0
+    anglais : 12.5
+    histoire : 13.0
+    ```
 
+    **2**  Implémenter la fonction suivante `ajouter_matiere(d, matiere, note)`
 
-🧪 **À tester avec :**
+    Ajoute une nouvelle matière `matiere` avec la note `note` au dictionnaire `d`.
 
-```python
-L = [
-    [6, 1, 8],
-    [7, 5, 3],
-    [2, 9, 4]
-]
-print(carre_magique(L))  # Doit afficher True 
-```
+    **Test** :
 
-**<H3 STYLE="COLOR:red;">Exercice 39 :** ★  **Gestion de carnet de notes</H3>**   
+    ```python
+    notes = {"maths": 15.5}
+    ajouter_matiere(notes, "svt", 14)
+    # Résultat attendu : {"maths": 15.5, "svt": 14}
+    ```
 
-On souhaite créer un petit programme qui **gère un carnet de notes** pour un élève.
-Ce carnet sera représenté par un **dictionnaire**, dont les **clés** sont les matières, et les **valeurs** sont les moyennes obtenues dans ces matières.
+    **3**  Implémenter la fonction suivante `supprimer_matiere(d, matiere)`
 
-🔢 **Exemple** :
+    Supprime une matière si elle existe dans le dictionnaire. Ne fait rien sinon.
 
-```python
-notes = {
-    "maths": 15.5,
-    "nsi": 18.0,
-    "anglais": 12.5,
-    "histoire": 13.0
-}
-```
+    **Test** :
 
-**1** Implémenter la fonction suivante `afficher_notes(d)`
+    ```python
+    notes = {"maths": 15.5, "svt": 14}
+    supprimer_matiere(notes, "svt")
+    # Résultat attendu : {"maths": 15.5}
+    ```
 
-Affiche chaque matière suivie de la note, sous la forme :
+    **4**  Implémenter la fonction suivante `moyenne_generale(d)`
 
-```
-maths : 15.5
-nsi : 18.0
-anglais : 12.5
-histoire : 13.0
-```
+    Renvoie la **moyenne générale** de toutes les notes (arrondie à 2 décimales si tu veux).
 
-**2**  Implémenter la fonction suivante `ajouter_matiere(d, matiere, note)`
+    **Test** :
 
-Ajoute une nouvelle matière `matiere` avec la note `note` au dictionnaire `d`.
+    ```python
+    notes = {"maths": 15.5, "nsi": 18.0, "anglais": 12.5}
+    assert moyenne_generale(notes) == 15.33
+    ```
 
-**Test** :
+    **5**  Implémenter la fonction suivante `matiere_max(d)`
 
-```python
-notes = {"maths": 15.5}
-ajouter_matiere(notes, "svt", 14)
-# Résultat attendu : {"maths": 15.5, "svt": 14}
-```
+    Renvoie la **matière** dans laquelle la note est la plus élevée.
 
-**3**  Implémenter la fonction suivante `supprimer_matiere(d, matiere)`
+    **Test** :
 
-Supprime une matière si elle existe dans le dictionnaire. Ne fait rien sinon.
+    ```python
+    notes = {"maths": 15.5, "nsi": 18.0, "anglais": 12.5}
+    assert matiere_max(notes) == "nsi"
+    ```
 
-**Test** :
+    **6**  Implémenter la fonction suivante `recherche(d, note)`
 
-```python
-notes = {"maths": 15.5, "svt": 14}
-supprimer_matiere(notes, "svt")
-# Résultat attendu : {"maths": 15.5}
-```
+    Renvoie la **liste des matières** pour lesquelles la note est exactement égale à `note`.
 
-**4**  Implémenter la fonction suivante `moyenne_generale(d)`
+    **Test** :
 
-Renvoie la **moyenne générale** de toutes les notes (arrondie à 2 décimales si tu veux).
+    ```python
+    notes = {"maths": 12, "nsi": 14, "anglais": 12}
+    assert recherche(notes, 12) == ["maths", "anglais"]
+    ```
 
-**Test** :
 
-```python
-notes = {"maths": 15.5, "nsi": 18.0, "anglais": 12.5}
-assert moyenne_generale(notes) == 15.33
-```
 
-**5**  Implémenter la fonction suivante `matiere_max(d)`
+!!! abstract "Exercice 40 ★ Simuler un tirage de cartes de poker:"
 
-Renvoie la **matière** dans laquelle la note est la plus élevée.
+    **1** Tirage d’une carte au hasard
 
-**Test** :
+    On donne la liste `ListeCartes` représentant les **52 cartes** d’un jeu de Poker (valeurs de 2 à As, et couleurs : pique (s), cœur (h), carreau (d), trèfle (c)).
 
-```python
-notes = {"maths": 15.5, "nsi": 18.0, "anglais": 12.5}
-assert matiere_max(notes) == "nsi"
-```
+    ```python
+    ListeCartes = ['2s','2h','2d','2c','3s','3h','3d','3c',
+                '4s','4h','4d','4c','5s','5h','5d','5c',
+                '6s','6h','6d','6c','7s','7h','7d','7c',
+                '8s','8h','8d','8c','9s','9h','9d','9c',
+                'Ts','Th','Td','Tc','Js','Jh','Jd','Jc',
+                'Qs','Qh','Qd','Qc','Ks','Kh','Kd','Kc',
+                'As','Ah','Ad','Ac']
+    ```
 
-**6**  Implémenter la fonction suivante `recherche(d, note)`
+    Écrire une fonction `tirage_carte()` qui retourne **une seule carte au hasard** de cette liste.
 
-Renvoie la **liste des matières** pour lesquelles la note est exactement égale à `note`.
+    > 💡 On pourra utiliser la fonction `random.choice()`.
 
-**Test** :
+    Exemple attendu :
 
-```python
-notes = {"maths": 12, "nsi": 14, "anglais": 12}
-assert recherche(notes, 12) == ["maths", "anglais"]
-```
+    ```python
+    >>> tirage_carte()
+    '9s'
+    ```
 
+    **2** Tirage de N cartes différentes : Écrire une fonction `tirage_n_cartes(n)` qui retourne une **liste de `n` cartes différentes**, tirées au hasard **sans doublon**.
 
+    > ⚠️ Le tirage doit respecter la règle du Poker : **on ne peut pas avoir deux fois la même carte**.
 
-**<H3 STYLE="COLOR:red;">Exercice 40</h3>** ★ **Simuler un tirage de cartes de poker</h3>**
+    > 💡 On pourra copier la liste `ListeCartes`, tirer une carte aléatoire, la retirer de la liste, et recommencer.
 
-**1** Tirage d’une carte au hasard
+    Exemple attendu :
 
-On donne la liste `ListeCartes` représentant les **52 cartes** d’un jeu de Poker (valeurs de 2 à As, et couleurs : pique (s), cœur (h), carreau (d), trèfle (c)).
+    ```python
+    >>> tirage_n_cartes(3)
+    ['8c', 'Qs', '3h']
+    ```
+    **3** Version optimisée avec `sample()` : Python propose la fonction `random.sample(liste, n)` qui renvoie directement `n` éléments **différents** pris au hasard dans `liste`.
 
-```python
-ListeCartes = ['2s','2h','2d','2c','3s','3h','3d','3c',
-               '4s','4h','4d','4c','5s','5h','5d','5c',
-               '6s','6h','6d','6c','7s','7h','7d','7c',
-               '8s','8h','8d','8c','9s','9h','9d','9c',
-               'Ts','Th','Td','Tc','Js','Jh','Jd','Jc',
-               'Qs','Qh','Qd','Qc','Ks','Kh','Kd','Kc',
-               'As','Ah','Ad','Ac']
-```
+    Réécrire la fonction précédente sous le nom `tirage_n_cartes_v2(n)` en utilisant cette fonction.
 
+    **Exemple** :
 
+    ```python
+    >>> tirage_n_cartes_v2(5)
+    ['2c', 'Kd', 'Jc', '6s', 'Th']
+    ```
 
-Écrire une fonction `tirage_carte()` qui retourne **une seule carte au hasard** de cette liste.
+!!! abstract "Exercice 41 : ★★ Le chiffrement de César (version light) : Cryptographie"
 
-> 💡 On pourra utiliser la fonction `random.choice()`.
+    🔹 **Partie 1 – La fonction `chr()` et le codage ASCII**
 
-Exemple attendu :
+    Python permet de manipuler les **codes numériques des caractères** grâce aux fonctions :
 
-```python
->>> tirage_carte()
-'9s'
-```
+    * `chr(entier)` : retourne le caractère ASCII correspondant à l'entier.
 
-**2** Tirage de N cartes différentes : Écrire une fonction `tirage_n_cartes(n)` qui retourne une **liste de `n` cartes différentes**, tirées au hasard **sans doublon**.
+    * `ord(caractère)` : retourne l'entier ASCII correspondant au caractère.
 
-> ⚠️ Le tirage doit respecter la règle du Poker : **on ne peut pas avoir deux fois la même carte**.
+    1.a.  **Quels sont les entiers qui codent l’alphabet en lettres majuscules ?**
 
-> 💡 On pourra copier la liste `ListeCartes`, tirer une carte aléatoire, la retirer de la liste, et recommencer.
+    > 💡 Aide : on pourra tester la fonction `ord()` sur `'A'`, `'B'`, ..., `'Z'`.
 
-Exemple attendu :
+    1.b.  **Quels scripts écrire pour obtenir l’affichage :**
 
-```python
->>> tirage_n_cartes(3)
-['8c', 'Qs', '3h']
-```
-**3** Version optimisée avec `sample()` : Python propose la fonction `random.sample(liste, n)` qui renvoie directement `n` éléments **différents** pris au hasard dans `liste`.
+    * de la lettre `'A'` ?
 
-Réécrire la fonction précédente sous le nom `tirage_n_cartes_v2(n)` en utilisant cette fonction.
+    * du mot `'NSI'` ?
 
-**Exemple** :
+    > 💡 Aide : utiliser `chr()` avec les bons entiers ASCII.
 
-```python
->>> tirage_n_cartes_v2(5)
-['2c', 'Kd', 'Jc', '6s', 'Th']
-```
 
+    1.c.  **Créer un dictionnaire qui associe chaque lettre majuscule à un nombre de 0 à 25**
 
+    > 💡 Aide : utiliser une boucle et `chr()` avec `range(65, 91)`
 
+    📌 Résultat attendu  : 
+    ```python
+    {'A': 0,  'B': 1,  'C': 2,  'D': 3,  'E': 4,  'F': 5,  'G': 6,  'H': 7, 'I': 8,  'J': 9,  'K': 10, 'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18, 'T': 19, 'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24, 'Z': 25}
+    ```
 
+    🔹 **Partie 2 – Le chiffrement de César**
 
-**<H3 STYLE="COLOR:red;">Exercice 41 :** ★★ **Le chiffrement de César (version light)** : Cryptographie</h3> 
+    Le **chiffrement de César** consiste à **décaler chaque lettre** d’un mot d’un certain nombre fixe.
+    Exemple avec un **décalage de +7** :
 
-🔹 **Partie 1 – La fonction `chr()` et le codage ASCII**
+    * `'A'` devient `'H'`
 
-Python permet de manipuler les **codes numériques des caractères** grâce aux fonctions :
+    * `'Y'` devient `'F'` car `(24 + 7) % 26 = 5` → `'F'`
 
-* `chr(entier)` : retourne le caractère ASCII correspondant à l'entier.
+    2.a. **Quels scripts permettent d’obtenir :**
 
-* `ord(caractère)` : retourne l'entier ASCII correspondant au caractère.
+    * le codage de la lettre `'A'` ?
 
+    * le codage du mot `'NSI'` avec un décalage de 7 ?
 
-1.a.  **Quels sont les entiers qui codent l’alphabet en lettres majuscules ?**
+    > 💡 Utiliser le dictionnaire de la question 1c, le modulo `%` pour la rotation, et `chr()` pour revenir au caractère.
 
-> 💡 Aide : on pourra tester la fonction `ord()` sur `'A'`, `'B'`, ..., `'Z'`.
 
+    2.b. **Créer un dictionnaire de codage (clé = lettre d’origine, valeur = lettre codée)**
 
+    Ce dictionnaire stocke le résultat du **chiffrement de César avec un décalage de 7**.
 
-1.b.  **Quels scripts écrire pour obtenir l’affichage :**
+    > 💡 À stocker dans une variable `d`.
 
-* de la lettre `'A'` ?
+    Résultat attendu (extrait) :
 
-* du mot `'NSI'` ?
+    ```python
+    {'A': 'H', 'B': 'I', ..., 'Y': 'F', 'Z': 'G'}
+    ```
 
-> 💡 Aide : utiliser `chr()` avec les bons entiers ASCII.
+    🔹 **Partie 3 – Une fonction de codage
 
+    3.a.  Tester le dictionnaire obtenu :
 
-1.c.  **Créer un dictionnaire qui associe chaque lettre majuscule à un nombre de 0 à 25**
+    ```python
+    print(d['A'])
+    print(d['D'])
+    print(d['E'])
+    ```
 
+    3.b.  Question de réflexion :
 
+    Dans `d['A']`, `d['D']`, `d['E']` :
 
-> 💡 Aide : utiliser une boucle et `chr()` avec `range(65, 91)`
+    * `'A'`, `'D'`, `'E'` sont-ils des **clés** ou des **valeurs** du dictionnaire `d` ?
 
-📌 Résultat attendu  : 
-```python
-{'A': 0,  'B': 1,  'C': 2,  'D': 3,  'E': 4,  'F': 5,  'G': 6,  'H': 7, 'I': 8,  'J': 9,  'K': 10, 'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18, 'T': 19, 'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24, 'Z': 25}
- ```
+    3.c. 🛠️ Écrire une fonction `codage(mot)` qui renvoie le mot codé avec César
 
+    La fonction :
 
-🔹 **Partie 2 – Le chiffrement de César**
+    * prend une **chaîne en lettres majuscules** (sans espace ni accents),
 
-Le **chiffrement de César** consiste à **décaler chaque lettre** d’un mot d’un certain nombre fixe.
-Exemple avec un **décalage de +7** :
+    * retourne une **nouvelle chaîne codée** avec le **décalage de 7**.
 
-* `'A'` devient `'H'`
+    **Exemple** :
 
-* `'Y'` devient `'F'` car `(24 + 7) % 26 = 5` → `'F'`
+    ```python
+    >>> codage("NSI")
+    'UZP'
+    ```
 
-2.a. **Quels scripts permettent d’obtenir :**
+    > 💡 Utiliser le dictionnaire `d` créé plus tôt.
 
-* le codage de la lettre `'A'` ?
 
-* le codage du mot `'NSI'` avec un décalage de 7 ?
+!!! abstract "Exercice 42 : ★★ Jeu de cartes :"
 
-> 💡 Utiliser le dictionnaire de la question 1c, le modulo `%` pour la rotation, et `chr()` pour revenir au caractère.
+    **Partie 1 – Modélisation et construction du jeu de 32 cartes**
 
+    📌 Règles :
 
-2.b. **Créer un dictionnaire de codage (clé = lettre d’origine, valeur = lettre codée)**
+    Un jeu de 32 cartes comprend :
 
-Ce dictionnaire stocke le résultat du **chiffrement de César avec un décalage de 7**.
+    * **4 couleurs** : pique, cœur, carreau, trèfle
 
-> 💡 À stocker dans une variable `d`.
+    * **8 valeurs** : Roi, Dame, Valet, 1 (As), 10, 9, 8, 7
 
-Résultat attendu (extrait) :
+    ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.060.png)
 
-```python
-{'A': 'H', 'B': 'I', ..., 'Y': 'F', 'Z': 'G'}
-```
 
-🔹 **Partie 3 – Une fonction de codage
+    **1** Implémenter la fonction qui crée un jeu de 32 cartes par compréhesion 
 
-3.a.  Tester le dictionnaire obtenu :
+    ```python
+    def creation_jeu32(couleur: tuple, valeur32: tuple) -> list:
+        """
+        Retourne la liste des 32 cartes d’un jeu sous forme de tuples (valeur, couleur).
+        """
+        pass
+    ```
 
-```python
-print(d['A'])
-print(d['D'])
-print(d['E'])
-```
+    **Données à utiliser :**
 
-3.b.  Question de réflexion :
+    ```python
+    couleur = ("pique", "coeur", "carreau", "trèfle")
+    valeur32 = ("Roi", "Dame", "Valet", 1, 10, 9, 8, 7)
+    ```
 
-Dans `d['A']`, `d['D']`, `d['E']` :
+    **Retour :**
+    ```
+    [('Roi', 'pique'), ('Roi', 'coeur'), ('Roi', 'carreau'), ('Roi', 'trèfle'), ('Dame', 'pique'), ('Dame', 'coeur'), ('Dame', 'carreau'), ('Dame', 'trèfle'), ('Valet', 'pique'), ('Valet', 'coeur'), ('Valet', 'carreau'), ('Valet', 'trèfle'), (1, 'pique'), (1, 'coeur'), (1, 'carreau'), (1, 'trèfle'), (10, 'pique'), (10, 'coeur'), (10, 'carreau'), (10, 'trèfle'), (9, 'pique'), (9, 'coeur'), (9, 'carreau'), (9, 'trèfle'), (8, 'pique'), (8, 'coeur'), (8, 'carreau'), (8, 'trèfle'), (7, 'pique'), (7, 'coeur'), (7, 'carreau'), (7, 'trèfle')]
+    ```
 
-* `'A'`, `'D'`, `'E'` sont-ils des **clés** ou des **valeurs** du dictionnaire `d` ?
+    **Test :**
 
-3.c. 🛠️ Écrire une fonction `codage(mot)` qui renvoie le mot codé avec César
+    ```python
+    jeu32 = creation_jeu32(couleur, valeur32)
+    print("Jeu de 32 cartes :", jeu32)
+    assert len(jeu32) == 32
+    ```
 
-La fonction :
+    **2** Implémenter la fonction qui mélange le jeu
 
-* prend une **chaîne en lettres majuscules** (sans espace ni accents),
+    ```python
+    import random
 
-* retourne une **nouvelle chaîne codée** avec le **décalage de 7**.
+    def melange(jeu: list) -> list:
+        """
+        Mélange le jeu (en place) et le retourne.
+        """
+        pass
+    ```
 
-**Exemple** :
+    **Test :**
 
-```python
->>> codage("NSI")
-'UZP'
-```
+    ```python
+    melange(jeu32)
+    print("Jeu mélangé :", jeu32)
+    ```
 
-> 💡 Utiliser le dictionnaire `d` créé plus tôt.
+    **3** Implémenter la fonction qui tire une carte au hasard
 
+    ```python
+    def carte_hasard(jeu: list) -> tuple:
+        """
+        Tire et supprime une carte du jeu. Renvoie un tuple (valeur, couleur).
+        """
+        pass
+    ```
 
-**<H3 STYLE="COLOR:red;">Exercice 42 :** ★★ **Jeu de cartes :</H3>**
+    **Test :**
 
+    ```python
+    jeu32 = creation_jeu32(couleur, valeur32)
+    c = carte_hasard(jeu32)
+    print("Carte tirée :", c)
+    assert isinstance(c, tuple)
+    assert len(jeu) == 31
+    ```
+    **4** Implémenter la fonction qui crée une main
 
-**Partie 1 – Modélisation et construction du jeu de 32 cartes**
+    ```python
+    def main(nombre_cartes: int, jeu: list) -> list:
+        """
+        Tire un certain nombre de cartes du jeu et les retourne sous forme de liste.
+        Les cartes sont retirées du jeu.
+        """
+        pass
+    ```
 
-📌 Règles :
+    **Test :**
 
-Un jeu de 32 cartes comprend :
+    ```python
+    jeu32 = creation_jeu32(couleur, valeur32)
+    main5 = main(5, jeu32)
+    print("Main de 5 cartes :", main5)
+    assert len(main5) == 5
+    assert len(jeu) == 27
+    ```
 
-* **4 couleurs** : pique, cœur, carreau, trèfle
+    **5** Implémenter la fonction qui calcule la force d'une carte
 
-* **8 valeurs** : Roi, Dame, Valet, 1 (As), 10, 9, 8, 7
+    ```python
+    def force(carte: tuple) -> int:
+        """
+        Renvoie la force d’une carte :
+        7 → 7, ..., Valet → 11, Dame → 12, Roi → 13, 1 (As) → 14
+        """
+        pass
+    ```
 
-![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.060.png)
+    **Test :**
 
+    ```python
+    assert force((7, "pique")) == 7
+    assert force((10, "coeur")) == 10
+    assert force(('Valet', "trèfle")) == 11
+    assert force(('Roi', "carreau")) == 13
+    assert force((1, "pique")) == 14
+    ```
 
-**1** Implémenter la fonction qui crée un jeu de 32 cartes par compréhesion 
+    **6** Implémenter la fonction qui associe chaque carte à sa force
 
-```python
-def creation_jeu32(couleur: tuple, valeur32: tuple) -> list:
-    """
-    Retourne la liste des 32 cartes d’un jeu sous forme de tuples (valeur, couleur).
-    """
-    pass
-```
+    ```python
+    def jeu_force(jeu: list) -> dict:
+        """
+        Renvoie un dictionnaire {carte: force} pour toutes les cartes du jeu.
+        """
+        pass
+    ```
 
-**Données à utiliser :**
+    **Test :**
 
-```python
-couleur = ("pique", "coeur", "carreau", "trèfle")
-valeur32 = ("Roi", "Dame", "Valet", 1, 10, 9, 8, 7)
-```
+    ```python
+    jeu = creation_jeu32(couleur, valeur32)
+    forces = jeu_force(jeu)
+    print("Forces des cartes :", forces)
+    assert isinstance(forces, dict)
+    ```
 
-**Retour :**
-```
-[('Roi', 'pique'), ('Roi', 'coeur'), ('Roi', 'carreau'), ('Roi', 'trèfle'), ('Dame', 'pique'), ('Dame', 'coeur'), ('Dame', 'carreau'), ('Dame', 'trèfle'), ('Valet', 'pique'), ('Valet', 'coeur'), ('Valet', 'carreau'), ('Valet', 'trèfle'), (1, 'pique'), (1, 'coeur'), (1, 'carreau'), (1, 'trèfle'), (10, 'pique'), (10, 'coeur'), (10, 'carreau'), (10, 'trèfle'), (9, 'pique'), (9, 'coeur'), (9, 'carreau'), (9, 'trèfle'), (8, 'pique'), (8, 'coeur'), (8, 'carreau'), (8, 'trèfle'), (7, 'pique'), (7, 'coeur'), (7, 'carreau'), (7, 'trèfle')]
-```
 
+    **7** Implémenter la fonction qui compare deux cartes
 
-**Test :**
+    ```python
+    def compare(carte1: tuple, carte2: tuple, forces: dict) -> tuple:
+        """
+        Compare deux cartes à l'aide d’un dictionnaire de forces.
+        Renvoie la carte la plus forte.
+        """
+        pass
+    ```
 
-```python
-jeu32 = creation_jeu32(couleur, valeur32)
-print("Jeu de 32 cartes :", jeu32)
-assert len(jeu32) == 32
-```
+    **Test :**
 
-**2** Implémenter la fonction qui mélange le jeu
+    ```python
+    jeu = creation_jeu32(couleur, valeur32)
+    forces = jeu_force(jeu)
+    assert compare(('Valet', 'coeur'), (1, 'coeur'), forces) == (1, 'coeur')
+    assert compare((9, 'pique'), (7, 'pique'), forces) == (9, 'pique')
+    ```
 
-```python
-import random
+    **8** Implémenter la fonction qui calcule la distance entre deux cartes</h3>
 
-def melange(jeu: list) -> list:
-    """
-    Mélange le jeu (en place) et le retourne.
-    """
-    pass
-```
+    ```python
+    def distance(carte1: tuple, carte2: tuple) -> int:
+        """
+        Renvoie la différence de force absolue entre deux cartes.
+        """
+        pass
+    ```
 
-**Test :**
+    **Test :**
 
-```python
-melange(jeu32)
-print("Jeu mélangé :", jeu32)
-```
+    ```python
+    assert distance((10, "coeur"), (7, "pique")) == 3
+    assert distance((1, "trèfle"), ('Roi', "trèfle")) == 1
+    ```
 
-**3** Implémenter la fonction qui tire une carte au hasard
+!!! abstract "Exercice 43 ★★ Tracé graphique" 
 
-```python
-def carte_hasard(jeu: list) -> tuple:
-    """
-    Tire et supprime une carte du jeu. Renvoie un tuple (valeur, couleur).
-    """
-    pass
-```
+    **1** Importation 
 
-**Test :**
+    ```python
+    import matplotlib.pyplot as plt
+    ```
 
-```python
-jeu32 = creation_jeu32(couleur, valeur32)
-c = carte_hasard(jeu32)
-print("Carte tirée :", c)
-assert isinstance(c, tuple)
-assert len(jeu) == 31
-```
-**4** Implémenter la fonction qui crée une main
+    **2** Définir la fonction f(x)
 
-```python
-def main(nombre_cartes: int, jeu: list) -> list:
-    """
-    Tire un certain nombre de cartes du jeu et les retourne sous forme de liste.
-    Les cartes sont retirées du jeu.
-    """
-    pass
-```
+    ```python
+    def f(x: float) -> float:
+        """
+        Fonction polynomiale de degré 2 : f(x) = x² + x - 4
+        """
+        pass
 
-**Test :**
+    # Tests
+    assert abs(f(0) - (-4)) < 1e-6
+    assert abs(f(1) - (-2)) < 1e-6
+    assert abs(f(-2) - (-6)) < 1e-6
+    ```
 
-```python
-jeu32 = creation_jeu32(couleur, valeur32)
-main5 = main(5, jeu32)
-print("Main de 5 cartes :", main5)
-assert len(main5) == 5
-assert len(jeu) == 27
-```
+    **3** Générer les données de la courbe
 
-**5** Implémenter la fonction qui calcule la force d'une carte
+    ```python
+    # Liste des abscisses x allant de -3.0 à 3.0 par pas de 0.1
+    liste_x = [x / 10 for x in range(-30, 31)]
 
-```python
-def force(carte: tuple) -> int:
-    """
-    Renvoie la force d’une carte :
-    7 → 7, ..., Valet → 11, Dame → 12, Roi → 13, 1 (As) → 14
-    """
-    pass
-```
+    # Liste des ordonnées associées à la fonction f
+    liste_y = [f(x) for x in liste_x]
+    ```
 
-**Test :**
+    **4** Tracer la première courbe
 
-```python
-assert force((7, "pique")) == 7
-assert force((10, "coeur")) == 10
-assert force(('Valet', "trèfle")) == 11
-assert force(('Roi', "carreau")) == 13
-assert force((1, "pique")) == 14
-```
+    ```python
+    plt.plot(liste_x, liste_y, "b-", label="x² + x - 4", linewidth=3)
+    plt.legend()
+    plt.grid()
+    plt.show()
+    ```
 
-**6** Implémenter la fonction qui associe chaque carte à sa force
+    **5** Définir une deuxième fonction f2(x)
 
-```python
-def jeu_force(jeu: list) -> dict:
-    """
-    Renvoie un dictionnaire {carte: force} pour toutes les cartes du jeu.
-    """
-    pass
-```
+    ```python
+    def f2(x: float) -> float:
+        """
+        Fonction polynomiale de degré 3 : f2(x) = x³ - 3x + 2
+        """
+        pass
 
-**Test :**
+    # Tests
+    assert abs(f2(0) - 2) < 1e-6
+    assert abs(f2(1) - 0) < 1e-6
+    assert abs(f2(-1) - ( -1 + 3 + 2)) < 1e-**6**  # = 4
+    ```
 
-```python
-jeu = creation_jeu32(couleur, valeur32)
-forces = jeu_force(jeu)
-print("Forces des cartes :", forces)
-assert isinstance(forces, dict)
-```
+    **6** Tracer les deux courbes ensemble
 
+    ```python
+    # Ordonnées de la seconde fonction
+    liste_y2 = [f2(x) for x in liste_x]
 
-**7** Implémenter la fonction qui compare deux cartes
+    # Tracé des deux courbes
+    plt.plot(liste_x, liste_y, "b-", label="x² + x - 4", linewidth=3)
+    plt.plot(liste_x, liste_y2, "r--", label="x³ - 3x + 2", linewidth=3)
+    plt.legend()
+    plt.grid()
+    plt.show()
+    ```
+    **Résultat attendu** :  
+    ![](Aimg021.png)
 
-```python
-def compare(carte1: tuple, carte2: tuple, forces: dict) -> tuple:
-    """
-    Compare deux cartes à l'aide d’un dictionnaire de forces.
-    Renvoie la carte la plus forte.
-    """
-    pass
-```
 
-**Test :**
+!!! abstract "Exercice 43 : ★★★ format EXIF Introduction" 
 
-```python
-jeu = creation_jeu32(couleur, valeur32)
-forces = jeu_force(jeu)
-assert compare(('Valet', 'coeur'), (1, 'coeur'), forces) == (1, 'coeur')
-assert compare((9, 'pique'), (7, 'pique'), forces) == (9, 'pique')
-```
 
-**8** Implémenter la fonction qui calcule la distance entre deux cartes</h3>
+    L’Exchangeable  Image  File  Format  ou  EXIF  est  une  spécification  de  format  de  fichier  pour  les  images  utilisées  par  les  appareils  photographiques  numériques.  Il  a  été  établi  par  le  Japan  Electronic  Industry Development Association (JEIDA). Cette spécification repose sur  des formats existants tels que JPEG, TIFF version 6.0 et RIFF format de  fichier audio WAVE, en y ajoutant des balises de métadonnées.  
 
-```python
-def distance(carte1: tuple, carte2: tuple) -> int:
-    """
-    Renvoie la différence de force absolue entre deux cartes.
-    """
-    pass
-```
+    Les  balises  de  métadonnées  définies  dans  le  format  EXIF  standard  couvrent un large éventail de données, dont :  
 
-**Test :**
+    - Information de la date et de l’heure.  
 
-```python
-assert distance((10, "coeur"), (7, "pique")) == 3
-assert distance((1, "trèfle"), ('Roi', "trèfle")) == 1
-```
+    - Marque et le modèle de l’appareil et des informations variables  telles  que  l’orientation,  l’ouverture,  la  vitesse  d’obturation,  la  longueur de focale, la sensibilité…  
 
+    - Informations  géographiques  provenant  d’un  éventuel  système  GPS connecté à l’appareil.  
 
+    - Description et information des droits d’auteur.  
 
-**<H3 STYLE="COLOR:red;">Exercice 43** ★★ **Tracé graphique</h3>**  
+    *Source : wikipedia*  
 
-**1** Importation 
+    **Utilisation du format EXIF**  
 
-```python
-import matplotlib.pyplot as plt
-```
+    Les données EXIF des photos permettent de comprendre pourquoi telle photo est floue, telle autre est trop foncée ou encore pourquoi le ciel est tout blanc. De même, certains sites de publications d’images, comme Flickr par exemple, permettent de visualiser ces données. 
 
-**2** Définir la fonction f(x)
+    Ces données EXIF peuvent avoir des utilisations inattendues comme par exemple en cas de vol de votre appareil photo car le numéro de série de l’appareil est intégré dans ces données (voir le site[ Stolen Camera Finder)](https://www.stolencamerafinder.com/). 
 
-```python
-def f(x: float) -> float:
-    """
-    Fonction polynomiale de degré 2 : f(x) = x² + x - 4
-    """
-    pass
+    **Lecture du format EXIF** 
 
-# Tests
-assert abs(f(0) - (-4)) < 1e-6
-assert abs(f(1) - (-2)) < 1e-6
-assert abs(f(-2) - (-6)) < 1e-6
-```
+    La plupart des appareils photos récents et téléphones portables enregistrent les photographies avec des données géographiques (longitude, latitude, mais aussi altitude). Si ces données sont lisibles avec la majorité des logiciels photos et d’explorateurs de fichiers, il est également possible d’y accéder avec Python. 
 
-**3** Générer les données de la courbe
 
-```python
-# Liste des abscisses x allant de -3.0 à 3.0 par pas de 0.1
-liste_x = [x / 10 for x in range(-30, 31)]
+    🏜️ Voici la photo à analyser
 
-# Liste des ordonnées associées à la fonction f
-liste_y = [f(x) for x in liste_x]
-```
+    ![valley.jpg](valley.jpg)
 
-**4** Tracer la première courbe
+    **1** Écrire une fonction qui lise les données EXIF contenues dans une image. On donne le prototype de la fonction : 
 
-```python
-plt.plot(liste_x, liste_y, "b-", label="x² + x - 4", linewidth=3)
-plt.legend()
-plt.grid()
-plt.show()
-```
+    ```get_exif(filename : str) -> dict ```
 
-**5** Définir une deuxième fonction f2(x)
+    - filename -- fichier image 
 
-```python
-def f2(x: float) -> float:
-    """
-    Fonction polynomiale de degré 3 : f2(x) = x³ - 3x + 2
-    """
-    pass
+    - la fonction retourne les données EXIF si ok, ou None si erreur 
 
-# Tests
-assert abs(f2(0) - 2) < 1e-6
-assert abs(f2(1) - 0) < 1e-6
-assert abs(f2(-1) - ( -1 + 3 + 2)) < 1e-**6**  # = 4
-```
+    **Aide :**  
 
-**6** Tracer les deux courbes ensemble
+    - On utilisera Image de la bibliothèque PIL :  ```from PIL import Image```
 
-```python
-# Ordonnées de la seconde fonction
-liste_y2 = [f2(x) for x in liste_x]
+    - On utilisera la bibliothèque PIL ainsi que les méthodes associées _getexif() et get().  ```from PIL.ExifTags import TAGS, GPSTAGS``` 
 
-# Tracé des deux courbes
-plt.plot(liste_x, liste_y, "b-", label="x² + x - 4", linewidth=3)
-plt.plot(liste_x, liste_y2, "r--", label="x³ - 3x + 2", linewidth=3)
-plt.legend()
-plt.grid()
-plt.show()
-```
-**Résultat attendu** :  
-![](Aimg021.png)
+    - L’appel à _getexif() se fait de la façon suivante : 
+    ```python
+    image = Image.open(filename) 
+    exif = image._getexif() 
+    ```
 
+    - Cependant, on obtient par ce biais un dictionnaire indexé avec des identifiants numériques. Pour avoir les noms correspondants, on utilise ExifTags et on renommera les clefs du dictionnaire : 
 
+    ```new_key = TAGS.get(key, key) ```
 
+    - Ne pas oublier de fermer l’image 
 
-**<H3 STYLE="COLOR:red;">Exercice 43 :** ★★★ **format EXIF Introduction</h3>** 
+    ```image.close() ```
 
+    **Rappels :**
 
-L’Exchangeable  Image  File  Format  ou  EXIF  est  une  spécification  de  format  de  fichier  pour  les  images  utilisées  par  les  appareils  photographiques  numériques.  Il  a  été  établi  par  le  Japan  Electronic  Industry Development Association (JEIDA). Cette spécification repose sur  des formats existants tels que JPEG, TIFF version 6.0 et RIFF format de  fichier audio WAVE, en y ajoutant des balises de métadonnées.  
+    - on utilisera la syntaxe  
+    ```
+    try : 
+    # bloc à coder 
+    except IOError : 
+    return None 
+    return #ledictionnaire
+    ``` 
 
-Les  balises  de  métadonnées  définies  dans  le  format  EXIF  standard  couvrent un large éventail de données, dont :  
+    🎟️ **Fonction à compléter** :
+    ```python
+    from PIL import Image
+    from PIL.ExifTags import TAGS, GPSTAGS
 
-- Information de la date et de l’heure.  
 
-- Marque et le modèle de l’appareil et des informations variables  telles  que  l’orientation,  l’ouverture,  la  vitesse  d’obturation,  la  longueur de focale, la sensibilité…  
+    def get_exif(filename : str) -> dict:
+        data = {}
 
-- Informations  géographiques  provenant  d’un  éventuel  système  GPS connecté à l’appareil.  
-
-- Description et information des droits d’auteur.  
-
-*Source : wikipedia*  
-
-**Utilisation du format EXIF**  
-
-Les données EXIF des photos permettent de comprendre pourquoi telle photo est floue, telle autre est trop foncée ou encore pourquoi le ciel est tout blanc. De même, certains sites de publications d’images, comme Flickr par exemple, permettent de visualiser ces données. 
-
-Ces données EXIF peuvent avoir des utilisations inattendues comme par exemple en cas de vol de votre appareil photo car le numéro de série de l’appareil est intégré dans ces données (voir le site[ Stolen Camera Finder)](https://www.stolencamerafinder.com/). 
-
-**Lecture du format EXIF** 
-
-La plupart des appareils photos récents et téléphones portables enregistrent les photographies avec des données géographiques (longitude, latitude, mais aussi altitude). Si ces données sont lisibles avec la majorité des logiciels photos et d’explorateurs de fichiers, il est également possible d’y accéder avec Python. 
-
-
-
-🏜️ Voici la photo à analyser
-
-![valley.jpg](valley.jpg)
-
-**1** Écrire une fonction qui lise les données EXIF contenues dans une image. On donne le prototype de la fonction : 
-
-```get_exif(filename : str) -> dict ```
-
-- filename -- fichier image 
-
-- la fonction retourne les données EXIF si ok, ou None si erreur 
-
-**Aide :**  
-
-- On utilisera Image de la bibliothèque PIL :  ```from PIL import Image```
-
-- On utilisera la bibliothèque PIL ainsi que les méthodes associées _getexif() et get().  ```from PIL.ExifTags import TAGS, GPSTAGS``` 
-
-- L’appel à _getexif() se fait de la façon suivante : 
-```python
-image = Image.open(filename) 
-exif = image._getexif() 
-```
-
-- Cependant, on obtient par ce biais un dictionnaire indexé avec des identifiants numériques. Pour avoir les noms correspondants, on utilise ExifTags et on renommera les clefs du dictionnaire : 
-
-```new_key = TAGS.get(key, key) ```
-
-- Ne pas oublier de fermer l’image 
-
-```image.close() ```
-
-**Rappels :**
-
-- on utilisera la syntaxe  
-```
-try : 
-  # bloc à coder 
-except IOError : 
-  return None 
-return #ledictionnaire
-``` 
-
-
-
-🎟️ **Fonction à compléter** :
-```python
-from PIL import Image
-from PIL.ExifTags import TAGS, GPSTAGS
-
-
-def get_exif(filename : str) -> dict:
-    data = {}
-
-    try:
-        image = Image.open(filename)
-        exif = image._getexif()
-        ...
-        ...
-        ...
-        image.close()
-    except IOError:
-        return None
-
-    return data
-
-print(get_exif('valley.jpg'))
-```
-**2** Indiquer l’auteur de la photo : 'Artist', 'Fabricant' et 'Numero de série' de l’appareil. Attention aux majuscules / minuscules  
-
-**3** Ajouter une fonction qui récupère les données GPS du format EXIF. On donne le prototype de la fonction : 
-```GPS_read(filename : str) -> dict ```
-- filename -- fichier image 
-- la fonction retourne les informations GPS si ok, ou None si erreur 
-
-**Aides :**
-
-- La variable exif contient l’ensemble des métadonnées de l’image : objectif, ouverture, vitesse, auteur…  
-
-```exif = get_exif(filename) ```
-
-- Les données GPS sont stockées dans exif['GPSInfo'].Il est conseillé de faire afficher cette clé de dictionnaire pour obtenir les noms des champs associés aux informations GPS. Pour récupérer le couple clé, valeur il faut écrire :  
-
-```key, value in exif['GPSInfo'].items():``` 
-
-- Comme tout à l’heure il faut utiliser les ExifTags et renommer les clés 
-
-```new_key = GPSTAGS.get(key, key) ```
-
-**Rappels :** 
-
-- Capturer les exceptions : s’il n’y a pas d’exif et s’il n’y a pas de 'GPSInfo' dans exif 
-
-```
-try : 
-  # bloc à coder 
-except KeyError : 
-  return None
-``` 
-
-🎟️ **Fonction à compléter** :
-```python
-def GPS_read(filename : str) -> dict:
-    """
-    fonction qui retourne toutes les données GPS à partir d'une photo
-    :param filename:str
-    :return:dict
-    """
-    gps = {}
-    try:
-        exif = get_exif(filename)
-        if exif is not None and 'GPSInfo' in exif:
+        try:
+            image = Image.open(filename)
+            exif = image._getexif()
             ...
             ...
             ...
-            return gps
-        return None
-    except KeyError:
-        return None
-print(GPS_read('mountain.jpg'))
-```
-
-Les coordonnées géographiques sont habituellement exprimées dans le système sexagésimal, ou DMS pour degrés (°), minutes (′) et secondes (″). L’unité est le degré d’angle (1 tour = 360°), puis la minute d’angle (1° = 60′), puis la seconde d’angle (1° = 3 600″). 
-
-Par rapport au plan équatorial, la latitude est complétée d’une lettre N (hémisphère) ou S selon qu’on se situe dans l’hémisphère Nord ou Sud. Par rapport au méridien de Greenwich, la longitude est complétée d’une lettre W ou E selon qu’on se situe à l’Ouest ou à l’Est. 
-
-Remarque : pour obtenir un traitement automatisé des données géographiques, un format décimal est souvent plus pratique. On divise les minutes par 60 et les secondes par 3600 et on additionne le tout. La latitude est négative dans l’hémisphère Sud (S), et à l’Ouest du méridien de Greenwich (W). 
-
-**4** A partir des données GPS récupérées précédemment, écrire une fonction qui indique les coordonnées GPS[^1]. On donne le prototype de la fonction : 
-
-```get_coordinates(GPSinfo : dict) -> list ```
-
-- GPSinfo -- données GPS 
-
-- la fonction retourne les coordonnées GPS au format DMS si ok, ou None si erreur sous la forme d’une liste de liste ['valeurLatitude', 'valeurLongitude']
-
-**Aide** : 
-
-- Pour connaitre les données à utiliser reportez vous à la ligne 3 et la ligne 4 du tableau ci-dessus 
-
-- Le  dictionnaire  précédent  renvoie  les  clés :   'GPSLatitudeRef',  'GPSLatitude', 'GPSLongitudeRef' et 'GPSLongitude' 
-
-- Pour accéder à une valeur particulière : 
-
-```
->>> GPSinfo = {'GPSLatitudeRef': 'N', 'GPSLatitude': ((63, 1), (409847, 10000), (0, 1)), 
-'GPSLongitudeRef': 'W', 'GPSLongitude': ((19, 1), (318565, 10000), (0, 1)), 'GPSAltitudeRef': 
-b'\x00', 'GPSAltitude': (92709, 191), 'GPSTimeStamp': ((13, 1), (18, 1), (42000, 1000)), 
-'GPSSpeedRef': 'K', 'GPSSpeed': (23, 25), 'GPSImgDirectionRef': 'M', 'GPSImgDirection': 
-(57107, 192), 'GPSDestBearingRef': 'M', 'GPSDestBearing': (57107, 192), 'GPSDateStamp': 
-'2018:09:03', 'GPSHPositioningError': (10, 1)}
->>> GPSinfo['GPSLatitude']
-((63, 1), (409847, 10000), (0, 1))
->>> GPSinfo['GPSLatitude'][0][0]
-63
-```
-
-
-
-- Convertir chaque donnée en str pour pouvoir faire une présentation des coordonnées de ce type : '63.0°40.9847‘0.0"N'' 
-
-- Pour coder le symbole de minute "‘" 
-
-- Pour écrire une instruction sur plusieurs lignes on met \ à la fin de chaque ligne 
-
-**Rappel** :  
-
-```
-try : 
-  # bloc à coder 
-except TypeError : 
-  return None 
-```
-
-
-🎟️ **Fonction à compléter** :
-```python
-def get_coordinates(GPSinfo : dict) -> list:
-    """
-    fonction qui retourne une liste avec les coordonnées GPS de la photo
-    :param GPSinfo: dict
-    :return: list
-    """
-    try :
-        coordinate=[0 for x in range(2)]
-        if 'GPSLatitude' in GPSinfo and 'GPSLongitude' in GPSinfo:
-            coordinate[0] = str(GPSinfo['GPSLatitude'][0][0]/GPSinfo['GPSLatitude'][0][1])+'°'\
-                               + str(GPSinfo['GPSLatitude'][1][0]/GPSinfo['GPSLatitude'][1][1])+"‘" \
-                               + str(GPSinfo['GPSLatitude'][2][0]/GPSinfo['GPSLatitude'][2][1])+'"' \
-                               + GPSinfo['GPSLatitudeRef']
-            coordinate[1]= ...
-
-        else :
+            image.close()
+        except IOError:
             return None
-        return coordinate
-    except TypeError:
-        return None
 
-GPSinfo = {'GPSLatitudeRef': 'N', 'GPSLatitude': ((63, 1), (409847, 10000), (0, 1)), 'GPSLongitudeRef': 'W', 'GPSLongitude': ((19, 1), (318565, 10000), (0, 1)), 'GPSAltitudeRef': b'\x00', 'GPSAltitude': (92709, 191), 'GPSTimeStamp': ((13, 1), (18, 1), (42000, 1000)), 'GPSSpeedRef': 'K', 'GPSSpeed': (23, 25), 'GPSImgDirectionRef': 'M', 'GPSImgDirection': (57107, 192), 'GPSDestBearingRef': 'M', 'GPSDestBearing': (57107, 192), 'GPSDateStamp': '2018:09:03', 'GPSHPositioningError': (10, 1)}
-print(get_coordinates(GPSinfo))
+        return data
 
-```
+    print(get_exif('valley.jpg'))
+    ```
+    **2** Indiquer l’auteur de la photo : 'Artist', 'Fabricant' et 'Numero de série' de l’appareil. Attention aux majuscules / minuscules  
 
+    **3** Ajouter une fonction qui récupère les données GPS du format EXIF. On donne le prototype de la fonction : 
+    ```GPS_read(filename : str) -> dict ```
+    - filename -- fichier image 
+    - la fonction retourne les informations GPS si ok, ou None si erreur 
 
+    **Aides :**
 
-**<H3 STYLE="COLOR:red;">Exercice 45 :** ★★★ **Le chiffrement de Caesar</h3>** 
+    - La variable exif contient l’ensemble des métadonnées de l’image : objectif, ouverture, vitesse, auteur…  
 
-![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.089.png)
+    ```exif = get_exif(filename) ```
 
-En cryptographie, le chiffrement par décalage, aussi connu comme le chiffre de César ou le code de César, est une méthode de chiffrement très simple utilisée par Jules César dans ses correspondances secrètes (ce qui explique le nom « chiffre de César »). 
+    - Les données GPS sont stockées dans exif['GPSInfo'].Il est conseillé de faire afficher cette clé de dictionnaire pour obtenir les noms des champs associés aux informations GPS. Pour récupérer le couple clé, valeur il faut écrire :  
 
-Le texte chiffré s'obtient en remplaçant chaque lettre du texte clair original par une lettre à distance fixe, toujours du même côté, dans l'ordre de l'alphabet. Pour les dernières lettres (dans le cas d'un décalage à droite), on reprend au début. Par exemple avec un décalage de 3 vers la droite, A est remplacé par D, B devient E, et ainsi jusqu'à W  qui  devient  Z,  puis  X  devient A  etc.  Il  s'agit  d'une  permutation  circulaire  de l'alphabet. La longueur du décalage, 3 dans l'exemple évoqué, constitue la clé du chiffrement qu'il suffit de transmettre au destinataire — s'il sait déjà qu'il s'agit d'un chiffrement de César — pour que celui-ci puisse déchiffrer le message. Dans le cas de l'alphabet latin, le chiffre de César n'a que 26 clés possibles. 
+    ```key, value in exif['GPSInfo'].items():``` 
 
-![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.090.png)
+    - Comme tout à l’heure il faut utiliser les ExifTags et renommer les clés 
 
-*Source :[ https://fr.wikipedia.org/wiki/Chiffrement_par_d%C3%A9calage* ](https://fr.wikipedia.org/wiki/Chiffrement_par_d%C3%A9calage)*
+    ```new_key = GPSTAGS.get(key, key) ```
 
-**Des chiffres et des lettres** 
+    **Rappels :** 
 
-Nous  adopterons  la  convention  suivante,  en  vert  c’est  la  partie  du  message  à  laquelle  tout  le  monde  a  accès  (ou  qui  pourrait  être  intercepté), c’est donc le message crypté. Alors qu’en rouge c’est la  partie du message confidentiel, c’est le message en clair.
+    - Capturer les exceptions : s’il n’y a pas d’exif et s’il n’y a pas de 'GPSInfo' dans exif 
 
-![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.091.png)
+    ```
+    try : 
+    # bloc à coder 
+    except KeyError : 
+    return None
+    ``` 
 
-Pour prendre en compte aussi les dernières lettres de l’alphabet, il est  plus judicieux de représenté l’alphabet sur un anneau. Ce décalage est  un décalage circulaire sur les lettres de l’alphabet. Pour déchiffrer le  message de César, il suffit de décaler les lettres dans l’autre sens, D se  déchiffre en A, E en B,…  
+    🎟️ **Fonction à compléter** :
+    ```python
+    def GPS_read(filename : str) -> dict:
+        """
+        fonction qui retourne toutes les données GPS à partir d'une photo
+        :param filename:str
+        :return:dict
+        """
+        gps = {}
+        try:
+            exif = get_exif(filename)
+            if exif is not None and 'GPSInfo' in exif:
+                ...
+                ...
+                ...
+                return gps
+            return None
+        except KeyError:
+            return None
+    print(GPS_read('mountain.jpg'))
+    ```
 
-Il est plus facile de manipuler des nombres que des lettres, aussi nous  passons à une formulation mathématique. Nous associons à chacune des  26 lettres de A à Z un nombre de 0 à 25. 
+    Les coordonnées géographiques sont habituellement exprimées dans le système sexagésimal, ou DMS pour degrés (°), minutes (′) et secondes (″). L’unité est le degré d’angle (1 tour = 360°), puis la minute d’angle (1° = 60′), puis la seconde d’angle (1° = 3 600″). 
 
-*Source: Arnaud Bodin & François Recher, université de Lille* 
+    Par rapport au plan équatorial, la latitude est complétée d’une lettre N (hémisphère) ou S selon qu’on se situe dans l’hémisphère Nord ou Sud. Par rapport au méridien de Greenwich, la longitude est complétée d’une lettre W ou E selon qu’on se situe à l’Ouest ou à l’Est. 
 
-Le code ASCII de la lettre ‘A’ a pour valeur 65, celui de la lettre ‘Z’ 90. Quel que soit le décalage appliqué, il faut rester dans l’intervalle [65 ; 90]. 
+    Remarque : pour obtenir un traitement automatisé des données géographiques, un format décimal est souvent plus pratique. On divise les minutes par 60 et les secondes par 3600 et on additionne le tout. La latitude est négative dans l’hémisphère Sud (S), et à l’Ouest du méridien de Greenwich (W). 
 
-Méthode : 
+    **4** A partir des données GPS récupérées précédemment, écrire une fonction qui indique les coordonnées GPS[^1]. On donne le prototype de la fonction : 
 
-**1** ([65 ; 90] – 65) → [0 ; 25]  on soustrait 65 pour être dans un intervalle [0 ; 25] 
+    ```get_coordinates(GPSinfo : dict) -> list ```
 
-**2** ([0 ; 25] + clef) → [clef ; 25 + clef]  on décale selon la clef 
+    - GPSinfo -- données GPS 
 
-**3** [clef ; 25 + clef] modulo 26 → [0 ; 25]   le modulo permet de rester dans l’intervalle [0 ; 25] 
+    - la fonction retourne les coordonnées GPS au format DMS si ok, ou None si erreur sous la forme d’une liste de liste ['valeurLatitude', 'valeurLongitude']
 
-**4** ([0 ; 25] + 65) → [65 ; 90]  on ajoute 65 pour revenir dans un intervalle [‘A’; ‘Z’] 
+    **Aide** : 
 
-On appelle modulo d’un nombre x par N, l’opérateur qui renvoie le reste de la division entière de x par N. 
+    - Pour connaitre les données à utiliser reportez vous à la ligne 3 et la ligne 4 du tableau ci-dessus 
 
-**Exemple** : 11 modulo 5 = 1 (en Python, le modulo est notée %). 
+    - Le  dictionnaire  précédent  renvoie  les  clés :   'GPSLatitudeRef',  'GPSLatitude', 'GPSLongitudeRef' et 'GPSLongitude' 
 
+    - Pour accéder à une valeur particulière : 
 
+    ```
+    >>> GPSinfo = {'GPSLatitudeRef': 'N', 'GPSLatitude': ((63, 1), (409847, 10000), (0, 1)), 
+    'GPSLongitudeRef': 'W', 'GPSLongitude': ((19, 1), (318565, 10000), (0, 1)), 'GPSAltitudeRef': 
+    b'\x00', 'GPSAltitude': (92709, 191), 'GPSTimeStamp': ((13, 1), (18, 1), (42000, 1000)), 
+    'GPSSpeedRef': 'K', 'GPSSpeed': (23, 25), 'GPSImgDirectionRef': 'M', 'GPSImgDirection': 
+    (57107, 192), 'GPSDestBearingRef': 'M', 'GPSDestBearing': (57107, 192), 'GPSDateStamp': 
+    '2018:09:03', 'GPSHPositioningError': (10, 1)}
+    >>> GPSinfo['GPSLatitude']
+    ((63, 1), (409847, 10000), (0, 1))
+    >>> GPSinfo['GPSLatitude'][0][0]
+    63
+    ```
 
-**1** Écrire une fonction qui utilise la méthode de César pour crypter un message. 
 
-Le prototype de la fonction est : ```caesar_encode(text : str, key : int = 1) -> str```
 
-- text représente le texte à chiffrer,  
-- key représente la clef de chiffrement.  
-- La fonction doit renvoyer le texte chiffré. 
+    - Convertir chaque donnée en str pour pouvoir faire une présentation des coordonnées de ce type : '63.0°40.9847‘0.0"N'' 
 
-**Aide :** 
+    - Pour coder le symbole de minute "‘" 
 
-- les caractères (lettres ou signes de ponctuations) qui ne figurent pas dans l’alphabet [A..Z] **restent inchangés**. 
+    - Pour écrire une instruction sur plusieurs lignes on met \ à la fin de chaque ligne 
 
-- Utilisez les méthodes upper() (pour mettre en majuscule) et isalpha() (pour tester si c’est une lettre alphabétique)  
+    **Rappel** :  
 
-- Utilisez les fonction chr(#nombre) pour convertir en caractère et ord(‘#la lettre’) pour convertir en code ASCII 
+    ```
+    try : 
+    # bloc à coder 
+    except TypeError : 
+    return None 
+    ```
 
-🎟️ **Fonction à compléter** :
-```python
-def caesar_encode(text : str, key : str = 1) -> str:
-    """
-    fonction qui utilise la méthode de César pour crypter
-    :param text: str
-    :param key: int
-    :return: str
-    """
-    #à compléter
+    🎟️ **Fonction à compléter** :
+    ```python
+    def get_coordinates(GPSinfo : dict) -> list:
+        """
+        fonction qui retourne une liste avec les coordonnées GPS de la photo
+        :param GPSinfo: dict
+        :return: list
+        """
+        try :
+            coordinate=[0 for x in range(2)]
+            if 'GPSLatitude' in GPSinfo and 'GPSLongitude' in GPSinfo:
+                coordinate[0] = str(GPSinfo['GPSLatitude'][0][0]/GPSinfo['GPSLatitude'][0][1])+'°'\
+                                + str(GPSinfo['GPSLatitude'][1][0]/GPSinfo['GPSLatitude'][1][1])+"‘" \
+                                + str(GPSinfo['GPSLatitude'][2][0]/GPSinfo['GPSLatitude'][2][1])+'"' \
+                                + GPSinfo['GPSLatitudeRef']
+                coordinate[1]= ...
 
-assert caesar_encode("ATTAQUEZ DEMAIN")== 'BUUBRVFA EFNBJO'
+            else :
+                return None
+            return coordinate
+        except TypeError:
+            return None
 
-```
+    GPSinfo = {'GPSLatitudeRef': 'N', 'GPSLatitude': ((63, 1), (409847, 10000), (0, 1)), 'GPSLongitudeRef': 'W', 'GPSLongitude': ((19, 1), (318565, 10000), (0, 1)), 'GPSAltitudeRef': b'\x00', 'GPSAltitude': (92709, 191), 'GPSTimeStamp': ((13, 1), (18, 1), (42000, 1000)), 'GPSSpeedRef': 'K', 'GPSSpeed': (23, 25), 'GPSImgDirectionRef': 'M', 'GPSImgDirection': (57107, 192), 'GPSDestBearingRef': 'M', 'GPSDestBearing': (57107, 192), 'GPSDateStamp': '2018:09:03', 'GPSHPositioningError': (10, 1)}
+    print(get_coordinates(GPSinfo))
+    ```
 
-**2** Écrire un programme qui permet de déchiffrer le texte chiffré précédemment. Le prototype de la fonction est : ```caesar_decode(code : str, key : int = 1) -> str```
 
-- code représente le texte à déchiffrer, 
 
-- key représente la clef de chiffrement.
+!!! abstract "Exercice 45 : ★★★ Le chiffrement de Caesar"
 
-- La fonction doit renvoyer le texte déchiffré. 
+    ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.089.png)
 
-**Aide :** 
-- Le decodage de la lettre S avec une key = 19 donne Z.
+    En cryptographie, le chiffrement par décalage, aussi connu comme le chiffre de César ou le code de César, est une méthode de chiffrement très simple utilisée par Jules César dans ses correspondances secrètes (ce qui explique le nom « chiffre de César »). 
 
-🎟️ **Fonction à compléter**
-```python
-def caesar_decode(code : str, key : str = 1) -> str:
-    """
-    fonction qui utilise la méthode de César pour décrypter
-    :param code: str
-    :param key: int
-    :return: str
-    """
-    # à compléter
+    Le texte chiffré s'obtient en remplaçant chaque lettre du texte clair original par une lettre à distance fixe, toujours du même côté, dans l'ordre de l'alphabet. Pour les dernières lettres (dans le cas d'un décalage à droite), on reprend au début. Par exemple avec un décalage de 3 vers la droite, A est remplacé par D, B devient E, et ainsi jusqu'à W  qui  devient  Z,  puis  X  devient A  etc.  Il  s'agit  d'une  permutation  circulaire  de l'alphabet. La longueur du décalage, 3 dans l'exemple évoqué, constitue la clé du chiffrement qu'il suffit de transmettre au destinataire — s'il sait déjà qu'il s'agit d'un chiffrement de César — pour que celui-ci puisse déchiffrer le message. Dans le cas de l'alphabet latin, le chiffre de César n'a que 26 clés possibles. 
 
-assert caesar_encode('BUUBRVFA EFNBJO')== 'ATTAQUEZ DEMAIN'
-```
+    ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.090.png)
 
-**3** Factoriser le code des deux fonctions précédentes pour obtenir une fonction qui chiffre ou déchiffre. Le prototype de la fonction est : ```caesar(str_in : str, key : int) -> str```
+    *Source :[ https://fr.wikipedia.org/wiki/Chiffrement_par_d%C3%A9calage* ](https://fr.wikipedia.org/wiki/Chiffrement_par_d%C3%A9calage)*
 
-- str_in représente le texte à chiffrer/déchiffrer, 
-- key représente la clef de chiffrement. Si key > 0 c’est un chiffrage si key < 0 c’est un déchiffrement.  
-- La fonction doit renvoyer le texte déchiffré/chiffré. 
+    **Des chiffres et des lettres** 
 
-🎟️ **Fonction à compléter** :
-```python 
-def caesar(str_in : str, key : int) -> str:
-    """
-    Fonction qui chiffre ou déchiffre avec la méthode de César
-    :param str_in:str
-    :param key : int
-    :return:str
-    """
-    # à compléter
+    Nous  adopterons  la  convention  suivante,  en  vert  c’est  la  partie  du  message  à  laquelle  tout  le  monde  a  accès  (ou  qui  pourrait  être  intercepté), c’est donc le message crypté. Alors qu’en rouge c’est la  partie du message confidentiel, c’est le message en clair.
 
+    ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.091.png)
 
-assert caesar("ATTAQUEZ DEMAIN", 1)== 'BUUBRVFA EFNBJO'
-assert caesar('BUUBRVFA EFNBJO', -1)== 'ATTAQUEZ DEMAIN'
-```
+    Pour prendre en compte aussi les dernières lettres de l’alphabet, il est  plus judicieux de représenté l’alphabet sur un anneau. Ce décalage est  un décalage circulaire sur les lettres de l’alphabet. Pour déchiffrer le  message de César, il suffit de décaler les lettres dans l’autre sens, D se  déchiffre en A, E en B,…  
 
+    Il est plus facile de manipuler des nombres que des lettres, aussi nous  passons à une formulation mathématique. Nous associons à chacune des  26 lettres de A à Z un nombre de 0 à 25. 
 
+    *Source: Arnaud Bodin & François Recher, université de Lille* 
 
-**4** Tests de cohérence. Écrire une série de tests unitaires qui vérifie les conditions suivantes : 
+    Le code ASCII de la lettre ‘A’ a pour valeur 65, celui de la lettre ‘Z’ 90. Quel que soit le décalage appliqué, il faut rester dans l’intervalle [65 ; 90]. 
 
-Tests à compléter
-```python
-assert caesar('A', 0) == ...
-assert caesar('Z', 1) == ...
-assert caesar('Y', 2) == ...
-assert caesar('A', 26) == ...
-assert caesar('A', 26*2) == ...
-assert caesar('A', -26) == ...
-assert caesar('', 1) == ...
-assert caesar('a', 0) == ...
-```
+    Méthode : 
 
+    **1** ([65 ; 90] – 65) → [0 ; 25]  on soustrait 65 pour être dans un intervalle [0 ; 25] 
 
-**Décryptage** 
+    **2** ([0 ; 25] + clef) → [clef ; 25 + clef]  on décale selon la clef 
 
-Décrypter consiste à retrouver le texte original à partir d'un message chiffré sans posséder la clé de (dé)chiffrement. Le challenge consiste à décrypter le message ci-dessous. 
+    **3** [clef ; 25 + clef] modulo 26 → [0 ; 25]   le modulo permet de rester dans l’intervalle [0 ; 25] 
 
-AV WRZJ JFLMVEK TV IVMV VKIREXV VK GVEVKIREK 
+    **4** ([0 ; 25] + 65) → [65 ; 90]  on ajoute 65 pour revenir dans un intervalle [‘A’; ‘Z’] 
 
-U’LEV WVDDV ZETFEELV, VK HLV A’RZDV, VK HLZ D’RZDV, 
+    On appelle modulo d’un nombre x par N, l’opérateur qui renvoie le reste de la division entière de x par N. 
 
-VK HLZ E’VJK, TYRHLV WFZJ, EZ KFLK R WRZK CR DVDV 
+    **Exemple** : 11 modulo 5 = 1 (en Python, le modulo est notée %). 
 
-EZ KFLK R WRZK LEV RLKIV, VK D’RZDV VK DV TFDGIVEU. 
+    **1** Écrire une fonction qui utilise la méthode de César pour crypter un message. 
 
-Le chiffrement de César a été utilisé mais avec une clef différente de 1. 
+    Le prototype de la fonction est : ```caesar_encode(text : str, key : int = 1) -> str```
 
-**5** Écrire un programme afin de donner le nom de l’auteur du message crypté. 
+    - text représente le texte à chiffrer,  
+    - key représente la clef de chiffrement.  
+    - La fonction doit renvoyer le texte chiffré. 
 
-**Aide :**  
-- La clef de chiffrement étant inconnue, il faut faire une boucle qui les teste toutes (technique de l’attaque par force brute). 
+    **Aide :** 
 
-**<H3 STYLE="COLOR:red;">Exercice 46 :** ★★★ **Le chiffrement de Vigenère</h3>** 
+    - les caractères (lettres ou signes de ponctuations) qui ne figurent pas dans l’alphabet [A..Z] **restent inchangés**. 
 
-Le chiffre de Vigenère est un système de chiffrement polyalphabétique, c’est un chiffrement par substitution, mais une même lettre du message clair peut, suivant sa position dans celui-ci, être remplacée par des lettres différentes, contrairement à un système de chiffrement mono alphabétique comme le chiffre de César (qu'il utilise cependant comme composant). Cette méthode résiste ainsi à l'analyse de fréquences, ce qui est un avantage décisif sur les chiffrements mono alphabétiques. Cependant le chiffre de Vigenère a été percé par le major prussien Friedrich Kasiski qui a publié sa méthode en 1863. Depuis cette époque, il n‘offre plus aucune sécurité. 
+    - Utilisez les méthodes upper() (pour mettre en majuscule) et isalpha() (pour tester si c’est une lettre alphabétique)  
 
-**Chiffrement mono-alphabétique**  
+    - Utilisez les fonction chr(#nombre) pour convertir en caractère et ord(‘#la lettre’) pour convertir en code ASCII 
 
-Nous avons vu que le chiffrement de César présente une sécurité très faible, la principale raison est que l’espace des clés est trop petit : il y a seulement 26 clés possibles, et on peut attaquer un message chiffré en testant toutes les clés à la main. 
-
-Au lieu de faire correspondre circulairement les lettres, on associe maintenant à chaque lettre une autre lettre (sans ordre fixe ou règle générale). 
-
-Par exemple : 
-
-|A |B |C |D |E |F |G |H |I |J |K |L |M |N |O |P |Q |R |S |T |U |V |W |X |Y |Z |
-| - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
-|F |Q |B |M |X |I |T |E |P |A |L |W |H |S |D |O |Z |K |V |G |R |C |N |Y |J |U |
-
-Pour crypter le message : ETRE OU NE PAS ETRE TELLE EST LA QUESTION 
-
-On regarde la correspondance et on remplace la lettre E par la lettre X, puis la lettre T par la lettre G, puis la lettre R par la lettre K... 
-
-Le message crypté est alors : XGKX DR SX OFV XGKX GXWWX XVG WF ZRXVGPDS Pour le décrypter, en connaissant les substitutions, on fait l’opération inverse. 
-
-- **Avantage** : nous allons voir que l’espace des clés est gigantesque et qu’il n’est plus question d’énumérer toutes les possibilités. 
-
-- **Inconvénients** : la clé à retenir est beaucoup plus longue, puisqu’il faut partager la clé constituée des 26 lettres "FQBMX...". Mais surtout, nous allons voir que finalement ce protocole de chiffrement est assez simple à « craquer ». 
-
-**Attaque statistique** 
-
-La principale faiblesse du chiffrement mono-alphabétique est qu’une même lettre est toujours chiffrée de la même façon. Par exemple, ici E devient X. Dans les textes longs, les lettres n’apparaissent pas avec la même fréquence. Ces fréquences varient suivant la langue utilisée. En français, les lettres les plus rencontrées sont dans l’ordre : 
-
-E S A I N T R U L O D C P M V Q G F H B X J Y Z K W avec les fréquences (souvent proches et dépendant de l’échantillon utilisé) : 
-
-
-
-|E |S |A |I |N |T |R |U |L |O |D |
-| - | - | - | - | - | - | - | - | - | - | - |
-|14.69% |8.01% |7.54% |7.18% |6.89% |6.88% |6.49% |6.12% |5.63% |5.29% |3.66% |
-
-Voici la méthode d’attaque : dans le texte crypté, on cherche la lettre qui apparaît le plus, et si le texte est assez long cela devrait être le chiffrement du E, la lettre qui apparaît ensuite dans l’étude des fréquences devrait être le chiffrement du S, puis le chiffrement du A... On obtient des morceaux de texte clair sous la forme d’un texte à trous et il faut ensuite deviner les lettres manquantes. 
-
-Par exemple, déchiffrons la phrase : LHLZ HFQ BC HFFPZ WH YOUPFH MUPZH 
-On compte les apparitions des lettres → H : 6 F : 4 P : 3 Z : 3 
-
-On suppose donc que le H crypte la lettre E, le F la lettre S, ce qui donne : 
-
-*E** ES* ** ESS** *E ***SE ****E 
-
-
-D’après les statistiques P et Z devraient se décrypter en A et I (ou I et A). Le quatrième mot "HFFPZ", pour l’instant décrypté en "ESS**", se complète donc en "ESSAI" ou "ESSIA". La première solution semble correcte. Ainsi P crypte A, et Z crypte I. La phrase est maintenant : 
-
-*E*I ES* ** ESSAI *E ***ASE **AIE 
-
-En réfléchissant un petit peu, on décrypte le message : CECI EST UN ESSAI DE PHRASE VRAIE 
-
-**1** Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un texte. On donne le prototype :  
-
-```letter_count(text : str) -> list```
-
-- text : texte source 
-- la fonction renvoie une liste de valeurs [lettre, occurrences], triée par ordre décroissant selon le nombre d’occurrences de chaque lettre. 
-
-**Aide** :  
-
-- penser à mettre tout le texte en minuscules 
-
-- utiliser  la  méthode  isalpha  pour  ne  sélectionner  que  les  lettres  alphabétiques :[https://www.geeksforgeeks.org/python-string-isalpha-application/ ](https://www.geeksforgeeks.org/python-string-isalpha-application/)
-
-- utiliser un dictionnaire pour compter les occurrences de chaque lettre puis créer une liste de listes à partir du dictionnaire 
-
-- on utilisera une fonction lambda et la méthode sort() pour trier la liste par ordre décroissant de nombre d’occurrences
-
-```python 
-a.sort(key=lambda x: x[1]) => tri la liste a par ordre croissant des nombres en indice 1
-a.sort(key=lambda x: -x[1]) => tri la liste a par ordre décroissant des nombres en indice 1
-```
-
-[https://www.science-emergence.com/Articles/Comment-trier-une-liste-de-tuple-par-rapport-a-un-](https://www.science-emergence.com/Articles/Comment-trier-une-liste-de-tuple-par-rapport-a-un-element-donnee-en-python-/)
-
-🎟️ **Fonction à compléter**:
-```python
-
-def letter_count(text : str) -> list:
-    """
-    Fonction qui compte le nombre d'occurrences de chaque lettre dans un texte
-    :param text: str
-    :return: list
-    """
-    
-
-assert letter_count("ETRE OU NE PAS ETRE TELLE EST LA QUESTION.") == [['e', 9], ['t', 5], ['s', 3], ['l', 3], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
-assert letter_count("Être ou ne pas Être, telle est la question.") == [['e', 7], ['t', 5], ['s', 3], ['l', 3], ['ê', 2], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
-```
-
-
-**2** Modifier la fonction pour que les lettres accentuées soient considérées comme non accentuées. On ajoutera avant une fonction ```strip_accent(text : str) -> str```
-
-- text : lettre accentuée 
-
-- la fonction renvoie lettre sans accent 
-
-**Aide** :  
-
-- passer en revue chaque lettre accentuée possible 
-
-🎟️ **Fonctions à compléter** :
-```python
-def strip_accent(text : str) -> str:
-    """
-    Fonction qui transforme la lettre accentuée en lettre non accentuées
-    :param text:str
-    :return:str
-    """
-    accents = {'a': ['à', 'â'],
-               'e': ['é', 'è', 'ê', 'ë'],
-               'i': ['î', 'ï'],
-               'u': ['ù', 'ü', 'û'],
-               'o': ['ô', 'ö']}
-
-    # à compléter
-
-
-def letter_count(text : str) -> list:
-    """
-    Fonction qui compte le nombre d'occurrences de chaque lettre dans un texte
-    :param text: str
-    :return: list
-    """
-    #à compléter
-
-assert letter_count("ETRE OU NE PAS ETRE TELLE EST LA QUESTION.") == [['e', 9], ['t', 5], ['s', 3], ['l', 3], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
-assert letter_count("Être ou ne pas Être, telle est la question.") == [['e', 9], ['t', 5], ['s', 3], ['l', 3], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
-```
-
-**3** Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un fichier texte. 
-
-On donne le prototype : ```count_in_file(file : str, encode = 'utf-8') -> list```
-
-- file: nom du fichier texte 
-
-- encode : type d’encodage du fichier (défaut utf-8) 
-
-- la fonction renvoie une liste de valeurs [lettre, occurrences], triée par ordre décroissant selon le nombre d’occurrences de chaque lettre ou liste vide si erreur. 
-
-**Aide :** 
-
-- ouvrir le fichier avec la fonction open() et l’attribut ‘r’, ne pas oublier l’encodage du fichier 
-
-- On utilisera la méthode rstrip("\n") pour enlever le symbole.  [https://www.w3schools.com/python/ref_string_rstrip.asp ](https://www.w3schools.com/python/ref_string_rstrip.asp)![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.010.png)
-
-🎟️ **Fonctions à compléter**:
-```python
-
-def count_in_file(file : str, encode = 'utf-8') -> list:
-    """
-    Fonction qui compte le nombre d'occurrences de chaque lettre dans un fichier texte
-    :param file: str
-    :param encode: list
-    :return:
-    """
-    # à compléter
-
-assert count_in_file("book_vh.txt") == [['e', 139996], ['a', 67618], ['s', 60385], ['i', 59208], ['t', 58033], ['u', 52989], ['r', 52377], ['n', 51021], ['l', 48412], ['o', 41961], ['d', 30221], ['c', 25215], ['m', 21676], ['p', 21393], ['v', 13206], ['q', 9631], ['g', 8972], ['f', 8856], ['h', 8542], ['b', 8187], ['j', 3882], ['x', 3161], ['y', 2425], ['z', 1319], ['ç', 458], ['æ', 38], ['k', 23], ['w', 3], ['ñ', 1], ['á', 1]]
-```
-
-**4** Modifier la fonction pour traiter le cas d’une éventuelle erreur à l’ouverture du fichier (nom incorrect, problème de droits, …). On utilisera le gestionnaire de contexte (context manager). 
-```
-try : 
-  # bloc à coder 
-except FileNotFoundError:          
-  return [] 
-```
-🎟️ **Fonction à compléter** :
-```python
-def count_in_file(file : str, encode = 'utf-8') -> list:
-    """
-    Fonction qui compte le nombre d'occurrences de chaque lettre dans un fichier texte
-    :param file: str
-    :param encode: list
-    :return:
-    """
-    ligne_caractere =''
-    try :
-        ...
-    except FileNotFoundError:
-        return []
-
-
-assert count_in_file("book_vh.txt") == [['e', 139996], ['a', 67618], ['s', 60385], ['i', 59208], ['t', 58033], ['u', 52989], ['r', 52377], ['n', 51021], ['l', 48412], ['o', 41961], ['d', 30221], ['c', 25215], ['m', 21676], ['p', 21393], ['v', 13206], ['q', 9631], ['g', 8972], ['f', 8856], ['h', 8542], ['b', 8187], ['j', 3882], ['x', 3161], ['y', 2425], ['z', 1319], ['ç', 458], ['æ', 38], ['k', 23], ['w', 3], ['ñ', 1], ['á', 1]]
-```
-
-**5** Écrire une fonction qui va filtrer la liste de valeurs [lettre, occurrences] sur les lettres. On donne le prototype : ```occurrence(sorted_list : list) -> list```
-
-- sorted_list :  liste  de  valeurs  [lettre,  occurrences],  triée  par  ordre  décroissant  selon  le  nombre d’occurrences de chaque lettre. 
-
-- La fonction renvoie une liste de lettres triées par ordre décroissant de fréquence d’apparition.  
-
-**Aide :** 
-
-- la liste renvoyée par la fonction letter_count() est déjà triées par ordre décroissant  ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.105.png)
-
-- modifier la fonction count_in_file() pour qu’elle renvoie la liste de lettres triées par ordre décroissant de fréquence d’apparition en combinant les fonctions 
-
-🎟️ **Fonction à compléter** : 
-```python
-def occurrence(sorted_list : list) -> list:
-    """
-    La fonction renvoie une liste de lettres triées par ordre décroissant de fréquence d’apparition
-    :param sorted_list:list
-    :return:list
-    """
-    #à compléter
-
-def count_in_file(file : str, encode = 'utf-8') -> list:
-    """
-    Fonction qui compte le nombre d'occurrences de chaque lettre dans un fichier texte
-    :param file: str
-    :param encode: list
-    :return:
-    """
-    ligne_caractere =''
-    try :
+    🎟️ **Fonction à compléter** :
+    ```python
+    def caesar_encode(text : str, key : str = 1) -> str:
+        """
+        fonction qui utilise la méthode de César pour crypter
+        :param text: str
+        :param key: int
+        :return: str
+        """
         #à compléter
 
-        return occurrence(letter_count(ligne_caractere))
-    except FileNotFoundError:
-        return []
+    assert caesar_encode("ATTAQUEZ DEMAIN")== 'BUUBRVFA EFNBJO'
+    ```
+
+    **2** Écrire un programme qui permet de déchiffrer le texte chiffré précédemment. Le prototype de la fonction est : ```caesar_decode(code : str, key : int = 1) -> str```
+
+    - code représente le texte à déchiffrer, 
+
+    - key représente la clef de chiffrement.
+
+    - La fonction doit renvoyer le texte déchiffré. 
+
+    **Aide :** 
+    - Le decodage de la lettre S avec une key = 19 donne Z.
+
+    🎟️ **Fonction à compléter**
+    ```python
+    def caesar_decode(code : str, key : str = 1) -> str:
+        """
+        fonction qui utilise la méthode de César pour décrypter
+        :param code: str
+        :param key: int
+        :return: str
+        """
+        # à compléter
+
+    assert caesar_encode('BUUBRVFA EFNBJO')== 'ATTAQUEZ DEMAIN'
+    ```
+
+    **3** Factoriser le code des deux fonctions précédentes pour obtenir une fonction qui chiffre ou déchiffre. Le prototype de la fonction est : ```caesar(str_in : str, key : int) -> str```
+
+    - str_in représente le texte à chiffrer/déchiffrer, 
+    - key représente la clef de chiffrement. Si key > 0 c’est un chiffrage si key < 0 c’est un déchiffrement.  
+    - La fonction doit renvoyer le texte déchiffré/chiffré. 
+
+    🎟️ **Fonction à compléter** :
+    ```python 
+    def caesar(str_in : str, key : int) -> str:
+        """
+        Fonction qui chiffre ou déchiffre avec la méthode de César
+        :param str_in:str
+        :param key : int
+        :return:str
+        """
+        # à compléter
 
 
-assert count_in_file("book_vh.txt") == ['e', 'a', 's', 'i', 't', 'u', 'r', 'n', 'l', 'o', 'd', 'c', 'm', 'p', 'v', 'q', 'g', 'f', 'h', 'b', 'j', 'x', 'y', 'z', 'ç', 'æ', 'k', 'w', 'ñ', 'á']
-``` 
-
-
-
-
-**Le chiffrement de Vigenère** 
-
-L’espace des clés du chiffrement mono-alphabétique est immense, mais le fait qu’une lettre soit toujours cryptée de la même façon représente une trop grande faiblesse. Le chiffrement de Vigenère remédie à ce problème. On regroupe les lettres de notre texte par blocs, par exemple ici par blocs de longueur 4 : 
-
-CETTE PHRASE NE VEUT RIEN DIRE devient : 
-
-CETT EPHR ASEN EVEU TRIE NDIR E 
-
-NB : les espaces sont purement indicatifs, dans la première phrase ils séparent les mots, dans la seconde ils séparent les blocs. 
-
-Si k est la longueur d’un bloc, alors on choisit une clé constituée de k nombres de 0 à 25 : (n 1 ,n 2 ,...,n k ).
-
-Le chiffrement consiste à effectuer un chiffrement de César, dont le décalage dépend du rang de la lettre dans le bloc: 
-
-- un décalage de n 1 pour la première lettre de chaque bloc, 
-
-- un décalage de n 2 pour la deuxième lettre de chaque bloc, 
-
-- ... 
-
-- un décalage de n k pour la k-ème et dernière lettre de chaque bloc. 
-
-Pour notre exemple, si on choisit comme clé (3,1,5,2) alors pour le premier bloc "CETT" : 
-
-- un décalage de 3 pour C donne F, 
-
-- un décalage de 1 pour E donne F, 
-
-- un décalage de 5 pour le premier T donne Y, 
-
-- un décalage de 2 pour le deuxième T donne V. 
-
-Ainsi "CETT" de vient "FFYV". Vous remarquez que les deux lettres T ne sont pas cryptées par la même lettre et que les deux F ne cryptent pas la même lettre. On continue ensuite avec le deuxième bloc... 
-
-**Espace des clés et attaque** 
-
-Il y a 26 k choix possibles de clés, lorsque les blocs sont de longueur k. Pour des blocs de longueur k = 4 cela en donne déjà 456 976, et même si un ordinateur teste toutes les combinaisons possibles sans problème, il n’est pas question de parcourir cette liste pour trouver le message en clair, c’est-à-dire celui qui est compréhensible ! 
-
-Il persiste tout de même une faiblesse du même ordre que celle rencontrée dans le chiffrement mono- alphabétique : la lettre A n’est pas toujours cryptée par la même lettre, mais si deux lettres A sont situées à la même position dans deux blocs différents (comme par exemple "ALPH ABET") alors elles seront cryptées par la même lettre. 
-
-Une attaque possible est donc la suivante : on découpe notre message en plusieurs listes, les premières lettres de chaque bloc, les deuxièmes lettres de chaque bloc... et on fait une attaque statistique sur chacun de ces regroupements. Ce type d’attaque n’est possible que si la taille des blocs est petite devant la longueur du texte. 
-
-**Algorithme** 
-
-Voici un petit algorithme correspondant au chiffrement de Vigenère. 
-
-````
-Algorithme vigenere
-	Pour i := 1 à 26 faire
-		Pour j := 1 à 26 faire
-			Pour k := 1 à 26 faire
-				clef := [i, j, k]
-				index := 0
-				afficher(clef)
-				Pour car dans texte_codé faire
-					si car < 'A' OU car > 'Z' alors
-						afficher(car)
-					sinon
-						afficher(caesar(car, clef[index]))
-	                   		index := (index + 1) modulo taille(clef)
-````
+    assert caesar("ATTAQUEZ DEMAIN", 1)== 'BUUBRVFA EFNBJO'
+    assert caesar('BUUBRVFA EFNBJO', -1)== 'ATTAQUEZ DEMAIN'
+    ```
 
 
 
-**Chiffrement mono-alphabétique (**★★★★)** 
+    **4** Tests de cohérence. Écrire une série de tests unitaires qui vérifie les conditions suivantes : 
 
-Le texte (en français) suivant a été chiffré par un code mono alphabétique. Déterminer l’auteur de ce texte. eposal, epg r’sjnp, s r’upjdp cj nrsliuaq rs isohsmlp, vp hsdqadsa. bcag-qj, vp gsag tjp qj o’sqqpleg. 
-
-**6** Écrire un programme qui substitue les lettres de la liste entree par celles de la liste sortie en fonctions des occurrences rencontrées. 
-
-**Aide :**  
-
-- On pourra utiliser la méthode index()
-
-- il est possible que l’ordre des occurrences de la liste de sortie ne coïncide pas totalement avec les occurrences de la liste d’entrée. 
-
-🎟️ **Fonction à compléter** :
-```python
-text = 'eposal, epg r’sjnp, s r’upjdp cj nrsliuaq rs isohsmlp, vp hsdqadsa. bcag-qj, vp gsag tjp qj o’sqqpleg.'
-
-entree = occurrence(letter_count(text))
-
-sortie = ['a', 'e', 'i', 't', 'u', 's', 'l', 'n', 'd', 'm', 'r', 'b', 'h', 'p', 'c', 'o', 'j', 'g', 'q', 'v']
+    Tests à compléter
+    ```python
+    assert caesar('A', 0) == ...
+    assert caesar('Z', 1) == ...
+    assert caesar('Y', 2) == ...
+    assert caesar('A', 26) == ...
+    assert caesar('A', 26*2) == ...
+    assert caesar('A', -26) == ...
+    assert caesar('', 1) == ...
+    assert caesar('a', 0) == ...
+    ```
 
 
-for lettre in text:
-    if lettre in entree :
-        print (..., end='')
-    else:
-        print (lettre, end='')
-```
+    **Décryptage** 
+
+    Décrypter consiste à retrouver le texte original à partir d'un message chiffré sans posséder la clé de (dé)chiffrement. Le challenge consiste à décrypter le message ci-dessous. 
+
+    AV WRZJ JFLMVEK TV IVMV VKIREXV VK GVEVKIREK 
+
+    U’LEV WVDDV ZETFEELV, VK HLV A’RZDV, VK HLZ D’RZDV, 
+
+    VK HLZ E’VJK, TYRHLV WFZJ, EZ KFLK R WRZK CR DVDV 
+
+    EZ KFLK R WRZK LEV RLKIV, VK D’RZDV VK DV TFDGIVEU. 
+
+    Le chiffrement de César a été utilisé mais avec une clef différente de 1. 
+
+    **5** Écrire un programme afin de donner le nom de l’auteur du message crypté. 
+
+    **Aide :**  
+    - La clef de chiffrement étant inconnue, il faut faire une boucle qui les teste toutes (technique de l’attaque par force brute). 
+
+!!! abstract "Exercice 46 : ★★★ Le chiffrement de Vigenère"
+
+    Le chiffre de Vigenère est un système de chiffrement polyalphabétique, c’est un chiffrement par substitution, mais une même lettre du message clair peut, suivant sa position dans celui-ci, être remplacée par des lettres différentes, contrairement à un système de chiffrement mono alphabétique comme le chiffre de César (qu'il utilise cependant comme composant). Cette méthode résiste ainsi à l'analyse de fréquences, ce qui est un avantage décisif sur les chiffrements mono alphabétiques. Cependant le chiffre de Vigenère a été percé par le major prussien Friedrich Kasiski qui a publié sa méthode en 1863. Depuis cette époque, il n‘offre plus aucune sécurité. 
+
+    **Chiffrement mono-alphabétique**  
+
+    Nous avons vu que le chiffrement de César présente une sécurité très faible, la principale raison est que l’espace des clés est trop petit : il y a seulement 26 clés possibles, et on peut attaquer un message chiffré en testant toutes les clés à la main. 
+
+    Au lieu de faire correspondre circulairement les lettres, on associe maintenant à chaque lettre une autre lettre (sans ordre fixe ou règle générale). 
+
+    Par exemple : 
+
+    |A |B |C |D |E |F |G |H |I |J |K |L |M |N |O |P |Q |R |S |T |U |V |W |X |Y |Z |
+    | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+    |F |Q |B |M |X |I |T |E |P |A |L |W |H |S |D |O |Z |K |V |G |R |C |N |Y |J |U |
+
+    Pour crypter le message : ETRE OU NE PAS ETRE TELLE EST LA QUESTION 
+
+    On regarde la correspondance et on remplace la lettre E par la lettre X, puis la lettre T par la lettre G, puis la lettre R par la lettre K... 
+
+    Le message crypté est alors : XGKX DR SX OFV XGKX GXWWX XVG WF ZRXVGPDS Pour le décrypter, en connaissant les substitutions, on fait l’opération inverse. 
+
+    - **Avantage** : nous allons voir que l’espace des clés est gigantesque et qu’il n’est plus question d’énumérer toutes les possibilités. 
+
+    - **Inconvénients** : la clé à retenir est beaucoup plus longue, puisqu’il faut partager la clé constituée des 26 lettres "FQBMX...". Mais surtout, nous allons voir que finalement ce protocole de chiffrement est assez simple à « craquer ». 
+
+    **Attaque statistique** 
+
+    La principale faiblesse du chiffrement mono-alphabétique est qu’une même lettre est toujours chiffrée de la même façon. Par exemple, ici E devient X. Dans les textes longs, les lettres n’apparaissent pas avec la même fréquence. Ces fréquences varient suivant la langue utilisée. En français, les lettres les plus rencontrées sont dans l’ordre : 
+
+    E S A I N T R U L O D C P M V Q G F H B X J Y Z K W avec les fréquences (souvent proches et dépendant de l’échantillon utilisé) : 
 
 
- 
+    |E |S |A |I |N |T |R |U |L |O |D |
+    | - | - | - | - | - | - | - | - | - | - | - |
+    |14.69% |8.01% |7.54% |7.18% |6.89% |6.88% |6.49% |6.12% |5.63% |5.29% |3.66% |
 
-**Chiffrement de Vigenère avec clef** 
+    Voici la méthode d’attaque : dans le texte crypté, on cherche la lettre qui apparaît le plus, et si le texte est assez long cela devrait être le chiffrement du E, la lettre qui apparaît ensuite dans l’étude des fréquences devrait être le chiffrement du S, puis le chiffrement du A... On obtient des morceaux de texte clair sous la forme d’un texte à trous et il faut ensuite deviner les lettres manquantes. 
 
-Le texte suivant a été chiffré par un chiffrement de Vigenère avec une clef de longueur 3. Quel prénom féminin apparaît dans ce texte ? 
+    Par exemple, déchiffrons la phrase : LHLZ HFQ BC HFFPZ WH YOUPFH MUPZH 
+    On compte les apparitions des lettres → H : 6 F : 4 P : 3 Z : 3 
 
-ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV XHGSZ CALE XHKSAG JZVJSNJ LUY UCNUG JA UFPPY ZCJUU FCGH 
+    On suppose donc que le H crypte la lettre E, le F la lettre S, ce qui donne : 
 
-**Indice** : le texte en clair contient le mot SAINT. 
+    *E** ES* ** ESS** *E ***SE ****E 
 
-**7** Implémenter l’algorithme précédent. 
 
-**Aide :**  
+    D’après les statistiques P et Z devraient se décrypter en A et I (ou I et A). Le quatrième mot "HFFPZ", pour l’instant décrypté en "ESS**", se complète donc en "ESSAI" ou "ESSIA". La première solution semble correcte. Ainsi P crypte A, et Z crypte I. La phrase est maintenant : 
 
-- ne pas revenir à la ligne après chaque print (afficher) 
+    *E*I ES* ** ESSAI *E ***ASE **AIE 
 
-- utiliser la fonction caesar() développée dans le module de l’activité précédente. 
+    En réfléchissant un petit peu, on décrypte le message : CECI EST UN ESSAI DE PHRASE VRAIE 
 
-- Mettre  à la fin du script un print() indenté comme la dernière boucle for (pour un retour à la ligne) 
+    **1** Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un texte. On donne le prototype :  
 
-🎟️ **Fonctions à compléter** :
-```python
+    ```letter_count(text : str) -> list```
 
-def caesar_encode(text : str, key : str = 1) -> str:
-    """
-    fonction qui utilise la méthode de César pour crypter
-    :param text: str
-    :param key: int
-    :return: str
-    """
-    text = text.upper()
-    text_code = ''
-    for lettre in text :
-        if lettre.isalpha():
-            text_code = text_code + chr((((ord(lettre)-65)+key)%26)+65)
-        else :
-            text_code = text_code + lettre
-    return text_code
+    - text : texte source 
 
-def caesar_decode(code : str, key : str = 1) -> str:
-    """
-    fonction qui utilise la méthode de César pour décrypter
-    :param code: str
-    :param key: int
-    :return: str
-    """
-    text_decode = ''
-    for lettre in code :
-        if lettre.isalpha():
-            if ord(lettre) - 65 - key <0:
-                text_decode = text_decode + chr((((ord(lettre) - 65) + 26) - key) + 65)
-            else:
-                text_decode = text_decode + chr(((ord(lettre) - 65) - key) + 65)
-        else :
-            text_decode = text_decode + lettre
-    return text_decode
+    - la fonction renvoie une liste de valeurs [lettre, occurrences], triée par ordre décroissant selon le nombre d’occurrences de chaque lettre. 
 
-def caesar(str_in : str, key : int) -> str:
-    """
-    Fonction qui chiffre ou déchiffre avec la méthode de César
-    :param str_in:str
-    :param key : int
-    :return:str
-    """
-    if key>=0:
-        return caesar_encode(str_in, key)
-    else:
-        return caesar_decode(str_in, abs(key))
+    **Aide** :  
 
-texte_code = " ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV XHGSZ CALE XHKSAG JZVJSNJ LUY UCNUG JA UFPPY ZCJUU FCGH"
-for i in range(26):
-    for j in range(26):
-        for k in range(26):
-            clef = [i, j, k]
+    - penser à mettre tout le texte en minuscules 
+
+    - utiliser  la  méthode  isalpha  pour  ne  sélectionner  que  les  lettres  alphabétiques :[https://www.geeksforgeeks.org/python-string-isalpha-application/ ](https://www.geeksforgeeks.org/python-string-isalpha-application/)
+
+    - utiliser un dictionnaire pour compter les occurrences de chaque lettre puis créer une liste de listes à partir du dictionnaire 
+
+    - on utilisera une fonction lambda et la méthode sort() pour trier la liste par ordre décroissant de nombre d’occurrences
+
+    ```python 
+    a.sort(key=lambda x: x[1]) => tri la liste a par ordre croissant des nombres en indice 1
+    a.sort(key=lambda x: -x[1]) => tri la liste a par ordre décroissant des nombres en indice 1
+    ```
+
+    [https://www.science-emergence.com/Articles/Comment-trier-une-liste-de-tuple-par-rapport-a-un-](https://www.science-emergence.com/Articles/Comment-trier-une-liste-de-tuple-par-rapport-a-un-element-donnee-en-python-/)
+
+    🎟️ **Fonction à compléter**:
+    ```python
+
+    def letter_count(text : str) -> list:
+        """
+        Fonction qui compte le nombre d'occurrences de chaque lettre dans un texte
+        :param text: str
+        :return: list
+        """
+        
+
+    assert letter_count("ETRE OU NE PAS ETRE TELLE EST LA QUESTION.") == [['e', 9], ['t', 5], ['s', 3], ['l', 3], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
+    assert letter_count("Être ou ne pas Être, telle est la question.") == [['e', 7], ['t', 5], ['s', 3], ['l', 3], ['ê', 2], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
+    ```
+
+
+    **2** Modifier la fonction pour que les lettres accentuées soient considérées comme non accentuées. On ajoutera avant une fonction ```strip_accent(text : str) -> str```
+
+    - text : lettre accentuée 
+
+    - la fonction renvoie lettre sans accent 
+
+    **Aide** :  
+
+    - passer en revue chaque lettre accentuée possible 
+
+    🎟️ **Fonctions à compléter** :
+    ```python
+    def strip_accent(text : str) -> str:
+        """
+        Fonction qui transforme la lettre accentuée en lettre non accentuées
+        :param text:str
+        :return:str
+        """
+        accents = {'a': ['à', 'â'],
+                'e': ['é', 'è', 'ê', 'ë'],
+                'i': ['î', 'ï'],
+                'u': ['ù', 'ü', 'û'],
+                'o': ['ô', 'ö']}
+
+        # à compléter
+
+
+    def letter_count(text : str) -> list:
+        """
+        Fonction qui compte le nombre d'occurrences de chaque lettre dans un texte
+        :param text: str
+        :return: list
+        """
+        #à compléter
+
+    assert letter_count("ETRE OU NE PAS ETRE TELLE EST LA QUESTION.") == [['e', 9], ['t', 5], ['s', 3], ['l', 3], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
+    assert letter_count("Être ou ne pas Être, telle est la question.") == [['e', 9], ['t', 5], ['s', 3], ['l', 3], ['r', 2], ['o', 2], ['u', 2], ['n', 2], ['a', 2], ['p', 1], ['q', 1], ['i', 1]]
+    ```
+
+    **3** Écrire une fonction qui va compter le nombre d’occurrences de chaque lettre dans un fichier texte. 
+
+    On donne le prototype : ```count_in_file(file : str, encode = 'utf-8') -> list```
+
+    - file: nom du fichier texte 
+
+    - encode : type d’encodage du fichier (défaut utf-8) 
+
+    - la fonction renvoie une liste de valeurs [lettre, occurrences], triée par ordre décroissant selon le nombre d’occurrences de chaque lettre ou liste vide si erreur. 
+
+    **Aide :** 
+
+    - ouvrir le fichier avec la fonction open() et l’attribut ‘r’, ne pas oublier l’encodage du fichier 
+
+    - On utilisera la méthode rstrip("\n") pour enlever le symbole.  [https://www.w3schools.com/python/ref_string_rstrip.asp ](https://www.w3schools.com/python/ref_string_rstrip.asp)![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.010.png)
+
+    🎟️ **Fonctions à compléter**:
+    ```python
+
+    def count_in_file(file : str, encode = 'utf-8') -> list:
+        """
+        Fonction qui compte le nombre d'occurrences de chaque lettre dans un fichier texte
+        :param file: str
+        :param encode: list
+        :return:
+        """
+        # à compléter
+
+    assert count_in_file("book_vh.txt") == [['e', 139996], ['a', 67618], ['s', 60385], ['i', 59208], ['t', 58033], ['u', 52989], ['r', 52377], ['n', 51021], ['l', 48412], ['o', 41961], ['d', 30221], ['c', 25215], ['m', 21676], ['p', 21393], ['v', 13206], ['q', 9631], ['g', 8972], ['f', 8856], ['h', 8542], ['b', 8187], ['j', 3882], ['x', 3161], ['y', 2425], ['z', 1319], ['ç', 458], ['æ', 38], ['k', 23], ['w', 3], ['ñ', 1], ['á', 1]]
+    ```
+
+    **4** Modifier la fonction pour traiter le cas d’une éventuelle erreur à l’ouverture du fichier (nom incorrect, problème de droits, …). On utilisera le gestionnaire de contexte (context manager). 
+    ```
+    try : 
+    # bloc à coder 
+    except FileNotFoundError:          
+    return [] 
+    ```
+    🎟️ **Fonction à compléter** :
+    ```python
+    def count_in_file(file : str, encode = 'utf-8') -> list:
+        """
+        Fonction qui compte le nombre d'occurrences de chaque lettre dans un fichier texte
+        :param file: str
+        :param encode: list
+        :return:
+        """
+        ligne_caractere =''
+        try :
+            ...
+        except FileNotFoundError:
+            return []
+
+
+    assert count_in_file("book_vh.txt") == [['e', 139996], ['a', 67618], ['s', 60385], ['i', 59208], ['t', 58033], ['u', 52989], ['r', 52377], ['n', 51021], ['l', 48412], ['o', 41961], ['d', 30221], ['c', 25215], ['m', 21676], ['p', 21393], ['v', 13206], ['q', 9631], ['g', 8972], ['f', 8856], ['h', 8542], ['b', 8187], ['j', 3882], ['x', 3161], ['y', 2425], ['z', 1319], ['ç', 458], ['æ', 38], ['k', 23], ['w', 3], ['ñ', 1], ['á', 1]]
+    ```
+
+    **5** Écrire une fonction qui va filtrer la liste de valeurs [lettre, occurrences] sur les lettres. On donne le prototype : ```occurrence(sorted_list : list) -> list```
+
+    - sorted_list :  liste  de  valeurs  [lettre,  occurrences],  triée  par  ordre  décroissant  selon  le  nombre d’occurrences de chaque lettre. 
+
+    - La fonction renvoie une liste de lettres triées par ordre décroissant de fréquence d’apparition.  
+
+    **Aide :** 
+
+    - la liste renvoyée par la fonction letter_count() est déjà triées par ordre décroissant  ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.105.png)
+
+    - modifier la fonction count_in_file() pour qu’elle renvoie la liste de lettres triées par ordre décroissant de fréquence d’apparition en combinant les fonctions 
+
+    🎟️ **Fonction à compléter** : 
+    ```python
+    def occurrence(sorted_list : list) -> list:
+        """
+        La fonction renvoie une liste de lettres triées par ordre décroissant de fréquence d’apparition
+        :param sorted_list:list
+        :return:list
+        """
+        #à compléter
+
+    def count_in_file(file : str, encode = 'utf-8') -> list:
+        """
+        Fonction qui compte le nombre d'occurrences de chaque lettre dans un fichier texte
+        :param file: str
+        :param encode: list
+        :return:
+        """
+        ligne_caractere =''
+        try :
+            #à compléter
+
+            return occurrence(letter_count(ligne_caractere))
+        except FileNotFoundError:
+            return []
+
+
+    assert count_in_file("book_vh.txt") == ['e', 'a', 's', 'i', 't', 'u', 'r', 'n', 'l', 'o', 'd', 'c', 'm', 'p', 'v', 'q', 'g', 'f', 'h', 'b', 'j', 'x', 'y', 'z', 'ç', 'æ', 'k', 'w', 'ñ', 'á']
+    ``` 
+
+    **Le chiffrement de Vigenère** 
+
+    L’espace des clés du chiffrement mono-alphabétique est immense, mais le fait qu’une lettre soit toujours cryptée de la même façon représente une trop grande faiblesse. Le chiffrement de Vigenère remédie à ce problème. On regroupe les lettres de notre texte par blocs, par exemple ici par blocs de longueur 4 : 
+
+    CETTE PHRASE NE VEUT RIEN DIRE devient : 
+
+    CETT EPHR ASEN EVEU TRIE NDIR E 
+
+    NB : les espaces sont purement indicatifs, dans la première phrase ils séparent les mots, dans la seconde ils séparent les blocs. 
+
+    Si k est la longueur d’un bloc, alors on choisit une clé constituée de k nombres de 0 à 25 : (n 1 ,n 2 ,...,n k ).
+
+    Le chiffrement consiste à effectuer un chiffrement de César, dont le décalage dépend du rang de la lettre dans le bloc: 
+
+    - un décalage de n 1 pour la première lettre de chaque bloc, 
+
+    - un décalage de n 2 pour la deuxième lettre de chaque bloc, 
+
+    - ... 
+
+    - un décalage de n k pour la k-ème et dernière lettre de chaque bloc. 
+
+    Pour notre exemple, si on choisit comme clé (3,1,5,2) alors pour le premier bloc "CETT" : 
+
+    - un décalage de 3 pour C donne F, 
+
+    - un décalage de 1 pour E donne F, 
+
+    - un décalage de 5 pour le premier T donne Y, 
+
+    - un décalage de 2 pour le deuxième T donne V. 
+
+    Ainsi "CETT" de vient "FFYV". Vous remarquez que les deux lettres T ne sont pas cryptées par la même lettre et que les deux F ne cryptent pas la même lettre. On continue ensuite avec le deuxième bloc... 
+
+    **Espace des clés et attaque** 
+
+    Il y a 26 k choix possibles de clés, lorsque les blocs sont de longueur k. Pour des blocs de longueur k = 4 cela en donne déjà 456 976, et même si un ordinateur teste toutes les combinaisons possibles sans problème, il n’est pas question de parcourir cette liste pour trouver le message en clair, c’est-à-dire celui qui est compréhensible ! 
+
+    Il persiste tout de même une faiblesse du même ordre que celle rencontrée dans le chiffrement mono- alphabétique : la lettre A n’est pas toujours cryptée par la même lettre, mais si deux lettres A sont situées à la même position dans deux blocs différents (comme par exemple "ALPH ABET") alors elles seront cryptées par la même lettre. 
+
+    Une attaque possible est donc la suivante : on découpe notre message en plusieurs listes, les premières lettres de chaque bloc, les deuxièmes lettres de chaque bloc... et on fait une attaque statistique sur chacun de ces regroupements. Ce type d’attaque n’est possible que si la taille des blocs est petite devant la longueur du texte. 
+
+    **Algorithme** 
+
+    Voici un petit algorithme correspondant au chiffrement de Vigenère. 
+
+    ````
+    Algorithme vigenere
+        Pour i := 1 à 26 faire
+            Pour j := 1 à 26 faire
+                Pour k := 1 à 26 faire
+                    clef := [i, j, k]
+                    index := 0
+                    afficher(clef)
+                    Pour car dans texte_codé faire
+                        si car < 'A' OU car > 'Z' alors
+                            afficher(car)
+                        sinon
+                            afficher(caesar(car, clef[index]))
+                                index := (index + 1) modulo taille(clef)
+    ````
+
+    **Chiffrement mono-alphabétique (**★★★★)** 
+
+    Le texte (en français) suivant a été chiffré par un code mono alphabétique. Déterminer l’auteur de ce texte. eposal, epg r’sjnp, s r’upjdp cj nrsliuaq rs isohsmlp, vp hsdqadsa. bcag-qj, vp gsag tjp qj o’sqqpleg. 
+
+    **6** Écrire un programme qui substitue les lettres de la liste entree par celles de la liste sortie en fonctions des occurrences rencontrées. 
+
+    **Aide :**  
+
+    - On pourra utiliser la méthode index()
+
+    - il est possible que l’ordre des occurrences de la liste de sortie ne coïncide pas totalement avec les occurrences de la liste d’entrée. 
+
+    🎟️ **Fonction à compléter** :
+    ```python
+    text = 'eposal, epg r’sjnp, s r’upjdp cj nrsliuaq rs isohsmlp, vp hsdqadsa. bcag-qj, vp gsag tjp qj o’sqqpleg.'
+
+    entree = occurrence(letter_count(text))
+
+    sortie = ['a', 'e', 'i', 't', 'u', 's', 'l', 'n', 'd', 'm', 'r', 'b', 'h', 'p', 'c', 'o', 'j', 'g', 'q', 'v']
+
+
+    for lettre in text:
+        if lettre in entree :
+            print (..., end='')
+        else:
+            print (lettre, end='')
+    ```
+
+    **Chiffrement de Vigenère avec clef** 
+
+    Le texte suivant a été chiffré par un chiffrement de Vigenère avec une clef de longueur 3. Quel prénom féminin apparaît dans ce texte ? 
+
+    ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV XHGSZ CALE XHKSAG JZVJSNJ LUY UCNUG JA UFPPY ZCJUU FCGH 
+
+    **Indice** : le texte en clair contient le mot SAINT. 
+
+    **7** Implémenter l’algorithme précédent. 
+
+    **Aide :**  
+
+    - ne pas revenir à la ligne après chaque print (afficher) 
+
+    - utiliser la fonction caesar() développée dans le module de l’activité précédente. 
+
+    - Mettre  à la fin du script un print() indenté comme la dernière boucle for (pour un retour à la ligne) 
+
+    🎟️ **Fonctions à compléter** :
+    ```python
+
+    def caesar_encode(text : str, key : str = 1) -> str:
+        """
+        fonction qui utilise la méthode de César pour crypter
+        :param text: str
+        :param key: int
+        :return: str
+        """
+        text = text.upper()
+        text_code = ''
+        for lettre in text :
+            if lettre.isalpha():
+                text_code = text_code + chr((((ord(lettre)-65)+key)%26)+65)
+            else :
+                text_code = text_code + lettre
+        return text_code
+
+    def caesar_decode(code : str, key : str = 1) -> str:
+        """
+        fonction qui utilise la méthode de César pour décrypter
+        :param code: str
+        :param key: int
+        :return: str
+        """
+        text_decode = ''
+        for lettre in code :
+            if lettre.isalpha():
+                if ord(lettre) - 65 - key <0:
+                    text_decode = text_decode + chr((((ord(lettre) - 65) + 26) - key) + 65)
+                else:
+                    text_decode = text_decode + chr(((ord(lettre) - 65) - key) + 65)
+            else :
+                text_decode = text_decode + lettre
+        return text_decode
+
+    def caesar(str_in : str, key : int) -> str:
+        """
+        Fonction qui chiffre ou déchiffre avec la méthode de César
+        :param str_in:str
+        :param key : int
+        :return:str
+        """
+        if key>=0:
+            return caesar_encode(str_in, key)
+        else:
+            return caesar_decode(str_in, abs(key))
+
+    texte_code = " ZCNUVJ LUYLNQL GXA PFPPJ LV XHKSA UFLPX HXJJ UFPPYL GXAGQSG JZV SHKSL GY ZCNUV XHGSZ CALE XHKSAG JZVJSNJ LUY UCNUG JA UFPPY ZCJUU FCGH"
+    for i in range(26):
+        for j in range(26):
+            for k in range(26):
+                clef = [i, j, k]
+                # à compléter
+
+
+                print()
+    ```
+
+!!! abstract "Exercice 47 : ★★★ Séquences nucléiques  Acide nucléique"
+
+    ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.116.png)
+    ![](Aimg023.png)
+
+    La  **séquence**  d'un [ acide  nucléique ](https://fr.wikipedia.org/wiki/Acide_nuclÃ©ique) — [ ADN ](https://fr.wikipedia.org/wiki/Acide_dÃ©soxyribonuclÃ©ique) ou [ ARN ](https://fr.wikipedia.org/wiki/Acide_ribonuclÃ©ique) —  est  la  succession  des [ nucléotides ](https://fr.wikipedia.org/wiki/NuclÃ©otide) qui  le  constituent.  Cette  succession  contient l['information génétique ](https://fr.wikipedia.org/wiki/Information_gÃ©nÃ©tique)portée par ces[ polynucléotides,](https://fr.wikipedia.org/wiki/PolynuclÃ©otide) de  sorte qu'on la qualifie également de **séquence génétique**. Elle peut  être déterminée par des méthodes de[ séquençage de l'ADN.](https://fr.wikipedia.org/wiki/SÃ©quenÃ§age_de_l%27ADN)  
+
+    Les molécules représentées dans ce schéma sont :  
+
+    - l'**ADN**  :  support  stable  et  transmissible  de  l'information  génétique. Il est composé des 4 nucléotides suivants (appelés aussi  bases) : A = adénine, T = thymine, G = guanine et C = cytosine.  Dans les cellules vivantes, l'ADN est sous la forme double brin,  c'est-à-dire que 2 séquences ADN se font face. Une séquence est  lue de gauche à droite et l'autre de droite à gauche. De plus, les  bases complémentaires l'une de l'autre se font face (A et T sont  complémentaires, G et C sont complémentaires). Un brin est donc  complémentaire et inversé par rapport à l'autre.  
+
+    - l'**ARN**  :  support  temporaire  permettant  l'expression  de  l'information génétique. Il est composé des 4 nucléotides suivants  
+
+    - A = adénine, U = uracile, G = guanine et C = cytosine.  
+
+    - les **protéines** : outils de la cellule (enzymes, transporteurs, etc.).  Elles sont composées de 20 acides aminés différents.  
+
+    Les processus du dogme central de la biologie moléculaire, réalisés par les cellules sont les suivants : 
+
+    1. la **transcription** 
+    2. la **traduction** 
+    3. la **réplication** 
+
+    **Les séquences ADN** 
+
+    **1** Écrire une fonction qui vérifie si une chaîne de caractères correspond à un brin d’ADN :  cette chaîne ne doit contenir aucun autre caractère que les quatre bases A, C, G et T. Le prototype de la fonction est le suivant : 
+
+    ```is_DNA_strand(strand : str) -> bool```
+    - strand : brin d’ADN (de 1 à n bases)
+    - la fonction renvoie True si la chaîne est un brin d’ADN, False sinon 
+
+    🎟️ **Fonction à compléter** :
+    ```python
+    def is_DNA_strand(strand : str) -> bool :
+        """
+        Fonction qui vérifie si une chaine est un brin d'ADN
+        :param strand: str
+        :return: bool
+        """
+        # à compléter
+
+    assert is_DNA_strand("ATGCGATC") == True 
+    assert is_DNA_strand("ACKT") == False 
+    assert is_DNA_strand("") == False 
+    assert is_DNA_strand(0) == False 
+
+    ```
+
+
+    Il est possible de générer aléatoirement une séquence ADN. La version naïve suppose que les 4 bases ont la même probabilité d'apparaître à une position donnée. 
+
+    **2** Écrire une fonction qui renvoie un brin d’ADN généré aléatoirement. Le prototype de la fonction est le suivant : ```generate_DNA_strand(size : int) -> str```
+
+    - size : taille du brin d’ADN (≥ 2) 
+
+    - la fonction renvoie un brin d’ADN généré aléatoirement 
+
+    🎟️ **Fonction à compléter**:
+    ```python
+    import random
+
+    def generate_DNA_strand(size : int) -> str:
+        """
+        la fonction renvoie un brin d’ADN généré aléatoirement
+        :param size: int
+        :return:str
+        """
+        # à compléter
+
+    print(generate_DNA_strand(5))
+    assert is_DNA_strand(generate_DNA_strand(1024)) == True
+    ```
+
+    
+
+    **La transcription** 
+
+    Certaines parties spécifiques de l'ADN sont transcrites en ARN. La transcription consiste en l'assemblage de nucléotides ARN en suivant le modèle ADN et en prenant les bases complémentaires. Dans l'ADN, les bases A et T sont complémentaires, ainsi que les bases G et C. Pour passer de l'ADN à l'ARN, le A est transformé en U, le T en A, le G en C et le C en G. 
+
+    **3** Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
+
+    ```complementary_base(base : str, type : str) -> st```
+
+    - base : nucléotide (A, T, G ou C) 
+
+    - type de séquence : 'ADN' ou 'ARN' 
+
+    - la fonction renvoie la base complémentaire, ou None si erreur
+
+    **Aide :** 
+    ```
+    try : 
+    # bloc à coder 
+    except #exception à trouver: 
+    #bloc à coder 
+    ```
+
+    🎟️ **Fonction à compléter**:
+    ```python
+    def complementary_base(base : str, type : str) -> str:
+        """
+        une fonction qui renvoie la base complémentaire d'un brin d'ADN ou de ARN
+        :param base:str
+        :param type:str
+        :return:str
+        """
+        nucleotide = ['A', 'T', 'G', 'C']
+        transcription_adn = ['T', 'A', 'C', 'G']
+        transcription_arn = ['U', 'A', 'C', 'G']
+        try :
+            # à compléter
+
+        except ValueError:
+            return None
+
+    assert complementary_base('G', 'ADN') == 'C' 
+    assert complementary_base('A', 'ARN') == 'U' 
+    assert complementary_base('K', 'ADN') == None 
+    assert complementary_base('G', 'ABC') == None
+    ```
+
+    **4** Écrire une fonction qui renvoie l'ARN construit à partir de la sous-séquence d'un brin d’ADN comprise entre les deux positions passées en paramètre, incluses. Le prototype de la fonction est le suivant : 
+
+    ```transcription(strand : str, start : int, end : int) -> str```
+
+    - strand : brin d’ADN 
+
+    - start : position de départ dans la séquence du brin d’ADN
+
+    - end : position de fin dans la séquence du brin d’ADN 
+
+    - la fonction renvoie  la séquence complémentaire du brin d’ADN transcript, ou None si erreur
+
+    **Aide** : 
+    ```
+    try : 
+    # bloc à coder 
+    assert 
+    … 
+    except #exception à trouver: 
+    # bloc à coder 
+    ```
+    🎟️ **Fonction à compléter** :
+    ```python
+    def transcription(strand : str, start : int, end : int) -> str:
+        """
+        fonction renvoie  la séquence complémentaire du brin d’ADN transcrit, ou None si erreur
+        :param strand:str
+        :param start:int
+        :param end:int
+        :return:str
+        """
+        try :
             # à compléter
 
 
-            print()
-```
+        except AssertionError:
+            return None
 
-**<H3 STYLE="COLOR:red;">Exercice 47 :** ★★★ **Séquences nucléiques  Acide nucléique</h3>** 
-
-![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.116.png)
-![](Aimg023.png)
-
-La  **séquence**  d'un [ acide  nucléique ](https://fr.wikipedia.org/wiki/Acide_nuclÃ©ique) — [ ADN ](https://fr.wikipedia.org/wiki/Acide_dÃ©soxyribonuclÃ©ique) ou [ ARN ](https://fr.wikipedia.org/wiki/Acide_ribonuclÃ©ique) —  est  la  succession  des [ nucléotides ](https://fr.wikipedia.org/wiki/NuclÃ©otide) qui  le  constituent.  Cette  succession  contient l['information génétique ](https://fr.wikipedia.org/wiki/Information_gÃ©nÃ©tique)portée par ces[ polynucléotides,](https://fr.wikipedia.org/wiki/PolynuclÃ©otide) de  sorte qu'on la qualifie également de **séquence génétique**. Elle peut  être déterminée par des méthodes de[ séquençage de l'ADN.](https://fr.wikipedia.org/wiki/SÃ©quenÃ§age_de_l%27ADN)  
-
-Les molécules représentées dans ce schéma sont :  
-
-- l'**ADN**  :  support  stable  et  transmissible  de  l'information  génétique. Il est composé des 4 nucléotides suivants (appelés aussi  bases) : A = adénine, T = thymine, G = guanine et C = cytosine.  Dans les cellules vivantes, l'ADN est sous la forme double brin,  c'est-à-dire que 2 séquences ADN se font face. Une séquence est  lue de gauche à droite et l'autre de droite à gauche. De plus, les  bases complémentaires l'une de l'autre se font face (A et T sont  complémentaires, G et C sont complémentaires). Un brin est donc  complémentaire et inversé par rapport à l'autre.  
-
-- l'**ARN**  :  support  temporaire  permettant  l'expression  de  l'information génétique. Il est composé des 4 nucléotides suivants  
-
-- A = adénine, U = uracile, G = guanine et C = cytosine.  
-
-- les **protéines** : outils de la cellule (enzymes, transporteurs, etc.).  Elles sont composées de 20 acides aminés différents.  
-
-Les processus du dogme central de la biologie moléculaire, réalisés par les cellules sont les suivants : 
-
-1. la **transcription** 
-2. la **traduction** 
-3. la **réplication** 
-
-**Les séquences ADN** 
-
-**1** Écrire une fonction qui vérifie si une chaîne de caractères correspond à un brin d’ADN :  cette chaîne ne doit contenir aucun autre caractère que les quatre bases A, C, G et T. Le prototype de la fonction est le suivant : 
-
-```is_DNA_strand(strand : str) -> bool```
-- strand : brin d’ADN (de 1 à n bases)
-- la fonction renvoie True si la chaîne est un brin d’ADN, False sinon 
-
-🎟️ **Fonction à compléter** :
-```python
-def is_DNA_strand(strand : str) -> bool :
-    """
-    Fonction qui vérifie si une chaine est un brin d'ADN
-    :param strand: str
-    :return: bool
-    """
-    # à compléter
-
-assert is_DNA_strand("ATGCGATC") == True 
-assert is_DNA_strand("ACKT") == False 
-assert is_DNA_strand("") == False 
-assert is_DNA_strand(0) == False 
-
-```
+    assert transcription('TTCTTCTTCGTAC', 4, 10) == 'AAGAAGC' 
+    assert transcription('TTCTTCTTCGTAC', 4, 3) == None 
+    assert transcription('TTCTTCTTCGTAC', 10, 40) == 'CAUG' 
+    assert transcription('TTCTTCTTCGTAC', -4, 0) == None 
+    assert transcription('TTCTTCTTCGTAC', -4, 4) == None 
+    ```
 
 
-Il est possible de générer aléatoirement une séquence ADN. La version naïve suppose que les 4 bases ont la même probabilité d'apparaître à une position donnée. 
 
-**2** Écrire une fonction qui renvoie un brin d’ADN généré aléatoirement. Le prototype de la fonction est le suivant : ```generate_DNA_strand(size : int) -> str```
+    **La traduction** 
 
-- size : taille du brin d’ADN (≥ 2) 
+    Les ARN messagers sont traduits en protéines. Le passage d'une séquence ARN composée de 4 nucléotides à une séquence protéique composée de 20 acides aminés, se fait à l'aide du code génétique. Dans ce code, chaque mot de 3 bases, appelé codon, correspond à un acide aminé. Il est possible de construire 4³ = 64 codons différents à l'aide des 4 bases. Ce code est donc dégénéré : plusieurs codons correspondent au même acide aminé. Les codons sont lus sans chevauchement, les uns à la suite des autres. 
 
-- la fonction renvoie un brin d’ADN généré aléatoirement 
+    Les acides aminés sont désignés par une lettre qui représente la forme du nom abrévié. 
 
-🎟️ **Fonction à compléter**:
-```python
-import random
+    **Le code génétique :** 
 
-def generate_DNA_strand(size : int) -> str:
-    """
-    la fonction renvoie un brin d’ADN généré aléatoirement
-    :param size: int
-    :return:str
-    """
-    # à compléter
+    ```
+    'UUU', 'UUC' : 							                'F'
+    'UUA', 'UUG', 'CUU', 'CUC', 'CUA', 'CUG' : 		        'L'
+    'AUU', 'AUC', 'AUA' : 						            'I'
+    'AUG' : 								                'M'
+    'GUU', 'GUC', 'GUA', 'GUG' : 					        'V'
+    'UCU', 'UCC', 'UCA', 'UCG', 'AGU', 'AGC' : 		        'S'
+    'CCU', 'CCC', 'CCA', 'CCG' : 					        'P'
+    'ACU', 'ACC', 'ACA', 'ACG' : 					        'T'
+    'GCU', 'GCC', 'GCA', 'GCG' : 					        'A'
+    'UAU', 'UAC' : 							                'Y'
+    'UAA', 'UAG', 'UGA' : 						            '*'
+    'CAU', 'CAC' : 							                'H'
+    'CAA', 'CAG' : 							                'Q'
+    'AAU', 'AAC' : 							                'N'
+    'AAA', 'AAG' :  							            'K'
+    'GAU', 'GAC' : 							                'D'
+    'GAA', 'GAG' : 							                'E'
+    'UGU', 'UGC' :  							            'C'
+    'UGG' : 								                'W'
+    'CGU', 'CGC', 'CGA', 'CGG', 'AGA', 'AGG' : 		        'R'
+    'GGU', 'GGC', 'GGA', 'GGG' : 					        'G'
+    ```
 
-print(generate_DNA_strand(5))
-assert is_DNA_strand(generate_DNA_strand(1024)) == True
-```
 
- 
+    **5** Écrire une fonction qui renvoie l'acide aminé correspondant au codon (ou \* pour les codons Stop). Le prototype de la fonction est le suivant : 
 
-**La transcription** 
+    ```genetic_code(codon: str) -> str```
 
-Certaines parties spécifiques de l'ADN sont transcrites en ARN. La transcription consiste en l'assemblage de nucléotides ARN en suivant le modèle ADN et en prenant les bases complémentaires. Dans l'ADN, les bases A et T sont complémentaires, ainsi que les bases G et C. Pour passer de l'ADN à l'ARN, le A est transformé en U, le T en A, le G en C et le C en G. 
+    - codon : codon (succession de trois lettres (voir ci-dessus)) 
 
-**3** Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
+    - la fonction renvoie  l'acide aminé sous la forme du nom abrévié, ou None si erreur
 
-```complementary_base(base : str, type : str) -> st```
 
-- base : nucléotide (A, T, G ou C) 
+    🎟️ **Fonction à compléter**:
+    ```python
+    def genetic_code(codon: str) -> str :
+        """
+        fonction renvoie  l'acide aminé sous la forme du nom abrévié
+        :param codon:str
+        :return:str
+        """
+        if len(str(codon))!=3:
+            return None
 
-- type de séquence : 'ADN' ou 'ARN' 
-
-- la fonction renvoie la base complémentaire, ou None si erreur
-
-**Aide :** 
-```
-try : 
-  # bloc à coder 
-except #exception à trouver: 
-  #bloc à coder 
-```
-
-🎟️ **Fonction à compléter**:
-```python
-def complementary_base(base : str, type : str) -> str:
-    """
-    une fonction qui renvoie la base complémentaire d'un brin d'ADN ou de ARN
-    :param base:str
-    :param type:str
-    :return:str
-    """
-    nucleotide = ['A', 'T', 'G', 'C']
-    transcription_adn = ['T', 'A', 'C', 'G']
-    transcription_arn = ['U', 'A', 'C', 'G']
-    try :
-        # à compléter
-
-    except ValueError:
-        return None
-
-assert complementary_base('G', 'ADN') == 'C' 
-assert complementary_base('A', 'ARN') == 'U' 
-assert complementary_base('K', 'ADN') == None 
-assert complementary_base('G', 'ABC') == None
-```
-
-**4** Écrire une fonction qui renvoie l'ARN construit à partir de la sous-séquence d'un brin d’ADN comprise entre les deux positions passées en paramètre, incluses. Le prototype de la fonction est le suivant : 
-
-```transcription(strand : str, start : int, end : int) -> str```
-
-- strand : brin d’ADN 
-
-- start : position de départ dans la séquence du brin d’ADN
-
-- end : position de fin dans la séquence du brin d’ADN 
-
-- la fonction renvoie  la séquence complémentaire du brin d’ADN transcript, ou None si erreur
-
-**Aide** : 
-```
-try : 
-  # bloc à coder 
-  assert 
-  … 
-except #exception à trouver: 
-  # bloc à coder 
-```
-🎟️ **Fonction à compléter** :
-```python
-def transcription(strand : str, start : int, end : int) -> str:
-    """
-    fonction renvoie  la séquence complémentaire du brin d’ADN transcrit, ou None si erreur
-    :param strand:str
-    :param start:int
-    :param end:int
-    :return:str
-    """
-    try :
         # à compléter
 
 
-    except AssertionError:
-        return None
+        else:
+            return None
 
-assert transcription('TTCTTCTTCGTAC', 4, 10) == 'AAGAAGC' 
-assert transcription('TTCTTCTTCGTAC', 4, 3) == None 
-assert transcription('TTCTTCTTCGTAC', 10, 40) == 'CAUG' 
-assert transcription('TTCTTCTTCGTAC', -4, 0) == None 
-assert transcription('TTCTTCTTCGTAC', -4, 4) == None 
-```
+    assert genetic_code('UGA') == '*' 
+    assert genetic_code('AAAA') == None 
+    assert genetic_code('XYZ') == None 
+    assert genetic_code(0) == None 
 
-
-
-**La traduction** 
-
-Les ARN messagers sont traduits en protéines. Le passage d'une séquence ARN composée de 4 nucléotides à une séquence protéique composée de 20 acides aminés, se fait à l'aide du code génétique. Dans ce code, chaque mot de 3 bases, appelé codon, correspond à un acide aminé. Il est possible de construire 4³ = 64 codons différents à l'aide des 4 bases. Ce code est donc dégénéré : plusieurs codons correspondent au même acide aminé. Les codons sont lus sans chevauchement, les uns à la suite des autres. 
-
-Les acides aminés sont désignés par une lettre qui représente la forme du nom abrévié. 
-
-**Le code génétique :** 
-
-```
-'UUU', 'UUC' : 							                'F'
-'UUA', 'UUG', 'CUU', 'CUC', 'CUA', 'CUG' : 		        'L'
-'AUU', 'AUC', 'AUA' : 						            'I'
-'AUG' : 								                'M'
-'GUU', 'GUC', 'GUA', 'GUG' : 					        'V'
-'UCU', 'UCC', 'UCA', 'UCG', 'AGU', 'AGC' : 		        'S'
-'CCU', 'CCC', 'CCA', 'CCG' : 					        'P'
-'ACU', 'ACC', 'ACA', 'ACG' : 					        'T'
-'GCU', 'GCC', 'GCA', 'GCG' : 					        'A'
-'UAU', 'UAC' : 							                'Y'
-'UAA', 'UAG', 'UGA' : 						            '*'
-'CAU', 'CAC' : 							                'H'
-'CAA', 'CAG' : 							                'Q'
-'AAU', 'AAC' : 							                'N'
-'AAA', 'AAG' :  							            'K'
-'GAU', 'GAC' : 							                'D'
-'GAA', 'GAG' : 							                'E'
-'UGU', 'UGC' :  							            'C'
-'UGG' : 								                'W'
-'CGU', 'CGC', 'CGA', 'CGG', 'AGA', 'AGG' : 		        'R'
-'GGU', 'GGC', 'GGA', 'GGG' : 					        'G'
-```
-
-
-**5** Écrire une fonction qui renvoie l'acide aminé correspondant au codon (ou \* pour les codons Stop). Le prototype de la fonction est le suivant : 
-
-```genetic_code(codon: str) -> str```
-
-- codon : codon (succession de trois lettres (voir ci-dessus)) 
-
-- la fonction renvoie  l'acide aminé sous la forme du nom abrévié, ou None si erreur
-
-
-🎟️ **Fonction à compléter**:
-```python
-def genetic_code(codon: str) -> str :
-    """
-    fonction renvoie  l'acide aminé sous la forme du nom abrévié
-    :param codon:str
-    :return:str
-    """
-    if len(str(codon))!=3:
-        return None
-
-    # à compléter
-
-
-    else:
-        return None
-
-assert genetic_code('UGA') == '*' 
-assert genetic_code('AAAA') == None 
-assert genetic_code('XYZ') == None 
-assert genetic_code(0) == None 
-
-```
+    ```
 
 
 
-**6** Écrire une fonction qui renvoie la séquence protéique obtenue par la traduction de la séquence ARN. Cette traduction se fait à partir du premier nucléotide de la séquence ARN. Le prototype de la fonction est le suivant : 
+    **6** Écrire une fonction qui renvoie la séquence protéique obtenue par la traduction de la séquence ARN. Cette traduction se fait à partir du premier nucléotide de la séquence ARN. Le prototype de la fonction est le suivant : 
 
-```traduction(arn : str) -> str``` 
+    ```traduction(arn : str) -> str``` 
 
-- arn : structure ARN 
+    - arn : structure ARN 
 
-- la fonction renvoie la séquence protéique c’est-à-dire les noms abrégés pour chaque codon, ou None si erreur 
+    - la fonction renvoie la séquence protéique c’est-à-dire les noms abrégés pour chaque codon, ou None si erreur 
 
-🎟️ **Fonction à compléter**:
-```python
-def traduction(arn : str) -> str:
-    """
-    fonction renvoie la séquence protéique
-    :param arn:str
-    :return:str
-    """
-    if len(str(arn))%3 != 0:
-        return None
-    # à compléter
-
-assert traduction('AUGCGAAGCCGAAAGAACACCGGCUAA') == 'MRSRKNTG*' 
-assert traduction('AUGCGAAGCCGAAAGAACACCGGCUA') == None 
-assert traduction(0) == None 
-```
-
-
-**La réplication** 
-
-L'ADN de chaque brin d'une double hélice est recopié de telle sorte que deux nouvelles doubles hélices sont produites, identiques à l'unique double hélice qui a servi de modèle. 
-
-De  simples  chaînes  de  caractères  permettent  de  représenter  les  séquences  biologiques  et  les  fonctions programmées vont reproduire les processus. 
-
-**7** Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
-
-```replication(strand : str) -> str``` 
-
-- strand : brin d’ADN 
-
-- la fonction renvoie la séquence ADN complémentaire et inversée (A et C sont complémentaires, T et G sont complémentaires), ou None si erreur 
-
-🎟️ **Fonction à compléter** :
-```python
-def replication(strand : str) -> str:
-    """
-    fonction renvoie la séquence ADN complémentaire et inversée
-    :param strand:str
-    :return:str
-    """
-    replication_adn = ''
-    nucleotide = ['A', 'T', 'C', 'G']
-    replication = ['C', 'G', 'A', 'T']
-    if strand =='':
-        return None
-    try :
+    🎟️ **Fonction à compléter**:
+    ```python
+    def traduction(arn : str) -> str:
+        """
+        fonction renvoie la séquence protéique
+        :param arn:str
+        :return:str
+        """
+        if len(str(arn))%3 != 0:
+            return None
         # à compléter
 
+    assert traduction('AUGCGAAGCCGAAAGAACACCGGCUAA') == 'MRSRKNTG*' 
+    assert traduction('AUGCGAAGCCGAAAGAACACCGGCUA') == None 
+    assert traduction(0) == None 
+    ```
 
-    except:
-        return None
 
-assert replication('ACTG') == 'CAGT'
-assert replication('') == None 
-assert replication(0) == None 
-```
+    **La réplication** 
+
+    L'ADN de chaque brin d'une double hélice est recopié de telle sorte que deux nouvelles doubles hélices sont produites, identiques à l'unique double hélice qui a servi de modèle. 
+
+    De  simples  chaînes  de  caractères  permettent  de  représenter  les  séquences  biologiques  et  les  fonctions programmées vont reproduire les processus. 
+
+    **7** Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
+
+    ```replication(strand : str) -> str``` 
+
+    - strand : brin d’ADN 
+
+    - la fonction renvoie la séquence ADN complémentaire et inversée (A et C sont complémentaires, T et G sont complémentaires), ou None si erreur 
+
+    🎟️ **Fonction à compléter** :
+    ```python
+    def replication(strand : str) -> str:
+        """
+        fonction renvoie la séquence ADN complémentaire et inversée
+        :param strand:str
+        :return:str
+        """
+        replication_adn = ''
+        nucleotide = ['A', 'T', 'C', 'G']
+        replication = ['C', 'G', 'A', 'T']
+        if strand =='':
+            return None
+        try :
+            # à compléter
+
+
+        except:
+            return None
+
+    assert replication('ACTG') == 'CAGT'
+    assert replication('') == None 
+    assert replication(0) == None 
+    ```
 
