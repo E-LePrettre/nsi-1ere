@@ -505,9 +505,9 @@ L’addition en **base 16** suit le même principe que l’addition en base 10 :
 | Résultat | 14 (E) | 17 (1 retenue, reste 1) |
 | Valeur finale | 151<sub>16</sub> |
 
-![](Aimg5.png){ width=40% }
+![](Aimg5.png){ width=30% }
 
-![](Aimg6.png){ width=40% }
+![](Aimg6.png){ width=20% }
 
 💡 **Interprétation** : 
 

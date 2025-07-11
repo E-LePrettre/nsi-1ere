@@ -147,13 +147,13 @@ L’instruction `assert` est utilisée pour **vérifier rapidement** que le prog
     ??? success "Python"
         {{ IDE() }}
 
-    ??? success "Solution"
+ 
 
-        **Explication :**
+**Explication :**
 
-        - `assert` teste plusieurs cas et arrête le programme **si un test échoue**.
+    - `assert` teste plusieurs cas et arrête le programme **si un test échoue**.
 
-        - La condition `if __name__ == '__main__':` garantit que ces tests ne s’exécutent **que si le fichier est exécuté directement**.
+    - La condition `if __name__ == '__main__':` garantit que ces tests ne s’exécutent **que si le fichier est exécuté directement**.
 
 ???+ question "Activité n°3 : Vérifier une division euclidienne"
 
