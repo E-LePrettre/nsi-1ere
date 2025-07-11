@@ -736,7 +736,7 @@ Si un nombre binaire commence par **1**, il est **négatif** en complément à 2
 ## **<H2 STYLE="COLOR:BLUE;">4. Exercices<a name="_page9_x40.00_y36.92"></a></h2>** 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-???+ question "Exercice 1"  
+!!! abstract "Exercice 1"  
 
     On suppose toujours nos entiers encodés sur un octet. 
 
@@ -744,17 +744,17 @@ Si un nombre binaire commence par **1**, il est **négatif** en complément à 2
 
     - Réaliser l’addition binaire bit à bit de ces 3 nombres. 
 
-???+ question "Exercice 2" 
+!!! abstract "Exercice 2" 
 
     On suppose toujours nos entiers encodés sur un octet. Donner les compléments à 2 de -12, -100 et -88. 
 
-???+ question "Exercice 3 ★" 
+!!! abstract "Exercice 3 ★" 
 
     - Réaliser l’addition binaire des compléments à 2 des nombres 12 et -100. 
 
     - Vérifier qu’on retrouve bien le résultat précédent pour -88. 
 
-???+ question "Exercice 4 ★"  
+!!! abstract "Exercice 4 ★"  
 
     Donner les notations décimales des binaires signés sur un octet suivant : 
 
@@ -766,7 +766,7 @@ Si un nombre binaire commence par **1**, il est **négatif** en complément à 2
 
     - 0b1010 0011 
 
-???+ question "Exercice 5  ★ : Conversion décimal – binaire"
+!!! abstract "Exercice 5  ★ : Conversion décimal – binaire"
 
     1 ★ Écrire un programme qui convertisse un nombre décimal en binaire. Utiliser une fonction dec2bin. On donne l’algorithme suivant : 
 
@@ -950,7 +950,7 @@ Les ordinateurs utilisent la **norme IEEE 754** pour stocker les nombres réels 
 
 💡 **Exemple :** Tester en Python
 
-???+ question "Activité n+28 :"
+???+ question "Activité n°28 :"
 
     ```python
     print(0.1 + 0.2)  # Résultat inattendu : 0.30000000000000004
@@ -1003,14 +1003,14 @@ $1 \quad 10000010 \quad 01000100000000000000000$
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-???+ question "Exercice 6 "  
+!!! abstract "Exercice 6 "  
 
     Convertir en base 10  
 
     1. 0,0101010101<sub>2</sub>  
     2. 11100,10001<sub>2</sub> 
 
-???+ question "Exercice 7 ★" 
+!!! abstract "Exercice 7 ★" 
 
     Convertir en binaire puis en norme IEEE-754 
 
@@ -1018,7 +1018,7 @@ $1 \quad 10000010 \quad 01000100000000000000000$
     2. 4,3125
     3. 0,3125 
 
-???+ question "Exercice 8 ★ : conversion des flottants" 
+!!! abstract "Exercice 8 ★ : conversion des flottants" 
 
     On souhaite transformer un nombre binaire décimal en base 10. Pour simplifier, on va déjà écrire un programme qui transforme **la partie décimale en binaire**, **puis** dans un deuxième temps on transformera **la partie entière**. 
 
@@ -1202,7 +1202,7 @@ Chaque pixel est défini par une combinaison de trois couleurs :
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-???+ question "Exercice 9 : Image matricielle"
+!!! abstract "Exercice 9 : Image matricielle"
 
     L’objectif de cet exercice est de dessiner une image matricielle dans le quadrillage 8x8 en page 1, ci-dessous, grâce à vos réponses aux différentes questions de conversions entre les bases numériques. 
 
@@ -1234,7 +1234,7 @@ Chaque pixel est défini par une combinaison de trois couleurs :
     Un nombre hexadécimal s’écrit ainsi : **9A<sub>(16)</sub>** ou **0x9A** ou **$9A** ou **9Ah**
 
 
-???+ question "Exercice 10 : L’heure en binaire ????" 
+!!! abstract "Exercice 10 : L’heure en binaire ????" 
 
     ![](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.109.png)
 
