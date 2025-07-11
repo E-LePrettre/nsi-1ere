@@ -91,7 +91,7 @@ Une condition permet d’exécuter des instructions **uniquement si une certaine
 
 ### **<H3 STYLE="COLOR:GREEN;">2.1. Les<a name="_page1_x40.00_y262.92"></a> structures conditionnelles</h3>**  
 #### **<H4 STYLE="COLOR:MAGENTA;">2.1.1. L’instruction<a name="_page1_x40.00_y281.92"></a> simple if</h4>**
-![](Aimg0.png){width=50%}
+![](Aimg0.png){width=25%}
 
 ???+ question "Activité n°3 : Vérifier si on a la moyenne"
 
