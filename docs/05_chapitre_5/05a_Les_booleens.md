@@ -236,7 +236,7 @@ Table de vérité
 
 Table de vérité
 
-| e1 | e2 | S |
+| E1 | E2 | S |
 |----|----|---|
 | 0  | 0  | 1 |
 | 0  | 1  | 0 |
@@ -439,17 +439,19 @@ Le  complément  d’un  produit  logique  (non  arithmétique)  est  égal  à 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
-**<H3 STYLE="COLOR:red;">Exercice n°1</H3>** ★ **:** On considère le circuit logique suivant. 
+!!! abstract "Exercice n°1 ★" 
+    
+    On considère le circuit logique suivant. 
 
-![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.022.png)
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.022.png)
 
-1. Réaliser le circuit à l’aide du logiciel Logisim. 
-2. Donner l’expression booléenne de S en fonction des variables A et B. 
-3. Compléter la table de vérité ci-dessous. 
+    1. Réaliser le circuit à l’aide du logiciel Logisim. 
+    2. Donner l’expression booléenne de S en fonction des variables A et B. 
+    3. Compléter la table de vérité ci-dessous. 
 
-![](Aimg013.png)
+    ![](Aimg013.png)
 
-4 Par quel circuit comprenant seulement deux portes peut-on remplacer le circuit étudié ? 
+    4 Par quel circuit comprenant seulement deux portes peut-on remplacer le circuit étudié ? 
 
 **<H3 STYLE="COLOR:red;">Exercice n°2</H3>** ★ :  On considère le circuit logique ci-dessous 
 
