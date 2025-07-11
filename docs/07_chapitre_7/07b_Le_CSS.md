@@ -108,63 +108,57 @@ ou :
 
 - **Éviter de mettre du CSS directement dans le HTML**. 
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** 
+???+ question "Activité n°1.:"
 
-Dans le fichier **`index.html`**, ajoutez le lien vers `style.css` dans la section `<head>` comme ceci (attention à recopier seulement la ligne concernée):  
+    Dans le fichier **`index.html`**, ajoutez le lien vers `style.css` dans la section `<head>` comme ceci (attention à recopier seulement la ligne concernée):  
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Logique sur les passoires</title>
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Logique sur les passoires</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Bienvenue sur mon site</h1>
+        <p>Voici ma première page avec du CSS !</p>
+    </body>
+    </html>
+    ```
+
+    📌 **Explication :**  
+
+    ✔ La balise `<link>` permet de relier notre fichier HTML à la feuille de style `style.css`. 
+
+    ✔ Désormais, **toute la mise en forme sera gérée depuis ce fichier CSS externe**.  
+
+    puis ajouter ceci au fichier style.css
+
+    ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.006.png)
+
+    ✅ **Enregistrer et observer `index.html`.**  
+
+
+???+ question "Activité n°2.:"
+
+    Lier le fichier CSS à `page2.html`**  
+
+    Ajoutez la même ligne dans `page2.html` :  
+
+    ```html
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Bienvenue sur mon site</h1>
-    <p>Voici ma première page avec du CSS !</p>
-</body>
-</html>
-```
+    ```
 
-📌 **Explication :**  
+    ✅ **Enregistrer et observer `page2.html`.**  
 
-✔ La balise `<link>` permet de relier notre fichier HTML à la feuille de style `style.css`. 
+???+ question "Activité n°3.:" 
 
-✔ Désormais, **toute la mise en forme sera gérée depuis ce fichier CSS externe**.  
+    Faire un lien vers le fichier CSS dans `page3.html`**  
 
-puis ajouter ceci au fichier style.css
-
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.006.png)
-
-✅ **Enregistrer et observer `index.html`.**  
-
-
-
-
-
-
-**<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** 
-
-Lier le fichier CSS à `page2.html`**  
-
-Ajoutez la même ligne dans `page2.html` :  
-
-```html
-<link rel="stylesheet" href="style.css">
-```
-
-✅ **Enregistrer et observer `page2.html`.**  
-
-
-
-
-
-**<H3 STYLE="COLOR:red;">Activité n°3.:</H3>** Faire un lien vers le fichier CSS dans `page3.html`**  
-
-1. **Ouvrir `page3.html`**  
-2. **Ajouter le lien vers `style.css`**  
-3. **Enregistrer et observer les modifications sur les pages `page2.html` et `page3.html`.**  
+    1. **Ouvrir `page3.html`**  
+    2. **Ajouter le lien vers `style.css`**  
+    3. **Enregistrer et observer les modifications sur les pages `page2.html` et `page3.html`.**  
 
 
 
@@ -222,18 +216,20 @@ p {
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°4.:</H3>** Modifier les couleurs des mots entre `<em>` et `<strong>`**  
+???+ question "Activité n°4.:" 
 
-1. **Ajoutez ces styles dans `style.css`** :  
-```css
-em {
-    color: red;
-}
-strong {
-    color: rgb(35, 241, 241);
-}
-```
-2. **Enregistrer et observer `index.html`**.
+    Modifier les couleurs des mots entre `<em>` et `<strong>`**  
+
+    1. **Ajoutez ces styles dans `style.css`** :  
+    ```css
+    em {
+        color: red;
+    }
+    strong {
+        color: rgb(35, 241, 241);
+    }
+    ```
+    2. **Enregistrer et observer `index.html`**.
 
 ✅ **Résultat attendu :**  
 
@@ -255,17 +251,17 @@ h1, h2, h3, h4, h5 {
 💡 **Explication** :  
 ✔ Tous les titres `<h1>` à `<h5>` deviennent violets.  
 
+???+ question "Activité n°5.:" 
 
+    Appliquer un style aux titres**  
 
-**<H3 STYLE="COLOR:red;">Activité n°5.:</H3>** Appliquer un style aux titres**  
-
-1. **Ajoutez cette règle dans `style.css`** :  
-```css
-h1, h2, h3, h4, h5 {
-    color: purple;
-}
-```
-2. **Enregistrer et observer `index.html`**.
+    1. **Ajoutez cette règle dans `style.css`** :  
+    ```css
+    h1, h2, h3, h4, h5 {
+        color: purple;
+    }
+    ```
+    2. **Enregistrer et observer `index.html`**.
 
 
 📌 **Note :**  
@@ -318,22 +314,24 @@ On utilise alors **les classes (`class`)** et **les identifiants (`id`)**.
 
 ➡ Une classe doit toujours être précédée d’un **point (`.`)** en CSS.
 
-**<H3 STYLE="COLOR:red;">Activité n°6.:</H3>** **Dans `index.html`**, encadrer le théorème avec une balise `<p>` en lui attribuant une **classe** 
+???+ question "Activité n°6.:" 
 
-```html
-    <p class ="theoreme"> …………………………………………..</p>
-```
+    **Dans `index.html`**, encadrer le théorème avec une balise `<p>` en lui attribuant une **classe** 
+
+    ```html
+        <p class ="theoreme"> …………………………………………..</p>
+    ```
 
 
-**Dans `style.css`**, ajouter :
-```css
-.theoreme {
-    color: red;
-    font-style: italic;
-}
-```
+    **Dans `style.css`**, ajouter :
+    ```css
+    .theoreme {
+        color: red;
+        font-style: italic;
+    }
+    ```
 
-✅ **Enregistrer et observer `index.html`**.
+    ✅ **Enregistrer et observer `index.html`**.
 
 
 
@@ -388,22 +386,22 @@ On utilise alors **les classes (`class`)** et **les identifiants (`id`)**.
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°7.:</H3>** 
+???+ question "Activité n°7.:"
 
-1 **Dans `index.html`**, modifier le texte du théorème :
-```html
-<p>La notion de <span class="passoire">passoires</span> est indépendante de la notion de trous.</p>
-```
+    1 **Dans `index.html`**, modifier le texte du théorème :
+    ```html
+    <p>La notion de <span class="passoire">passoires</span> est indépendante de la notion de trous.</p>
+    ```
 
-2 **Dans `style.css`**, ajouter :
-```css
-.passoire {
-    font-weight: bold;
-    background-color: yellow;
-}
-```
+    2 **Dans `style.css`**, ajouter :
+    ```css
+    .passoire {
+        font-weight: bold;
+        background-color: yellow;
+    }
+    ```
 
-✅ **Enregistrer et observer `index.html`**.
+    ✅ **Enregistrer et observer `index.html`**.
 
 📌 **Explication :**
 
@@ -531,13 +529,15 @@ p {
 }
 ```
 
-**<H3 STYLE="COLOR:red;">Activité n°8.:</H3>** Dans `style.css`, ajoutez :
-```css
-p {
-    font-size: 120%;
-}
-```
-✅ **Enregistrer et observer `index.html`**.
+???+ question "Activité n°8.:" 
+
+    Dans `style.css`, ajoutez :
+    ```css
+    p {
+        font-size: 120%;
+    }
+    ```
+    ✅ **Enregistrer et observer `index.html`**.
 
 ✅ **Résultat attendu :**  
 
@@ -568,13 +568,13 @@ p {
 ✔ `sans-serif` → Police générique au cas où aucune des précédentes n'est disponible.  
 
 
+???+ question "Activité n°9.:" 
 
+    Modifier la feuille de style pour que les paragraphes est une police en Trebuchet MS. 
 
-**<H3 STYLE="COLOR:red;">Activité n°9.:</H3>** Modifier la feuille de style pour que les paragraphes est une police en Trebuchet MS. 
+    ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.034.png)
 
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.034.png)
-
-✅ **Enregistrer et observer `index.html`**.
+    ✅ **Enregistrer et observer `index.html`**.
 
 ### **<H3 STYLE="COLOR:GREEN;">4.3. Appliquer des styles (italique, gras, souligné)<a name="_page5_x40.00_y342.92"></a>**</H3> 
 
@@ -628,13 +628,13 @@ img {
 
 ✔ `margin: auto;` permet **de centrer l’image horizontalement**.  
 
+???+ question "Activité n°10.:" 
 
+    Modifier la feuille de style pour que les paragraphes soient justifiés et centré les images (penser à mettre des nom aux balises des images sur la index) 
 
-**<H3 STYLE="COLOR:red;">Activité n°10.:</H3>** Modifier la feuille de style pour que les paragraphes soient justifiés et centré les images (penser à mettre des nom aux balises des images sur la index) 
+    ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.036.jpeg)
 
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.036.jpeg)
-
-✅ **Enregistrer et observer `index.html`**.
+    ✅ **Enregistrer et observer `index.html`**.
 
 ✅ **Résultat attendu :**  
 
@@ -675,29 +675,28 @@ p {
 }
 ```
 
+???+ question "Activité n°11.:" 
 
+    Ajoutez cette règle dans `style.css` :
+    ```css
+    body {
+        background-color: #F3E0C5;
+    }
+    ```
 
+    📌 **Expérimentez** en essayant ces variantes :  
+    ```css
+    body {
+        background-color: rgb(255, 0, 0); /* Rouge */
+    }
+    ```
+    ```css
+    p {
+        background-color: rgba(255, 0, 0, 0.5); /* Fond rouge semi-transparent */
+    }
+    ```
 
-**<H3 STYLE="COLOR:red;">Activité n°11.:</H3>** Ajoutez cette règle dans `style.css` :
-```css
-body {
-    background-color: #F3E0C5;
-}
-```
-
-📌 **Expérimentez** en essayant ces variantes :  
-```css
-body {
-    background-color: rgb(255, 0, 0); /* Rouge */
-}
-```
-```css
-p {
-    background-color: rgba(255, 0, 0, 0.5); /* Fond rouge semi-transparent */
-}
-```
-
-✅ **Enregistrer et observer `index.html`**.
+    ✅ **Enregistrer et observer `index.html`**.
 
 
 
@@ -714,24 +713,20 @@ body {
 ```
 
 
+???+ question "Activité n°12.:"
 
+    1 Trouvez une **image neutre** et nommez-la `paper.gif`. 
 
+    2 Ajoutez-la dans le **même dossier** que votre fichier CSS.  
 
+    3 Modifiez `style.css` pour appliquer l’image en fond :
+    ```css
+    body {
+        background-image: url("paper.gif");
+    }
+    ```
 
-
-**<H3 STYLE="COLOR:red;">Activité n°12.:</H3>** 
-1 Trouvez une **image neutre** et nommez-la `paper.gif`. 
-
-2 Ajoutez-la dans le **même dossier** que votre fichier CSS.  
-
-3 Modifiez `style.css` pour appliquer l’image en fond :
-```css
-body {
-    background-image: url("paper.gif");
-}
-```
-
-✅ **Enregistrer et observer `index.html`**.
+    ✅ **Enregistrer et observer `index.html`**.
 
 
 
@@ -950,23 +945,25 @@ div {
 ➡ **Résultat** : Un encadrement **avec des coins arrondis de 10px**.
  
 
-**<H3 STYLE="COLOR:red;">Activité n°13.:</H3>** Ajouter une bordure au théorème**  
+???+ question "Activité n°13.:" 
 
-Dans `style.css`, ajoutez :
-```css
-.theoreme {
-    border: 4px solid #FF5733; /* Bordure orange */
-    border-radius: 15px; /* Coins arrondis */
-    text-align: center; /* Centrer le texte */
-    padding: 10px; /* Espacement intérieur */
-    width: 50%;
-    margin: auto; /* Centrer le bloc */
-}
-```
+    Ajouter une bordure au théorème**  
 
-✅ **Enregistrer et observer `index.html`**.
+    Dans `style.css`, ajoutez :
+    ```css
+    .theoreme {
+        border: 4px solid #FF5733; /* Bordure orange */
+        border-radius: 15px; /* Coins arrondis */
+        text-align: center; /* Centrer le texte */
+        padding: 10px; /* Espacement intérieur */
+        width: 50%;
+        margin: auto; /* Centrer le bloc */
+    }
+    ```
 
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.061.jpeg)
+    ✅ **Enregistrer et observer `index.html`**.
+
+    ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.061.jpeg)
 
 ### **<H3 STYLE="COLOR:GREEN;">7.3. Ajouter des ombres (`box-shadow` et `text-shadow`)<a name="_page10_x40.00_y299.92"></a>**</H3> 
 
@@ -991,19 +988,20 @@ h1 {
 ➡ **Résultat** : Un **effet d’ombre sur le texte `<h1>`**.
 
 
+???+ question "Activité n°14.:"  
 
-**<H3 STYLE="COLOR:red;">Activité n°14.:</H3>**  Ajouter une ombre au théorème**  
+    Ajouter une ombre au théorème**  
 
-Dans `style.css`, ajoutez :
-```css
-.theoreme {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-}
-```
+    Dans `style.css`, ajoutez :
+    ```css
+    .theoreme {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+    ```
 
-✅ **Enregistrer et observer `index.html`**.
+    ✅ **Enregistrer et observer `index.html`**.
 
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.066.jpeg)
+    ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.066.jpeg)
 
 ## **<H2 STYLE="COLOR:BLUE;">8. Les<a name="_page10_x40.00_y621.92"></a> apparences dynamiques**</H2> 
 
@@ -1172,36 +1170,36 @@ Il existe des balises HTML qui permettent de  définir les trois « zones » du 
 
 ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.078.jpeg)
 
-**<H3 STYLE="COLOR:red;">Activité n°15.:</H3>** 
+???+ question "Activité n°15.:"
 
-1. **Ajoutez un tableau résumé à la fin de `index.html`**.
+    1. **Ajoutez un tableau résumé à la fin de `index.html`**.
 
-2. **Modifiez `style.css` pour obtenir un style similaire à l’exemple ci-dessous.**
+    2. **Modifiez `style.css` pour obtenir un style similaire à l’exemple ci-dessous.**
 
-📌 **CSS recommandé :**
-```css
-table {
-    width: 80%;
-    border-collapse: collapse;
-    margin: auto;
-}
+    📌 **CSS recommandé :**
+    ```css
+    table {
+        width: 80%;
+        border-collapse: collapse;
+        margin: auto;
+    }
 
-th, td {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-}
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
 
-th {
-    background-color: #EEE;
-}
-```
+    th {
+        background-color: #EEE;
+    }
+    ```
 
-✅ **Enregistrer et observer `index.html`**.
+    ✅ **Enregistrer et observer `index.html`**.
 
 
 
-![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.079.png)![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.080.png)
+    ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.079.png)![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.080.png)
 
 ## **<H2 STYLE="COLOR:BLUE;">10. Le<a name="_page13_x40.00_y36.92"></a> modèle des boites**</H2>
 
