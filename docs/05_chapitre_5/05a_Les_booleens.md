@@ -216,10 +216,17 @@ La porte XOR est symbolisée par le schéma suivant :
 |![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.016.png)|![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.017.png)|![](Aimg02.png) |
 
 ### **<H3 STYLE="COLOR:GREEN;">2.5. La<a name="_page2_x40.00_y649.04"></a> porte NON ET (NAND)</h3>** 
+Table de vérité
+| E1 | E2 | S |
+|----|----|---|
+| 0  | 0  | 1 |
+| 0  | 1  | 1 |
+| 1  | 0  | 1 |
+| 1  | 1  | 0 |
 
-|Symbole |Table de vérité |Opération |
-| - | - | - |
-|![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.018.png)|| E1 | E2 | S ||----|----|---|| 0  | 0  | 1 || 0  | 1  | 1 || 1  | 0  | 1 || 1  | 1  | 0 ||![](Aimg03.png) |
+|Symbole |Opération |
+| - | - | 
+|![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.018.png)|![](Aimg03.png) |
 
 
 
