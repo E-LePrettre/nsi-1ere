@@ -373,176 +373,175 @@ Python permet d’utiliser des expressions **booléennes**, qui ne peuvent être
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
-**<H3 STYLE="COLOR:red;">Exercice 1</H3>**★  Écrire une fonction maximum(x,y) qui renvoie le maximum de deux nombres x et y. Attention : vous n'avez pas le droit d'utiliser la fonction built-in max().  
+???+ question "Exercice 1 ★"  
+    
+    Écrire une fonction maximum(x,y) qui renvoie le maximum de deux nombres x et y. Attention : vous n'avez pas le droit d'utiliser la fonction built-in max().  
 
 
-**<H3 STYLE="COLOR:red;">Exercice 2</H3>**★Ecrire et tester une fonction compare(a,b) qui retourne :  
+???+ question "Exercice 2 ★" 
 
-- -1 si a < b,  
+    Ecrire et tester une fonction compare(a,b) qui retourne :  
 
-- 0 si a = b,  
+        - -1 si a < b,  
 
-- 1 si a > b.  
+        - 0 si a = b,  
 
-**<H3 STYLE="COLOR:red;">Exercice 3</H3>**★ Écrire une fonction resout(a,b) avec les deux variables réelles a, b qui résout l’équation ax + b = 0.
+        - 1 si a > b.  
 
+???+ question "Exercice 3 ★" 
 
+    Écrire une fonction resout(a,b) avec les deux variables réelles a, b qui résout l’équation ax + b = 0.
 
-**<H3 STYLE="COLOR:red;">Exercice 4.</H3>**★ Ecrire une fonction mention(note) qui affichera la mention correspondante à la note obtenue.  Les mentions sont obtenues 
 
-- Une mention "assez bien" si sa moyenne est égale ou supérieure à 12/20 et inférieure à 14/20. 
-- Une mention "bien" si sa moyenne est au moins égale à 14/20 et inférieure à 16/20. 
-- Une mention "très bien" s'il obtient une moyenne égale ou supérieure à 16/20. 
 
-Si la note est supérieure ou égale à 10/20 et inférieure 12/20 le candidat obtient passable 
+???+ question "Exercice 4 ★"  
 
-SI la note est inférieure à 10/20 le candidat n’a pas obtenu le bac 
+    Ecrire une fonction mention(note) qui affichera la mention correspondante à la note obtenue.  Les mentions sont obtenues 
 
-Par exemple :
-```
->>> mention(17)
-'Très bien'
->>> mention(8)
-'recalé'
-```
+    - Une mention "assez bien" si sa moyenne est égale ou supérieure à 12/20 et inférieure à 14/20. 
 
+    - Une mention "bien" si sa moyenne est au moins égale à 14/20 et inférieure à 16/20. 
 
+    - Une mention "très bien" s'il obtient une moyenne égale ou supérieure à 16/20. 
 
+    Si la note est supérieure ou égale à 10/20 et inférieure 12/20 le candidat obtient passable 
 
+    SI la note est inférieure à 10/20 le candidat n’a pas obtenu le bac 
 
+    Par exemple :
+    ```
+    >>> mention(17)
+    'Très bien'
+    >>> mention(8)
+    'recalé'
+    ```
 
+???+ question "Exercice 5 ★" 
 
+    Ecrire une fonction IMC(poids, taille) qui calcule l’indice de masse corporelle (IMC) d’un adulte et qui en donne l’interprétation (corpulence normale, surpoids…). 
 
+    Il se calcule simplement en divisant le poids (en kg) par le carré de la taille (m). Indice de masse corporelle (IMC) Interprétation (d'après l'OMS) 
 
-**<H3 STYLE="COLOR:red;">Exercice 5.</H3>**★ Ecrire une fonction IMC(poids, taille) qui calcule l’indice de masse corporelle (IMC) d’un adulte et qui en donne l’interprétation (corpulence normale, surpoids…). 
+    - moins de 18,5 Insuffisance pondérale (maigreur) 
 
-Il se calcule simplement en divisant le poids (en kg) par le carré de la taille (m). Indice de masse corporelle (IMC) Interprétation (d'après l'OMS) ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.036.png)
+    - 18,5 à 24,9  Corpulence normale 
 
-- moins de 18,5 Insuffisance pondérale (maigreur) 
+    - 25 à 29,9  Surpoids 
 
-- 18,5 à 24,9  Corpulence normale 
+    - 30 à 39,9  Obésité  
 
-- 25 à 29,9  Surpoids 
+    - plus de 40  Obésité morbide ou massive 
 
-- 30 à 39,9  Obésité  
+    Exemple d'utilisation: 
+    ```
+    >>> IMC(68.5, 1.70)
+    'IMC = 23.7: Interprétation : Corpulence normale'
+    ```
 
-- plus de 40  Obésité morbide ou massive 
+???+ question "Exercice 6 ★★"  
 
-Exemple d'utilisation: 
-```
->>> IMC(68.5, 1.70)
-'IMC = 23.7: Interprétation : Corpulence normale'
-```
+    Ecrire une fonction annee\_bissextile(annee) qui indique qu’il s’agit d’une année bissextile. On rappelle qu’une année est bissextile si elle est multiple de 4 mais pas multiple de 100, ou si elle est multiple de 400. 
 
+    Exemple : 
+    ```
+    >>> annee_bissextile(1900)
+    "L'année 1900 n'est pas bissextile"
+    >>> annee_bissextile(2000)
+    "L'année 2000 est bissextile"
+    ```
 
+???+ question "Exercice 7 ★★" 
 
-**<H3 STYLE="COLOR:red;">Exercice 6.</H3>**★★: Ecrire une fonction annee\_bissextile(annee) qui indique qu’il s’agit d’une année bissextile. On rappelle qu’une année est bissextile si elle est multiple de 4 mais pas multiple de 100, ou si elle est multiple de 400. 
+    - Niveau première en mathématiques 
+    
+    - Ecrire un script qui résout l'équation du second degré : ax² + bx + c = 0  
 
-Exemple : 
-```
->>> annee_bissextile(1900)
-"L'année 1900 n'est pas bissextile"
->>> annee_bissextile(2000)
-"L'année 2000 est bissextile"
-```
+    Pour revoir les formules à appliquer :[ https://www.maths-et-tiques.fr/telech/Secondegre2.pdf ](https://www.maths-et-tiques.fr/telech/Secondegre2.pdf)
 
+    🟥 Définition — Équation du second degré
 
+    > **Définition :**
+    > Une équation du second degré est une équation de la forme :
+    > *ax² + bx + c = 0*
+    > où *a*, *b* et *c* sont des réels, avec *a ≠ 0*.
 
+    > Une **solution** de cette équation s'appelle une **racine** du trinôme *ax² + bx + c*.
 
+    🟥 Définition — Discriminant
 
+    > **Définition :**
+    > On appelle **discriminant** du trinôme *ax² + bx + c* le nombre réel, noté **Δ**, défini par la formule :
+    > **Δ = b² - 4ac**
 
-**<H3 STYLE="COLOR:red;">Exercice 7.</H3>**★★ - Niveau première en mathématiques - Ecrire un script qui résout l'équation du second degré : ax² + bx + c = 0  
+    🟥 Propriété — Nombre de solutions selon Δ
 
-Pour revoir les formules à appliquer :[ https://www.maths-et-tiques.fr/telech/Secondegre2.pdf ](https://www.maths-et-tiques.fr/telech/Secondegre2.pdf)
+    > **Propriété :**
+    > Soit **Δ** le discriminant du trinôme *ax² + bx + c*.
 
-🟥 Définition — Équation du second degré
+    * Si **Δ < 0** : l'équation *ax² + bx + c = 0* n'a **pas de solution réelle**.
+    * Si **Δ = 0** : l'équation *ax² + bx + c = 0* a **une unique solution** :
+    *x₀ = -b / 2a*
+    * Si **Δ > 0** : l'équation *ax² + bx + c = 0* a **deux solutions distinctes** :
 
-> **Définition :**
-> Une équation du second degré est une équation de la forme :
-> *ax² + bx + c = 0*
-> où *a*, *b* et *c* sont des réels, avec *a ≠ 0*.
+    $$
+    x_1 = \frac{-b - \sqrt{\Delta}}{2a} \quad \text{et} \quad x_2 = \frac{-b + \sqrt{\Delta}}{2a}
+    $$
 
-> Une **solution** de cette équation s'appelle une **racine** du trinôme *ax² + bx + c*.
 
-🟥 Définition — Discriminant
 
-> **Définition :**
-> On appelle **discriminant** du trinôme *ax² + bx + c* le nombre réel, noté **Δ**, défini par la formule :
-> **Δ = b² - 4ac**
+    🧮 Exemple — Résolution d'une équation du second degré
 
-🟥 Propriété — Nombre de solutions selon Δ
+    > **Calculons le discriminant de l'équation** :
+    > *2x² - x - 6 = 0*
 
-> **Propriété :**
-> Soit **Δ** le discriminant du trinôme *ax² + bx + c*.
+    * a = 2, b = -1, c = -6
+    * Δ = b² - 4ac = (-1)² - 4 × 2 × (-6) = 1 + 48 = **49**
 
-* Si **Δ < 0** : l'équation *ax² + bx + c = 0* n'a **pas de solution réelle**.
-* Si **Δ = 0** : l'équation *ax² + bx + c = 0* a **une unique solution** :
-  *x₀ = -b / 2a*
-* Si **Δ > 0** : l'équation *ax² + bx + c = 0* a **deux solutions distinctes** :
+    > Comme **Δ > 0**, l'équation possède **deux solutions distinctes** :
 
-$$
-x_1 = \frac{-b - \sqrt{\Delta}}{2a} \quad \text{et} \quad x_2 = \frac{-b + \sqrt{\Delta}}{2a}
-$$
+    $$
+    x_1 = \frac{-(-1) - \sqrt{49}}{2 \times 2} = \frac{1 - 7}{4} = \frac{-6}{4} = \frac{-3}{2}
+    $$
 
+    $$
+    x_2 = \frac{-(-1) + \sqrt{49}}{2 \times 2} = \frac{1 + 7}{4} = \frac{8}{4} = 2
+    $$
 
 
-🧮 Exemple — Résolution d'une équation du second degré
+    Aide : Il faut importer la fonction racine 
 
-> **Calculons le discriminant de l'équation** :
-> *2x² - x - 6 = 0*
+    ```python
+    from math import sqrt
+    ```
 
-* a = 2, b = -1, c = -6
-* Δ = b² - 4ac = (-1)² - 4 × 2 × (-6) = 1 + 48 = **49**
+    Exemple :
 
-> Comme **Δ > 0**, l'équation possède **deux solutions distinctes** :
+    ```python
+    print(racine(1, -3, 2))
+    ```
 
-$$
-x_1 = \frac{-(-1) - \sqrt{49}}{2 \times 2} = \frac{1 - 7}{4} = \frac{-6}{4} = \frac{-3}{2}
-$$
+    ```
+    'Le discriminant vaut :  1'
+    'Il y a deux solutions : 1.0 et 2.0'
+    ```
 
-$$
-x_2 = \frac{-(-1) + \sqrt{49}}{2 \times 2} = \frac{1 + 7}{4} = \frac{8}{4} = 2
-$$
+    ```python
+    print(racine(2, 1.5, 4))
+    ```
 
+    ```
+    'Le discriminant vaut :  -29.75'
+    "Il n'y a pas de solution"
+    ```
 
-Aide : Il faut importer la fonction racine 
+    ```python
+    print(racine(1, -6, 9))
+    ```
 
-```python
-from math import sqrt
-```
-
-Exemple :
-
-```python
-print(racine(1, -3, 2))
-```
-
-```
-'Le discriminant vaut :  1'
-'Il y a deux solutions : 1.0 et 2.0'
-```
-
-```python
-print(racine(2, 1.5, 4))
-```
-
-```
-'Le discriminant vaut :  -29.75'
-"Il n'y a pas de solution"
-```
-
-```python
-print(racine(1, -6, 9))
-```
-
-```
-'Le discriminant vaut :  0'
-'Il y a une solution : 3.0'
-```
-
-
-
-
+    ```
+    'Le discriminant vaut :  0'
+    'Il y a une solution : 3.0'
+    ```
 
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Les<a name="_page7_x40.00_y36.92"></a> boucles</h2>** 
@@ -821,176 +820,174 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 8</H3>**★ 
+???+ question "Exercice 8 ★★"  
 
-1  Avec une boucle for, écrire une fonction nombre_de_z(chaine) qui compte le nombre de lettres z dans une chaîne de caractères. Par exemple : 
-```
-nombre_de_z('Zinedine Zidane') 
-2
-```
+    1  Avec une boucle for, écrire une fonction nombre_de_z(chaine) qui compte le nombre de lettres z dans une chaîne de caractères. Par exemple : 
+    ```
+    nombre_de_z('Zinedine Zidane') 
+    2
+    ```
 
-2  Ecrire une fonction nombre_de_z2(chaine) qui fait la même chose, directement avec la 
-méthode count() de la classe str. Pour obtenir de l’aide sur cette méthode : 
-```
-help(str.count)
-```
+    2  Ecrire une fonction nombre_de_z2(chaine) qui fait la même chose, directement avec la 
+    méthode count() de la classe str. Pour obtenir de l’aide sur cette méthode : 
+    ```
+    help(str.count)
+    ```
 
-**<H3 STYLE="COLOR:red;">Exercice 9</H3>**★ 
+???+ question "Exercice 9 ★★" 
 
-1  Ecrire la fonction devinette(proposition) du jeu de devinette suivant : 
+    1  Ecrire la fonction devinette(proposition) du jeu de devinette suivant : 
 
-```
->>> 
-Le jeu consiste à deviner un nombre entre 1 et 100 :
-choisir un nombre>? 50
-trop petit !
-choisir un nombre>? 20
-trop petit !
-choisir un nombre>? 70
-trop grand
-choisir un nombre>? 66
-Gagné 
-en 3 coups !
-```
+    ```
+    >>> 
+    Le jeu consiste à deviner un nombre entre 1 et 100 :
+    choisir un nombre>? 50
+    trop petit !
+    choisir un nombre>? 20
+    trop petit !
+    choisir un nombre>? 70
+    trop grand
+    choisir un nombre>? 66
+    Gagné 
+    en 3 coups !
+    ```
 
-2  Quelle est la stratégie la plus efficace ? 
+    2  Quelle est la stratégie la plus efficace ? 
 
-3  Question bonus : Montrer que l’on peut deviner un nombre en 7 coups maximum. 
+    3  Question bonus : Montrer que l’on peut deviner un nombre en 7 coups maximum. 
 
-Bibliographie :[ La dichotomie ](http://fr.wikipedia.org/wiki/Dichotomie)
+    Bibliographie :[ La dichotomie ](http://fr.wikipedia.org/wiki/Dichotomie)
 
-Remarques :  
+    Remarques :  
 
--  l’algorithme de Dichotomie est au programme de première NSI. 
+    -  l’algorithme de Dichotomie est au programme de première NSI. 
 
--  pour créer un nombre entier aléatoire entre 1 et 100 : 
+    -  pour créer un nombre entier aléatoire entre 1 et 100 : 
 
-```python
-import random 
-nombre = random.randint(1,100)
-``` 
+    ```python
+    import random 
+    nombre = random.randint(1,100)
+    ``` 
 
-**<H3 STYLE="COLOR:red;">Exercice 10</H3>**★★ Code de César 
-En cryptographie, le code de César est une technique de chiffrement élémentaire qui consiste à décaler une lettre de 3 rangs vers la droite : 
+???+ question "Exercice 10 ★★ : Code César" 
 
-A → D 
+    En cryptographie, le code César est une technique de chiffrement élémentaire qui consiste à décaler une lettre de 3 rangs vers la droite : 
 
-B → E 
+    A → D 
 
-... 
+    B → E 
 
-Z → C 
+    ... 
 
-1 Ecrire une fonction message_a_coder(message) qui permet de coder un message passé en argument.Par exemple : 
+    Z → C 
 
-```
->>> message_a_coder('abcdefghijklmnopqrstuvwxyz')
-'defghijklmnopqrstuvwxyzabc'
->>> message_a_coder('Lycee Jean Cassaigne classe de NSI')
-'obfhh mhdq fdvvdljqh fodvvh gh qvl'
-```
+    1 Ecrire une fonction message_a_coder(message) qui permet de coder un message passé en argument.Par exemple : 
 
+    ```
+    >>> message_a_coder('abcdefghijklmnopqrstuvwxyz')
+    'defghijklmnopqrstuvwxyzabc'
+    >>> message_a_coder('Lycee Jean Cassaigne classe de NSI')
+    'obfhh mhdq fdvvdljqh fodvvh gh qvl'
+    ```
 
+    On pourra utiliser la chaîne 'abcdefghijklmnopqrstuvwxyz',  la méthode find() de la classe str et la méthode lower() qui permet de tout mettre en minuscule. Pour obtenir de l’aide sur cette méthode : 
 
-On pourra utiliser la chaîne 'abcdefghijklmnopqrstuvwxyz',  la méthode find() de la classe str et la méthode lower() qui permet de tout mettre en minuscule. Pour obtenir de l’aide sur cette méthode : 
-
-```
->>> help(str.find)
->>> help(str.lower)
-```
-
-
-2 Ecrire la fonction message_a_decoder(message) qui permet le décodage. Par exemple : 
-
-```
->> message_a_decoder('obfhh mhdq fdvvdljqh fodvvh gh qvl')
-'lycee jean cassaigne classe de nsi'
-```
+    ```
+    >>> help(str.find)
+    >>> help(str.lower)
+    ```
 
 
+    2 Ecrire la fonction message_a_decoder(message) qui permet le décodage. Par exemple : 
 
-**<H3 STYLE="COLOR:red;">Exercice 11</H3>**★ Geralt de Riv kiffe ses cheveux. 
+    ```
+    >> message_a_decoder('obfhh mhdq fdvvdljqh fodvvh gh qvl')
+    'lycee jean cassaigne classe de nsi'
+    ```
 
-Pour ne pas être dérangé dans ses aventures il décide de les couper chaque fois qu’ils font plus de 40 cm. Ce matin Geralt a coupé ses cheveux et ils mesurent 17 cm. Chaque jour la longueur de ses cheveux augmente d’un pour cent (leur longueur est multipliée par 1.01). 
 
-Écrire un script qui affiche dans combien de jours Geralt devra couper ses cheveux. 
+???+ question "Exercice 11 ★ : Geralt de Riv kiffe ses cheveux."  
+
+    Pour ne pas être dérangé dans ses aventures il décide de les couper chaque fois qu’ils font plus de 40 cm. Ce matin Geralt a coupé ses cheveux et ils mesurent 17 cm. Chaque jour la longueur de ses cheveux augmente d’un pour cent (leur longueur est multipliée par 1.01). 
+
+    Écrire un script qui affiche dans combien de jours Geralt devra couper ses cheveux. 
 
 **Les exercices suivants nécessitent quelques (peu quand même) aptitudes en mathématiques…** 
 
-**<H3 STYLE="COLOR:red;">Exercice 12</H3>**★★ Ecrire une méthode heron(U, n) qui donne la valeur de la suite pour un rang n (méthode de Héron) : La méthode de Héron permet d’approcher la valeur de la racine carrée d’un nombre. Nous allons l’appliquer pour déterminer la valeur approchée de la racine de 2. Elle est définie par la suite : 
+???+ question "Exercice 12 ★★"  
+    Ecrire une méthode heron(U, n) qui donne la valeur de la suite pour un rang n (méthode de Héron) : La méthode de Héron permet d’approcher la valeur de la racine carrée d’un nombre. Nous allons l’appliquer pour déterminer la valeur approchée de la racine de 2. Elle est définie par la suite : 
 
 
-$U_0=k$, k étant une valeur initiale
-Et $\forall n\in\mathbb{N}$, $U_{n+1}=\frac{1}{2}\left(U_n+\frac{2}{U_n}\right)$
-Donc cela signifie :
-$U_1=\frac{1}{2}\left(U_0+\frac{2}{U_0}\right)$, 	 $U_2=\frac{1}{2}\left(U_1+\frac{2}{U_1}\right)$, 	$U_3=\frac{1}{2}\left(U_2+\frac{2}{U_2}\right)$,	$U_4=\frac{1}{2}\left(U_3+\frac{2}{U_3}\right)$, etc
+    $U_0=k$, k étant une valeur initiale
+    Et $\forall n\in\mathbb{N}$, $U_{n+1}=\frac{1}{2}\left(U_n+\frac{2}{U_n}\right)$
+    Donc cela signifie :
+    $U_1=\frac{1}{2}\left(U_0+\frac{2}{U_0}\right)$, 	 $U_2=\frac{1}{2}\left(U_1+\frac{2}{U_1}\right)$, 	$U_3=\frac{1}{2}\left(U_2+\frac{2}{U_2}\right)$,	$U_4=\frac{1}{2}\left(U_3+\frac{2}{U_3}\right)$, etc
 
-n étant le rang que l’on veut calculer la suite 
+    n étant le rang que l’on veut calculer la suite 
 
-Par exemple : 
-```
->>> heron(20,0)
-20
->>> heron(20,1)
-10.05
->>> heron(20,15)
-1.414213562373095
-```
-
-
-Aide :  
-
-- Utiliser seulement  n et U comme variable, 
-
-**<H3 STYLE="COLOR:red;">Exercice 13</H3>**★★ Fraction continue infinie  
-![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.086.jpeg)
-
-Le nombre d’or est un célèbre nombre irrationnel :[ Wikipédia.](https://fr.wikipedia.org/wiki/Nombre_d%27or)  
-Il a été étudié par de nombreux mathématiciens au cours du temps.  
-Il vaut $\phi$ =$\frac{1+√5}{2}$  et vaut approximativement 1,61803. On peut  estimer la valeur numérique de la fraction continue suivante :  
+    Par exemple : 
+    ```
+    >>> heron(20,0)
+    20
+    >>> heron(20,1)
+    10.05
+    >>> heron(20,15)
+    1.414213562373095
+    ```
 
 
-$\varphi=1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{\ldots}}}}}$
-Cela signifie que pour le rang 3, on aura :
-$\varphi=1$,		$\varphi=1+\frac{1}{1}$		$\varphi=1+\frac{1}{1+\frac{1}{1}}$,		$\varphi=1+\frac{1}{1+\frac{1}{1+\frac{1}{1}}}$, 	$\varphi=1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{1}}}}$, 
+    Aide :  
+
+    - Utiliser seulement  n et U comme variable, 
 
 
-Ecrire une fonction nombre_dor(n) qui détermine la valeur approchée du nombre d’or (seulement la valeur 
-Par exemple : 
+???+ question "Exercice 13 ★★ : Fraction continue infinie"   
+    
+    ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.086.jpeg)
 
-```
-la valeur de (1+math.sqrt(5))/2 est : 1.618033988749895
->>> nombre_dor(0)
-1
->>> nombre_dor(5)
-1.625
->>> nombre_dor(10)
-1.6179775280898876
->>> nombre_dor(15)
-1.618034447821682
-```
+    Le nombre d’or est un célèbre nombre irrationnel :[ Wikipédia.](https://fr.wikipedia.org/wiki/Nombre_d%27or)  
+    Il a été étudié par de nombreux mathématiciens au cours du temps.  
+    Il vaut $\phi$ =$\frac{1+√5}{2}$  et vaut approximativement 1,61803. On peut  estimer la valeur numérique de la fraction continue suivante :  
+
+    $\varphi=1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{\ldots}}}}}$
+    Cela signifie que pour le rang 3, on aura :
+    $\varphi=1$,		$\varphi=1+\frac{1}{1}$		$\varphi=1+\frac{1}{1+\frac{1}{1}}$,		$\varphi=1+\frac{1}{1+\frac{1}{1+\frac{1}{1}}}$, 	$\varphi=1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{1}}}}$, 
 
 
-**<H3 STYLE="COLOR:red;">Exercice 14</H3>**
+    Ecrire une fonction nombre_dor(n) qui détermine la valeur approchée du nombre d’or (seulement la valeur 
+    Par exemple : 
 
-★ Ecrire une fonction premier(nombre) qui détermine si un nombre entier est premier ou pas. 
+    ```
+    la valeur de (1+math.sqrt(5))/2 est : 1.618033988749895
+    >>> nombre_dor(0)
+    1
+    >>> nombre_dor(5)
+    1.625
+    >>> nombre_dor(10)
+    1.6179775280898876
+    >>> nombre_dor(15)
+    1.618034447821682
+    ```
 
-**Rappel :** un nombre **premier** est un entier naturel qui n’a que deux diviseurs : 1 et lui-même. Ex : 3 est premier mais 6 ne l’est pas car 2\*3=6. Par exemple : 
+???+ question "Exercice 14 ★★"  
 
-```
->>> premier(17)
-'17 est un nombre premier'
->>> premier(18)
-"18 n'est pas un nombre premier"
+    ★ Ecrire une fonction premier(nombre) qui détermine si un nombre entier est premier ou pas. 
 
-```
+    **Rappel :** un nombre **premier** est un entier naturel qui n’a que deux diviseurs : 1 et lui-même. Ex : 3 est premier mais 6 ne l’est pas car 2\*3=6. Par exemple : 
 
+    ```
+    >>> premier(17)
+    '17 est un nombre premier'
+    >>> premier(18)
+    "18 n'est pas un nombre premier"
 
-**Aide** : Le but est de regarder le reste de la division entre le nombre donné et nombre diviseur
+    ```
 
-1) avec une boucle for
+    **Aide** : Le but est de regarder le reste de la division entre le nombre donné et nombre diviseur
 
-2) avec une boucle while
+    1) avec une boucle for
+
+    2) avec une boucle while
 
 [QCM sur les boucles ](http://fabrice.sincere.free.fr/qcm/qcm.php?nom=qcm_python_loop)
 
@@ -1198,162 +1195,127 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
-**<H3 STYLE="COLOR:red;">Exercice 15</H3>**☆ 
+???+ question "Exercice 15 ☆"   
 
-1.Ecrire une fonction carre() qui retourne le carré d’un nombre : 
+    1.Ecrire une fonction carre() qui retourne le carré d’un nombre : 
 
-```
->>> carre(11.11111)
-123.4567654321
-```
+    ```
+    >>> carre(11.11111)
+    123.4567654321
+    ```
 
-2.Avec une boucle while et la fonction carre(), écrire un script qui affiche le carré des nombres entiers de 1 à 100 : 
+    2.Avec une boucle while et la fonction carre(), écrire un script qui affiche le carré des nombres entiers de 1 à 100 : 
 
-```
->>> 
-1 ^2 = 1
-2 ^2 = 4
-3 ^2 = 9
-4 ^2 = 16
-5 ^2 = 25
-6 ^2 = 36
-…
-98 ^2 = 9604
-99 ^2 = 9801
-100 ^2 = 10000
-```
+    ```
+    >>> 
+    1 ^2 = 1
+    2 ^2 = 4
+    3 ^2 = 9
+    4 ^2 = 16
+    5 ^2 = 25
+    6 ^2 = 36
+    …
+    98 ^2 = 9604
+    99 ^2 = 9801
+    100 ^2 = 10000
+    ```
 
+???+ question "Exercice 16 ☆"
 
+    Ecrire une fonction qui retourne l’aire de la surface d’un disque de rayon R. Exemple : 
 
+    ```
+    >>> airedisque(2.5)
+    19.634954084936208
+    ```
 
+???+ question "Exercice 17 ★" 
 
+    1.Ecrire une fonction qui retourne la factorielle d’un nombre entier N. On rappelle que : factorielle de N est noté N! 
 
+    N!=1×2×…×(N−1)×N 
 
+    Par exemple : 3!=1×2×3=6 
 
+    1!=1 
 
+    Par convention, 0!=1 
 
+    Exemple : 
+    ```
+    >>> factorielle(10)
+    3628800
+    >>> factorielle(0)
+    1
+    ```
+    
+    2.Comparez avec le résultat de la fonction[ factorial() ](http://docs.python.org/3/library/math.html)du module math. 
 
+???+ question "Exercice 18 ★" 
 
+    1.A l’aide de la fonction randint() du module random, écrire une fonction qui retourne un mot de passe de longueur N (chiffres, lettres minuscules ou majuscules).  
 
+    [https://www.w3schools.com/python/ref_random_randint.asp ](https://www.w3schools.com/python/ref_random_randint.asp) 
 
+    On donne : chaine = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
+    ```
+    >>> password(10)
+    'WpMdQLccbt'
+    >>> password(5)
+    '1zCNr'
+    ```
 
+    2.Reprendre la question 1) avec la fonction choice() du module random. Pour obtenir de l’aide sur cette fonction : 
 
+    ```python
+    import random 
+    help(random.choice) 
+    ```
 
+    3.Quel est le nombre de combinaisons possibles ? 
 
+    4.Quelle durée faut-il pour casser le mot de passe de longueur 10 avec un logiciel capable de générer 1 million de combinaisons par seconde ? Convertir la valeur trouvée dans une unité mieux adaptée. 
 
+    Lien utile :[ https://www.motdepasse.xyz/ ](https://www.motdepasse.xyz/)![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.110.png)
 
-**<H3 STYLE="COLOR:red;">Exercice 16</H3>**☆ 
 
-Ecrire une fonction qui retourne l’aire de la surface d’un disque de rayon R. Exemple : 
 
-```
->>> airedisque(2.5)
-19.634954084936208
-```
+???+ question "Exercice 19 ★★" 
 
+    Ecrire une fonction qui retourne une grille de numéros du jeu  Euro Millions. On utilisera la fonction sample() du module random.  
+    ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.114.png)
 
+    ```
+    >>> euromillions()  
+    '43 31 35 41 39 22 14 ' 
+    ```
 
+???+ question "Exercice 20"  
 
+    1.★ Ecrire une fonction qui retourne la valeur de la fonction  mathématique f(x)= 27x^3 - 27x^2 - 18x + 8 :  
 
+    ```
+    >>> f(0), f(1), f(0.5), f(0.25), f(0.375)  
+    (8, -10, -4.375, 2.234375, -1.123046875)  
+    ```
 
-**<H3 STYLE="COLOR:red;">Exercice 17</H3>**★ 
 
-1.Ecrire une fonction qui retourne la factorielle d’un nombre entier N. On rappelle que : factorielle de N est noté N! 
+    2.★★ On se propose de chercher les zéros de cette fonction par la (Wikipédia)[ méthode de dichotomie.](https://fr.wikipedia.org/wiki/M%C3%A9thode_de_dichotomie) 
 
-N!=1×2×…×(N−1)×N 
+    Ecrire le script correspondant. On recherche d’un zéro dans l’intervalle [a, b] avec une précision de 
+    1e-12
 
-Par exemple : 3!=1×2×3=6 
+    ```
+    >>> fonction(0,1)
+    (0.33333333333303017, 0.33333333333393966)
+    ```
 
-1!=1 
+    3.Chercher tous les zéros de cette fonction. 
 
-Par convention, 0!=1 
+    ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.122.jpeg)
 
-Exemple : 
-```
->>> factorielle(10)
-3628800
->>> factorielle(0)
-1
-```
-
-
-
-
-
-
-
-2.Comparez avec le résultat de la fonction[ factorial() ](http://docs.python.org/3/library/math.html)du module math. 
-
-**<H3 STYLE="COLOR:red;">Exercice 18</H3>**★ 
-
-1.A l’aide de la fonction randint() du module random, écrire une fonction qui retourne un mot de passe de longueur N (chiffres, lettres minuscules ou majuscules).  
-
-[https://www.w3schools.com/python/ref_random_randint.asp ](https://www.w3schools.com/python/ref_random_randint.asp) 
-
-On donne : chaine = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-
-```
->>> password(10)
-'WpMdQLccbt'
->>> password(5)
-'1zCNr'
-```
-
-
-
-
-
-2.Reprendre la question 1) avec la fonction choice() du module random. Pour obtenir de l’aide sur cette fonction : 
-
-```python
-import random 
-help(random.choice) 
-```
-
-3.Quel est le nombre de combinaisons possibles ? 
-
-4.Quelle durée faut-il pour casser le mot de passe de longueur 10 avec un logiciel capable de générer 1 million de combinaisons par seconde ? Convertir la valeur trouvée dans une unité mieux adaptée. 
-
-Lien utile :[ https://www.motdepasse.xyz/ ](https://www.motdepasse.xyz/)![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.110.png)
-
-
-
-**<H3 STYLE="COLOR:red;">Exercice 19</H3>**★★ Ecrire une fonction qui retourne une grille de numéros du jeu  Euro Millions. On utilisera la fonction sample() du module random.  
-![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.114.png)
-
-```
->>> euromillions()  
-'43 31 35 41 39 22 14 ' 
-```
-
-**<H3 STYLE="COLOR:red;">Exercice 20</H3>**  
-
-1.★ Ecrire une fonction qui retourne la valeur de la fonction  mathématique f(x)= 27x^3 - 27x^2 - 18x + 8 :  
-
-```
->>> f(0), f(1), f(0.5), f(0.25), f(0.375)  
-(8, -10, -4.375, 2.234375, -1.123046875)  
-```
-
-
-2.★★ On se propose de chercher les zéros de cette fonction par la (Wikipédia)[ méthode de dichotomie.](https://fr.wikipedia.org/wiki/M%C3%A9thode_de_dichotomie) 
-
-Ecrire le script correspondant. On recherche d’un zéro dans l’intervalle [a, b] avec une précision de 
-1e-12
-
-```
->>> fonction(0,1)
-(0.33333333333303017, 0.33333333333393966)
-```
-
-
-3.Chercher tous les zéros de cette fonction. 
-
-![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.122.jpeg)
-
-Annexe  :  représentation graphique  de  la  fonction f(x)= 27x^3 - 27x^2 - 18x  + 8 (graphique  réalisé  avec  la  librairie[ matplotlib ](http://matplotlib.org/examples/pylab_examples/axes_props.html)de  Python)  
-
+    Annexe  :  représentation graphique  de  la  fonction f(x)= 27x^3 - 27x^2 - 18x  + 8 (graphique  réalisé  avec  la  librairie[ matplotlib ](http://matplotlib.org/examples/pylab_examples/axes_props.html)de  Python)  
 
 
 
