@@ -275,7 +275,7 @@ Lorsqu’un utilisateur souhaite afficher une page Web en entrant une URL dans s
 
 
 L’utilisateur saisit une URL dans la barre d’adresse
-Exemple : https://www.exemple.com/index.html
+Exemple : `https://www.exemple.com/index.html`
 
 L’URL est composée de :
 
