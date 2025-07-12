@@ -43,7 +43,6 @@ Exemple : 00:1A:2B:3C:4D:5E
 Fonction : identification au **niveau local** (réseau LAN)
 
 ???+ question "Activité n°1. :"
-
     Retrouver votre adresse MAC sous Windows ou Linux (ipconfig /all ou ip a) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
 
 ### <H3 STYLE="COLOR:GREEN;">**1.2. Une adresse IP**</H3>
@@ -235,7 +234,6 @@ La **table ARP** est une **mémoire temporaire** (cache)
 ARP travaille entre la **couche Réseau (IP)** et la **couche Liaison (MAC)**  et utilise le **broadcast** pour la requête 
 
 ???+ question "Activité n°2"
-
     Afficher la table ARP locale (IP → MAC) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
 
     ```bash
@@ -245,7 +243,6 @@ ARP travaille entre la **couche Réseau (IP)** et la **couche Liaison (MAC)**  e
 ### <H3 STYLE="COLOR:GREEN;">**1.7. Autres commandes sur un réseau**</H2>
 
 ???+ question "Activité n°3"
-
     Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS), utilisez les commandes suivantes pour observer et analyser le réseau :  
 
     | **Commande** | **Description** |
