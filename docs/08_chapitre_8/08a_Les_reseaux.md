@@ -30,7 +30,7 @@ Le Web correspond à **World Wide Web**, composé de *worldwide* (« **mondial**
 
 ## <H2 STYLE="COLOR:BLUE;">**1. De <a name="1234"></a> l’adresse MAC à l’adresse IP**</h2>
 
-"Votre ordinateur doit envoyer un message à une autre machine. Comment fait-il pour la trouver dans l’établissement ? Et sur Internet ?"
+
 
 ### <H3 STYLE="COLOR:GREEN;">**1.1. Une adresse MAC**</H3>
 
@@ -42,9 +42,9 @@ Exemple : 00:1A:2B:3C:4D:5E
 
 Fonction : identification au **niveau local** (réseau LAN)
 
-???+ question "Activité n°1"
+???+ question "Activité n°1. :"
 
-  Retrouver votre adresse MAC sous Windows ou Linux (ipconfig /all ou ip a) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
+    Retrouver votre adresse MAC sous Windows ou Linux (ipconfig /all ou ip a) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
 
 ### <H3 STYLE="COLOR:GREEN;">**1.2. Une adresse IP**</H3>
 
@@ -236,28 +236,28 @@ ARP travaille entre la **couche Réseau (IP)** et la **couche Liaison (MAC)**  e
 
 ???+ question "Activité n°2"
 
-  Afficher la table ARP locale (IP → MAC) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
+    Afficher la table ARP locale (IP → MAC) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
 
-  ```bash
-  arp -a
-  ```
+    ```bash
+    arp -a
+    ```
 
 ### <H3 STYLE="COLOR:GREEN;">**1.7. Autres commandes sur un réseau**</H2>
 
 ???+ question "Activité n°3"
 
-  Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS), utilisez les commandes suivantes pour observer et analyser le réseau :  
+    Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS), utilisez les commandes suivantes pour observer et analyser le réseau :  
 
-  | **Commande** | **Description** |
-  |-------------|----------------|
-  | `hostname` | Affiche le nom réseau de l’ordinateur. |
-  | `ipconfig` (ou `ifconfig` sous Linux/macOS) | Affiche un résumé des paramètres IP des interfaces réseau : adresse IP, masque de sous-réseau, passerelle par défaut, IPv4 ou IPv6. |
-  | `ipconfig /all` | Donne des informations détaillées : nom d’hôte, adresse MAC, serveurs DNS. |
-  | `ipconfig /flushdns` | Vide le cache DNS. |
-  | `ipconfig /displaydns` | Affiche le cache DNS. |
-  | `ping [adresse]` | Vérifie la connexion à une adresse IP ou un site web. Par exemple ping 8.8.8.8|
-  | `tracert [adresse]` (ou `traceroute` sous Linux) | Affiche les étapes (sauts) nécessaires pour atteindre une adresse réseau. Par exemple tracert www.google.fr|
-  | `netstat` | Affiche les ports actifs et les connexions réseau, utile pour détecter un virus. |
+    | **Commande** | **Description** |
+    |-------------|----------------|
+    | `hostname` | Affiche le nom réseau de l’ordinateur. |
+    | `ipconfig` (ou `ifconfig` sous Linux/macOS) | Affiche un résumé des paramètres IP des interfaces réseau : adresse IP, masque de sous-réseau, passerelle par défaut, IPv4 ou IPv6. |
+    | `ipconfig /all` | Donne des informations détaillées : nom d’hôte, adresse MAC, serveurs DNS. |
+    | `ipconfig /flushdns` | Vide le cache DNS. |
+    | `ipconfig /displaydns` | Affiche le cache DNS. |
+    | `ping [adresse]` | Vérifie la connexion à une adresse IP ou un site web. Par exemple ping 8.8.8.8|
+    | `tracert [adresse]` (ou `traceroute` sous Linux) | Affiche les étapes (sauts) nécessaires pour atteindre une adresse réseau. Par exemple tracert www.google.fr|
+    | `netstat` | Affiche les ports actifs et les connexions réseau, utile pour détecter un virus. |
 
 
 ## <H2 STYLE="COLOR:BLUE;">**2. Que<a name="_page0_x40.00_y569.92"></a> se passe-t-il lorsqu’on veut afficher une page web dans le navigateur ?**</H2>
@@ -298,11 +298,11 @@ C’est le **serveur DNS (Domain Name System)** qui est chargé de traduire le n
 
 2 S’il ne la trouve pas, il envoie une requête DNS à :
 
-   - La **box internet** locale.
+   1. La **box internet** locale.
 
-   - Le **serveur DNS du fournisseur d'accès (FAI)**.
+   2. Le **serveur DNS du fournisseur d'accès (FAI)**.
 
-   - Un **serveur DNS public** (ex : Google DNS `8.8.8.8`).
+   3. Un **serveur DNS public** (ex : Google DNS `8.8.8.8`).
 
 3 Une fois l’IP récupérée, elle est renvoyée à l’ordinateur.
 
