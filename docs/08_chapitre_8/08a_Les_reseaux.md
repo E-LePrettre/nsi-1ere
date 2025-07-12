@@ -6,7 +6,8 @@ title: 08a Les réseaux
 
 **Table des matières** 
 
-1. [Que se passe-t-il lorsqu’on veut afficher une page web dans le navigateur ?](#_page0_x40.00_y569.92)
+1. [De l’adresse MAC à l’adresse IP](<#1234)
+2. [Que se passe-t-il lorsqu’on veut afficher une page web dans le navigateur ?](#_page0_x40.00_y569.92)
 2. [Observation d’un réseau](#_page5_x40.00_y260.92)
 3. [Le protocole ARP](#_page5_x40.00_y455.92)
 4. [Le modèle TCP/IP](#_page5_x40.00_y630.92)
@@ -27,26 +28,33 @@ Le terme **réseau** désigne à la fois :
 
 Le Web correspond à **World Wide Web**, composé de *worldwide* (« **mondial** ») et *web* (« **toile d’araignée** »).  
 
-## <H2 STYLE="COLOR:BLUE;">**1. Que<a name="_page0_x40.00_y569.92"></a> se passe-t-il lorsqu’on veut afficher une page web dans le navigateur ?**</H2>
+## <H2 STYLE="COLOR:BLUE;">**1. De <a name="1234"></a> l’adresse MAC à l’adresse IP**</h2>
 
-Lorsqu’on veut afficher une page Web, plusieurs éléments interviennent :
+"Votre ordinateur doit envoyer un message à une autre machine. Comment fait-il pour la trouver dans l’établissement ? Et sur Internet ?"
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.004.jpeg)
-
-### <H3 STYLE="COLOR:GREEN;">**1.1. Une<a name="_page0_x40.00_y699.92"></a> adresse MAC**</H3>
+### <H3 STYLE="COLOR:GREEN;">**1.1. Une adresse MAC**</H3>
 
 L’**adresse MAC** est un **identifiant physique unique** associé à une **carte réseau** (Wi-Fi, Ethernet).  
 
-- Elle est **attribuée à la fabrication** du matériel et ne change pas.  
+Définition : identifiant physique **unique**, gravé dans la carte réseau  
 
-- On peut la comparer à une **plaque d’immatriculation** d’un appareil sur un réseau local.  
+Exemple : 00:1A:2B:3C:4D:5E
 
+Fonction : identification au **niveau local** (réseau LAN)
 
-### <H3 STYLE="COLOR:GREEN;">**1.2. Une<a name="_page1_x40.00_y36.92"></a> adresse IP**</H3>
+???+ question "Activité n°1"
 
-Une **adresse IP** est un numéro d’identification attribué **temporairement ou en permanence** à un périphérique connecté à un réseau. 
+  Retrouver votre adresse MAC sous Windows ou Linux (ipconfig /all ou ip a) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
 
-Elle est essentielle au **routage des paquets de données** sur Internet. 
+### <H3 STYLE="COLOR:GREEN;">**1.2. Une adresse IP**</H3>
+
+Définition : **adresse logique** **temporairement ou en permanence** qui identifie un équipement sur un réseau
+
+Exemple : 192.168.1.10
+
+Liée à un réseau / sous-réseau
+
+Utilisable dans un **réseau local** ou sur **Internet**
 
 Il existe deux versions :  
 
@@ -55,6 +63,7 @@ Il existe deux versions :
   - **IPv6** (128 bits) : format `2001:db8::ff00:42:8329`.  
 
 ℹ️ **Pourquoi IPv6 ?** L’IPv4 est en cours de remplacement par l’IPv6 car les 4,3 milliards d’adresses IPv4 sont presque toutes utilisées.
+
 
 ### <H3 STYLE="COLOR:GREEN;">**1.3. Anatomie<a name="_page1_x40.00_y162.92"></a> d’une adresse IP**</H3>  
 #### <H4 STYLE="COLOR:MAGENTA;">**1.3.1. Adresse<a name="_page1_x40.00_y181.92"></a> machine**</H4>
@@ -154,11 +163,7 @@ soit 90.98.96.0 pour IP **du (sous) réseau**
 L'adresse de broadcast sera: 
 ```01011010.01100010.01100111.1111111111=> 90.98.103.255```
 
-Pour aller plus loin:
 
-- Protocole IP[ https://www.commentcamarche.net/contents/530-le-protocole-ip ](https://www.commentcamarche.net/contents/530-le-protocole-ip)
-
-- Classes d’adresse[ https://www.inetdoc.net/articles/adressage.ipv4/adressage.ipv4.class.html ](https://www.inetdoc.net/articles/adressage.ipv4/adressage.ipv4.class.html)
 
 #### <H4 STYLE="COLOR:MAGENTA;">**1.3.3. Adresse<a name="_page2_x40.00_y473.92"></a> publique et adresse privée**</H4>
 
@@ -171,7 +176,10 @@ Pour aller plus loin:
 
 📌 Les adresses privées **ne sont pas routables** sur Internet.  
 
-📌 Un **NAT (Network Address Translation)** [^1] convertit une adresse privée en une adresse publique pour accéder à Internet.  
+📌 Un **NAT (Network Address Translation)** [^1] convertit une adresse privée en une adresse publique pour accéder à Internet. 
+
+
+
 
 
 ### <H3 STYLE="COLOR:GREEN;">**1.4. Un<a name="_page3_x40.00_y36.92"></a> switch (commutateur réseau)**</H3>
@@ -200,16 +208,85 @@ Un **routeur** assure la connexion **entre plusieurs réseaux**.
 
 Exemple : 
 
-- La box internet fait office de **routeur** entre le réseau domestique (Wi-Fi) et Internet.  
-
-### <H3 STYLE="COLOR:GREEN;">**1.6. Etude<a name="_page3_x40.00_y273.92"></a> de cas concret : charger une page WEB**</H3>
-
-Lorsqu’un utilisateur souhaite afficher une page Web en entrant une URL dans son navigateur, plusieurs étapes techniques se déroulent en arrière-plan. Nous allons détailler le chemin emprunté par la requête et la réponse entre l’ordinateur et le serveur du site Web.
+- La box internet fait office de **routeur** entre le réseau domestique (Wi-Fi) et Internet. 
 
 
-#### **1. La résolution de nom : obtenir l'adresse IP du site**
+### <H3 STYLE="COLOR:GREEN;">**1.6 Qu’est-ce que le **protocole ARP** ? </h3>
 
-Lorsqu’on tape `www.nsi.fr` dans la barre d’adresse, cette adresse n’existe pas sous cette forme sur Internet. En réalité, chaque site est identifié par une **adresse IP**.
+📖 Définition :
+
+**ARP (Address Resolution Protocol)** est un protocole qui permet de retrouver l’**adresse MAC** associée à une **adresse IP**, **dans un réseau local (LAN)**.
+
+🔁 Fonctionnement de base :
+
+| Étape                                         | Action                                                           |
+| --------------------------------------------- | ---------------------------------------------------------------- |
+| 1️⃣                                           | L’ordinateur A veut envoyer un paquet IP à `192.168.1.10`        |
+| 2️⃣                                           | Il regarde dans sa **table ARP** s’il connaît déjà l’adresse MAC |
+| 3️⃣                                           | Si non, il envoie une **requête ARP** en broadcast :             |
+| `Qui a 192.168.1.10 ?`                        |                                                                  |
+| 4️⃣                                           | L’ordinateur B (ayant cette IP) répond en unicast :              |
+| `C’est moi, voici ma MAC : 08:00:27:65:A3:1F` |                                                                  |
+| 5️⃣                                           | A stocke l’adresse MAC dans sa table ARP et envoie le paquet     |
+
+
+La **table ARP** est une **mémoire temporaire** (cache)  
+
+ARP travaille entre la **couche Réseau (IP)** et la **couche Liaison (MAC)**  et utilise le **broadcast** pour la requête 
+
+???+ question "Activité n°2"
+
+  Afficher la table ARP locale (IP → MAC) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
+
+  ```bash
+  arp -a
+  ```
+
+### <H3 STYLE="COLOR:GREEN;">**1.7. Autres commandes sur un réseau**</H2>
+
+???+ question "Activité n°3"
+
+  Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS), utilisez les commandes suivantes pour observer et analyser le réseau :  
+
+  | **Commande** | **Description** |
+  |-------------|----------------|
+  | `hostname` | Affiche le nom réseau de l’ordinateur. |
+  | `ipconfig` (ou `ifconfig` sous Linux/macOS) | Affiche un résumé des paramètres IP des interfaces réseau : adresse IP, masque de sous-réseau, passerelle par défaut, IPv4 ou IPv6. |
+  | `ipconfig /all` | Donne des informations détaillées : nom d’hôte, adresse MAC, serveurs DNS. |
+  | `ipconfig /flushdns` | Vide le cache DNS. |
+  | `ipconfig /displaydns` | Affiche le cache DNS. |
+  | `ping [adresse]` | Vérifie la connexion à une adresse IP ou un site web. Par exemple ping 8.8.8.8|
+  | `tracert [adresse]` (ou `traceroute` sous Linux) | Affiche les étapes (sauts) nécessaires pour atteindre une adresse réseau. Par exemple tracert www.google.fr|
+  | `netstat` | Affiche les ports actifs et les connexions réseau, utile pour détecter un virus. |
+
+
+## <H2 STYLE="COLOR:BLUE;">**2. Que<a name="_page0_x40.00_y569.92"></a> se passe-t-il lorsqu’on veut afficher une page web dans le navigateur ?**</H2>
+
+Lorsqu’on veut afficher une page Web, plusieurs éléments interviennent :
+
+![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.004.jpeg)
+
+
+
+Lorsqu’un utilisateur souhaite afficher une page Web en entrant une URL dans son navigateur, plusieurs étapes techniques se déroulent en arrière-plan. 
+
+
+### <H3 STYLE="COLOR:GREEN;"> **2.1. La résolution de nom : obtenir l'adresse IP du site**</h3>
+
+
+L’utilisateur saisit une URL dans la barre d’adresse
+Exemple : https://www.exemple.com/index.html
+
+L’URL est composée de :
+
+- Protocole : https://
+
+- Nom de domaine : www.exemple.com
+
+- Chemin : /index.html
+
+Mais cette adresse n’existe pas sous cette forme sur Internet. 
+En réalité, chaque site est identifié par une **adresse IP**.
 
 C’est le **serveur DNS (Domain Name System)** qui est chargé de traduire le nom de domaine en adresse IP.
 
@@ -223,17 +300,17 @@ C’est le **serveur DNS (Domain Name System)** qui est chargé de traduire le n
 
    - La **box internet** locale.
 
-   - Le **serveur DNS du fournisseur d'accès**.
+   - Le **serveur DNS du fournisseur d'accès (FAI)**.
 
    - Un **serveur DNS public** (ex : Google DNS `8.8.8.8`).
 
 3 Une fois l’IP récupérée, elle est renvoyée à l’ordinateur.
 
-**Exemple :** L’adresse IP de `www.nsi.fr` pourrait être `200.16.0.1`.
+**Exemple :** L’adresse IP de `www.exemple.com` pourrait être `200.16.0.1`.
 
-![Schéma du fonctionnement du DNS](Resolution-DNS-1-2048x1365.png)
 
-#### **2. L’envoi de la requête HTTP**
+
+### <H3 STYLE="COLOR:GREEN;"> **2.2. L’envoi de la requête HTTP</h3>**
 
 Maintenant que l’IP du site est connue, l’ordinateur peut envoyer une requête pour récupérer la page Web.
 
@@ -323,47 +400,11 @@ Une fois les données reçues :
 | **6** | Affichage et rendu dans le navigateur |
 
 
-## <H2 STYLE="COLOR:BLUE;">**2. Observation<a name="_page5_x40.00_y260.92"></a> d’un réseau**</H2>
-
-**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** Dans une fenêtre **cmd** lancer les commandes 
-
-Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS), utilisez les commandes suivantes pour observer et analyser le réseau :  
-
-| **Commande** | **Description** |
-|-------------|----------------|
-| `hostname` | Affiche le nom réseau de l’ordinateur. |
-| `ipconfig` (ou `ifconfig` sous Linux/macOS) | Affiche un résumé des paramètres IP des interfaces réseau : adresse IP, masque de sous-réseau, passerelle par défaut, IPv4 ou IPv6. |
-| `ipconfig /all` | Donne des informations détaillées : nom d’hôte, adresse MAC, serveurs DNS. |
-| `ipconfig /flushdns` | Vide le cache DNS. |
-| `ipconfig /displaydns` | Affiche le cache DNS. |
-| `ping [adresse]` | Vérifie la connexion à une adresse IP ou un site web. |
-| `tracert [adresse]` (ou `traceroute` sous Linux) | Affiche les étapes (sauts) nécessaires pour atteindre une adresse réseau. |
-| `netstat` | Affiche les ports actifs et les connexions réseau, utile pour détecter un virus. |
-
-
-
-## <H2 STYLE="COLOR:BLUE;">**3. Le<a name="_page5_x40.00_y455.92"></a> protocole ARP**</H2>
-
-Le protocole **ARP (Address Resolution Protocol)** est utilisé pour **associer une adresse IP (logique) à une adresse MAC (physique)** sur un réseau local.  
-
-- **Pourquoi ?** Une machine connaît l’IP de sa destination, mais pour envoyer des données sur un réseau local, elle a besoin de son **adresse MAC**.  
-
-- **Comment ça marche ?** ARP envoie une **requête de diffusion** pour demander *"Qui possède cette adresse IP ?"*, et le propriétaire de l’IP répond avec son adresse MAC.  
-
-📌 **Pour aller plus loin :** [Le protocole ARP expliqué](https://www.supinfo.com/articles/single/2440-protocole-arp)  
 
 
 
 
-Par exemple : la table ARP de mon ordinateur ci-contre
-
-![](titre.png) 
-
-
-**<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** Dans une fenêtre **cmd** lancer la commande   l’instant fait 
-```arp -a```
-
-Cela affichera la table ARP, avec une liste d’adresses IP associées à des adresses MAC sur le réseau local. 
+ 
 
 ## <H2 STYLE="COLOR:BLUE;">**4. Le<a name="_page5_x40.00_y630.92"></a> modèle TCP/IP**</H2>
 ### <H3 STYLE="COLOR:GREEN;">**4.1. Principe<a name="_page5_x40.00_y658.92"></a> des couches**</H3>
