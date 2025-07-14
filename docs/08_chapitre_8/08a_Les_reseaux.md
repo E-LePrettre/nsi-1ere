@@ -651,18 +651,18 @@ Exemple : `https://www.exemple.com/index.html`
 
 L’URL est composée de :
 
-- Protocole : https://
+- **Protocole** : https://
 
-- Nom de domaine : www.exemple.com
+- **Nom de domaine** : www.exemple.com
 
-- Chemin : /index.html
+- **Chemin** : /index.html
 
 Mais cette adresse n’existe pas sous cette forme sur Internet. 
 En réalité, chaque site est identifié par une **adresse IP**.
 
 C’est le **serveur DNS (Domain Name System)** qui est chargé de traduire le nom de domaine en adresse IP.
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.031.jpeg)
+
 
 **Processus DNS**
 
@@ -680,11 +680,7 @@ C’est le **serveur DNS (Domain Name System)** qui est chargé de traduire le n
 
 
 
-L'ordinateur M9 d'adresse IP 
-@source 192.168.1.1/24
-
-veut communiquer avec une machine d'adresse IP
-@destination 192.168.3.2/24
+L'ordinateur M9 d'adresse IP @source 192.168.1.1/24 veut communiquer avec une machine d'adresse IP @destination 192.168.3.2/24
 
 ![](destination.png)
 
@@ -709,7 +705,7 @@ Tout d'abord, on cherche à savoir si les deux adresses IP font partie du même 
 * **Binaire du masque :** `11111111.11111111.11111111.00000000`
 * **Résultat AND (adresse réseau) :** `11000000.10101000.00000011.00000000` → `192.168.3.0`
 
-🔍 Conclusion
+🔍 **Conclusion**
 
 * **Adresse réseau de la machine 1 :** `192.168.1.0`
 * **Adresse réseau de la machine 2 :** `192.168.3.0`
