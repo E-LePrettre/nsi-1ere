@@ -6,7 +6,7 @@ title: 08a Les réseaux
 
 **Table des matières** 
 
-1. [De l’adresse MAC à l’adresse IP](<#1234)
+1. [Quelques éléments physiques d'un réseau](<#1234)
 2. [Que se passe-t-il lorsqu’on veut afficher une page web dans le navigateur ?](#_page0_x40.00_y569.92)
 2. [Observation d’un réseau](#_page5_x40.00_y260.92)
 3. [Le protocole ARP](#_page5_x40.00_y455.92)
@@ -28,7 +28,7 @@ Le terme **réseau** désigne à la fois :
 
 Le Web correspond à **World Wide Web**, composé de *worldwide* (« **mondial** ») et *web* (« **toile d’araignée** »).  
 
-## <H2 STYLE="COLOR:BLUE;">**1. Quelques <a name="1234"></a> éléments physiques d'un réseau**</h2>
+## <H2 STYLE="COLOR:BLUE;">**1. Quelques <a name="1234"></a> éléments physiques d'un réseau</h2>**
 
 Voici quelques éléments physiques d'un réseau :
 
@@ -82,7 +82,7 @@ Ce sont les équipements chargés **d’acheminer les données** entre les termi
 > 💡 Le type de connexion influence la **vitesse**, la **portée** et la **qualité** de la communication.
 
 
-## <H2 STYLE="COLOR:BLUE;">**2. Première situation : <a name="2345"></a> communication dans un réseau local**</h2>
+## <H2 STYLE="COLOR:BLUE;">**2. Première situation : <a name="2345"></a> communication dans un réseau local</h2>**
 
 Voici le réseau que l'on va étudier :
 ![](réseau.png)
@@ -93,7 +93,7 @@ Ce réseau est constitué de sous-réseaux. Par exemple : 2 ordinateur, un switc
 
 On voudrait faire communiquer M9 avec un autre ordinateur de son réseau local
 
-### <H3 STYLE="COLOR:GREEN;">**2.1. Le protocole TCP**</H3>
+### <H3 STYLE="COLOR:GREEN;">**2.1. Le protocole TCP</h3>**
 
 
 > **Un protocole réseau** est un **ensemble de règles et de formats normalisés** qui permettent à **deux entités (ordinateurs, serveurs, équipements réseau, etc.) de communiquer entre elles** de manière fiable et compréhensible.
@@ -102,7 +102,7 @@ On voudrait faire communiquer M9 avec un autre ordinateur de son réseau local
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**2.2. Envoi du message**</H3>
+### <H3 STYLE="COLOR:GREEN;">**2.2. Envoi du message</h3>**
 
 
 > On souhaite envoyer un poème :
@@ -153,7 +153,7 @@ Ces idées sont similaires à ce que fait le protocole **TCP** :
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**2.3. les ports**</H3>
+### <H3 STYLE="COLOR:GREEN;">**2.3. les ports</h3>**
 
 Sur notre ordinateur, on utilise souvent **plusieurs logiciels en même temps**.
 Par exemple :
@@ -201,13 +201,31 @@ Le serveur **utilise ce même port source** pour répondre au bon logiciel.
 > * Les ports permettent de **multiplier les communications simultanées** entre les mêmes machines.
 
 
+### <H3 STYLE="COLOR:GREEN;">**2.4. les segments</h3>**
 
 
-## <H2 STYLE="COLOR:BLUE;">**3. Deuxième situation : <a name="3456"></a> communication entre réseaux locaux (Internet)**</h2>
+Pour envoyer un message (par exemple, un **vers du poème**), on ajoute des **métadonnées** : c’est ce qu’on appelle **l’en-tête TCP** (ou **en-tête du segment TCP**).
+
+Cette en-tête contient plusieurs informations essentielles pour que le message soit bien acheminé, reçu, et éventuellement reconstitué.
+
+> Elle est constituée notamment :
+>
+> * du **port source** (pour savoir **quel logiciel client** a envoyé le message),
+> * du **port de destination** (pour savoir **quel service du serveur** doit le recevoir),
+> * d’un **numéro de séquence** (ou numéro du message), pour **remettre les messages dans le bon ordre**,
+> * d’un ou plusieurs **drapeaux** (flags), comme le **flag ACK** qui indique que l’on attend un **accusé de réception**.
+>
+
+![](segment.png)
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**1.1. Une adresse MAC**</H3>
+## <H2 STYLE="COLOR:BLUE;">**3. Deuxième situation : <a name="3456"></a> communication entre réseaux locaux (Internet)</h2>**
+
+
+
+
+### <H3 STYLE="COLOR:GREEN;">**1.1. Une adresse MAC</h3>**
 
 L’**adresse MAC** est un **identifiant physique unique** associé à une **carte réseau** (Wi-Fi, Ethernet).  
 
@@ -220,7 +238,7 @@ Fonction : identification au **niveau local** (réseau LAN)
 ???+ question "Activité n°1. :"
     Retrouver votre adresse MAC sous Windows ou Linux (ipconfig /all ou ip a) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
 
-### <H3 STYLE="COLOR:GREEN;">**1.2. Une adresse IP**</H3>
+### <H3 STYLE="COLOR:GREEN;">**1.2. Une adresse IP</h3>**
 
 Définition : **adresse logique** **temporairement ou en permanence** qui identifie un équipement sur un réseau
 
@@ -239,7 +257,7 @@ Il existe deux versions :
 ℹ️ **Pourquoi IPv6 ?** L’IPv4 est en cours de remplacement par l’IPv6 car les 4,3 milliards d’adresses IPv4 sont presque toutes utilisées.
 
 
-### <H3 STYLE="COLOR:GREEN;">**1.3. Anatomie<a name="_page1_x40.00_y162.92"></a> d’une adresse IP**</H3>  
+### <H3 STYLE="COLOR:GREEN;">**1.3. Anatomie<a name="_page1_x40.00_y162.92"></a> d’une adresse IP</h3>**  
 #### <H4 STYLE="COLOR:MAGENTA;">**1.3.1. Adresse<a name="_page1_x40.00_y181.92"></a> machine**</H4>
 
 Une adresse IP est divisée en **deux parties** : 
@@ -356,7 +374,7 @@ L'adresse de broadcast sera:
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**1.4. Un<a name="_page3_x40.00_y36.92"></a> switch (commutateur réseau)**</H3>
+### <H3 STYLE="COLOR:GREEN;">**1.4. Un<a name="_page3_x40.00_y36.92"></a> switch (commutateur réseau)</h3>**
 
 Un **switch** est un équipement qui **transmet les données uniquement aux destinataires concernés**.  
 
@@ -371,7 +389,7 @@ Un **switch** est un équipement qui **transmet les données uniquement aux dest
 ✅ Plus performant qu’un hub (qui envoie à tout le monde).  
 
 
-### <H3 STYLE="COLOR:GREEN;">**1.5. Un<a name="_page3_x40.00_y209.92"></a> routeur**</H3>
+### <H3 STYLE="COLOR:GREEN;">**1.5. Un<a name="_page3_x40.00_y209.92"></a> routeur</h3>**
 
 Un **routeur** assure la connexion **entre plusieurs réseaux**.  
 
@@ -415,7 +433,7 @@ ARP travaille entre la **couche Réseau (IP)** et la **couche Liaison (MAC)**  e
     arp -a
     ```
 
-### <H3 STYLE="COLOR:GREEN;">**1.7. Autres commandes sur un réseau**</H2>
+### <H3 STYLE="COLOR:GREEN;">**1.7. Autres commandes sur un réseau</h2>**
 
 ???+ question "Activité n°3"
     Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS), utilisez les commandes suivantes pour observer et analyser le réseau :  
@@ -432,7 +450,7 @@ ARP travaille entre la **couche Réseau (IP)** et la **couche Liaison (MAC)**  e
     | `netstat` | Affiche les ports actifs et les connexions réseau, utile pour détecter un virus. |
 
 
-## <H2 STYLE="COLOR:BLUE;">**2. Que<a name="_page0_x40.00_y569.92"></a> se passe-t-il lorsqu’on veut afficher une page web dans le navigateur ?**</H2>
+## <H2 STYLE="COLOR:BLUE;">**2. Que<a name="_page0_x40.00_y569.92"></a> se passe-t-il lorsqu’on veut afficher une page web dans le navigateur ?</h2>**
 
 Lorsqu’on veut afficher une page Web, plusieurs éléments interviennent :
 
@@ -443,7 +461,7 @@ Lorsqu’on veut afficher une page Web, plusieurs éléments interviennent :
 Lorsqu’un utilisateur souhaite afficher une page Web en entrant une URL dans son navigateur, plusieurs étapes techniques se déroulent en arrière-plan. 
 
 
-### <H3 STYLE="COLOR:GREEN;"> **2.1. La résolution de nom : obtenir l'adresse IP du site**</h3>
+### <H3 STYLE="COLOR:GREEN;"> **2.1. La résolution de nom : obtenir l'adresse IP du site</h3>**
 
 
 L’utilisateur saisit une URL dans la barre d’adresse
@@ -578,8 +596,8 @@ Une fois les données reçues :
 
  
 
-## <H2 STYLE="COLOR:BLUE;">**4. Le<a name="_page5_x40.00_y630.92"></a> modèle TCP/IP**</H2>
-### <H3 STYLE="COLOR:GREEN;">**4.1. Principe<a name="_page5_x40.00_y658.92"></a> des couches**</H3>
+## <H2 STYLE="COLOR:BLUE;">**4. Le<a name="_page5_x40.00_y630.92"></a> modèle TCP/IP</h2>**
+### <H3 STYLE="COLOR:GREEN;">**4.1. Principe<a name="_page5_x40.00_y658.92"></a> des couches</h3>**
 
 Le modèle **OSI** (Open Systems Interconnection) a été conçu dans les années 70 pour normaliser les communications entre ordinateurs.  
 
@@ -588,7 +606,7 @@ Cependant, le modèle **TCP/IP**, plus simple et adopté dès 1983 sur **Arpanet
 📌 **TCP/IP regroupe un ensemble de protocoles**, dont **TCP** (Transmission Control Protocol) et **IP** (Internet Protocol), initialement développés par la **DARPA** (Défense américaine).
 
 
-### <H3 STYLE="COLOR:GREEN;">**4.2. Les<a name="_page6_x40.00_y147.92"></a> rôles des couches dans le modèle TCP/IP**</H3>
+### <H3 STYLE="COLOR:GREEN;">**4.2. Les<a name="_page6_x40.00_y147.92"></a> rôles des couches dans le modèle TCP/IP</h3>**
 
 Le modèle **TCP/IP** comporte **4 couches**, chacune ayant un rôle précis :  
 
@@ -602,7 +620,7 @@ Le modèle **TCP/IP** comporte **4 couches**, chacune ayant un rôle précis :
 📌 **Exemple :** Lorsque vous chargez une page Web, les données passent par **ces couches** pour être envoyées puis reçues.
 
 
-### <H3 STYLE="COLOR:GREEN;">**4.3. Principe<a name="_page6_x40.00_y290.92"></a> de l’encapsulation**</H3>
+### <H3 STYLE="COLOR:GREEN;">**4.3. Principe<a name="_page6_x40.00_y290.92"></a> de l’encapsulation</h3>**
 
 ![](Sans.png)
 
@@ -617,7 +635,7 @@ Lorsque des données sont envoyées sur le réseau :
 ![](https://upload.wikimedia.org/wikipedia/commons/6/6b/Encapsulation_TCP-IP.png)
  
 
-### <H3 STYLE="COLOR:GREEN;">**4.4. Application<a name="_page6_x40.00_y409.92"></a> au modèle  TCP/IP**</H3>   
+### <H3 STYLE="COLOR:GREEN;">**4.4. Application<a name="_page6_x40.00_y409.92"></a> au modèle  TCP/IP</h3>**   
 
 ![](img04.png)
 
@@ -636,7 +654,7 @@ En **réception** :
 
 L’entête est lu, interprétée et supprimée => **désencapsulation** 
 
-### <H3 STYLE="COLOR:GREEN;">**4.5. Etablissement<a name="_page7_x40.00_y349.92"></a> de la communication TCP (« three way handshake »)**</H3>
+### <H3 STYLE="COLOR:GREEN;">**4.5. Etablissement<a name="_page7_x40.00_y349.92"></a> de la communication TCP (« three way handshake »)</h3>**
 
 Le protocole **TCP** établit une connexion en **3 étapes** pour garantir un échange fiable entre un client et un serveur.  
 
@@ -663,7 +681,7 @@ Exemple avec des numéros de séquence :
 
 *Il existe une technique de piratage, appelée spoofing IP, permettant de corrompre cette relation d'approbation !*
 
-### <H3 STYLE="COLOR:GREEN;">**4.6. Fiabilité<a name="_page8_x40.00_y36.92"></a> des transferts : protocole du bit alterné**</H3>
+### <H3 STYLE="COLOR:GREEN;">**4.6. Fiabilité<a name="_page8_x40.00_y36.92"></a> des transferts : protocole du bit alterné</h3>**
 
 Le protocole TCP permet d’assurer le transfert des données de façon fiable. Pour cela, il possède un **système d’accusé de réception** permettant au client et au serveur de s’assurer de la bonne réception mutuelle des données.  
 
@@ -701,27 +719,27 @@ La règle est relativement simple : la première trame envoyée par A aura pour 
 
 *Pour aller encore plus loin : TCP sur site[ https://www.frameip.com/entete-tcp/ ](https://www.frameip.com/entete-tcp/) ![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.008.png)*
 
-## <H2 STYLE="COLOR:BLUE;">**5. Menaces courantes sur les réseaux<a name="#_titre5"></a>**</H2>
+## <H2 STYLE="COLOR:BLUE;">**5. Menaces courantes sur les réseaux<a name="#_titre5"></a></h2>**
 
-### <H3 STYLE="COLOR:GREEN;">**5.1. Phishing**</H3>
+### <H3 STYLE="COLOR:GREEN;">**5.1. Phishing</h3>**
 
 - **Description** : Le phishing est une technique de fraude où un attaquant se fait passer pour une entité de confiance pour obtenir des informations sensibles comme des identifiants de connexion, des numéros de carte bancaire, etc.
 
 - **Exemple** : Un utilisateur reçoit un email qui semble provenir de sa banque, lui demandant de vérifier ses informations de compte en cliquant sur un lien qui mène à un faux site web.
 
-### <H3 STYLE="COLOR:GREEN;">**5.2. DDoS (Distributed Denial of Service)**</H3>
+### <H3 STYLE="COLOR:GREEN;">**5.2. DDoS (Distributed Denial of Service)</h3>**
 - **Description** : Une attaque DDoS vise à rendre un service ou un réseau indisponible en le submergeant de trafic provenant de multiples sources. Cela surcharge les serveurs et les réseaux, empêchant les utilisateurs légitimes d'accéder aux services.
 
 - **Exemple** : Un site web d'e-commerce est bombardé de requêtes malveillantes provenant de milliers d'ordinateurs compromis, rendant le site inaccessible aux clients.
 
-### <H3 STYLE="COLOR:GREEN;">**5.3. Man-In-The-Middle (MITM)**</H3>
+### <H3 STYLE="COLOR:GREEN;">**5.3. Man-In-The-Middle (MITM)</h3>**
 - **Description** : Dans une attaque MITM, un attaquant intercepte et peut altérer les communications entre deux parties sans qu'elles le sachent. Cela permet à l'attaquant de voler des informations sensibles ou d'injecter des données malveillantes.
 
 - **Exemple** : Un utilisateur se connecte à un Wi-Fi public et un attaquant intercepte les communications entre l'utilisateur et un site web sécurisé, dérobant ainsi les identifiants de connexion de l'utilisateur.
 
-## <H2 STYLE="COLOR:BLUE;">**6. Mesures de protection des réseaux<a name="#_titre6"></a>**</H2>
+## <H2 STYLE="COLOR:BLUE;">**6. Mesures de protection des réseaux<a name="#_titre6"></a></h2>**
 
-### <H3 STYLE="COLOR:GREEN;">**6.1. Firewalls**</H3>
+### <H3 STYLE="COLOR:GREEN;">**6.1. Firewalls</h3>**
 
 **Description** : Un firewall est une barrière de sécurité qui surveille et contrôle le trafic réseau entrant et sortant en fonction de règles de sécurité prédéfinies. Il peut être matériel, logiciel, ou les deux.
 
@@ -733,7 +751,7 @@ La règle est relativement simple : la première trame envoyée par A aura pour 
 
 **Exemple** : Un firewall bloque les tentatives de connexion non autorisées provenant d'adresses IP suspectes.
 
-### <H3 STYLE="COLOR:GREEN;">**6.2. VPN (Virtual Private Network)**</H3>
+### <H3 STYLE="COLOR:GREEN;">**6.2. VPN (Virtual Private Network)</h3>**
 
 **Description** : Un VPN crée une connexion sécurisée et chiffrée entre l'utilisateur et le réseau, permettant de masquer l'adresse IP de l'utilisateur et de protéger ses données contre les interceptions.
 
@@ -745,7 +763,7 @@ La règle est relativement simple : la première trame envoyée par A aura pour 
 
 **Exemple** : Un employé utilise un VPN pour accéder aux ressources de l'entreprise en travaillant à distance, garantissant que les données transmises sont sécurisées.
 
-### <H3 STYLE="COLOR:GREEN;">**6.3. Chiffrement**</H3>
+### <H3 STYLE="COLOR:GREEN;">**6.3. Chiffrement</h3>**
 
 **Description** : Le chiffrement transforme les données en une forme illisible pour toute personne non autorisée. Seules les parties possédant la clé de déchiffrement peuvent lire les données.
 
@@ -757,9 +775,9 @@ La règle est relativement simple : la première trame envoyée par A aura pour 
 
 **Exemple** : Les transactions bancaires en ligne utilisent le chiffrement SSL/TLS pour sécuriser les données échangées entre le client et le serveur bancaire.
 
-## <H2 STYLE="COLOR:BLUE;">**7. Analyse de trame<a name="#_titre7"></a>**</H2>
+## <H2 STYLE="COLOR:BLUE;">**7. Analyse de trame<a name="#_titre7"></a></h2>**
 
-**<H3 STYLE="COLOR:red;">Activité n°3 :**</H3> Analyse d'une trame fictive
+**<H3 STYLE="COLOR:red;">Activité n°3 :</h3>** Analyse d'une trame fictive
 
 ```
 Frame 1: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface en0, id 0
@@ -815,9 +833,9 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
 
 
 
-## <H2 STYLE="COLOR:BLUE;">**8.  Simulation d’un réseau avec Filius<a name="_page10_x40.00_y36.92"></a>**</H2>
+## <H2 STYLE="COLOR:BLUE;">**8.  Simulation d’un réseau avec Filius<a name="_page10_x40.00_y36.92"></a></h2>**
 
-**<H3 STYLE="COLOR:red;">Activité n°4.:**</H3> Lien direct entre deux ordinateurs  
+**<H3 STYLE="COLOR:red;">Activité n°4.:</h3>** Lien direct entre deux ordinateurs  
 ![](Image1.png)
 
 - Lancer **Filius**.  
@@ -836,7 +854,7 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
 
 - Effectuer un `ipconfig` dans le terminal du poste **10** et comparer l’adresse **MAC** avec celle de la source affichée dans le tableau des données échangées.  
 
-**<H3 STYLE="COLOR:red;">Activité n°5.:**</H3> 2 ordinateurs et un serveur  
+**<H3 STYLE="COLOR:red;">Activité n°5.:</h3>** 2 ordinateurs et un serveur  
 ![](Image2.png)
 
 - Modifier le réseau précédent pour y ajouter un **serveur** (IP : `192.168.1.12`) et un **switch**.  
@@ -874,7 +892,7 @@ Pour terminer la connexion, cliquez sur **Déconnexion**.
 
 On observe que les échanges entre le client et le serveur suivent **4 étapes**.  
 
-**<H3 STYLE="COLOR:red;">Activité n°6.:**</H3> 2 réseaux  
+**<H3 STYLE="COLOR:red;">Activité n°6.:</h3>** 2 réseaux  
 ![](Image3.png)
 
 - Modifier le réseau précédent pour obtenir **deux réseaux interconnectés**.  
@@ -896,7 +914,7 @@ On observe que les échanges entre le client et le serveur suivent **4 étapes**
 
 📌 **Test avancé** : Installer un **client générique** sur **2.10** et l’envoyer au **serveur 1.12** avec le message `"Bonjour"`. Observer les **données échangées**.  
 
-**<H3 STYLE="COLOR:red;">Activité n°7.:**</H3> Simulation du web avec adresse IP 
+**<H3 STYLE="COLOR:red;">Activité n°7.:</h3>** Simulation du web avec adresse IP 
 
 Installer un **serveur Web** et un **éditeur de texte** sur **1.12**.  
 
@@ -934,7 +952,7 @@ Sauvegarder les modifications.
 
 - **Encodage UTF-8 incorrect**.  
 
-**<H3 STYLE="COLOR:red;">Activité  n°8.:**</H3>  Simulation  du  web  avec  serveur DNS  
+**<H3 STYLE="COLOR:red;">Activité  n°8.:</h3>**  Simulation  du  web  avec  serveur DNS  
 
 ![](Image4.png)
 
@@ -969,7 +987,7 @@ Sur Internet, on utilise des **noms de domaine** au lieu d’adresses IP. Le **s
 - Observer le résultat.  
 
 
-**<H3 STYLE="COLOR:red;">Activité n°9.:**</H3> Chemin d’un client à un serveur 
+**<H3 STYLE="COLOR:red;">Activité n°9.:</h3>** Chemin d’un client à un serveur 
 
 - Télécharger le fichier `snt_sim_res.fls` :[snt_sim_res.fls](https://pixees.fr/informatiquelycee/n_site/asset/snt_sim_res.fls).  
 
@@ -987,7 +1005,7 @@ Sur Internet, on utilise des **noms de domaine** au lieu d’adresses IP. Le **s
 - Si `ping` ne fonctionne pas immédiatement, **attendez quelques secondes et réessayez**.  
 
 
-**<H3 STYLE="COLOR:red;">Activité n°10.:**</H3> Chemin d’un client à un serveur version graphique 
+**<H3 STYLE="COLOR:red;">Activité n°10.:</h3>** Chemin d’un client à un serveur version graphique 
 
 Utiliser le site : [Traceroute en ligne](https://gsuite.tools/traceroute) 
 
