@@ -7,10 +7,9 @@ title: 08a Les réseaux
 **Table des matières** 
 
 1. [Quelques éléments physiques d'un réseau](#1234)
-2. [Première situation : communication dans un réseau local](#2345)
-2. [Observation d’un réseau](#_page5_x40.00_y260.92)
-3. [Le protocole ARP](#_page5_x40.00_y455.92)
-4. [Le modèle TCP/IP](#_page5_x40.00_y630.92)
+2. [Première situation : communication dans un réseau local](#2345)9
+3. [Deuxième situation : communication entre réseaux locaux (Internet)](#3456)
+4. [Autres commandes sur un réseau](#_titre4)
 5. [Menaces courantes sur les réseaux](#_titre5)
 6. [Mesures de protection des réseaux](#_titre6)
 7. [Analyse de trame](#_titre7)
@@ -988,7 +987,7 @@ Cela garantit la **modularité**, la **compatibilité** et la **pérennité** de
 
 
 
-## <H2 STYLE="COLOR:BLUE;">**4. Autres commandes sur un réseau</h2>**
+## <H2 STYLE="COLOR:BLUE;">**4. Autres <a name="#_titre4">commandes sur un réseau</a></h2>**
 
 ???+ question "Activité n°3"
     Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS), utilisez les commandes suivantes pour observer et analyser le réseau :  
@@ -1004,7 +1003,7 @@ Cela garantit la **modularité**, la **compatibilité** et la **pérennité** de
     | `tracert [adresse]` (ou `traceroute` sous Linux) | Affiche les étapes (sauts) nécessaires pour atteindre une adresse réseau. Par exemple tracert www.google.fr|
     | `netstat` | Affiche les ports actifs et les connexions réseau, utile pour détecter un virus. |
 
-## <H2 STYLE="COLOR:BLUE;">**5. Menaces courantes sur les réseaux<a name="#_titre5"></a></h2>**
+## <H2 STYLE="COLOR:BLUE;">**5. Menaces <a name="#_titre5">courantes sur les réseaux</a></h2>**
 
 
 
@@ -1034,7 +1033,7 @@ Cela garantit la **modularité**, la **compatibilité** et la **pérennité** de
 
 
 
-## <h2 style="color:blue;">**6. Mesures de protection des réseaux**</h2>
+## <h2 style="color:blue;">**6. Mesures de protection <a name="#_titre6">des réseaux</a></h2>**
 
 ### <h3 style="color:green;">**6.1. Pare-feu (firewall)**</h3>
 
@@ -1078,7 +1077,7 @@ Cela garantit la **modularité**, la **compatibilité** et la **pérennité** de
 
 
 
-## <H2 STYLE="COLOR:BLUE;">**7. Analyse de trame<a name="#_titre7"></a></h2>**
+## <H2 STYLE="COLOR:BLUE;">**7. Analyse <a name="#_titre7">de trame</a></h2>**
 
 **<H3 STYLE="COLOR:red;">Activité n°3 :</h3>** Analyse d'une trame fictive
 
