@@ -175,10 +175,13 @@ Pour cela, on associe un **identifiant numérique à chaque service**, appelé *
 
 ➤ Ce **numéro de port** est **ajouté aux données** pour indiquer à quel logiciel (serveur) elles sont destinées.
 
-> > 🧠 Exemple :
-> > Port 80 → pour le serveur HTTP (web)
-> > Port 25 → pour le serveur SMTP (mail sortant)
-> > Port 21 → pour le serveur FTP
+> 🧠 Exemple :
+>
+> Port 80 → pour le serveur HTTP (web)
+>
+> Port 25 → pour le serveur SMTP (mail sortant)
+>
+> Port 21 → pour le serveur FTP
 
 ![](port.png)
 
