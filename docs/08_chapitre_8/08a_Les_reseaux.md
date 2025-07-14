@@ -34,7 +34,7 @@ Voici quelques éléments physiques d'un réseau :
 
 ![](elements.png)
 
-🖥️ Les périphériques dans un réseau
+
 
 ### <H3 STYLE="COLOR:GREEN;"> **1.1 Périphériques terminaux :</h3>**
 
@@ -64,7 +64,7 @@ Ce sont les équipements chargés **d’acheminer les données** entre les termi
 
 ### <H3 STYLE="COLOR:GREEN;">**2.6. Types de connexions réseau</h3>**
 
-🔸 **Connexions filaires :**
+🔸 **Connexions filaires**
 
 🔸 **Connexions sans-fil :**
 
@@ -81,9 +81,10 @@ Ce sont les équipements chargés **d’acheminer les données** entre les termi
 ## <H2 STYLE="COLOR:BLUE;">**2. Première situation : <a name="2345"></a> communication dans un réseau local</h2>**
 
 Voici le réseau que l'on va étudier :
+
 ![](réseau.png)
 
-Ce réseau est composé de plusieurs sous-réseaux.
+Ce réseau est composé de plusieurs **sous-réseaux**.
 
 Par exemple, un sous-réseau peut contenir deux ordinateurs, un switch et un routeur.
 
@@ -152,6 +153,7 @@ Voici ce qu'on doit envoyer mais ce qu’on **reçoit réellement** pose problè
 
 Ces idées sont similaires à ce que fait le protocole **TCP** :
 
+* **découpage des données en paquets (1460 octets au maximum)**
 * **numérotation des paquets**,
 * **accusés de réception (ACK)**,
 * **retransmission automatique des paquets perdus**.
@@ -161,6 +163,7 @@ Ces idées sont similaires à ce que fait le protocole **TCP** :
 ### <H3 STYLE="COLOR:GREEN;">**2.3. les ports</h3>**
 
 Sur notre ordinateur, on utilise souvent **plusieurs logiciels en même temps**.
+
 Par exemple :
 
 * un navigateur Internet pour consulter des sites web,
@@ -180,7 +183,7 @@ Pour cela, on associe un **identifiant numérique à chaque service**, appelé *
 
 ➤ Ce **numéro de port** est **ajouté aux données** pour indiquer à quel logiciel (serveur) elles sont destinées.
 
-> 🧠 Exemple :
+🧠 **Exemple** :
 >
 > Port 80 → pour le serveur HTTP (web)
 >
@@ -202,7 +205,7 @@ Le serveur **utilise ce même port source** pour répondre au bon logiciel.
 ![](port2.png)
 
 
-> 💡 **Résumé** :
+💡 **Résumé** :
 >
 > * Un **port** identifie un **logiciel de communication** sur un appareil.
 > * Les **ports bien connus** (de 0 à 1023) sont réservés aux services standard.
@@ -216,7 +219,7 @@ Pour envoyer un message (par exemple, un **vers du poème**), on ajoute des **m�
 
 Cette en-tête contient plusieurs informations essentielles pour que le message soit bien acheminé, reçu, et éventuellement reconstitué.
 
-> Elle est constituée notamment :
+Elle est constituée notamment :
 >
 > * du **port source** (pour savoir **quel logiciel client** a envoyé le message),
 > * du **port de destination** (pour savoir **quel service du serveur** doit le recevoir),
@@ -234,7 +237,7 @@ On connaît son **adresse IP**, mais **on ne sait pas sur quel réseau local ell
 
 #### <H4 STYLE="COLOR:MAGENTA;">**2.5.1. Adresse IP</h4>**
 
-📌 Définition :
+📌 **Définition** :
 
 L’**adresse IP** (Internet Protocol) est une **adresse logique**, **temporaire ou permanente**, qui permet d’**identifier un équipement sur un réseau**.
 
@@ -252,7 +255,7 @@ L’**adresse IP** (Internet Protocol) est une **adresse logique**, **temporaire
 * **IPv6** (128 bits) → format étendu : `2001:db8::ff00:42:8329`
 
 
-> ℹ️ **Pourquoi IPv6 ?**
+ℹ️ **Pourquoi IPv6 ?**
 > Le stock d’adresses IPv4 (environ **4,3 milliards**) est **presque entièrement épuisé**.
 > L’IPv6 permet de générer un **nombre quasi infini d’adresses** pour répondre à la croissance des appareils connectés.
 
@@ -262,7 +265,7 @@ L’**adresse IP** (Internet Protocol) est une **adresse logique**, **temporaire
 
 
 
-> Une **adresse IP** est composée de **deux parties** :
+Une **adresse IP** est composée de **deux parties** :
 >
 > * **NetID** (ou **identifiant du réseau**) : permet d’identifier le réseau auquel appartient la machine.
 > * **HostID** (ou **identifiant de l’hôte**) : permet d’identifier une **machine spécifique** au sein de ce réseau.
@@ -302,7 +305,7 @@ $256 - 2 = 254$
 #### <H4 STYLE="COLOR:MAGENTA;">**2.5.3. Adresse<a name="_page1_x40.00_y612.92"></a> du sous réseau et masque de sous réseau</h4>**
 
 
-✅ Le masque de sous-réseau 
+✅ **Le masque de sous-réseau** 
 
 Un **masque de sous-réseau** permet de **découper un réseau IP** en **sous-réseaux plus petits**, et de déterminer :
 
@@ -310,7 +313,7 @@ Un **masque de sous-réseau** permet de **découper un réseau IP** en **sous-r�
 * l’**adresse de broadcast**,
 * les **adresses des machines possibles (hôtes)**.
 
-🔹 Exemple 1 : IP `192.168.1.55/24`
+🔹 **Exemple 1** : IP `192.168.1.55/24`
 
 ➡️ Masque : `255.255.255.0`
 
@@ -345,7 +348,7 @@ Résultat (AND) : 11000000.10101000.00000001.00000000
 
 ➤ L’adresse de **broadcast** sera : **192.168.1.255**
 
-🧠 Remarque  :
+🧠 **Remarque** :
 
 Avec des masques simples comme `255.255.255.0`, on peut **deviner rapidement** :
 
@@ -353,7 +356,7 @@ Avec des masques simples comme `255.255.255.0`, on peut **deviner rapidement** :
 * l’adresse de broadcast (on met tous les bits à 1 dans la partie hôte).
 
 
-📌 Quelques exemples directs sans conversion binaire :
+📌 **Quelques exemples directs sans conversion binaire** :
 
 ```text
 192.168.1.239/24
@@ -372,7 +375,7 @@ Avec des masques simples comme `255.255.255.0`, on peut **deviner rapidement** :
   → Broadcast :          192.255.255.255
 ```
 
-🔹 Exemple 2 : IP `90.98.100.3/21`
+🔹 **Exemple 2** : IP `90.98.100.3/21`
 
 ➡️ Masque : `255.255.248.0` = `11111111.11111111.11111000.00000000`
 
@@ -402,7 +405,7 @@ Broadcast :      01011010.01100010.01100111.11111111
 #### <H4 STYLE="COLOR:MAGENTA;">**2.5.4. Adresse<a name="_page2_x40.00_y473.92"></a> publique et adresse privée</h4>**
 
 
-✅ Tableau des types d'adresses IP
+✅ **Tableau des types d'adresses IP**
 
 | **Type d’adresse** | **Utilisation**                                                               | **Exemple**                  |
 | ------------------ | ----------------------------------------------------------------------------- | ---------------------------- |
@@ -410,13 +413,13 @@ Broadcast :      01011010.01100010.01100111.11111111
 | **Privée**         | Adresse **utilisée dans un réseau local** (non routable sur Internet)         | `192.168.1.1` (box Internet) |
 
 
-🔍 Détails importants à retenir
+🔍 **Détails importants à retenir**
 
 * 📌 **Les adresses IP privées ne peuvent pas circuler sur Internet**. Elles sont réservées à une utilisation **interne** (maison, entreprise, établissement scolaire...).
 * 📌 Pour accéder à Internet, les équipements d’un réseau local utilisent un mécanisme appelé **NAT (Network Address Translation)**.
 
 
-🌐 NAT : Network Address Translation
+🌐 **NAT** : Network Address Translation
 
 > Le **NAT** est une technique utilisée par les routeurs pour **traduire une adresse IP privée (locale)** en **adresse IP publique** lors d’un accès à Internet.
 >
@@ -434,7 +437,7 @@ Pour envoyer des données à une autre machine sur un réseau, il faut d'abord d
 
 Cela se fait en **calculant l'adresse du réseau** à partir de l'adresse IP et du **masque de sous-réseau** à l'aide d'une opération logique **ET (AND binaire)**.
 
-🧮 Exemple : Machine locale
+🧮 **Exemple : Machine locale**
 
 * **Adresse IP :** `192.168.1.1`
 * **Masque de sous-réseau :** `255.255.255.0`
@@ -448,7 +451,7 @@ Résultat   : 11000000.10101000.00000001.00000000
 → Adresse réseau : 192.168.1.0
 ```
 
-🧮 Exemple : Machine de destination
+🧮 **Exemple : Machine de destination**
 
 * **Adresse IP :** `192.168.1.11`
 * **Masque de sous-réseau :** `255.255.255.0`
@@ -462,12 +465,12 @@ Résultat   : 11000000.10101000.00000001.00000000
 → Adresse réseau : 192.168.1.0
 ```
 
-✅ Conclusion
+✅ **Conclusion**
 
 Ces deux machines ont la **même adresse réseau** : `192.168.1.0`
 ➡ Elles sont donc **sur le même réseau local** et peuvent **communiquer directement**, **sans passer par une passerelle** (routeur).
 
-📦 Le paquet IP
+📦 **Le paquet IP**
 
 Pour envoyer des données à une autre machine, on encapsule les **données du segment TCP** dans un **paquet IP**, en y ajoutant une **en-tête IP** (ou *IP header*), qui contient notamment :
 
@@ -481,12 +484,12 @@ Cela permet au réseau d'acheminer les données correctement vers leur destinata
 
 ### <H3 STYLE="COLOR:GREEN;">**2.7. Une adresse MAC</h3>**
 
-🔎 Qui possède cette adresse IP de destination dans le sous-réseau ?
+🔎 **Qui possède cette adresse IP de destination dans le sous-réseau ?**
 
 Dans un réseau local, **chaque machine est connectée à un switch via une carte réseau** (Ethernet ou Wi-Fi).
 Chaque carte réseau possède un identifiant matériel unique : **l'adresse MAC**.
 
-📌 Qu’est-ce qu’une adresse MAC ?
+📌 **Qu’est-ce qu’une adresse MAC ?**
 
 L’**adresse MAC** (Media Access Control) est un **identifiant physique unique** attribué à chaque carte réseau.
 Elle est généralement **gravée en usine** dans la carte.
@@ -494,7 +497,7 @@ Elle est généralement **gravée en usine** dans la carte.
 * **Format :** 6 octets (48 bits)
 * **Exemple :** `00:1A:2B:3C:4D:5E`
 
-🧭 Rôle de l’adresse MAC
+🧭 **Rôle de l’adresse MAC**
 
 * Elle permet **d’identifier une machine de manière unique** dans un réseau local.
 * Elle est utilisée par les protocoles de la **couche 2 (liaison de données)** du modèle OSI.
@@ -531,17 +534,17 @@ Un **switch** est un équipement qui **transmet les données uniquement aux dest
 
 ### <H3 STYLE="COLOR:GREEN;">**2.8 Qu’est-ce que le protocole ARP ?</h3>**
 
-🧩 Comment trouver l’adresse MAC à partir de l’adresse IP dans un réseau local ?
+🧩 **Comment trouver l’adresse MAC à partir de l’adresse IP dans un réseau local ?**
 
 Lorsque deux ordinateurs sont connectés au **même réseau local** via un **switch**, et que l’un d’eux veut envoyer un message à une **adresse IP locale**, il doit d'abord connaître **l’adresse MAC correspondante**.
 
 Mais **l’ordinateur ne connaît que l’adresse MAC de destination**. Il va donc utiliser un protocole spécifique : **ARP** (Address Resolution Protocol).
 
-🧠 Que fait ARP ?
+🧠 **Que fait ARP ?**
 
 Le **protocole ARP** permet de faire le lien entre une **adresse IP** et l’**adresse MAC** associée dans le même réseau local.
 
-⚙️ Étapes détaillées :
+⚙️ **Étapes détaillées :**
 
 1 🖥️ **Notre ordinateur veut envoyer un message à l’IP `192.168.1.11`**
    Il vérifie si cette IP est dans le **même sous-réseau** que lui (grâce au masque de sous-réseau).
@@ -601,6 +604,14 @@ Elle est constituée de :
 
 ### <H3 STYLE="COLOR:GREEN;">**2.10. Le modèle TCP/IP</h3>**
 
+🧱 **Pourquoi utilise-t-on un modèle en couches en réseau ?**
+
+📌 **Définition :**
+
+Un modèle en couches est une manière de découper le fonctionnement d’un réseau en étapes successives et indépendantes, appelées couches.
+
+Chaque couche a un rôle précis et ne communique qu’avec la couche juste au-dessus et la couche juste en dessous.
+
 ![](16225672656323_P2C5-3.png)
 
 
@@ -617,7 +628,7 @@ Le **modèle TCP/IP** (à droite) est plus **réaliste et utilisé dans Internet
 * Les couches **1 et 2** sont regroupées en **Accès au réseau**.
 * Les couches **Transport** et **Internet** correspondent respectivement aux couches 4 et 3 de l’OSI.
 
-Lorsque l'ordinateur 1 veut tranféerer des fichiers à l'ordinateur 2 sur le même réseau local :
+Lorsque l'ordinateur 1 veut transférer des fichiers à l'ordinateur 2 sur le même réseau local :
 
 - **couche application** : il utilise le protocole FTP 
 - **couche transport** : les données sont encapsulées avec l'entête TCP
@@ -626,7 +637,7 @@ Lorsque l'ordinateur 1 veut tranféerer des fichiers à l'ordinateur 2 sur le m�
 
 ![](encapsulation.png)
 
-La trame est ensuite envoyé à l'ordinateur 2 qui va ensuite décapsuler chaque entête.
+La trame est ensuite envoyé à l'ordinateur 2 qui va ensuite **décapsuler** chaque entête.
 
 ![](decapsulation.png)
 
