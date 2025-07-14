@@ -695,7 +695,7 @@ Exemple :
 
 - La box internet fait office de **routeur** entre le réseau domestique (Wi-Fi) et Internet. 
 
-![](routeur.png)
+![](routeur.png){ width=25%; : .center }
 
 
 Le routeur n°1 a 4 adresses IP, cela signifie que, il est en contact avec 2 sous réseaux et 2 routeurs.
@@ -706,7 +706,7 @@ Il va donc comparer chacune de ses adresses IP de sous réseau avec l'adresse IP
 
 Puis il vérifie avec le routeur 2 et le routeur 3. 
 
-Chaque routeur possède une table de routage qui permet de savoir s'il connait l'adresse IP de destination ou pas. Donc il choisit le routeur n°3.
+Chaque routeur possède une table de routage qui permet de savoir s'il connait l'adresse IP de destination ou pas. Donc il choisit le routeur n°3 qui est dans le même réseau.
 
 
 
