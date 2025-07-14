@@ -524,7 +524,7 @@ Un **switch** est un équipement qui **transmet les données uniquement aux dest
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**2.8 Qu’est-ce que le **protocole ARP ?</h3>**
+### <H3 STYLE="COLOR:GREEN;">**2.8 Qu’est-ce que le protocole ARP ?</h3>**
 
 🧩 Comment trouver l’adresse MAC à partir de l’adresse IP dans un réseau local ?
 
@@ -579,7 +579,7 @@ Le **protocole ARP** permet de faire le lien entre une **adresse IP** et l’**a
       ```
 
 
-
+### <H3 STYLE="COLOR:GREEN;">**2.9 La trame</h3>**
 
 
 ## <H2 STYLE="COLOR:BLUE;">**3. Deuxième situation : <a name="3456"></a> communication entre réseaux locaux (Internet)</h2>**
