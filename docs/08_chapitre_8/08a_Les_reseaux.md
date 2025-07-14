@@ -95,69 +95,113 @@ On voudrait faire communiquer M9 avec un autre ordinateur de son réseau local
 
 ### <H3 STYLE="COLOR:GREEN;">**2.1. Le protocole TCP**</H3>
 
-Un protocole est un ensemble de règles qui permet à deux entités de communiquer ensemble.
-Ici on utilise le protocole TCP (Transmission Control Protocol)
+
+> **Un protocole réseau** est un **ensemble de règles et de formats normalisés** qui permettent à **deux entités (ordinateurs, serveurs, équipements réseau, etc.) de communiquer entre elles** de manière fiable et compréhensible.
+>
+> Le protocole **TCP (Transmission Control Protocol)** est l’un de ces protocoles. Il fonctionne à la **couche transport** du modèle TCP/IP. Il est responsable de la **gestion de la connexion**, du **contrôle des erreurs**, et de l’**acheminement fiable des données** d’un point à un autre sur le réseau.
+
+
 
 ### <H3 STYLE="COLOR:GREEN;">**2.2. Envoi du message**</H3>
 
-On souhaiterait envoyer un poeme :
 
-L’albatros
-Charles Baudelaire
+> On souhaite envoyer un poème :
+>
+> **L’Albatros**
+> *Charles Baudelaire*
+>
+> Souvent, pour s’amuser, les hommes d’équipage
+> Prennent des albatros, vastes oiseaux des mers,
+> Qui suivent, indolents compagnons de voyage,
+> Le navire glissant sur les gouffres amers.
+>
+> À peine les ont-ils déposés sur les planches,
+> Que ces rois de l’azur, maladroits et honteux,
+> Laissent piteusement leurs grandes ailes blanches
+> Comme des avirons traîner à côté d’eux.
+>
+> *(On ne transmet que les deux premiers quatrains)*
 
-Souvent, pour s’amuser, les hommes d’équipage
-Prennent des albatros, vastes oiseaux des mers,
-Qui suivent, indolents compagnons de voyage,
-Le navire glissant sur les gouffres amers.
+Mais : **on ne peut envoyer qu’un seul vers par message**.
 
-À peine les ont-ils déposés sur les planches,
-Que ces rois de l’azur, maladroits et honteux,
-Laissent piteusement leurs grandes ailes blanches
-Comme des avirons traîner à côté d’eux.
 
-…
 
-Ses ailes de géant l’empêchent de marcher.
-
-Mais ! on doit envoyer un seul vers par message. Et on va s'intéresser au 2 premiers quatrains.
-
-Voici ce qu'on doit envoyer et voici ce qu'on reçoit dans cet ordre
+Voici ce qu'on doit envoyer mais ce qu’on **reçoit réellement** pose problème 
 
 ![](poeme.png)
 
-Plusieurs problèmes :
+* Les vers **arrivent dans le désordre**.
+* Certains **vers manquent** complètement.
 
-- les vers arrivent dans le désordre
 
-- il manque des vers
+**Quels problèmes techniques cela illustre-t-il ?**
 
-**Quelles solutions ?**
+* Transmission **non fiable** sans contrôle d’ordre ni d’intégrité.
+* Données perdues en chemin.
 
-1. numéroter les vers
 
-2. on demande un accusé de réception pour pouvoir renvoyer le vers s'il a été perdu
+**Quelles solutions simples peut-on imaginer ?**
+
+1. **Numéroter chaque vers** avant l’envoi → pour permettre la remise en ordre à l’arrivée.
+2. **Demander un accusé de réception** pour chaque message → pour pouvoir **renvoyer** un vers si l’accusé n’arrive pas.
+
+Ces idées sont similaires à ce que fait le protocole **TCP** :
+
+* **numérotation des paquets**,
+* **accusés de réception (ACK)**,
+* **retransmission automatique des paquets perdus**.
+
+
 
 ### <H3 STYLE="COLOR:GREEN;">**2.3. les ports**</H3>
 
-Sur notre ordinateur, on utilise plusieurs logiciels en même temps. Par exemple, un navigateur Internet pour aller sur le web ou un logiciel pour échanger des fichiers.
+Sur notre ordinateur, on utilise souvent **plusieurs logiciels en même temps**.
+Par exemple :
 
-On se connecte à une machine qui offre différents services, par exemple un serveur web et un serveur de messagerie ou un serveur ftp et un serveur de messagerie.
+* un navigateur Internet pour consulter des sites web,
+* un logiciel pour envoyer ou recevoir des fichiers,
+* un client de messagerie pour consulter ses e-mails, etc.
 
-**Quel serveur va recevoir les données envoyées ?**
+En face, **une machine distante (un serveur)** peut offrir plusieurs services en parallèle :
 
-On va associer un identifiant : un nombre à un logiciel. Ce nombre sera appelé le **port**.
+* un serveur web (HTTP),
+* un serveur de messagerie (SMTP/IMAP/POP),
+* un serveur FTP pour les fichiers, etc.
 
-Il faudra ainsi ajouter le numéro de port avec les données à envoyer.
+
+❓**Quel service (logiciel serveur) va recevoir les données envoyées ?**
+
+Pour cela, on associe un **identifiant numérique à chaque service**, appelé **port**.
+
+➤ Ce **numéro de port** est **ajouté aux données** pour indiquer à quel logiciel (serveur) elles sont destinées.
+
+> > 🧠 Exemple :
+> > Port 80 → pour le serveur HTTP (web)
+> > Port 25 → pour le serveur SMTP (mail sortant)
+> > Port 21 → pour le serveur FTP
 
 ![](port.png)
 
-La machine va ensuite répondre en énvoyant des données.
+Quand le serveur répond à l’ordinateur client :
 
-**Quel logiciel va recevoir les données du serveur?**
+❓**Quel logiciel (client) doit recevoir la réponse ?**
 
-Là aussi il y a la notion de ports, c'est à dire lorsqu'on va envoyer des données on indiquera aussi le numéro de port du logiciel qui le recevra.
+➤ Là encore, on utilise des **ports**.
+
+Lorsqu’un logiciel sur votre ordinateur envoie une requête, le système **lui attribue un port aléatoire temporaire** (appelé **port source**).
+Le serveur **utilise ce même port source** pour répondre au bon logiciel.
 
 ![](port2.png)
+
+
+> 💡 **Résumé** :
+>
+> * Un **port** identifie un **logiciel de communication** sur un appareil.
+> * Les **ports bien connus** (de 0 à 1023) sont réservés aux services standard.
+> * Les ports permettent de **multiplier les communications simultanées** entre les mêmes machines.
+
+
+
 
 ## <H2 STYLE="COLOR:BLUE;">**3. Deuxième situation : <a name="3456"></a> communication entre réseaux locaux (Internet)**</h2>
 
