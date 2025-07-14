@@ -500,7 +500,7 @@ Elle est généralement **gravée en usine** dans la carte.
 ???+ question "🧪 Activité n°1 — Trouver votre adresse MAC"
     Ouvrez un terminal et tapez la commande suivante pour afficher les informations réseau de votre machine :
 
-    ````
+    
     Sous **Windows** :
     ```bash
     ipconfig /all
@@ -511,7 +511,7 @@ Elle est généralement **gravée en usine** dans la carte.
     ```
 
     → Recherchez la ligne contenant "Adresse physique" (Windows) ou "link/ether" (Linux) pour obtenir votre adresse MAC.
-    ````
+    
 
 ### <H3 STYLE="COLOR:GREEN;">**2.7. Un<a name="_page3_x40.00_y36.92"></a> switch (commutateur réseau)</h3>**
 
