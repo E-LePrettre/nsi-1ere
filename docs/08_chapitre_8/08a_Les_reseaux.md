@@ -664,7 +664,7 @@ Tout d'abord, on cherche à savoir si les deux adresses IP font partie du même 
 * **Binaire du masque :** `11111111.11111111.11111111.00000000`
 * **Résultat AND (adresse réseau) :** `11000000.10101000.00000001.00000000` → `192.168.1.0`
 
-🖥️ M**achine 2**
+🖥️ **Machine 2**
 
 * **Adresse IP :** `192.168.3.2`
 * **Masque :** `255.255.255.0`
@@ -682,35 +682,90 @@ Tout d'abord, on cherche à savoir si les deux adresses IP font partie du même 
 
 Il faut donc envoyer les données à une **passerelle** : c'est le rôle du routeur. La passerelle est indiquée au niveau de l'ordinateur, dans l'exemple c'est le routeur 1 connecté au switch.
 
+
+🔄 **Le rôle du routeur**
+
+La passerelle par défaut (un **routeur**) est configurée sur chaque machine pour envoyer les paquets hors du réseau local.
+
 ![](passerelle.png)
 
-Un **routeur** assure la connexion **entre plusieurs réseaux** et assure le routage des paquets.  
+Un **routeur** :
 
-- Il fonctionne en **couche 3 (réseau)**.  
+* assure la **connexion entre plusieurs réseaux**,
+* fonctionne en **couche 3 (réseau)** du modèle OSI,
+* utilise une **table de routage** pour choisir le chemin vers la destination.
 
-- Il utilise une **table de routage** pour acheminer les paquets.  
+💡 **Exemple courant :** la **box Internet** joue le rôle de routeur entre votre réseau domestique (Wi-Fi) et Internet.
 
-
-Exemple : 
-
-- La box internet fait office de **routeur** entre le réseau domestique (Wi-Fi) et Internet. 
-
-![](routeur.png){ width=25%; : .center }
-
-
-Le routeur n°1 a 4 adresses IP, cela signifie que, il est en contact avec 2 sous réseaux et 2 routeurs.
-
-Il reçoit la trame et la décapsule pour pouvoir voir l'adresse IP de destination.
-
-Il va donc comparer chacune de ses adresses IP de sous réseau avec l'adresse IP de destination moyennant le masque pour savoir si elles sont dans le même sous réseau.
-
-Puis il vérifie avec le routeur 2 et le routeur 3. 
-
-Chaque routeur possède une table de routage qui permet de savoir s'il connait l'adresse IP de destination ou pas. Donc il choisit le routeur n°3 qui est dans le même réseau.
+![](routeur.png){ width=35%; .center }
 
 
 
+🔄 **Que fait le routeur ?**
 
+Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adresses IP**. Il est connecté à **deux sous-réseaux** et à **deux autres routeurs**.
+
+1. **Réception de la trame :**
+   Il reçoit une trame Ethernet contenant un paquet IP.
+   → Il **décapsule** la trame pour lire l’**entête IP**.
+
+![](routeur_decapsulation.png){ width=50%; .center }
+
+2. **Comparaison :**
+   Il applique le **masque** à chaque adresse IP de ses interfaces pour voir si l’**IP de destination** appartient à l’un de ses sous-réseaux.
+
+3. **Consultation de la table de routage :**
+   Si l’IP de destination n’est pas dans un de ses sous-réseaux, il consulte sa **table de routage** pour savoir **quel routeur** contacter.
+
+4. **Choix du prochain saut :**
+   Il choisit ici le **routeur n°3**, qui connaît le sous-réseau de destination.
+
+5. **Encapsulation :**
+   Il crée une **nouvelle trame Ethernet**, avec :
+
+   * **MAC source** : la sienne (dans le sous-réseau partagé avec le routeur 3),
+   * **MAC destination** : celle du **routeur n°3**.
+
+![](routeur_encapsulation.png){ width=60%; .center }
+
+6. **Transmission :**
+   Le **routeur n°3** reçoit la trame, **décapsule** et lit l’**adresse IP de destination**.
+
+7. **Décision finale :**
+   Il applique le masque, constate que l’IP est dans son sous-réseau, et peut **acheminer les données jusqu'à la machine finale**.
+
+8. **Résolution ARP (si nécessaire)**
+    Le routeur connaît l’**adresse IP de destination**, mais **pas sa MAC**.
+    Il doit donc :
+      * Envoyer une **requête ARP** :
+      « Qui a l’adresse IP `192.168.X.Y` ? Donne-moi ton adresse MAC. »
+      * **Seule la machine concernée répond** avec :
+      « Moi ! Voici mon adresse MAC. »
+
+    > Si l’adresse MAC est déjà en cache ARP, cette étape est **skippée** (ignorée).
+
+9. **Création de la trame Ethernet finale**
+    Le routeur encapsule les données dans une trame :
+      * **MAC source** : l’adresse MAC du routeur sur ce réseau
+      * **MAC destination** : celle de la machine finale (trouvée par ARP)
+      * **Paquet IP** : inchangé (conserve l’IP source et destination)
+
+10. **Envoi au switch**
+    Le **routeur envoie la trame Ethernet** sur le **port relié au switch**.
+
+11. **Comportement du switch**
+    * Le **switch reçoit la trame** et lit l’**adresse MAC de destination**
+    * Il **consulte sa table de commutation (CAM table)** pour savoir **sur quel port** se trouve cette adresse MAC
+      * Si elle est connue : il **envoie la trame uniquement sur ce port**
+      * Si elle est inconnue : il fait un **broadcast** à tous les ports sauf celui d’entrée
+
+12. **Réception par la machine finale**
+    * La **machine cible** reçoit la trame
+    * Elle vérifie que **l’adresse MAC destination** correspond bien à la sienne
+    * Elle **décapsule la trame** pour récupérer le **paquet IP**
+    * Puis **décapsule le paquet IP** pour accéder à la **donnée utile (segment TCP/UDP puis donnée applicative)**
+
+![](transfert.png)
 
 
 ### <H3 STYLE="COLOR:GREEN;">**1.7. Autres commandes sur un réseau</h2>**
