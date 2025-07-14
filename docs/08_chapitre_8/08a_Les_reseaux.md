@@ -848,11 +848,6 @@ Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adress
 
 
 
-
-Voici une **correction complète** et reformulation de ta partie de cours, avec des ajouts mineurs pour améliorer la clarté et la pédagogie :
-
----
-
 ### <h3 style="color:green;">**3.4. Établissement de la communication TCP (« Three-Way Handshake »)**</h3>
 
 Avant de pouvoir échanger des données avec fiabilité, le protocole **TCP (Transmission Control Protocol)** met en place une **connexion** entre le client et le serveur via un processus appelé **three-way handshake**.
@@ -953,6 +948,44 @@ De la même façon, si deux **ACK** identiques arrivent au même moment :
 * Si l’émetteur reçoit l’ACK attendu, il envoie la **deuxième trame** avec bit = 1, etc.
 
 
+Voici ta section corrigée et reformulée pour plus de clarté, de rigueur et de lisibilité :
+
+---
+
+### <h3 style="color:green;">**3.6. Les protocoles**</h3>
+
+Les **protocoles de communication** sont répartis dans les différentes **couches du modèle en couches** (comme le modèle TCP/IP ou OSI). Chaque couche a ses propres **protocoles**, qui remplissent des fonctions précises.
+
+📡 **Couche Application**
+
+Elle regroupe les **protocoles utilisés par les logiciels** pour accéder au réseau. 
+
+Par exemple : 
+
+* **FTP** (File Transfer Protocol) : pour transférer des fichiers entre deux machines.
+* **HTTP** (HyperText Transfer Protocol) : pour accéder aux pages web.
+* **HTTPS** : version sécurisée de HTTP, utilisant un chiffrement (SSL/TLS).
+
+🚚 **Couche Transport**
+
+Elle assure le **transport des données** entre deux applications.
+
+* **TCP** (Transmission Control Protocol) : protocole **fiable**, avec **accusés de réception**, utilisé pour les sites web, les emails, etc.
+* **UDP** (User Datagram Protocol) : protocole **rapide**, **sans accusé de réception**, utilisé pour les **jeux en ligne**, le **streaming**, les **appels en visio**, etc.
+
+
+
+![](protocole.png)
+
+
+
+### 🧱 Pourquoi ces différentes couches ?
+
+Le **modèle en couches** permet de **séparer les responsabilités** et de **faciliter l’évolution des réseaux**.
+👉 Si un protocole d'une couche est modifié (ex. passage de HTTP à HTTPS), **les autres couches n'ont pas besoin d’être modifiées**.
+Cela garantit la **modularité**, la **compatibilité** et la **pérennité** des systèmes de communication.
+
+
 
 
 ## <H2 STYLE="COLOR:BLUE;">**4. Autres commandes sur un réseau</h2>**
@@ -973,59 +1006,77 @@ De la même façon, si deux **ACK** identiques arrivent au même moment :
 
 ## <H2 STYLE="COLOR:BLUE;">**5. Menaces courantes sur les réseaux<a name="#_titre5"></a></h2>**
 
-### <H3 STYLE="COLOR:GREEN;">**5.1. Phishing</h3>**
 
-- **Description** : Le phishing est une technique de fraude où un attaquant se fait passer pour une entité de confiance pour obtenir des informations sensibles comme des identifiants de connexion, des numéros de carte bancaire, etc.
 
-- **Exemple** : Un utilisateur reçoit un email qui semble provenir de sa banque, lui demandant de vérifier ses informations de compte en cliquant sur un lien qui mène à un faux site web.
+### <h3 style="color:green;">**5.1. Phishing (hameçonnage)**</h3>
 
-### <H3 STYLE="COLOR:GREEN;">**5.2. DDoS (Distributed Denial of Service)</h3>**
-- **Description** : Une attaque DDoS vise à rendre un service ou un réseau indisponible en le submergeant de trafic provenant de multiples sources. Cela surcharge les serveurs et les réseaux, empêchant les utilisateurs légitimes d'accéder aux services.
+* **Définition** : Le phishing (ou hameçonnage) est une technique de fraude dans laquelle un attaquant se fait passer pour une entité de confiance (banque, administration, entreprise connue) afin de tromper la victime et lui soutirer des **informations sensibles** : identifiants, mots de passe, numéros de carte bancaire, etc.
 
-- **Exemple** : Un site web d'e-commerce est bombardé de requêtes malveillantes provenant de milliers d'ordinateurs compromis, rendant le site inaccessible aux clients.
+* **Exemple** : Une personne reçoit un **email frauduleux** prétendant venir de sa banque. Le message l'invite à cliquer sur un lien pour "vérifier ses informations". Ce lien redirige vers un **faux site web** qui ressemble au vrai site bancaire. Si la victime saisit ses identifiants, l’attaquant les récupère.
 
-### <H3 STYLE="COLOR:GREEN;">**5.3. Man-In-The-Middle (MITM)</h3>**
-- **Description** : Dans une attaque MITM, un attaquant intercepte et peut altérer les communications entre deux parties sans qu'elles le sachent. Cela permet à l'attaquant de voler des informations sensibles ou d'injecter des données malveillantes.
 
-- **Exemple** : Un utilisateur se connecte à un Wi-Fi public et un attaquant intercepte les communications entre l'utilisateur et un site web sécurisé, dérobant ainsi les identifiants de connexion de l'utilisateur.
 
-## <H2 STYLE="COLOR:BLUE;">**6. Mesures de protection des réseaux<a name="#_titre6"></a></h2>**
+### <h3 style="color:green;">**5.2. Attaque DDoS (Déni de service distribué)**</h3>
 
-### <H3 STYLE="COLOR:GREEN;">**6.1. Firewalls</h3>**
+* **Définition** : Une attaque DDoS (Distributed Denial of Service) consiste à **inonder un serveur ou un service en ligne de requêtes** provenant de milliers d’appareils compromis (appelés bots), dans le but de **le rendre indisponible** pour les utilisateurs légitimes.
 
-**Description** : Un firewall est une barrière de sécurité qui surveille et contrôle le trafic réseau entrant et sortant en fonction de règles de sécurité prédéfinies. Il peut être matériel, logiciel, ou les deux.
+* **Conséquences** : Le service devient **lent, instable ou totalement inaccessible**, provoquant souvent des pertes économiques ou une perte de confiance des utilisateurs.
 
-**Fonctionnement** : 
+* **Exemple** : Un site de e-commerce est ciblé par une attaque DDoS. Des milliers d’ordinateurs infectés (botnet) envoient des requêtes en boucle vers le serveur du site, qui finit par **saturer et planter**, empêchant les clients d’y accéder.
 
-  - **Filtrage des paquets** : Analyse chaque paquet de données entrant ou sortant et le bloque ou le permet en fonction des règles établies.
 
-  - **Proxy** : Intercepte toutes les communications entre les utilisateurs et le réseau, les inspecte et les transfère si elles sont sûres.
 
-**Exemple** : Un firewall bloque les tentatives de connexion non autorisées provenant d'adresses IP suspectes.
+### <h3 style="color:green;">**5.3. Attaque de type Man-In-The-Middle (MITM)**</h3>
 
-### <H3 STYLE="COLOR:GREEN;">**6.2. VPN (Virtual Private Network)</h3>**
+* **Définition** : Dans une attaque **Man-In-The-Middle** (l’homme du milieu), un attaquant **intercepte et peut modifier les échanges de données** entre deux parties qui pensent communiquer directement entre elles. Cela permet de **voler des données sensibles** (identifiants, mots de passe, numéros de carte…) ou d’**injecter du contenu malveillant**.
 
-**Description** : Un VPN crée une connexion sécurisée et chiffrée entre l'utilisateur et le réseau, permettant de masquer l'adresse IP de l'utilisateur et de protéger ses données contre les interceptions.
+* **Exemple** : Une personne se connecte à un **réseau Wi-Fi public non sécurisé**. Un attaquant intercepte les données échangées entre l'utilisateur et un site web, capturant ainsi les identifiants de connexion à un compte bancaire.
 
-**Fonctionnement** :
 
-  - **Tunneling** : Les données sont encapsulées dans un protocole de tunneling et chiffrées, rendant difficile pour les attaquants d'intercepter ou de lire les informations.
 
-  - **Authentification** : Utilise des protocoles d'authentification pour s'assurer que seuls les utilisateurs autorisés peuvent accéder au réseau.
+## <h2 style="color:blue;">**6. Mesures de protection des réseaux**</h2>
 
-**Exemple** : Un employé utilise un VPN pour accéder aux ressources de l'entreprise en travaillant à distance, garantissant que les données transmises sont sécurisées.
+### <h3 style="color:green;">**6.1. Pare-feu (firewall)**</h3>
 
-### <H3 STYLE="COLOR:GREEN;">**6.3. Chiffrement</h3>**
+* **Définition** : Un **pare-feu** (ou firewall) est un dispositif de sécurité — matériel, logiciel ou les deux — qui **filtre les échanges entre un réseau interne et l’extérieur** (comme Internet), selon des **règles prédéfinies**.
 
-**Description** : Le chiffrement transforme les données en une forme illisible pour toute personne non autorisée. Seules les parties possédant la clé de déchiffrement peuvent lire les données.
+* **Fonctions principales** :
 
-**Fonctionnement** :
+  * 🔒 **Filtrage de paquets** : analyse chaque **paquet de données** entrant ou sortant, et autorise ou bloque sa transmission selon les critères définis (adresse IP, port, protocole…).
 
-  - **Chiffrement symétrique** : Utilise la même clé pour chiffrer et déchiffrer les données.
+  * 🛡️ **Proxy** : agit comme un **intermédiaire** entre l’utilisateur et Internet. Il peut inspecter, modifier ou enregistrer les communications, offrant une **protection et un contrôle renforcé**.
 
-  - **Chiffrement asymétrique** : Utilise une paire de clés (publique et privée). La clé publique chiffre les données, et seule la clé privée correspondante peut les déchiffrer.
+* **Exemple** : Un firewall empêche une machine extérieure suspecte d’accéder à un serveur interne en bloquant les connexions provenant de son adresse IP.
 
-**Exemple** : Les transactions bancaires en ligne utilisent le chiffrement SSL/TLS pour sécuriser les données échangées entre le client et le serveur bancaire.
+
+
+### <h3 style="color:green;">**6.2. VPN (Virtual Private Network)**</h3>
+
+* **Définition** : Un **VPN** (Réseau Privé Virtuel) établit une **connexion chiffrée et sécurisée** entre l’utilisateur et un réseau distant. Il permet de **masquer l’adresse IP réelle** de l’utilisateur et de **protéger les données échangées** contre toute interception.
+
+* **Fonctionnement** :
+
+  * 🔄 **Tunneling** : Les données sont encapsulées dans un **canal sécurisé** (ou "tunnel") et **chiffrées**, empêchant leur lecture ou modification par des tiers.
+
+  * 🔐 **Authentification** : L’accès au VPN est protégé par une **authentification** (mot de passe, certificat, clé…), garantissant que seuls les utilisateurs autorisés peuvent se connecter.
+
+* **Exemple** : Un salarié utilise un **VPN d’entreprise** depuis son domicile pour accéder à des fichiers internes, en toute sécurité, comme s’il était physiquement dans les locaux de son entreprise.
+
+
+
+### <h3 style="color:green;">**6.3. Chiffrement des données**</h3>
+
+* **Définition** : Le **chiffrement** (ou cryptage) est un procédé qui **convertit des données lisibles en données inintelligibles** pour toute personne ne possédant pas la **clé de déchiffrement**. C’est un pilier fondamental de la **cybersécurité**.
+
+* **Fonctionnement** :
+
+  * 🔁 **Chiffrement symétrique** : la **même clé** est utilisée pour **chiffrer et déchiffrer** les données (ex : AES).
+
+  * 🔄 **Chiffrement asymétrique** : repose sur une **paire de clés** (clé **publique** pour chiffrer, clé **privée** pour déchiffrer). Ex : RSA, utilisé dans SSL/TLS.
+
+* **Exemple** : Lors d’un paiement en ligne, les données bancaires sont **chiffrées via SSL/TLS**, garantissant qu’aucun tiers ne puisse intercepter ou modifier les informations échangées.
+
+
 
 ## <H2 STYLE="COLOR:BLUE;">**7. Analyse de trame<a name="#_titre7"></a></h2>**
 
