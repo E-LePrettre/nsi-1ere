@@ -643,22 +643,48 @@ La trame est ensuite envoyé à l'ordinateur 2 qui va ensuite **décapsuler** ch
 
 ## <H2 STYLE="COLOR:BLUE;">**3. Deuxième situation : <a name="3456"></a> communication entre réseaux locaux (Internet)</h2>**
 
+L'ordinateur M9 d'adresse IP 
+@source 192.168.1.1/24
+
+veut communiquer avec une machine d'adresse IP
+@destination 192.168.3.2/24
+
+![](destination.png)
+
+### <H3 STYLE="COLOR:GREEN;">**3.1. Le routeur</h3>**
+
+Tout d'abord, on cherche à savoir si les deux adresses IP font partie du même réseau local.
 
 
+🖥️ **Machine 1**
+
+* **Adresse IP :** `192.168.1.1`
+* **Masque :** `255.255.255.0`
+* **Binaire de l’adresse IP :** `11000000.10101000.00000001.00000001`
+* **Binaire du masque :** `11111111.11111111.11111111.00000000`
+* **Résultat AND (adresse réseau) :** `11000000.10101000.00000001.00000000` → `192.168.1.0`
+
+🖥️ M**achine 2**
+
+* **Adresse IP :** `192.168.3.2`
+* **Masque :** `255.255.255.0`
+* **Binaire de l’adresse IP :** `11000000.10101000.00000011.00000010`
+* **Binaire du masque :** `11111111.11111111.11111111.00000000`
+* **Résultat AND (adresse réseau) :** `11000000.10101000.00000011.00000000` → `192.168.3.0`
+
+🔍 Conclusion
+
+* **Adresse réseau de la machine 1 :** `192.168.1.0`
+* **Adresse réseau de la machine 2 :** `192.168.3.0`
+
+❌ Ces deux machines **ne sont pas dans le même sous-réseau** (elles n’ont pas la même adresse réseau), **elles auront donc besoin d’un routeur pour communiquer**.
 
 
+Il faut donc envoyer les données à une **passerelle** : c'est le rôle du routeur. La passerelle est indiquée au niveau de l'ordinateur, dans l'exemple c'est le routeur 1 connecté au switch.
 
+![](passerelle.png)
 
-
-
-
-
- 
-
-
-### <H3 STYLE="COLOR:GREEN;">**1.5. Un<a name="_page3_x40.00_y209.92"></a> routeur</h3>**
-
-Un **routeur** assure la connexion **entre plusieurs réseaux**.  
+Un **routeur** assure la connexion **entre plusieurs réseaux** et assure le routage des paquets.  
 
 - Il fonctionne en **couche 3 (réseau)**.  
 
@@ -668,6 +694,21 @@ Un **routeur** assure la connexion **entre plusieurs réseaux**.
 Exemple : 
 
 - La box internet fait office de **routeur** entre le réseau domestique (Wi-Fi) et Internet. 
+
+![](routeur.png)
+
+
+Le routeur n°1 a 4 adresses IP, cela signifie que, il est en contact avec 2 sous réseaux et 2 routeurs.
+
+Il reçoit la trame et la décapsule pour pouvoir voir l'adresse IP de destination.
+
+Il va donc comparer chacune de ses adresses IP de sous réseau avec l'adresse IP de destination moyennant le masque pour savoir si elles sont dans le même sous réseau.
+
+Puis il vérifie avec le routeur 2 et le routeur 3. 
+
+Chaque routeur possède une table de routage qui permet de savoir s'il connait l'adresse IP de destination ou pas. Donc il choisit le routeur n°3.
+
+
 
 
 
