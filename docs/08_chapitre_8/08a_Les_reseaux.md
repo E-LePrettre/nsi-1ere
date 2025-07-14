@@ -706,62 +706,91 @@ Un **routeur** :
 Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adresses IP**. Il est connecté à **deux sous-réseaux** et à **deux autres routeurs**.
 
 1. **Réception de la trame :**
+
     Il reçoit une trame Ethernet contenant un paquet IP.
+
     → Il **décapsule** la trame pour lire l’**entête IP**.
+
     ![](routeur_decapsulation.png){ width=75%; .center }
 
 2. **Comparaison :**
-   Il applique le **masque** à chaque adresse IP de ses interfaces pour voir si l’**IP de destination** appartient à l’un de ses sous-réseaux.
+
+    Il applique le **masque** à chaque adresse IP de ses interfaces pour voir si l’**IP de destination** appartient à l’un de ses sous-réseaux.
 
 3. **Consultation de la table de routage :**
-   Si l’IP de destination n’est pas dans un de ses sous-réseaux, il consulte sa **table de routage** pour savoir **quel routeur** contacter.
+
+    Si l’IP de destination n’est pas dans un de ses sous-réseaux, il consulte sa **table de routage** pour savoir **quel routeur** contacter.
 
 4. **Choix du prochain saut :**
-   Il choisit ici le **routeur n°3**, qui connaît le sous-réseau de destination.
+
+    Il choisit ici le **routeur n°3**, qui connaît le sous-réseau de destination.
 
 5. **Encapsulation :**
-   Il crée une **nouvelle trame Ethernet**, avec :
 
-   * **MAC source** : la sienne (dans le sous-réseau partagé avec le routeur 3),
-   * **MAC destination** : celle du **routeur n°3**.
+    Il crée une **nouvelle trame Ethernet**, avec :
+
+      * **MAC source** : la sienne (dans le sous-réseau partagé avec le routeur 3),
+   
+      * **MAC destination** : celle du **routeur n°3**.
 
     ![](routeur_encapsulation.png){ width=60%; .center }
 
 6. **Transmission :**
-   Le **routeur n°3** reçoit la trame, **décapsule** et lit l’**adresse IP de destination**.
+
+    Le **routeur n°3** reçoit la trame, **décapsule** et lit l’**adresse IP de destination**.
 
 7. **Décision finale :**
-   Il applique le masque, constate que l’IP est dans son sous-réseau, et peut **acheminer les données jusqu'à la machine finale**.
+
+    Il applique le masque, constate que l’IP est dans son sous-réseau, et peut **acheminer les données jusqu'à la machine finale**.
 
 8. **Résolution ARP (si nécessaire)**
+    
     Le routeur connaît l’**adresse IP de destination**, mais **pas sa MAC**.
+
     Il doit donc :
+
       * Envoyer une **requête ARP** :
+
       « Qui a l’adresse IP `192.168.X.Y` ? Donne-moi ton adresse MAC. »
+      
       * **Seule la machine concernée répond** avec :
+      
       « Moi ! Voici mon adresse MAC. »
 
     > Si l’adresse MAC est déjà en cache ARP, cette étape est **skippée** (ignorée).
 
 9. **Création de la trame Ethernet finale**
+    
     Le routeur encapsule les données dans une trame :
+      
       * **MAC source** : l’adresse MAC du routeur sur ce réseau
+      
       * **MAC destination** : celle de la machine finale (trouvée par ARP)
+      
       * **Paquet IP** : inchangé (conserve l’IP source et destination)
 
 10. **Envoi au switch**
+    
     Le **routeur envoie la trame Ethernet** sur le **port relié au switch**.
 
 11. **Comportement du switch**
+    
     * Le **switch reçoit la trame** et lit l’**adresse MAC de destination**
+    
     * Il **consulte sa table de commutation (CAM table)** pour savoir **sur quel port** se trouve cette adresse MAC
+      
       * Si elle est connue : il **envoie la trame uniquement sur ce port**
+      
       * Si elle est inconnue : il fait un **broadcast** à tous les ports sauf celui d’entrée
 
 12. **Réception par la machine finale**
+    
     * La **machine cible** reçoit la trame
+    
     * Elle vérifie que **l’adresse MAC destination** correspond bien à la sienne
+    
     * Elle **décapsule la trame** pour récupérer le **paquet IP**
+    
     * Puis **décapsule le paquet IP** pour accéder à la **donnée utile (segment TCP/UDP puis donnée applicative)**
 
 ![](transfert.png)
