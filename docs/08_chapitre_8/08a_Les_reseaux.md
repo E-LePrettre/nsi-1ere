@@ -513,15 +513,70 @@ Elle est généralement **gravée en usine** dans la carte.
     → Recherchez la ligne contenant "Adresse physique" (Windows) ou "link/ether" (Linux) pour obtenir votre adresse MAC.
     ````
 
-### <H3 STYLE="COLOR:GREEN;">**2.8. Un<a name="_page3_x40.00_y36.92"></a> switch (commutateur réseau)</h3>**
+### <H3 STYLE="COLOR:GREEN;">**2.7. Un<a name="_page3_x40.00_y36.92"></a> switch (commutateur réseau)</h3>**
 
-**Comment trouver l'adresse MAC à partir de l'adresse IP ?**
 
 Un **switch** est un équipement qui **transmet les données uniquement aux destinataires concernés**.  
 
 - Il fonctionne en **couche 2 (liaison de données)**.
 
-- Il **enregistre les adresses MAC** dans une table.  
+- Il **enregistre les adresses MAC** dans une table (CAM).
+
+
+
+### <H3 STYLE="COLOR:GREEN;">**2.8 Qu’est-ce que le **protocole ARP ?</h3>**
+
+🧩 Comment trouver l’adresse MAC à partir de l’adresse IP dans un réseau local ?
+
+Lorsque deux ordinateurs sont connectés au **même réseau local** via un **switch**, et que l’un d’eux veut envoyer un message à une **adresse IP locale**, il doit d'abord connaître **l’adresse MAC correspondante**.
+
+Mais **l’ordinateur ne connaît que l’adresse MAC de destination**. Il va donc utiliser un protocole spécifique : **ARP** (Address Resolution Protocol).
+
+🧠 Que fait ARP ?
+
+Le **protocole ARP** permet de faire le lien entre une **adresse IP** et l’**adresse MAC** associée dans le même réseau local.
+
+⚙️ Étapes détaillées :
+
+1. 🖥️ **Notre ordinateur veut envoyer un message à l’IP `192.168.1.11`**
+   Il vérifie si cette IP est dans le **même sous-réseau** que lui (grâce au masque de sous-réseau).
+   Si c’est le cas → **pas besoin de passer par la passerelle**.
+
+2. 🔍 Il **cherche dans son cache ARP** (mémoire temporaire) :
+
+   > "Est-ce que je connais déjà l’adresse MAC correspondant à `192.168.1.11` ?"
+
+3. ❌ Si l’adresse MAC **n’est pas connue** :
+   il envoie un **message ARP en broadcast** (diffusion) sur le réseau :
+
+   ```
+   Qui a l'adresse IP 192.168.1.11 ? Donne-moi ton adresse MAC !
+   ```
+
+4. 📨 L’ordinateur ayant cette adresse IP (`192.168.1.11`) **répond directement** :
+
+   ```
+   Moi ! Mon adresse MAC est 00:1A:2B:3C:4D:5E
+   ```
+
+5. ✅ Notre ordinateur **enregistre cette correspondance dans sa table ARP** et peut maintenant **envoyer les données au bon destinataire** via son adresse MAC.
+
+
+
+???+ question "Activité n°2"
+    Afficher la table ARP locale (IP → MAC) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
+
+    * Sous **Windows** :
+
+      ```bash
+      arp -a
+      ```
+
+    * Sous **Linux / macOS** :
+
+      ```bash
+      ip neigh
+      ```
 
 
 
@@ -556,35 +611,7 @@ Exemple :
 - La box internet fait office de **routeur** entre le réseau domestique (Wi-Fi) et Internet. 
 
 
-### <H3 STYLE="COLOR:GREEN;">**1.6 Qu’est-ce que le **protocole ARP ?</h3>**
 
-📖 Définition :
-
-**ARP (Address Resolution Protocol)** est un protocole qui permet de retrouver l’**adresse MAC** associée à une **adresse IP**, **dans un réseau local (LAN)**.
-
-🔁 Fonctionnement de base :
-
-| Étape                                         | Action                                                           |
-| --------------------------------------------- | ---------------------------------------------------------------- |
-| 1️⃣                                           | L’ordinateur A veut envoyer un paquet IP à `192.168.1.10`        |
-| 2️⃣                                           | Il regarde dans sa **table ARP** s’il connaît déjà l’adresse MAC |
-| 3️⃣                                           | Si non, il envoie une **requête ARP** en broadcast :             |
-| `Qui a 192.168.1.10 ?`                        |                                                                  |
-| 4️⃣                                           | L’ordinateur B (ayant cette IP) répond en unicast :              |
-| `C’est moi, voici ma MAC : 08:00:27:65:A3:1F` |                                                                  |
-| 5️⃣                                           | A stocke l’adresse MAC dans sa table ARP et envoie le paquet     |
-
-
-La **table ARP** est une **mémoire temporaire** (cache)  
-
-ARP travaille entre la **couche Réseau (IP)** et la **couche Liaison (MAC)**  et utilise le **broadcast** pour la requête 
-
-???+ question "Activité n°2"
-    Afficher la table ARP locale (IP → MAC) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
-
-    ```bash
-    arp -a
-    ```
 
 ### <H3 STYLE="COLOR:GREEN;">**1.7. Autres commandes sur un réseau</h2>**
 
