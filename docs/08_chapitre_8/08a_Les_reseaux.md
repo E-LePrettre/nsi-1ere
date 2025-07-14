@@ -582,6 +582,49 @@ Le **protocole ARP** permet de faire le lien entre une **adresse IP** et l’**a
 ### <H3 STYLE="COLOR:GREEN;">**2.9 La trame</h3>**
 
 
+Notre ordinateur va **ajouter une nouvelle entête** au paquet IP :
+👉 **l'entête Ethernet**, utilisée pour l’envoi dans le **réseau local** (LAN).
+
+Elle est constituée de :
+
+* **l'adresse MAC source** (notre machine)
+* **l'adresse MAC de destination** (machine cible ou passerelle)
+* (et d'autres champs comme le type, mais non abordés ici)
+
+
+![](trame.png)
+
+### <H3 STYLE="COLOR:GREEN;">**2.10. Le modèle TCP/IP</h3>**
+
+![](16225672656323_P2C5-3.png)
+
+
+
+📚 **Comparaison des modèles OSI et TCP/IP avec explication des couches**
+
+Le **modèle OSI** (à gauche) est un modèle théorique à 7 couches qui décrit **comment les données circulent** dans un réseau.
+Le **modèle TCP/IP** (à droite) est plus **réaliste et utilisé dans Internet**. Il regroupe certaines couches de l’OSI.
+
+
+🎯 Dans le **modèle TCP/IP** :
+
+* Les **couches 5 à 7** de l'OSI sont regroupées en **Application**.
+* Les couches **1 et 2** sont regroupées en **Accès au réseau**.
+* Les couches **Transport** et **Internet** correspondent respectivement aux couches 4 et 3 de l’OSI.
+
+Lorsque l'ordinateur 1 veut tranféerer des fichiers à l'ordinateur 2 sur le même réseau local :
+
+- **couche application** : il utilise le protocole FTP 
+- **couche transport** : les données sont encapsulées avec l'entête TCP
+- **couche internet** : ce segment est encapsulé avec l'entête IP (IP source, IP destination)
+- **couche réseau** : ce paquet est encapsulé avec l'entête Ethernet
+
+![](encapsulation.png)
+
+La trame est ensuite envoyé à l'ordinateur 2 qui va ensuite décapsuler chaque entête.
+
+![](decapsulation.png)
+
 ## <H2 STYLE="COLOR:BLUE;">**3. Deuxième situation : <a name="3456"></a> communication entre réseaux locaux (Internet)</h2>**
 
 
