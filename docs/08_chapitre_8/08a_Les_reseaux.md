@@ -643,6 +643,43 @@ La trame est ensuite envoyé à l'ordinateur 2 qui va ensuite **décapsuler** ch
 
 ## <H2 STYLE="COLOR:BLUE;">**3. Deuxième situation : <a name="3456"></a> communication entre réseaux locaux (Internet)</h2>**
 
+### <H3 STYLE="COLOR:GREEN;"> **3.1. La résolution de nom : obtenir l'adresse IP du site</h3>**
+
+
+L’utilisateur saisit une URL dans la barre d’adresse
+Exemple : `https://www.exemple.com/index.html`
+
+L’URL est composée de :
+
+- Protocole : https://
+
+- Nom de domaine : www.exemple.com
+
+- Chemin : /index.html
+
+Mais cette adresse n’existe pas sous cette forme sur Internet. 
+En réalité, chaque site est identifié par une **adresse IP**.
+
+C’est le **serveur DNS (Domain Name System)** qui est chargé de traduire le nom de domaine en adresse IP.
+
+![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.031.jpeg)
+
+**Processus DNS**
+
+1 Le navigateur vérifie d'abord dans **son cache** s'il possède déjà l'IP associée au site.
+
+2 S’il ne la trouve pas, il envoie une requête DNS à :
+
+   1. La **box internet** locale.
+
+   2. Le **serveur DNS du fournisseur d'accès (FAI)**.
+
+   3. Un **serveur DNS public** (ex : Google DNS `8.8.8.8`).
+
+3 Une fois l’IP récupérée, elle est renvoyée à l’ordinateur.
+
+
+
 L'ordinateur M9 d'adresse IP 
 @source 192.168.1.1/24
 
@@ -651,7 +688,7 @@ veut communiquer avec une machine d'adresse IP
 
 ![](destination.png)
 
-### <H3 STYLE="COLOR:GREEN;">**3.1. Le rôle du routeur</h3>**
+### <H3 STYLE="COLOR:GREEN;">**3.2. Le rôle du routeur</h3>**
 
 Tout d'abord, on cherche à savoir si les deux adresses IP font partie du même réseau local.
 
@@ -700,7 +737,7 @@ Un **routeur** :
 ![](routeur.png){ width=35%; .center }
 
 
-### <H3 STYLE="COLOR:GREEN;">**3.2. Que fait le routeur ?</h3>**
+### <H3 STYLE="COLOR:GREEN;">**3.3. Que fait le routeur ?</h3>**
 
 
 Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adresses IP**. Il est connecté à **deux sous-réseaux** et à **deux autres routeurs**.
@@ -796,7 +833,7 @@ Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adress
 ![](transfert.png)
 
 
-### <H3 STYLE="COLOR:GREEN;">**1.7. Autres commandes sur un réseau</h2>**
+## <H2 STYLE="COLOR:BLUE;">**4. Autres commandes sur un réseau</h2>**
 
 ???+ question "Activité n°3"
     Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS), utilisez les commandes suivantes pour observer et analyser le réseau :  
@@ -824,42 +861,6 @@ Lorsqu’on veut afficher une page Web, plusieurs éléments interviennent :
 Lorsqu’un utilisateur souhaite afficher une page Web en entrant une URL dans son navigateur, plusieurs étapes techniques se déroulent en arrière-plan. 
 
 
-### <H3 STYLE="COLOR:GREEN;"> **2.1. La résolution de nom : obtenir l'adresse IP du site</h3>**
-
-
-L’utilisateur saisit une URL dans la barre d’adresse
-Exemple : `https://www.exemple.com/index.html`
-
-L’URL est composée de :
-
-- Protocole : https://
-
-- Nom de domaine : www.exemple.com
-
-- Chemin : /index.html
-
-Mais cette adresse n’existe pas sous cette forme sur Internet. 
-En réalité, chaque site est identifié par une **adresse IP**.
-
-C’est le **serveur DNS (Domain Name System)** qui est chargé de traduire le nom de domaine en adresse IP.
-
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.031.jpeg)
-
-**Processus DNS**
-
-1 Le navigateur vérifie d'abord dans **son cache** s'il possède déjà l'IP associée au site.
-
-2 S’il ne la trouve pas, il envoie une requête DNS à :
-
-   1. La **box internet** locale.
-
-   2. Le **serveur DNS du fournisseur d'accès (FAI)**.
-
-   3. Un **serveur DNS public** (ex : Google DNS `8.8.8.8`).
-
-3 Une fois l’IP récupérée, elle est renvoyée à l’ordinateur.
-
-**Exemple :** L’adresse IP de `www.exemple.com` pourrait être `200.16.0.1`.
 
 
 
