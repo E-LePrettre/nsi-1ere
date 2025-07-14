@@ -62,7 +62,7 @@ Ce sont les équipements chargés **d’acheminer les données** entre les termi
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**1.3. Types de connexions réseau</h3>**
+### <H3 STYLE="COLOR:GREEN;">**2.6. Types de connexions réseau</h3>**
 
 🔸 **Connexions filaires :**
 
@@ -221,6 +221,299 @@ Cette en-tête contient plusieurs informations essentielles pour que le message 
 
 ![](segment.png)
 
+### <H3 STYLE="COLOR:GREEN;">**2.5. Anatomie d'une adresse IP</h3>**
+
+
+On souhaite envoyer des données à une machine.
+On connaît son **adresse IP**, mais **on ne sait pas sur quel réseau local elle se trouve** ni **comment l’atteindre physiquement**.
+
+#### <H4 STYLE="COLOR:MAGENTA;">**2.5.1. Adresse IP</h4>**
+
+📌 Définition :
+
+L’**adresse IP** (Internet Protocol) est une **adresse logique**, **temporaire ou permanente**, qui permet d’**identifier un équipement sur un réseau**.
+
+➤ Elle est utilisée pour acheminer les données vers la bonne machine, que ce soit dans un **réseau local** ou sur **Internet**.
+
+📌 **Exemple d'adresse IP** : `192.168.1.10`
+
+➤ Cette adresse est **liée à un réseau ou un sous-réseau**. Elle permet de savoir à **quel réseau appartient l'appareil**.
+
+
+
+🌐 Il existe deux versions d’adresses IP :
+
+* **IPv4** (32 bits) → format classique : `192.168.1.1`
+* **IPv6** (128 bits) → format étendu : `2001:db8::ff00:42:8329`
+
+
+> ℹ️ **Pourquoi IPv6 ?**
+> Le stock d’adresses IPv4 (environ **4,3 milliards**) est **presque entièrement épuisé**.
+> L’IPv6 permet de générer un **nombre quasi infini d’adresses** pour répondre à la croissance des appareils connectés.
+
+
+
+#### <H4 STYLE="COLOR:MAGENTA;">**2.5.2. Adresse<a name="_page1_x40.00_y181.92"></a> machine</h4>**
+
+
+
+> Une **adresse IP** est composée de **deux parties** :
+>
+> * **NetID** (ou **identifiant du réseau**) : permet d’identifier le réseau auquel appartient la machine.
+> * **HostID** (ou **identifiant de l’hôte**) : permet d’identifier une **machine spécifique** au sein de ce réseau.
+
+🧪 **Exemple :**
+
+Adresse IP : `131.254.100.48/24`
+
+Cela signifie que :
+
+* Les **24 premiers bits** correspondent à l’**identifiant du réseau (NetID)**
+* Les **8 bits restants** sont utilisés pour identifier les **machines (HostID)**
+
+| Octet 1            | Octet 2            | Octet 3 | Octet 4 |
+| ------------------ | ------------------ | ------- | ------- |
+| 131                | 254                | 100     | 48      |
+| ⬅️ NetID (24 bits) | ➡️ HostID (8 bits) |         |         |
+
+🧠 Tous les appareils du **même réseau** auront une adresse IP de la forme :
+`131.254.100.xxx`
+
+❓**Combien de machines sont possibles sur ce réseau ?**
+
+* Si l’**HostID occupe 8 bits**, cela donne :
+  $2^8 = 256$ **adresses possibles**
+
+* Mais **deux adresses sont réservées** :
+
+  * `131.254.100.0` → **adresse du réseau**
+  * `131.254.100.255` → **adresse de diffusion** (**broadcast**)
+
+➡️ Il reste donc :
+$256 - 2 = 254$
+**machines adressables** sur ce réseau.
+
+
+#### <H4 STYLE="COLOR:MAGENTA;">**2.5.3. Adresse<a name="_page1_x40.00_y612.92"></a> du sous réseau et masque de sous réseau</h4>**
+
+
+✅ Le masque de sous-réseau 
+
+Un **masque de sous-réseau** permet de **découper un réseau IP** en **sous-réseaux plus petits**, et de déterminer :
+
+* l’**adresse du réseau**,
+* l’**adresse de broadcast**,
+* les **adresses des machines possibles (hôtes)**.
+
+🔹 Exemple 1 : IP `192.168.1.55/24`
+
+➡️ Masque : `255.255.255.0`
+
+| **Adresse IP** | **Masque**    | **Résultat (AND)** → Adresse réseau |
+| -------------- | ------------- | ----------------------------------- |
+| 192.168.1.55   | 255.255.255.0 | 192.168.1.0                         |
+
+L’**adresse de broadcast** est : `192.168.1.255`.
+
+🔍 Détail en binaire :
+
+```
+Adresse IP :     11000000.10101000.00000001.00110111
+Masque :         11111111.11111111.11111111.00000000
+Résultat (AND) : 11000000.10101000.00000001.00000000
+```
+
+✅ Table de vérité de l'opérateur logique **ET** (AND)
+
+| Entrée A | Entrée B | A AND B |
+| -------- | -------- | ------- |
+| 0        | 0        | 0       |
+| 0        | 1        | 0       |
+| 1        | 0        | 0       |
+| 1        | 1        | 1       |
+
+
+
+
+
+➤ Ce qui donne : **192.168.1.0** → adresse du réseau
+
+➤ L’adresse de **broadcast** sera : **192.168.1.255**
+
+🧠 Remarque pédagogique :
+
+Avec des masques simples comme `255.255.255.0`, on peut **deviner rapidement** :
+
+* l’adresse du sous-réseau (les parties à 255 ne changent pas),
+* l’adresse de broadcast (on met tous les bits à 1 dans la partie hôte).
+
+
+📌 Quelques exemples directs sans conversion binaire :
+
+```text
+192.168.1.239/24
+  → Adresse réseau :     192.168.1.0
+  → Partie hôte :        0.0.0.239
+  → Broadcast :          192.168.1.255
+
+192.168.1.239/16
+  → Adresse réseau :     192.168.0.0
+  → Partie hôte :        0.0.1.239
+  → Broadcast :          192.168.255.255
+
+192.168.1.239/8
+  → Adresse réseau :     192.0.0.0
+  → Partie hôte :        0.168.1.239
+  → Broadcast :          192.255.255.255
+```
+
+🔹 Exemple 2 : IP `90.98.100.3/21`
+
+➡️ Masque : `255.255.248.0` = `11111111.11111111.11111000.00000000`
+
+
+
+🔍 Calcul en binaire :
+
+```
+Adresse IP :     01011010.01100010.01100100.00000011
+Masque :         11111111.11111111.11111000.00000000
+Résultat (AND) : 01011010.01100010.01100000.00000000
+```
+
+➤ Adresse du sous-réseau : **90.98.96.0**
+
+🔁 Adresse de broadcast :
+
+```
+Broadcast :      01011010.01100010.01100111.11111111
+→ soit :         90.98.103.255
+```
+
+
+
+
+
+#### <H4 STYLE="COLOR:MAGENTA;">**2.5.4. Adresse<a name="_page2_x40.00_y473.92"></a> publique et adresse privée</h4>**
+
+
+✅ Tableau des types d'adresses IP
+
+| **Type d’adresse** | **Utilisation**                                                               | **Exemple**                  |
+| ------------------ | ----------------------------------------------------------------------------- | ---------------------------- |
+| **Publique**       | Adresse **visible sur Internet** ; attribuée par un fournisseur d’accès (FAI) | `8.8.8.8` (DNS de Google)    |
+| **Privée**         | Adresse **utilisée dans un réseau local** (non routable sur Internet)         | `192.168.1.1` (box Internet) |
+
+
+🔍 Détails importants à retenir
+
+* 📌 **Les adresses IP privées ne peuvent pas circuler sur Internet**. Elles sont réservées à une utilisation **interne** (maison, entreprise, établissement scolaire...).
+* 📌 Pour accéder à Internet, les équipements d’un réseau local utilisent un mécanisme appelé **NAT (Network Address Translation)**.
+
+
+🌐 NAT : Network Address Translation
+
+> Le **NAT** est une technique utilisée par les routeurs pour **traduire une adresse IP privée (locale)** en **adresse IP publique** lors d’un accès à Internet.
+>
+> Cela permet :
+>
+> * d’**économiser** les adresses IPv4 publiques,
+> * de **protéger** les machines internes (les adresses privées ne sont pas directement accessibles depuis Internet),
+> * de **faire communiquer plusieurs machines** avec une seule adresse publique.
+
+
+
+### <h3 style="color:green;">**2.6. Le paquet IP</h3>**
+
+Pour envoyer des données à une autre machine sur un réseau, il faut d'abord déterminer si cette machine appartient au **même réseau local** (LAN) que la nôtre.
+
+Cela se fait en **calculant l'adresse du réseau** à partir de l'adresse IP et du **masque de sous-réseau** à l'aide d'une opération logique **ET (AND binaire)**.
+
+🧮 Exemple : Machine locale
+
+* **Adresse IP :** `192.168.1.1`
+* **Masque de sous-réseau :** `255.255.255.0`
+
+En binaire :
+
+```
+Adresse IP : 11000000.10101000.00000001.00000001  
+Masque     : 11111111.11111111.11111111.00000000  
+Résultat   : 11000000.10101000.00000001.00000000  
+→ Adresse réseau : 192.168.1.0
+```
+
+🧮 Exemple : Machine de destination
+
+* **Adresse IP :** `192.168.1.11`
+* **Masque de sous-réseau :** `255.255.255.0`
+
+En binaire :
+
+```
+Adresse IP : 11000000.10101000.00000001.00001011  
+Masque     : 11111111.11111111.11111111.00000000  
+Résultat   : 11000000.10101000.00000001.00000000  
+→ Adresse réseau : 192.168.1.0
+```
+
+✅ Conclusion
+
+Ces deux machines ont la **même adresse réseau** : `192.168.1.0`
+➡ Elles sont donc **sur le même réseau local** et peuvent **communiquer directement**, **sans passer par une passerelle** ni un routeur.
+
+📦 Le paquet IP
+
+Pour envoyer des données à une autre machine, on encapsule les **données du segment TCP** dans un **paquet IP**, en y ajoutant une **en-tête IP** (ou *IP header*), qui contient notamment :
+
+* **l’adresse IP source**
+* **l’adresse IP de destination**
+
+Cela permet au réseau d'acheminer les données correctement vers leur destinataire.
+
+![](paquet.png)
+
+
+### <H3 STYLE="COLOR:GREEN;">**2.7. Une adresse MAC</h3>**
+
+🔎 Qui possède cette adresse IP de destination dans le sous-réseau ?
+
+Dans un réseau local, **chaque machine est connectée à un switch via une carte réseau** (Ethernet ou Wi-Fi).
+Chaque carte réseau possède un identifiant matériel unique : **l'adresse MAC**.
+
+📌 Qu’est-ce qu’une adresse MAC ?
+
+L’**adresse MAC** (Media Access Control) est un **identifiant physique unique** attribué à chaque carte réseau.
+Elle est généralement **gravée en usine** dans la carte.
+
+* **Format :** 6 octets (48 bits)
+* **Exemple :** `00:1A:2B:3C:4D:5E`
+
+🧭 Rôle de l’adresse MAC
+
+* Elle permet **d’identifier une machine de manière unique** dans un réseau local.
+* Elle est utilisée par les protocoles de la **couche 2 (liaison de données)** du modèle OSI.
+* **Elle ne sort pas du réseau local** : elle n’est pas utilisée sur Internet.
+
+
+
+???+ question "🧪 Activité n°1 — Trouver votre adresse MAC"
+Ouvrez un terminal et tapez la commande suivante pour afficher les informations réseau de votre machine :
+
+  ````
+  Sous **Windows** :
+  ```bash
+  ipconfig /all
+  ```
+  Sous **Linux / macOS** :
+  ```bash
+  ip a
+  ```
+
+  → Recherchez la ligne contenant "Adresse physique" (Windows) ou "link/ether" (Linux) pour obtenir votre adresse MAC.
+  ````
+
+
 
 
 ## <H2 STYLE="COLOR:BLUE;">**3. Deuxième situation : <a name="3456"></a> communication entre réseaux locaux (Internet)</h2>**
@@ -228,150 +521,8 @@ Cette en-tête contient plusieurs informations essentielles pour que le message 
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**1.1. Une adresse MAC</h3>**
-
-L’**adresse MAC** est un **identifiant physique unique** associé à une **carte réseau** (Wi-Fi, Ethernet).  
-
-Définition : identifiant physique **unique**, gravé dans la carte réseau  
-
-Exemple : 00:1A:2B:3C:4D:5E
-
-Fonction : identification au **niveau local** (réseau LAN)
-
-???+ question "Activité n°1. :"
-    Retrouver votre adresse MAC sous Windows ou Linux (ipconfig /all ou ip a) dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS)
-
-### <H3 STYLE="COLOR:GREEN;">**1.2. Une adresse IP</h3>**
-
-Définition : **adresse logique** **temporairement ou en permanence** qui identifie un équipement sur un réseau
-
-Exemple : 192.168.1.10
-
-Liée à un réseau / sous-réseau
-
-Utilisable dans un **réseau local** ou sur **Internet**
-
-Il existe deux versions :  
-
-  - **IPv4** (32 bits) : format classique `192.168.1.1`.
-
-  - **IPv6** (128 bits) : format `2001:db8::ff00:42:8329`.  
-
-ℹ️ **Pourquoi IPv6 ?** L’IPv4 est en cours de remplacement par l’IPv6 car les 4,3 milliards d’adresses IPv4 sont presque toutes utilisées.
 
 
-### <H3 STYLE="COLOR:GREEN;">**1.3. Anatomie<a name="_page1_x40.00_y162.92"></a> d’une adresse IP</h3>**  
-#### <H4 STYLE="COLOR:MAGENTA;">**1.3.1. Adresse<a name="_page1_x40.00_y181.92"></a> machine**</H4>
-
-Une adresse IP est divisée en **deux parties** : 
-
-- **NetID (identifiant du réseau)** : identifie le réseau.  
-
-- **HostID (identifiant de l’hôte)** : identifie une machine spécifique sur ce réseau.  
-
-Exemple : 
-
-Si une machine a l’adresse `131.254.100.48/24`, cela signifie :  
-
-| **Réseau** | **Réseau** | **Réseau** | **Hôte** |  
-|-----------|-----------|-----------|-----------|  
-| 131       | 254       | 100       | 48        |  
-
-- Tous les appareils du même réseau auront une adresse commençant par `131.254.100.xxx`.  
-
-- Le `/24` signifie que **24 bits** sont utilisés pour désigner le réseau, laissant **8 bits** pour identifier les machines.  
-
-
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.015.png)
-
-
-
-**Combien de machines sont adressables sur ce réseau ?**
-
-On a l’identification de l’interface réseau de la machine comprend **8 bits**, on peut donc avoir $2^8$ = **256 possibilités** soit 256-2 = **254 machines différentes** dans le réseau.  
-
-Il y a deux **adresses réservées** : 
-
-- la **zéro (adresse du sous réseau)** 
-
-- la **255** (c’est le **broadcast (adresse de diffusion)** : envoie vers toutes les machines) 
-
-
-#### <H4 STYLE="COLOR:MAGENTA;">**1.3.2. Adresse<a name="_page1_x40.00_y612.92"></a> du sous réseau et masque de sous réseau**</H4>
-
-
-Un **masque de sous-réseau** permet de découper un réseau en sous-réseaux plus petits.  
-
-👉 **Exemple avec `192.168.1.55/24` (masque `255.255.255.0`)**  
-
-| **Adresse IP**         | **Masque**          | **Résultat AND** (Adresse réseau) |  
-|------------------------|--------------------|-----------------------------------|  
-| `192.168.1.55`       | `255.255.255.0`    | `192.168.1.0`                    |  
-
-L’adresse de **broadcast** sera `192.168.1.255`.  
-
-
-On obtient **l'adresse du sous réseau** avec l'opérateur AND  
-
-**Exemple 1 : Par exemple : Voici une IPv4 192.168.1.55/24 et son masque de sous réseau 255.255.255.0** En binaire cela donne 
-```
-  	 11000000.10101000.00000001.00110111 
-AND  11111111.11111111.11111111.00000000
-
-   	 11000000.10101000.00000001.000000000 
-```
-(AND : cela fait 1 quand les deux bits sont à 1) cela fait :
-
-* soit 192.168.1.0 **c'est l'adresse du (sous) réseau**.
-
-* et 192.168.1.255 **c'est l'adresse du broadcast**.
-
-On comprend vite que donner ces réponses avec des masques de 255 et 0 **est très simple** et ne nécessite pas le passage en binaire. 
-```
-192.168.1.239/24
- 	=> 192.168.1.0 pour le sous réseau
-	=> 0.0.0.239 pour la partie hôte
-	=> 192.168.1.255 pour le broadcast
-192.168.1.239/16
- 	=> 192.168.0.0 pour le sous réseau
-	=> 0.0.1.239 pour la partie hôte
-	=> 192.168.255.255 pour le broadcast
-192.168.1.239/8
- 	=> 192.0.0.0 pour le sous réseau
-	=> 0.168.1.239 pour la partie hôte
-	=> 192.255.255.255 pour le broadcast
-```
-
-
-**Exemple 2 : Par exemple 90.98.100.3/21** indique que le masque est 11111111.11111111.11111000.00000000 soit 255.255.248.0 
-
-Cherchons l'adresse du sous réseau puis de l'hôte destination: 
-```
-     01011010.01100010.01100100.00000011 
-AND  11111111.11111111 .11111000.00000000
-
-     01011010.01100010.01100000.000000000 
-```
-
-soit 90.98.96.0 pour IP **du (sous) réseau**  
-
-L'adresse de broadcast sera: 
-```01011010.01100010.01100111.1111111111=> 90.98.103.255```
-
-
-
-#### <H4 STYLE="COLOR:MAGENTA;">**1.3.3. Adresse<a name="_page2_x40.00_y473.92"></a> publique et adresse privée**</H4>
-
-
-
-| **Type d’adresse** | **Utilisation** | **Exemple** |  
-|-------------------|----------------|------------|  
-| **Publique**  | Visible sur Internet | `8.8.8.8` (Google DNS) |  
-| **Privée**    | Réseaux internes | `192.168.1.1` (box internet) |  
-
-📌 Les adresses privées **ne sont pas routables** sur Internet.  
-
-📌 Un **NAT (Network Address Translation)** [^1] convertit une adresse privée en une adresse publique pour accéder à Internet. 
 
 
 
