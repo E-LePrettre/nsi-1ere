@@ -612,7 +612,7 @@ Un modèle en couches est une manière de découper le fonctionnement d’un ré
 
 Chaque couche a un rôle précis et ne communique qu’avec la couche juste au-dessus et la couche juste en dessous.
 
-![](16225672656323_P2C5-3.png){ width=50%; .center }
+![](16225672656323_P2C5-3.png){ width=40%; .center }
 
 
 
