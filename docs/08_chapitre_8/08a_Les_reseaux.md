@@ -6,8 +6,8 @@ title: 08a Les réseaux
 
 **Table des matières** 
 
-1. [Quelques éléments physiques d'un réseau](<#1234)
-2. [Que se passe-t-il lorsqu’on veut afficher une page web dans le navigateur ?](#_page0_x40.00_y569.92)
+1. [Quelques éléments physiques d'un réseau](#1234)
+2. [Première situation : communication dans un réseau local](#2345)
 2. [Observation d’un réseau](#_page5_x40.00_y260.92)
 3. [Le protocole ARP](#_page5_x40.00_y455.92)
 4. [Le modèle TCP/IP](#_page5_x40.00_y630.92)
