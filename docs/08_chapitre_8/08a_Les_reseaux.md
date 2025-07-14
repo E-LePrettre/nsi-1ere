@@ -833,192 +833,14 @@ Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adress
 ![](transfert.png)
 
 
-## <H2 STYLE="COLOR:BLUE;">**4. Autres commandes sur un réseau</h2>**
 
-???+ question "Activité n°3"
-    Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS), utilisez les commandes suivantes pour observer et analyser le réseau :  
 
-    | **Commande** | **Description** |
-    |-------------|----------------|
-    | `hostname` | Affiche le nom réseau de l’ordinateur. |
-    | `ipconfig` (ou `ifconfig` sous Linux/macOS) | Affiche un résumé des paramètres IP des interfaces réseau : adresse IP, masque de sous-réseau, passerelle par défaut, IPv4 ou IPv6. |
-    | `ipconfig /all` | Donne des informations détaillées : nom d’hôte, adresse MAC, serveurs DNS. |
-    | `ipconfig /flushdns` | Vide le cache DNS. |
-    | `ipconfig /displaydns` | Affiche le cache DNS. |
-    | `ping [adresse]` | Vérifie la connexion à une adresse IP ou un site web. Par exemple ping 8.8.8.8|
-    | `tracert [adresse]` (ou `traceroute` sous Linux) | Affiche les étapes (sauts) nécessaires pour atteindre une adresse réseau. Par exemple tracert www.google.fr|
-    | `netstat` | Affiche les ports actifs et les connexions réseau, utile pour détecter un virus. |
 
 
-## <H2 STYLE="COLOR:BLUE;">**2. Que<a name="_page0_x40.00_y569.92"></a> se passe-t-il lorsqu’on veut afficher une page web dans le navigateur ?</h2>**
 
-Lorsqu’on veut afficher une page Web, plusieurs éléments interviennent :
+### <H3 STYLE="COLOR:GREEN;">**3.4. Etablissement<a name="_page7_x40.00_y349.92"></a> de la communication TCP (« three way handshake »)</h3>**
 
-
-
-
-
-Lorsqu’un utilisateur souhaite afficher une page Web en entrant une URL dans son navigateur, plusieurs étapes techniques se déroulent en arrière-plan. 
-
-
-
-
-
-### <H3 STYLE="COLOR:GREEN;"> **2.2. L’envoi de la requête HTTP</h3>**
-
-Maintenant que l’IP du site est connue, l’ordinateur peut envoyer une requête pour récupérer la page Web.
-
-**Construction de la requête**
-
-1. **Définition du type de données** : La couche application (couche 4 du modèle TCP/IP) décide d’envoyer une requête **HTTP**.
-
-2. **Découpe des données** : La couche transport (couche 3) applique le protocole **TCP** pour segmenter la requête.
-
-3. **Ajout des adresses IP** : La couche Internet (couche 2) encapsule les données avec les adresses **IP source et destination**.
-
-4. **Encapsulation Ethernet** : La couche réseau (couche 1) ajoute les adresses **MAC** et envoie la trame sur le réseau.
-
-On verra 
-
-![Schéma des couches du modèle TCP/IP](16225672656323_P2C5-3.png)
-
-#### **3. L’intermédiaire : les routeurs et l’ARP**
-
-Avant d’arriver sur Internet, la requête doit être acheminée vers **la passerelle** (généralement la box).
-
-1. L’ordinateur vérifie sa **table ARP** (Address Resolution Protocol) pour savoir à quelle **adresse MAC** envoyer la requête.
-
-2. Si l’adresse MAC de la passerelle est inconnue, une **requête ARP** est diffusée sur le réseau local pour la trouver.
-
-3. Une fois connue, la requête est envoyée vers la **box**.
-
-À chaque passage par un routeur, l’adresse MAC change, mais **l’adresse IP reste identique**.
-
-![Processus ARP et transmission des paquets](01.webp)
-
-![Processus ARP et transmission des paquets](02.webp)
-
-![Processus ARP et transmission des paquets](03.webp)
-
-![Processus ARP et transmission des paquets](04.webp)
-
-#### **4. L’acheminement de la requête sur Internet**
-
-La requête quitte le réseau local et est transmise d’un **routeur à un autre** sur Internet.
-
-1. Chaque routeur examine l’**adresse IP de destination** et choisit le **meilleur chemin** selon sa table de routage.
-
-2. La requête traverse plusieurs **fournisseurs d’accès et backbone Internet** jusqu’au serveur du site Web.
-
-3. Une fois arrivée sur le serveur, elle est traitée par le logiciel Web (ex : Apache, Nginx).
-
-![Illustration du routage des paquets sur Internet](drawit-diagram-225.png)
-
-
-#### **5. La réponse du serveur Web**
-
-Le serveur **lit la requête HTTP** et prépare la réponse avec la page demandée.
-
-1. La page est convertie en **segments TCP**, puis en **paquets IP**, encapsulés dans des **trames Ethernet**.
-
-2. Les paquets retournent vers l’ordinateur **par un chemin qui peut être différent de l’aller**.
-
-3. Lors de la réception, l’ordinateur effectue une **désencapsulation** pour récupérer le contenu.
-
-![Retour des paquets et affichage dans le navigateur](ssl.jpg)
-
-
-#### **6. Affichage de la page Web**
-
-Une fois les données reçues :
-
-1. Le **navigateur web** réassemble les paquets.
-
-2. Il **interprète le code HTML, CSS et JavaScript**.
-
-3. La page Web s’affiche sur l’écran.
-
-📌 **Remarque** : Si certains fichiers (images, styles CSS) sont en cache, ils ne sont pas téléchargés à nouveau.
-
-
-
-#### **7. Résumé des étapes**
-
-| Étape | Action |
-|-------|--------|
-| **1** | L'utilisateur entre l’URL dans le navigateur |
-| **2** | Recherche de l’adresse IP via DNS |
-| **3** | Envoi d’une requête HTTP vers le serveur |
-| **4** | Passage par plusieurs routeurs sur Internet |
-| **5** | Réponse du serveur contenant la page Web |
-| **6** | Affichage et rendu dans le navigateur |
-
-
-
-
-
-
- 
-
-## <H2 STYLE="COLOR:BLUE;">**4. Le<a name="_page5_x40.00_y630.92"></a> modèle TCP/IP</h2>**
-### <H3 STYLE="COLOR:GREEN;">**4.1. Principe<a name="_page5_x40.00_y658.92"></a> des couches</h3>**
-
-Le modèle **OSI** (Open Systems Interconnection) a été conçu dans les années 70 pour normaliser les communications entre ordinateurs.  
-
-Cependant, le modèle **TCP/IP**, plus simple et adopté dès 1983 sur **Arpanet** (ancêtre d’Internet), s’est imposé.  
-
-📌 **TCP/IP regroupe un ensemble de protocoles**, dont **TCP** (Transmission Control Protocol) et **IP** (Internet Protocol), initialement développés par la **DARPA** (Défense américaine).
-
-
-### <H3 STYLE="COLOR:GREEN;">**4.2. Les<a name="_page6_x40.00_y147.92"></a> rôles des couches dans le modèle TCP/IP</h3>**
-
-Le modèle **TCP/IP** comporte **4 couches**, chacune ayant un rôle précis :  
-
-| **Couche** | **Rôle** |
-|-----------|---------|
-| **Application** (4) | Gère les données envoyées (ex : HTTP, FTP, DNS). |
-| **Transport** (3) | Assure la transmission fiable des données (ex : TCP, UDP). |
-| **Internet** (2) | Responsable du routage des paquets (ex : IP). |
-| **Réseau** (1) | Acheminement physique des données (ex : Ethernet, Wi-Fi). |
-
-📌 **Exemple :** Lorsque vous chargez une page Web, les données passent par **ces couches** pour être envoyées puis reçues.
-
-
-### <H3 STYLE="COLOR:GREEN;">**4.3. Principe<a name="_page6_x40.00_y290.92"></a> de l’encapsulation</h3>**
-
-![](Sans.png)
-
-Lorsque des données sont envoyées sur le réseau :  
-
-1. Chaque couche **ajoute une en-tête** aux données.
-
-2. Ces en-têtes permettent d'identifier **les protocoles utilisés**. 
-
-3. À la réception, les couches **décryptent et suppriment** les en-têtes une par une (*désencapsulation*).  
-
-![](https://upload.wikimedia.org/wikipedia/commons/6/6b/Encapsulation_TCP-IP.png)
- 
-
-### <H3 STYLE="COLOR:GREEN;">**4.4. Application<a name="_page6_x40.00_y409.92"></a> au modèle  TCP/IP</h3>**   
-
-![](img04.png)
-
-En **émission** :
-
-- Chaque **paquet de données** traverse les **couches**, qui ajoutent une en-tête contenant les informations nécessaires au transport.  
-
-- Ex : Une requête HTTP sera **d’abord** encapsulée dans TCP, puis IP, puis Ethernet.  
-
-En **réception** :
-
-- Chaque couche **décode** et **supprime** les en-têtes, jusqu’à ce que le message atteigne l’application destinataire.  
-
-
-![](img02bis.png)
-
-L’entête est lu, interprétée et supprimée => **désencapsulation** 
-
-### <H3 STYLE="COLOR:GREEN;">**4.5. Etablissement<a name="_page7_x40.00_y349.92"></a> de la communication TCP (« three way handshake »)</h3>**
+AVANT d’envoyer les données TCP, on établit la connexion TCP → "three-way handshake" 
 
 Le protocole **TCP** établit une connexion en **3 étapes** pour garantir un échange fiable entre un client et un serveur.  
 
@@ -1045,7 +867,7 @@ Exemple avec des numéros de séquence :
 
 *Il existe une technique de piratage, appelée spoofing IP, permettant de corrompre cette relation d'approbation !*
 
-### <H3 STYLE="COLOR:GREEN;">**4.6. Fiabilité<a name="_page8_x40.00_y36.92"></a> des transferts : protocole du bit alterné</h3>**
+### <H3 STYLE="COLOR:GREEN;">**3.5. Fiabilité<a name="_page8_x40.00_y36.92"></a> des transferts : protocole du bit alterné</h3>**
 
 Le protocole TCP permet d’assurer le transfert des données de façon fiable. Pour cela, il possède un **système d’accusé de réception** permettant au client et au serveur de s’assurer de la bonne réception mutuelle des données.  
 
@@ -1081,7 +903,23 @@ Il en va de même pour le chevauchement d’acquittements. Le récepteur rejette
 
 La règle est relativement simple : la première trame envoyée par A aura pour drapeau 0, dès cette trame reçue par B, ce dernier va envoyer un accusé de réception avec le drapeau 1 (ce 1 signifie "la prochaine trame que A va m'envoyer devra avoir son drapeau à 1"). Dès que A reçoit l'accusé de réception avec le drapeau à 1, il envoie la 2e trame avec un drapeau à 1, et ainsi de suite... 
 
-*Pour aller encore plus loin : TCP sur site[ https://www.frameip.com/entete-tcp/ ](https://www.frameip.com/entete-tcp/) ![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.008.png)*
+![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.008.png)
+
+## <H2 STYLE="COLOR:BLUE;">**4. Autres commandes sur un réseau</h2>**
+
+???+ question "Activité n°3"
+    Dans une **fenêtre de terminal** (`cmd` sous Windows, `terminal` sous Linux/macOS), utilisez les commandes suivantes pour observer et analyser le réseau :  
+
+    | **Commande** | **Description** |
+    |-------------|----------------|
+    | `hostname` | Affiche le nom réseau de l’ordinateur. |
+    | `ipconfig` (ou `ifconfig` sous Linux/macOS) | Affiche un résumé des paramètres IP des interfaces réseau : adresse IP, masque de sous-réseau, passerelle par défaut, IPv4 ou IPv6. |
+    | `ipconfig /all` | Donne des informations détaillées : nom d’hôte, adresse MAC, serveurs DNS. |
+    | `ipconfig /flushdns` | Vide le cache DNS. |
+    | `ipconfig /displaydns` | Affiche le cache DNS. |
+    | `ping [adresse]` | Vérifie la connexion à une adresse IP ou un site web. Par exemple ping 8.8.8.8|
+    | `tracert [adresse]` (ou `traceroute` sous Linux) | Affiche les étapes (sauts) nécessaires pour atteindre une adresse réseau. Par exemple tracert www.google.fr|
+    | `netstat` | Affiche les ports actifs et les connexions réseau, utile pour détecter un virus. |
 
 ## <H2 STYLE="COLOR:BLUE;">**5. Menaces courantes sur les réseaux<a name="#_titre5"></a></h2>**
 
