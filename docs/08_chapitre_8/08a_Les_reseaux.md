@@ -706,9 +706,8 @@ Un **routeur** :
 Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adresses IP**. Il est connecté à **deux sous-réseaux** et à **deux autres routeurs**.
 
 1. **Réception de la trame :**
-   Il reçoit une trame Ethernet contenant un paquet IP.
-   → Il **décapsule** la trame pour lire l’**entête IP**.
-
+    Il reçoit une trame Ethernet contenant un paquet IP.
+    → Il **décapsule** la trame pour lire l’**entête IP**.
     ![](routeur_decapsulation.png){ width=75%; .center }
 
 2. **Comparaison :**
