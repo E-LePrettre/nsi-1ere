@@ -538,28 +538,28 @@ Le **protocole ARP** permet de faire le lien entre une **adresse IP** et l’**a
 
 ⚙️ Étapes détaillées :
 
-1. 🖥️ **Notre ordinateur veut envoyer un message à l’IP `192.168.1.11`**
+1 🖥️ **Notre ordinateur veut envoyer un message à l’IP `192.168.1.11`**
    Il vérifie si cette IP est dans le **même sous-réseau** que lui (grâce au masque de sous-réseau).
    Si c’est le cas → **pas besoin de passer par la passerelle**.
 
-2. 🔍 Il **cherche dans son cache ARP** (mémoire temporaire) :
+2 🔍 Il **cherche dans son cache ARP** (mémoire temporaire) :
 
    > "Est-ce que je connais déjà l’adresse MAC correspondant à `192.168.1.11` ?"
 
-3. ❌ Si l’adresse MAC **n’est pas connue** :
+3 ❌ Si l’adresse MAC **n’est pas connue** :
    il envoie un **message ARP en broadcast** (diffusion) sur le réseau :
 
    ```
    Qui a l'adresse IP 192.168.1.11 ? Donne-moi ton adresse MAC !
    ```
 
-4. 📨 L’ordinateur ayant cette adresse IP (`192.168.1.11`) **répond directement** :
+4 📨 L’ordinateur ayant cette adresse IP (`192.168.1.11`) **répond directement** :
 
    ```
    Moi ! Mon adresse MAC est 00:1A:2B:3C:4D:5E
    ```
 
-5. ✅ Notre ordinateur **enregistre cette correspondance dans sa table ARP** et peut maintenant **envoyer les données au bon destinataire** via son adresse MAC.
+5 ✅ Notre ordinateur **enregistre cette correspondance dans sa table ARP** et peut maintenant **envoyer les données au bon destinataire** via son adresse MAC.
 
 
 
