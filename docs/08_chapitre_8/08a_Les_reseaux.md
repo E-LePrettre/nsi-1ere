@@ -125,7 +125,39 @@ Voici ce qu'on doit envoyer et voici ce qu'on reçoit dans cet ordre
 
 ![](poeme.png)
 
+Plusieurs problèmes :
 
+- les vers arrivent dans le désordre
+
+- il manque des vers
+
+**Quelles solutions ?**
+
+1. numéroter les vers
+
+2. on demande un accusé de réception pour pouvoir renvoyer le vers s'il a été perdu
+
+### <H3 STYLE="COLOR:GREEN;">**2.3. les ports**</H3>
+
+Sur notre ordinateur, on utilise plusieurs logiciels en même temps. Par exemple, un navigateur Internet pour aller sur le web ou un logiciel pour échanger des fichiers.
+
+On se connecte à une machine qui offre différents services, par exemple un serveur web et un serveur de messagerie ou un serveur ftp et un serveur de messagerie.
+
+**Quel serveur va recevoir les données envoyées ?**
+
+On va associer un identifiant : un nombre à un logiciel. Ce nombre sera appelé le **port**.
+
+Il faudra ainsi ajouter le numéro de port avec les données à envoyer.
+
+![](port.png)
+
+La machine va ensuite répondre en énvoyant des données.
+
+**Quel logiciel va recevoir les données du serveur?**
+
+Là aussi il y a la notion de ports, c'est à dire lorsqu'on va envoyer des données on indiquera aussi le numéro de port du logiciel qui le recevra.
+
+![](port2.png)
 
 ## <H2 STYLE="COLOR:BLUE;">**3. Deuxième situation : <a name="3456"></a> communication entre réseaux locaux (Internet)**</h2>
 
