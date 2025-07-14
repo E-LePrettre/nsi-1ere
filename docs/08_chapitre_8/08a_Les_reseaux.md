@@ -44,7 +44,7 @@ Ce sont les **appareils utilisateurs**, situés en bout de chaîne, qui **émett
 * les **ordinateurs**
 * les **imprimantes**
 * les **téléphones**
-* des **voitures** (objets connectés)
+* des **objets connectés** (voiture, frigo, aspirateur robot,...)
 
 > 💡 Ces périphériques ont une **adresse IP** et une **adresse MAC**.
 
@@ -56,18 +56,15 @@ Ce sont les équipements chargés **d’acheminer les données** entre les termi
 
 * les **commutateurs** (aussi appelés **switchs**)
 * les **routeurs**
-* les **box** (modem/routeur combiné)
+* les **box** (modem/routeur/pare-feu combinée)
 
-> 💡 Ces équipements agissent aux **couches 2 et 3** du modèle OSI.
+> 💡 Ces équipements agissent aux **couches 2 et/ou 3** du modèle OSI.
 
 
 
 ### <H3 STYLE="COLOR:GREEN;">**2.6. Types de connexions réseau</h3>**
 
 🔸 **Connexions filaires :**
-
-* **Câble droit** : pour relier des appareils différents (PC ↔ switch)
-* **Câble croisé** : pour relier des appareils similaires (PC ↔ PC)
 
 🔸 **Connexions sans-fil :**
 
@@ -76,8 +73,7 @@ Ce sont les équipements chargés **d’acheminer les données** entre les termi
 
 🔸 **Connexions optiques :**
 
-* **Fibre monomode**
-* **Fibre multimode**
+* **Fibre optique**
 
 > 💡 Le type de connexion influence la **vitesse**, la **portée** et la **qualité** de la communication.
 
@@ -87,37 +83,46 @@ Ce sont les équipements chargés **d’acheminer les données** entre les termi
 Voici le réseau que l'on va étudier :
 ![](réseau.png)
 
-Ce réseau est constitué de sous-réseaux. Par exemple : 2 ordinateur, un switch et un routeur, ou un autre entre 2 routeurs...
+Ce réseau est composé de plusieurs sous-réseaux.
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.004.jpeg)
+Par exemple, un sous-réseau peut contenir deux ordinateurs, un switch et un routeur.
+
+Un autre sous-réseau peut relier deux routeurs entre eux, ou contenir d'autres équipements.
 
 On voudrait faire communiquer M9 avec un autre ordinateur de son réseau local
 
 ### <H3 STYLE="COLOR:GREEN;">**2.1. Le protocole TCP</h3>**
 
 
-> **Un protocole réseau** est un **ensemble de règles et de formats normalisés** qui permettent à **deux entités (ordinateurs, serveurs, équipements réseau, etc.) de communiquer entre elles** de manière fiable et compréhensible.
->
-> Le protocole **TCP (Transmission Control Protocol)** est l’un de ces protocoles. Il fonctionne à la **couche transport** du modèle TCP/IP. Il est responsable de la **gestion de la connexion**, du **contrôle des erreurs**, et de l’**acheminement fiable des données** d’un point à un autre sur le réseau.
+**Un protocole réseau** est un **ensemble de règles et de formats normalisés** qui permettent à **deux entités (ordinateurs, serveurs, équipements réseau, etc.) de communiquer entre elles** de manière fiable et compréhensible.
+
+Le protocole **TCP (Transmission Control Protocol)** est l’un de ces protocoles. Il fonctionne à la **couche transport** du modèle TCP/IP. Il est responsable de la **gestion de la connexion**, du **contrôle des erreurs**, et de l’**acheminement fiable des données** d’un point à un autre sur le réseau.
 
 
 
 ### <H3 STYLE="COLOR:GREEN;">**2.2. Envoi du message</h3>**
 
 
-> On souhaite envoyer un poème :
->
+On souhaite envoyer un poème :
+
 > **L’Albatros**
+>
 > *Charles Baudelaire*
 >
 > Souvent, pour s’amuser, les hommes d’équipage
+> 
 > Prennent des albatros, vastes oiseaux des mers,
+> 
 > Qui suivent, indolents compagnons de voyage,
+> 
 > Le navire glissant sur les gouffres amers.
 >
 > À peine les ont-ils déposés sur les planches,
+> 
 > Que ces rois de l’azur, maladroits et honteux,
+> 
 > Laissent piteusement leurs grandes ailes blanches
+> 
 > Comme des avirons traîner à côté d’eux.
 >
 > *(On ne transmet que les deux premiers quatrains)*
@@ -207,7 +212,7 @@ Le serveur **utilise ce même port source** pour répondre au bon logiciel.
 ### <H3 STYLE="COLOR:GREEN;">**2.4. les segments</h3>**
 
 
-Pour envoyer un message (par exemple, un **vers du poème**), on ajoute des **métadonnées** : c’est ce qu’on appelle **l’en-tête TCP** (ou **en-tête du segment TCP**).
+Pour envoyer un message (par exemple, un **vers du poème**), on ajoute des **métadonnées** aux données à transmettre : c’est ce qu’on appelle **l’en-tête TCP** (ou **en-tête du segment TCP**).
 
 Cette en-tête contient plusieurs informations essentielles pour que le message soit bien acheminé, reçu, et éventuellement reconstitué.
 
@@ -274,7 +279,7 @@ Cela signifie que :
 | Octet 1            | Octet 2            | Octet 3 | Octet 4 |
 | ------------------ | ------------------ | ------- | ------- |
 | 131                | 254                | 100     | 48      |
-| ⬅️ NetID (24 bits) | ➡️ HostID (8 bits) |         |         |
+|  | ⬅️ NetID (24 bits) |         |➡️ HostID (8 bits)         |
 
 🧠 Tous les appareils du **même réseau** auront une adresse IP de la forme :
 `131.254.100.xxx`
@@ -340,7 +345,7 @@ Résultat (AND) : 11000000.10101000.00000001.00000000
 
 ➤ L’adresse de **broadcast** sera : **192.168.1.255**
 
-🧠 Remarque pédagogique :
+🧠 Remarque  :
 
 Avec des masques simples comme `255.255.255.0`, on peut **deviner rapidement** :
 
@@ -460,7 +465,7 @@ Résultat   : 11000000.10101000.00000001.00000000
 ✅ Conclusion
 
 Ces deux machines ont la **même adresse réseau** : `192.168.1.0`
-➡ Elles sont donc **sur le même réseau local** et peuvent **communiquer directement**, **sans passer par une passerelle** ni un routeur.
+➡ Elles sont donc **sur le même réseau local** et peuvent **communiquer directement**, **sans passer par une passerelle** (routeur).
 
 📦 Le paquet IP
 
@@ -549,15 +554,15 @@ Le **protocole ARP** permet de faire le lien entre une **adresse IP** et l’**a
 3 ❌ Si l’adresse MAC **n’est pas connue** :
    il envoie un **message ARP en broadcast** (diffusion) sur le réseau :
 
-   ```
-   Qui a l'adresse IP 192.168.1.11 ? Donne-moi ton adresse MAC !
-   ```
+   
+   > Qui a l'adresse IP 192.168.1.11 ? Donne-moi ton adresse MAC !
+   
 
 4 📨 L’ordinateur ayant cette adresse IP (`192.168.1.11`) **répond directement** :
 
-   ```
-   Moi ! Mon adresse MAC est 00:1A:2B:3C:4D:5E
-   ```
+   
+   > Moi ! Mon adresse MAC est 00:1A:2B:3C:4D:5E
+   
 
 5 ✅ Notre ordinateur **enregistre cette correspondance dans sa table ARP** et peut maintenant **envoyer les données au bon destinataire** via son adresse MAC.
 
