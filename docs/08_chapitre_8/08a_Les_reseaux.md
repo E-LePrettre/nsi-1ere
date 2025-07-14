@@ -646,43 +646,56 @@ La trame est ensuite envoyé à l'ordinateur 2 qui va ensuite **décapsuler** ch
 ### <H3 STYLE="COLOR:GREEN;"> **3.1. La résolution de nom : obtenir l'adresse IP du site</h3>**
 
 
-L’utilisateur saisit une URL dans la barre d’adresse
-Exemple : `https://www.exemple.com/index.html`
+Voici la **correction et reformulation** complète de ta partie de cours :
 
-L’URL est composée de :
+---
 
-- **Protocole** : https://
+### <h3 style="color:green;">**3.1. La résolution de nom : obtenir l'adresse IP du site**</h3>
 
-- **Nom de domaine** : www.exemple.com
+Lorsqu’un utilisateur saisit une URL dans la barre d’adresse d’un navigateur, par exemple :
+`https://www.exemple.com/index.html`, le navigateur doit **trouver l’adresse IP** du serveur pour pouvoir lui envoyer une requête.
 
-- **Chemin** : /index.html
+🔍 **Structure d'une URL** :
 
-Mais cette adresse n’existe pas sous cette forme sur Internet. 
-En réalité, chaque site est identifié par une **adresse IP**.
+* **Protocole** : `https://` → indique le protocole utilisé pour la communication (ici HTTP sécurisé)
+* **Nom de domaine** : `www.exemple.com` → nom lisible pour l'humain
+* **Chemin** : `/index.html` → ressource demandée sur le serveur
 
-C’est le **serveur DNS (Domain Name System)** qui est chargé de traduire le nom de domaine en adresse IP.
-
-
-
-**Processus DNS**
-
-1 Le navigateur vérifie d'abord dans **son cache** s'il possède déjà l'IP associée au site.
-
-2 S’il ne la trouve pas, il envoie une requête DNS à :
-
-   1. La **box internet** locale.
-
-   2. Le **serveur DNS du fournisseur d'accès (FAI)**.
-
-   3. Un **serveur DNS public** (ex : Google DNS `8.8.8.8`).
-
-3 Une fois l’IP récupérée, elle est renvoyée à l’ordinateur.
+Cependant, sur Internet, les machines ne sont identifiées **ni par leur nom**, ni par leur URL, mais par leur **adresse IP**.
 
 
 
-L'ordinateur M9 d'adresse IP @source 192.168.1.1/24 veut communiquer avec une machine d'adresse IP @destination 192.168.3.2/24
+🌐 **Rôle du DNS (Domain Name System)**
 
-![](destination.png)
+Le **serveur DNS** est chargé de faire la correspondance entre un **nom de domaine** et son **adresse IP**. C’est l’équivalent d’un annuaire téléphonique pour Internet.
+
+
+
+🔄 **Processus de résolution DNS :**
+
+1. **Le navigateur consulte le cache local** :
+   Il vérifie s’il a déjà l’adresse IP correspondant au nom de domaine.
+
+2. **Si ce n’est pas le cas, il envoie une requête DNS** à :
+
+   * La **box internet** (DNS local)
+   * Le **serveur DNS du fournisseur d’accès à Internet (FAI)**
+   * Ou un **serveur DNS public** (ex. : Google DNS `8.8.8.8`, Cloudflare `1.1.1.1`)
+
+3. **Réponse du serveur DNS** :
+   Il retourne l’adresse IP associée au nom de domaine. Cette IP est alors stockée en cache pour les prochaines requêtes.
+
+
+
+💡 **Exemple réseau (machine M9)** :
+
+La machine M9 possède l’adresse IP `192.168.1.1/24`
+Elle souhaite contacter une autre machine à l’adresse `192.168.3.2/24`
+
+![Schéma destination](destination.png)
+
+
+
 
 ### <H3 STYLE="COLOR:GREEN;">**3.2. Le rôle du routeur</h3>**
 
@@ -730,13 +743,15 @@ Un **routeur** :
 
 💡 **Exemple courant :** la **box Internet** joue le rôle de routeur entre votre réseau domestique (Wi-Fi) et Internet.
 
-![](routeur.png){ width=35%; .center }
+
 
 
 ### <H3 STYLE="COLOR:GREEN;">**3.3. Que fait le routeur ?</h3>**
 
 
 Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adresses IP**. Il est connecté à **deux sous-réseaux** et à **deux autres routeurs**.
+
+![](routeur.png){ width=35%; .center }
 
 1. **Réception de la trame :**
 
@@ -834,72 +849,111 @@ Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adress
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**3.4. Etablissement<a name="_page7_x40.00_y349.92"></a> de la communication TCP (« three way handshake »)</h3>**
+Voici une **correction complète** et reformulation de ta partie de cours, avec des ajouts mineurs pour améliorer la clarté et la pédagogie :
 
-AVANT d’envoyer les données TCP, on établit la connexion TCP → "three-way handshake" 
+---
 
-Le protocole **TCP** établit une connexion en **3 étapes** pour garantir un échange fiable entre un client et un serveur.  
+### <h3 style="color:green;">**3.4. Établissement de la communication TCP (« Three-Way Handshake »)**</h3>
 
-| Étape | Action |
-|------|--------|
-| **1. SYN** | Le client envoie une demande de connexion (`SYN`). |
-| **2. SYN-ACK** | Le serveur accepte et répond (`SYN-ACK`). |
-| **3. ACK** | Le client confirme (`ACK`). |
+Avant de pouvoir échanger des données avec fiabilité, le protocole **TCP (Transmission Control Protocol)** met en place une **connexion** entre le client et le serveur via un processus appelé **three-way handshake**.
 
-Exemple avec des numéros de séquence :  
+🤝 **Trois étapes pour établir une connexion TCP fiable** :
 
-- Client → Serveur : **SYN (seq=1010)**  
+| Étape          | Description                                                                                      |
+| -------------- | ------------------------------------------------------------------------------------------------ |
+| **1. SYN**     | Le client envoie une demande de connexion au serveur : un segment **SYN** (synchronize).         |
+| **2. SYN-ACK** | Le serveur accepte la demande et répond avec un segment **SYN-ACK** (synchronize + acknowledge). |
+| **3. ACK**     | Le client confirme la réponse du serveur avec un segment **ACK** (acknowledge).                  |
 
-- Serveur → Client : **SYN-ACK (seq=1011, ack=3002)**  
+ 🔢 **Exemple avec des numéros de séquence** :
 
-- Client → Serveur : **ACK (seq=3003)**  
+* **Client → Serveur** : `SYN` avec **seq = 1010**
+* **Serveur → Client** : `SYN-ACK` avec **seq = 3001**, **ack = 1011**
+* **Client → Serveur** : `ACK` avec **ack = 3002**
 
-![](https://upload.wikimedia.org/wikipedia/commons/9/92/Three-way-handshake.png)
+📌 **Pourquoi cette étape est-elle indispensable ?**
 
-📌 **Pourquoi cette étape est-elle importante ?** Elle évite l’envoi de données inutiles si la connexion ne peut être établie.
+Elle garantit que :
+
+* Le serveur **est bien en ligne** et prêt à recevoir les données.
+* Le client **est bien identifié**.
+* La **fiabilité de la transmission** est assurée dès le début.
+
+Elle permet donc **d’éviter l’envoi de données inutiles** si la connexion ne peut être établie.
+
+📷 Illustration visuelle :
+
+![Three-way handshake](https://upload.wikimedia.org/wikipedia/commons/9/92/Three-way-handshake.png)
+
+⚠️ Sécurité : attention au **spoofing IP**
+
+> Il existe une attaque appelée **IP spoofing**, dans laquelle un pirate falsifie l'adresse IP source lors de l'envoi d'un paquet SYN. Cette technique peut être utilisée pour **perturber le handshake TCP**, ou mener des attaques de type **SYN Flood**.
 
 
-![](img05.png)
-
-*Il existe une technique de piratage, appelée spoofing IP, permettant de corrompre cette relation d'approbation !*
 
 ### <H3 STYLE="COLOR:GREEN;">**3.5. Fiabilité<a name="_page8_x40.00_y36.92"></a> des transferts : protocole du bit alterné</h3>**
 
-Le protocole TCP permet d’assurer le transfert des données de façon fiable. Pour cela, il possède un **système d’accusé de réception** permettant au client et au serveur de s’assurer de la bonne réception mutuelle des données.  
 
-- **Cas où l’échange se passe correctement** 
+Le protocole **TCP** garantit un **transfert fiable des données**. Il repose notamment sur un système d'**accusé de réception**, permettant à l'émetteur et au récepteur de vérifier que les données ont bien été reçues.
 
-Dans le protocole du **bit alterné**, l’émetteur envoie les données encapsulées dans des trames contenant entre autres informations techniques, **le bit de séquence.** La couche émettrice **alterne la valeur du bit de séquence d’une trame émise à l’autre**.  
+🔄 **Le protocole du bit alterné**
 
-- Lors de l’émission d’un segment, un numéro d’ordre est associé. La première trame aura pour **drapeau (flag) 0**.  
+Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame envoyée, et un **accusé de réception (ACK)** pour valider la bonne réception.
 
-- A réception d’un segment de donnée, la machine réceptrice va retourner un segment de donnée dont le **drapeau** (flag) ACK (acknowledgement : accusé de réception) **est à 1** (afin de signaler qu’il l’a bien reçu) accompagné d’un numéro d’accusé de réception égal au **numéro d’ordre précédent** qui seront ajouter au niveau de l’entête. 
+✅ **Cas normal : tout se passe bien**
+
+* À chaque trame envoyée, l’émetteur **alterne la valeur** du bit de séquence (0 → 1 → 0 → ...).
+* Le récepteur renvoie une trame ACK contenant le **bit de séquence attendu** pour la trame suivante.
+
+🧾 **Exemple :**
+
+* Trame 1 : bit de séquence = 0
+* Réponse : ACK avec bit = 1 (attente de la prochaine trame avec bit 1)
+* Trame 2 : bit de séquence = 1
+* Réponse : ACK avec bit = 0
+  ...
 
 ![](img06.png)
 
-- **Cas où la trame émise n’est pas reçue** 
 
-Si la trame émise n’est pas reçue, l’émetteur réagit. Il constate, en effet, qu’il n’a pas reçue d’accusé de réception dans les délais et renvoie la trame 
+
+❌ **Cas 1 : trame non reçue**
+
+Si une trame n’est **pas reçue** ou si l'ACK n'arrive pas à temps :
+
+* L’émetteur **renvoie** la trame après un délai.
 
 ![](img07.png)
 
-- **Cas du chevauchement de message** 
 
-En fait la trame n’a pas été perdu, elle arrive tout de même à destination. Le récepteur reçoit finalement deux trames identiques, mais écartera la seconde car son bit de séquence ne correspondra pas au bit attendu.  
+
+⚠️ **Cas 2 : chevauchement de trames**
+
+Parfois, la trame initialement perdue arrive **en retard** :
+
+* Le récepteur reçoit deux trames identiques.
+* Il **rejette la seconde** car son bit de séquence **n’est plus attendu**.
 
 ![](img08.png)
 
-- **Cas du chevauchement d’acquittements** 
+⚠️ **Cas 3 : chevauchement d’acquittements**
 
-Il en va de même pour le chevauchement d’acquittements. Le récepteur rejettera l’acquittement qui n’aura pas le bit de séquence attendu. 
+De la même façon, si deux **ACK** identiques arrivent au même moment :
+
+* L’émetteur **rejette l’ACK en double**, car le bit ne correspond pas au prochain attendu.
 
 ![](img09.png)
 
-- **Pourquoi bit alterné ?** 
+❓ **Pourquoi appelle-t-on cela le bit alterné** ?
 
-La règle est relativement simple : la première trame envoyée par A aura pour drapeau 0, dès cette trame reçue par B, ce dernier va envoyer un accusé de réception avec le drapeau 1 (ce 1 signifie "la prochaine trame que A va m'envoyer devra avoir son drapeau à 1"). Dès que A reçoit l'accusé de réception avec le drapeau à 1, il envoie la 2e trame avec un drapeau à 1, et ainsi de suite... 
+> Parce que le bit de séquence **alterne à chaque trame** :
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.008.png)
+* La première trame a un **bit = 0**.
+* Si elle est reçue correctement, le récepteur envoie un **ACK avec bit = 1**, pour demander la prochaine trame avec bit = 1.
+* Si l’émetteur reçoit l’ACK attendu, il envoie la **deuxième trame** avec bit = 1, etc.
+
+
+
 
 ## <H2 STYLE="COLOR:BLUE;">**4. Autres commandes sur un réseau</h2>**
 
