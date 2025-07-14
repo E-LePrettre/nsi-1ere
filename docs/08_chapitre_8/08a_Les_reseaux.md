@@ -1049,9 +1049,9 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
 - Question 5 : Numéro de séquence et d'accusé de réception : Quel est le numéro de séquence et le numéro d'accusé de réception de cette trame TCP ?
 
 **Remarque** pour faire une analyse de trame, on peut utiliser un logiciel type wiresharp
-**Installation et prise en main de Wireshark**
-
-1 **Installation de Wireshark**
+> **Installation et prise en main de Wireshark**
+>
+> 1 **Installation de Wireshark**
 
    - Aller sur le site officiel de Wireshark : [https://www.wireshark.org/](https://www.wireshark.org/).
 
@@ -1059,7 +1059,7 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
 
    - Suivre les instructions d'installation.
 
-2 **Premier lancement et configuration**
+> 2 **Premier lancement et configuration**
 
    - Ouvrir Wireshark.
 
@@ -1068,15 +1068,15 @@ Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, L
    - Démarrer une capture en cliquant sur le bouton "Start capturing packets".
 
 
-**Capture et analyse de trames réseau**
+> **Capture et analyse de trames réseau**
 
-1 **Démarrer une capture réseau**
+> 1 **Démarrer une capture réseau**
 
    - Avec Wireshark ouvert et une capture en cours, ouvrir un navigateur web et visiter quelques sites web (ex. : www.google.com, www.wikipedia.org).
 
    - Retourner à Wireshark et arrêter la capture en cliquant sur le bouton "Stop capturing packets".
 
-2 **Analyse des trames capturées**
+> 2 **Analyse des trames capturées**
 
    - Dans la fenêtre principale de Wireshark, vous verrez une liste de trames capturées.
 
