@@ -883,7 +883,7 @@ Elle permet donc **d’éviter l’envoi de données inutiles** si la connexion 
 
 📷 Illustration visuelle :
 
-![Three-way handshake](https://upload.wikimedia.org/wikipedia/commons/9/92/Three-way-handshake.png)
+![Three-way handshake](https://upload.wikimedia.org/wikipedia/id/d/db/TCP_Three_Way_Handshake.png)
 
 ⚠️ Sécurité : attention au **spoofing IP**
 
