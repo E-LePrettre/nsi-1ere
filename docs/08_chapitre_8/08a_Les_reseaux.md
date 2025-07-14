@@ -709,7 +709,7 @@ Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adress
    Il reçoit une trame Ethernet contenant un paquet IP.
    → Il **décapsule** la trame pour lire l’**entête IP**.
 
-![](routeur_decapsulation.png){ width=75%; .center }
+    ![](routeur_decapsulation.png){ width=75%; .center }
 
 2. **Comparaison :**
    Il applique le **masque** à chaque adresse IP de ses interfaces pour voir si l’**IP de destination** appartient à l’un de ses sous-réseaux.
@@ -726,7 +726,7 @@ Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adress
    * **MAC source** : la sienne (dans le sous-réseau partagé avec le routeur 3),
    * **MAC destination** : celle du **routeur n°3**.
 
-![](routeur_encapsulation.png){ width=60%; .center }
+    ![](routeur_encapsulation.png){ width=60%; .center }
 
 6. **Transmission :**
    Le **routeur n°3** reçoit la trame, **décapsule** et lit l’**adresse IP de destination**.
