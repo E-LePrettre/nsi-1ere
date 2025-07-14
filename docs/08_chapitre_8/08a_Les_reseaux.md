@@ -651,7 +651,7 @@ veut communiquer avec une machine d'adresse IP
 
 ![](destination.png)
 
-### <H3 STYLE="COLOR:GREEN;">**3.1. Le routeur</h3>**
+### <H3 STYLE="COLOR:GREEN;">**3.1. Le rôle du routeur</h3>**
 
 Tout d'abord, on cherche à savoir si les deux adresses IP font partie du même réseau local.
 
@@ -700,8 +700,8 @@ Un **routeur** :
 ![](routeur.png){ width=35%; .center }
 
 
+### <H3 STYLE="COLOR:GREEN;">**3.2. Que fait le routeur ?</h3>**
 
-🔄 **Que fait le routeur ?**
 
 Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adresses IP**. Il est connecté à **deux sous-réseaux** et à **deux autres routeurs**.
 
