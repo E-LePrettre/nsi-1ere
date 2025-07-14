@@ -28,7 +28,106 @@ Le terme **réseau** désigne à la fois :
 
 Le Web correspond à **World Wide Web**, composé de *worldwide* (« **mondial** ») et *web* (« **toile d’araignée** »).  
 
-## <H2 STYLE="COLOR:BLUE;">**1. De <a name="1234"></a> l’adresse MAC à l’adresse IP**</h2>
+## <H2 STYLE="COLOR:BLUE;">**1. Quelques <a name="1234"></a> éléments physiques d'un réseau**</h2>
+
+Voici quelques éléments physiques d'un réseau :
+
+![](elements.png)
+
+🖥️ Les périphériques dans un réseau
+
+### <H3 STYLE="COLOR:GREEN;"> **1.1 Périphériques terminaux :</h3>**
+
+Ce sont les **appareils utilisateurs**, situés en bout de chaîne, qui **émettent ou reçoivent des données** :
+
+* les **serveurs** : c'est un ordinateur qui offre un service par exemple : un serveur web ou un serveur de messagerie
+* les **ordinateurs**
+* les **imprimantes**
+* les **téléphones**
+* des **voitures** (objets connectés)
+
+> 💡 Ces périphériques ont une **adresse IP** et une **adresse MAC**.
+
+
+
+### <H3 STYLE="COLOR:GREEN;"> **1.2. Périphériques intermédiaires :</h3>**
+
+Ce sont les équipements chargés **d’acheminer les données** entre les terminaux :
+
+* les **commutateurs** (aussi appelés **switchs**)
+* les **routeurs**
+* les **box** (modem/routeur combiné)
+
+> 💡 Ces équipements agissent aux **couches 2 et 3** du modèle OSI.
+
+
+
+### <H3 STYLE="COLOR:GREEN;">**1.3. Types de connexions réseau</h3>**
+
+🔸 **Connexions filaires :**
+
+* **Câble droit** : pour relier des appareils différents (PC ↔ switch)
+* **Câble croisé** : pour relier des appareils similaires (PC ↔ PC)
+
+🔸 **Connexions sans-fil :**
+
+* **Wi-Fi**
+* **Bluetooth**
+
+🔸 **Connexions optiques :**
+
+* **Fibre monomode**
+* **Fibre multimode**
+
+> 💡 Le type de connexion influence la **vitesse**, la **portée** et la **qualité** de la communication.
+
+
+## <H2 STYLE="COLOR:BLUE;">**2. Première situation : <a name="2345"></a> communication dans un réseau local**</h2>
+
+Voici le réseau que l'on va étudier :
+![](réseau.png)
+
+Ce réseau est constitué de sous-réseaux. Par exemple : 2 ordinateur, un switch et un routeur, ou un autre entre 2 routeurs...
+
+![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.004.jpeg)
+
+On voudrait faire communiquer M9 avec un autre ordinateur de son réseau local
+
+### <H3 STYLE="COLOR:GREEN;">**2.1. Le protocole TCP**</H3>
+
+Un protocole est un ensemble de règles qui permet à deux entités de communiquer ensemble.
+Ici on utilise le protocole TCP (Transmission Control Protocol)
+
+### <H3 STYLE="COLOR:GREEN;">**2.2. Envoi du message**</H3>
+
+On souhaiterait envoyer un poeme :
+
+L’albatros
+Charles Baudelaire
+
+Souvent, pour s’amuser, les hommes d’équipage
+Prennent des albatros, vastes oiseaux des mers,
+Qui suivent, indolents compagnons de voyage,
+Le navire glissant sur les gouffres amers.
+
+À peine les ont-ils déposés sur les planches,
+Que ces rois de l’azur, maladroits et honteux,
+Laissent piteusement leurs grandes ailes blanches
+Comme des avirons traîner à côté d’eux.
+
+…
+
+Ses ailes de géant l’empêchent de marcher.
+
+Mais ! on doit envoyer un seul vers par message. Et on va s'intéresser au 2 premiers quatrains.
+
+Voici ce qu'on doit envoyer et voici ce qu'on reçoit dans cet ordre
+
+![](poeme.png)
+
+
+
+## <H2 STYLE="COLOR:BLUE;">**3. Deuxième situation : <a name="3456"></a> communication entre réseaux locaux (Internet)**</h2>
 
 
 
@@ -210,7 +309,7 @@ Exemple :
 - La box internet fait office de **routeur** entre le réseau domestique (Wi-Fi) et Internet. 
 
 
-### <H3 STYLE="COLOR:GREEN;">**1.6 Qu’est-ce que le **protocole ARP** ? </h3>
+### <H3 STYLE="COLOR:GREEN;">**1.6 Qu’est-ce que le **protocole ARP ?</h3>**
 
 📖 Définition :
 
@@ -261,7 +360,7 @@ ARP travaille entre la **couche Réseau (IP)** et la **couche Liaison (MAC)**  e
 
 Lorsqu’on veut afficher une page Web, plusieurs éléments interviennent :
 
-![](Aspose.Words.15f906fb-bf44-45f2-afd3-4f489997c9e9.004.jpeg)
+
 
 
 
