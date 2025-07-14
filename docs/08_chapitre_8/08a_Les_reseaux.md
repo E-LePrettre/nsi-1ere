@@ -498,20 +498,31 @@ Elle est généralement **gravée en usine** dans la carte.
 
 
 ???+ question "🧪 Activité n°1 — Trouver votre adresse MAC"
-Ouvrez un terminal et tapez la commande suivante pour afficher les informations réseau de votre machine :
+    Ouvrez un terminal et tapez la commande suivante pour afficher les informations réseau de votre machine :
 
-  ````
-  Sous **Windows** :
-  ```bash
-  ipconfig /all
-  ```
-  Sous **Linux / macOS** :
-  ```bash
-  ip a
-  ```
+    ````
+    Sous **Windows** :
+    ```bash
+    ipconfig /all
+    ```
+    Sous **Linux / macOS** :
+    ```bash
+    ip a
+    ```
 
-  → Recherchez la ligne contenant "Adresse physique" (Windows) ou "link/ether" (Linux) pour obtenir votre adresse MAC.
-  ````
+    → Recherchez la ligne contenant "Adresse physique" (Windows) ou "link/ether" (Linux) pour obtenir votre adresse MAC.
+    ````
+
+### <H3 STYLE="COLOR:GREEN;">**2.8. Un<a name="_page3_x40.00_y36.92"></a> switch (commutateur réseau)</h3>**
+
+**Comment trouver l'adresse MAC à partir de l'adresse IP ?**
+
+Un **switch** est un équipement qui **transmet les données uniquement aux destinataires concernés**.  
+
+- Il fonctionne en **couche 2 (liaison de données)**.
+
+- Il **enregistre les adresses MAC** dans une table.  
+
 
 
 
@@ -528,19 +539,7 @@ Ouvrez un terminal et tapez la commande suivante pour afficher les informations 
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**1.4. Un<a name="_page3_x40.00_y36.92"></a> switch (commutateur réseau)</h3>**
-
-Un **switch** est un équipement qui **transmet les données uniquement aux destinataires concernés**.  
-
-- Il fonctionne en **couche 2 (liaison de données)**.
-
-- Il **enregistre les adresses MAC** dans une table.  
-
-🚀 **Avantages :**  
-
-✅ Réduit le trafic réseau. 
-
-✅ Plus performant qu’un hub (qui envoie à tout le monde).  
+ 
 
 
 ### <H3 STYLE="COLOR:GREEN;">**1.5. Un<a name="_page3_x40.00_y209.92"></a> routeur</h3>**
