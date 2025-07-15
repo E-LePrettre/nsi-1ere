@@ -1327,3 +1327,5 @@ Utiliser le site : [Traceroute en ligne](https://gsuite.tools/traceroute)
 - **ipconfig** (PaperGeek) : [Explication détaillée](https://www.papergeek.fr/ipconfig-comment-connaitre-son-adresse-ip-locale-et-son-adresse-mac-sous-windows-80996)  
 
 [^1]: Network Address Translation : Traduction d’adresse réseau
+
+*Je remercie mon ami Charles Poulmaire pour m’avoir inspiré *
