@@ -915,26 +915,24 @@ Si une trame n’est **pas reçue** ou si l'ACK n'arrive pas à temps :
 
 * L’émetteur **renvoie** la trame après un délai.
 
-![](bit_alterne1.png)
+![](alt2.png)
 
+![](alt1.png)
 
-
-⚠️ **Cas 2 : chevauchement de trames**
+⚠️ **Cas 2 : chevauchement de trames ou d'acquitement**
 
 Parfois, la trame initialement perdue arrive **en retard** :
 
 * Le récepteur reçoit deux trames identiques.
 * Il **rejette la seconde** car son bit de séquence **n’est plus attendu**.
 
-![](bit_alterne2.png)
 
-⚠️ **Cas 3 : chevauchement d’acquittements**
 
 De la même façon, si deux **ACK** identiques arrivent au même moment :
 
 * L’émetteur **rejette l’ACK en double**, car le bit ne correspond pas au prochain attendu.
 
-![](bit_alterne3.png)
+![](alt3.png)
 
 ❓ **Pourquoi appelle-t-on cela le bit alterné** ?
 
