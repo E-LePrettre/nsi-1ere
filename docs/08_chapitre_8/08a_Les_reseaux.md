@@ -642,46 +642,7 @@ La trame est ensuite envoyé à l'ordinateur 2 qui va ensuite **décapsuler** ch
 
 ## <H2 STYLE="COLOR:BLUE;">**3. Deuxième situation : <a name="3456"></a> communication entre réseaux locaux (Internet)</h2>**
 
-### <H3 STYLE="COLOR:GREEN;"> **3.1. La résolution de nom : obtenir l'adresse IP du site</h3>**
 
-
-
-Lorsqu’un utilisateur saisit une URL dans la barre d’adresse d’un navigateur, par exemple :
-`https://www.exemple.com/index.html`, le navigateur doit **trouver l’adresse IP** du serveur pour pouvoir lui envoyer une requête.
-
-🔍 **Structure d'une URL** :
-
-* **Protocole** : `https://` → indique le protocole utilisé pour la communication (ici HTTP sécurisé)
-* **Nom de domaine** : `www.exemple.com` → nom lisible pour l'humain
-* **Chemin** : `/index.html` → ressource demandée sur le serveur
-
-Cependant, sur Internet, les machines ne sont identifiées **ni par leur nom**, ni par leur URL, mais par leur **adresse IP**.
-
-
-
-🌐 **Rôle du DNS (Domain Name System)**
-
-Le **serveur DNS** est chargé de faire la correspondance entre un **nom de domaine** et son **adresse IP**. C’est l’équivalent d’un annuaire téléphonique pour Internet.
-
-
-
-🔄 **Processus de résolution DNS :**
-
-1. **Le navigateur consulte le cache local** :
-   Il vérifie s’il a déjà l’adresse IP correspondant au nom de domaine.
-
-2. **Si ce n’est pas le cas, il envoie une requête DNS** à :
-
-   * La **box internet** (DNS local)
-   * Le **serveur DNS du fournisseur d’accès à Internet (FAI)**
-   * Ou un **serveur DNS public** (ex. : Google DNS `8.8.8.8`, Cloudflare `1.1.1.1`)
-
-3. **Réponse du serveur DNS** :
-   Il retourne l’adresse IP associée au nom de domaine. Cette IP est alors stockée en cache pour les prochaines requêtes.
-
-
-
-💡 **Exemple réseau (machine M9)** :
 
 La machine M9 possède l’adresse IP `192.168.1.1/24`
 Elle souhaite contacter une autre machine à l’adresse `192.168.3.2/24`
@@ -691,7 +652,7 @@ Elle souhaite contacter une autre machine à l’adresse `192.168.3.2/24`
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**3.2. Le rôle du routeur</h3>**
+### <H3 STYLE="COLOR:GREEN;">**3.1. Le rôle du routeur</h3>**
 
 Tout d'abord, on cherche à savoir si les deux adresses IP font partie du même réseau local.
 
@@ -740,7 +701,7 @@ Un **routeur** :
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**3.3. Que fait le routeur ?</h3>**
+### <H3 STYLE="COLOR:GREEN;">**3.2. Que fait le routeur ?</h3>**
 
 
 Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adresses IP**. Il est connecté à **deux sous-réseaux** et à **deux autres routeurs**.
@@ -842,7 +803,7 @@ Le **routeur n°1** possède **quatre interfaces réseau**, donc **quatre adress
 
 
 
-### <h3 style="color:green;">**3.4. Établissement de la communication TCP (« Three-Way Handshake »)**</h3>
+### <h3 style="color:green;">**3.3. Établissement de la communication TCP (« Three-Way Handshake »)**</h3>
 
 Avant de pouvoir échanger des données avec fiabilité, le protocole **TCP (Transmission Control Protocol)** met en place une **connexion** entre le client et le serveur via un processus appelé **three-way handshake**.
 
@@ -880,7 +841,7 @@ Elle permet donc **d’éviter l’envoi de données inutiles** si la connexion 
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**3.5. Fiabilité<a name="_page8_x40.00_y36.92"></a> des transferts : protocole du bit alterné</h3>**
+### <H3 STYLE="COLOR:GREEN;">**3.4. Fiabilité<a name="_page8_x40.00_y36.92"></a> des transferts : protocole du bit alterné</h3>**
 
 
 Le protocole **TCP** garantit un **transfert fiable des données**. Il repose notamment sur un système d'**accusé de réception**, permettant à l'émetteur et au récepteur de vérifier que les données ont bien été reçues.
@@ -945,7 +906,7 @@ De la même façon, si deux **ACK** identiques arrivent au même moment :
 
 
 
-### <h3 style="color:green;">**3.6. Les protocoles**</h3>
+### <h3 style="color:green;">**3.5. Les protocoles**</h3>
 
 Les **protocoles de communication** sont répartis dans les différentes **couches du modèle en couches** (comme le modèle TCP/IP ou OSI). Chaque couche a ses propres **protocoles**, qui remplissent des fonctions précises.
 
@@ -972,7 +933,7 @@ Elle assure le **transport des données** entre deux applications.
 
 
 
-### 🧱 Pourquoi ces différentes couches ?
+🧱 **Pourquoi ces différentes couches ?**
 
 Le **modèle en couches** permet de **séparer les responsabilités** et de **faciliter l’évolution des réseaux**.
 👉 Si un protocole d'une couche est modifié (ex. passage de HTTP à HTTPS), **les autres couches n'ont pas besoin d’être modifiées**.

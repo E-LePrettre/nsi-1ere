@@ -12,6 +12,43 @@ title: 08b Interaction client-serveur - Requête
 4. [APPLICATION : Création d’une page web dynamique](#_page8_x40.00_y503.92)
 5. [Exercices](#_page13_x40.00_y36.92)
 
+### <H3 STYLE="COLOR:GREEN;"> **3.1. La résolution de nom : obtenir l'adresse IP du site</h3>**
+
+
+
+Lorsqu’un utilisateur saisit une URL dans la barre d’adresse d’un navigateur, par exemple :
+`https://www.exemple.com/index.html`, le navigateur doit **trouver l’adresse IP** du serveur pour pouvoir lui envoyer une requête.
+
+🔍 **Structure d'une URL** :
+
+* **Protocole** : `https://` → indique le protocole utilisé pour la communication (ici HTTP sécurisé)
+* **Nom de domaine** : `www.exemple.com` → nom lisible pour l'humain
+* **Chemin** : `/index.html` → ressource demandée sur le serveur
+
+Cependant, sur Internet, les machines ne sont identifiées **ni par leur nom**, ni par leur URL, mais par leur **adresse IP**.
+
+
+
+🌐 **Rôle du DNS (Domain Name System)**
+
+Le **serveur DNS** est chargé de faire la correspondance entre un **nom de domaine** et son **adresse IP**. C’est l’équivalent d’un annuaire téléphonique pour Internet.
+
+
+
+🔄 **Processus de résolution DNS :**
+
+1. **Le navigateur consulte le cache local** :
+   Il vérifie s’il a déjà l’adresse IP correspondant au nom de domaine.
+
+2. **Si ce n’est pas le cas, il envoie une requête DNS** à :
+
+   * La **box internet** (DNS local)
+   * Le **serveur DNS du fournisseur d’accès à Internet (FAI)**
+   * Ou un **serveur DNS public** (ex. : Google DNS `8.8.8.8`, Cloudflare `1.1.1.1`)
+
+3. **Réponse du serveur DNS** :
+   Il retourne l’adresse IP associée au nom de domaine. Cette IP est alors stockée en cache pour les prochaines requêtes.
+
 
 ## **<H2 STYLE="COLOR:BLUE;">1. Modèle<a name="_page0_x40.00_y516.92"></a> client/serveur**</H2>
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.004.png)
