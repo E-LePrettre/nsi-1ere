@@ -645,11 +645,6 @@ La trame est ensuite envoyé à l'ordinateur 2 qui va ensuite **décapsuler** ch
 ### <H3 STYLE="COLOR:GREEN;"> **3.1. La résolution de nom : obtenir l'adresse IP du site</h3>**
 
 
-Voici la **correction et reformulation** complète de ta partie de cours :
-
----
-
-### <h3 style="color:green;">**3.1. La résolution de nom : obtenir l'adresse IP du site**</h3>
 
 Lorsqu’un utilisateur saisit une URL dans la barre d’adresse d’un navigateur, par exemple :
 `https://www.exemple.com/index.html`, le navigateur doit **trouver l’adresse IP** du serveur pour pouvoir lui envoyer une requête.
@@ -722,7 +717,7 @@ Tout d'abord, on cherche à savoir si les deux adresses IP font partie du même 
 * **Adresse réseau de la machine 1 :** `192.168.1.0`
 * **Adresse réseau de la machine 2 :** `192.168.3.0`
 
-❌ Ces deux machines **ne sont pas dans le même sous-réseau** (elles n’ont pas la même adresse réseau), **elles auront donc besoin d’un routeur pour communiquer**.
+❌ Ces deux machines **ne sont pas dans le même sous-réseau** (elles n’ont pas la même adresse réseau), **elles auront donc besoin d'au moins un routeur pour communiquer**.
 
 
 Il faut donc envoyer les données à une **passerelle** : c'est le rôle du routeur. La passerelle est indiquée au niveau de l'ordinateur, dans l'exemple c'est le routeur 1 connecté au switch.
@@ -740,7 +735,7 @@ Un **routeur** :
 * fonctionne en **couche 3 (réseau)** du modèle OSI,
 * utilise une **table de routage** pour choisir le chemin vers la destination.
 
-💡 **Exemple courant :** la **box Internet** joue le rôle de routeur entre votre réseau domestique (Wi-Fi) et Internet.
+💡 **Exemple courant :** la **box Internet** joue le rôle de routeur entre votre réseau domestique et Internet.
 
 
 
@@ -875,9 +870,9 @@ Elle garantit que :
 
 Elle permet donc **d’éviter l’envoi de données inutiles** si la connexion ne peut être établie.
 
-📷 Illustration visuelle :
 
-![Three-way handshake](https://upload.wikimedia.org/wikipedia/id/d/db/TCP_Three_Way_Handshake.png)
+
+![Three-way handshake](10_07_55.png){ width=60%; .center }
 
 ⚠️ Sécurité : attention au **spoofing IP**
 
@@ -897,17 +892,20 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
 ✅ **Cas normal : tout se passe bien**
 
 * À chaque trame envoyée, l’émetteur **alterne la valeur** du bit de séquence (0 → 1 → 0 → ...).
-* Le récepteur renvoie une trame ACK contenant le **bit de séquence attendu** pour la trame suivante.
+* Le récepteur 
+
+    * accepte la trame si le bit est celui **attendu**
+    * envoie un **accusé de réception** (ACK) avec le même bit.
 
 🧾 **Exemple :**
 
 * Trame 1 : bit de séquence = 0
-* Réponse : ACK avec bit = 1 (attente de la prochaine trame avec bit 1)
+* Réponse : ACK avec bit = 0 (attente de la prochaine trame avec bit 1)
 * Trame 2 : bit de séquence = 1
-* Réponse : ACK avec bit = 0
+* Réponse : ACK avec bit = 1
   ...
 
-![](img06.png)
+![](bit_alterne.png)
 
 
 
@@ -917,7 +915,7 @@ Si une trame n’est **pas reçue** ou si l'ACK n'arrive pas à temps :
 
 * L’émetteur **renvoie** la trame après un délai.
 
-![](img07.png)
+![](bit_alterne1.png)
 
 
 
@@ -928,7 +926,7 @@ Parfois, la trame initialement perdue arrive **en retard** :
 * Le récepteur reçoit deux trames identiques.
 * Il **rejette la seconde** car son bit de séquence **n’est plus attendu**.
 
-![](img08.png)
+![](bit_alterne2.png)
 
 ⚠️ **Cas 3 : chevauchement d’acquittements**
 
@@ -936,7 +934,7 @@ De la même façon, si deux **ACK** identiques arrivent au même moment :
 
 * L’émetteur **rejette l’ACK en double**, car le bit ne correspond pas au prochain attendu.
 
-![](img09.png)
+![](bit_alterne3.png)
 
 ❓ **Pourquoi appelle-t-on cela le bit alterné** ?
 
@@ -947,9 +945,7 @@ De la même façon, si deux **ACK** identiques arrivent au même moment :
 * Si l’émetteur reçoit l’ACK attendu, il envoie la **deuxième trame** avec bit = 1, etc.
 
 
-Voici ta section corrigée et reformulée pour plus de clarté, de rigueur et de lisibilité :
 
----
 
 ### <h3 style="color:green;">**3.6. Les protocoles**</h3>
 
