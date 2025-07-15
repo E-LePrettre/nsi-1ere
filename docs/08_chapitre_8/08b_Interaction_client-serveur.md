@@ -12,7 +12,9 @@ title: 08b Interaction client-serveur - Requête
 4. [APPLICATION : Création d’une page web dynamique](#_page8_x40.00_y503.92)
 5. [Exercices](#_page13_x40.00_y36.92)
 
-### <H3 STYLE="COLOR:GREEN;"> **3.1. La résolution de nom : obtenir l'adresse IP du site</h3>**
+
+## **<H2 STYLE="COLOR:BLUE;">1. Modèle<a name="_page0_x40.00_y516.92"></a> client/serveur**</H2>
+### <H3 STYLE="COLOR:GREEN;"> **1.1. La résolution de nom : obtenir l'adresse IP du site</h3>**
 
 
 
@@ -49,6 +51,13 @@ Le **serveur DNS** est chargé de faire la correspondance entre un **nom de doma
 3. **Réponse du serveur DNS** :
    Il retourne l’adresse IP associée au nom de domaine. Cette IP est alors stockée en cache pour les prochaines requêtes.
 
+Une fois l'adresse IP envoyé, il y a établissement de la connextion TCP selon le modèle déjà étudié :
+
+* le client envoie un paquet SYN à l'adresse IP
+* le serveur lui répond avec un paquet SYN - ACK
+* le client renvoie un accusé de réception au serveur
+
+![](client_serveur.png)
 
 ## **<H2 STYLE="COLOR:BLUE;">1. Modèle<a name="_page0_x40.00_y516.92"></a> client/serveur**</H2>
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.004.png)
