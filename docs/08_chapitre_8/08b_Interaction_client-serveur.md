@@ -196,7 +196,7 @@ Connection: close
 * **`Server: Apache/2.4.41 (Ubuntu)`** : Donne des informations sur le **logiciel serveur web** utilisé : **Apache** version 2.4.41 tournant sous **Ubuntu**.
 
 * **`Content-Type: text/html; charset=UTF-8`**
-    >
+    
     > Indique le **type de contenu** de la réponse.
     >
     > Ici :
@@ -210,7 +210,7 @@ Connection: close
 * **`Connection: close`** :  Le serveur signale que la connexion TCP va être **fermée** après cette réponse.
 
 * 📄 **Corps de la réponse (à partir de la 7e ligne)**
-    >
+    
     > Tout ce qui vient **après la ligne vide** (séparateur) constitue le **corps** de la réponse, ici une **page HTML**.
 
 ### **<H3 STYLE="COLOR:GREEN;">1.4. Le protocole HTTPS**</H3>
