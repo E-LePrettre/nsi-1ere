@@ -787,6 +787,225 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 4. **Le navigateur envoie une nouvelle requête HTTP** avec les **données du formulaire** (via `GET` ou `POST`) au **serveur**.
 5. **Le serveur traite ces données** grâce à un **langage côté serveur** : c’est là qu’intervient **PHP** (ou un autre langage comme Python, Node.js, etc.).
 
+## **<H2 STYLE="COLOR:BLUE;">4. APPLICATION<a name="_page8_x40.00_y503.92"></a> : Création d’une page web dynamique** 🌍💻</H2>
+Un site web peut être **statique** (HTML pur) ou **dynamique** (généré à la volée par un langage comme PHP).  
+
+Nous allons mettre en place un **serveur web local** et apprendre à **créer une page dynamique en PHP**.
+
+
+ 
+![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.067.png)
+
+### **<H3 STYLE="COLOR:GREEN;">4.1. Mise<a name="_page8_x40.00_y565.92"></a> en place d’un serveur Apache Wamp** 🚀</H3>  
+
+📥 **Téléchargement**  
+
+Télécharger un serveur WAMP : [UwAmp Wamp Server - Apache MySQL PHP](https://www.uwamp.com/fr/)  
+Normalement, il s’installe dans `C:\UwAmp`. 
+
+???+ question "**Activité n°9**"
+
+    **Démarrer le serveur WAMP**  
+
+    - Ouvrir `UwAmp.exe` et s'assurer qu'Apache et MySQL sont en cours d'exécution.  
+
+    - Vérifier en tapant **localhost** dans un navigateur.  
+
+    ![](screen_home.png)
+
+### **<H3 STYLE="COLOR:GREEN;">4.2. Affichage d'une<a name="_page9_x40.00_y154.92"></a> d’une page Web statique**</H3>
+![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.072.png)
+
+Avant de passer à **PHP**, créons une **page HTML statique**.
+
+
+???+ question "**Activité n°10**".
+
+    Créer avec le bloc note, un fichier où on aura copier :
+    ```html
+    <!doctype html>
+    <html lang="fr">
+        <head>
+            <meta charset="utf-8">
+            <title>Utilisation d'Apache</title>
+        </head>
+        <body>
+            <p>Le serveur Apache fonctionne parfaitement</p>
+        </body>
+    </html>
+    ```
+
+    📂 **Enregistrer sous** `C:\UwAmp\www\index.html`  
+
+    **ATTENTION** à bien sélectionner tous les fichiers.
+    ![](AZE.png)
+
+
+???+ question "**Activité n°11**" 
+
+    ✅ **Tester dans le navigateur**  
+
+    1️⃣ Ouvrir **`localhost`**  
+
+    2️⃣ La page doit afficher : *"Le serveur Apache fonctionne parfaitement !"*   
+
+### **<H3 STYLE="COLOR:GREEN;">4.3. Affichage d'une d’une page Web dynamique**</H3>
+
+???+ question "**Activité n°12**"
+
+    🔧 Avant de commencer, supprime les fichiers index.html et index.php du dossier www s’ils existent. Un seul fichier nommé index doit exister à la fois, sinon Apache en exécutera un par défaut.
+    Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
+    ```php
+    <?php
+    date_default_timezone_set('Europe/Paris'); // Fuseau horaire Paris
+    $heure = date("H:i");
+    echo '<h1>Bienvenue sur mon site</h1>
+        <p>Il est '.$heure.'</p>';
+    ?>
+    ```
+    📂 **Enregistrer sous** `C:\UwAmp\www\index.php`  
+
+    **ATTENTION** à bien sélectionner tous les fichiers.
+
+
+???+ question "**Activité n°13**"
+
+    Ouvrir votre navigateur Web  
+
+    ✅ **Tester dans le navigateur** 
+
+    1️⃣ Ouvrir `localhost`    
+
+    2️⃣ La page doit afficher **l’heure actuelle**  
+
+    📌 **Si vous actualisez la page, l’heure change** → preuve que **la page est générée dynamiquement** ! 🔄
+
+### **<H3 STYLE="COLOR:GREEN;">4.4. Interaction avec un Formulaire en PHP** 🖊️</H3>
+
+Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.  
+
+
+???+ question "**Activité n°14**" 
+
+    🔧 Avant de commencer, supprime les fichiers index.html et index.php du dossier www s’ils existent. Un seul fichier nommé index doit exister à la fois, sinon Apache en exécutera un par défaut.
+    Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
+
+    ```html
+    <!doctype html>
+    <html lang="fr">
+        <head>
+            <meta charset="utf-8">
+            <title>Le formulaire</title>
+        </head>
+        <body>
+            <form action="trait_form.php" method="post">
+                    <label>Nom</label> : <input type="text" name="nom" />
+                    <label>Prénom</label> : <input type="text" name="prenom" />
+                    <input type="submit" value="Envoyer" />
+            </form>
+        </body>
+    </html>
+    ```
+    📂 **Enregistrer sous** `C:\UwAmp\www\index.html` . 
+
+    ATTENTION à bien sélectionner tous les fichiers.
+
+???+ question "**Activité n°15**" 
+
+    Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www".  
+
+    ```php
+    <?php
+        $n=$_POST['nom'];
+        $p=$_POST['prenom'];
+        echo "<p>Bonjour ".$p." ".$n.", j'espère que vous allez bien.</p>";
+    ?>
+    ```
+    📂 **Enregistrer sous** `C:\UwAmp\www\trait_form.php`. 
+
+    ATTENTION à bien sélectionner tous les fichiers.
+
+???+ question "**Activité n°16**"
+
+    Ouvrir le navigateur Web 
+
+    ✅ **Tester dans le navigateur**  
+
+    1️⃣ Ouvrir `localhost/index.html`  
+
+    2️⃣ Remplir le formulaire et cliquer sur **"Envoyer"**  
+
+    3️⃣ La page doit afficher **"Bonjour [Prénom] [Nom],  j'espère que vous allez bien."**  
+
+    📌 **Explication** : 
+
+    - **Le formulaire envoie les données en `POST` à `trait_form.php`**  
+
+    - **PHP récupère les données et affiche un message personnalisé** 
+
+
+### **<H3 STYLE="COLOR:GREEN;">4.5. Comparer les méthodes GET et POST** 🖊️</H3>
+
+???+ question "**Activité n°16**"
+
+    Modifier les fichiers "index.html" et "trait_form.php" comme suit : 
+
+    📂 Modifier `index.html` :  
+
+    ```html
+    <form action="trait_form.php" method="get">
+        <label>Nom</label> : <input type="text" name="nom" />
+        <label>Prénom</label> : <input type="text" name="prenom" />
+        <input type="submit" value="Envoyer" />
+    </form>
+    ```
+
+    📂 Modifier `trait_form.php` :  
+
+    ```php
+    <?php
+        $n=$_GET['nom'];
+        $p=$_GET['prenom'];
+        echo "<p>Bonjour ".$p." ".$n.", j'espère que vous allez bien.</p>";
+    ?>
+    ```
+
+???+ question "**Activité n°17**" 
+
+    Ouvrir le navigateur Web 
+
+    ✅ **Tester et observer l’URL après soumission** 
+
+    ➡️ Avec **GET**, les données sont visibles dans l’URL :  
+    ```
+    localhost/trait_form.php?nom=Dupont&prenom=Jean
+    ```
+
+???+ question "**Activité n°18**"
+
+    📌 **Objectif** : Observer les différences entre **les méthodes GET et POST**.
+
+    1️⃣ **Tester avec `POST`** et vérifier que les données **ne sont pas visibles dans l’URL**  
+
+    2️⃣ **Tester avec `GET`** et observer l’URL après validation du formulaire  
+
+    Fermer le serveur Wamp
+
+📚 **Ressources utiles**
+
+- [Introduction à PHP](http://www.phpdebutant.org/article118.php)  
+
+- [Afficher la date et l’heure](http://www.phpdebutant.org/article53.php)  
+
+- [PHP dans du code HTML](http://www.phpdebutant.org/article54.php)  
+
+- [Les sessions PHP](http://www.phpdebutant.org/article69.php)  
+
+🔧 **Editeurs PHP en ligne**  
+
+- [PHPFiddle](http://phpfiddle.org/)  
+
+- [RunPHPOnline](https://www.runphponline.com/)  
 
 
 
@@ -1384,230 +1603,6 @@ Set-Cookie: username=JohnDoe; Expires=Wed, 21 Jul 2024 07:28:00 GMT; Path=/; Dom
 
 **<H3 STYLE="COLOR:RED;">Activité n°5**</H3>: faire les exercices
 
-## **<H2 STYLE="COLOR:BLUE;">4. APPLICATION<a name="_page8_x40.00_y503.92"></a> : Création d’une page web dynamique** 🌍💻</H2>
-Un site web peut être **statique** (HTML pur) ou **dynamique** (généré à la volée par un langage comme PHP).  
-
-Nous allons mettre en place un **serveur web local** et apprendre à **créer une page dynamique en PHP**.
-
-
- 
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.067.png)
-
-### **<H3 STYLE="COLOR:GREEN;">4.1. Mise<a name="_page8_x40.00_y565.92"></a> en place d’un serveur Apache Wamp** 🚀</H3>  
-
-📥 **Téléchargement**  
-
-Télécharger un serveur WAMP : [UwAmp Wamp Server - Apache MySQL PHP](https://www.uwamp.com/fr/)  
-Normalement, il s’installe dans `C:\UwAmp`. 
-
-**<H3 STYLE="COLOR:RED;">Activité n°6**</H3> 
-
-**Démarrer le serveur WAMP**  
-
-- Ouvrir `UwAmp.exe` et s'assurer qu'Apache et MySQL sont en cours d'exécution.  
-
-- Vérifier en tapant **localhost** dans un navigateur.  
-
-![](screen_home.png)
-
-### **<H3 STYLE="COLOR:GREEN;">4.2. Affichage d'une<a name="_page9_x40.00_y154.92"></a> d’une page Web statique**</H3>
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.072.png)
-
-Avant de passer à **PHP**, créons une **page HTML statique**.
-
-
-
-
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°7.**</H3> Créer avec le bloc note, un fichier où on aura copier :
-
-```html
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Utilisation d'Apache</title>
-    </head>
-    <body>
-        <p>Le serveur Apache fonctionne parfaitement</p>
-    </body>
-</html>
-```
-
-📂 **Enregistrer sous** `C:\UwAmp\www\index.html`  
-
-**ATTENTION** à bien sélectionner tous les fichiers.
-![](AZE.png)
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°8.**</H3> . 
-
-✅ **Tester dans le navigateur**  
-
-1️⃣ Ouvrir **`localhost`**  
-
-2️⃣ La page doit afficher : *"Le serveur Apache fonctionne parfaitement !"*   
-
-### **<H3 STYLE="COLOR:GREEN;">4.3. Affichage d'une d’une page Web dynamique**</H3>
-
-**<H3 STYLE="COLOR:RED;">Activité n°9.**</H3> Après avoir supprimé le fichier "index.html" préalablement créé dans le répertoire "www" **ET** le fichier "index.php", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
-```php
-<?php
-date_default_timezone_set('Europe/Paris'); // Fuseau horaire Paris
-$heure = date("H:i");
-echo '<h1>Bienvenue sur mon site</h1>
-      <p>Il est '.$heure.'</p>';
-?>
-```
-📂 **Enregistrer sous** `C:\UwAmp\www\index.php`  
-
-**ATTENTION** à bien sélectionner tous les fichiers.
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°10.**</H3> Ouvrir votre navigateur Web  
-
-✅ **Tester dans le navigateur** 
-
-1️⃣ Ouvrir `localhost`    
-
-2️⃣ La page doit afficher **l’heure actuelle**  
-
-📌 **Si vous actualisez la page, l’heure change** → preuve que **la page est générée dynamiquement** ! 🔄
-
-### **<H3 STYLE="COLOR:GREEN;">4.4. Interaction avec un Formulaire en PHP** 🖊️</H3>
-
-Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.  
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°11.**</H3> Après avoir supprimé le fichier "index.php" préalablement créé dans le répertoire "www", Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www". 
-
-```html
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Le formulaire</title>
-    </head>
-    <body>
-        <form action="trait_form.php" method="post">
-                <label>Nom</label> : <input type="text" name="nom" />
-                <label>Prénom</label> : <input type="text" name="prenom" />
-                <input type="submit" value="Envoyer" />
-        </form>
-    </body>
-</html>
-```
-📂 **Enregistrer sous** `C:\UwAmp\www\index.html` . 
-
-ATTENTION à bien sélectionner tous les fichiers.
-
-**<H3 STYLE="COLOR:RED;">Activité n°12.**</H3> : Créer avec le bloc note, un fichier où on aura copier : toujours dans le répertoire "www".  
-```php
-<?php
-    $n=$_POST['nom'];
-    $p=$_POST['prenom'];
-    echo "<p>Bonjour ".$p." ".$n.", j'espère que vous allez bien.</p>";
-?>
-```
-📂 **Enregistrer sous** `C:\UwAmp\www\trait_form.php`. 
-
-ATTENTION à bien sélectionner tous les fichiers.
-
-**<H3 STYLE="COLOR:RED;">Activité n°13.**</H3> : Ouvrir le navigateur Web 
-
-✅ **Tester dans le navigateur**  
-
-1️⃣ Ouvrir `localhost/index.html`  
-
-2️⃣ Remplir le formulaire et cliquer sur **"Envoyer"**  
-
-3️⃣ La page doit afficher **"Bonjour [Prénom] [Nom], bienvenue !"**  
-
-📌 **Explication** : 
-
-- **Le formulaire envoie les données en `POST` à `trait_form.php`**  
-
-- **PHP récupère les données et affiche un message personnalisé** 
-
-
-### **<H3 STYLE="COLOR:GREEN;">4.5. Interaction avec un Formulaire en PHP** 🖊️</H3>
-
-**<H3 STYLE="COLOR:RED;">Activité n°14.**</H3> Modifier les fichiers "index.html" et "trait_form.php" comme suit : 
-
-📂 Modifier `index.html` :  
-
-```html
-<form action="trait_form.php" method="get">
-    <label>Nom</label> : <input type="text" name="nom" />
-    <label>Prénom</label> : <input type="text" name="prenom" />
-    <input type="submit" value="Envoyer" />
-</form>
-```
-
-📂 Modifier `trait_form.php` :  
-
-```php
-<?php
-    $n=$_GET['nom'];
-    $p=$_GET['prenom'];
-    echo "<p>Bonjour ".$p." ".$n.", j'espère que vous allez bien.</p>";
-?>
-```
-
-
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°15.**</H3> Ouvrir le navigateur Web 
-
-✅ **Tester et observer l’URL après soumission** 
-
-➡️ Avec **GET**, les données sont visibles dans l’URL :  
-```
-localhost/trait_form.php?nom=Dupont&prenom=Jean
-```
-
-| **Critère**   | **GET** | **POST** |
-|--------------|--------|---------|
-| **Données visibles dans l’URL ?** | ✅ Oui | ❌ Non |
-| **Utilisation principale** | 🔍 Recherche | 🔐 Formulaires sensibles |
-| **Sécurité** | ⚠️ Moins sécurisé | ✅ Recommandé |
-
-📌 **Conclusion** :  
-
-- **GET** est utile pour les **recherches et URL partageables**  
-
-- **POST** est utilisé pour **les informations sensibles (ex: mots de passe)**  
-
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°16.**</H3> 
-
-📌 **Objectif** : Observer les différences entre **les méthodes GET et POST**.
-
-1️⃣ **Tester avec `POST`** et vérifier que les données **ne sont pas visibles dans l’URL**  
-
-2️⃣ **Tester avec `GET`** et observer l’URL après validation du formulaire  
-
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°17**</H3> Fermer le serveur Wamp
-
-📚 **Ressources utiles**
-
-- [Introduction à PHP](http://www.phpdebutant.org/article118.php)  
-
-- [Afficher la date et l’heure](http://www.phpdebutant.org/article53.php)  
-
-- [PHP dans du code HTML](http://www.phpdebutant.org/article54.php)  
-
-- [Les sessions PHP](http://www.phpdebutant.org/article69.php)  
-
-🔧 **Editeurs PHP en ligne**  
-
-- [PHPFiddle](http://phpfiddle.org/)  
-
-- [RunPHPOnline](https://www.runphponline.com/)  
 
 
 ## **<H2 STYLE="COLOR:BLUE;">5. Exercices<a name="_page13_x40.00_y36.92"></a>**</H2> 
