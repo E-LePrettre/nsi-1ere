@@ -7,13 +7,12 @@ title: 08b Interaction client-serveur - Requête
 **Table des matières** 
 
 1. [Modèle client/serveur](#1234)
-1. [Le protocole HTTP](#2345)
-3. [Coder l’envoi d’une requête par le navigateur](#_page3_x40.00_y617.92)
-4. [APPLICATION : Création d’une page web dynamique](#_page8_x40.00_y503.92)
-5. [Exercices](#_page13_x40.00_y36.92)
+2. [Le protocole HTTP](#2345)
+3. [APPLICATION : Création d’une page web dynamique](#3456)
+4. [Exercices](#4567)
 
 
-## **<H2 STYLE="COLOR:BLUE;">1. Modèle<a name="_page0_x40.00_y516.92"></a> client/serveur**</H2>
+## **<H2 STYLE="COLOR:BLUE;">1. Modèle<a name="1234"></a> client/serveur**</H2>
 ### <H3 STYLE="COLOR:GREEN;"> **1.1. La résolution de nom : obtenir l'adresse IP du site</h3>**
 
 Lorsqu’un utilisateur saisit une URL dans la barre d’adresse d’un navigateur, par exemple :
@@ -231,7 +230,7 @@ Connection: close
 * 🌍 **Standard web** : Tous les sites sérieux l’utilisent (e-commerce, banque, réseaux sociaux…)
 
 
-## **<H2 STYLE="COLOR:BLUE;">2. Les langages <a name="_page0_x40.00_y516.92"></a> clients**</H2>
+## **<H2 STYLE="COLOR:BLUE;">2. Les langages <a name="2345"></a> clients**</H2>
 
 
 ### **<H3 STYLE="COLOR:GREEN;">2.1. HTML, CSS, JS**</H3>
@@ -380,7 +379,7 @@ user=dupont&password=azerty
 💡 **Bonne pratique** : Toujours utiliser **`POST`** pour transmettre **des mots de passe ou données personnelles**.
 
 
-### **<H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML**</H3>
+### **<H3 STYLE="COLOR:GREEN;">2.3. Les éléments d’un formulaire HTML**</H3>
 
 Un formulaire HTML est composé de plusieurs éléments permettant de structurer et saisir des données. 
 Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir les données directement dans l’URL.
@@ -777,7 +776,7 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
 
 
-### **<H3 STYLE="COLOR:GREEN;">3.4. Comment le serveur interagit avec le formulaire?**</H3>
+### **<H3 STYLE="COLOR:GREEN;">2.4. Comment le serveur interagit avec le formulaire?**</H3>
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.059.jpeg)
 
@@ -787,7 +786,7 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 4. **Le navigateur envoie une nouvelle requête HTTP** avec les **données du formulaire** (via `GET` ou `POST`) au **serveur**.
 5. **Le serveur traite ces données** grâce à un **langage côté serveur** : c’est là qu’intervient **PHP** (ou un autre langage comme Python, Node.js, etc.).
 
-## **<H2 STYLE="COLOR:BLUE;">4. APPLICATION<a name="_page8_x40.00_y503.92"></a> : Création d’une page web dynamique** 🌍💻</H2>
+## **<H2 STYLE="COLOR:BLUE;">3. APPLICATION<a name="3456"></a> : Création d’une page web dynamique** 🌍💻</H2>
 Un site web peut être **statique** (HTML pur) ou **dynamique** (généré à la volée par un langage comme PHP).  
 
 Nous allons mettre en place un **serveur web local** et apprendre à **créer une page dynamique en PHP**.
@@ -796,7 +795,7 @@ Nous allons mettre en place un **serveur web local** et apprendre à **créer un
  
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.067.png)
 
-### **<H3 STYLE="COLOR:GREEN;">4.1. Mise<a name="_page8_x40.00_y565.92"></a> en place d’un serveur Apache Wamp** 🚀</H3>  
+### **<H3 STYLE="COLOR:GREEN;">3.1. Mise en place d’un serveur Apache Wamp** 🚀</H3>  
 
 📥 **Téléchargement**  
 
@@ -813,7 +812,7 @@ Normalement, il s’installe dans `C:\UwAmp`.
 
     ![](screen_home.png)
 
-### **<H3 STYLE="COLOR:GREEN;">4.2. Affichage d'une<a name="_page9_x40.00_y154.92"></a> d’une page Web statique**</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.2. Affichage d'une d’une page Web statique**</H3>
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.072.png)
 
 Avant de passer à **PHP**, créons une **page HTML statique**.
@@ -849,7 +848,7 @@ Avant de passer à **PHP**, créons une **page HTML statique**.
 
     2️⃣ La page doit afficher : *"Le serveur Apache fonctionne parfaitement !"*   
 
-### **<H3 STYLE="COLOR:GREEN;">4.3. Affichage d'une d’une page Web dynamique**</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.3. Affichage d'une d’une page Web dynamique**</H3>
 
 ???+ question "**Activité n°12**"
 
@@ -880,7 +879,7 @@ Avant de passer à **PHP**, créons une **page HTML statique**.
 
     📌 **Si vous actualisez la page, l’heure change** → preuve que **la page est générée dynamiquement** ! 🔄
 
-### **<H3 STYLE="COLOR:GREEN;">4.4. Interaction avec un Formulaire en PHP** 🖊️</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.4. Interaction avec un Formulaire en PHP** 🖊️</H3>
 
 Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.  
 
@@ -944,7 +943,7 @@ Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.
     - **PHP récupère les données et affiche un message personnalisé** 
 
 
-### **<H3 STYLE="COLOR:GREEN;">4.5. Comparer les méthodes GET et POST** 🖊️</H3>
+### **<H3 STYLE="COLOR:GREEN;">3.5. Comparer les méthodes GET et POST** 🖊️</H3>
 
 ???+ question "**Activité n°16**"
 
@@ -1015,597 +1014,9 @@ Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.
 
 
 
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.061.jpeg)
 
 
-
-
-
-### **<H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML**</H3>
-
-
-
-
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.047.jpeg)
-
-
-
-
-
-### **<H3 STYLE="COLOR:GREEN;">3.4. Elément<a name="_page5_x40.00_y275.92"></a> ```<input>``` : quelques exemples**</H3>
-
-
-
-
-
-![](090.png)
-
-**📌 Exemples courants :**  
-
-```html
-<input type="text" name="nom" placeholder="Votre nom">
-<input type="email" name="email" placeholder="Votre email">
-<input type="password" name="motdepasse" placeholder="Mot de passe">
-<input type="date" name="date_naissance">
-<input type="checkbox" name="conditions" value="accept"> J’accepte les conditions
-<input type="radio" name="sexe" value="homme"> Homme
-<input type="radio" name="sexe" value="femme"> Femme
-<input type="submit" value="Envoyer">
-```
-
-✅ **Les boutons radio permettent de choisir une seule option, tandis que les cases à cocher peuvent être sélectionnées simultanément.**
-
-
-### **<H3 STYLE="COLOR:GREEN;">3.5. Elément<a name="_page5_x40.00_y485.92"></a> ```<select>``` : quelques exemples**</H3>
-
-L'élément `<select>` permet de créer une liste déroulante avec des options de choix.
-
-
-![](091.png)
-
-### **<H3 STYLE="COLOR:GREEN;">3.6. Elément<a name="_page6_x40.00_y36.92"></a> value dans ```<select>```**</H3>
-
-L’attribut `value` d’un `<option>` définit la valeur qui sera envoyée au serveur lorsqu'un choix est fait.
-
-L'attribut value est **facultatif**. S’il n’est pas spécifié, alors **le texte** dans le conteneur **est envoyé à la place** 
-
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.055.png)
-
-### **<H3 STYLE="COLOR:GREEN;">3.7. Les<a name="_page6_x40.00_y300.92"></a> boutons de commande**</H3>
-
-💡 **Il existe plusieurs façons d’ajouter des boutons dans un formulaire :**
-
-| **Type**                    | **Description** |
-|-----------------------------|----------------|
-| `<input type="submit">`     | Envoie les données du formulaire. |
-| `<input type="reset">`      | Efface les champs du formulaire. |
-| `<input type="button">`     | Bouton personnalisé (nécessite JavaScript). |
-| `<input type="image">`      | Bouton sous forme d’image. |
-| `<button>`                  | Bouton plus flexible pouvant contenir du texte et des images. |
-
-
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.057.png)
-
-⚠ **Attention à ne pas confondre :**
-
-- `<button>` avec `<input type='button'>`
-
-- `<input type='submit'>` avec `<button type='submit'>`
-
-🚀 **Préférez `<button>` pour plus de flexibilité !** 
-
-
-
-
-
-### **<H3 STYLE="COLOR:GREEN;">3.8. Comment<a name="_page7_x40.00_y36.92"></a> le formulaire interagit avec le serveur ?**</H3> 
-
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.059.jpeg)
-
-
-
-### **<H3 STYLE="COLOR:GREEN;">3.9. Les<a name="_page8_x40.00_y290.92"></a> cookies**</H3> 
-
-Un site web utilise des **cookies** pour identifier et suivre ses visiteurs. Un cookie est une **petite quantité de données** stockée dans le navigateur du client. Il est composé de :
-
-- **Un nom**  
-
-- **Une valeur**  
-
-- **Optionnellement, une date d'expiration**  
-
-Le serveur choisit ces paramètres et envoie le cookie au client via les **en-têtes HTTP**.
-
-**Exemple d'En-tête de Réponse HTTP avec un Cookie**  
-
-```http
-HTTP/1.1 200 OK
-Content-Type: text/html; charset=UTF-8
-Set-Cookie: username=JohnDoe; Expires=Wed, 21 Jul 2024 07:28:00 GMT; Path=/; Domain=example.com; Secure; HttpOnly
-```
-
-**Détails de la Réponse**  
-
-**Ligne de Statut :**  
-
-- `HTTP/1.1 200 OK` : La requête a été traitée avec succès, et le serveur renvoie une réponse correcte.  
-
-**En-têtes de Réponse :**  
-
-- `Content-Type: text/html; charset=UTF-8` : Le type du contenu est du **HTML encodé en UTF-8**.  
-
-**Détails du cookie (`Set-Cookie`) :**  
-
-- `Set-Cookie: username=JohnDoe` : Crée un cookie nommé **username** avec la valeur **JohnDoe**.  
-
-- `Expires=Wed, 21 Jul 2024 07:28:00 GMT` : Date d’expiration du cookie ; après cette date, il sera supprimé automatiquement.  
-
-- `Path=/` : Le cookie est disponible sur **toutes les pages** du site. 
-
-- `Domain=example.com` : Le cookie est valide pour **example.com** et ses sous-domaines.  
-
-- `Secure` : Le cookie est **transmis uniquement via HTTPS**, garantissant une transmission sécurisée.  
-
-- `HttpOnly` : Le cookie **n’est pas accessible en JavaScript**, ce qui le protège des attaques XSS (Cross-Site Scripting).  
-
-
-
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°5**</H3>: faire les exercices
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### **<H4 STYLE="COLOR:MAGENTA;">2.3.3. Transmission des données avec GET et POST**</H4>
-
-Les formulaires HTML envoient **des données** au serveur via `GET` ou `POST`.
-
-
-**Exemple avec `GET`** *(⚠️ Visible dans l’URL)*  
-```html
-<form method="GET" action="/login">
-    <input type="text" name="username" placeholder="Nom d'utilisateur">
-    <input type="password" name="password" placeholder="Mot de passe">
-    <button type="submit">Se connecter</button>
-</form>
-```
-➡️ **Les données sont visibles dans l’URL :**
-```
-https://www.example.com/login?username=dupont&password=azerty
-```
-🚨 **Problème** : Le mot de passe est en clair dans l’URL (**risque de sécurité !**).  
-
-
-**Exemple avec `POST`** *(✔️ Sécurisé, car invisible dans l’URL)*  
-```html
-<form method="POST" action="/login">
-    <input type="text" name="username" placeholder="Nom d'utilisateur">
-    <input type="password" name="password" placeholder="Mot de passe">
-    <button type="submit">Se connecter</button>
-</form>
-```
-➡️ **Avec POST, les données sont envoyées dans le corps de la requête** et ne sont **pas visibles dans l’URL**.  
-
-
-
-#### **<H4 STYLE="COLOR:MAGENTA;">2.3.4. Différences entre GET et POST**</H4>
-
-| Critère  | **GET**  | **POST**  |
-|----------|---------|---------|
-| **Visibilité des données** | ✔️ Affichées dans l’URL  | ❌ Cachées dans la requête |
-| **Utilisation principale** | Accéder à une ressource  | Envoyer des données |
-| **Longueur des données** | ⚠️ Limitée (taille de l’URL) | ✅ Illimitée |
-| **Sécurité** | ❌ Données visibles | ✔️ Masquées |
-| **Historique** | ✔️ Stocké dans le cache | ❌ Non mémorisé |
-| **Exemples** | Recherche sur un site | Connexion, formulaire |
-
-🚀 **Bonnes pratiques** :  
-
-✔️ **Utiliser GET pour des recherches (`?q=ordinateur`)**  
-
-✔️ **Utiliser POST pour des données sensibles (mots de passe, paiements)**  
-
-
-
-
-
-
-
-#### **<H4 STYLE="COLOR:MAGENTA;">2.4.2. Corps de la Réponse avec PHP**</H4>
-
-Le corps de la réponse HTTP contient le **contenu réel renvoyé au navigateur**.  
-
-Si une page web est demandée, elle est envoyée sous forme de HTML.
-
-🔹 **Exemple d’une page générée dynamiquement avec PHP :**
-```php
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Bienvenue</title>
-</head>
-<body>
-    <?php
-    // Récupération des données envoyées via une requête POST
-    $name = htmlspecialchars($_POST['name']);
-    $city = htmlspecialchars($_POST['city']);
-    ?>
-    <h1>Bienvenue sur mon site, <?php echo $name; ?> de <?php echo $city; ?> !</h1>
-    <p>Nous sommes heureux de vous accueillir.</p>
-</body>
-</html>
-```
-📌 **Analyse** :
-
-- Le serveur reçoit les données du formulaire via `$_POST['name']` et `$_POST['city']`.  
-
-- `htmlspecialchars()` empêche les failles XSS en filtrant les caractères spéciaux.  
-
-- Le serveur renvoie une page personnalisée au client.
-
-
-
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.028.jpeg)
-
-
-
-
-## **<H2 STYLE="COLOR:BLUE;">1. Modèle<a name="_page0_x40.00_y516.92"></a> client/serveur**</H2>
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.004.png)
-
-Dans un réseau, les **ordinateurs échangent des données** :  
-
-- **Le client** envoie une requête pour demander une ressource (exemple : un navigateur web). 
-
-- **Le serveur** reçoit la requête, la traite et répond avec la ressource demandée (exemple : un serveur web).  
-
-💡 **Le Web est devenu dynamique**  
-
-Les serveurs ne se limitent plus à envoyer des fichiers statiques. Grâce à des langages comme **PHP, Python ou Java**, ils génèrent du contenu en temps réel.
-
-📌 **Exemple : Génération dynamique d'une page avec PHP**  
-
-```php
-<?php 
-$heure = date("H:i"); 
-echo "<h1>Bienvenue sur mon site</h1>";
-echo "<p>Il est actuellement $heure</p>";
-?>
-```
-Si un client se connecte à **18h23**, le serveur lui enverra :  
-
-```html
-<h1>Bienvenue sur mon site</h1>
-<p>Il est actuellement 18h23</p>
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## **<H2 STYLE="COLOR:BLUE;">3.  Coder l’envoi d’une requête par le navigateur<a name="_page3_x40.00_y617.92"></a>**</H2>
-
-Il existe plusieurs **manières d’envoyer une requête HTTP** :  
-
-1️⃣ **Saisir une URL dans la barre d’adresse du navigateur**  
-
-2️⃣ **Utiliser un formulaire HTML**  
-
-3️⃣ **Envoyer une requête via JavaScript (AJAX, Fetch API, etc.)**  
-
-### **<H3 STYLE="COLOR:GREEN;">3.1. Exemple<a name="_page4_x40.00_y36.92"></a> d'un formulaire HTML**</H3>
-
-💡 **Un formulaire HTML permet d’envoyer des données au serveur avec les méthodes `GET` ou `POST`.**  
-
-**1️⃣ Formulaire avec la méthode `GET` (⚠️ données visibles dans l’URL)**
-```html
-<form method="GET" action="/search">
-    <input type="text" name="query" placeholder="Rechercher">
-    <button type="submit">Rechercher</button>
-</form>
-```
-➡️ **Résultat dans l’URL** :  
-```
-https://www.example.com/search?query=informatique
-```
-⚠️ **Problème** : Les données sont visibles dans l’URL et peuvent être interceptées.
-
----
-
-**2️⃣ Formulaire avec la méthode `POST` (✔️ plus sécurisé)**
-```html
-<form method="POST" action="/login">
-    <input type="text" name="username" placeholder="Nom d'utilisateur">
-    <input type="password" name="password" placeholder="Mot de passe">
-    <button type="submit">Se connecter</button>
-</form>
-```
-✅ **Les données sont envoyées dans le corps de la requête HTTP et ne sont pas visibles dans l’URL.**  
-
-
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°2.**</H3>  Ouvrir un bloc-notes. Ajouter le script suivant et vérifier ce qu’on obtient dans le navigateur. Enregistrer le fichier sous `index.html`.
-
-⚠ **ATTENTION** à bien sélectionner **tous les fichiers** lors de l'enregistrement !
-
-![](AZE.png)
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Requête</title>
-</head>
-<body>
-<form method='GET' action='./login'>
-    <input name='user' type='text' required>
-    <input name='password' type='password' required>
-    <button type='submit'>Login</button>
-</form>
-</body>
-</html>
-```
-Ce formulaire utilise la **méthode GET**, ce qui signifie que :
-
-- Les données saisies (`user` et `password`) seront ajoutées dans l’URL après soumission.
-
-- Exemple d’URL après soumission :
-  ```
-  https://monsite.com/login?user=dupont&password=azerty
-  ```
-- ⚠️ **Problème** : Avec `GET`, le mot de passe est visible dans l’URL, ce qui n’est pas sécurisé.
-
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°3.**</H3> Remplir ce formulaire et le soumettre fera envoyer une requête **GET** vers l'URL `./login`. Observer la nouvelle URL.
-
-Avec la méthode **GET**, les données du formulaire seront encodées **dans l’URL**.
-
-Si on saisit les valeurs :
-
-- **Nom d'utilisateur** : `Dupont`
-
-- **Mot de passe** : `azerty`
-
-➡ Le navigateur chargera la page avec l'URL suivante :
-```
-./login?user=dupont&password=azerty
-```
-
-
-**Problème :** 
-
-  - Les données sont **visibles** dans l'URL, ce qui pose un problème de **sécurité**, notamment pour les mots de passe.
-
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°4.**</H3> 
-Modifier la page pour pouvoir la soumettre avec une requête **POST**. Remplir ce formulaire et le soumettre fera envoyer une requête **POST**.
-
-Dans ce cas, les données ne seront **pas visibles dans l’URL**, mais envoyées **dans le corps de la requête**.
-
-
-
-
-✅ **Explication :**
-
-Ici on demande de **modifier la méthode du formulaire** pour utiliser **POST** au lieu de **GET** :
-  ```html
-  <form method="POST" action="./login">
-  ```
-**Différence avec GET :**
-
-  - Avec POST, les données sont **transmises dans le corps de la requête** et **non visibles dans l'URL**.
-
-  - Cela permet de **protéger les informations sensibles** comme les mots de passe.
-
-  - Exemple de requête envoyée par POST :
-    ```
-    POST /login HTTP/1.1
-    Host: monsite.com
-    Content-Type: application/x-www-form-urlencoded
-    Content-Length: 32
-
-    user=dupont&password=azerty
-    ```
-
-
-### **<H3 STYLE="COLOR:GREEN;">3.2. Différences entre GET et POST**<a name="_page7_x40.00_y370.92"></a> </H3>
-
-| Critère  | **GET**  | **POST**  |
-|----------|---------|---------|
-| **Données visibles ?** | ✔️ Oui, dans l’URL | ❌ Non, cachées dans la requête |
-| **Sécurité** | ❌ Risque de fuite d’infos sensibles | ✔️ Plus sécurisé (ex : mot de passe) |
-| **Taille des données** | ⚠️ Limitée par l’URL | ✅ Illimitée |
-| **Stockage dans l’historique ?** | ✔️ Oui | ❌ Non |
-| **Cas d’utilisation** | Recherche, navigation | Connexion, formulaires sensibles |
-
-💡 **Bonne pratique** : Toujours utiliser **POST** pour **les mots de passe et les données sensibles** !
-
-
-
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.061.jpeg)
-
-
-
-
-
-### **<H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML**</H3>
-
-Un formulaire HTML est composé de plusieurs éléments permettant de structurer et saisir des données.
-
-
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.047.jpeg)
-
-| **Type**        | **Description** |
-|----------------|---------------|
-| `<button>`     | Définit un bouton cliquable. |
-| `<fieldset>`   | Regroupe les éléments liés dans un formulaire. |
-| `<form>`       | Définit le conteneur de formulaire. |
-| `<input>`      | Définit un champ de saisie. |
-| `<label>`      | Définit une étiquette pour un élément de formulaire. |
-| `<legend>`     | Définit l’étiquette d’un groupe de champs. |
-| `<option>`     | Définit une option dans une liste déroulante. |
-| `<optgroup>`   | Regroupe des options connexes dans une liste. |
-| `<select>`     | Définit une liste à choix multiples. |
-| `<textarea>`   | Définit une zone de saisie de texte multiligne. |
-
-
-
-
-### **<H3 STYLE="COLOR:GREEN;">3.4. Elément<a name="_page5_x40.00_y275.92"></a> ```<input>``` : quelques exemples**</H3>
-
-Le champ `<input>` est utilisé pour permettre la saisie de texte, mots de passe, et autres valeurs.
-
-
-
-![](090.png)
-
-**📌 Exemples courants :**  
-
-```html
-<input type="text" name="nom" placeholder="Votre nom">
-<input type="email" name="email" placeholder="Votre email">
-<input type="password" name="motdepasse" placeholder="Mot de passe">
-<input type="date" name="date_naissance">
-<input type="checkbox" name="conditions" value="accept"> J’accepte les conditions
-<input type="radio" name="sexe" value="homme"> Homme
-<input type="radio" name="sexe" value="femme"> Femme
-<input type="submit" value="Envoyer">
-```
-
-✅ **Les boutons radio permettent de choisir une seule option, tandis que les cases à cocher peuvent être sélectionnées simultanément.**
-
-
-### **<H3 STYLE="COLOR:GREEN;">3.5. Elément<a name="_page5_x40.00_y485.92"></a> ```<select>``` : quelques exemples**</H3>
-
-L'élément `<select>` permet de créer une liste déroulante avec des options de choix.
-
-
-![](091.png)
-
-### **<H3 STYLE="COLOR:GREEN;">3.6. Elément<a name="_page6_x40.00_y36.92"></a> value dans ```<select>```**</H3>
-
-L’attribut `value` d’un `<option>` définit la valeur qui sera envoyée au serveur lorsqu'un choix est fait.
-
-L'attribut value est **facultatif**. S’il n’est pas spécifié, alors **le texte** dans le conteneur **est envoyé à la place** 
-
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.055.png)
-
-### **<H3 STYLE="COLOR:GREEN;">3.7. Les<a name="_page6_x40.00_y300.92"></a> boutons de commande**</H3>
-
-💡 **Il existe plusieurs façons d’ajouter des boutons dans un formulaire :**
-
-| **Type**                    | **Description** |
-|-----------------------------|----------------|
-| `<input type="submit">`     | Envoie les données du formulaire. |
-| `<input type="reset">`      | Efface les champs du formulaire. |
-| `<input type="button">`     | Bouton personnalisé (nécessite JavaScript). |
-| `<input type="image">`      | Bouton sous forme d’image. |
-| `<button>`                  | Bouton plus flexible pouvant contenir du texte et des images. |
-
-
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.057.png)
-
-⚠ **Attention à ne pas confondre :**
-
-- `<button>` avec `<input type='button'>`
-
-- `<input type='submit'>` avec `<button type='submit'>`
-
-🚀 **Préférez `<button>` pour plus de flexibilité !** 
-
-
-
-
-
-
-### **<H3 STYLE="COLOR:GREEN;">3.9. Les<a name="_page8_x40.00_y290.92"></a> cookies**</H3> 
-
-Un site web utilise des **cookies** pour identifier et suivre ses visiteurs. Un cookie est une **petite quantité de données** stockée dans le navigateur du client. Il est composé de :
-
-- **Un nom**  
-
-- **Une valeur**  
-
-- **Optionnellement, une date d'expiration**  
-
-Le serveur choisit ces paramètres et envoie le cookie au client via les **en-têtes HTTP**.
-
-**Exemple d'En-tête de Réponse HTTP avec un Cookie**  
-
-```http
-HTTP/1.1 200 OK
-Content-Type: text/html; charset=UTF-8
-Set-Cookie: username=JohnDoe; Expires=Wed, 21 Jul 2024 07:28:00 GMT; Path=/; Domain=example.com; Secure; HttpOnly
-```
-
-**Détails de la Réponse**  
-
-**Ligne de Statut :**  
-
-- `HTTP/1.1 200 OK` : La requête a été traitée avec succès, et le serveur renvoie une réponse correcte.  
-
-**En-têtes de Réponse :**  
-
-- `Content-Type: text/html; charset=UTF-8` : Le type du contenu est du **HTML encodé en UTF-8**.  
-
-**Détails du cookie (`Set-Cookie`) :**  
-
-- `Set-Cookie: username=JohnDoe` : Crée un cookie nommé **username** avec la valeur **JohnDoe**.  
-
-- `Expires=Wed, 21 Jul 2024 07:28:00 GMT` : Date d’expiration du cookie ; après cette date, il sera supprimé automatiquement.  
-
-- `Path=/` : Le cookie est disponible sur **toutes les pages** du site. 
-
-- `Domain=example.com` : Le cookie est valide pour **example.com** et ses sous-domaines.  
-
-- `Secure` : Le cookie est **transmis uniquement via HTTPS**, garantissant une transmission sécurisée.  
-
-- `HttpOnly` : Le cookie **n’est pas accessible en JavaScript**, ce qui le protège des attaques XSS (Cross-Site Scripting).  
-
-
-
-
-
-**<H3 STYLE="COLOR:RED;">Activité n°5**</H3>: faire les exercices
-
-
-
-## **<H2 STYLE="COLOR:BLUE;">5. Exercices<a name="_page13_x40.00_y36.92"></a>**</H2> 
+## **<H2 STYLE="COLOR:BLUE;">4. Exercices<a name="4567"></a>**</H2> 
 
 
 **<H3 STYLE="COLOR:RED;">Exercice n°1 :**</H3> Réaliser le visuel du formulaire suivant :
