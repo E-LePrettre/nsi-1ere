@@ -544,7 +544,7 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
 
 
-???+ question "🧪 Activité n°7 : HTML : Explorer les menus déroulants `<select>` et les valeurs envoyées"
+???+ question "🧪 **Activité n°7 : HTML : Explorer les menus déroulants `<select>` et les valeurs envoyées**"
 
     📄 **Partie 1 – Menu déroulant simple**
 
@@ -672,7 +672,7 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 | `optgroup` | Regroupe visuellement les options               |
 
 
-???+ question 🧪 **Activité n°8 : Explorer les différents boutons HTML**"
+???+ question "🧪 **Activité n°8 : Explorer les différents boutons HTML**"
 
     📁 **Partie 1 – Crée un formulaire avec 3 types de boutons**
 
@@ -945,7 +945,7 @@ Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.
 
 ### **<H3 STYLE="COLOR:GREEN;">3.5. Comparer les méthodes GET et POST** 🖊️</H3>
 
-???+ question "**Activité n°16**"
+???+ question "**Activité n°17**"
 
     Modifier les fichiers "index.html" et "trait_form.php" comme suit : 
 
@@ -969,7 +969,7 @@ Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.
     ?>
     ```
 
-???+ question "**Activité n°17**" 
+???+ question "**Activité n°18**" 
 
     Ouvrir le navigateur Web 
 
@@ -980,7 +980,7 @@ Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.
     localhost/trait_form.php?nom=Dupont&prenom=Jean
     ```
 
-???+ question "**Activité n°18**"
+???+ question "**Activité n°19**"
 
     📌 **Objectif** : Observer les différences entre **les méthodes GET et POST**.
 
