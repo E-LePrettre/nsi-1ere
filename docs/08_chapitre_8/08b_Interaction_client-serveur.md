@@ -818,7 +818,7 @@ Normalement, il s’installe dans `C:\UwAmp`.
 Avant de passer à **PHP**, créons une **page HTML statique**.
 
 
-???+ question  "**Activité n°10**".
+???+ question  "**Activité n°10**"
 
     Créer avec le bloc note, un fichier où on aura copier :
     ```html
