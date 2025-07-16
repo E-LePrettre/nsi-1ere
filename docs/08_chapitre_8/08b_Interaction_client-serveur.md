@@ -236,7 +236,328 @@ Connection: close
 
 ### **<H3 STYLE="COLOR:GREEN;">2.1. HTML, CSS, JS**</H3>
 
-Le navigateur de l'ordinateur client a reçu une page de code qui va être interprétée pour afficher la page web demandée. Une page web est composée de plusieurs langages comme déjà vu dans le chapitre
+📄 **Quand vous consultez une page web**, le **navigateur du client (votre ordinateur)** reçoit du code écrit en trois langages essentiels :
+
+* **HTML** : structure la page (titres, paragraphes, formulaires, etc.)
+* **CSS** : gère l’apparence visuelle (couleurs, marges, mise en forme…)
+* **JavaScript** : rend la page interactive (animations, menus déroulants, traitement de formulaires…)
+
+💡 Ces langages sont dits **"clients"** car ils sont **interprétés par le navigateur du client**, sans intervention du serveur (sauf pour les données).
+
+
+### **<H3 STYLE="COLOR:GREEN;">2.2. Les méthodes HTTP : GET vs POST**</H3>
+
+💬 Lorsqu’un utilisateur envoie des données via un **formulaire HTML**, deux méthodes principales sont utilisées :
+
+* `GET` : données dans l’URL (visible)
+* `POST` : données dans le corps de la requête (invisible)
+
+
+
+🔹 1️⃣ Formulaire avec la méthode `GET` (⚠️ données visibles)
+
+```html
+<form method="GET" action="/search">
+    <input type="text" name="query" placeholder="Rechercher">
+    <button type="submit">Rechercher</button>
+</form>
+```
+
+➡️ Exemple d’URL après envoi :
+
+```
+https://www.example.com/search?query=informatique
+```
+
+⚠️ **Problème** : les données sont **visibles dans l’URL**. Elles peuvent être stockées dans l’historique, partagées, interceptées.
+
+
+🔹 2️⃣ Formulaire avec la méthode `POST` (✔️ plus sécurisé)
+
+```html
+<form method="POST" action="/login">
+    <input type="text" name="username" placeholder="Nom d'utilisateur">
+    <input type="password" name="password" placeholder="Mot de passe">
+    <button type="submit">Se connecter</button>
+</form>
+```
+
+✅ Les données sont envoyées **dans le corps** de la requête HTTP → **non visibles dans l’URL**.
+
+
+
+???+ question "🔧 Activité n°2"
+        
+    Objectif :Créer un fichier HTML avec un formulaire en méthode `GET` pour **observer l’URL générée**.
+
+    🔸 **Étapes :**
+
+    1. Ouvrir le Bloc-notes
+    2. Copier le code suivant :
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+    <meta charset="UTF-8">
+    <title>Requête</title>
+    </head>
+    <body>
+    <form method="GET" action="./login">
+        <input name="user" type="text" required placeholder="Nom d'utilisateur">
+        <input name="password" type="password" required placeholder="Mot de passe">
+        <button type="submit">Login</button>
+    </form>
+    </body>
+    </html>
+    ```
+
+    3. Enregistrer sous : `index.html`
+    📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
+
+
+
+???+ question "🔍 Activité n°3 : observer l’URL générée"
+
+    Remplir le formulaire avec :
+
+    * 👤 **Nom d'utilisateur** : `Dupont`
+    * 🔑 **Mot de passe** : `azerty`
+
+    ➡ Après clic sur "Login", l’URL devient :
+
+    ```
+    ./login?user=dupont&password=azerty
+    ```
+
+    🛑 **Problème identifié :**
+
+    * Le mot de passe est **visible dans l’URL**.
+
+    * Risque de fuite, stockage dans l’historique, partage involontaire…
+
+???+ question "🔐 Activité n°4 : passer à la méthode POST"
+
+    🎯 Objectif : protéger les données sensibles en utilisant `POST`.
+
+    ✅ **Étapes :**
+
+    1. Modifier l’attribut `method` :
+
+    ```html
+    <form method="POST" action="./login">
+    ```
+
+    2. Recharger la page dans le navigateur, remplir le formulaire et observer :
+    
+    * L’**URL reste la même**
+    
+    * Les données sont **envoyées dans le corps de la requête**, donc **non visibles** dans l’URL
+
+
+📄 Exemple de requête HTTP POST
+
+```
+POST /login HTTP/1.1
+Host: monsite.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 32
+
+user=dupont&password=azerty
+```
+
+🧠 Récapitulatif : GET vs POST
+
+| Critère                        | **GET**                    | **POST**                       |
+| ------------------------------ | -------------------------- | ------------------------------ |
+| **Visibilité des données**     | ✔️ Dans l’URL              | ❌ Non, dans le corps           |
+| **Sécurité**                   | ❌ Faible                   | ✅ Plus sécurisé                |
+| **Taille des données**         | ⚠️ Limitée (URL max \~2Ko) | ✅ Plus grande (corps illimité) |
+| **Stockage dans l’historique** | ✔️ Oui                     | ❌ Non                          |
+| **Exemples d’usage**           | 🔍 Recherche, filtres      | 🔐 Login, paiement, contact    |
+
+💡 **Bonne pratique** : Toujours utiliser **`POST`** pour transmettre **des mots de passe ou données personnelles**.
+
+
+### **<H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML**</H3>
+
+
+
+
+
+
+
+
+
+
+
+
+![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.061.jpeg)
+
+
+
+
+
+### **<H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML**</H3>
+
+Un formulaire HTML est composé de plusieurs éléments permettant de structurer et saisir des données.
+
+
+![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.047.jpeg)
+
+| **Type**        | **Description** |
+|----------------|---------------|
+| `<button>`     | Définit un bouton cliquable. |
+| `<fieldset>`   | Regroupe les éléments liés dans un formulaire. |
+| `<form>`       | Définit le conteneur de formulaire. |
+| `<input>`      | Définit un champ de saisie. |
+| `<label>`      | Définit une étiquette pour un élément de formulaire. |
+| `<legend>`     | Définit l’étiquette d’un groupe de champs. |
+| `<option>`     | Définit une option dans une liste déroulante. |
+| `<optgroup>`   | Regroupe des options connexes dans une liste. |
+| `<select>`     | Définit une liste à choix multiples. |
+| `<textarea>`   | Définit une zone de saisie de texte multiligne. |
+
+
+
+
+### **<H3 STYLE="COLOR:GREEN;">3.4. Elément<a name="_page5_x40.00_y275.92"></a> ```<input>``` : quelques exemples**</H3>
+
+Le champ `<input>` est utilisé pour permettre la saisie de texte, mots de passe, et autres valeurs.
+
+
+
+![](090.png)
+
+**📌 Exemples courants :**  
+
+```html
+<input type="text" name="nom" placeholder="Votre nom">
+<input type="email" name="email" placeholder="Votre email">
+<input type="password" name="motdepasse" placeholder="Mot de passe">
+<input type="date" name="date_naissance">
+<input type="checkbox" name="conditions" value="accept"> J’accepte les conditions
+<input type="radio" name="sexe" value="homme"> Homme
+<input type="radio" name="sexe" value="femme"> Femme
+<input type="submit" value="Envoyer">
+```
+
+✅ **Les boutons radio permettent de choisir une seule option, tandis que les cases à cocher peuvent être sélectionnées simultanément.**
+
+
+### **<H3 STYLE="COLOR:GREEN;">3.5. Elément<a name="_page5_x40.00_y485.92"></a> ```<select>``` : quelques exemples**</H3>
+
+L'élément `<select>` permet de créer une liste déroulante avec des options de choix.
+
+
+![](091.png)
+
+### **<H3 STYLE="COLOR:GREEN;">3.6. Elément<a name="_page6_x40.00_y36.92"></a> value dans ```<select>```**</H3>
+
+L’attribut `value` d’un `<option>` définit la valeur qui sera envoyée au serveur lorsqu'un choix est fait.
+
+L'attribut value est **facultatif**. S’il n’est pas spécifié, alors **le texte** dans le conteneur **est envoyé à la place** 
+
+![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.055.png)
+
+### **<H3 STYLE="COLOR:GREEN;">3.7. Les<a name="_page6_x40.00_y300.92"></a> boutons de commande**</H3>
+
+💡 **Il existe plusieurs façons d’ajouter des boutons dans un formulaire :**
+
+| **Type**                    | **Description** |
+|-----------------------------|----------------|
+| `<input type="submit">`     | Envoie les données du formulaire. |
+| `<input type="reset">`      | Efface les champs du formulaire. |
+| `<input type="button">`     | Bouton personnalisé (nécessite JavaScript). |
+| `<input type="image">`      | Bouton sous forme d’image. |
+| `<button>`                  | Bouton plus flexible pouvant contenir du texte et des images. |
+
+
+![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.057.png)
+
+⚠ **Attention à ne pas confondre :**
+
+- `<button>` avec `<input type='button'>`
+
+- `<input type='submit'>` avec `<button type='submit'>`
+
+🚀 **Préférez `<button>` pour plus de flexibilité !** 
+
+
+
+
+
+### **<H3 STYLE="COLOR:GREEN;">3.8. Comment<a name="_page7_x40.00_y36.92"></a> le formulaire interagit avec le serveur ?**</H3> 
+
+![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.059.jpeg)
+
+
+
+### **<H3 STYLE="COLOR:GREEN;">3.9. Les<a name="_page8_x40.00_y290.92"></a> cookies**</H3> 
+
+Un site web utilise des **cookies** pour identifier et suivre ses visiteurs. Un cookie est une **petite quantité de données** stockée dans le navigateur du client. Il est composé de :
+
+- **Un nom**  
+
+- **Une valeur**  
+
+- **Optionnellement, une date d'expiration**  
+
+Le serveur choisit ces paramètres et envoie le cookie au client via les **en-têtes HTTP**.
+
+**Exemple d'En-tête de Réponse HTTP avec un Cookie**  
+
+```http
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
+Set-Cookie: username=JohnDoe; Expires=Wed, 21 Jul 2024 07:28:00 GMT; Path=/; Domain=example.com; Secure; HttpOnly
+```
+
+**Détails de la Réponse**  
+
+**Ligne de Statut :**  
+
+- `HTTP/1.1 200 OK` : La requête a été traitée avec succès, et le serveur renvoie une réponse correcte.  
+
+**En-têtes de Réponse :**  
+
+- `Content-Type: text/html; charset=UTF-8` : Le type du contenu est du **HTML encodé en UTF-8**.  
+
+**Détails du cookie (`Set-Cookie`) :**  
+
+- `Set-Cookie: username=JohnDoe` : Crée un cookie nommé **username** avec la valeur **JohnDoe**.  
+
+- `Expires=Wed, 21 Jul 2024 07:28:00 GMT` : Date d’expiration du cookie ; après cette date, il sera supprimé automatiquement.  
+
+- `Path=/` : Le cookie est disponible sur **toutes les pages** du site. 
+
+- `Domain=example.com` : Le cookie est valide pour **example.com** et ses sous-domaines.  
+
+- `Secure` : Le cookie est **transmis uniquement via HTTPS**, garantissant une transmission sécurisée.  
+
+- `HttpOnly` : Le cookie **n’est pas accessible en JavaScript**, ce qui le protège des attaques XSS (Cross-Site Scripting).  
+
+
+
+
+
+**<H3 STYLE="COLOR:RED;">Activité n°5**</H3>: faire les exercices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
