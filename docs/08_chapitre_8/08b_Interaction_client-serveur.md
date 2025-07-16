@@ -350,7 +350,7 @@ https://www.example.com/search?query=informatique
     ```
 
     2 Recharger la page dans le navigateur, remplir le formulaire et observer :
-        >
+
         > * L’**URL reste la même**
         > 
         > * Les données sont **envoyées dans le corps de la requête**, donc **non visibles** dans l’URL
