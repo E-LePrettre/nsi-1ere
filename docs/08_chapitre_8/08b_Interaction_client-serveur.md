@@ -351,9 +351,9 @@ https://www.example.com/search?query=informatique
 
     2 Recharger la page dans le navigateur, remplir le formulaire et observer :
     
-        * L’**URL reste la même**
-    
-        * Les données sont **envoyées dans le corps de la requête**, donc **non visibles** dans l’URL
+        > * L’**URL reste la même**
+        > 
+        > * Les données sont **envoyées dans le corps de la requête**, donc **non visibles** dans l’URL
 
 
 📄 Exemple de requête HTTP POST
@@ -428,7 +428,7 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     3 Enregistrer sous : `formulaire.html`
 
-        📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
+        > 📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
 
     4 Ouvrir le fichier dans un navigateur Internet
 
@@ -436,23 +436,23 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     a. **Remplis le champ "Titre" et choisis un pays dans la liste, puis clique sur "Validez".**
 
-        * Que se passe-t-il ?
-
-        * Que remarques-tu dans la barre d'adresse (URL) ?
+        > * Que se passe-t-il ?
+        > 
+        > * Que remarques-tu dans la barre d'adresse (URL) ?
 
     b. **Observe l’URL générée. Que signifient les mots qui apparaissent après le `?` ?**
 
-        * Exemple : `?titre=Test&lieu=France`
-
-        * Quels noms correspondent aux champs du formulaire ? À quelles valeurs ?
+        > * Exemple : `?titre=Test&lieu=France`
+        > 
+        > * Quels noms correspondent aux champs du formulaire ? À quelles valeurs ?
 
     c. **Modifie l’attribut `method="get"` en `method="post"`, puis recharge la page.**
 
-        * Recommence le test.
-
-        * Que remarques-tu cette fois dans l’URL ?
-
-        * Pourquoi n'y a-t-il rien dans la barre d'adresse ?
+        > * Recommence le test.
+        > 
+        > * Que remarques-tu cette fois dans l’URL ?
+        > 
+        > * Pourquoi n'y a-t-il rien dans la barre d'adresse ?
 
 🧠 **Bilan**
 
@@ -518,13 +518,13 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     a. **Remplis le champ prénom, choisis un genre, sélectionne les moyens de transport, puis clique sur "Valider".**
 
-        * Que vois-tu apparaître dans l’URL après le `?` ?
-
-        * Que représentent les parties `prenom=...`, `genre=...`, `vehicule=...` ?
+        > * Que vois-tu apparaître dans l’URL après le `?` ?
+        >
+        > * Que représentent les parties `prenom=...`, `genre=...`, `vehicule=...` ?
 
     b. **Coche uniquement "J’ai une voiture". Quelle différence dans l’URL ?**
 
-        * Que se passe-t-il si aucun véhicule n’est coché ?
+        > * Que se passe-t-il si aucun véhicule n’est coché ?
 
     c. **Pourquoi peut-on cocher plusieurs cases pour les véhicules, mais un seul genre ?**
 
@@ -576,11 +576,11 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     3 **Questions :**
 
-        * Quelle option est sélectionnée par défaut ?
-        
-        * Que vois-tu dans l’URL après avoir cliqué sur "Envoyer" ?
-        
-        * Modifie l’attribut `selected` pour que "Option 1" soit sélectionnée par défaut. Vérifie le résultat.
+        > * Quelle option est sélectionnée par défaut ?
+        > 
+        > * Que vois-tu dans l’URL après avoir cliqué sur "Envoyer" ?
+        >
+        > * Modifie l’attribut `selected` pour que "Option 1" soit sélectionnée par défaut. Vérifie le résultat.
 
     📄 **Partie 2 – Valeurs envoyées avec `value`**
 
@@ -602,11 +602,11 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     3 🧠 **Questions :**
 
-        * Quelle est la valeur envoyée dans l’URL ?
-        
-        * Que se passe si tu sélectionnes "Option 3" ?
-        
-        * Quelle est la différence entre le texte affiché et la donnée réellement transmise ?
+        > * Quelle est la valeur envoyée dans l’URL ?
+        >
+        > * Que se passe si tu sélectionnes "Option 3" ?
+        >
+        > * Quelle est la différence entre le texte affiché et la donnée réellement transmise ?
 
     📄 **Partie 3 – Menu élargi avec `size` (liste déroulante dépliée)**
 
@@ -626,11 +626,11 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     🧠 **Questions :**
 
-        * Qu’est-ce qui change visuellement avec `size="3"` ?
-        
-        * Peut-on toujours sélectionner plusieurs éléments ?
-        
-        * Si non, comment modifier cela ? (💡 : `multiple`)
+        > * Qu’est-ce qui change visuellement avec `size="3"` ?
+        >
+        > * Peut-on toujours sélectionner plusieurs éléments ?
+        >
+        > * Si non, comment modifier cela ? (💡 : `multiple`)
 
     📄 **Partie 4 – Menu groupé avec `<optgroup>`**
 
@@ -654,11 +654,11 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     🧠 **Questions :**
 
-        * Quelle est l’utilité de `<optgroup>` ?
-        
-        * Est-ce que `<optgroup>` a un rôle dans les données transmises ?
-        
-        * Comment rendre ce menu plus clair pour l’utilisateur ?
+        > * Quelle est l’utilité de `<optgroup>` ?
+        >
+        > * Est-ce que `<optgroup>` a un rôle dans les données transmises ?
+        >
+        > * Comment rendre ce menu plus clair pour l’utilisateur ?
 
 
 
@@ -671,6 +671,125 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 | `value`    | Détermine la valeur envoyée au serveur          |
 | `size`     | Affiche plusieurs lignes visibles en même temps |
 | `optgroup` | Regroupe visuellement les options               |
+
+
+???+ question 🧪 **Activité n°8 : Explorer les différents boutons HTML**"
+
+    📁 **Partie 1 – Crée un formulaire avec 3 types de boutons**
+
+    1. Crée un fichier `boutons1.html`
+    2. Colle le code suivant :
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+    <meta charset="UTF-8">
+    <title>Test des boutons HTML</title>
+    </head>
+    <body>
+    <form action="" method="get">
+        Prénom : <input type="text" name="prenom"><br><br>
+
+        <input type="submit" value="Envoyer">
+        <input type="reset" value="Réinitialiser">
+        <input type="button" value="Ne fait rien">
+    </form>
+    </body>
+    </html>
+    ```
+    3 🔍 Questions :
+
+        > a. Que fait le bouton **"Envoyer"** ?
+        >
+        > b. Que fait le bouton **"Réinitialiser"** ?
+        > 
+        > c. Que fait le bouton **"Ne fait rien"** ?
+        >
+        > d. Peux-tu modifier l’URL du formulaire avec la méthode GET pour voir les données envoyées ?
+
+    📁 **Partie 2 – Bouton avec image**
+
+    1. Crée un fichier `boutons2.html`
+    2. Colle ce code (utilise une image comme bouton) :
+
+    ```html
+    <form method="get">
+    <p>Clique sur l'image pour envoyer :</p>
+    <input type="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Calendar_font_awesome.svg/48px-Calendar_font_awesome.svg.png" alt="Envoyer" width="40" height="40">
+    </form>
+    ```
+
+    3 🔍 Questions :
+
+        > a. Que se passe-t-il quand tu cliques sur l’image ?
+        >
+        > b. Est-ce que l’image est un bouton "submit" ?
+        >
+        > c. Quelle différence avec un vrai `<input type="submit">` ?
+
+    📁 **Partie 3 – Bouton personnalisé avec `<button>`**
+
+    ```html
+    <form method="get">
+    <button type="submit">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Edit_font_awesome.svg/32px-Edit_font_awesome.svg.png" alt="Éditer">
+        Éditer
+    </button>
+    </form>
+    ```
+
+    🔍 Questions :
+
+        > a. Ce bouton est-il un "submit" ou un simple bouton ?
+        >
+        > b. Que contient ce bouton en plus par rapport à `<input>` ?
+        >
+        > c. Peux-tu ajouter un champ de formulaire au-dessus pour voir si ça envoie bien les données ?
+
+
+
+    📁 **Partie 4 – Bouton avec lien**
+
+    ```html
+    <button>
+    <a href="https://www.wikipedia.org">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/40px-Wikipedia-logo-v2.svg.png" alt="Wikipedia">
+        Aller sur Wikipedia
+    </a>
+    </button>
+    ```
+
+    ⚠️ Attention : Ce bouton **n’envoie pas de formulaire**, il agit comme un **lien décoré**.
+
+
+
+🧠 **Bilan**
+
+| Balise                   | Rôle                                            |
+| ------------------------ | ----------------------------------------------- |
+| `<input type="submit">`  | Envoie le formulaire                            |
+| `<input type="reset">`   | Réinitialise les champs                         |
+| `<input type="button">`  | Ne fait rien sans JS                            |
+| `<input type="image">`   | Agit comme un bouton submit avec une image      |
+| `<button type="submit">` | Bouton plus riche (peut contenir texte + image) |
+| `<button>` + `<a>`       | Simule un lien stylisé                          |
+
+
+
+### **<H3 STYLE="COLOR:GREEN;">3.4. Comment le serveur interagit avec le formulaire?**</H3>
+
+![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.059.jpeg)
+
+1. **Le client (navigateur) envoie une requête initiale au serveur** pour afficher une page contenant un formulaire (fichier `.html` ou `.php`).
+2. **Le serveur retourne une page HTML** contenant le formulaire à remplir.
+3. **L’utilisateur remplit le formulaire** dans son navigateur et clique sur "Valider".
+4. **Le navigateur envoie une nouvelle requête HTTP** avec les **données du formulaire** (via `GET` ou `POST`) au **serveur**.
+5. **Le serveur traite ces données** grâce à un **langage côté serveur** : c’est là qu’intervient **PHP** (ou un autre langage comme Python, Node.js, etc.).
+
+
+
+
 
 
 
@@ -1212,11 +1331,6 @@ L'attribut value est **facultatif**. S’il n’est pas spécifié, alors **le t
 
 
 
-
-
-### **<H3 STYLE="COLOR:GREEN;">3.8. Comment<a name="_page7_x40.00_y36.92"></a> le formulaire interagit avec le serveur ?**</H3> 
-
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.059.jpeg)
 
 
 
