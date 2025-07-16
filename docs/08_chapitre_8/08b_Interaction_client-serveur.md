@@ -350,6 +350,7 @@ https://www.example.com/search?query=informatique
     ```
 
     2 Recharger la page dans le navigateur, remplir le formulaire et observer :
+
     * L’**URL reste la même**
     
     * Les données sont **envoyées dans le corps de la requête**, donc **non visibles** dans l’URL
@@ -427,7 +428,7 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     3 Enregistrer sous : `formulaire.html`
 
-        > 📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
+    📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
 
     4 Ouvrir le fichier dans un navigateur Internet
 
@@ -435,23 +436,23 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     a. **Remplis le champ "Titre" et choisis un pays dans la liste, puis clique sur "Validez".**
 
-        > * Que se passe-t-il ?
-        > 
-        > * Que remarques-tu dans la barre d'adresse (URL) ?
+    * Que se passe-t-il ?
+    
+    * Que remarques-tu dans la barre d'adresse (URL) ?
 
     b. **Observe l’URL générée. Que signifient les mots qui apparaissent après le `?` ?**
 
-        > * Exemple : `?titre=Test&lieu=France`
-        > 
-        > * Quels noms correspondent aux champs du formulaire ? À quelles valeurs ?
+    * Exemple : `?titre=Test&lieu=France`
+    
+    * Quels noms correspondent aux champs du formulaire ? À quelles valeurs ?
 
     c. **Modifie l’attribut `method="get"` en `method="post"`, puis recharge la page.**
 
-        > * Recommence le test.
-        > 
-        > * Que remarques-tu cette fois dans l’URL ?
-        > 
-        > * Pourquoi n'y a-t-il rien dans la barre d'adresse ?
+    * Recommence le test.
+    
+    * Que remarques-tu cette fois dans l’URL ?
+     
+    * Pourquoi n'y a-t-il rien dans la barre d'adresse ?
 
 🧠 **Bilan**
 
@@ -517,13 +518,13 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     a. **Remplis le champ prénom, choisis un genre, sélectionne les moyens de transport, puis clique sur "Valider".**
 
-        > * Que vois-tu apparaître dans l’URL après le `?` ?
-        >
-        > * Que représentent les parties `prenom=...`, `genre=...`, `vehicule=...` ?
+    * Que vois-tu apparaître dans l’URL après le `?` ?
+    
+    * Que représentent les parties `prenom=...`, `genre=...`, `vehicule=...` ?
 
     b. **Coche uniquement "J’ai une voiture". Quelle différence dans l’URL ?**
 
-        > * Que se passe-t-il si aucun véhicule n’est coché ?
+    * Que se passe-t-il si aucun véhicule n’est coché ?
 
     c. **Pourquoi peut-on cocher plusieurs cases pour les véhicules, mais un seul genre ?**
 
@@ -575,11 +576,11 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     3 **Questions :**
 
-        > * Quelle option est sélectionnée par défaut ?
-        > 
-        > * Que vois-tu dans l’URL après avoir cliqué sur "Envoyer" ?
-        >
-        > * Modifie l’attribut `selected` pour que "Option 1" soit sélectionnée par défaut. Vérifie le résultat.
+    * Quelle option est sélectionnée par défaut ?
+    
+    * Que vois-tu dans l’URL après avoir cliqué sur "Envoyer" ?
+    
+    * Modifie l’attribut `selected` pour que "Option 1" soit sélectionnée par défaut. Vérifie le résultat.
 
     📄 **Partie 2 – Valeurs envoyées avec `value`**
 
@@ -601,11 +602,11 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     3 🧠 **Questions :**
 
-        > * Quelle est la valeur envoyée dans l’URL ?
-        >
-        > * Que se passe si tu sélectionnes "Option 3" ?
-        >
-        > * Quelle est la différence entre le texte affiché et la donnée réellement transmise ?
+    * Quelle est la valeur envoyée dans l’URL ?
+    
+    * Que se passe si tu sélectionnes "Option 3" ?
+    
+    * Quelle est la différence entre le texte affiché et la donnée réellement transmise ?
 
     📄 **Partie 3 – Menu élargi avec `size` (liste déroulante dépliée)**
 
@@ -625,11 +626,11 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     🧠 **Questions :**
 
-        > * Qu’est-ce qui change visuellement avec `size="3"` ?
-        >
-        > * Peut-on toujours sélectionner plusieurs éléments ?
-        >
-        > * Si non, comment modifier cela ? (💡 : `multiple`)
+    * Qu’est-ce qui change visuellement avec `size="3"` ?
+    
+    * Peut-on toujours sélectionner plusieurs éléments ?
+    
+    * Si non, comment modifier cela ? (💡 : `multiple`)
 
     📄 **Partie 4 – Menu groupé avec `<optgroup>`**
 
@@ -653,11 +654,11 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     🧠 **Questions :**
 
-        > * Quelle est l’utilité de `<optgroup>` ?
-        >
-        > * Est-ce que `<optgroup>` a un rôle dans les données transmises ?
-        >
-        > * Comment rendre ce menu plus clair pour l’utilisateur ?
+    * Quelle est l’utilité de `<optgroup>` ?
+    
+    * Est-ce que `<optgroup>` a un rôle dans les données transmises ?
+    
+    * Comment rendre ce menu plus clair pour l’utilisateur ?
 
 
 
@@ -699,13 +700,13 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
     ```
     3 🔍 Questions :
 
-        > a. Que fait le bouton **"Envoyer"** ?
-        >
-        > b. Que fait le bouton **"Réinitialiser"** ?
-        > 
-        > c. Que fait le bouton **"Ne fait rien"** ?
-        >
-        > d. Peux-tu modifier l’URL du formulaire avec la méthode GET pour voir les données envoyées ?
+    a. Que fait le bouton **"Envoyer"** ?
+    
+    b. Que fait le bouton **"Réinitialiser"** ?
+     
+    c. Que fait le bouton **"Ne fait rien"** ?
+    
+    d. Peux-tu modifier l’URL du formulaire avec la méthode GET pour voir les données envoyées ?
 
     📁 **Partie 2 – Bouton avec image**
 
@@ -721,11 +722,11 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     3 🔍 Questions :
 
-        > a. Que se passe-t-il quand tu cliques sur l’image ?
-        >
-        > b. Est-ce que l’image est un bouton "submit" ?
-        >
-        > c. Quelle différence avec un vrai `<input type="submit">` ?
+    a. Que se passe-t-il quand tu cliques sur l’image ?
+    
+    b. Est-ce que l’image est un bouton "submit" ?
+    
+    c. Quelle différence avec un vrai `<input type="submit">` ?
 
     📁 **Partie 3 – Bouton personnalisé avec `<button>`**
 
@@ -740,11 +741,11 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     🔍 Questions :
 
-        > a. Ce bouton est-il un "submit" ou un simple bouton ?
-        >
-        > b. Que contient ce bouton en plus par rapport à `<input>` ?
-        >
-        > c. Peux-tu ajouter un champ de formulaire au-dessus pour voir si ça envoie bien les données ?
+    a. Ce bouton est-il un "submit" ou un simple bouton ?
+    
+    b. Que contient ce bouton en plus par rapport à `<input>` ?
+    
+    c. Peux-tu ajouter un champ de formulaire au-dessus pour voir si ça envoie bien les données ?
 
 
 
