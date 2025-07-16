@@ -672,7 +672,7 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 | `optgroup` | Regroupe visuellement les options               |
 
 
-???+ question "🧪 **Activité n°8 : Explorer les différents boutons HTML**"
+???+ question "🧪**Activité n°8 : Explorer les différents boutons HTML**"
 
     📁 **Partie 1 – Crée un formulaire avec 3 types de boutons**
 
