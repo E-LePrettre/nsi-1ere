@@ -145,16 +145,29 @@ Autre exemple :
 
 Écrire 57 en base 2 (=donner sa représentation binaire). 
 
-- 32 < 57 < 64. Donc on fait 57 = 32+25 = 25+25. On a un chiffre 1 à la position 6. 
-- 16 < 25 < 32. Donc on fait 25 = 16+9 = 24+9. On a un chiffre 1 à la position 5. 
-- 8 < 9 < 16. Donc on fait 9=8+1=23+1. On a un chiffre 1 à la position 4. 
-- 1=20. On peut s’arrêter (dès qu’on atteint une puissance de 2). On a un chiffre 1 à la position 1. 
+✅ **Tableau : Représentation binaire de 57**
 
-57 = 0b111001  
+| **Puissances de 2**       | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+| ------------------------- | --- | -- | -- | -- | - | - | - | - |
+| **Bits (valeur binaire)** | 0   | 0  | 1  | 1  | 1 | 0 | 0 | 1 |
+
+
+
+✍️ **Explication **
+
+* 57 ≥ **32** → ✅ **1** → reste : 57 - 32 = **25**
+* 25 ≥ **16** → ✅ **1** → reste : 25 - 16 = **9**
+* 9 ≥ **8** → ✅ **1** → reste : 9 - 8 = **1**
+* 1 ≥ **1** → ✅ **1** → reste : 1 - 1 = **0**
+* Tous les autres bits = **0**
+
+**57 en base 2 => `00111001`**
+
+
 
 ???+ question "Activité n°2 :"
 
-    convertir 23 écrit en décimal en binaire
+    convertir 23 écrit en décimal (base 10) en binaire
 
     ??? success "Solution"
 

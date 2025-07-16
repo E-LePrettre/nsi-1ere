@@ -6,8 +6,8 @@ title: 08b Interaction client-serveur - Requête
 
 **Table des matières** 
 
-1. [Modèle client/serveur](#_page0_x40.00_y516.92)
-1. [Le protocole HTTP](#_page1_x40.00_y233.92)
+1. [Modèle client/serveur](#1234)
+1. [Le protocole HTTP](#2345)
 3. [Coder l’envoi d’une requête par le navigateur](#_page3_x40.00_y617.92)
 4. [APPLICATION : Création d’une page web dynamique](#_page8_x40.00_y503.92)
 5. [Exercices](#_page13_x40.00_y36.92)
@@ -29,10 +29,15 @@ protocole://nom-de-domaine:port/chemin?paramètre1=valeur1&paramètre2=valeur2#a
 🔍 **Explication:**
 
 ✔️ `protocole` → HTTP ou HTTPS (selon que la connexion est sécurisée ou non)
+
 ✔️ `nom-de-domaine` → Adresse du serveur (ex. : `www.example.com`)
+
 ✔️ `:port` → (Facultatif) numéro de port utilisé (ex. `:443` pour HTTPS, `:80` pour HTTP)
+
 ✔️ `chemin` → Page demandée ou ressource (`/index.html`)
+
 ✔️ `?paramètre1=valeur1` → Paramètres transmis dans l’URL (ex. recherche)
+
 ✔️ `#ancre` → Cible une **section précise** d’une page (ex. `#Algorithmique`)
 
 💡 **Exemple concret**
@@ -45,24 +50,25 @@ https://fr.wikipedia.org/wiki/Informatique#Algorithmique
 
 ???+ question "Activité n°1"
 
-### <h3 style="color:red;">Activité n°1</h3>
+    🧪 **Passage de paramètres à un serveur**
 
-🧪 **Passage de paramètres à un serveur**
+    1️⃣ Va sur [Wikipedia](https://fr.wikipedia.org/)
 
-1️⃣ Va sur [Wikipedia](https://fr.wikipedia.org/)
-2️⃣ Tape **"informatique"** dans la barre de recherche
-3️⃣ Observe et **note l’URL générée**
-4️⃣ Compare les deux URLs suivantes :
+    2️⃣ Tape **"informatique"** dans la barre de recherche
 
-* 🔹 [https://fr.wikipedia.org/w/index.php?search=informatique](https://fr.wikipedia.org/w/index.php?search=informatique)
-* 🔹 [https://fr.wikipedia.org/wiki/Informatique#Algorithmique](https://fr.wikipedia.org/wiki/Informatique#Algorithmique)
+    3️⃣ Observe et **note l’URL générée**
 
----
+    4️⃣ Compare les deux URLs suivantes :
 
-### ❓ **Que remarquez-vous ?**
+        * 🔹 [https://fr.wikipedia.org/w/index.php?search=informatique](https://fr.wikipedia.org/w/index.php?search=informatique)
 
-📌 La première URL utilise un **paramètre de recherche** (`?search=informatique`) → typique d’une requête **GET**.
-📌 La deuxième URL cible une **page existante** + une **ancre** (`#Algorithmique`) pour aller **directement à une section précise**.
+        * 🔹 [https://fr.wikipedia.org/wiki/Informatique#Algorithmique](https://fr.wikipedia.org/wiki/Informatique#Algorithmique)
+
+    ❓ **Que remarquez-vous ?**
+
+    📌 La première URL utilise un **paramètre de recherche** (`?search=informatique`) → typique d’une requête **GET**.
+
+    📌 La deuxième URL cible une **page existante** + une **ancre** (`#Algorithmique`) pour aller **directement à une section précise**.
 
 
 
@@ -127,17 +133,23 @@ Connection: close
 
 * **`HTTP/1.1`** : version du protocole HTTP utilisée. 
 
-* `Host: www.exemple.com`
+* **`Host: www.exemple.com`**
+
     > * Ce champ **obligatoire en HTTP/1.1** indique **le nom du serveur cible** (nom de domaine).
+
     > * Permet à un même serveur d’héberger plusieurs sites web (virtualisation).
 
 * **`User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)`**
+
     > * Ce champ permet d’indiquer **qui fait la requête** (navigateur, version, OS...).
+
     > * Ici, c’est un navigateur Mozilla Firefox tournant sur Windows 10.
 
 * **`Accept: text/html`** : Indique **le type de contenu** attendu par le client (ici, du HTML).
 
 * **`Connection: close`** : Indique que le client souhaite **fermer la connexion TCP** après la réponse.
+
+
 
 ### **<H3 STYLE="COLOR:GREEN;">1.3. Réponse du serveur**</H3>
 
@@ -162,17 +174,21 @@ Connection: close
 ```
 
 
-## 🧩 **Explication**
+🧩 **Explication**
 
 
 * **`HTTP/1.1`** : version du protocole HTTP utilisée pour la réponse.
 
 * **`200 OK`** : **code de statut** suivi de son message. Ici :
+
     > * `200` signifie que la requête a réussi.
+    >
     > * `OK` est un message humainement lisible.
     > 
     > 🧠 Autres exemples de statuts :
+    >
     > * `404 Not Found` → ressource inexistante.
+    >
     > * `500 Internal Server Error` → erreur côté serveur.
 
 * `Date: Tue, 15 Jul 2025 08:30:00 GMT` : Indique la **date et l'heure** à laquelle la réponse a été générée.
@@ -180,9 +196,13 @@ Connection: close
 * **`Server: Apache/2.4.41 (Ubuntu)`** : Donne des informations sur le **logiciel serveur web** utilisé : **Apache** version 2.4.41 tournant sous **Ubuntu**.
 
 * **`Content-Type: text/html; charset=UTF-8`**
+    >
     > Indique le **type de contenu** de la réponse.
+    >
     > Ici :
+    >
     > * `text/html` signifie que le corps est une page HTML.
+    >
     > * `charset=UTF-8` précise l’encodage des caractères (important pour les accents !).
 
 * **`Content-Length: 1024`** : Spécifie la **taille du corps de la réponse** en octets (ici 1024 octets) : permet au client de savoir combien d’octets il doit lire.
@@ -190,6 +210,7 @@ Connection: close
 * **`Connection: close`** :  Le serveur signale que la connexion TCP va être **fermée** après cette réponse.
 
 * 📄 **Corps de la réponse (à partir de la 7e ligne)**
+    >
     > Tout ce qui vient **après la ligne vide** (séparateur) constitue le **corps** de la réponse, ici une **page HTML**.
 
 ### **<H3 STYLE="COLOR:GREEN;">1.4. Le protocole HTTPS**</H3>
@@ -213,8 +234,9 @@ Connection: close
 ## **<H2 STYLE="COLOR:BLUE;">2. Les langages <a name="_page0_x40.00_y516.92"></a> clients**</H2>
 
 
+### **<H3 STYLE="COLOR:GREEN;">2.1. HTML, CSS, JS**</H3>
 
-
+Le navigateur de l'ordinateur client a reçu une page de code qui va être interprétée pour afficher la page web demandée. Une page web est composée de plusieurs langages comme déjà vu dans le chapitre
 
 
 
