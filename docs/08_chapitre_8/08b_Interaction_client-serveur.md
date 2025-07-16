@@ -544,7 +544,7 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
 
 
-???+ question 🧪 Activité n°7 : HTML : Explorer les menus déroulants `<select>` et les valeurs envoyées"
+???+ question "🧪 Activité n°7 : HTML : Explorer les menus déroulants `<select>` et les valeurs envoyées"
 
     📄 **Partie 1 – Menu déroulant simple**
 
