@@ -78,11 +78,11 @@ https://fr.wikipedia.org/wiki/Informatique#Algorithmique
         * Le serveur interprète le paramètre `search` pour effectuer une **recherche du mot "informatique"**
    
 
-        * La première URL montre un **formulaire de recherche avec la méthode GET**
+        La première URL montre un **formulaire de recherche avec la méthode GET**
 
-        * La deuxième URL utilise une **ancre HTML** pour accéder **directement à une section** d’une page déjà existante
+        La deuxième URL utilise une **ancre HTML** pour accéder **directement à une section** d’une page déjà existante
 
-        * **GET permet de transmettre des paramètres** dans l’URL, tandis que `#` sert à **naviguer à l’intérieur de la page**
+        **GET permet de transmettre des paramètres** dans l’URL, tandis que `#` sert à **naviguer à l’intérieur de la page**
 
 
 
