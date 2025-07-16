@@ -765,6 +765,51 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
     * Comment rendre ce menu plus clair pour l’utilisateur ?
 
 
+    ??? success "Solution"
+
+        📄 **Partie 1 – Menu déroulant simple**
+
+        🧠 **Questions :**
+
+        | Question                                                                                               | Réponse attendue                                                                                    |
+        | ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
+        | ❓ Quelle option est sélectionnée par défaut ?                                                          | **Option 2**, car elle est marquée `selected`.                                                      |
+        | ❓ Que vois-tu dans l’URL après avoir cliqué sur "Envoyer" ?                                            | Quelque chose comme `...?choix=Option+2` si Option 2 était sélectionnée.                            |
+        | ❓ Modifie l’attribut `selected` pour que "Option 1" soit sélectionnée par défaut. Vérifie le résultat. | Il faut déplacer `selected` vers `<option>Option 1</option>` → `<option selected>Option 1</option>` |
+
+        📄 **Partie 2 – Valeurs envoyées avec `value`**
+
+        🧠 **Questions :**
+
+        | Question                                                                              | Réponse attendue                                                                                                                                        |
+        | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+        | ❓ Quelle est la valeur envoyée dans l’URL ?                                           | **1**, **2** ou **3**, selon l’option choisie. Par défaut, c’est `choix=2`.                                                                             |
+        | ❓ Que se passe si tu sélectionnes "Option 3" ?                                        | L’URL devient `...?choix=3`.                                                                                                                            |
+        | ❓ Quelle est la différence entre le texte affiché et la donnée réellement transmise ? | Le texte visible est `"Option 3"`, mais la valeur transmise est `"3"`. On peut donc afficher un libellé parlant tout en transmettant un code simplifié. |
+
+        📄 **Partie 3 – Menu élargi avec `size="3"`**
+
+        🧠 **Questions :**
+
+        | Question                                              | Réponse attendue                                                                                                            |
+        | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+        | ❓ Qu’est-ce qui change visuellement avec `size="3"` ? | Le menu **est déplié** et affiche **directement 3 options visibles** sans clic.                                             |
+        | ❓ Peut-on toujours sélectionner plusieurs éléments ?  | Non, **seulement un** élément à la fois est sélectionnable.                                                                 |
+        | ❓ Si non, comment modifier cela ?                     | Il faut ajouter l’attribut `multiple` → `<select name="choix" size="3" multiple>` pour permettre la **sélection multiple**. |
+
+        ---
+
+        ### 📄 **Partie 4 – Menu groupé avec `<optgroup>`**
+
+        🧠 **Questions :**
+
+        | Question                                                          | Réponse attendue                                                                                                                                                                                                                                                                                                  |
+        | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+        | ❓ Quelle est l’utilité de `<optgroup>` ?                          | Elle permet de **regrouper visuellement les options** sous un même intitulé, pour **mieux organiser** les choix (par zone géographique ici).                                                                                                                                                                      |
+        | ❓ Est-ce que `<optgroup>` a un rôle dans les données transmises ? | Non, seul l’élément `<option>` sélectionné est envoyé (ex. `ville=Paris`), **l’optgroup ne fait que structurer visuellement**.                                                                                                                                                                                    |
+        | ❓ Comment rendre ce menu plus clair pour l’utilisateur ?          | En ajoutant des **libellés explicites** dans les `<optgroup>`, en **classant logiquement** les options, et en précisant le **choix à faire** via le `<label>`. On peut aussi ajouter une première option grisée de type : `<option disabled selected>Choisissez une ville...</option>` pour guider l'utilisateur. |
+
+
 
 📦 **Bilan**
 
