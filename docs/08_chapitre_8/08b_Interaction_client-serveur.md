@@ -73,9 +73,9 @@ https://fr.wikipedia.org/wiki/Informatique#Algorithmique
         
         Cela signifie que :
 
-            * Le **navigateur envoie une requête GET** au **serveur Wikipedia**
+        * Le **navigateur envoie une requête GET** au **serveur Wikipedia**
 
-            * Le serveur interprète le paramètre `search` pour effectuer une **recherche du mot "informatique"**
+        * Le serveur interprète le paramètre `search` pour effectuer une **recherche du mot "informatique"**
    
 
         * La première URL montre un **formulaire de recherche avec la méthode GET**
