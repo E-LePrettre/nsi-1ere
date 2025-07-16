@@ -61,7 +61,7 @@ Ce sont les équipements chargés **d’acheminer les données** entre les termi
 
 
 
-### <H3 STYLE="COLOR:GREEN;">**2.6. Types de connexions réseau</h3>**
+### <H3 STYLE="COLOR:GREEN;">**1.3. Types de connexions réseau</h3>**
 
 🔸 **Connexions filaires**
 

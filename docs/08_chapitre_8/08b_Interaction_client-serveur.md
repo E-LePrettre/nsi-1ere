@@ -59,15 +59,19 @@ https://fr.wikipedia.org/wiki/Informatique#Algorithmique
 
     4️⃣ Compare les deux URLs suivantes :
 
-        * 🔹 [https://fr.wikipedia.org/w/index.php?search=informatique](https://fr.wikipedia.org/w/index.php?search=informatique)
+    * [https://fr.wikipedia.org/w/index.php?search=informatique](https://fr.wikipedia.org/w/index.php?search=informatique)
 
-        * 🔹 [https://fr.wikipedia.org/wiki/Informatique#Algorithmique](https://fr.wikipedia.org/wiki/Informatique#Algorithmique)
+    * [https://fr.wikipedia.org/wiki/Informatique#Algorithmique](https://fr.wikipedia.org/wiki/Informatique#Algorithmique)
 
     ❓ **Que remarquez-vous ?**
 
     📌 La première URL utilise un **paramètre de recherche** (`?search=informatique`) → typique d’une requête **GET**.
 
     📌 La deuxième URL cible une **page existante** + une **ancre** (`#Algorithmique`) pour aller **directement à une section précise**.
+
+    ??? success "Solution"
+
+
 
 
 
