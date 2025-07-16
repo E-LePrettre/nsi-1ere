@@ -509,9 +509,8 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
     distance = [23, 40, 12, 44, 21, 9, 67, 32, 51, 30, 11, 55, 24, 64, 32, 57, 12, 80] 
     autonomie = 100 
     ```
-
-    ★★★ **<H3 STYLE="COLOR:RED;">Exercice 4 : le cambrioleur**</h3> 
-
+!!! abstract "**Exercice n°4 ★★★ : le cambrioleur**"
+    
     Un cambrioleur entre par effraction dans une maison. Il n'est capable de porter qu’une masse limitée : il lui faudra donc choisir entre les différents objets de valeur, afin d'amasser le plus gros magot possible. 
 
     **1** Écrire un algorithme qui donne un choix optimal pour le voleur. 
