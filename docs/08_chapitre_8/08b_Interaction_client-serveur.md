@@ -672,7 +672,7 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 | `optgroup` | Regroupe visuellement les options               |
 
 
-???+ question "🧪**Activité n°8 : Explorer les différents boutons HTML**"
+???+ question "🧪 **Activité n°8 : Explorer les différents boutons HTML**"
 
     📁 **Partie 1 – Crée un formulaire avec 3 types de boutons**
 
@@ -818,7 +818,7 @@ Normalement, il s’installe dans `C:\UwAmp`.
 Avant de passer à **PHP**, créons une **page HTML statique**.
 
 
-???+ question "**Activité n°10**".
+???+ question  "**Activité n°10**".
 
     Créer avec le bloc note, un fichier où on aura copier :
     ```html
