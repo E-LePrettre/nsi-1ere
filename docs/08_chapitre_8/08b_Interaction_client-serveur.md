@@ -47,9 +47,7 @@ https://fr.wikipedia.org/wiki/Informatique#Algorithmique
 
 ➡️ Le fragment `#Algorithmique` permet **d’accéder directement à la section "Algorithmique"** de la page.
 
-???+ question "Activité n°1"
-
-    🧪 **Passage de paramètres à un serveur**
+???+ question "Activité n°1 : 🧪 **Passage de paramètres à un serveur**"
 
     1️⃣ Va sur [Wikipedia](https://fr.wikipedia.org/)
 
@@ -71,7 +69,20 @@ https://fr.wikipedia.org/wiki/Informatique#Algorithmique
 
     ??? success "Solution"
 
+        ```https://fr.wikipedia.org/w/index.php?search=informatique``` : Cette URL contient un **paramètre de requête** (après le `?`) : `search=informatique`
+        
+        Cela signifie que :
 
+            * Le **navigateur envoie une requête GET** au **serveur Wikipedia**
+
+            * Le serveur interprète le paramètre `search` pour effectuer une **recherche du mot "informatique"**
+   
+
+        * La première URL montre un **formulaire de recherche avec la méthode GET**
+
+        * La deuxième URL utilise une **ancre HTML** pour accéder **directement à une section** d’une page déjà existante
+
+        * **GET permet de transmettre des paramètres** dans l’URL, tandis que `#` sert à **naviguer à l’intérieur de la page**
 
 
 
@@ -291,7 +302,7 @@ https://www.example.com/search?query=informatique
 
 ???+ question "🔧 Activité n°2"
         
-    Objectif :Créer un fichier HTML avec un formulaire en méthode `GET` pour **observer l’URL générée**.
+    Objectif : Créer un fichier HTML avec un formulaire en méthode `GET` pour **observer l’URL générée**.
 
     🔸 **Étapes :**
 
@@ -318,6 +329,14 @@ https://www.example.com/search?query=informatique
     3 Enregistrer sous : `index.html`
 
     📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
+
+    ??? success "Solution"
+
+        * Ce formulaire fonctionne en GET : les données sont ajoutées à l’URL.
+
+        * C’est utile pour faire des recherches, tester ou partager un lien, mais pas pour des données sensibles.
+
+        * Pour un mot de passe, il faudra utiliser la méthode POST.
 
 
 
@@ -357,6 +376,10 @@ https://www.example.com/search?query=informatique
     * L’**URL reste la même**
     
     * Les données sont **envoyées dans le corps de la requête**, donc **non visibles** dans l’URL
+
+    ??? success "Solution"
+
+        La méthode POST est donc plus adaptée aux formulaires contenant des informations confidentielles, comme des mots de passe ou des identifiants.
 
 
 📄 Exemple de requête HTTP POST
@@ -457,6 +480,43 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
      
     * Pourquoi n'y a-t-il rien dans la barre d'adresse ?
 
+    ??? success "Solution"
+
+        🔹 **a. Remplis le champ "Titre" et choisis un pays, puis clique sur "Validez".**
+
+        * ✅ **Ce qui se passe** : la page se recharge, et l’**URL est modifiée**.
+
+        * Exemple d’URL après validation :  ```file:///.../formulaire.html?titre=Bonjour&lieu=Canada```
+
+        🔹 **b. Observe l’URL générée. Que signifient les mots après le `?` ?**
+
+        * Ce sont les **données transmises par le formulaire**, encodées dans l’URL.
+
+        * `titre=Bonjour` → correspond au champ `<input name="titre">`
+
+        * `lieu=Canada` → correspond au champ `<select name="lieu">`
+
+        * Le signe `&` sépare les différents paramètres.
+
+        🧠 **Règle** :
+
+            * **`name="..."`** détermine le **nom du paramètre**
+
+            * La valeur saisie ou sélectionnée devient la **valeur du paramètre**
+
+        🔹 **c. Modifie `method="get"` en `method="post"`, recharge la page et recommence.**
+
+        * ✅ **Ce qui se passe** : la page **ne change pas visiblement**, mais :
+
+            * L’URL **reste la même**
+            
+            * Les données **ne sont plus visibles dans l’URL**
+
+        📌 **Pourquoi ?**
+        Parce que la méthode **`POST`** envoie les données **dans le corps de la requête HTTP**, et non dans l’URL.
+
+
+
 🧠 **Bilan**
 
 | **Type**        | **Description** |
@@ -532,6 +592,47 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
     c. **Pourquoi peut-on cocher plusieurs cases pour les véhicules, mais un seul genre ?**
 
     d. **Quel est le rôle de l’attribut `checked` ? Peux-tu modifier le fichier pour que "homme" soit sélectionné par défaut ?**
+
+    ??? success "Solution"
+
+        🔹 a. Remplis tous les champs et clique sur **"Valider"**
+
+        Exemple de test :
+
+            * Prénom : `Alice`
+            * Genre : `femme`
+            * Véhicules : `J’ai un vélo`
+
+        🔎 Résultat dans l’URL :```formulaire2.html?prenom=Alice&psw=&genre=femme&vehicule=velo```
+
+        ✅ Explication :
+
+            * `prenom=Alice` → champ texte
+            * `psw=` → champ mot de passe vide
+            * `genre=femme` → bouton radio sélectionné
+            * `vehicule=velo` → case cochée
+
+        **Chaque `name` dans le formulaire devient un paramètre** dans l’URL.
+
+        🔹 b. Coche uniquement **"J’ai une voiture"** (décocher vélo)
+
+        🔎 Résultat :```...&vehicule=auto```
+
+        ✅ Seule la **valeur de la case cochée** est transmise.
+        ❌ Si **aucune case** n’est cochée, **`vehicule` n’apparaît pas du tout** dans l’URL.
+        👉 Cela montre que **seuls les champs cochés ou remplis sont envoyés** avec la méthode `GET`.
+
+        🔹 c. Pourquoi peut-on cocher plusieurs véhicules, mais un seul genre ?
+
+        👉 C’est le fonctionnement HTML :
+
+            * `radio` impose **un choix exclusif**
+            * `checkbox` permet **plusieurs réponses**
+
+        🔹 d. Quel est le rôle de `checked` ? Peut-on changer l’option par défaut ?
+
+            ✅ L’attribut `checked` permet de **pré-sélectionner** une case ou un bouton.
+
 
 
 
