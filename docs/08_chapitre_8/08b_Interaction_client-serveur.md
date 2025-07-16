@@ -500,9 +500,9 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
         🧠 **Règle** :
 
-            * **`name="..."`** détermine le **nom du paramètre**
+        * **`name="..."`** détermine le **nom du paramètre**
 
-            * La valeur saisie ou sélectionnée devient la **valeur du paramètre**
+        * La valeur saisie ou sélectionnée devient la **valeur du paramètre**
 
         🔹 **c. Modifie `method="get"` en `method="post"`, recharge la page et recommence.**
 
@@ -599,18 +599,18 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
         Exemple de test :
 
-            * Prénom : `Alice`
-            * Genre : `femme`
-            * Véhicules : `J’ai un vélo`
+        * Prénom : `Alice`
+        * Genre : `femme`
+        * Véhicules : `J’ai un vélo`
 
         🔎 Résultat dans l’URL :```formulaire2.html?prenom=Alice&psw=&genre=femme&vehicule=velo```
 
         ✅ Explication :
 
-            * `prenom=Alice` → champ texte
-            * `psw=` → champ mot de passe vide
-            * `genre=femme` → bouton radio sélectionné
-            * `vehicule=velo` → case cochée
+        * `prenom=Alice` → champ texte
+        * `psw=` → champ mot de passe vide
+        * `genre=femme` → bouton radio sélectionné
+        * `vehicule=velo` → case cochée
 
         **Chaque `name` dans le formulaire devient un paramètre** dans l’URL.
 
@@ -626,12 +626,12 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
         👉 C’est le fonctionnement HTML :
 
-            * `radio` impose **un choix exclusif**
-            * `checkbox` permet **plusieurs réponses**
+        * `radio` impose **un choix exclusif**
+        * `checkbox` permet **plusieurs réponses**
 
         🔹 d. Quel est le rôle de `checked` ? Peut-on changer l’option par défaut ?
 
-            ✅ L’attribut `checked` permet de **pré-sélectionner** une case ou un bouton.
+        ✅ L’attribut `checked` permet de **pré-sélectionner** une case ou un bouton.
 
 
 
@@ -911,6 +911,51 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
 
     ⚠️ Attention : Ce bouton **n’envoie pas de formulaire**, il agit comme un **lien décoré**.
 
+    ??? success "Solution"
+    
+        📁 **Partie 1 – Formulaire avec 3 types de boutons**
+
+        🧠 **Questions :**
+
+        | Question                                                   | Réponse attendue                                                                                                                  |
+        | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+        | a. Que fait le bouton **"Envoyer"** ?                      | Il **soumet** le formulaire. Avec la méthode `GET`, les données sont visibles dans l’URL, par exemple : `?prenom=Elisa`.          |
+        | b. Que fait le bouton **"Réinitialiser"** ?                | Il **efface** les champs du formulaire (remise à zéro).                                                                           |
+        | c. Que fait le bouton **"Ne fait rien"** ?                 | Rien du tout par défaut. C’est un **bouton neutre**, il n’exécute aucune action sans JavaScript.                                  |
+        | d. Peux-tu modifier l’URL pour voir les données envoyées ? | Oui, en entrant une valeur dans le champ "Prénom" puis en cliquant sur **Envoyer**, on observe une URL comme : `...?prenom=Jean`. |
+
+        📁 **Partie 2 – Bouton avec image (`<input type="image">`)**
+
+        🧠 **Questions :**
+
+        | Question                                                    | Réponse attendue                                                                                                         |
+        | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+        | a. Que se passe-t-il quand tu cliques sur l’image ?         | Le formulaire est **envoyé**. L’image agit comme un **bouton de soumission**.                                            |
+        | b. Est-ce que l’image est un bouton "submit" ?              | Oui, c’est un **`input type="image"`**, donc elle déclenche un **submit**.                                               |
+        | c. Quelle différence avec un vrai `<input type="submit">` ? | Elle **envoie en plus les coordonnées** du clic dans l’image via les paramètres `x` et `y` de l’URL (ex : `?x=12&y=34`). |
+
+        📁 **Partie 3 – Bouton personnalisé avec `<button>`**
+
+        🧠 **Questions :**
+
+        | Question                                                    | Réponse attendue                                                                                                                                    |
+        | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+        | a. Ce bouton est-il un "submit" ou un simple bouton ?       | Oui, grâce à l’attribut `type="submit"`, c’est bien un **bouton de soumission**.                                                                    |
+        | b. Que contient ce bouton en plus par rapport à `<input>` ? | Il peut contenir **du HTML enrichi** : images, texte stylé, icônes, etc.                                                                            |
+        | c. Peux-tu ajouter un champ de formulaire au-dessus ?       | Oui. Si on ajoute par exemple : `<input name="prenom" type="text">`, alors cliquer sur le bouton **envoie bien la donnée `prenom=...`** dans l’URL. |
+
+        📁 **Partie 4 – Bouton avec lien (faux bouton)**
+
+        🧠 **Explication :**
+
+        | Éléments       | Observations                                                                                                                                                                                                           |
+        | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+        | Code utilisé   | `<button><a href="...">...</a></button>`                                                                                                                                                                               |
+        | Fonctionnement | Ce n’est **pas un vrai bouton de formulaire**. Il agit comme un **lien cliquable stylisé**.                                                                                                                            |
+        | Que fait-il ?  | Il **redirige vers un autre site** (ici Wikipedia) sans soumettre de données.                                                                                                                                          |
+        | Problème ?     | Il est préférable de ne **pas imbriquer un `<a>` dans un `<button>`**, car ce n’est pas conforme HTML5. Il vaut mieux utiliser directement : `<a class="button" href="...">Aller sur Wikipedia</a>` avec un style CSS. |
+
+
 
 
 🧠 **Bilan**
@@ -1169,109 +1214,119 @@ Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.
 ## **<H2 STYLE="COLOR:BLUE;">4. Exercices<a name="4567"></a>**</H2> 
 
 
-**<H3 STYLE="COLOR:RED;">Exercice n°1 :**</H3> Réaliser le visuel du formulaire suivant :
+!!! abstract "Exercice n°1" 
 
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.129.jpeg)
+    Réaliser le visuel du formulaire suivant :
 
-Pour cela : 
+    ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.129.jpeg)
 
-- vous utilisez les balises input et select,  
+    Pour cela : 
 
-- vous préciserez le type lors de l'utilisation d'une balise input, 
+    - vous utilisez les balises input et select,  
 
-- vous préciserez le name dans chacun des cas (attribut name utilisé plus tard pour retrouver la valeur d'un élément d'un formulaire).
+    - vous préciserez le type lors de l'utilisation d'une balise input, 
 
-- vous proposerez deux types de carte bancaire possibles : 'Visa' et 'Bleue' (carte par défaut).
+    - vous préciserez le name dans chacun des cas (attribut name utilisé plus tard pour retrouver la valeur d'un élément d'un formulaire).
 
-- Attention ! Sans Javascript, votre bouton 'Valider le paiement' sera sans effet.
+    - vous proposerez deux types de carte bancaire possibles : 'Visa' et 'Bleue' (carte par défaut).
 
-**<H3 STYLE="COLOR:RED;">Exercice n°2 :**</H3> Expliquer ce que fait ce code. 
-```html
-<form>
-<p> Choix d'une nationalité :</p>
-    <select id="choix" name="lang" onchange="selection()">
-        <option value="ras">Choisir sa nationalité</option>
-        <option value="fr">Français</option>
-        <option value="zh">Chinois</option>
-        <option value="it">Italien</option>
-    </select>
-<p> Vous avez choisi comme nationalité :<span id="nat">  </span>
+    - Attention ! Sans Javascript, votre bouton 'Valider le paiement' sera sans effet.
 
- </p>
-</form>
-```
+!!! abstract "Exercice n°2"  
 
+    Expliquer ce que fait ce code. 
+    ```html
+    <form>
+    <p> Choix d'une nationalité :</p>
+        <select id="choix" name="lang" onchange="selection()">
+            <option value="ras">Choisir sa nationalité</option>
+            <option value="fr">Français</option>
+            <option value="zh">Chinois</option>
+            <option value="it">Italien</option>
+        </select>
+    <p> Vous avez choisi comme nationalité :<span id="nat">  </span>
 
-**Pour aller plus loin (avec du JS) : <H3 STYLE="COLOR:RED;">Exercice n°3 :**</H3>** 
-
-Pour l'exercice on a besoin de trois instructions (déjà vues) : 
-
-- **getElementById('id')** est une méthode qui récupère l'objet de la page identifié par 'id'. 
-
-document.getElementById('id') récupère l'objet de la page en cours identifié par 'id'.
-
-- **selectedIndex** est une méthode qui renvoie la valeur l'option choisie par une liste déroulante ; plus généralement, cette méthode indique le rang à partir de 0 de l'élément de la liste qui a été sélectionnée par l'utilisateur.
-
-selecteur.selectedIndex renvoie l'indice du choix fait par l'utilisateur de la liste déroulante nommée 'selecteur'. 
-
-- **innerHTML** est une méthode qui permet de récupérer tout le contenu HTML d'un élément d'une page html.
-
-document.getElementById('ici').innerHTML intégre du contenu html à l'emplacement de la page identifié par l'id nommé 'ici'. 
-
-voilà le script d'une fonction écrite en javascript :
-```JS
-function selection() {
-        const selecteur = document.getElementById('choix');
-        const monChoix = selecteur[selecteur.selectedIndex];
-        console.log(monChoix.value +' '+ monChoix.text);
-        document.getElementById('nat').innerHTML = monChoix.text;
-    }
-```
+    </p>
+    </form>
+    ```
 
 
-1. Intégrer au code de l'exercice 2 ci-dessus ce script, soit directement, soit avec un lien vers un fichier javascript. 
+**Pour aller plus loin (avec du JS) :** 
 
-1. Relancer le code ainsi augmenté de l'exercice 2. Que remarquez-vous ? 
+!!! abstract "Exercice n°3" 
 
-1. Commenter chaque ligne de cette fonction écrite en JavaScript. 
+    Pour l'exercice on a besoin de trois instructions (déjà vues) : 
 
-Utiliser la console de votre navigateur afin de voir l'effet d'une des lignes. 
+    - **getElementById('id')** est une méthode qui récupère l'objet de la page identifié par 'id'. 
 
-**Pour aller plus loin (avec du JS) : <H3 STYLE="COLOR:RED;">Exercice n°4 :**</H3>**  
+    document.getElementById('id') récupère l'objet de la page en cours identifié par 'id'.
 
-Ecrire un formulaire qui demande votre âge et qui indique dans la même page si vous êtes majeur ou mineur. 
+    - **selectedIndex** est une méthode qui renvoie la valeur l'option choisie par une liste déroulante ; plus généralement, cette méthode indique le rang à partir de 0 de l'élément de la liste qui a été sélectionnée par l'utilisateur.
 
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.136.png) ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.137.jpeg)
+    selecteur.selectedIndex renvoie l'indice du choix fait par l'utilisateur de la liste déroulante nommée 'selecteur'. 
 
-**Pour aller plus loin (avec du JS) : <H3 STYLE="COLOR:RED;">Exercice n°5 :**</H3>**  
+    - **innerHTML** est une méthode qui permet de récupérer tout le contenu HTML d'un élément d'une page html.
 
-On donne le code suivant : 
-```html
-<form>
-    <fieldset>
-        <legend>Veuillez sélectionner vos spécialités l'année prochaine :
-        </legend>
-        <div>
-            <input type="checkbox" id="nsi" name="interest" value="nsi">
-            <label for="nsi">NSI</label>
-        </div>
-        <div>
-            <input type="checkbox" id="ma" name="interest" value="ma">
-            <label for="ma">Maths</label>
-        </div>
-        <div>
-            <input type="checkbox" id="svt" name="interest" value="svt">
-            <label for="svt">SVT</label>
-        </div>
-    </fieldset>
-</form>
-```
+    document.getElementById('ici').innerHTML intégre du contenu html à l'emplacement de la page identifié par l'id nommé 'ici'. 
+
+    voilà le script d'une fonction écrite en javascript :
+    ```JS
+    function selection() {
+            const selecteur = document.getElementById('choix');
+            const monChoix = selecteur[selecteur.selectedIndex];
+            console.log(monChoix.value +' '+ monChoix.text);
+            document.getElementById('nat').innerHTML = monChoix.text;
+        }
+    ```
 
 
-En vous inspirant de l'exercice précédent, faire un formulaire qui demande quelles spécialités vous allez conserver l'année prochaine 
+    1. Intégrer au code de l'exercice 2 ci-dessus ce script, soit directement, soit avec un lien vers un fichier javascript. 
 
-Vous ferez une question pour la première 
+    1. Relancer le code ainsi augmenté de l'exercice 2. Que remarquez-vous ? 
 
-La réponse sera affichée dans la page HTML. 
+    1. Commenter chaque ligne de cette fonction écrite en JavaScript. 
 
-Si la réponse contient NSI, la page HTML doit afficher : "Bravo, bon choix !". 
+    Utiliser la console de votre navigateur afin de voir l'effet d'une des lignes. 
+
+**Pour aller plus loin (avec du JS) :** 
+
+!!! abstract "Exercice n°4" 
+
+    Ecrire un formulaire qui demande votre âge et qui indique dans la même page si vous êtes majeur ou mineur. 
+
+    ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.136.png) ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.137.jpeg)
+
+**Pour aller plus loin (avec du JS) :**
+
+!!! abstract "Exercice n°5"  
+
+    On donne le code suivant : 
+    ```html
+    <form>
+        <fieldset>
+            <legend>Veuillez sélectionner vos spécialités l'année prochaine :
+            </legend>
+            <div>
+                <input type="checkbox" id="nsi" name="interest" value="nsi">
+                <label for="nsi">NSI</label>
+            </div>
+            <div>
+                <input type="checkbox" id="ma" name="interest" value="ma">
+                <label for="ma">Maths</label>
+            </div>
+            <div>
+                <input type="checkbox" id="svt" name="interest" value="svt">
+                <label for="svt">SVT</label>
+            </div>
+        </fieldset>
+    </form>
+    ```
+
+
+    En vous inspirant de l'exercice précédent, faire un formulaire qui demande quelles spécialités vous allez conserver l'année prochaine 
+
+    Vous ferez une question pour la première 
+
+    La réponse sera affichée dans la page HTML. 
+
+    Si la réponse contient NSI, la page HTML doit afficher : "Bravo, bon choix !". 
