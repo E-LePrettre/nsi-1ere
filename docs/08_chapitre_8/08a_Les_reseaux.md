@@ -1092,201 +1092,194 @@ Cela garantit la **modularité**, la **compatibilité** et la **pérennité** de
 ## <H2 STYLE="COLOR:BLUE;">**8.  Simulation d’un réseau avec Filius<a name="_page10_x40.00_y36.92"></a></h2>**
 
 ???+ question "Activité n°5 : Lien direct entre 2 ordinateurs"
-    
-  ![](Image1.png)
+      
+    ![](Image1.png)
 
-  - Lancer **Filius**.  
+    - Lancer **Filius**.  
 
-  - Créer le réseau illustré ci-dessus.  
+    - Créer le réseau illustré ci-dessus.  
 
-  - Lancer la simulation.  
+    - Lancer la simulation.  
 
-  - Sur le poste **10**, installer **Ligne de commande**.  
+    - Sur le poste **10**, installer **Ligne de commande**.  
 
-  - Ouvrir l’application et exécuter :  
-    ```bash
-    ping 192.168.1.11
-    ```
-  - Afficher les données échangées en effectuant un clic droit sur l’ordinateur.  
+    - Ouvrir l’application et exécuter :  
+      ```bash
+      ping 192.168.1.11
+      ```
+    - Afficher les données échangées en effectuant un clic droit sur l’ordinateur.  
 
-  - Effectuer un `ipconfig` dans le terminal du poste **10** et comparer l’adresse **MAC** avec celle de la source affichée dans le tableau des données échangées.  
+    - Effectuer un `ipconfig` dans le terminal du poste **10** et comparer l’adresse **MAC** avec celle de la source affichée dans le tableau des données échangées.  
 
 ???+ question "Activité n°6 : entre 2 ordinateurs et un serveur"
  
-  ![](Image2.png)
+    ![](Image2.png)
 
-  - Modifier le réseau précédent pour y ajouter un **serveur** (IP : `192.168.1.12`) et un **switch**.  
+    - Modifier le réseau précédent pour y ajouter un **serveur** (IP : `192.168.1.12`) et un **switch**.  
 
-  - Installer un **serveur générique** sur le serveur (`port 55555`) et le démarrer.  
+    - Installer un **serveur générique** sur le serveur (`port 55555`) et le démarrer.  
 
-  - Sur un des ordinateurs, installer un **client générique** et le connecter au serveur. 
+    - Sur un des ordinateurs, installer un **client générique** et le connecter au serveur. 
 
-  - Envoyer un **message** au serveur via le client générique. 
+    - Envoyer un **message** au serveur via le client générique. 
 
-  - Observer les **données échangées** en effectuant un clic droit sur l’ordinateur.  
+    - Observer les **données échangées** en effectuant un clic droit sur l’ordinateur.  
 
 
-  **Comprendre la couche transport : le Three-Way Handshake TCP**  
+    **Comprendre la couche transport : le Three-Way Handshake TCP**  
 
-  Lorsqu’une connexion TCP s’établit, trois étapes sont nécessaires :  
+    Lorsqu’une connexion TCP s’établit, trois étapes sont nécessaires :  
 
-  1. **SYN** : Le client envoie une demande (`SYN`) au serveur avec un **numéro de séquence A**. 
+    1. **SYN** : Le client envoie une demande (`SYN`) au serveur avec un **numéro de séquence A**. 
 
-  2. **SYN-ACK** : Le serveur répond avec un **SYN-ACK**, où le numéro de séquence du `ACK` est **A+1**, et envoie un **numéro aléatoire B**.  
+    2. **SYN-ACK** : Le serveur répond avec un **SYN-ACK**, où le numéro de séquence du `ACK` est **A+1**, et envoie un **numéro aléatoire B**.  
 
-  3. **ACK** : Le client envoie un dernier `ACK`, où le numéro du **ACK** est **B+1**.  
+    3. **ACK** : Le client envoie un dernier `ACK`, où le numéro du **ACK** est **B+1**.  
 
-  Ensuite :  
+    Ensuite :  
 
-  - Le client envoie son message au serveur.  
+    - Le client envoie son message au serveur.  
 
-  - Le serveur accuse réception en **A+2**.  
+    - Le serveur accuse réception en **A+2**.  
 
-  - Le serveur envoie sa réponse au client. 
+    - Le serveur envoie sa réponse au client. 
 
-  - Le client accuse réception en **B+2**.  
+    - Le client accuse réception en **B+2**.  
 
-  Pour terminer la connexion, cliquez sur **Déconnexion**.  
+    Pour terminer la connexion, cliquez sur **Déconnexion**.  
 
-  On observe que les échanges entre le client et le serveur suivent **4 étapes**.  
+    On observe que les échanges entre le client et le serveur suivent **4 étapes**.  
 
-**<H3 STYLE="COLOR:red;">Activité n°6.:</h3>** 2 réseaux  
-![](Image3.png)
+???+ question "Activité n°7 : 2 réseaux"
+    ![](Image3.png)
 
-- Modifier le réseau précédent pour obtenir **deux réseaux interconnectés**.  
+    - Modifier le réseau précédent pour obtenir **deux réseaux interconnectés**.  
 
-- Essayer de **pinguer** (`ping 1.10 → 2.10`). 
+    - Essayer de **pinguer** (`ping 1.10 → 2.10`). 
 
-- Normalement, le message ne peut pas traverser le premier réseau vers le second.  
+    - Normalement, le message ne peut pas traverser le premier réseau vers le second.  
 
-**Ajouter une passerelle pour permettre la communication**  
-- Configurer la passerelle du **routeur** :
+    **Ajouter une passerelle pour permettre la communication**  
+    - Configurer la passerelle du **routeur** :
 
-  - **Réseau 1** : `192.168.1.1`
+      - **Réseau 1** : `192.168.1.1`
 
-  - **Réseau 2** : `192.168.2.1`
+      - **Réseau 2** : `192.168.2.1`
 
-- Ajouter la passerelle correspondante sur **chaque ordinateur** (`1.x` et `2.x`). 
+    - Ajouter la passerelle correspondante sur **chaque ordinateur** (`1.x` et `2.x`). 
 
-- Pinguer de **1.10** vers **2.10** après configuration.  
+    - Pinguer de **1.10** vers **2.10** après configuration.  
 
-📌 **Test avancé** : Installer un **client générique** sur **2.10** et l’envoyer au **serveur 1.12** avec le message `"Bonjour"`. Observer les **données échangées**.  
+    📌 **Test avancé** : Installer un **client générique** sur **2.10** et l’envoyer au **serveur 1.12** avec le message `"Bonjour"`. Observer les **données échangées**.  
 
-**<H3 STYLE="COLOR:red;">Activité n°7.:</h3>** Simulation du web avec adresse IP 
+???+ question "Activité n°8 : Simulation du web avec adresse IP"
 
-Installer un **serveur Web** et un **éditeur de texte** sur **1.12**.  
+    Installer un **serveur Web** et un **éditeur de texte** sur **1.12**.  
 
-Modifier le fichier **index.html** (situé dans `/root/webserver`).
+    Modifier le fichier **index.html** (situé dans `/root/webserver`).
 
-Ajouter **vos propres fichiers** en installant un explorateur de document et en important dans `/root/webserver` par exemple :
+    Ajouter **vos propres fichiers** (ou d'autres fichiers que vous avez) en installant un explorateur de document et en important dans `/root/webserver` par exemple :
 
-  - `page1.html`
+      - `page1.html`
 
-  - `script.js` (`/js/`)
+      - `script.js` (`/js/`)
 
-  - `style.css` (`/css/`)
+      - `style.css` (`/css/`)
 
-  - Images (`/images/`)
+      - Images (`/images/`)
 
-Renommer :
+    Renommer :
 
-  - `index.html` → `indexold.html`
+      - `index.html` → `indexold.html`
 
-  - `page1.html` → `index.html`
+      - `page1.html` → `index.html`
 
-Sauvegarder les modifications.  
+    Sauvegarder les modifications.  
 
-**Démarrer et tester le serveur Web**  
+    **Démarrer et tester le serveur Web**  
 
-- Ouvrir l’application **Serveur Web**, cliquer sur **Démarrer**.  
+    - Ouvrir l’application **Serveur Web**, cliquer sur **Démarrer**.  
 
-- Depuis un **navigateur Web** sur **2.10**, entrer l’URL :  
-  ```
-  http://192.168.1.12
-  ```
-📌 **Problème observé :**  
+    - Depuis un **navigateur Web** sur **2.10**, entrer l’URL :  
+      ```
+      http://192.168.1.12
+      ```
+    📌 **Problème observé :**  
 
-- **CSS ne fonctionne pas**. 
+    - **CSS ne fonctionne pas**. 
 
-- **Encodage UTF-8 incorrect**.  
+    - **Encodage UTF-8 incorrect**.  
 
-**<H3 STYLE="COLOR:red;">Activité  n°8.:</h3>**  Simulation  du  web  avec  serveur DNS  
+???+ question "Activité n°9 : Simulation  du  web  avec  serveur DNS"
 
-![](Image4.png)
+    ![](Image4.png)
 
-**Pourquoi utiliser un DNS ?**  
+    **Pourquoi utiliser un DNS ?**  
 
-Sur Internet, on utilise des **noms de domaine** au lieu d’adresses IP. Le **serveur DNS** traduit ces noms en adresses IP.  
+    Sur Internet, on utilise des **noms de domaine** au lieu d’adresses IP. Le **serveur DNS** traduit ces noms en adresses IP.  
 
-**Configuration d’un serveur DNS**  
+    **Configuration d’un serveur DNS**  
 
-1. Ajouter un **serveur DNS** avec l’IP `192.168.3.10` et comme passerelle `192.168.3.1`.  
+    1. Ajouter un **serveur DNS** avec l’IP `192.168.3.10` et comme passerelle `192.168.3.1`.  
 
-2. Connecter le **serveur DNS** au **routeur** (`192.168.3.1`).  
+    2. Connecter le **serveur DNS** au **routeur** (`192.168.3.1`).  
 
-3. Ajouter l’**IP du serveur DNS** dans la configuration **réseau de tous les postes**.  
+    3. Ajouter l’**IP du serveur DNS** dans la configuration **réseau de tous les postes**.  
 
-4. Installer et **paramétrer** l’application **serveur DNS** sur `192.168.3.10` :
+    4. Installer et **paramétrer** l’application **serveur DNS** sur `192.168.3.10` :
 
-   - Associer **www.serverwebdensi.fr** → `192.168.1.12` (serveur Web).  
+      - Associer **www.serverwebdensi.fr** → `192.168.1.12` (serveur Web).  
 
-   - **Démarrer** le serveur DNS.  
+      - **Démarrer** le serveur DNS.  
 
-5. Sur **2.10**, tester en tapant dans un navigateur :  
-   ```
-   http://www.serverwebdensi.fr
-   ```
-**Vérification**  
+    5. Sur **2.10**, tester en tapant dans un navigateur :  
+      ```
+      http://www.serverwebdensi.fr
+      ```
+    **Vérification**  
 
-- Sur **1.10**, ouvrir un terminal et exécuter :  
-  ```bash
-  host www.serverwebdensi.fr
-  ```
-- Observer le résultat.  
+    - Sur **1.10**, ouvrir un terminal et exécuter :  
+      ```bash
+      host www.serverwebdensi.fr
+      ```
+    - Observer le résultat.  
 
 
-**<H3 STYLE="COLOR:red;">Activité n°9.:</h3>** Chemin d’un client à un serveur 
+???+ question "Activité n°10 : Chemin d’un client à un serveur" 
 
-- Télécharger le fichier `snt_sim_res.fls` :[snt_sim_res.fls](https://pixees.fr/informatiquelycee/n_site/asset/snt_sim_res.fls).  
+    - Télécharger le fichier `snt_sim_res.fls` :[snt_sim_res.fls](https://pixees.fr/informatiquelycee/n_site/asset/snt_sim_res.fls).  
 
-- Lancer un **traceroute** entre **M14** et **M9** :  
-  ```bash
-  tracert [IP de M9]  # Windows
-  traceroute [IP de M9]  # Linux/macOS
-  ```
-- Supprimer le câble **routeur F → routeur E** (simulation de panne). 
+    - Lancer un **traceroute** entre **M14** et **M9** :  
+      ```bash
+      tracert [IP de M9]  # Windows
+      traceroute [IP de M9]  # Linux/macOS
+      ```
+    - Supprimer le câble **routeur F → routeur E** (simulation de panne). 
 
-- Refaites un **traceroute** entre **M14** et **M9**.  
+    - Refaites un **traceroute** entre **M14** et **M9**.  
 
-📌 **Remarque** : Il se peut que la mise à jour des tables de routage prenne du temps.
+    📌 **Remarque** : Il se peut que la mise à jour des tables de routage prenne du temps.
 
-- Si `ping` ne fonctionne pas immédiatement, **attendez quelques secondes et réessayez**.  
+    - Si `ping` ne fonctionne pas immédiatement, **attendez quelques secondes et réessayez**.  
 
 
-**<H3 STYLE="COLOR:red;">Activité n°10.:</h3>** Chemin d’un client à un serveur version graphique 
+???+ question "Activité n°11 : Chemin d’un client à un serveur version graphique" 
 
-Utiliser le site : [Traceroute en ligne](https://gsuite.tools/traceroute) 
+    Utiliser le site : [Traceroute en ligne](https://gsuite.tools/traceroute) 
 
-- Entrer une **URL** pour observer son chemin.  
+    - Entrer une **URL** pour observer son chemin.  
 
-**Exemples de sites à tester :**  
+    **Exemples de sites à tester :**  
 
-- `gs-cassaigne.fr`  
+    - `gs-cassaigne.fr`  
 
-- `aliexpress.com`  
+    - `aliexpress.com`  
 
-- `www.intechinfo.fr` 
+    - `www.intechinfo.fr` 
 
-- `malekal.com`  
+    - `malekal.com`  
 
 
-**Ressources complémentaires**  
-
-**Commandes réseau**  
-
-- **ipconfig** (Windows) : [Guide PC Astuces](https://www.pcastuces.com/pratique/windows/outils_reseau/page4.htm)  
-
-- **ipconfig** (PaperGeek) : [Explication détaillée](https://www.papergeek.fr/ipconfig-comment-connaitre-son-adresse-ip-locale-et-son-adresse-mac-sous-windows-80996)  
 
 [^1]: Network Address Translation : Traduction d’adresse réseau
 
