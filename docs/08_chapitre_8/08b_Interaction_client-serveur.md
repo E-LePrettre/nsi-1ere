@@ -312,7 +312,8 @@ https://www.example.com/search?query=informatique
     </html>
     ```
 
-    3. Enregistrer sous : `index.html`
+    3 Enregistrer sous : `index.html`
+
     📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
 
 
@@ -348,11 +349,11 @@ https://www.example.com/search?query=informatique
     <form method="POST" action="./login">
     ```
 
-    2. Recharger la page dans le navigateur, remplir le formulaire et observer :
+    2 Recharger la page dans le navigateur, remplir le formulaire et observer :
     
-    * L’**URL reste la même**
+        * L’**URL reste la même**
     
-    * Les données sont **envoyées dans le corps de la requête**, donc **non visibles** dans l’URL
+        * Les données sont **envoyées dans le corps de la requête**, donc **non visibles** dans l’URL
 
 
 📄 Exemple de requête HTTP POST
@@ -381,29 +382,79 @@ user=dupont&password=azerty
 
 ### **<H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML**</H3>
 
+Un formulaire HTML est composé de plusieurs éléments permettant de structurer et saisir des données. 
+Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir les données directement dans l’URL.
 
 
+???+ question "**🧪 Activité n°5: Découverte d’un formulaire HTML**"
 
+    1. Crée un fichier dans un éditeur de texte (Notepad sous Windows, TextEdit sur Mac,...)
 
+    2. Copie-colle le code suivant dans le fichier :
 
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+    <meta charset="UTF-8">
+    <title>Formulaire de test</title>
+    </head>
+    <body>
+    <form method="get" action="">
+        <fieldset>
+        <legend>Mon formulaire</legend>
 
+        <p>
+            <label>Titre :</label>
+            <input type="text" name="titre">
+        </p>
 
+        <p>
+            <label>Localisation :</label>
+            <select name="lieu">
+            <option>pays</option>
+            <option>Canada</option>
+            <option>Finlande</option>
+            <option>France</option>
+            </select>
+        </p>
 
+        <input type="submit" value="Validez">
+        </fieldset>
+    </form>
+    </body>
+    </html>
+    ```
 
+    3 Enregistrer sous : `formulaire.html`
 
+        📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
 
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.061.jpeg)
+    4 Ouvrir le fichier dans un navigateur Internet
 
+    5 🧠 Questions d’exploration (à faire avec le fichier ouvert dans le navigateur)
 
+    a. **Remplis le champ "Titre" et choisis un pays dans la liste, puis clique sur "Validez".**
 
+        * Que se passe-t-il ?
 
+        * Que remarques-tu dans la barre d'adresse (URL) ?
 
-### **<H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML**</H3>
+    b. **Observe l’URL générée. Que signifient les mots qui apparaissent après le `?` ?**
 
-Un formulaire HTML est composé de plusieurs éléments permettant de structurer et saisir des données.
+        * Exemple : `?titre=Test&lieu=France`
 
+        * Quels noms correspondent aux champs du formulaire ? À quelles valeurs ?
 
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.047.jpeg)
+    c. **Modifie l’attribut `method="get"` en `method="post"`, puis recharge la page.**
+
+        * Recommence le test.
+
+        * Que remarques-tu cette fois dans l’URL ?
+
+        * Pourquoi n'y a-t-il rien dans la barre d'adresse ?
+
+🧠 **Bilan**
 
 | **Type**        | **Description** |
 |----------------|---------------|
@@ -421,9 +472,231 @@ Un formulaire HTML est composé de plusieurs éléments permettant de structurer
 
 
 
+???+ question "🧪 **Activité n°6: Créer et tester un formulaire HTML avec différents champs**"
+
+    1. Crée un nouveau fichier nommé `formulaire2.html`
+
+    2. Copie-colle le code suivant dans le fichier :
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+    <meta charset="UTF-8">
+    <title>Formulaire 2</title>
+    </head>
+    <body>
+    <form method="get" action="">
+        <p>
+        Prénom : <input type="text" name="prenom">
+        </p>
+
+        <p>
+        Mot de passe : <input type="password" name="psw">
+        </p>
+
+        <p>
+        Genre :<br>
+        <input type="radio" name="genre" value="homme"> homme<br>
+        <input type="radio" name="genre" value="femme" checked> femme<br>
+        <input type="radio" name="genre" value="non"> ne souhaite pas répondre
+        </p>
+
+        <p>
+        Véhicules :<br>
+        <input type="checkbox" name="vehicule" value="velo" checked> J’ai un vélo<br>
+        <input type="checkbox" name="vehicule" value="auto"> J’ai une voiture
+        </p>
+
+        <input type="submit" value="Valider">
+    </form>
+    </body>
+    </html>
+    ```
+
+    3 🔍 **Questions de compréhension (à faire après test dans le navigateur)**
+
+    a. **Remplis le champ prénom, choisis un genre, sélectionne les moyens de transport, puis clique sur "Valider".**
+
+        * Que vois-tu apparaître dans l’URL après le `?` ?
+
+        * Que représentent les parties `prenom=...`, `genre=...`, `vehicule=...` ?
+
+    b. **Coche uniquement "J’ai une voiture". Quelle différence dans l’URL ?**
+
+        * Que se passe-t-il si aucun véhicule n’est coché ?
+
+    c. **Pourquoi peut-on cocher plusieurs cases pour les véhicules, mais un seul genre ?**
+
+    d. **Quel est le rôle de l’attribut `checked` ? Peux-tu modifier le fichier pour que "homme" soit sélectionné par défaut ?**
+
+
+
+🧠 **Bilan**
+
+| Élément HTML      | Rôle                                      |
+| ----------------- | ----------------------------------------- |
+| `type="text"`     | Saisie libre (ex : prénom)                |
+| `type="password"` | Masque le texte saisi (ex : mot de passe) |
+| `type="radio"`    | Un seul choix possible dans un groupe     |
+| `type="checkbox"` | Plusieurs choix possibles                 |
+| `type="submit"`   | Envoie les données                        |
+| `checked`         | Rend une option sélectionnée par défaut   |
+
+
+
+???+ question 🧪 Activité n°7 : HTML : Explorer les menus déroulants `<select>` et les valeurs envoyées"
+
+    📄 **Partie 1 – Menu déroulant simple**
+
+    1. Crée un fichier `menu1.html`
+    2. Copie-colle ce code :
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+    <meta charset="UTF-8">
+    <title>Menu déroulant simple</title>
+    </head>
+    <body>
+    <form method="get">
+        <label for="choix">Choisis une option :</label><br>
+        <select name="choix" id="choix">
+        <option>Option 1</option>
+        <option selected>Option 2</option>
+        <option>Option 3</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Envoyer">
+    </form>
+    </body>
+    </html>
+    ```
+
+    3 **Questions :**
+
+        * Quelle option est sélectionnée par défaut ?
+        
+        * Que vois-tu dans l’URL après avoir cliqué sur "Envoyer" ?
+        
+        * Modifie l’attribut `selected` pour que "Option 1" soit sélectionnée par défaut. Vérifie le résultat.
+
+    📄 **Partie 2 – Valeurs envoyées avec `value`**
+
+    1. Crée un nouveau fichier `menu2.html`
+    2. Utilise ce code :
+
+    ```html
+    <form method="get">
+    <label>Choix codé :</label><br>
+    <select name="choix">
+        <option value="1">Option 1</option>
+        <option value="2" selected>Option 2</option>
+        <option value="3">Option 3</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Envoyer">
+    </form>
+    ```
+
+    3 🧠 **Questions :**
+
+        * Quelle est la valeur envoyée dans l’URL ?
+        
+        * Que se passe si tu sélectionnes "Option 3" ?
+        
+        * Quelle est la différence entre le texte affiché et la donnée réellement transmise ?
+
+    📄 **Partie 3 – Menu élargi avec `size` (liste déroulante dépliée)**
+
+    ```html
+    <form method="get">
+    <label>Liste visible (3 lignes) :</label><br>
+    <select name="choix" size="3">
+        <option>Un</option>
+        <option>Deux</option>
+        <option>Trois</option>
+        <option>Quatre</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Envoyer">
+    </form>
+    ```
+
+    🧠 **Questions :**
+
+        * Qu’est-ce qui change visuellement avec `size="3"` ?
+        
+        * Peut-on toujours sélectionner plusieurs éléments ?
+        
+        * Si non, comment modifier cela ? (💡 : `multiple`)
+
+    📄 **Partie 4 – Menu groupé avec `<optgroup>`**
+
+    ```html
+    <form method="get">
+    <label>Choisis une ville :</label><br>
+    <select name="ville">
+        <optgroup label="Amérique du Nord">
+        <option>Montréal</option>
+        <option>New York</option>
+        </optgroup>
+        <optgroup label="Europe">
+        <option>Paris</option>
+        <option>Berlin</option>
+        </optgroup>
+    </select>
+    <br><br>
+    <input type="submit" value="Envoyer">
+    </form>
+    ```
+
+    🧠 **Questions :**
+
+        * Quelle est l’utilité de `<optgroup>` ?
+        
+        * Est-ce que `<optgroup>` a un rôle dans les données transmises ?
+        
+        * Comment rendre ce menu plus clair pour l’utilisateur ?
+
+
+
+📦 **Bilan**
+
+| Élément    | Rôle                                            |
+| ---------- | ----------------------------------------------- |
+| `<select>` | Crée un menu déroulant                          |
+| `selected` | Définit l’option par défaut                     |
+| `value`    | Détermine la valeur envoyée au serveur          |
+| `size`     | Affiche plusieurs lignes visibles en même temps |
+| `optgroup` | Regroupe visuellement les options               |
+
+
+
+
+
+
+![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.061.jpeg)
+
+
+
+
+
+### **<H3 STYLE="COLOR:GREEN;">3.3. Les<a name="_page4_x40.00_y568.92"></a> éléments d’un formulaire HTML**</H3>
+
+
+
+
+![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.047.jpeg)
+
+
+
+
+
 ### **<H3 STYLE="COLOR:GREEN;">3.4. Elément<a name="_page5_x40.00_y275.92"></a> ```<input>``` : quelques exemples**</H3>
 
-Le champ `<input>` est utilisé pour permettre la saisie de texte, mots de passe, et autres valeurs.
+
 
 
 
