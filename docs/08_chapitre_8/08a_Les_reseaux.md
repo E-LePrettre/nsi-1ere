@@ -1034,120 +1034,121 @@ Cela garantit la **modularité**, la **compatibilité** et la **pérennité** de
 
 ## <H2 STYLE="COLOR:BLUE;">**7. Analyse <a name="#_titre7">de trame</a></h2>**
 
-**<H3 STYLE="COLOR:red;">Activité n°3 :</h3>** Analyse d'une trame fictive
+???+ question "Activité n°4"
+    ```
+    Frame 1: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface en0, id 0
+    Ethernet II, Src: 00:0c:29:36:bc:5a, Dst: 00:50:56:c0:00:01
+    Internet Protocol Version 4, Src: 192.168.1.101, Dst: 192.168.1.1
+    Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, Len: 0
+    ```
 
-```
-Frame 1: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface en0, id 0
-Ethernet II, Src: 00:0c:29:36:bc:5a, Dst: 00:50:56:c0:00:01
-Internet Protocol Version 4, Src: 192.168.1.101, Dst: 192.168.1.1
-Transmission Control Protocol, Src Port: 443, Dst Port: 56324, Seq: 1, Ack: 1, Len: 0
-```
+    - Question 1 : Adresse MAC : Quelle est l'adresse MAC source et l'adresse MAC de destination ?
 
-- Question 1 : Adresse MAC : Quelle est l'adresse MAC source et l'adresse MAC de destination ?
+    - Question 2 : Adresse IP: Quelle est l'adresse IP source et l'adresse IP de destination ?
 
-- Question 2 : Adresse IP: Quelle est l'adresse IP source et l'adresse IP de destination ?
+    - Question 3 : Protocole utilisé : Quel protocole de couche transport est utilisé par cette trame ?
 
-- Question 3 : Protocole utilisé : Quel protocole de couche transport est utilisé par cette trame ?
+    - Question 4 : Ports utilisés : Quels sont les ports source et destination ?
 
-- Question 4 : Ports utilisés : Quels sont les ports source et destination ?
-
-- Question 5 : Numéro de séquence et d'accusé de réception : Quel est le numéro de séquence et le numéro d'accusé de réception de cette trame TCP ?
+    - Question 5 : Numéro de séquence et d'accusé de réception : Quel est le numéro de séquence et le numéro d'accusé de réception de cette trame TCP ?
 
 **Remarque** pour faire une analyse de trame, on peut utiliser un logiciel type wiresharp
 > **Installation et prise en main de Wireshark**
 >
 > 1 **Installation de Wireshark**
-
-   - Aller sur le site officiel de Wireshark : [https://www.wireshark.org/](https://www.wireshark.org/).
-
-   - Télécharger la version appropriée pour votre système d'exploitation (Windows, macOS, Linux).
-
-   - Suivre les instructions d'installation.
-
+>
+>  - Aller sur le site officiel de Wireshark : [https://www.wireshark.org/](https://www.wireshark.org/).
+>
+>  - Télécharger la version appropriée pour votre système d'exploitation (Windows, macOS, Linux).
+>
+>  - Suivre les instructions d'installation.
+>
 > 2 **Premier lancement et configuration**
-
-   - Ouvrir Wireshark.
-
-   - Sélectionner l'interface réseau à utiliser pour la capture (par exemple, Wi-Fi ou Ethernet).
-
-   - Démarrer une capture en cliquant sur le bouton "Start capturing packets".
-
-
+>
+>  - Ouvrir Wireshark.
+>
+>  - Sélectionner l'interface réseau à utiliser pour la capture (par exemple, Wi-Fi ou Ethernet).
+>
+>  - Démarrer une capture en cliquant sur le bouton "Start capturing packets".
+>
+>
 > **Capture et analyse de trames réseau**
-
+>
 > 1 **Démarrer une capture réseau**
-
-   - Avec Wireshark ouvert et une capture en cours, ouvrir un navigateur web et visiter quelques sites web (ex. : www.google.com, www.wikipedia.org).
-
-   - Retourner à Wireshark et arrêter la capture en cliquant sur le bouton "Stop capturing packets".
-
+>
+>  - Avec Wireshark ouvert et une capture en cours, ouvrir un navigateur web et visiter quelques sites web (ex. : www.google.com, www.wikipedia.org).
+>
+>  - Retourner à Wireshark et arrêter la capture en cliquant sur le bouton "Stop capturing packets".
+>
 > 2 **Analyse des trames capturées**
-
-   - Dans la fenêtre principale de Wireshark, vous verrez une liste de trames capturées.
-
-   - Sélectionner une trame TCP et observer les détails dans les différentes sections (Frame, Ethernet, IP, TCP).
+>
+>   - Dans la fenêtre principale de Wireshark, vous verrez une liste de trames capturées.
+>
+>   - Sélectionner une trame TCP et observer les détails dans les différentes sections (Frame, Ethernet, IP, TCP).
 
 
 
 
 ## <H2 STYLE="COLOR:BLUE;">**8.  Simulation d’un réseau avec Filius<a name="_page10_x40.00_y36.92"></a></h2>**
 
-**<H3 STYLE="COLOR:red;">Activité n°4.:</h3>** Lien direct entre deux ordinateurs  
-![](Image1.png)
+???+ question "Activité n°5 : Lien direct entre 2 ordinateurs"
+    
+  ![](Image1.png)
 
-- Lancer **Filius**.  
+  - Lancer **Filius**.  
 
-- Créer le réseau illustré ci-dessus.  
+  - Créer le réseau illustré ci-dessus.  
 
-- Lancer la simulation.  
+  - Lancer la simulation.  
 
-- Sur le poste **10**, installer **Ligne de commande**.  
+  - Sur le poste **10**, installer **Ligne de commande**.  
 
-- Ouvrir l’application et exécuter :  
-  ```bash
-  ping 192.168.1.11
-  ```
-- Afficher les données échangées en effectuant un clic droit sur l’ordinateur.  
+  - Ouvrir l’application et exécuter :  
+    ```bash
+    ping 192.168.1.11
+    ```
+  - Afficher les données échangées en effectuant un clic droit sur l’ordinateur.  
 
-- Effectuer un `ipconfig` dans le terminal du poste **10** et comparer l’adresse **MAC** avec celle de la source affichée dans le tableau des données échangées.  
+  - Effectuer un `ipconfig` dans le terminal du poste **10** et comparer l’adresse **MAC** avec celle de la source affichée dans le tableau des données échangées.  
 
-**<H3 STYLE="COLOR:red;">Activité n°5.:</h3>** 2 ordinateurs et un serveur  
-![](Image2.png)
+???+ question "Activité n°6 : entre 2 ordinateurs et un serveur"
+ 
+  ![](Image2.png)
 
-- Modifier le réseau précédent pour y ajouter un **serveur** (IP : `192.168.1.12`) et un **switch**.  
+  - Modifier le réseau précédent pour y ajouter un **serveur** (IP : `192.168.1.12`) et un **switch**.  
 
-- Installer un **serveur générique** sur le serveur (`port 55555`) et le démarrer.  
+  - Installer un **serveur générique** sur le serveur (`port 55555`) et le démarrer.  
 
-- Sur un des ordinateurs, installer un **client générique** et le connecter au serveur. 
+  - Sur un des ordinateurs, installer un **client générique** et le connecter au serveur. 
 
-- Envoyer un **message** au serveur via le client générique. 
+  - Envoyer un **message** au serveur via le client générique. 
 
-- Observer les **données échangées** en effectuant un clic droit sur l’ordinateur.  
+  - Observer les **données échangées** en effectuant un clic droit sur l’ordinateur.  
 
 
-**Comprendre la couche transport : le Three-Way Handshake TCP**  
+  **Comprendre la couche transport : le Three-Way Handshake TCP**  
 
-Lorsqu’une connexion TCP s’établit, trois étapes sont nécessaires :  
+  Lorsqu’une connexion TCP s’établit, trois étapes sont nécessaires :  
 
-1. **SYN** : Le client envoie une demande (`SYN`) au serveur avec un **numéro de séquence A**. 
+  1. **SYN** : Le client envoie une demande (`SYN`) au serveur avec un **numéro de séquence A**. 
 
-2. **SYN-ACK** : Le serveur répond avec un **SYN-ACK**, où le numéro de séquence du `ACK` est **A+1**, et envoie un **numéro aléatoire B**.  
+  2. **SYN-ACK** : Le serveur répond avec un **SYN-ACK**, où le numéro de séquence du `ACK` est **A+1**, et envoie un **numéro aléatoire B**.  
 
-3. **ACK** : Le client envoie un dernier `ACK`, où le numéro du **ACK** est **B+1**.  
+  3. **ACK** : Le client envoie un dernier `ACK`, où le numéro du **ACK** est **B+1**.  
 
-Ensuite :  
+  Ensuite :  
 
-- Le client envoie son message au serveur.  
+  - Le client envoie son message au serveur.  
 
-- Le serveur accuse réception en **A+2**.  
+  - Le serveur accuse réception en **A+2**.  
 
-- Le serveur envoie sa réponse au client. 
+  - Le serveur envoie sa réponse au client. 
 
-- Le client accuse réception en **B+2**.  
+  - Le client accuse réception en **B+2**.  
 
-Pour terminer la connexion, cliquez sur **Déconnexion**.  
+  Pour terminer la connexion, cliquez sur **Déconnexion**.  
 
-On observe que les échanges entre le client et le serveur suivent **4 étapes**.  
+  On observe que les échanges entre le client et le serveur suivent **4 étapes**.  
 
 **<H3 STYLE="COLOR:red;">Activité n°6.:</h3>** 2 réseaux  
 ![](Image3.png)

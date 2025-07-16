@@ -16,16 +16,55 @@ title: 08b Interaction client-serveur - Requête
 ## **<H2 STYLE="COLOR:BLUE;">1. Modèle<a name="_page0_x40.00_y516.92"></a> client/serveur**</H2>
 ### <H3 STYLE="COLOR:GREEN;"> **1.1. La résolution de nom : obtenir l'adresse IP du site</h3>**
 
-
-
 Lorsqu’un utilisateur saisit une URL dans la barre d’adresse d’un navigateur, par exemple :
-`https://www.exemple.com/index.html`, le navigateur doit **trouver l’adresse IP** du serveur pour pouvoir lui envoyer une requête.
+`http://www.exemple.com/index.html`, le navigateur doit **trouver l’adresse IP** du serveur pour pouvoir lui envoyer une requête.
 
-🔍 **Structure d'une URL** :
 
-* **Protocole** : `https://` → indique le protocole utilisé pour la communication (ici HTTP sécurisé)
-* **Nom de domaine** : `www.exemple.com` → nom lisible pour l'humain
-* **Chemin** : `/index.html` → ressource demandée sur le serveur
+📌 **Structure d’une URL**
+
+```
+protocole://nom-de-domaine:port/chemin?paramètre1=valeur1&paramètre2=valeur2#ancre
+```
+
+🔍 **Explication:**
+
+✔️ `protocole` → HTTP ou HTTPS (selon que la connexion est sécurisée ou non)
+✔️ `nom-de-domaine` → Adresse du serveur (ex. : `www.example.com`)
+✔️ `:port` → (Facultatif) numéro de port utilisé (ex. `:443` pour HTTPS, `:80` pour HTTP)
+✔️ `chemin` → Page demandée ou ressource (`/index.html`)
+✔️ `?paramètre1=valeur1` → Paramètres transmis dans l’URL (ex. recherche)
+✔️ `#ancre` → Cible une **section précise** d’une page (ex. `#Algorithmique`)
+
+💡 **Exemple concret**
+
+```
+https://fr.wikipedia.org/wiki/Informatique#Algorithmique
+```
+
+➡️ Le fragment `#Algorithmique` permet **d’accéder directement à la section "Algorithmique"** de la page.
+
+???+ question "Activité n°1"
+
+### <h3 style="color:red;">Activité n°1</h3>
+
+🧪 **Passage de paramètres à un serveur**
+
+1️⃣ Va sur [Wikipedia](https://fr.wikipedia.org/)
+2️⃣ Tape **"informatique"** dans la barre de recherche
+3️⃣ Observe et **note l’URL générée**
+4️⃣ Compare les deux URLs suivantes :
+
+* 🔹 [https://fr.wikipedia.org/w/index.php?search=informatique](https://fr.wikipedia.org/w/index.php?search=informatique)
+* 🔹 [https://fr.wikipedia.org/wiki/Informatique#Algorithmique](https://fr.wikipedia.org/wiki/Informatique#Algorithmique)
+
+---
+
+### ❓ **Que remarquez-vous ?**
+
+📌 La première URL utilise un **paramètre de recherche** (`?search=informatique`) → typique d’une requête **GET**.
+📌 La deuxième URL cible une **page existante** + une **ancre** (`#Algorithmique`) pour aller **directement à une section précise**.
+
+
 
 Cependant, sur Internet, les machines ne sont identifiées **ni par leur nom**, ni par leur URL, mais par leur **adresse IP**.
 
@@ -59,108 +98,125 @@ Une fois l'adresse IP envoyé, il y a établissement de la connextion TCP selon 
 
 ![](client_serveur.png)
 
-## **<H2 STYLE="COLOR:BLUE;">1. Modèle<a name="_page0_x40.00_y516.92"></a> client/serveur**</H2>
-![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.004.png)
-
-Dans un réseau, les **ordinateurs échangent des données** :  
-
-- **Le client** envoie une requête pour demander une ressource (exemple : un navigateur web). 
-
-- **Le serveur** reçoit la requête, la traite et répond avec la ressource demandée (exemple : un serveur web).  
-
-💡 **Le Web est devenu dynamique**  
-
-Les serveurs ne se limitent plus à envoyer des fichiers statiques. Grâce à des langages comme **PHP, Python ou Java**, ils génèrent du contenu en temps réel.
-
-📌 **Exemple : Génération dynamique d'une page avec PHP**  
-
-```php
-<?php 
-$heure = date("H:i"); 
-echo "<h1>Bienvenue sur mon site</h1>";
-echo "<p>Il est actuellement $heure</p>";
-?>
-```
-Si un client se connecte à **18h23**, le serveur lui enverra :  
-
-```html
-<h1>Bienvenue sur mon site</h1>
-<p>Il est actuellement 18h23</p>
-```
 
 
 
+### **<H3 STYLE="COLOR:GREEN;">1.2. Principe<a name="_page1_x40.00_y564.92"></a> d’une requête HTTP**</H3>
 
-## **<H2 STYLE="COLOR:BLUE;">2. Le<a name="_page1_x40.00_y233.92"></a> protocole HTTP**</H2>
-### **<H3 STYLE="COLOR:GREEN;">2.1. Qu’est<a name="_page1_x40.00_y255.92"></a> ce que c’est et quel est son rôle ?**</H3>
-
-Le **HyperText Transfer Protocol (HTTP)** est un protocole de communication entre un **client** et un **serveur**. Il permet l’**envoi de requêtes** par le client et la **réception de réponses** du serveur.  
-
-
-
-### **<H3 STYLE="COLOR:GREEN;">2.2. Les<a name="_page1_x40.00_y417.92"></a> codes de statut HTTP**</H3>
-
-Un serveur HTTP répond toujours avec un **code de statut**, qui indique le résultat de la requête :  
-
-| **Code** | **Signification** |
-|---------|------------------|
-| **200** | Succès (OK) |
-| **301** | Redirection permanente |
-| **404** | Page non trouvée |
-| **500** | Erreur interne du serveur |
-
-
-
-### **<H3 STYLE="COLOR:GREEN;">2.3. Principe<a name="_page1_x40.00_y564.92"></a> d’une requête**</H3>
-
-Un **navigateur** envoie une **requête** à un **serveur web** en suivant une **structure standardisée**.
+Une fois que la connexion est établie, le client va faire sa **requête HTTP** au serveur web. Le **HyperText Transfer Protocol (HTTP)** est un protocole de communication entre un **client** et un **serveur**. Il permet l’**envoi de requêtes** par le client et la **réception de réponses** du serveur.  
 
 **Structure d’une requête HTTP**
 
-1️⃣ **Méthode HTTP** (`GET`, `POST`...)  
-
-2️⃣ **URL de la ressource** (`/index.html`)  
-
-3️⃣ **Version du protocole** (`HTTP/1.1`)  
-
-4️⃣ **En-têtes de requête** (informations supplémentaires)  
-
-5️⃣ **Corps de requête** *(optionnel - pour `POST` uniquement)*  
-
-
-
-#### **<H4 STYLE="COLOR:MAGENTA;">2.3.1. Ligne de Requête**</H4>
-
-Elle est composée de **trois éléments** :
-```
-GET /index.html HTTP/1.1
-```
-🔹 **Méthode** : `GET` (peut être `POST`, `PUT`, `DELETE`…)  
-🔹 **Ressource demandée** : `/index.html`  
-🔹 **Version du protocole** : `HTTP/1.1`  
-
-
-
-
-#### **<H4 STYLE="COLOR:MAGENTA;">2.3.2. En-têtes de Requête (Headers)**</H4>
-
-Les en-têtes HTTP fournissent des **informations supplémentaires** sur la requête et le client.
-
-**Exemple de requête avec en-têtes** :
-```
-GET /index.html HTTP/1.1
-Host: www.example.com
+```http
+GET /recherche?q=chat HTTP/1.1
+Host: www.exemple.com
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-Accept: text/html,application/xhtml+xml
+Accept: text/html
+Connection: close
 ```
 
-📌 **Explication :**  
+🧩 **Explication**
 
-✔️ `Host` → Nom du site demandé (`www.example.com`)  
 
-✔️ `User-Agent` → Type de navigateur utilisé (`Mozilla/5.0`)  
 
-✔️ `Accept` → Type de contenu accepté (`text/html`, `image/png`...)  
+* **`GET`** : méthode HTTP utilisée ici. Elle demande au serveur de **récupérer une ressource** (en lecture seule, sans modification côté serveur).
+
+* **`/recherche?q=chat`** : chemin d’accès à la ressource.
+  > * `/recherche` est le chemin (endpoint) sur le serveur.
+  > * `?q=chat` est un **paramètre de requête** (query string) signifiant ici qu’on cherche le mot "chat".
+
+* **`HTTP/1.1`** : version du protocole HTTP utilisée. 
+
+* `Host: www.exemple.com`
+    > * Ce champ **obligatoire en HTTP/1.1** indique **le nom du serveur cible** (nom de domaine).
+    > * Permet à un même serveur d’héberger plusieurs sites web (virtualisation).
+
+* **`User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)`**
+    > * Ce champ permet d’indiquer **qui fait la requête** (navigateur, version, OS...).
+    > * Ici, c’est un navigateur Mozilla Firefox tournant sur Windows 10.
+
+* **`Accept: text/html`** : Indique **le type de contenu** attendu par le client (ici, du HTML).
+
+* **`Connection: close`** : Indique que le client souhaite **fermer la connexion TCP** après la réponse.
+
+### **<H3 STYLE="COLOR:GREEN;">1.3. Réponse du serveur**</H3>
+
+📩 **Exemple de réponse HTTP**
+
+```http
+HTTP/1.1 200 OK
+Date: Tue, 15 Jul 2025 08:30:00 GMT
+Server: Apache/2.4.41 (Ubuntu)
+Content-Type: text/html; charset=UTF-8
+Content-Length: 1024
+Connection: close
+
+<!DOCTYPE html>
+<html>
+  <head><title>Résultat de la recherche</title></head>
+  <body>
+    <h1>Résultats pour "chat"</h1>
+    <p>Voici les résultats de votre recherche...</p>
+  </body>
+</html>
+```
+
+
+## 🧩 **Explication**
+
+
+* **`HTTP/1.1`** : version du protocole HTTP utilisée pour la réponse.
+
+* **`200 OK`** : **code de statut** suivi de son message. Ici :
+    > * `200` signifie que la requête a réussi.
+    > * `OK` est un message humainement lisible.
+    > 
+    > 🧠 Autres exemples de statuts :
+    > * `404 Not Found` → ressource inexistante.
+    > * `500 Internal Server Error` → erreur côté serveur.
+
+* `Date: Tue, 15 Jul 2025 08:30:00 GMT` : Indique la **date et l'heure** à laquelle la réponse a été générée.
+
+* **`Server: Apache/2.4.41 (Ubuntu)`** : Donne des informations sur le **logiciel serveur web** utilisé : **Apache** version 2.4.41 tournant sous **Ubuntu**.
+
+* **`Content-Type: text/html; charset=UTF-8`**
+    > Indique le **type de contenu** de la réponse.
+    > Ici :
+    > * `text/html` signifie que le corps est une page HTML.
+    > * `charset=UTF-8` précise l’encodage des caractères (important pour les accents !).
+
+* **`Content-Length: 1024`** : Spécifie la **taille du corps de la réponse** en octets (ici 1024 octets) : permet au client de savoir combien d’octets il doit lire.
+
+* **`Connection: close`** :  Le serveur signale que la connexion TCP va être **fermée** après cette réponse.
+
+* 📄 **Corps de la réponse (à partir de la 7e ligne)**
+    > Tout ce qui vient **après la ligne vide** (séparateur) constitue le **corps** de la réponse, ici une **page HTML**.
+
+### **<H3 STYLE="COLOR:GREEN;">1.4. Le protocole HTTPS**</H3>
+
+🔹 **Différences entre HTTP et HTTPS**  
+
+✔️ **HTTP** → Données **non chiffrées**, vulnérables aux attaques  
+
+✔️ **HTTPS** → Données **chiffrées** grâce au protocole TLS  
+
+
+
+✅ **Pourquoi HTTPS est indispensable aujourd’hui ?**
+
+* 🔐 **Sécurité** : mots de passe, paiements, données personnelles… tout est **protégé**
+* 🛡️ **Confiance** : présence du **cadenas 🔒** dans la barre d’adresse
+* 📈 **Référencement** : Google favorise les sites en **HTTPS** dans les résultats
+* 🌍 **Standard web** : Tous les sites sérieux l’utilisent (e-commerce, banque, réseaux sociaux…)
+
+
+## **<H2 STYLE="COLOR:BLUE;">2. Les langages <a name="_page0_x40.00_y516.92"></a> clients**</H2>
+
+
+
+
+
+
 
 
 
@@ -216,33 +272,6 @@ https://www.example.com/login?username=dupont&password=azerty
 
 
 
-### **<H3 STYLE="COLOR:GREEN;">2.4. Réponse HTTP du Serveur**</H3>
-
-Après réception d’une requête, **le serveur répond avec** :  
-
-1️⃣ **Un code de statut** (`200 OK`, `404 Not Found`, `500 Internal Server Error`...)  
-
-2️⃣ **Des en-têtes de réponse** (`Content-Type: text/html`)  
-
-3️⃣ **Le contenu demandé** (HTML, JSON, image...)  
-
-
-#### **<H4 STYLE="COLOR:MAGENTA;">2.4.1. Exemple d’une Réponse HTTP**</H4>
-
-```
-HTTP/1.1 200 OK
-Content-Type: text/html; charset=UTF-8
-Content-Length: 356
-Connection: keep-alive
-```
-
-📌 **Explication** :  
-
-✔️ `200 OK` → Requête réussie  
-
-✔️ `Content-Type` → Contenu en HTML  
-
-✔️ `Connection: keep-alive` → Maintient la connexion ouverte  
 
 
 
@@ -283,72 +312,53 @@ Si une page web est demandée, elle est envoyée sous forme de HTML.
 
 ![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.028.jpeg)
 
-#### **<H4 STYLE="COLOR:MAGENTA;">2.4.3. HTTPS : Sécurisation des échanges**</H4>
-
-🔹 **Différences entre HTTP et HTTPS**  
-
-✔️ **HTTP** → Données **non chiffrées**, vulnérables aux attaques  
-
-✔️ **HTTPS** → Données **chiffrées** grâce au protocole TLS  
-
-🔹 **Pourquoi utiliser HTTPS ?**  
-
-✔️ **Protection des données** (paiements, mots de passe)  
-
-✔️ **Amélioration du référencement** (Google privilégie HTTPS) 
-
-✔️ **Affichage du cadenas 🔒** dans la barre d’adresse  
-
-💡 **Astuce** : Toujours vérifier la présence du 🔒 dans l’URL avant d’entrer des données sensibles.  
 
 
 
+## **<H2 STYLE="COLOR:BLUE;">1. Modèle<a name="_page0_x40.00_y516.92"></a> client/serveur**</H2>
+![](Aspose.Words.bec3aaa5-551c-40be-9a61-cdd26a2bc5a1.004.png)
 
-### **<H3 STYLE="COLOR:GREEN;">2.5. Syntaxe<a name="_page3_x40.00_y314.92"></a> complète des URL**</H3>
+Dans un réseau, les **ordinateurs échangent des données** :  
 
-📌 **Structure d’une URL**  
+- **Le client** envoie une requête pour demander une ressource (exemple : un navigateur web). 
+
+- **Le serveur** reçoit la requête, la traite et répond avec la ressource demandée (exemple : un serveur web).  
+
+💡 **Le Web est devenu dynamique**  
+
+Les serveurs ne se limitent plus à envoyer des fichiers statiques. Grâce à des langages comme **PHP, Python ou Java**, ils génèrent du contenu en temps réel.
+
+📌 **Exemple : Génération dynamique d'une page avec PHP**  
+
+```php
+<?php 
+$heure = date("H:i"); 
+echo "<h1>Bienvenue sur mon site</h1>";
+echo "<p>Il est actuellement $heure</p>";
+?>
 ```
-protocole://nom-de-domaine:port/chemin?paramètre1=valeur1&paramètre2=valeur2#ancre
+Si un client se connecte à **18h23**, le serveur lui enverra :  
+
+```html
+<h1>Bienvenue sur mon site</h1>
+<p>Il est actuellement 18h23</p>
 ```
 
-🔹 **Explication** :  
-
-✔️ `protocole` → HTTP ou HTTPS  
-
-✔️ `nom-de-domaine` → Adresse du serveur (`www.example.com`)  
-
-✔️ `chemin` → Page demandée (`/index.html`)  
-
-✔️ `?paramètre1=valeur1` → Données envoyées (utilisé avec GET)  
-
-✔️ `#ancre` → Cible une section spécifique d’une page  
-
-🔹 **Exemple concret**  
-```
-https://fr.wikipedia.org/wiki/Informatique#Algorithmique
-```
-💡 **Le `#Algorithmique` permet d’accéder directement à cette section de la page.**  
 
 
 
 
-**<H3 STYLE="COLOR:RED;">Activité n°1.**</H3> Passage de paramètre  un serveur 
 
-1️⃣ **Aller sur** [Wikipedia](https://fr.wikipedia.org/)  
 
-2️⃣ **Taper "informatique" dans la barre de recherche**  
 
-3️⃣ **Noter l’URL générée**  
 
-4️⃣ **Comparer ces URLs** :
 
-   - [https://fr.wikipedia.org/w/index.php?search=informatique](https://fr.wikipedia.org/w/index.php?search=informatique)
 
-   - [https://fr.wikipedia.org/wiki/Informatique#Algorithmique](https://fr.wikipedia.org/wiki/Informatique#Algorithmique)
 
-🔹 **Que remarquez-vous ?**  
 
-📌 **Les paramètres sont passés via l’URL et permettent d’accéder directement aux résultats.**  
+
+
+
 
 
 ## **<H2 STYLE="COLOR:BLUE;">3.  Coder l’envoi d’une requête par le navigateur<a name="_page3_x40.00_y617.92"></a>**</H2>
