@@ -329,6 +329,7 @@ https://www.example.com/search?query=informatique
     3 Enregistrer sous : `index.html`
 
     📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
+    ![](AZE.png)
 
     ??? success "Solution"
 
@@ -455,6 +456,7 @@ Dans les activités, on utilisera la méthode GET pour mieux comprendre et voir 
     3 Enregistrer sous : `formulaire.html`
 
     📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
+    ![](AZE.png)
 
     4 Ouvrir le fichier dans un navigateur Internet
 
@@ -1031,7 +1033,7 @@ Avant de passer à **PHP**, créons une **page HTML statique**.
 
     📂 **Enregistrer sous** `C:\UwAmp\www\index.html`  
 
-    **ATTENTION** à bien sélectionner tous les fichiers.
+    📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
     ![](AZE.png)
 
 
@@ -1059,7 +1061,8 @@ Avant de passer à **PHP**, créons une **page HTML statique**.
     ```
     📂 **Enregistrer sous** `C:\UwAmp\www\index.php`  
 
-    **ATTENTION** à bien sélectionner tous les fichiers.
+    📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
+    ![](AZE.png)
 
 
 ???+ question "**Activité n°13**"
@@ -1102,7 +1105,8 @@ Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.
     ```
     📂 **Enregistrer sous** `C:\UwAmp\www\index.html` . 
 
-    ATTENTION à bien sélectionner tous les fichiers.
+    📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
+    ![](AZE.png)
 
 ???+ question "**Activité n°15**" 
 
@@ -1117,7 +1121,8 @@ Un site web dynamique doit pouvoir **interagir avec l’utilisateur**.
     ```
     📂 **Enregistrer sous** `C:\UwAmp\www\trait_form.php`. 
 
-    ATTENTION à bien sélectionner tous les fichiers.
+    📌 **Attention** : choisir « Tous les fichiers » dans le type lors de l’enregistrement.
+    ![](AZE.png)
 
 ???+ question "**Activité n°16**"
 
