@@ -335,7 +335,7 @@ Le **processeur est cadencé** par une **horloge interne**, qui envoie des **imp
 
 💡 **Un CPU cadencé à 2 GHz exécute 2 milliards d’opérations par seconde**.
 
-???+ question "**Activité n°5** 
+???+ question "**Activité n°5**"
 
     Sur les photos ci-dessous, identifier le processeur. 
 
