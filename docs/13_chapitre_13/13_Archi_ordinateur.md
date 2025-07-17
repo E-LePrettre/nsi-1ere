@@ -127,51 +127,53 @@ Actuellement, les principaux systèmes d’exploitation sont **Windows, macOS et
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:</H3>** 
+???+ question "**Activité n°1**"
 
-Répondre par Vrai ou faux 
+  Répondre par Vrai ou faux 
 
-Certaines questions nécessitent une recherche Internet.  
+  Certaines questions nécessitent une recherche Internet.  
 
-1️⃣ Blaise Pascal a mis au point le logiciel Turbo Pascal. 
+  1️⃣ Blaise Pascal a mis au point le logiciel Turbo Pascal. 
 
-2️⃣ George Boole était un spécialiste de la logique binaire.  
+  2️⃣ George Boole était un spécialiste de la logique binaire.  
 
-3️⃣ Alan Turing a travaillé sur l’intelligence artificielle. 
+  3️⃣ Alan Turing a travaillé sur l’intelligence artificielle. 
 
-4️⃣ Alan Turing a cassé le code Enigma.  
+  4️⃣ Alan Turing a cassé le code Enigma.  
 
-5️⃣ L’ordinateur ENIAC était aussi petit qu’une boîte à chaussures.  
+  5️⃣ L’ordinateur ENIAC était aussi petit qu’une boîte à chaussures.  
 
-6️⃣ John Von Neumann a conçu l’architecture de base des ordinateurs modernes.  
+  6️⃣ John Von Neumann a conçu l’architecture de base des ordinateurs modernes.  
 
-7️⃣ L’invention du transistor a permis de miniaturiser les ordinateurs.  
+  7️⃣ L’invention du transistor a permis de miniaturiser les ordinateurs.  
 
-8️⃣ Le premier micro-ordinateur est américain. 
+  8️⃣ Le premier micro-ordinateur est américain. 
 
-9️⃣ Le processeur 8086 possède 1 000 000 de transistors.  
+  9️⃣ Le processeur 8086 possède 1 000 000 de transistors.  
 
-🔟 Gary Kasparov est imbattable aux échecs. 
+  🔟 Gary Kasparov est imbattable aux échecs. 
 
-1️⃣1️⃣ La loi de Moore est toujours valide en 2020.  
+  1️⃣1️⃣ La loi de Moore est toujours valide en 2020.  
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°2.:</H3>** Cocher la ou les bonnes réponses. 
+???+ question "**Activité n°2**" 
 
-Certaines questions nécessitent une recherche Internet.  
+  Cocher la ou les bonnes réponses. 
 
-1️⃣ Le premier algorithme connu remonte... 
+  Certaines questions nécessitent une recherche Internet.  
 
-📌 XXe siècle / 📌 XIXe siècle / 📌 Ier siècle / 📌 Bien avant  
+  1️⃣ Le premier algorithme connu remonte... 
 
-2️⃣ Le mot "algorithme" vient du nom…  
+  📌 XXe siècle / 📌 XIXe siècle / 📌 Ier siècle / 📌 Bien avant  
 
-📌 Al-Khwârizmi / 📌 Grace Hopper / 📌 Steve Jobs / 📌 Ada Lovelace  
+  2️⃣ Le mot "algorithme" vient du nom…  
 
-3️⃣ Le premier compilateur a été conçu par… 
+  📌 Al-Khwârizmi / 📌 Grace Hopper / 📌 Steve Jobs / 📌 Ada Lovelace  
 
-📌 Al-Khwârizmi / 📌 Grace Hopper / 📌 Steve Jobs / 📌 Ada Lovelace  
+  3️⃣ Le premier compilateur a été conçu par… 
+
+  📌 Al-Khwârizmi / 📌 Grace Hopper / 📌 Steve Jobs / 📌 Ada Lovelace  
 
 📌 **Et bien d’autres questions à explorer !**  
 
@@ -243,17 +245,19 @@ Pour compenser la différence de vitesse entre le **processeur** et la **mémoir
   3 **Cache L3** : partagée entre plusieurs cœurs d’un processeur multi-cœur.  
 
 
-**<H3 STYLE="COLOR:red;">Activité n°3.:</H3>** Quelques interrogations 
+???+ question "**Activité n°3**"
 
-💡 Réfléchissez aux réponses aux questions suivantes :  
+  Quelques interrogations 
 
-1️⃣ Où sont stockés les programmes dans la mémoire ?  
+  💡 Réfléchissez aux réponses aux questions suivantes :  
 
-2️⃣ Comment l’ordinateur effectue-t-il une addition ?  
+  1️⃣ Où sont stockés les programmes dans la mémoire ?  
 
-3️⃣ D’où proviennent les données entrées via le clavier ?
+  2️⃣ Comment l’ordinateur effectue-t-il une addition ?  
 
-4️⃣ Où vont les informations envoyées vers l’écran ? 
+  3️⃣ D’où proviennent les données entrées via le clavier ?
+
+  4️⃣ Où vont les informations envoyées vers l’écran ? 
 
 ## <H2 STYLE="COLOR:BLUE;"> **3. Architecture<a name="_page4_x40.00_y536.92"></a> de Von Neumann** </H2>
 
@@ -292,11 +296,11 @@ Ils permettent à l’ordinateur de communiquer avec l’extérieur (**clavier, 
 
 💡 **L’architecture Harvard** est une alternative où les mémoires des programmes et des données sont séparées, permettant un **traitement plus rapide**.
 
-**<H3 STYLE="COLOR:red;">Activité n°4.:</H3>** Calcul de la mémoire disponible**  
+???+ question "**Activité n°4 : Calcul de la mémoire disponible**"  
 
-1️⃣ **Combien d’adresses mémoire différentes peut-on avoir avec un bus d’adresses de 16 bits ?**  
+  1️⃣ **Combien d’adresses mémoire différentes peut-on avoir avec un bus d’adresses de 16 bits ?**  
 
-2️⃣ **Si chaque case mémoire contient 1 octet, quelle est la capacité maximale de mémoire vive ?**  
+  2️⃣ **Si chaque case mémoire contient 1 octet, quelle est la capacité maximale de mémoire vive ?**  
 
 
 ### <H3 STYLE="COLOR:GREEN;"> **3.2. Le<a name="_page6_x297.92"></a> CPU** </H3>
@@ -331,11 +335,13 @@ Le **processeur est cadencé** par une **horloge interne**, qui envoie des **imp
 
 💡 **Un CPU cadencé à 2 GHz exécute 2 milliards d’opérations par seconde**.
 
-**<H3 STYLE="COLOR:red;">Activité n°5.:</H3>** Sur les photos ci-dessous, identifier le processeur. 
+???+ question "**Activité n°5** 
 
-![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.026.png)
-![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.027.png)
-![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.028.png)
+  Sur les photos ci-dessous, identifier le processeur. 
+
+  ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.026.png)
+  ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.027.png)
+  ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.028.png)
 
 ### <H3 STYLE="COLOR:GREEN;"> **3.4. Les<a name="_page7_x274.92"></a> limites** </H3>
 
@@ -369,9 +375,11 @@ Le **processeur est cadencé** par une **horloge interne**, qui envoie des **imp
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°6.:</H3>** Ci-contre, retrouver les interfaces RJ45, VGA, HDMI et USB. 
+???+ question "**Activité n°6**" 
 
-![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.032.jpeg)
+  Ci-contre, retrouver les interfaces RJ45, VGA, HDMI et USB. 
+
+  ![](Aspose.Words.49fb7717-1633-4b59-ac3e-82de7dfc0910.032.jpeg)
 
 ## <H2 STYLE="COLOR:BLUE;"> **4. Langage<a name="_page8_x40.00_y390.92"></a> assembleur** </H2>
 
@@ -415,79 +423,81 @@ Ce code en assembleur signifie :
 | `CMP R0, #23 BGT 78` | Si **R0 > 23**, alors saute à l’adresse **78**. |
 | `HALT` | Arrête l’exécution du programme. |
 
-**<H3 STYLE="COLOR:red;">Activité n°7.:</H3>** Expliquer les instructions suivantes 
+???+ question "**Activité n°7**" 
 
-📌 **Décrivez les instructions suivantes en langage naturel :** 
+  Expliquer les instructions suivantes 
 
-1️⃣ `ADD R0, R1, #42`  
+  📌 **Décrivez les instructions suivantes en langage naturel :** 
 
-2️⃣ `LDR R5, 98`  
+  1️⃣ `ADD R0, R1, #42`  
 
-3️⃣ `CMP R4, #18`  
+  2️⃣ `LDR R5, 98`  
 
-4️⃣ `BGT 77`  
+  3️⃣ `CMP R4, #18`  
 
-5️⃣ `STR R0, 15`  
+  4️⃣ `BGT 77`  
 
-6️⃣ `B 100`  
+  5️⃣ `STR R0, 15`  
+
+  6️⃣ `B 100`  
 
 ### <H3 STYLE="COLOR:GREEN;"> **4.2. Applications** </H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°8.:</H3>** 
+???+ question "**Activité n°8**"
 
-📌 **Écrivez les instructions en assembleur correspondant aux phrases suivantes :**  
+  📌 **Écrivez les instructions en assembleur correspondant aux phrases suivantes :**  
 
-1️⃣ Additionne la valeur stockée dans **R0** et celle stockée dans **R1**, stocke le résultat dans **R5**. 
+  1️⃣ Additionne la valeur stockée dans **R0** et celle stockée dans **R1**, stocke le résultat dans **R5**. 
 
-2️⃣ Charge la valeur située à l’adresse mémoire **878** dans le registre **R0**.  
+  2️⃣ Charge la valeur située à l’adresse mémoire **878** dans le registre **R0**.  
 
-3️⃣ Stocke la valeur du registre **R0** en mémoire à l’adresse **124**.  
+  3️⃣ Stocke la valeur du registre **R0** en mémoire à l’adresse **124**.  
 
-4️⃣ Sauter directement à l’instruction stockée en mémoire **478**.  
+  4️⃣ Sauter directement à l’instruction stockée en mémoire **478**.  
 
-5️⃣ Si **R0 == 42**, sauter à l’adresse **85**.
+  5️⃣ Si **R0 == 42**, sauter à l’adresse **85**.
 
-**<H3 STYLE="COLOR:red;">Activité n°9.:</H3>** 
+???+ question "**Activité n°9:"
 
-📌 **Comparer le programme suivant en Python et en Assembleur** :
+  📌 **Comparer le programme suivant en Python et en Assembleur** :
 
-**Python**  
-```python
-x = 4
-y = 8
-if x == 10:
-    y = 9
-else:
-    x = x + 1
-z = 6
-```
+  **Python**  
+  ```python
+  x = 4
+  y = 8
+  if x == 10:
+      y = 9
+  else:
+      x = x + 1
+  z = 6
+  ```
 
-**Assembleur équivalent**
-```assembly
-MOV R0, #4
-STR R0, 30
-MOV R0, #8
-STR R0, 75
-LDR R0, 30
-CMP R0, #10
-BNE else
-MOV R0, #9
-STR R0, 75
-B endif
-else:
-LDR R0, 30
-ADD R0, R0, #1
-STR R0, 30
-endif:
-MOV R0, #6
-STR R0, 23
-HALT
-```
-📌 **Questions** :  
+  **Assembleur équivalent**
+  ```assembly
+  MOV R0, #4
+  STR R0, 30
+  MOV R0, #8
+  STR R0, 75
+  LDR R0, 30
+  CMP R0, #10
+  BNE else
+  MOV R0, #9
+  STR R0, 75
+  B endif
+  else:
+  LDR R0, 30
+  ADD R0, R0, #1
+  STR R0, 30
+  endif:
+  MOV R0, #6
+  STR R0, 23
+  HALT
+  ```
+  📌 **Questions** :  
 
-1️⃣ À quoi sert la ligne `B endif` ?  
+  1️⃣ À quoi sert la ligne `B endif` ?  
 
-2️⃣ Que représentent les adresses mémoires `23`, `75` et `30` ?  
+  2️⃣ Que représentent les adresses mémoires `23`, `75` et `30` ?  
 
 
 ## <H2 STYLE="COLOR:BLUE;"> **5. Simulation<a name="_page11_x40.00_y36.92"></a> CPU** </H2>
@@ -516,15 +526,15 @@ Nous allons utiliser un **simulateur CPU** basé sur l’architecture **Von Neum
 
 Par défaut le contenu des différentes cellules de la mémoire est en base 10 (entier signé), mais d'autres options sont possibles : base 10 (entier non-signé, "unsigned"), base 16 ("hex"), base 2 ("binary"). On accède à ces options à l'aide du bouton "OPTIONS" situé en bas dans la partie gauche du simulateur.
 
-**<H3 STYLE="COLOR:red;">Activité n°10.:</H3>**  
+???+ question "**Activité n°10**"  
 
-1️⃣ Utiliser le bouton **"OPTIONS"** pour afficher la mémoire en **binaire**.  
+  1️⃣ Utiliser le bouton **"OPTIONS"** pour afficher la mémoire en **binaire**.  
 
-2️⃣ Chaque cellule mémoire contient **32 bits**.  
+  2️⃣ Chaque cellule mémoire contient **32 bits**.  
 
-3️⃣ Vérifier l’adresse mémoire utilisée (entre **000 et 199**). 
+  3️⃣ Vérifier l’adresse mémoire utilisée (entre **000 et 199**). 
 
-4️⃣ Remettre l’affichage en **base 10**.  (bouton "OPTION"->"signed")
+  4️⃣ Remettre l’affichage en **base 10**.  (bouton "OPTION"->"signed")
 
 
 
@@ -538,28 +548,31 @@ Dans la partie centrale du simulateur, nous allons trouver en allant du haut ver
 
 ### <H3 STYLE="COLOR:GREEN;"> **5.4. Programmer<a name="_page12_x218.92"></a> en assembleur** </H3>
 
-**<H3 STYLE="COLOR:red;">Activité n°11.:</H3>** 
-1️⃣ Dans l'éditeur **Assembly Language**, saisissez :  
-```assembly
-MOV R0, #42
-STR R0, 150
-HALT
-```
-2️⃣ Cliquez sur **Submit**.  
+???+ question "**Activité n°11**"
 
-3️⃣ Vérifiez que :  
+  1️⃣ Dans l'éditeur **Assembly Language**, saisissez :  
+  ```assembly
+  MOV R0, #42
+  STR R0, 150
+  HALT
+  ```
+  2️⃣ Cliquez sur **Submit**.  
 
-   - L’instruction **MOV** est à l’adresse **000**.  
+  3️⃣ Vérifiez que :  
 
-   - L’instruction **STR** est à l’adresse **001**.  
+  - L’instruction **MOV** est à l’adresse **000**.  
 
-   - L’instruction **HALT** est à l’adresse **002**.  
+  - L’instruction **STR** est à l’adresse **001**.  
 
-**<H3 STYLE="COLOR:red;">Activité n°12.:** Exécution pas à pas :</H3>
-1️⃣ **Exécutez** le programme en cliquant sur **RUN**.  
-2️⃣ Observez l’animation du CPU.  
-3️⃣ Vérifiez que **l’adresse mémoire 150 contient bien 42**.  
-4️⃣ **Modifier** la vitesse avec **<< et >>**.  
+  - L’instruction **HALT** est à l’adresse **002**.  
+
+???+ question "**Activité n°12**" 
+
+  Exécution pas à pas :</H3>
+  1️⃣ **Exécutez** le programme en cliquant sur **RUN**.  
+  2️⃣ Observez l’animation du CPU.  
+  3️⃣ Vérifiez que **l’adresse mémoire 150 contient bien 42**.  
+  4️⃣ **Modifier** la vitesse avec **<< et >>**.  
 
 📌 **Remarque** : Pour relancer la simulation, cliquez sur **RESET**.
 
@@ -567,34 +580,34 @@ HALT
 Une fois la simulation terminée, on constate que la cellule mémoire d'adresse 150, contient bien le nombre 42 (en base 10) et que le registre R0 a bien stocké le nombre 42.
 
 
-**<H3 STYLE="COLOR:red;">Activité n°13.:</H3>** 
+???+ question "**Activité n°13**"
 
-💡 **Modifier le programme précédent** pour **stocker 54 dans l’adresse mémoire 50** en utilisant **R1**. 
+  💡 **Modifier le programme précédent** pour **stocker 54 dans l’adresse mémoire 50** en utilisant **R1**. 
 
-✅ **Testez** la modification en exécutant le programme.
+  ✅ **Testez** la modification en exécutant le programme.
 
-**<H3 STYLE="COLOR:red;">Activité n°14.:</H3>** 
+  **<H3 STYLE="COLOR:red;">Activité n°14.:</H3>** 
 
-💡 **Tester le programme suivant** :
-```assembly
-MOV R0, #4
-STR R0, 30
-MOV R0, #8
-STR R0, 75
-LDR R0, 30
-CMP R0, #10
-BNE else
-MOV R0, #9
-STR R0, 75
-B endif
-else:
-LDR R0, 30
-ADD R0, R0, #1
-STR R0, 30
-endif:
-MOV R0, #6
-STR R0, 23
-HALT
-```
-✅ **Analysez** le comportement du programme.  
+  💡 **Tester le programme suivant** :
+  ```assembly
+  MOV R0, #4
+  STR R0, 30
+  MOV R0, #8
+  STR R0, 75
+  LDR R0, 30
+  CMP R0, #10
+  BNE else
+  MOV R0, #9
+  STR R0, 75
+  B endif
+  else:
+  LDR R0, 30
+  ADD R0, R0, #1
+  STR R0, 30
+  endif:
+  MOV R0, #6
+  STR R0, 23
+  HALT
+  ```
+  ✅ **Analysez** le comportement du programme.  
 
