@@ -77,65 +77,62 @@ Un autre format structuré est le **XML (Extensible Markup Language)** :
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
-**<H3 STYLE="COLOR:red;">Activité n°1.:</h3> Lire un fichier CSV avec `csv.reader`** : 
+???+ question "**Activité n°1 : Lire un fichier CSV avec `csv.reader`**" : 
 
-```python
-import csv
+    ```python
+    import csv
 
-f = open("musique.csv", encoding="utf-8")  # Ouvre le fichier CSV avec encodage UTF-8
-donnees = csv.reader(f, delimiter=';')  # Lecture avec séparateur ";"
-for row in donnees:  
-    print(row)  # Affiche chaque ligne
-f.close()  # Toujours fermer le fichier
-```
+    f = open("musique.csv", encoding="utf-8")  # Ouvre le fichier CSV avec encodage UTF-8
+    donnees = csv.reader(f, delimiter=';')  # Lecture avec séparateur ";"
+    for row in donnees:  
+        print(row)  # Affiche chaque ligne
+    f.close()  # Toujours fermer le fichier
+    ```
 
-
-
-**Attention sur Thonny** (par exemple) il faut enregistrer le fichier python au même endroit que le fichier CSV.
-```
->>>
-['Album', 'groupe', 'annÃ©e', 'classement']
-['Master of Puppets', 'Metalica', '1986', '1']
-['Paranoid', 'Black Sabbath', '1970', '2']
-['Rage against the machine', 'Rage against the machine', '1992', '3']
-['Ride the lightning', 'Metallica', '1984', '4']
-['Rust in peace', 'Megadeth', '1990', '5']
-['Metallica', 'Metallica', '1991', '6']
-['Toxicity', 'System of a down', '2001', '7']
-['reign in blood', 'Slayer', '1986', '8']
-['the number of the beast', 'Iron maiden', '1982', '9']
-['From mars to sirius', 'Gojira', '2005', '10']
-['..and justice for all', 'Metallica', '1988', '11']
-['Mutter', 'Rammstein', '2001', '12']
-['Painkiller', 'Judas Priest', '1990', '13']
-['Powerslave', 'Iron maiden', '1984', '14']
-['Blawater Park', 'Opeth', '2001', '15']
-```
+    **Attention sur Thonny** (par exemple) il faut enregistrer le fichier python au même endroit que le fichier CSV.
+    ```
+    >>>
+    ['Album', 'groupe', 'annÃ©e', 'classement']
+    ['Master of Puppets', 'Metalica', '1986', '1']
+    ['Paranoid', 'Black Sabbath', '1970', '2']
+    ['Rage against the machine', 'Rage against the machine', '1992', '3']
+    ['Ride the lightning', 'Metallica', '1984', '4']
+    ['Rust in peace', 'Megadeth', '1990', '5']
+    ['Metallica', 'Metallica', '1991', '6']
+    ['Toxicity', 'System of a down', '2001', '7']
+    ['reign in blood', 'Slayer', '1986', '8']
+    ['the number of the beast', 'Iron maiden', '1982', '9']
+    ['From mars to sirius', 'Gojira', '2005', '10']
+    ['..and justice for all', 'Metallica', '1988', '11']
+    ['Mutter', 'Rammstein', '2001', '12']
+    ['Painkiller', 'Judas Priest', '1990', '13']
+    ['Powerslave', 'Iron maiden', '1984', '14']
+    ['Blawater Park', 'Opeth', '2001', '15']
+    ```
 
 📝 **Problème** : Les données sont des **listes non structurées**. La première ligne correspond aux **descripteurs**, les autres lignes aux **valeurs**.
 
 ### <H3 STYLE="COLOR:GREEN;">**2.2. Lecture en liste de liste<a name="_page5_x40.00_y36.92"></a></h3>** 
 
-**<H3 STYLE="COLOR:red;">Activité  n°2.:</h3>  Stocker un fichier CSV sous forme de liste de listes** :
+???+ question "**Activité n°2 :  Stocker un fichier CSV sous forme de liste de listes**"
 
-```python
-import csv
+    ```python
+    import csv
 
-table = []
-with open("musique.csv", encoding="utf-8") as f:
-    donnees = csv.reader(f, delimiter=';')  
-    for row in donnees:
-        table.append(row)  # Ajoute chaque ligne à la liste table
+    table = []
+    with open("musique.csv", encoding="utf-8") as f:
+        donnees = csv.reader(f, delimiter=';')  
+        for row in donnees:
+            table.append(row)  # Ajoute chaque ligne à la liste table
 
-print(table)  # Affichage de la liste de listes
-```
+    print(table)  # Affichage de la liste de listes
+    ```
 
+    ```
+    >>>
+    [['Album', 'groupe', 'annÃ©e', 'classement'], ['Master of Puppets', 'Metalica', '1986', '1'], ['Paranoid', 'Black Sabbath', '1970', '2'], ['Rage against the machine', 'Rage against the machine', '1992', '3'], ['Ride the lightning', 'Metallica', '1984', '4'], ['Rust in peace', 'Megadeth', '1990', '5'], ['Metallica', 'Metallica', '1991', '6'], ['Toxicity', 'System of a down', '2001', '7'], ['reign in blood', 'Slayer', '1986', '8'], ['the number of the beast', 'Iron maiden', '1982', '9'], ['From mars to sirius', 'Gojira', '2005', '10'], ['..and justice for all', 'Metallica', '1988', '11'], ['Mutter', 'Rammstein', '2001', '12'], ['Painkiller', 'Judas Priest', '1990', '13'], ['Powerslave', 'Iron maiden', '1984', '14'], ['Blawater Park', 'Opeth', '2001', '15']]
+    ```
 
-
-```
->>>
-[['Album', 'groupe', 'annÃ©e', 'classement'], ['Master of Puppets', 'Metalica', '1986', '1'], ['Paranoid', 'Black Sabbath', '1970', '2'], ['Rage against the machine', 'Rage against the machine', '1992', '3'], ['Ride the lightning', 'Metallica', '1984', '4'], ['Rust in peace', 'Megadeth', '1990', '5'], ['Metallica', 'Metallica', '1991', '6'], ['Toxicity', 'System of a down', '2001', '7'], ['reign in blood', 'Slayer', '1986', '8'], ['the number of the beast', 'Iron maiden', '1982', '9'], ['From mars to sirius', 'Gojira', '2005', '10'], ['..and justice for all', 'Metallica', '1988', '11'], ['Mutter', 'Rammstein', '2001', '12'], ['Painkiller', 'Judas Priest', '1990', '13'], ['Powerslave', 'Iron maiden', '1984', '14'], ['Blawater Park', 'Opeth', '2001', '15']]
-```
 ✅ **Avantage** : Structure en **tableau** facilitant l’accès aux données. 
 
 ❌ **Inconvénient** : Il faut manipuler les indices (`table[0]`, `table[1]`...) pour récupérer les données.
@@ -144,25 +141,25 @@ print(table)  # Affichage de la liste de listes
 
 
 
-**<H3 STYLE="COLOR:red;">Activité n°3.:</h3> Transformer un fichier CSV en liste de dictionnaires** : 
+???+ question "**Activité n°3 : Transformer un fichier CSV en liste de dictionnaires**"
 
-```python
-import csv
+    ```python
+    import csv
 
-dico = []
-with open("musique.csv", encoding="utf-8") as f:
-    donnees = csv.DictReader(f, delimiter=';')  
-    for row in donnees:
-        dico.append(row)  
+    dico = []
+    with open("musique.csv", encoding="utf-8") as f:
+        donnees = csv.DictReader(f, delimiter=';')  
+        for row in donnees:
+            dico.append(row)  
 
-print(dico)  # Affichage de la liste de dictionnaires
-```
+    print(dico)  # Affichage de la liste de dictionnaires
+    ```
 
 
-```
->>>
-[{'Album': 'Master of Puppets', 'groupe': 'Metalica', 'annÃ©e': '1986', 'classement': '1'}, {'Album': 'Paranoid', 'groupe': 'Black Sabbath', 'annÃ©e': '1970', 'classement': '2'}, {'Album': 'Rage against the machine', 'groupe': 'Rage against the machine', 'annÃ©e': '1992', 'classement': '3'}, {'Album': 'Ride the lightning', 'groupe': 'Metallica', 'annÃ©e': '1984', 'classement': '4'}, {'Album': 'Rust in peace', 'groupe': 'Megadeth', 'annÃ©e': '1990', 'classement': '5'}, {'Album': 'Metallica', 'groupe': 'Metallica', 'annÃ©e': '1991', 'classement': '6'}, {'Album': 'Toxicity', 'groupe': 'System of a down', 'annÃ©e': '2001', 'classement': '7'}, {'Album': 'reign in blood', 'groupe': 'Slayer', 'annÃ©e': '1986', 'classement': '8'}, {'Album': 'the number of the beast', 'groupe': 'Iron maiden', 'annÃ©e': '1982', 'classement': '9'}, {'Album': 'From mars to sirius', 'groupe': 'Gojira', 'annÃ©e': '2005', 'classement': '10'}, {'Album': '..and justice for all', 'groupe': 'Metallica', 'annÃ©e': '1988', 'classement': '11'}, {'Album': 'Mutter', 'groupe': 'Rammstein', 'annÃ©e': '2001', 'classement': '12'}, {'Album': 'Painkiller', 'groupe': 'Judas Priest', 'annÃ©e': '1990', 'classement': '13'}, {'Album': 'Powerslave', 'groupe': 'Iron maiden', 'annÃ©e': '1984', 'classement': '14'}, {'Album': 'Blawater Park', 'groupe': 'Opeth', 'annÃ©e': '2001', 'classement': '15'}]
-```
+    ```
+    >>>
+    [{'Album': 'Master of Puppets', 'groupe': 'Metalica', 'annÃ©e': '1986', 'classement': '1'}, {'Album': 'Paranoid', 'groupe': 'Black Sabbath', 'annÃ©e': '1970', 'classement': '2'}, {'Album': 'Rage against the machine', 'groupe': 'Rage against the machine', 'annÃ©e': '1992', 'classement': '3'}, {'Album': 'Ride the lightning', 'groupe': 'Metallica', 'annÃ©e': '1984', 'classement': '4'}, {'Album': 'Rust in peace', 'groupe': 'Megadeth', 'annÃ©e': '1990', 'classement': '5'}, {'Album': 'Metallica', 'groupe': 'Metallica', 'annÃ©e': '1991', 'classement': '6'}, {'Album': 'Toxicity', 'groupe': 'System of a down', 'annÃ©e': '2001', 'classement': '7'}, {'Album': 'reign in blood', 'groupe': 'Slayer', 'annÃ©e': '1986', 'classement': '8'}, {'Album': 'the number of the beast', 'groupe': 'Iron maiden', 'annÃ©e': '1982', 'classement': '9'}, {'Album': 'From mars to sirius', 'groupe': 'Gojira', 'annÃ©e': '2005', 'classement': '10'}, {'Album': '..and justice for all', 'groupe': 'Metallica', 'annÃ©e': '1988', 'classement': '11'}, {'Album': 'Mutter', 'groupe': 'Rammstein', 'annÃ©e': '2001', 'classement': '12'}, {'Album': 'Painkiller', 'groupe': 'Judas Priest', 'annÃ©e': '1990', 'classement': '13'}, {'Album': 'Powerslave', 'groupe': 'Iron maiden', 'annÃ©e': '1984', 'classement': '14'}, {'Album': 'Blawater Park', 'groupe': 'Opeth', 'annÃ©e': '2001', 'classement': '15'}]
+    ```
 
 ✅ **Avantage** : Chaque ligne est convertie en **dictionnaire** avec des **clés explicites**.
 
@@ -195,60 +192,60 @@ plt.show()
 
 ### <H3 STYLE="COLOR:GREEN;">**3.2. Analyse du fichier `MetalBands.csv`</h3>** 
 
-**<H3 STYLE="COLOR:red;">Activité n°4.:</h3> Analyse de données CSV** : 
+???+ question "**Activité n°4 : Analyse de données CSV**"
 
 
-```python
-import csv
+    ```python
+    import csv
 
-dico = []
-with open("MetalBands.csv", encoding='ISO-8859-1') as f:  
-    donnees = csv.DictReader(f, delimiter=',')  
-    for row in donnees:
-        dico.append(row)
+    dico = []
+    with open("MetalBands.csv", encoding='ISO-8859-1') as f:  
+        donnees = csv.DictReader(f, delimiter=',')  
+        for row in donnees:
+            dico.append(row)
 
-print(len(dico))  # 1. Nombre de groupes
-print(dico[811])  # 2. Nom du groupe en 812
-```
-📌 **Explications** :
+    print(len(dico))  # 1. Nombre de groupes
+    print(dico[811])  # 2. Nom du groupe en 812
+    ```
+    📌 **Explications** :
 
-1️⃣ `len(dico)` : Affiche le nombre de groupes présents.  
+    1️⃣ `len(dico)` : Affiche le nombre de groupes présents.  
 
-2️⃣ `dico[811]` : Affiche le groupe en **812e position** (indexation commence à 0).  
+    2️⃣ `dico[811]` : Affiche le groupe en **812e position** (indexation commence à 0).  
 
 ### <H3 STYLE="COLOR:GREEN;">**3.3. Recherche de groupes par année</h3>** 
 
-**<H3 STYLE="COLOR:red;">Activité n°5.**</h3>  : 
+???+ question "**Activité n°5**" 
 
-📌 **Compter les groupes formés en 1981**
-```python
-groupes_1981 = [band for band in dico if band['formed'] == '1981']
-print(f"Nombre de groupes formés en 1981 : {len(groupes_1981)}")
-```
-📌 **Explication** :
+    📌 **Compter les groupes formés en 1981**
+    ```python
+    groupes_1981 = [band for band in dico if band['formed'] == '1981']
+    print(f"Nombre de groupes formés en 1981 : {len(groupes_1981)}")
+    ```
+    📌 **Explication** :
 
-- On **filtre** les groupes avec `formed == '1981'`.
+    - On **filtre** les groupes avec `formed == '1981'`.
 
-- On affiche la **taille** de la liste filtrée.
+    - On affiche la **taille** de la liste filtrée.
 
 ### <H3 STYLE="COLOR:GREEN;">**3.4. Liste des groupes de "Melodic Death</h3>** 
 
-**<H3 STYLE="COLOR:red;">Activité n°6.**</h3>  : 
+???+ question "**Activité n°6 :**" 
 
-📌 **Lister les groupes en supprimant les doublons**
-```python
-genres = set()  # Utilisation d'un ensemble pour éviter les doublons
-for band in dico:
-    if "melodic death" in band['genre'].lower():
-        genres.add(band['band_name'])  
+    📌 **Lister les groupes en supprimant les doublons**
+    ```python
+    genres = set()  # Utilisation d'un ensemble pour éviter les doublons
+    for band in dico:
+        if "melodic death" in band['genre'].lower():
+            genres.add(band['band_name'])  
 
-print(genres)
-```
-📌 **Explication** :
+    print(genres)
+    ```
+    📌 **Explication** :
 
-- `band['genre'].lower()` convertit en **minuscule** pour éviter les erreurs de casse.
+    - `band['genre'].lower()` convertit en **minuscule** pour éviter les erreurs de casse.
 
-- `set()` supprime automatiquement les doublons.
+    - `set()` supprime automatiquement les doublons.
 
 ### <H3 STYLE="COLOR:GREEN;">**3.5. Visualisation des groupes sur un graphique</h3>** 
 

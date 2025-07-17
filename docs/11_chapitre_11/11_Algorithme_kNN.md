@@ -236,16 +236,16 @@ Pour classer une donnée avec k-NN, il faut :
 ???+ question "**Activité n°5 : Exemple 1**"
 
 
-Une cible a pour caractéristiques **(50,8)** et on choisit **k = 4**.  
-On trace un cercle englobant les **4 voisins les plus proches**.  
+    Une cible a pour caractéristiques **(50,8)** et on choisit **k = 4**.  
+    On trace un cercle englobant les **4 voisins les plus proches**.  
 
-![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.022.jpeg)
+    ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.022.jpeg)
 
-**Questions :**  
+    **Questions :**  
 
-- Quelle est la catégorie majoritaire ?  
+    - Quelle est la catégorie majoritaire ?  
 
-- Quelle valeur de k permet d’avoir une classification fiable ?  
+    - Quelle valeur de k permet d’avoir une classification fiable ?  
 
 
 
@@ -541,8 +541,6 @@ L’espèce inconnue est classée comme **« iris setosa »**.
     plt.show()
     ```
 
-    #### **Visualisation du résultat :**  
-    ![Résultat prédiction k-NN](attachment:file-G6M1hfRZPEDLMqzEHAAmvs)
 
 ➡ **L’algorithme k-NN classe la cible comme étant un iris setosa.**
 
@@ -728,26 +726,26 @@ L’écriture dans un fichier se fait avec la fonction ```open()``` en mode écr
 
 ???+ question "**Activité n°14 : Création, ouverture et écriture dans un fichier texte**"
 
-```python
-# coding=utf-8
-# script lecture.py
+    ```python
+    # coding=utf-8
+    # script lecture.py
 
-NomFichier = 'test.txt'
-# création et ouverture du fichier test.txt en mode write 'w' (écriture)
-# si le fichier test.txt existe déjà, il est écrasé
-Fichier = open(NomFichier,'w')      # instanciation de l'objet Fichier de la classe file
+    NomFichier = 'test.txt'
+    # création et ouverture du fichier test.txt en mode write 'w' (écriture)
+    # si le fichier test.txt existe déjà, il est écrasé
+    Fichier = open(NomFichier,'w')      # instanciation de l'objet Fichier de la classe file
 
-# écriture dans le fichier avec la méthode write()
-Fichier.write('Bonjour à tous !')
+    # écriture dans le fichier avec la méthode write()
+    Fichier.write('Bonjour à tous !')
 
-# fermeture du fichier avec la méthode close()
-Fichier.close()
-```
+    # fermeture du fichier avec la méthode close()
+    Fichier.close()
+    ```
 
-Enregistrer le script dans Documents et lancer le script 
-Ouvrir le fichier test.txt qui se trouve dans Documents 
+    Enregistrer le script dans Documents et lancer le script 
+    Ouvrir le fichier test.txt qui se trouve dans Documents 
 
-![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.047.jpeg)
+    ![](Aspose.Words.3ff765a9-d01a-40a4-b89f-2b60e83d57aa.047.jpeg)
 
 #### <H4 STYLE="COLOR:MAGENTA;"> **3.1.2. Le mode append**</H4>
 
