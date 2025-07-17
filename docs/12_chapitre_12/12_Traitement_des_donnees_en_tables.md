@@ -77,7 +77,7 @@ Un autre format structuré est le **XML (Extensible Markup Language)** :
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
 
-???+ question "**Activité n°1 : Lire un fichier CSV avec `csv.reader`**" : 
+???+ question "**Activité n°1 : Lire un fichier CSV avec `csv.reader`**" 
 
     ```python
     import csv
