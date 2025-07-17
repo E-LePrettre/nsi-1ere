@@ -12,8 +12,8 @@
 8. Les réseaux
 9. Algorithme glouton
 10. Système d'exploitation
-11. Architecture d'un ordinateur
+11. Algorithme knn
 12. Traitement des données en tables
-13. Algorithme knn
+13. Architecture d'un ordinateur 
 
 *Elisabeth Le Prettre*
