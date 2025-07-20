@@ -544,7 +544,9 @@ L'instruction `float` permet de convertir certaines chaînes de caractères en u
 ???+ question "Activité n°19 : Délimiter les chaines de caractères"
 
     Faire afficher exactement :
+
     - C'est bientôt Noël
+    
     - Bonjour se dit "Hello"
 
     ??? success "Python"
