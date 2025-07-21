@@ -1293,7 +1293,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
 !!! abstract "Exercice 20"  
 
-    1.★ Ecrire une fonction qui retourne la valeur de la fonction  mathématique f(x)= 27x^3 - 27x^2 - 18x + 8 :  
+    1.★ Ecrire une fonction qui retourne la valeur de la fonction  mathématique f(x)= $27x^3 - 27x^2 - 18x + 8$ :  
 
     ```
     >>> f(0), f(1), f(0.5), f(0.25), f(0.375)  
@@ -1304,7 +1304,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
     2.★★ On se propose de chercher les zéros de cette fonction par la (Wikipédia)[ méthode de dichotomie.](https://fr.wikipedia.org/wiki/M%C3%A9thode_de_dichotomie) 
 
     Ecrire le script correspondant. On recherche d’un zéro dans l’intervalle [a, b] avec une précision de 
-    1e-12
+    $10^-12$ (noté sur Python : 1e-12)
 
     ```
     >>> fonction(0,1)
@@ -1315,7 +1315,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
     ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.122.jpeg)
 
-    Annexe  :  représentation graphique  de  la  fonction f(x)= 27x^3 - 27x^2 - 18x  + 8 (graphique  réalisé  avec  la  librairie[ matplotlib ](http://matplotlib.org/examples/pylab_examples/axes_props.html)de  Python)  
+    Annexe  :  représentation graphique  de  la  fonction f(x)= $27x^3 - 27x^2 - 18x  + 8$ (graphique  réalisé  avec  la  librairie[ matplotlib ](http://matplotlib.org/examples/pylab_examples/axes_props.html)de  Python)  
 
 
 
