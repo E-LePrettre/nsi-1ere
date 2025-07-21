@@ -1304,7 +1304,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
     2.★★ On se propose de chercher les zéros de cette fonction par la (Wikipédia)[ méthode de dichotomie.](https://fr.wikipedia.org/wiki/M%C3%A9thode_de_dichotomie) 
 
     Ecrire le script correspondant. On recherche d’un zéro dans l’intervalle [a, b] avec une précision de 
-    $10^-12$ (noté sur Python : 1e-12)
+    $10^{-12}$ (noté sur Python : 1e-12)
 
     ```
     >>> fonction(0,1)
