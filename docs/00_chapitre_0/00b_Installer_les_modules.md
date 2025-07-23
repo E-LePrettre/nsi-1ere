@@ -1,10 +1,10 @@
-﻿---
+---
 author: ELP
 title: 00b Installer les modules utiles
 ---
 
 
-Dans ce chapitre nous avons besoin de certains modules qui ne sont pas installer par défaut dans Python. Sous windows : Lancer l’invite de commande windows en mode administrateur : 
+Dans ce chapitre nous avons besoin de certains modules qui ne sont pas installés par défaut dans Python. Sous windows : Lancer l’invite de commande windows en mode administrateur : 
 
 ![](Aspose.Words.fb8229e2-c270-44a7-9c68-2a1acafb39ea.001.png)
 
