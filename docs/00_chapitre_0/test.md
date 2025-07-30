@@ -85,4 +85,4 @@ Nombres premiers
     Tout entier, supérieur ou égal à $2$ est soit un nombre premier, soit un produit de nombres premiers appelé **décomposition en facteurs premiers**. Cette décomposition est unique.
 
 
-    Exemple : 360=23×32×5360=2^3 \times 3^2 \times 5360=23×32×5
+    Exemple : $360=23×32×5360=2^3 \times 3^2 \times 5360=23×32×5$
