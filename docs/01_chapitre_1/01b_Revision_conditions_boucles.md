@@ -856,7 +856,7 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
         while epaisseur <= 400:
             epaisseur = epaisseur * 2
             pliage = pliage + 1
-        print("pliage)
+        print("pliage")
         ```
 
 
