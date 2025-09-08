@@ -639,7 +639,7 @@ _Modifiez la chaîne pour tester d'autres phrases._
         ```python
         s = 0
         for i in range(1,8):
-            s = s + i
+            s = s + i * i
         print(s)
         ```
 
@@ -648,7 +648,7 @@ _Modifiez la chaîne pour tester d'autres phrases._
         ```python
         s = 0
         for i in range(1,101):
-            s = s + i
+            s = s + i * i
         print(s)
         ```
 
@@ -662,7 +662,7 @@ _Modifiez la chaîne pour tester d'autres phrases._
         etages = int(input("Entrez le nombre d'étages : "))
         s = 0
         for i in range(1, etages+1):
-            s = s + i
+            s = s + i * i
         print(s)
         ```
 
