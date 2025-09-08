@@ -783,7 +783,7 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
         - Le total est cumulé et affiché à la fin.
     
         ```python
-        s = 0
+        s = 100
         for i in range(1,101):
             s = s + i * 2 + 100
         print(s)
