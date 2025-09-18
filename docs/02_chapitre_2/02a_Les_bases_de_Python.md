@@ -865,8 +865,26 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
     -  pour créer un nombre entier aléatoire entre 1 et 100 : 
 
     ```python
-    import random 
+    import random
     nombre = random.randint(1,100)
+    ... # créer un compteur
+
+    def devinette(proposition):
+        if ... :
+            return "trop petit"
+        elif ... :
+            return "trop grand"
+        elif ... :
+            return "gagné"
+
+    while True:
+        proposition = int(input("choisir un nombre "))
+        resultat = devinette(proposition)
+        ... # afficher le résultat
+        ... # ajouter 1 au compteur
+        if resultat == "gagné":
+            ... # afficher le compteur
+            break
     ``` 
 
 !!! abstract "Exercice 10 ★★ : Code César" 
