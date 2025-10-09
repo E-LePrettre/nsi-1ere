@@ -392,7 +392,7 @@ On peut noter les 2 manières d’importer le module :
 >>> math.sqrt(25) 
 
 >>> from math import sqrt
->>> m.sqrt(25) 
+>>> sqrt(25) 
 
 >>> import random 
 >>> x = random.randint(0,10)  
