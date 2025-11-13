@@ -1,4 +1,4 @@
-﻿---
+---
 author: ELP
 title: 05a Fiche méthode Logicism
 ---
@@ -12,7 +12,7 @@ Logisim est un logiciel de simulation de circuits logiques. Voici une fiche mét
 ## 1. Installation de Logisim
 - **Téléchargez Logisim** depuis le site officiel 
 
-![telechargement](https://sourceforge.net/projects/circuit/) 
+[telechargement](https://sourceforge.net/projects/circuit/) 
 
 ou une source de confiance.
 
