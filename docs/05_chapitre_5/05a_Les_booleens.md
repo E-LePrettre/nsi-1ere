@@ -1,4 +1,4 @@
-﻿---
+---
 author: ELP
 title: 05a Les booléens
 ---
@@ -445,7 +445,7 @@ Le  complément  d’un  produit  logique  (non  arithmétique)  est  égal  à 
 
     ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.022.png)
 
-    1. Réaliser le circuit à l’aide du logiciel Logisim. 
+    1. Réaliser le circuit. 
     2. Donner l’expression booléenne de S en fonction des variables A et B. 
     3. Compléter la table de vérité ci-dessous. 
 
@@ -533,7 +533,7 @@ Le  complément  d’un  produit  logique  (non  arithmétique)  est  égal  à 
 
     ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.053.jpeg)
 
-    Réaliser ce circuit à l’aide du logiciel Logisim et compléter la table de vérité ci-dessous. 
+    Réaliser ce circuit et compléter la table de vérité ci-dessous. 
 
     ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.054.jpeg)
 
