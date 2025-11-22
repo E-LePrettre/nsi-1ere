@@ -1,4 +1,4 @@
-﻿---
+---
 author: ELP
 title: 05b Types construits
 ---
@@ -686,7 +686,7 @@ m = [[1, 3, 4],
 
 ✅ `m[i][j]` renvoie l’élément de la **ligne `i` et colonne `j`**.
 
-#### **<H4 STYLE="COLOR:MAGENTA;">1.3.3. Parcourir une Matrice avec une Double Boucle `for`</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">1.5.3. Parcourir une Matrice avec une Double Boucle `for`</h4>**
 
 
 En Python, on peut parcourir tous les éléments d'une matrice **grâce à une double boucle**.
@@ -992,7 +992,7 @@ On accède aux valeurs d’un dictionnaire via **les clés**.
     for i in turing.keys():
         print(i)
 
-    print("\nAvec la méthode values() :")
+    print("Avec la méthode values() :")
     for i in turing.values():
         print(i)
     ```
@@ -1022,7 +1022,7 @@ On peut parcourir un dictionnaire **clé par clé** ou **avec `items()`** pour o
     for i in turing.items():
         print(i)
 
-    print("\nAvec la méthode items() version2 :")
+    print("Avec la méthode items() version2 :")
     for key, value in turing.items():
         print(f"La clé {key} contient la valeur {value}.")
     ```
