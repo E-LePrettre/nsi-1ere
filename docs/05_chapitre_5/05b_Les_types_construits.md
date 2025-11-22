@@ -206,7 +206,7 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
 
-!!! abstract "Exercice 1 : Accès aux éléments"  
+!!! abstract "Exercice 1 : Accès aux éléments"
 
     Écrire une fonction `deuxieme(t)` qui renvoie le **deuxième élément** du tuple `t`.
 
@@ -215,7 +215,8 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
     ```python
     t = ("Alice", 17, "1ère NSI")
     assert deuxieme(t) == 17
-```
+    ```  
+
 !!! abstract "Exercice 2 : longueur d'un tuple"
 
     Écrire une fonction `taille(t)` qui renvoie le **nombre d’éléments** dans le tuple `t`.
