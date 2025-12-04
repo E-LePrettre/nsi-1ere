@@ -473,7 +473,7 @@ Les listes sont **très utiles** pour manipuler des chaînes de caractères grâ
 
 #### **<H4 STYLE="COLOR:MAGENTA;">1.3.7. Méthodes spécifiques aux listes</h4>**
 
-|Contrairement aux tuples, les listes possèdent **des méthodes supplémentaires** :
+Contrairement aux tuples, les listes possèdent **des méthodes supplémentaires** :
 
 | **Méthode** | **Description** |
 |------------|----------------|
@@ -486,7 +486,7 @@ Les listes sont **très utiles** pour manipuler des chaînes de caractères grâ
 | `s.reverse()` | Inverse l’ordre des éléments. |
 
 
-#### **<H4 STYLE="COLOR:MAGENTA;"> **1.3.8. Parcourir une liste en Python</h4>**
+#### **<H4 STYLE="COLOR:MAGENTA;"> 1.3.8. Parcourir une liste en Python</h4>**
 
 Parcourir une liste signifie **visiter chaque élément un par un**, souvent pour afficher, modifier, compter, filtrer, etc.
 C’est une compétence essentielle en Python.
