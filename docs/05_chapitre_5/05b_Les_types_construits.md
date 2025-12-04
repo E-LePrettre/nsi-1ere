@@ -486,6 +486,145 @@ Les listes sont **très utiles** pour manipuler des chaînes de caractères grâ
 | `s.reverse()` | Inverse l’ordre des éléments. |
 
 
+#### **<H4 STYLE="COLOR:MAGENTA;"> **1.3.8. Parcourir une liste en Python</h4>**
+
+Parcourir une liste signifie **visiter chaque élément un par un**, souvent pour afficher, modifier, compter, filtrer, etc.
+C’est une compétence essentielle en Python.
+
+Python propose **plusieurs manières** de parcourir une liste, chacune adaptée à une situation précise.
+
+
+
+🔹 **Méthode 1 : Parcours simple des éléments**
+
+On parcourt directement les valeurs de la liste.
+
+```python
+for element in liste:
+    print(element)
+```
+
+⭐ **À utiliser quand on n’a pas besoin de l’indice.**
+
+
+
+🔹 **Méthode 2 : Parcours avec les indices**
+
+On utilise `range` pour accéder à l'indice **et** à la valeur.
+
+```python
+for i in range(len(liste)):
+    print(i, liste[i])
+```
+
+⭐ **Utile si tu veux modifier la liste ou afficher les indices.**
+
+
+
+
+
+🔹 **Méthode 3 : Parcours filtré (avec condition)**
+
+On parcourt seulement certains éléments.
+
+```python
+for x in liste:
+    if x > 10:
+        print(x)
+```
+
+⭐ **Très utile pour créer une nouvelle liste à partir d’une ancienne.**
+
+
+
+
+???+ question "Activité n°14 : Parcours simple"
+    Tester :
+
+    ```python
+    notes = [12, 15, 9, 18, 7]
+
+    for n in notes:
+        print("Note :", n)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+
+
+
+
+???+ question "Activité n°15 : Parcours filtré"
+    Tester :
+
+    ```python
+    L = [3, 12, 7, 18, 2, 25]
+    for x in L:
+        if x >= 10:
+            print("Grand nombre :", x)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+
+???+ question "Activité n°16 : Fonction qui calcule la somme des éléments"
+
+    Écrire une **fonction** `somme_liste(L)` qui prend une liste en paramètre et affiche la somme de ses éléments **en utilisant un parcours de liste** (donc sans `sum()`).
+
+    🔹 **Tester :**
+
+    ```python
+    def somme_liste(L):
+        total = 0
+        for element in L:   # Parcours simple
+            total += element
+        return total
+
+    somme_liste([5, 10, 3])
+    somme_liste([])
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+
+
+???+ question "Activité n°17 : Fonction qui compte les occurrences"
+
+    Écrire une **fonction** `nb_occurrences(L, val)` qui renvoie le nombre de fois où `val` apparaît dans la liste `L`.
+
+    🔹 **Tester :**
+
+    ```python
+    def nb_occurrences(L, val):
+        compteur = 0
+        for element in L:   # Parcours et comparaison
+            if element == val:
+                compteur += 1
+        return compteur
+
+    nb_occurrences([1, 5, 1, 3, 1, 7], 1)
+    nb_occurrences([10, 20, 30], 5)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+
+
+
+📌 **Résumé : Quand utiliser quelle méthode ?**
+
+| Objectif                           | Méthode recommandée          |
+| ---------------------------------- | ---------------------------- |
+| Lire les éléments                  | `for x in liste`             |
+| Modifier les éléments              | `for i in range(len(liste))` |
+| Filtrer                            | `if` dans la boucle          |
+
+
+
 **Pourquoi utiliser un tuple plutôt qu'une liste ?**  
 
 ✅ **Un tuple est plus rapide qu'une liste.**  
