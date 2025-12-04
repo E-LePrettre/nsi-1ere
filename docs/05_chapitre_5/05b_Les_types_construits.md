@@ -612,6 +612,24 @@ for x in liste:
     ??? success "Python"
         {{ IDE() }}
 
+???+ question "Activité n°18 : Parcours avec les indices"
+
+    Écrire une fonction affiche_positions(L, val) qui affiche toutes les positions où la valeur val apparaît dans la liste L.
+
+    🔹 Tester :
+
+    def affiche_positions(L, val):
+        for i in range(len(L)):            # Parcours par indice
+            if L[i] == val:                # Test sur l'élément
+                print(f"Valeur trouvée à l’indice {i}")
+
+    print(affiche_positions([3, 7, 3, 9, 3, 2], 3))
+    print(affiche_positions([10, 20, 30], 5))
+
+
+    ??? success "Python"
+        {{ IDE() }}
+
 
 
 
@@ -802,7 +820,7 @@ m = [[1, 3, 4],
 #### **<H4 STYLE="COLOR:MAGENTA;">1.5.2. Accéder aux éléments d'une Matrice</h4>**
 
 
-???+ question "Activité n°14 : Accéder aux éléments d'une Matrice"
+???+ question "Activité n°19 : Accéder aux éléments d'une Matrice"
 
     🔹 **Tester :**  
 
@@ -831,7 +849,7 @@ m = [[1, 3, 4],
 
 En Python, on peut parcourir tous les éléments d'une matrice **grâce à une double boucle**.
 
-???+ question "Activité n°15 : Parcourir une Matrice"
+???+ question "Activité n°20 : Parcourir une Matrice"
 
     🔹 **Tester :**  
 
@@ -1041,7 +1059,7 @@ dico = {"A": 0, "B": 1, "C": 2, "D": 3}
 Un dictionnaire est créé avec des **accolades `{}`**, et les paires clé/valeur sont séparées par des **virgules**.  
 Les clés et leurs valeurs sont séparées par **`:`**.
 
-???+ question "Activité n°16 : Création et Ajout de Clés dans un Dictionnaire"
+???+ question "Activité n°21 : Création et Ajout de Clés dans un Dictionnaire"
 
     🔹 **Tester :**  
 
@@ -1067,7 +1085,7 @@ Les clés et leurs valeurs sont séparées par **`:`**.
 
 Python permet de **créer un dictionnaire rapidement** grâce à une syntaxe **en compréhension**.
 
-???+ question "Activité n°17 : Dictionnaire en Compréhension"
+???+ question "Activité n°22 : Dictionnaire en Compréhension"
 
     🔹 **Tester :**  
 
@@ -1097,7 +1115,7 @@ Python permet de **créer un dictionnaire rapidement** grâce à une syntaxe **e
 
 On peut créer un **dictionnaire à partir d’une liste** grâce à la **fonction `dict()`**.
 
-???+ question "Activité n°18 : Création d'un Dictionnaire depuis une Liste"
+???+ question "Activité n°23 : Création d'un Dictionnaire depuis une Liste"
 
     🔹 **Tester :**  
 
@@ -1121,7 +1139,7 @@ On peut créer un **dictionnaire à partir d’une liste** grâce à la **foncti
 
 On accède aux valeurs d’un dictionnaire via **les clés**.
 
-???+ question "Activité n°19 : Accéder aux Clés et aux Valeurs"
+???+ question "Activité n°24 : Accéder aux Clés et aux Valeurs"
 
     🔹 **Tester :**  
 
@@ -1151,7 +1169,7 @@ On accède aux valeurs d’un dictionnaire via **les clés**.
 
 On peut parcourir un dictionnaire **clé par clé** ou **avec `items()`** pour obtenir les **paires clé-valeur**.
 
-???+ question "Activité n°20 : Utilisation de `.items()`"
+???+ question "Activité n°25 : Utilisation de `.items()`"
 
     🔹 **Tester :**  
 
@@ -1182,7 +1200,7 @@ On peut parcourir un dictionnaire **clé par clé** ou **avec `items()`** pour o
 
 On peut **vérifier si une clé ou une valeur** est présente dans un dictionnaire.
 
-???+ question "Activité n°21 : Vérifier l'Existence d'une Clé ou d'une Valeur"
+???+ question "Activité n°26 : Vérifier l'Existence d'une Clé ou d'une Valeur"
 
     🔹 **Tester :**  
 
@@ -1208,7 +1226,7 @@ On peut **vérifier si une clé ou une valeur** est présente dans un dictionnai
 
 On peut **changer une valeur** existante.
 
-???+ question "Activité n°22 : Modification d'une Valeur"
+???+ question "Activité n°27 : Modification d'une Valeur"
 
     🔹 **Tester :**  
 
@@ -1245,7 +1263,7 @@ print(d["E"])  # 🔴 ERREUR : KeyError: 'E'
 
 ✅ On peut aussi **définir une valeur par défaut** si la clé n’existe pas.
 
-???+ question "Activité n°23 : Utilisation de `.get()`"
+???+ question "Activité n°28 : Utilisation de `.get()`"
 
     🔹 **Tester :**  
 
@@ -1279,7 +1297,7 @@ print(d["E"])  # 🔴 ERREUR : KeyError: 'E'
 
 ✅ Pour connaître le **nombre d'éléments** dans un dictionnaire, on utilise **`len()`**.  
 
-???+ question "Activité n°24 : Nombre d'Éléments avec `len()`"
+???+ question "Activité n°29 : Nombre d'Éléments avec `len()`"
 
     🔹 **Tester :**  
 
@@ -1300,7 +1318,7 @@ print(d["E"])  # 🔴 ERREUR : KeyError: 'E'
 
 ### **<H3 STYLE="COLOR:GREEN;">2.10. Supprimer un Élément avec `del()`</h3>** 
 
-???+ question "Activité n°25 : Suppression d'un Élément avec `del()`"
+???+ question "Activité n°30 : Suppression d'un Élément avec `del()`"
 
     🔹 **Tester :**  
 
@@ -1325,7 +1343,7 @@ print(d["E"])  # 🔴 ERREUR : KeyError: 'E'
 
 Python permet d’insérer **directement** des valeurs d’un dictionnaire dans une **chaîne formatée**.
 
-???+ question "Activité n°26 : Formatage de Chaînes avec un Dictionnaire"
+???+ question "Activité n°31 : Formatage de Chaînes avec un Dictionnaire"
 
     🔹 **Tester :**  
 
