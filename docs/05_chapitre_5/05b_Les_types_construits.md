@@ -617,7 +617,7 @@ for x in liste:
     Écrire une fonction affiche_positions(L, val) qui affiche toutes les positions où la valeur val apparaît dans la liste L.
 
     🔹 Tester :
-
+    ```python
     def affiche_positions(L, val):
         for i in range(len(L)):            # Parcours par indice
             if L[i] == val:                # Test sur l'élément
@@ -625,7 +625,7 @@ for x in liste:
 
     print(affiche_positions([3, 7, 3, 9, 3, 2], 3))
     print(affiche_positions([10, 20, 30], 5))
-
+    ```
 
     ??? success "Python"
         {{ IDE() }}
