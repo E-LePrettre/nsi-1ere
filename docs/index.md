@@ -1,19 +1,24 @@
-# NSI 1ère au lycée Jean Cassaigne
+# 🧠 NSI – Première  
+_Lycée Jean Cassaigne_
+
 ---
 
+## 📘 Chapitres du programme
 
-1. A la découverte de Python
-2. Les bases de Python
-3. Mise au point et exception
-4. Codage de l'information
-5. Les types construits
-6. L'algorithmique
-7. Le web
-8. Les réseaux
-9. Algorithme glouton
-10. Système d'exploitation
-11. Algorithme knn
-12. Traitement des données en tables
-13. Architecture d'un ordinateur 
+1️⃣ **Révisions**  
+2️⃣ **Les bases de Python**  
+3️⃣ **Mise au point des scripts et gestion des exceptions**  
+4️⃣ **Codage de l'information**  
+5️⃣ **Les types construits**  
+6️⃣ **Algorithmique**  
+7️⃣ **Le Web**  
+8️⃣ **Les réseaux**  
+9️⃣ **Algorithme glouton**  
+🔟 **Les systèmes d’exploitation**  
+1️⃣1️⃣ **Algorithme des k plus proches voisins (k-NN)**  
+1️⃣2️⃣ **Traitement des données en tables**  
+1️⃣3️⃣ **Architecture de l’ordinateur**
 
-*Elisabeth Le Prettre*
+---
+
+✍️ *Elisabeth Le Prettre*
