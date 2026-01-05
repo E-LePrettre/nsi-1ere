@@ -1383,7 +1383,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 | **Récupérer toutes les valeurs** | `d.values()` | Retourne une liste des valeurs |
 | **Parcourir le dictionnaire** | `for clé, valeur in d.items():` | Permet d’itérer sur les clés et valeurs |
 | **Parcourir le dictionnaire** | `for clé in d.keys():` | Permet d’itérer sur les clés |
-| **Parcourir le dictionnaire** | `for valeur in d.items():` | Permet d’itérer sur valeurs |
+| **Parcourir le dictionnaire** | `for valeur in d.values():` | Permet d’itérer sur valeurs |
 
 
 ## 🏆 **Conclusion**  
