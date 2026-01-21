@@ -145,7 +145,7 @@ Fin
 
 ![](Aimg.png)
 
-Il faut numéroter toutes les lignes de l'algorithme. 
+Pour faire une trace d’exécution, il est recommandé de numéroter les lignes, afin de repérer les retours de boucle.
 
 ![](Aimg2.png)
 
@@ -191,7 +191,7 @@ Début
     nombre_de_jours ← 0
     masse_restante ← 25
     Tant que masse_restante > 1 faire
-        masse_restante ← masse_restante - 10% masse_restante
+        masse_restante ← masse_restante * 0.9
         nombre_de_jours ← nombre_de_jours + 1
     Afficher nombre_de_jours
 Fin
@@ -233,12 +233,14 @@ L'efficacité d’un algorithme peut être mesurée selon **deux critères** :
 ✔ **La complexité spatiale** : quantité de mémoire utilisée par l'algorithme.  
 
 L'objectif est de **trouver les algorithmes les plus rapides et les plus économes en ressources** pour résoudre un problème donné.
-ation du temps d’exécution de l’algorithme lors de son fonctionnement.** 
+
 
 ### **<H3 STYLE="COLOR:GREEN;">4.1. Complexité<a name="_page3_x40.00_y529.92"></a> temporelle</H3>**
 #### **<H4 STYLE="COLOR:MAGENTA;">4.1.1. Règles<a name="_page3_x40.00_y549.92"></a> de calcul</H4>**
 
 💡 **Comment mesurer le coût d’un algorithme ?**  
+
+⚠️ On utilise ici un modèle simplifié de coût : l’objectif est de **comparer des algorithmes entre eux**, pas d’obtenir un temps réel exact.
 
 Chaque **instruction** d’un programme **prend du temps** pour s’exécuter.  
 
@@ -282,7 +284,7 @@ a = a + 1
     **Analyser le code suivant et calculer son coût :**
     
     ```python
-    def conversion(n: float) -> list:
+    def conversion(n: float) -> tuple :
         h = n // 3600
         m = (n - 3600 * h) // 60
         s = n % 60
@@ -292,31 +294,49 @@ a = a + 1
     ??? success "Total des opérations"
     
         ```
-        `h = n // 3600` 
+        `h = n // 3600`
 
-        - 1 opération de division entière (`//`)
-        - 1 affectation  
-        - 1 accès mémoire 
+        - 1 accès mémoire (lecture de `n`)
+        - 1 division entière (`//`)
+        - 1 affectation
 
-        `m = (n - 3600 * h) // 60` 
+        Coût = 3
 
-        - 1 multiplication (`*`)  
-        - 1 soustraction (`-`)  
-        - 1 division entière (`//`)  
-        - 1 affectation  
-        - 2 accès mémoire 
 
-        `s = n % 60`  
+        `m = (n - 3600 * h) // 60`
 
-        - 1 modulo (`%`)  
-        - 1 affectation  
-        - 1 accès mémoire 
+        Détail de `(n - 3600 * h)` :
+        - 1 accès mémoire (lecture de `n`)
+        - 1 accès mémoire (lecture de `h`)
+        - 1 multiplication (`*`)
+        - 1 soustraction (`-`)
 
-        `return h, m, s` 
+        Puis `(... ) // 60` :
+        - 1 division entière (`//`)
 
-        - 3 accès mémoire 
+        Puis affectation :
+        - 1 affectation
 
-        T(n) = 19
+        Total ligne m : 2 accès mémoire + 3 opérations + 1 affectation = 6
+
+
+        `s = n % 60`
+
+        - 1 accès mémoire (lecture de `n`)
+        - 1 modulo (`%`)
+        - 1 affectation
+
+        Coût = 3
+
+
+        `return h, m, s`
+
+        - 3 accès mémoire (lecture de `h`, `m`, `s`)
+
+        Coût = 3
+
+
+        T(n) = 3 + 6 + 3 + 3 = 15 (constante)
         ```
 
 
@@ -342,20 +362,30 @@ La complexité étant constante, on note **O(1)** en notation de Landau.
     ??? success "Total des opérations"
     
         ```
-        `if n % 2 == 0:` 
+        `if n % 2 == 0:`
 
-        - 1 opération modulo (`%`)  
-        - 1 comparaison (`==`)  
+        - 1 accès mémoire (lecture de `n`)
+        - 1 modulo (`%`)
+        - 1 comparaison (`==`)
 
-        `res = 1` ou `res = -1`  
+        Coût = 3
 
-        - 1 affectation  
 
-        `return res` 
+        `res = 1` (ou `res = -1`)
 
-        - 1 accès mémoire 
+        - 1 affectation
 
-        T(n) = 1(modulo) + 1(comparaison) + 1(affectation) + 1(accès mémoire) = 4
+        Coût = 1
+
+
+        `return res`
+
+        - 1 accès mémoire (lecture de `res`)
+
+        Coût = 1
+
+
+        T(n) = 3 + 1 + 1 = 5 (constante)
         ```
 
     La complexité étant constante, on note **O(1)** en notation de Landau.
@@ -377,30 +407,47 @@ La complexité étant constante, on note **O(1)** en notation de Landau.
     ??? success "Total des opérations"
     
         ```
-        `somme = 0`  
+        `somme = 0`
 
-        - 1 affectation  
+        - 1 affectation
 
-        `for i in range(n + 1):`  
+        Coût = 1
 
-        - 1 affectation (`i = 0`)
-        - n + 1 comparaisons (`i < n + 1`)
-        - n + 1 incrémentations (`i += 1`)
 
-        `somme += i`  
+        `for i in range(n + 1):`
 
-        - n + 1 additions (`+`)  
-        - n + 1 affectations  
+        Calcul de `n + 1` (fait une seule fois au démarrage de la boucle) :
+        - 1 accès mémoire (lecture de `n`)
+        - 1 addition (`+`)
 
-        `return somme`  
+        Coût = 2
 
-        - 1 accès mémoire  
+        À chaque itération, la boucle fournit une nouvelle valeur à `i` :
+        - 1 affectation (mise à jour de `i`)
 
-        T(n) = 1(affectation) + (n + 1) * [1(+) + 1(affectation) + 2(mémoire) + 1(affectation)] + 1(accès mémoire)
+        Coût par itération = 1
 
-        = 1 + (n + 1) * 5 + 1  
-        = 2 + 5n + 5  
-        = 5n + 7
+
+        `somme += i`  (exécuté n+1 fois)
+
+        - 1 accès mémoire (lecture de `somme`)
+        - 1 accès mémoire (lecture de `i`)
+        - 1 addition (`+`)
+        - 1 affectation (écriture dans `somme`)
+
+        Coût par itération = 4
+
+
+        `return somme`
+
+        - 1 accès mémoire (lecture de `somme`)
+
+        Coût = 1
+
+
+        T(n) = 1  + 2  + (n+1) * (1 + 4) + 1
+            = 1 + 2 + 5(n+1) + 1
+            = 5n + 9  (linéaire)
         ```
 
     La complexité de cet algorithme est dite **linéaire**.  
@@ -428,36 +475,65 @@ La complexité étant constante, on note **O(1)** en notation de Landau.
     ??? success "Total des opérations"
     
         ```
-        `resultat = []`  
+        `resultat = []`
 
-        - 1 affectation  
+        - 1 affectation
 
-        `for mot in mots:`  
+        Coût = 1
 
-        - n affectations (`mot`)
-        - n comparaisons (`mot in mots`)
 
-        `for ligne in fichier_test:`  
+        `for mot in mots:`  (n itérations)
 
-        - n * n affectations (`ligne`)
-        - n * n comparaisons (`ligne in fichier_test`)
+        À chaque itération :
+        - 1 affectation (mise à jour de `mot`)
 
-        `if mot in ligne:`  
+        Coût par itération = 1
 
-        - n * n comparaisons
 
-        `resultat.append(mot)`  
+        `for ligne in fichier_test:`  (m itérations pour chaque mot)
 
-        - n * n accès mémoire (append)
+        À chaque itération :
+        - 1 affectation (mise à jour de `ligne`)
 
-        `return resultat`  
+        Coût par itération = 1
 
-        - 1 accès mémoire  
 
-        T(n) = 1(affectation) + n \*[n \*[1(comparaison) + 1(affectation) + 1(mémoire)]] + 1(mémoire)  
+        `if mot in ligne:`  (test exécuté n*m fois)
 
-        = 1 + n * (n * 3) + 1  
-        = 2 + 3n²  
+        - 1 accès mémoire (lecture de `mot`)
+        - 1 accès mémoire (lecture de `ligne`)
+        - 1 opération d’appartenance (`in`)
+
+        Coût par test = 3
+
+
+        `resultat.append(mot)`  (exécuté k fois, avec 0 ≤ k ≤ n*m)
+
+        - 1 accès mémoire (lecture de `resultat`)
+        - 1 accès mémoire (lecture de `mot`)
+        - 1 opération d’ajout (`append`)
+
+        Coût par ajout = 3
+
+
+        `return resultat`
+
+        - 1 accès mémoire (lecture de `resultat`)
+
+        Coût = 1
+
+
+        T(n,m) = 1
+            + n * [ 1 + m * ( 1 + 3 + (éventuellement 3 si append) ) ]
+            + 1
+
+        Si on prend le pire cas (append à chaque test, donc k = n*m) :
+        T(n,m) = 1 + n * [ 1 + m * (1 + 3 + 3) ] + 1
+            = 2 + n * [ 1 + 7m ]
+            = 2 + n + 7nm
+
+
+        Cas particulier : si m ≈ n, alors T(n) = = 2 + n + 7n²
         ```
 
     La complexité de cet algorithme est dite **quadratique**.  
@@ -498,7 +574,7 @@ Si on double la taille d’un tableau :
 
 - Pour un algorithme de complexité n, le temps d’exécution est doublé 
 - Pour un algorithme de complexité n², le temps d’exécution est quadruplé 
-- Pour un algorithme de complexité log<sub>2</sub>(n), le temps d’exécution prend une unité. 
+- Pour un algorithme de complexité log<sub>2</sub>(n), le temps d’exécution prend une unité car log<sub>2</sub>(2n). = log<sub>2</sub>(n) + 1
 
 RESSOURCES : 
 
