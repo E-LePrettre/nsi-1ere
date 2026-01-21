@@ -9,7 +9,8 @@ title: 06b Algorithmes de tri
 1. [Créer une liste de données aléatoire](#_page0_x40.00_y438.92)
 2. [Le tri par sélection](#_page1_x40.00_y54.92)
 3. [Tri par insertion](#_page4_x40.00_y702.92)
-4. [Exercices ](#_page9_x40.00_y511.92)
+4. [Autres algorithmes de tris : le tri à bulles (Bubble sort) ](#_page8_x40.00_y36.92)
+5. [Exercices ](#_page9_x40.00_y511.92)
 
 ---
 
@@ -577,9 +578,172 @@ On mesure **le temps de tri** en fonction de la taille du tableau.
 
 ---
 
+## **<H2 STYLE="COLOR:BLUE;">4. Autres<a name="_page8_x40.00_y36.92"></a> algorithmes de tris : le tri à bulles (Bubble sort)</h2>**
+
+Le tri à bulles est un algorithme de tri qui consiste à faire  **remonter progressivement les plus grands éléments vers la fin du tableau**, Le **tri à bulles** est un algorithme de tri simple qui fonctionne en **échangeant les éléments voisins** pour les remettre dans l'ordre croissant. Son fonctionnement est inspiré du mouvement des bulles d'air qui remontent à la surface d'un liquide.
+
+---
+
+### **<H3 STYLE="COLOR:GREEN;">4.1. Principe du tri à bulles</H3>**
 
 
-## **<H2 STYLE="COLOR:BLUE;">4. Exercices<a name="_page9_x40.00_y511.92"></a></h2>**
+L’algorithme fonctionne de la manière suivante :
+
+1️⃣ On compare **deux éléments adjacents** dans la liste. 
+
+2️⃣ Si le premier est **plus grand** que le second, on les **échange**.  
+
+3️⃣ On répète cette opération **jusqu'à la fin de la liste**. 
+
+4️⃣ Après un **premier passage**, le plus grand élément est **placé à la fin** de la liste.  
+
+5️⃣ On recommence le processus **pour les éléments restants**, en ignorant la dernière position triée.  
+
+6️⃣ On continue jusqu'à ce que **plus aucun échange ne soit nécessaire**, ce qui signifie que la liste est triée.  
+
+---
+
+**🖼️ Illustration graphique**
+
+📌 **Prenons un exemple avec la liste `[5, 3, 8, 4, 2]` à trier en ordre croissant :**
+
+| Itération | État du tableau après chaque passage |
+|-----------|------------------------------------|
+| **Départ** | `[5, 3, 8, 4, 2]` |
+| 1️⃣ **Passage 1** | `[3, 5, 4, 2, 8]` (le 8 est bien placé) |
+| 2️⃣ **Passage 2** | `[3, 4, 2, 5, 8]` (le 5 est bien placé) |
+| 3️⃣ **Passage 3** | `[3, 2, 4, 5, 8]` (le 4 est bien placé) |
+| 4️⃣ **Passage 4** | `[2, 3, 4, 5, 8]` ✅ **Liste triée !** |
+
+💡 **Remarque** : À chaque passage, le plus grand élément restant "remonte" à sa position correcte.
+
+---
+
+### **<H3 STYLE="COLOR:GREEN;">4.2. Illustration vidéo</H3>**
+
+Illustration vidéo :[ https://ladigitale.dev/digiview/#/v/668aed8c3bab4 ](https://ladigitale.dev/digiview/#/v/668aed8c3bab4) 
+
+---
+
+### **<H3 STYLE="COLOR:GREEN;">4.3. Implémentation du tri à bulles</H3>**
+
+```
+FONCTION swap(T : tableau d'entiers, i : entier, j : entier)
+    temp ← T[i]
+    T[i] ← T[j]
+    T[j] ← temp
+FIN FONCTION
+
+FONCTION tri_bulle(T : tableau d'entiers)
+    n <- longueur(T)
+    POUR i ALLANT DE 0 A n-2 FAIRE
+        POUR j ALLANT DE 0 A n-2-i FAIRE
+            SI T[j] > T[j+1] ALORS
+                échanger(T[j], T[j+1])
+            FIN SI
+        FIN POUR
+    FIN POUR
+FIN FONCTION
+
+```
+
+---
+
+=> CAPYTALE Le code vous sera donné par votre enseignant
+
+???+ question "Activité n°8 : Générer une liste aléatoire"
+
+    **Créer une liste aléatoire pour tester l'algorithme de tri à bulles.**
+
+    ```python
+    import random
+    
+    def genere_liste_aleatoire(N, n):
+        """Génère une liste aléatoire de N éléments compris entre 0 et n"""
+        return [random.randint(0, n) for i in range(N)]
+    
+    # Création d'une liste de 10 valeurs comprises entre 0 et 100
+    liste_aleatoire = genere_liste_aleatoire(10, 100)
+    print(liste_aleatoire)
+    ```
+
+    ??? success "Solution"
+
+        **Exemple de sortie :**
+        ```
+        [34, 89, 12, 7, 65, 23, 9, 78, 45, 3]
+        ```
+
+---
+
+???+ question "Activité n°9 : Implémentation du tri à bulles"
+
+    **Compléter et exécuter l'algorithme du tri à bulles avec la fonction d’échange `swap`.**
+
+    ```python
+    def swap(T: list, i: int, j: int) -> None:
+        """Échange les éléments T[i] et T[j]"""
+        # à compléter
+
+    def bubble_sort(T: list) -> list:
+        """Tri à bulles optimisé"""
+        # à compléter
+
+    # Test de l’algorithme
+    liste = [5, 3, 8, 4, 2]
+    print("Avant tri :", liste)
+    print("Après tri :", bubble_sort(liste))
+    ```
+
+    ??? success "Solution"
+
+        **Exemple de sortie :**
+        ```
+        Avant tri : [5, 3, 8, 4, 2]
+        Après tri : [2, 3, 4, 5, 8]
+        ```
+
+---
+
+**Remarque : il existe d’autres versions du tri bulle** 
+
+---
+
+???+ question "Activité n°10 : Mesurer le temps d'exécution du tri à bulles"
+
+    **Comparer le temps d'exécution du tri à bulles sur des listes de différentes tailles.**
+
+    ```python
+    import time
+
+    # Mesure du temps d'exécution pour différentes tailles de listes
+    for taille in [1_000, 2_000, 10_000]:
+        somme_des_durees = 0
+        for _ in range(5):
+            liste = genere_liste_aleatoire(taille, 1_000_000)
+            start_time = time.perf_counter()
+            bubble_sort(liste)
+            somme_des_durees += time.perf_counter() - start_time
+        moyenne = somme_des_durees / 5
+        print(f"Temps d’exécution pour {taille} éléments : {moyenne:.5f} secondes")
+    ```
+
+    ??? success "Solution"
+
+        **Exemple de sortie :**
+        ```
+        Temps d’exécution pour 1_000 éléments : 0.02458 secondes
+        Temps d’exécution pour 2_000 éléments : 0.09123 secondes
+        Temps d’exécution pour 10_000 éléments : 1.43567 secondes
+        ```
+
+---
+
+Animation :[ http://lwh.free.fr/pages/algo/tri/tri_bulle.html ](http://lwh.free.fr/pages/algo/tri/tri_bulle.html)
+
+---
+
+## **<H2 STYLE="COLOR:BLUE;">5. Exercices<a name="_page9_x40.00_y511.92"></a></h2>**
 
 => CAPYTALE Le code vous sera donné par votre enseignant
 
@@ -607,4 +771,6 @@ On mesure **le temps de tri** en fonction de la taille du tableau.
 
     Créer une fonction selection_sort_desc_partir_fin() qui permet trier avec l’algorithme de tri par sélection et l’algorithme de l’exercice 2, une liste aléatoire par valeurs décroissantes.
 
+!!! abstract "Exercice n°4 :" 
 
+    Créer une fonction bubble_sort_desc() qui permet trier avec l’algorithme de tri à bulles une liste aléatoire par valeurs décroissantes.
