@@ -369,9 +369,7 @@ Le principe du tri par insertion peut être comparé à l'organisation d'un jeu 
 
 4️⃣ On continue jusqu'à ce que toutes les cartes soient triées.
 
-🔽 **Illustration :**  
 
- ![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.036.png)
 
 ---
 
