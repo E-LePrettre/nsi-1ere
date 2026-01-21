@@ -248,13 +248,7 @@ On veut prouver que l’algorithme **s’arrête toujours**.
 
 - Elle compare `n-i-1` éléments, donc **le nombre de comparaisons diminue progressivement**.  
 
-📌 **Mesure de progrès**  
 
-On définit `m = n - i`, qui représente le nombre d’éléments restants à trier.  
-
-- `m` diminue strictement à chaque itération.  
-
-- Quand `m = 1`, la boucle **s’arrête**. ✅  
 
 ✔ **Conclusion** : L’algorithme **termine toujours** après `n-1` itérations.
 
