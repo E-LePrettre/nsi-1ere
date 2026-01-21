@@ -103,9 +103,10 @@ ALGORITHME echange (T, i, j)
         T[j] <- tmp
 
 ALGORITHME tri_selection
-    POUR i ALLANT DE 0 A N-1 FAIRE  
+    N <- longueur(T)
+    POUR i ALLANT DE 0 A N-2 FAIRE  
         mini <- i   # Indice du plus petit élément trouvé
-        POUR j ALLANT DE i+1 A N FAIRE  
+        POUR j ALLANT DE i+1 A N-1 FAIRE  
             SI T[j] < T[mini] ALORS  
                 mini <- j  
             FIN SI
@@ -163,6 +164,8 @@ Un **tri stable** conserve l’ordre relatif des éléments identiques :
 ![Bouteilles après tri stable](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.018.png)
 
 Ici, les bouteilles de même volume **restent dans le même ordre** qu’au départ.
+
+⚠️ **Tri par sélection** : **non stable** (dans sa version classique), car l’échange peut inverser des éléments égaux.
 
 **Pourquoi est-ce important ?**
 
@@ -396,8 +399,9 @@ ALGORITHME tri_insertion
         
         T[j+1] <- tmp  # Insère la valeur  
 
-    PROCEDURE tri_insertion(T)  
-        POUR i ALLANT DE 1 A n FAIRE  
+    PROCEDURE tri_insertion(T)
+        n <- longueur(T)  
+        POUR i ALLANT DE 1 A n-1 FAIRE  
             insere (T, i)  
         FIN POUR
 ```
@@ -446,14 +450,8 @@ L’algorithme **ne peut pas boucler indéfiniment** et **s’arrête toujours**
 
 1️⃣ **Boucle `for i in range(1, len(T))`** : s’exécute **`len(T) - 1` fois**.  
 
-2️⃣ **Boucle `while j >= 0 and T[j] > tmp` dans `insert`** : `j` **diminue strictement**, donc **nombre fini d'itérations**.  
-
-📌 **Mesure de progrès** :  
-On définit `m = len(T) - i`, qui représente le nombre d’éléments restants à traiter.  
-
-- À chaque itération, `m` **diminue strictement**.  
-
-- Quand `m = 0`, l’algorithme **s'arrête**. ✅  
+2️⃣ **Boucle `while j >= 0 and T[j] > tmp` dans `insert`** : `j` **diminue strictement**, donc la boucle **while** s'arrête forcément.
+ 
 
 ✔ **Conclusion** : L’algorithme **se termine toujours** après au plus **O(n²) itérations**.
 
@@ -519,9 +517,9 @@ On mesure **le temps de tri** en fonction de la taille du tableau.
         somme_des_durees = 0
         for _ in range(5):
             liste = genere_liste_aleatoire(taille, 1_000_000)
-            start_time = time.time()
+            start_time = time.perf_counter()
             insertion_sort(liste)
-            somme_des_durees += time.time() - start_time
+            somme_des_durees += time.perf_counter() - start_time
         moyenne = somme_des_durees / 5
         print(f"Temps pour {taille} éléments : {moyenne:.4f} secondes")
     ```
@@ -538,7 +536,7 @@ On mesure **le temps de tri** en fonction de la taille du tableau.
 
 ## **<H2 STYLE="COLOR:BLUE;">4. Autres<a name="_page8_x40.00_y36.92"></a> algorithmes de tris : le tri à bulles (Bubble sort)</h2>**
 
-Le tri à bulles est un algorithme de tri qui consiste à faire  **remonter  progressivement les plus petits éléments d'une liste**, Le **tri à bulles** est un algorithme de tri simple qui fonctionne en **échangeant les éléments voisins** pour les remettre dans l'ordre croissant. Son fonctionnement est inspiré du mouvement des bulles d'air qui remontent à la surface d'un liquide.
+Le tri à bulles est un algorithme de tri qui consiste à faire  **remonter progressivement les plus grands éléments vers la fin du tableau**, Le **tri à bulles** est un algorithme de tri simple qui fonctionne en **échangeant les éléments voisins** pour les remettre dans l'ordre croissant. Son fonctionnement est inspiré du mouvement des bulles d'air qui remontent à la surface d'un liquide.
 
 ### **<H3 STYLE="COLOR:GREEN;">4.1. Principe du tri à bulles</H3>**
 
@@ -584,11 +582,12 @@ FONCTION swap(T : tableau d'entiers, i : entier, j : entier)
     T[j] ← temp
 FIN FONCTION
 
-FONCTION tri_bulle(T : tableau d'entiers, n : entier)
-    POUR i DE 0 À n - 2 FAIRE
-        POUR j DE 0 À n - 2 - i FAIRE
-            SI T[j] > T[j + 1] ALORS
-                swap(T, j, j + 1)
+FONCTION tri_bulle(T : tableau d'entiers)
+    n <- longueur(T)
+    POUR i ALLANT DE 0 A n-2 FAIRE
+        POUR j ALLANT DE 0 A n-2-i FAIRE
+            SI T[j] > T[j+1] ALORS
+                échanger(T[j], T[j+1])
             FIN SI
         FIN POUR
     FIN POUR
@@ -665,9 +664,9 @@ FIN FONCTION
         somme_des_durees = 0
         for _ in range(5):
             liste = genere_liste_aleatoire(taille, 1_000_000)
-            start_time = time.time()
+            start_time = time.perf_counter()
             bubble_sort(liste)
-            somme_des_durees += time.time() - start_time
+            somme_des_durees += time.perf_counter() - start_time
         moyenne = somme_des_durees / 5
         print(f"Temps d’exécution pour {taille} éléments : {moyenne:.5f} secondes")
     ```
