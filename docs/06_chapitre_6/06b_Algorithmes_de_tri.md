@@ -12,6 +12,8 @@ title: 06b Algorithmes de tri
 4. [Autres algorithmes de tris : le tri à bulles (Bubble sort) ](#_page8_x40.00_y36.92)
 5. [Exercices ](#_page9_x40.00_y511.92)
 
+---
+
 ## **<H2 STYLE="COLOR:BLUE;">Introduction : Qu’est-ce que trier ? Pourquoi trier ? </h2>**
 
 Le **tri** est une opération qui consiste à organiser des données dans un certain ordre (croissant, décroissant, alphabétique, etc.). Trier des données est essentiel dans de nombreux domaines :
@@ -20,7 +22,7 @@ Le **tri** est une opération qui consiste à organiser des données dans un cer
 - Sur un **moteur de recherche**, les résultats sont triés en fonction de leur pertinence.
 - En **informatique**, de nombreux algorithmes reposent sur des données triées pour améliorer l’efficacité des traitements (exemple : la recherche dichotomique est beaucoup plus rapide si la liste est triée).
 
-
+---
 
 ## **<H2 STYLE="COLOR:BLUE;">1. Créer<a name="_page0_x40.00_y438.92"></a> une liste de données aléatoire</h2>**
 
@@ -53,7 +55,7 @@ Avant de trier une liste, il faut d'abord en générer une ! Nous allons utilise
 
         - L’utilisation de `_` dans la boucle `for` indique que nous n'avons pas besoin de la valeur de l'index.
 
-
+---
 
 ## **<H2 STYLE="COLOR:BLUE;">2. Le<a name="_page1_x40.00_y54.92"></a> tri par sélection :</h2>**
 ### **<H3 STYLE="COLOR:GREEN;">2.1. Le<a name="_page1_x40.00_y76.92"></a> principe</H3>**
@@ -66,7 +68,7 @@ L'idée du **tri par sélection** est simple :
 
 3. On continue ainsi jusqu'à ce que toute la liste soit triée.  
 
-
+---
 
 
 ### **<H3 STYLE="COLOR:GREEN;">2.2. Illustration<a name="_page1_x40.00_y201.92"></a> graphique</H3>**
@@ -86,6 +88,7 @@ L'idée du **tri par sélection** est simple :
 
 Ce tri fonctionne en **N étapes**, où `N` est la taille du tableau.
 
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">2.3. Illustration<a name="_page1_x40.00_y434.92"></a> en vidéo</H3>**
 
@@ -93,6 +96,8 @@ Ce tri fonctionne en **N étapes**, où `N` est la taille du tableau.
 [https://ladigitale.dev/digiview/#/v/668aea84a26ef](https://ladigitale.dev/digiview/#/v/668aea84a26ef)  
 
 💡 **Remarque :** Les danseurs s'échangent après chaque comparaison, mais dans le véritable algorithme, l’échange ne se fait qu’une fois par tour.
+
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">2.4. Pseudo-code<a name="_page1_x40.00_y485.92"></a></H3>**
 
@@ -117,7 +122,7 @@ ALGORITHME tri_selection
     FIN POUR    
 ```
 
-
+---
 
 
 ### **<H3 STYLE="COLOR:GREEN;">2.5. Complexité<a name="_page2_x40.00_y36.92"></a></H3>**
@@ -132,7 +137,7 @@ Analysons le nombre d’opérations effectuées :
 
 Cela signifie que **si on double la taille du tableau, le temps d’exécution est multiplié par 4**. Pour **N = 10 000**, le tri est encore rapide, mais pour **N = 1 000 000**, il devient lent.
 
-
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">2.6. Stabilité<a name="_page2_x40.00_y632.92"></a> d’un algorithme</H3>**
 
@@ -146,6 +151,8 @@ Avant le tri, nous avons :
 
 Nous souhaitons trier ces bouteilles par **ordre croissant de volume**.
 
+---
+
 **Exemple d'un tri non stable :**
 Si l'algorithme **n'est pas stable**, il peut modifier l’ordre des éléments identiques (bouteilles de même volume). Par exemple, voici un tri **incorrect** car l’ordre des bouteilles de même volume a changé : 
 
@@ -157,6 +164,8 @@ Dans cet exemple :
 
 - Les deux bouteilles de volume **4** ont aussi été **inversées**.
 
+---
+
 **Exemple d'un tri stable :**
 
 Un **tri stable** conserve l’ordre relatif des éléments identiques :
@@ -165,12 +174,17 @@ Un **tri stable** conserve l’ordre relatif des éléments identiques :
 
 Ici, les bouteilles de même volume **restent dans le même ordre** qu’au départ.
 
+---
+
 ⚠️ **Tri par sélection** : **non stable** (dans sa version classique), car l’échange peut inverser des éléments égaux.
+
+---
 
 **Pourquoi est-ce important ?**
 
 L’intérêt d’un tri stable est qu'il permet d'**appliquer plusieurs tris successifs sans perdre d’informations**. Par exemple, on peut d'abord trier une liste de personnes **par âge**, puis, dans un second temps, **par nom**, en gardant les personnes du même âge **dans le même ordre qu’avant**.
  
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">2.7. Preuve<a name="_page3_x40.00_y297.92"></a> de correction</H3>**
 
@@ -180,7 +194,7 @@ Un **algorithme est correct** s’il satisfait **deux conditions** :
 
 2️⃣ **Terminaison** : Il **s’arrête toujours** après un nombre fini d’opérations.  
 
-
+---
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.7.1.	Correction partielle </H4>**
 
@@ -189,6 +203,8 @@ On veut prouver que **l’algorithme produit un tableau trié** après son exéc
 ✅ **Invariant de boucle**  
 
 Avant chaque itération `i`, les `i` premiers éléments sont **triés et contiennent les `i` plus petits éléments en ordre croissant**.  
+
+---
 
 🧩 **Preuve par récurrence**  
 
@@ -216,6 +232,7 @@ Avant chaque itération `i`, les `i` premiers éléments sont **triés et contie
 
 ✔ **Conclusion** : L’algorithme **produit bien un tableau trié**.  
 
+---
 
 #### **<H4 STYLE="COLOR:MAGENTA;">2.7.2. Terminaison</H4>**
 
@@ -241,7 +258,7 @@ On définit `m = n - i`, qui représente le nombre d’éléments restants à tr
 
 ✔ **Conclusion** : L’algorithme **termine toujours** après `n-1` itérations.
 
-
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">2.8. Implémentation<a name="_page3_x40.00_y497.92"></a> en Python</H3>**
 
@@ -266,6 +283,7 @@ On définit `m = n - i`, qui représente le nombre d’éléments restants à tr
     ??? success "Python"
         {{ IDE() }}
 
+---
 
 ???+ question "Activité n°3 : Implémenter le tri par sélection"
 
@@ -294,6 +312,7 @@ On définit `m = n - i`, qui représente le nombre d’éléments restants à tr
 
         - On affiche la liste avant et après le tri.
 
+---
 
 ???+ question "Activité n°4 : Tester l'efficacité du tri par sélection"
 
@@ -323,9 +342,11 @@ On définit `m = n - i`, qui représente le nombre d’éléments restants à tr
 
         - **Remarque** : Le temps d’exécution augmente rapidement !
 
-
+---
 
 **Animation :[http://lwh.free.fr/pages/algo/tri/tri_selection.html ](http://lwh.free.fr/pages/algo/tri/tri_selection.html)**
+
+---
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Tri<a name="_page4_x40.00_y702.92"></a> par insertion</h2>**
 ### **<H3 STYLE="COLOR:GREEN;">3.1. Le<a name="_page4_x40.00_y724.92"></a> principe</H3>**
@@ -352,7 +373,7 @@ Le principe du tri par insertion peut être comparé à l'organisation d'un jeu 
 
  ![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.036.png)
 
-
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">3.2. Illustration<a name="_page5_x40.00_y290.92"></a> graphique</H3>**
 
@@ -369,7 +390,7 @@ Exemple : **Trier la liste `[9, 2, 7, 1]` en ordre croissant.**
 
 📌 **Résultat final :** `[1, 2, 7, 9]` ✅
 
-
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">3.3. Illustration<a name="_page5_x40.00_y491.92"></a> vidéo</H3>**
 
@@ -377,6 +398,7 @@ Exemple : **Trier la liste `[9, 2, 7, 1]` en ordre croissant.**
 
 📌 [Tri par Insertion - Animation](https://ladigitale.dev/digiview/#/v/668aed171ea50)
 
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">3.4. Pseudo-code<a name="_page5_x40.00_y542.92"></a></H3>**
 
@@ -406,6 +428,7 @@ ALGORITHME tri_insertion
         FIN POUR
 ```
 
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">3.5. Complexité<a name="_page6_x40.00_y36.92"></a></H3>**
 
@@ -422,7 +445,7 @@ Le **nombre d'itérations** dépend de la situation initiale du tableau.
 
 - **Moins performant** sur de **grands tableaux** à cause de O(N²). 
 
-
+---
 
 
 ### **<H3 STYLE="COLOR:GREEN;">3.6. Preuve<a name="_page6_x40.00_y637.92"></a> de correction</H3>**
@@ -443,6 +466,7 @@ Avant chaque itération `i`, le sous-tableau `T[0:i]` est **trié**.
 
 ✔ **Conclusion** : L'algorithme **produit bien un tableau trié** à la fin.  
 
+---
 
 #### <H4 STYLE="COLOR:MAGENTA;">3.6.2.	Terminaison</H4>
 
@@ -455,6 +479,7 @@ L’algorithme **ne peut pas boucler indéfiniment** et **s’arrête toujours**
 
 ✔ **Conclusion** : L’algorithme **se termine toujours** après au plus **O(n²) itérations**.
 
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">3.7. Implémentation<a name="_page7_x40.00_y36.92"></a> en Python</H3>**
 
@@ -479,6 +504,7 @@ Nous allons maintenant **coder** le tri par insertion.
     ??? success "Python"
         {{ IDE() }}
 
+---
 
 ???+ question "Activité n°6 : Implémentation du Tri par Insertion"
     
@@ -497,13 +523,15 @@ Nous allons maintenant **coder** le tri par insertion.
     print("Liste triée :", liste_triee)
     ```
 
-
+---
 
 **Remarque : on aurait pu également faire une seule fonction**  
 
 
 
 On mesure **le temps de tri** en fonction de la taille du tableau.
+
+---
 
 ???+ question "Activité n°7 : Mesurer le Temps d’Exécution"
     
@@ -524,7 +552,7 @@ On mesure **le temps de tri** en fonction de la taille du tableau.
         print(f"Temps pour {taille} éléments : {moyenne:.4f} secondes")
     ```
 
-
+---
 
 📌 **Remarque :**  
 
@@ -534,9 +562,13 @@ On mesure **le temps de tri** en fonction de la taille du tableau.
 
 **Animation :[ http://lwh.free.fr/pages/algo/tri/tri_insertion.html ](http://lwh.free.fr/pages/algo/tri/tri_insertion.html)![](Aspose.Words.44e8a127-fa79-459d-b056-b00fa0212d54.006.png)**
 
+---
+
 ## **<H2 STYLE="COLOR:BLUE;">4. Autres<a name="_page8_x40.00_y36.92"></a> algorithmes de tris : le tri à bulles (Bubble sort)</h2>**
 
 Le tri à bulles est un algorithme de tri qui consiste à faire  **remonter progressivement les plus grands éléments vers la fin du tableau**, Le **tri à bulles** est un algorithme de tri simple qui fonctionne en **échangeant les éléments voisins** pour les remettre dans l'ordre croissant. Son fonctionnement est inspiré du mouvement des bulles d'air qui remontent à la surface d'un liquide.
+
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">4.1. Principe du tri à bulles</H3>**
 
@@ -555,6 +587,8 @@ L’algorithme fonctionne de la manière suivante :
 
 6️⃣ On continue jusqu'à ce que **plus aucun échange ne soit nécessaire**, ce qui signifie que la liste est triée.  
 
+---
+
 **🖼️ Illustration graphique**
 
 📌 **Prenons un exemple avec la liste `[5, 3, 8, 4, 2]` à trier en ordre croissant :**
@@ -569,9 +603,13 @@ L’algorithme fonctionne de la manière suivante :
 
 💡 **Remarque** : À chaque passage, le plus grand élément restant "remonte" à sa position correcte.
 
+---
+
 ### **<H3 STYLE="COLOR:GREEN;">4.2. Illustration vidéo</H3>**
 
 Illustration vidéo :[ https://ladigitale.dev/digiview/#/v/668aed8c3bab4 ](https://ladigitale.dev/digiview/#/v/668aed8c3bab4) 
+
+---
 
 ### **<H3 STYLE="COLOR:GREEN;">4.3. Implémentation du tri à bulles</H3>**
 
@@ -594,6 +632,8 @@ FONCTION tri_bulle(T : tableau d'entiers)
 FIN FONCTION
 
 ```
+
+---
 
 => CAPYTALE Le code vous sera donné par votre enseignant
 
@@ -620,6 +660,7 @@ FIN FONCTION
         [34, 89, 12, 7, 65, 23, 9, 78, 45, 3]
         ```
 
+---
 
 ???+ question "Activité n°9 : Implémentation du tri à bulles"
 
@@ -648,9 +689,11 @@ FIN FONCTION
         Après tri : [2, 3, 4, 5, 8]
         ```
 
+---
 
 **Remarque : il existe d’autres versions du tri bulle** 
 
+---
 
 ???+ question "Activité n°10 : Mesurer le temps d'exécution du tri à bulles"
 
@@ -680,8 +723,11 @@ FIN FONCTION
         Temps d’exécution pour 10_000 éléments : 1.43567 secondes
         ```
 
+---
 
 Animation :[ http://lwh.free.fr/pages/algo/tri/tri_bulle.html ](http://lwh.free.fr/pages/algo/tri/tri_bulle.html)
+
+---
 
 ## **<H2 STYLE="COLOR:BLUE;">5. Exercices<a name="_page9_x40.00_y511.92"></a></h2>**
 
