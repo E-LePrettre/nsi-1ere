@@ -9,7 +9,7 @@ title: 06a Introduction à l’algorithmique
 2. [Efficacité d’un algorithme](#_page1_x40.00_y36.92)
 3. [Création d’un algorithme](#_page1_x40.00_y488.92)
 4. [Complexité](#_page3_x40.00_y361.92)
-5. [!!! abstractcices](#_page7_x40.00_y36.92)
+5. [Exercices](#_page7_x40.00_y36.92)
 
 L'**algorithmique** regroupe l'ensemble des règles et techniques permettant de concevoir et de structurer des algorithmes. Ces derniers sont au cœur de l'informatique, mais aussi présents dans de nombreux autres domaines : mathématiques, logistique, intelligence artificielle, etc.
 
