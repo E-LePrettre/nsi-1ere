@@ -103,6 +103,12 @@ On cherche le plus grand entier puis on permute. Le plus grand est bien placé. 
 
 ![Tri par sélection](selection.png)
 
+![Tri par sélection](tri_selection1.png)
+
+![Tri par sélection](tri_selection2.png)
+
+![Tri par sélection](tri_selection3.png)
+
 **Nombre de comparaisons** :
 
 Calculons la somme
