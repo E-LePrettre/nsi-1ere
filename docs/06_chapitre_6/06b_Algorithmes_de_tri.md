@@ -112,11 +112,17 @@ On cherche le plus grand entier puis on permute. Le plus grand est bien placé. 
 **Nombre de comparaisons** :
 
 Calculons la somme
+
     `S = 15 + 14 + 13 + 12 + … + 4  +  3 +  2  + 1`
+
 Posons une autre somme dans l’autre sens
+
     `S =   1 +   2  +   3  +  4  +  … + 12 + 13 + 14 + 15`
+
 Faisons la somme membre à membre
+
        `2S = 16 + 16 + 16 + 16 +  …  + 16 + 16 + 16 + 16`
+
 Soit 
 ```
       2S = 16 x 15
@@ -129,7 +135,7 @@ Soit
 ### **<H3 STYLE="COLOR:GREEN;">2.3. Illustration<a name="_page1_x40.00_y434.92"></a> en vidéo</H3>**
 
 🎥 **Regardez cette vidéo pour mieux comprendre :**  
-[https://ladigitale.dev/digiview/#/v/668aea84a26ef](https://ladigitale.dev/digiview/#/v/668aea84a26ef)  
+[https://youtu.be/Ns4TPTC8whw?si=t_V-YDyirqhxmapy](https://youtu.be/Ns4TPTC8whw?si=t_V-YDyirqhxmapy)  
 
 💡 **Remarque :** Les danseurs s'échangent après chaque comparaison, mais dans le véritable algorithme, l’échange ne se fait qu’une fois par tour.
 
