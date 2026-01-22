@@ -411,6 +411,8 @@ Le principe du tri par insertion peut être comparé à l'organisation d'un jeu 
 
 ### **<H3 STYLE="COLOR:GREEN;">3.2. Illustration<a name="_page5_x40.00_y290.92"></a> graphique</H3>**
 
+Choisir tri par insertion :
+
 [Animation tri par insertion](https://interstices.info/les-algorithmes-de-tri/)
 
 A chaque étape on insère un nouvel élément dans la partie triée
