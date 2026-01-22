@@ -49,9 +49,8 @@ En informatique les mots **tri et trier** sont à prendre avec le **sens de clas
 Avant de trier une liste, il faut d'abord en générer une ! Nous allons utiliser le module `random` pour créer une liste de nombres aléatoires.
 
 ???+ question "Activité n°1 : Générer des données aléatoires"
+    **Tester :**
 
-    **Tester le code suivant :**
-    
     ```python
     import random
 
@@ -63,9 +62,11 @@ Avant de trier une liste, il faut d'abord en générer une ! Nous allons utilise
     liste_aleatoire = genere_liste_aleatoire(50, 100)
     print(liste_aleatoire)
     ```
+    
 
     ??? success "Python"
         {{ IDE() }}
+
 
     ??? success "Explication"
 
@@ -96,7 +97,7 @@ L'idée du **tri par sélection** est simple :
 
 ### **<H3 STYLE="COLOR:GREEN;">2.2. Illustration<a name="_page1_x40.00_y201.92"></a> graphique</H3>**
 
-[https://interstices.info/les-algorithmes-de-tri/](https://interstices.info/les-algorithmes-de-tri/)
+
   
 On cherche le plus grand entier puis on permute. Le plus grand est bien placé. On recommence 
 
