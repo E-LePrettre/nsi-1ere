@@ -1,5 +1,5 @@
 ﻿---
-author: ELP
+author: Elisabeth Le Prettre (LePrettre)
 title: 03 Mise au point des scripts et gestion des exceptions
 ---
 
@@ -7,15 +7,63 @@ title: 03 Mise au point des scripts et gestion des exceptions
 **Table des matières**
 
 1. [Les bonnes pratiques : documenter les fonctions ](#_page0_x40.00_y447.92)
-2. [Les tests](#_page1_x40.00_y350.92)
+2. [Les tests et les jeux de tests](#_page1_x40.00_y350.92)
 3. [Les préconditions et les postconditions](#_page5_x40.00_y567.92)
 4. [Les bibliothèques ou modules](#_page6_x40.00_y233.92)
 5. [Gestion des exceptions](#_page9_x40.00_y401.92)
 6. [Exercices](#_page13_x40.00_y375.92)
 
-## **<H2 STYLE="COLOR:BLUE;">1.  Les bonnes pratiques : <a name="_page0_x40.00_y447.92"></a>documenter les fonctions</h2>** 
+!!! info "🎯 Ce que dit le programme officiel de Première NSI"
 
-### **<H3 STYLE="COLOR:GREEN;">1.1. Qu’est-ce qu’une docstring ?</h3>**
+    **Spécification** — Capacités attendues :
+
+    - **Prototyper** une fonction ;
+    - Décrire les **préconditions** sur les arguments ;
+    - Décrire des **postconditions** sur les résultats.
+
+    *Des **assertions** peuvent être utilisées pour garantir des préconditions ou des postconditions.*
+
+    **Mise au point de programmes** — Capacité attendue :
+
+    - Utiliser des **jeux de tests**.
+
+    *L'importance de la **qualité** et du **nombre** des tests est mise en évidence. Le **succès d'un jeu de tests ne garantit pas la correction d'un programme**.*
+
+    Le programme insiste aussi sur l'importance de la **spécification**, de la **documentation** et des **tests**, ainsi que sur l'intérêt de la **modularisation** qui permet la **réutilisation** de programmes et la mise à disposition de **bibliothèques**. Pour vos programmes simples, une **spécification rapide mais précise** suffit.
+
+## **<H2 STYLE="COLOR:BLUE;">1.  Les bonnes pratiques : <a name="_page0_x40.00_y447.92"></a>spécifier et documenter les fonctions</h2>** 
+
+### **<H3 STYLE="COLOR:GREEN;">1.1. Prototyper et spécifier une fonction</h3>**
+
+Le **prototype** d'une fonction est sa « carte d'identité » : son **nom**, ses **paramètres** (avec leur type) et le **type du résultat** renvoyé.
+
+En Python, on peut écrire le prototype directement dans l'en-tête grâce aux **annotations de type** :
+
+```python
+def factorielle(n: int) -> int:
+```
+
+Ce prototype se lit : « la fonction `factorielle` prend un paramètre `n` de type `int` et renvoie un `int` ». ⚠️ Ces annotations sont **indicatives** : Python ne vérifie pas les types à l'exécution.
+
+La **spécification** d'une fonction complète le prototype. Elle décrit **ce que fait la fonction** (son rôle), **sans dire comment** elle le fait. Une spécification **rapide mais précise** comporte :
+
+1. le **prototype** (nom, paramètres, type du résultat) ;
+
+2. le **rôle** de la fonction ;
+
+3. les **préconditions** : conditions que doivent respecter les arguments (aussi appelées **conditions d'utilisation, CU**) ;
+
+4. les **postconditions** : propriétés garanties sur le résultat.
+
+!!! example "Exemple de spécification"
+    - **Prototype** : `factorielle(n: int) -> int`
+    - **Rôle** : renvoie la factorielle de `n`, c'est-à-dire n! = 1 × 2 × … × n.
+    - **Précondition** : `n` est un entier positif ou nul (`n >= 0`).
+    - **Postcondition** : le résultat est un entier supérieur ou égal à 1.
+
+En Python, cette spécification s'écrit dans la **docstring** de la fonction : c'est l'objet de la sous-section suivante.
+
+### **<H3 STYLE="COLOR:GREEN;">1.2. Qu’est-ce qu’une docstring ?</h3>**
 
 Une **docstring** est un texte placé juste après l’en-tête d’une fonction en Python. Elle sert à expliquer :
 
@@ -30,14 +78,14 @@ Elle est essentielle pour rendre le code **plus lisible** et **plus compréhensi
 
 
 
-### **<H3 STYLE="COLOR:GREEN;">1.2. Comment écrire une docstring ?</h3>**
+### **<H3 STYLE="COLOR:GREEN;">1.3. Comment écrire une docstring ?</h3>**
 
 ???+ question "Activité n°1 : Ajouter une docstring"
 
     **Tester :**
 
     ```python
-    def factorielle(n):
+    def factorielle(n: int) -> int:
         """
         Fonction qui retourne la factorielle d'un nombre.
         :param n: int
@@ -69,7 +117,7 @@ Elle est essentielle pour rendre le code **plus lisible** et **plus compréhensi
         ```
         Help on function factorielle in module __main__:
 
-        factorielle(n)
+        factorielle(n: int) -> int
             Fonction qui retourne la factorielle d'un nombre.
             :param n: int
             :return: int
@@ -86,13 +134,24 @@ Elle est essentielle pour rendre le code **plus lisible** et **plus compréhensi
 
     - Elle décrit clairement **l’objectif** et **les conditions d’utilisation**.
 
+    - `help` affiche aussi le **prototype** `factorielle(n: int) -> int` : la docstring + le prototype constituent la **spécification** de la fonction.
 
 
 
-## **<H2 STYLE="COLOR:BLUE;">2. Les<a name="_page1_x40.00_y350.92"></a> tests</h2>** 
+
+## **<H2 STYLE="COLOR:BLUE;">2. Les<a name="_page1_x40.00_y350.92"></a> tests et les jeux de tests</h2>** 
 
 Les tests permettent de **vérifier** qu’un programme ne produit pas d’erreur et qu’il effectue bien la tâche attendue.
-  
+
+Un **jeu de tests** est un **ensemble de cas de test** : pour chaque cas, on choisit une **entrée** et on calcule **à l'avance** le **résultat attendu**.
+
+!!! tip "Choisir un bon jeu de tests"
+    La **qualité** et le **nombre** des tests sont essentiels. Un bon jeu de tests couvre :
+
+    - des **cas ordinaires** (valeurs « normales ») ;
+    - des **cas limites** (0, 1, valeur minimale ou maximale autorisée…) ;
+    - des **cas particuliers** (valeurs négatives, décimales, mauvais type… si la spécification le permet).
+
 
 ### **<H3 STYLE="COLOR:GREEN;">2.1. Les<a name="_page1_x40.00_y523.92"></a> tests simples avec assert</h3>**
 
@@ -313,6 +372,48 @@ L’instruction `assert` est utilisée pour **vérifier rapidement** que le prog
         - **Utile pour voir ce qui est testé**.
 
 
+### **<H3 STYLE="COLOR:GREEN;">2.3. Les limites d'un jeu de tests</h3>**
+
+!!! warning "⚠️ À retenir (programme officiel)"
+    **Le succès d'un jeu de tests ne garantit pas la correction d'un programme.**
+
+    Un test qui **échoue** prouve la présence d'un **bug**. Mais un jeu de tests qui **réussit** prouve seulement que le programme est correct **sur les cas testés**… pas sur tous les autres !
+
+???+ question "Activité n°7 bis : Des tests qui réussissent… sur une fonction fausse !"
+
+    On veut programmer la fonction `somme(a, b)` qui renvoie la somme de `a` et `b`. Un élève propose ce code :
+
+    **Tester :**
+
+    ```python
+    def somme(a, b):
+        """Renvoie la somme de a et b."""
+        return a * b   # ERREUR : multiplication au lieu d'addition !
+
+    assert somme(2, 2) == 4
+    assert somme(0, 0) == 0
+    print("Tous les tests sont passés !")
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :** `Tous les tests sont passés !`
+
+        **Explication :**
+
+        - Le jeu de tests **réussit** alors que la fonction est **fausse** : par malchance, `2 * 2 == 2 + 2` et `0 * 0 == 0 + 0` !
+
+        - Il suffit d'ajouter un cas mieux choisi pour révéler le bug :
+        ```python
+        assert somme(2, 3) == 5   # AssertionError : somme(2, 3) renvoie 6
+        ```
+
+        - **Conclusion :** le succès d'un jeu de tests **ne garantit pas** la correction du programme. D'où l'importance de la **qualité** et du **nombre** des tests.
+
+
 
 
 
@@ -320,7 +421,13 @@ L’instruction `assert` est utilisée pour **vérifier rapidement** que le prog
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Les<a name="_page5_x40.00_y567.92"></a> préconditions et les postconditions</h2>** 
 
-Les assertions permettent de **vérifier les résultats** tout au long de l'exécution d'un programme, et pas seulement **test par test**.
+On a vu en **1.1** que la spécification d'une fonction décrit :
+
+- les **préconditions** : conditions sur les **arguments**, à vérifier **avant** le calcul ;
+
+- les **postconditions** : propriétés du **résultat**, garanties **après** le calcul.
+
+Des **assertions** (`assert`) peuvent être utilisées pour **garantir** ces préconditions et postconditions : elles permettent de **vérifier les résultats** tout au long de l'exécution d'un programme, et pas seulement **test par test**.
 
 ???+ question "Activité n°8 :"
 
@@ -371,6 +478,9 @@ Pour plus de précisions :[ https://www.youtube.com/watch?v=DRVoh5XiAZo ](https:
 Une bibliothèque en Python est un fichier contenant du **code réutilisable**. Ce code peut être sous forme de fonctions, classes ou variables. Pour utiliser une bibliothèque, on doit **l’importer** dans notre programme. 
 
 Une bibliothèque est une **collection de modules**. C'est un ensemble plus large qui peut contenir **plusieurs fichiers** Python, **chacun étant un module**.
+
+!!! info "La modularisation"
+    Découper un programme en **modules** s'appelle la **modularisation**. Son intérêt : permettre la **réutilisation** de programmes déjà écrits (et testés !) et la mise à disposition de **bibliothèques**. C'est pour cela qu'une fonction bien **spécifiée** et bien **documentée** est précieuse : on peut la réutiliser **sans relire son code**, en lisant seulement sa docstring.
 
 ### **<H3 STYLE="COLOR:GREEN;">4.2. Importer des bibliothèques (modules) standards<a name="_page6_x40.00_y498.92"></a></h3>** 
 
@@ -695,5 +805,31 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
 
     Remarquez bien qu’on demande le nombre à l’utilisateur *jusqu'à* ce qu’il convienne. 
 
+!!! abstract "Exercice 6"
+
+    Un élève a écrit la fonction suivante, censée renvoyer le **maximum** de deux nombres :
+
+    ```python
+    def maximum(a, b):
+        """Renvoie le plus grand des deux nombres a et b."""
+        return abs(a)
+    ```
+
+    Il la valide avec le jeu de tests suivant, qui **réussit** :
+
+    ```python
+    assert maximum(5, 3) == 5
+    assert maximum(-2, -7) == 2   # Oups... ce résultat attendu est-il correct ?
+    ```
+
+    1. Donner le **prototype** de la fonction `maximum` (avec les annotations de type).
+
+    2. Le deuxième cas de test est mal conçu : le **résultat attendu** est faux. Quel est le bon résultat attendu pour `maximum(-2, -7)` ? Que se passe-t-il alors ?
+
+    3. Proposer un **jeu de 4 tests bien choisis** (cas ordinaire, cas limite `a == b`, cas négatifs) qui révèle le bug.
+
+    4. Corriger la fonction, puis vérifier que tout le jeu de tests réussit.
+
+    5. Ce succès **garantit-il** que la fonction est correcte ? 
+
 [Documentation sur les exceptions ](http://docs.python.org/3/tutorial/errors.html#exceptions)
-Source :[ Fabrice Sincère ](http://fsincere.free.fr/isn/python/cours_python_ch5.php)-[ Contenu sous licence CC BY-NC-SA 3.0 ](http://creativecommons.org/licenses/by-nc-sa/3.0/fr/)

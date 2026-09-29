@@ -1,8 +1,6 @@
 ﻿---
-
-author: ELP
+author: Elisabeth Le Prettre (LePrettre)
 title: 09 Algorithme glouton
-
 ---
 
 **Table des matières** 
@@ -143,8 +141,43 @@ Cependant, cette efficacité a un prix : **la solution obtenue n’est pas toujo
     Soit 30 euros, l’algorithme ne fonctionne plus, car il manque une pièce de 1 euro. 
 
 
+### <H3 STYLE="COLOR:GREEN;"> **1.2. Optimum local et optimum global**</H3> 
 
-### <H3 STYLE="COLOR:GREEN;"> **1.2. Le<a name="_page2_x51.00_y32.00"></a> problème du sac à dos**</H3> 
+Un algorithme glouton fait à chaque étape **le meilleur choix immédiat** : c'est un **optimum local** (le meilleur choix *sur le moment*, sans regarder la suite).
+
+Mais la **succession de choix localement optimaux** ne donne pas toujours **l'optimum global** (la meilleure solution de **l'ensemble** du problème).
+
+| Notion | Définition |
+|--------|------------|
+| **Optimum local** | meilleur choix à une étape, sans anticiper la suite |
+| **Optimum global** | meilleure solution du problème **complet** |
+
+🔁 **Illustration (rendu de monnaie)** : avec le système `{1, 3, 4}` pour rendre **6 €**, le glouton choisit d'abord **4 €** (meilleur choix local), puis se retrouve obligé de rendre `1 + 1`. Résultat : **3 pièces**. L'optimum global était `3 + 3`, soit **2 pièces**.
+
+➡️ Le bon choix **local** (prendre la plus grosse pièce) a **empêché** d'atteindre l'optimum **global**.
+
+💡 **À retenir :** un glouton vise l'optimum global *en empilant des optima locaux*, mais rien ne le garantit. Il faut le **vérifier** au cas par cas.
+
+### <H3 STYLE="COLOR:GREEN;"> **1.3. Systèmes canoniques : quand le glouton est-il optimal ?**</H3> 
+
+On a vu que le résultat du glouton **dépend du système de pièces**. On distingue :
+
+| Système | Définition | Glouton |
+|---------|------------|---------|
+| **Canonique** | le glouton donne l'optimum pour **toute** somme | ✅ toujours optimal |
+| **Non canonique** | il existe **au moins une** somme où le glouton n'est pas optimal | ⚠️ parfois non optimal |
+
+✅ **Le système euro `{1, 2, 5, 10, 20, 50, 100, 200, 500}` est canonique** : le glouton donne toujours le nombre minimal de pièces.
+
+🚨 **Le système `{1, 3, 4}` est non canonique** : pour **6 €**, le glouton donne `4 + 1 + 1` (**3 pièces**) alors que l'optimum est `3 + 3` (**2 pièces**). **Une seule somme suffit à le prouver.**
+
+!!! note "Comment montrer qu'un système est non canonique ?"
+    Il suffit d'exhiber **un seul contre-exemple** : une somme pour laquelle une autre combinaison utilise **moins de pièces** que le glouton.
+
+!!! warning "Ce qui est hors programme"
+    **Prouver** qu'un système *est* canonique (comme l'euro) est difficile et **hors programme** en Première. On se contente ici de **constater** l'optimalité sur l'euro et de la **réfuter** sur un système non canonique par un contre-exemple.
+
+### <H3 STYLE="COLOR:GREEN;"> **1.4. Le<a name="_page2_x51.00_y32.00"></a> problème du sac à dos**</H3> 
 
 Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimisation :
 
@@ -209,7 +242,7 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
     print(remplirSac(objets,poidsMax))
     ```
 
-### <H3 STYLE="COLOR:GREEN;"> **1.3. Variante : Affichage sous forme de dictionnaire**</H3> 
+### <H3 STYLE="COLOR:GREEN;"> **1.5. Variante : Affichage sous forme de dictionnaire**</H3> 
 
 
 ???+ question "**Activité n°3 : Sac à dos**"
@@ -230,7 +263,7 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
 
 
 
-### <H3 STYLE="COLOR:GREEN;"> **1.4. Variante : Méthode gloutonne avec ratio valeur/poids**</H3> 
+### <H3 STYLE="COLOR:GREEN;"> **1.6. Variante : Méthode gloutonne avec ratio valeur/poids**</H3> 
 
 
 ???+ question "**Activité n°4 : Sac à dos et ratio**"
@@ -253,7 +286,7 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
 
     🧮 **Pseudo-code à traduire**
 
-    ```plaintext
+    ```
     Fonction remplirSacRatio(objets : liste de [valeur, poids, nom], poidsMax : float) → dictionnaire des objets pris
 
         Étape 1 : Calculer la liste des ratios
@@ -298,15 +331,158 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
     * 💡 Pour trier, créer une nouvelle liste `objetsAvecRatio = [[valeur, poids, nom, ratio], …]` puis la **trier à la main** (ex : tri par sélection).
 
 
+### <H3 STYLE="COLOR:GREEN;"> **1.7. Le choix de l'heuristique (sac à dos)**</H3> 
+
+Pour remplir le sac, le glouton doit **trier les objets** selon un critère : c'est **l'heuristique**. Il en existe plusieurs, et **elles ne donnent pas le même résultat**.
+
+🔹 **Trois heuristiques classiques :**
+
+| Heuristique | Critère de tri | Idée |
+|-------------|----------------|------|
+| **Par valeur** | valeur décroissante | « prendre d'abord ce qui rapporte le plus » |
+| **Par poids** | poids croissant | « prendre d'abord ce qui prend le moins de place » |
+| **Par ratio** | ratio valeur/poids décroissant | « prendre d'abord ce qui rapporte le plus *par kilo* » |
+
+**Exemple — sac de capacité 50 :**
+
+| Objet | Valeur | Poids | Ratio |
+|-------|--------|-------|-------|
+| A | 60 | 10 | 6,0 |
+| B | 100 | 20 | 5,0 |
+| C | 120 | 30 | 4,0 |
+
+| Heuristique | Objets pris | Valeur |
+|-------------|-------------|--------|
+| Par valeur | C + B | **220** |
+| Par poids | A + B | 160 |
+| Par ratio | A + B | 160 |
+| **Optimum (force brute)** | **B + C** | **220** |
+
+🚨 Ici, **l'heuristique du ratio rate l'optimum** (160 au lieu de 220).
+
+⚠️ **Aucune heuristique n'est toujours la meilleure.** Prenons un autre sac, de capacité **10** :
+
+| Objet | Valeur | Poids | Ratio |
+|-------|--------|-------|-------|
+| Gros | 11 | 10 | 1,1 |
+| Petit 1 | 6 | 5 | 1,2 |
+| Petit 2 | 6 | 5 | 1,2 |
+
+| Heuristique | Objets pris | Valeur |
+|-------------|-------------|--------|
+| Par valeur | Gros | 11 |
+| Par ratio | Petit 1 + Petit 2 | **12** |
+| **Optimum** | **Petit 1 + Petit 2** | **12** |
+
+➡️ Cette fois c'est **l'heuristique de la valeur qui rate l'optimum** (11 au lieu de 12), et le ratio qui gagne. **Conclusion : pour le sac à dos 0/1, aucun glouton n'est garanti optimal.**
+
+!!! abstract "Le parallèle avec le rendu de monnaie"
+    Comme pour la monnaie, **le glouton n'est optimal que dans des cas particuliers** :
+
+    | Problème | Glouton optimal | Glouton non optimal |
+    |----------|-----------------|---------------------|
+    | **Monnaie** | système **canonique** (ex : euro) | système **non canonique** (ex : `{1, 3, 4}`) |
+    | **Sac à dos** | sac **fractionnaire** (objets sécables) | sac **0/1** (objets indivisibles) |
+
+    🔑 Dans le **sac fractionnaire** (on peut prendre une *fraction* d'objet), l'heuristique du **ratio est toujours optimale**. Dans le **sac 0/1** (on prend l'objet en entier ou pas du tout — **notre cas**), elle peut échouer.
+
+    Pour l'optimum du sac 0/1, il faut la **programmation dynamique** (hors programme, abordée en Terminale).
+
+### <H3 STYLE="COLOR:GREEN;"> **1.8. Le coût des algorithmes gloutons**</H3> 
+
+Le coût (la complexité) d'un glouton se mesure en fonction du nombre **n** d'éléments (types de pièces, ou objets). Quand les **données sont nombreuses**, c'est ce coût qui décide si l'algorithme est utilisable.
+
+🔹 **Rendu de monnaie**
+
+Avec la version **par division** (quotient et reste), on traite chaque type de pièce **une seule fois** :
+
+```python
+def rendu(somme, pieces):       # pieces triées décroissant
+    choisies = [0] * len(pieces)
+    for i in range(len(pieces)):
+        choisies[i] = somme // pieces[i]   # nombre de pièces de ce type
+        somme = somme % pieces[i]          # reste à rendre
+    return choisies
+```
+
+➡️ Coût en **O(n)**, **identique dans le meilleur et le pire des cas** (il ne dépend que du nombre de types de pièces, pas des valeurs).
+
+!!! note "Et la version par soustraction (boucle `while`) ?"
+    Avec la boucle `tant que pieces[i] <= somme`, le nombre d'itérations égale le **nombre de pièces rendues**, qui peut être **très grand** (ex : rendre 1000 € avec des pièces de 1 €). Le coût dépend alors de la **somme**, et non plus seulement de **n**.
+
+🔹 **Sac à dos**
+
+L'algorithme glouton fait **deux étapes** :
+
+1. **trier** les objets selon l'heuristique ;
+2. **parcourir** une fois la liste triée pour remplir le sac → **O(n)**.
+
+Le parcours est en O(n), **mais le tri coûte plus cher** et **domine** le coût total :
+
+| Tri utilisé | Meilleur cas | Pire cas |
+|-------------|--------------|----------|
+| Tri par **sélection** | O(n²) | O(n²) *(pas de meilleur cas)* |
+| Tri par **insertion** | O(n) *(liste déjà triée)* | O(n²) |
+| Tri **natif** Python (`sorted`) | O(n log n) | O(n log n) |
+
+🔑 **Conclusion :** le sac à dos glouton coûte **O(n log n)** avec un bon tri (ou **O(n²)** avec un tri par sélection comme dans l'Activité 4) — et **non O(n)**, car le **tri préalable domine** le parcours. C'est ce coût qui compte « dans le cas de données nombreuses ».
+
+### <H3 STYLE="COLOR:GREEN;"> **1.9. Terminaison (variant) et correction (invariant)**</H3> 
+
+Prouver qu'un algorithme est **correct**, c'est prouver **deux choses** :
+
+- **Terminaison** : l'algorithme **s'arrête toujours** → on utilise un **variant** ;
+- **Correction partielle** : *s'il s'arrête*, le résultat **respecte la spécification** → on utilise un **invariant**.
+
+Les deux ensemble donnent la **correction totale** (qui **ne garantit pas** l'optimalité !).
+
+!!! info "Variant et invariant"
+    - un **variant** est une quantité **entière ≥ 0 qui décroît strictement** à chaque tour de boucle : elle ne peut pas décroître indéfiniment, donc la boucle s'arrête ;
+    - un **invariant** est une propriété **vraie avant la boucle** et **préservée à chaque tour** : elle est donc encore vraie à la sortie.
+
+    👉 Le **variant** n'est utile que pour une **boucle non bornée** (`while`). Une boucle `for` sur une liste finie **se termine d'office**.
+
+🔹 **Rendu de monnaie** *(boucle `while` → non bornée)*
+
+**Variant.** La somme restante `somme` est un **entier ≥ 0** qui **décroît strictement** à chaque pièce prise (on retire `pieces[i] ≥ 1`). Une suite d'entiers ≥ 0 strictement décroissante est **finie** → l'algorithme **termine**.
+
+**Invariant.** À tout moment :
+
+```
+somme_initiale  =  somme  +  (somme des pièces déjà choisies)
+```
+
+Vrai au départ (aucune pièce choisie), **préservé** à chaque soustraction (on retire `pieces[i]` de `somme` et on ajoute la même pièce aux choisies). À la fin, si `somme = 0`, les pièces choisies **réalisent exactement** la somme demandée → résultat **valide**.
+
+🔹 **Sac à dos** *(boucle `for` → bornée)*
+
+**Terminaison.** La boucle `for` parcourt une liste **finie** d'objets → elle **s'arrête d'office** (pas besoin de variant).
+
+**Invariant.** À tout moment :
+
+```
+poids_total = somme des poids des objets pris   ET   poids_total ≤ capacité
+```
+
+On n'ajoute un objet **que si** `poids_total + poids ≤ capacité`, donc la contrainte reste vraie. → La solution rendue est **toujours réalisable** (elle respecte la capacité).
+
+!!! warning "Correct ≠ optimal"
+    L'invariant et le variant prouvent que le résultat est **réalisable** et que l'algorithme **termine** (correction totale). Ils **ne prouvent pas** que le résultat est **optimal** — et on a vu (systèmes non canoniques, sac 0/1) qu'il ne l'est pas toujours.
 
 
+### <H3 STYLE="COLOR:GREEN;"> **1.10. Conclusion**</H3> 
 
-### <H3 STYLE="COLOR:GREEN;"> **1.5. Conclusion**</H3> 
+- **Les algorithmes gloutons sont rapides et simples** : à chaque étape, le **meilleur choix local**, sans retour en arrière.
 
+- Ils visent l'**optimum global** mais ne le garantissent pas : tout dépend de la **structure du problème** (système **canonique** pour la monnaie, sac **fractionnaire** pour le sac à dos).
 
-- **Les algorithmes gloutons sont rapides et simples**, mais ils ne garantissent pas toujours une solution optimale.
+- Le **choix de l'heuristique** (valeur, poids, ratio) change le résultat ; **aucune n'est toujours la meilleure** pour le sac 0/1.
 
-- Pour des solutions optimales, on utilise des méthodes plus avancées comme **la programmation dynamique** ou **l’arbre de recherche**.
+- Le **coût** est faible mais réel : **O(n)** pour la monnaie, **O(n log n)** pour le sac (le **tri domine**).
+
+- On sait **prouver** la **terminaison** (variant) et la **correction** (invariant) — mais correction **≠** optimalité.
+
+- Pour l'**optimum garanti**, on utilise des méthodes plus avancées comme **la programmation dynamique** ou **l’arbre de recherche**.
 
 💡 **Remarque :** Le **problème du sac à dos optimal** sera étudié en **Terminale** avec des techniques comme la **séparation et évaluation** (*Branch & Bound*).
 
@@ -319,19 +495,38 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
 
     🟢 Étape 1 – Force brute très simple (3 stations)
 
-    🚗 Contexte :
+    Sur son trajet, il rencontre plusieurs stations. Entre chaque point du trajet, les distances sont les suivantes :
 
+    🚗 Contexte :
     ```python
     distance = [40, 30, 20]  # Entre les stations
     autonomie = 100
     ```
 
-    ✍️ Question 1:
+    Cela signifie que le voyageur doit parcourir successivement :
 
-    > Liste toutes les **combinaisons possibles d'arrêts** (0, 1, 2 arrêts), et indique lesquelles permettent d'atteindre la fin sans panne.
+    40 km pour atteindre la première station ;
+    puis 30 km pour atteindre la deuxième station ;
+    puis 20 km pour atteindre l’arrivée.
 
+    À chaque station, le voyageur peut choisir :
 
+    soit de s’arrêter pour refaire le plein : son autonomie revient alors à 100 km ;
+    soit de continuer sans s’arrêter.
 
+    L’objectif est de tester toutes les possibilités d’arrêts pour savoir lesquelles permettent d’arriver à destination sans tomber en panne.
+
+    ✍️ Question 1 
+
+    > Liste toutes les combinaisons possibles d’arrêts :
+    >
+    > - aucun arrêt ;
+    > - un seul arrêt ;
+    > - deux arrêts.
+    > 
+    >Pour chaque combinaison, indique si le voyageur arrive à destination ou s’il tombe en panne.
+    >
+    >Tu devras justifier ta réponse en suivant l’évolution de son autonomie après chaque trajet.
 
     🟡 Étape 2 – Force brute plus complexe (6 stations)
 
@@ -346,6 +541,7 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
 
     > Énumère toutes les **séquences d’arrêts possibles** (par exemple : \[3], \[2, 5], etc.) et teste si elles permettent de finir le trajet.
     > Indique la **meilleure séquence**, celle qui utilise **le moins d’arrêts**.
+
 
     🔶 Étape 3 – Force brute infaisable (17 stations)
 
@@ -372,10 +568,6 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
     > * ne teste pas toutes les combinaisons,
     > * mais **choisit intelligemment** les stations où s’arrêter **au fur et à mesure du trajet**.
 
-
-
-
-
     🔴 Étape 5 – Mise en œuvre de la méthode gloutonne
 
 
@@ -393,7 +585,6 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
     4. Note les stations où tu t’arrêterais.
 
 
-
     5.  Maintenant, traduis cette stratégie en Python.
 
 
@@ -408,19 +599,12 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
         pass
     ```
 
-
-
-    🧪 Test : 
-
     ```python
     distance = [23, 40, 12, 44, 21, 9]
     autonomie = 100
     print(voyage_glouton(distance, autonomie))
     # Résultat attendu : [3] → arrêt à la station 3 avant de dépasser l'autonomie
     ```
-
-
-
 
 !!! abstract "**Exercice n°2  ★ : Rendu de monnaie**"
 
@@ -480,7 +664,7 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
 
     - royaume uni : ```S = (1, 3, 4, 10, 30, 40, 100, 300, 400)```[^2] on prendra 2019 pour somme à rendre 
 
-!!! abstract "**Exercice n°3  ★★ : Le voyageur**"
+!!! abstract "**Exercice n°3  ★★ : Le voyageur**" 
 
     Une route comporte n+1 stations-service, numérotées dans l'ordre du parcours, de 0 à n. La première est à une distance d[0] du départ, la deuxième est à une distance d[1] de la première, la troisième à une distance d[2] de la deuxième, etc. La fin de la route est à une distance d[n] de la n-ième et dernière station-service. 
 
@@ -509,25 +693,25 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
     distance = [23, 40, 12, 44, 21, 9, 67, 32, 51, 30, 11, 55, 24, 64, 32, 57, 12, 80] 
     autonomie = 100 
     ```
-!!! abstract "**Exercice n°4 ★★★ : le cambrioleur**"
+!!! abstract "**Exercice n°4 ★★★ : le chargement solidaire**"
     
-    Un cambrioleur entre par effraction dans une maison. Il n'est capable de porter qu’une masse limitée : il lui faudra donc choisir entre les différents objets de valeur, afin d'amasser le plus gros magot possible. 
+    Une association doit charger un véhicule utilitaire pour acheminer des dons. Le véhicule ne peut transporter qu'une **masse limitée** : il faut donc choisir parmi les différents lots de matériel afin d'emporter **la plus grande valeur d'usage possible**. 
 
-    **1** Écrire un algorithme qui donne un choix optimal pour le voleur. 
+    **1** Écrire un algorithme qui donne un choix le plus avantageux possible pour le chargement. 
 
     **Aide** : 
 
-    - Pour amasser le plus gros butin, il suffit de considérer le rapport prix/masse. A chaque fois, on en prend le rapport maximal. 
-    - il faut rajouter ce critère à la liste [prix, poids] et la trier sur ce critère par ordre décroissant. 
+    - Pour emporter la plus grande valeur, on considère le rapport valeur/masse. À chaque fois, on prend le rapport maximal. 
+    - il faut rajouter ce critère à la liste [valeur, masse] et la trier sur ce critère par ordre décroissant. 
 
     **2** Montrer que cet algorithme termine.
 
-    **3** Programmez une fonction remplir dont le prototype est le suivant : 
-    ```voleur(articles : list, masse : int) -> list```
+    **3** Programmez une fonction `charger` dont le prototype est le suivant : 
+    ```charger(articles : list, masse : int) -> list```
 
     - ```articles``` -- liste des articles (masse, valeur)  
 
-    - ```masse``` -- masse maximale
+    - ```masse``` -- masse maximale transportable
 
     - la fonction retourne la liste des articles : liste de tuple(masse, valeur)
 
@@ -535,7 +719,7 @@ Le **problème du sac à dos** (*Knapsack Problem*) est un problème d’optimis
 
     **4** Documenter la fonction 
 
-    On dispose d’une liste d’objets de masses ```m = [9, 10, 12, 14, 11, 5, 7, 5, 6, 2]``` ainsi que de leurs valeurs associées ```v = [10, 8, 7, 7, 5, 4, 3, 2, 2, 1]```.
+    On dispose d’une liste de lots de masses ```m = [9, 10, 12, 14, 11, 5, 7, 5, 6, 2]``` ainsi que de leurs valeurs d'usage associées ```v = [10, 8, 7, 7, 5, 4, 3, 2, 2, 1]```.
 
     **5** Tester le programme pour une masse maximale de 22 kg. Conclure. 
 

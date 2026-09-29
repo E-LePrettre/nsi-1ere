@@ -1,5 +1,5 @@
 ---
-author: ELP
+author: Elisabeth Le Prettre (LePrettre)
 title: 07b Le CSS
 ---
 
@@ -17,6 +17,8 @@ title: 07b Le CSS
 10. [Squelette de base HTML–CSS](#squelette)
 
 ---
+
+!!! info "🧠 Capytale : Utiliser le code du chapitre 07a"
 
 Le CSS est un langage utilisé pour décrire l'apparence et la mise en forme des pages web. Alors que le HTML structure le contenu (titres, paragraphes, images, etc.), le CSS permet de définir son **style** : couleurs, taille des polices, agencement des éléments, marges, etc. Grâce au CSS, on sépare la structure du contenu de sa présentation.
 
@@ -186,7 +188,7 @@ Parfois, on veut appliquer un style uniquement à **certains éléments** sans a
     Dans `index.html`, encadrer le théorème avec une balise `<p>` ayant une **classe** :
 
     ```html
-    <p class="theoreme">…………………………………………..</p>
+    <p class="theoreme">……tout le texte ici……..</p>
     ```
 
     Dans `style.css`, ajouter :
@@ -200,11 +202,48 @@ Parfois, on veut appliquer un style uniquement à **certains éléments** sans a
 
     ✅ Enregistrer et observer `index.html`.
 
-#### 3.5.2. Définir un identifiant (`id`)
+
+
+### 3.5.2. Définir un identifiant (`id`)⚓︎
+
+Un identifiant (`id`) permet de désigner **un seul élément unique** dans la page HTML.
+
+Par exemple, si l’on veut appliquer un style particulier à un seul titre, on peut lui donner un identifiant.
+
+#### En HTML
+
+On écrit l’identifiant **sans** le symbole `#`.
+
+```html
+<h1 id="haut">Mon titre</h1>
+```
+
+#### En CSS
+
+Pour appliquer un style à cet identifiant, on écrit son nom **avec** le symbole `#`.
+
+```css
+#haut {
+    color: blue;
+    text-align: center;
+}
+```
+
+#### À retenir
+
+* En **HTML**, on écrit : `id="haut"`
+* En **CSS**, on écrit : `#haut`
+
+Le nom de l’identifiant est **libre**.
+On pourrait écrire `haut`, `titre`, `menu`, `logo`…
+Ce qui compte, c’est d’utiliser **exactement le même nom** en HTML et en CSS.
+
+#### Exemple correct avec `titre`
 
 ```html
 <h1 id="titre">Mon titre</h1>
 ```
+
 ```css
 #titre {
     color: blue;
@@ -212,9 +251,38 @@ Parfois, on veut appliquer un style uniquement à **certains éléments** sans a
 }
 ```
 
-➡ Un ID doit toujours être précédé d'un **dièse (`#`)** en CSS.
+#### Exemple correct avec `haut`
 
-💡 `class` peut être utilisé **plusieurs fois** sur la page. `id` est **unique** et ne doit être utilisé qu'une seule fois.
+```html
+<h1 id="haut">Mon titre</h1>
+```
+
+```css
+#haut {
+    color: blue;
+    text-align: center;
+}
+```
+
+#### Attention
+
+Il ne faut **pas** écrire :
+
+```html
+<h1 id="#haut">Mon titre</h1>
+```
+
+car en HTML, on ne met jamais `#` dans la valeur de l’attribut `id`.
+
+Il ne faut pas non plus créer un deuxième titre juste pour le CSS.
+Un seul `<h1>` suffit : il faut simplement que le nom de l’identifiant soit cohérent entre le HTML et le CSS.
+
+💡 **Règle simple :**
+
+* `id="nom"` en HTML
+* `#nom` en CSS
+
+
 
 ### 3.6. Les balises neutres `<div>` et `<span>`
 
@@ -251,7 +319,7 @@ Parfois, on veut appliquer un style uniquement à **certains éléments** sans a
 
     ✅ Enregistrer et observer `index.html`.
 
-    ![Exemple](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.018.jpeg)
+    
 
 ---
 
@@ -276,7 +344,7 @@ p {
 
     Dans `style.css`, ajouter la règle ci-dessus et observer le résultat.
 
-    ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.032.jpeg)
+    
 
 ### 4.2. Modifier la police (`font-family`)
 
@@ -290,7 +358,7 @@ p {
 
 ???+ question "Activité n°9."
 
-    Modifier la feuille de style pour que les paragraphes utilisent la police **Trebuchet MS**.
+    Modifier la feuille de style pour que les paragraphes utilisent la police **Trebuchet MS** et que votre page ressemble à ceci ⬇️.
 
     ![](Aspose.Words.d520a3b2-fd79-44d0-beb1-46503fd463ef.034.png)
 

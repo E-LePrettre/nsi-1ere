@@ -1,6 +1,6 @@
 ---
-author: ELP
-title: 08 Les réseaux
+author: Elisabeth Le Prettre (LePrettre)
+title: 08b Les réseaux
 ---
 
 **Table des matières**
@@ -694,6 +694,10 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
 
 ---
 
+
+
+!!! abstract "CAPYTALE Le code vous sera donné par votre enseignant"
+
 ## 8. Simulation d'un réseau avec Filius { #filius }
 
 ???+ question "Activité n°5 — Lien direct entre 2 ordinateurs"
@@ -711,6 +715,16 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
     5. Afficher les données échangées (clic droit sur l'ordinateur).
 
     6. Effectuer un `ipconfig` dans le terminal du poste **10** et comparer l'adresse MAC avec celle de la source affichée dans le tableau des données échangées.
+
+    7. Faites la commande `ping 192.168.1.11` dans le terminal du poste 10. Quel est le **temps moyen** (en ms) indiqué pour les réponses ?
+
+    8. Dans le tableau des données échangées du poste 10, quel **protocole** est utilisé par la commande `ping` ? (Indice : ce n'est ni TCP ni UDP.)
+
+    9. Recopiez l'**adresse MAC** du poste 10 telle qu'affichée par la commande `ipconfig`. Cette adresse est-elle identique à celle qui apparaît dans la colonne « source » du tableau des données échangées ? Justifiez.
+
+    10. Dans le tableau des données échangées, combien de **lignes** ont été générées par la commande `ping` ? Distinguez les requêtes envoyées et les réponses reçues.
+
+    11. Que se passe-t-il si vous exécutez `ping 192.168.1.15` (une adresse qui n'existe pas sur le réseau) ? Décrivez le résultat obtenu et faites une capture d'écran.
 
 ???+ question "Activité n°6 — Réseau avec switch et serveur"
 
@@ -730,13 +744,25 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
 
     Lors de l'établissement d'une connexion TCP, trois étapes sont nécessaires :
 
-    1. **SYN** : le client envoie `SYN` avec un numéro de séquence A.
+    - **SYN** : le client envoie `SYN` avec un numéro de séquence A.
 
-    2. **SYN-ACK** : le serveur répond avec `SYN-ACK`, ack = A+1, et un numéro aléatoire B.
+    - **SYN-ACK** : le serveur répond avec `SYN-ACK`, ack = A+1, et un numéro aléatoire B.
 
-    3. **ACK** : le client confirme avec ack = B+1.
+    - **ACK** : le client confirme avec ack = B+1.
 
     Puis les échanges de messages suivent, avec accusés de réception. Cliquer sur **Déconnexion** pour terminer.
+
+    6 Dans le tableau des données échangées du client, repérez les **trois premières lignes** correspondant au Three-Way Handshake. Recopiez pour chacune : le **type de segment** (SYN, SYN-ACK, ACK), le **numéro de séquence** et le **numéro d'acquittement (ack)**.
+
+    7 Quel **message** avez-vous envoyé au serveur ? Retrouvez-le dans le tableau des données échangées et indiquez le **numéro de la ligne** où il apparaît.
+
+    8 Après avoir cliqué sur **Déconnexion**, combien de segments supplémentaires apparaissent dans le tableau des données échangées ? Quel type de segment marque la fin de la connexion ? (Indice : cherchez `FIN`.)
+
+    9 Quel est le **port source** utilisé par le client pour cette connexion ? Est-il identique au port du serveur (`55555`) ? Expliquez pourquoi.
+
+
+
+
 
 ???+ question "Activité n°7 — Deux réseaux interconnectés"
 
@@ -744,7 +770,7 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
 
     1. Modifier le réseau précédent pour obtenir **deux réseaux interconnectés**.
 
-    2. Essayer de pinguer (`ping 1.10 → 2.10`) → le message ne peut pas traverser.
+    2. Essayer de pinguer (`ping 1.10 → 2.10`) → le message ne peut pas traverser.Quel est le message exact affiché ?
 
     3. Configurer la passerelle du **routeur** :
 
@@ -752,11 +778,13 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
 
         - Réseau 2 : `192.168.2.1`
 
-    4. Ajouter la passerelle correspondante sur chaque ordinateur.
+    4. Ajouter la passerelle correspondante sur chaque ordinateur. Quelle **adresse de passerelle** avez-vous configurée sur le poste `192.168.1.10` ? Et sur le poste `192.168.2.10` ? Expliquez pourquoi ces adresses sont différentes.
 
-    5. Pinguer à nouveau de **1.10** vers **2.10**.
+    5. Pinguer à nouveau de **1.10** vers **2.10**. Combien de réponses positives obtenez-vous ?
 
-    📌 **Test avancé** : installer un **client générique** sur `2.10` et envoyer `"Bonjour"` au **serveur `1.12`**. Observer les données échangées.
+    6. Dans le tableau des données échangées du poste `1.10`, lorsque vous pinguez `2.10`, quelle est l'**adresse MAC de destination** du premier paquet ? Est-ce l'adresse MAC du poste `2.10` ou celle d'un autre équipement ? Lequel et pourquoi ?
+
+    7. 📌 **Test avancé** : installer un **client générique** sur `2.10` et envoyer `"Bonjour"` au **serveur `1.12`**. Observer les données échangées.Combien de **routeurs** le message a-t-il traversé ? 
 
 ???+ question "Activité n°8 — Simulation du web avec adresse IP"
 
@@ -774,6 +802,16 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
 
     📌 **Observations possibles :** le CSS peut ne pas fonctionner, et l'encodage UTF-8 peut être incorrect — c'est une limitation connue du serveur web de Filius.
 
+    6. Dans le tableau des données échangées du poste `2.10`, quel **protocole de la couche application** est utilisé pour récupérer la page web ? Sur quel **port** le serveur web écoute-t-il ?
+
+    7. Combien de **requêtes HTTP** le navigateur a-t-il envoyées pour afficher votre page ? (Comptez dans les données échangées.) Si votre page contient des images ou un fichier CSS, y a-t-il des requêtes supplémentaires ?
+    
+    8. Avez-vous rencontré un problème d'**encodage des caractères** (accents, caractères spéciaux) ? Si oui, décrivez ce que vous observez. Si non, quel encodage avez-vous spécifié dans votre HTML ?
+    
+
+    
+
+
 ???+ question "Activité n°9 — Simulation du web avec serveur DNS"
 
     ![](Image4.png)
@@ -784,7 +822,7 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
 
     2. Connecter le serveur DNS au routeur (`192.168.3.1`).
 
-    3. Ajouter l'IP du serveur DNS dans la configuration réseau de **tous les postes**.
+    3. Ajouter l'IP du serveur DNS dans la configuration réseau de **tous les postes**. Quelle **adresse IP de serveur DNS** avez-vous renseignée dans la configuration réseau du poste `2.10` ? 
 
     4. Installer et paramétrer l'application **serveur DNS** sur `192.168.3.10` :
 
@@ -794,7 +832,13 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
 
     5. Sur `2.10`, tester dans un navigateur : `http://www.serverwebdensi.fr`
 
-    6. Sur `1.10`, ouvrir un terminal et exécuter : `host www.serverwebdensi.fr`
+    6. Sur `1.10`, ouvrir un terminal et exécuter : `host www.serverwebdensi.fr` Quelle adresse IP est renvoyée ?
+
+    7. Dans le tableau des données échangées du poste `2.10` (après avoir accédé à `http://www.serverwebdensi.fr`), repérez la **requête DNS**. Quel **protocole de transport** est utilisé pour la résolution DNS : TCP ou UDP ? Sur quel **port** ?
+
+
+    8. **Question de réflexion** : que se passe-t-il si vous essayez d'accéder à `http://www.serverwebdensi.fr` depuis le poste `2.10` **sans avoir configuré** l'adresse du serveur DNS sur ce poste ? Testez (en retirant temporairement l'IP DNS de la config de `2.10`) et décrivez le résultat.
+
 
 ???+ question "Activité n°10 — Chemin d'un client à un serveur"
 
@@ -806,11 +850,19 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
 
         - Linux/macOS : `traceroute [IP de M9]`
 
-    3. Supprimer le câble **routeur F → routeur E** (simulation de panne).
+    
+    3. Quelle est l'**adresse IP** de la machine M9 dans ce réseau ? Et celle de M14 ?
 
-    4. Refaire un **traceroute** entre M14 et M9.
+    4. Listez dans l'ordre les **adresses IP des routeurs** traversés entre M14 et M9. Combien de **sauts** (hops) sont nécessaires ?
+
+    5. Supprimer le câble **routeur F → routeur E** (simulation de panne). Le chemin a-t-il changé ? Listez les nouvelles adresses IP des routeurs traversés.
+
+    6. Refaire un **traceroute** entre M14 et M9. Combien de **sauts supplémentaires** le second traceroute nécessite-t-il par rapport au premier ? Expliquez pourquoi le chemin est plus long.
 
     📌 La mise à jour des tables de routage peut prendre quelques secondes.
+
+    7. Quels **routeurs** sont présents sur le nouveau chemin mais absents de l'ancien ? Nommez-les.
+
 
 ???+ question "Activité n°11 — Traceroute graphique en ligne"
 
@@ -825,6 +877,20 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
     - `www.intechinfo.fr`
     
     - `malekal.com`
+
+    1. Pour chacune des 4 URLs, indiquez le **nombre de sauts** (hops) et le **temps total** du traceroute. Présentez vos résultats dans un tableau :
+
+        | URL | Nombre de sauts | Temps du dernier saut (ms) |
+        |-----|----------------|---------------------------|
+        | `gs-cassaigne.fr` | ... | ... |
+        | `aliexpress.com` | ... | ... |
+        | `www.intechinfo.fr` | ... | ... |
+        | `malekal.com` | ... | ... |
+
+    2. sur le traceroute vers `aliexpress.com`, dans quel **pays** se situe le serveur final ?
+
+
+    3. Parmi les 4 URLs, laquelle a le **plus grand nombre de sauts** ? Proposez une explication.
 
 ---
 

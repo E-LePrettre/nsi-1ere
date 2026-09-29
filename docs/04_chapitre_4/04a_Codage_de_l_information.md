@@ -1,6 +1,6 @@
-﻿---
-author: ELP
-title: 04 Codage de l'information
+---
+author: Elisabeth Le Prettre (LePrettre)
+title: 04a Codage de l'information
 ---
 
 

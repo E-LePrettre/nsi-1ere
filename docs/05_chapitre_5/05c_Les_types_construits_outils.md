@@ -1,6 +1,6 @@
 ---
-author: ELP
-title: 05c Fiche méthode Types construits
+author: Elisabeth Le Prettre (LePrettre)
+title: 05c 🎒Trousse à outils - Types construits
 ---
 
 

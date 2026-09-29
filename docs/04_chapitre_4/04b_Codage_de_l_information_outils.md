@@ -1,6 +1,6 @@
-﻿---
-author: ELP
-title: 04 Fiche Méthode Conversion entre les bases
+---
+author: Elisabeth Le Prettre (LePrettre)
+title: 04b 🎒Trousse à outils - Conversion entre les bases
 ---
 
 

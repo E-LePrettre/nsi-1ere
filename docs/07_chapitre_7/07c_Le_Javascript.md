@@ -1,5 +1,5 @@
 ---
-author: ELP
+author: Elisabeth Le Prettre (LePrettre)
 title: 07c Le Javascript
 ---
 
@@ -18,6 +18,8 @@ title: 07c Le Javascript
 11. [Exercices](#exercices)
 
 ---
+
+!!! info "🧠 Capytale : Utiliser le code du chapitre 07a"
 
 ## 1. Qu'est-ce que JavaScript et à quoi sert-il ? { #intro }
 
@@ -90,9 +92,9 @@ document.getElementById("monBouton").addEventListener("click", function() {
 
 ???+ question "Activité n°1."
 
-    1. Dans `index.html`, ajouter juste avant `</body>` :
+    1. Dans `index.html`, ajouter un bouton dans le `<body>` :
     ```html
-    <script src="script.js"></script>
+    <button id="monBouton">Cliquez-moi</button>
     ```
     2. Créer un fichier `script.js`.
     3. Ajouter ce code dans `script.js` :
@@ -101,9 +103,9 @@ document.getElementById("monBouton").addEventListener("click", function() {
         alert("Vous avez cliqué !");
     });
     ```
-    4. Dans `index.html`, ajouter un bouton dans le `<body>` :
+    4. Dans `index.html`, ajouter **juste avant** `</body>` (après le bouton) :
     ```html
-    <button id="monBouton">Cliquez-moi</button>
+    <script src="script.js"></script>
     ```
     5. Enregistrer et tester dans un navigateur.
 
@@ -489,7 +491,7 @@ Le **Document Object Model (DOM)** est une interface qui permet à JavaScript d'
 
 ### 9.1. Sélectionner un élément par son ID
 
-??+ question "Activité n°20 :" 
+???+ question "Activité n°20 :" 
 
     📌 **Sélection d'un élément par son ID**
 

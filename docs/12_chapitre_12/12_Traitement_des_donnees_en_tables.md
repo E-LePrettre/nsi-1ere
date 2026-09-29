@@ -1,5 +1,5 @@
 ﻿---
-author: ELP
+author: Elisabeth Le Prettre (LePrettre)
 title: 12 Traitement des données en tables
 ---
 
@@ -7,9 +7,10 @@ title: 12 Traitement des données en tables
 
 1. [**LES FICHIERS CSV ET LES FICHIERS JSON**](#_page0_x40.00_y360.92)
 2. [**IMPORTATION D’UN FICHIER CSV**](#_page7_x40.00_y36.92)
-3. [**TRI**](#_page7)
-4. [**FUSION DE TABLES**](#_page12)
-5. [**PROJET (DEMARCHE D’INVESTIGATION)**](#_page13_x40.00_y36.92)
+3. [**Analyse et Visualisation**](#_page5)
+4. [**TRI**](#_page7)
+5. [**FUSION DE TABLES**](#_page12)
+6. [**PROJET (DEMARCHE D’INVESTIGATION)**](#_page13_x40.00_y36.92)
 
 ## <H2 STYLE="COLOR:BLUE;">**1. Les fichiers CSV et les fichiers JSON<a name="_page0_x40.00_y360.92"></a></h2>**
 
@@ -54,20 +55,7 @@ L'équivalent en JSON du fichier précédent :
 
 - Il permet d’imbriquer des objets et de gérer des types variés (**nombres, chaînes de caractères, booléens, listes…**).  
 
-### <H3 STYLE="COLOR:GREEN;">**1.3. Exemple de format XML</h3>** 
 
-Un autre format structuré est le **XML (Extensible Markup Language)** :
-```xml
-<albums>
-    <album>
-        <titre>Master of Puppets</titre>
-        <groupe>Metallica</groupe>
-        <annee>1986</annee>
-        <classement>1</classement>
-    </album>
-</albums>
-```
-📌 **Remarque :** XML est utilisé dans certaines bases de données et échanges de données.
 
 
 ## <H2 STYLE="COLOR:BLUE;">**2. Importation d’un fichier CSV<a name="_page7_x40.00_y36.92"></a></h2>**
@@ -166,7 +154,7 @@ Un autre format structuré est le **XML (Extensible Markup Language)** :
 ❌ **Inconvénient** : Utilisation légèrement plus gourmande en mémoire.
 
 
-## <H2 STYLE="COLOR:BLUE;">**3. Application : Analyse et Visualisation de données CSV<a name="_page7_x40.00_y36.92"></a></h2>**
+## <H2 STYLE="COLOR:BLUE;">**3. Application : Analyse et Visualisation de données CSV<a name="_page5"></a></h2>**
 
 ### <H3 STYLE="COLOR:GREEN;">**3.1. Tracer un graphique avec `matplotlib`</h3>** 
 
@@ -192,6 +180,14 @@ plt.show()
 
 ### <H3 STYLE="COLOR:GREEN;">**3.2. Analyse du fichier `MetalBands.csv`</h3>** 
 
+Le nouveau fichier contient les descripteurs suivants :
+
+- band_name, 
+- fans, 
+- formed, 
+- origin, 
+- style 
+
 ???+ question "**Activité n°4 : Analyse de données CSV**"
 
 
@@ -203,47 +199,42 @@ plt.show()
         donnees = csv.DictReader(f, delimiter=',')  
         for row in donnees:
             dico.append(row)
-
-    print(len(dico))  # 1. Nombre de groupes
-    print(dico[811])  # 2. Nom du groupe en 812
+    print(dico)
+    f.close()
     ```
-    📌 **Explications** :
+    1. Combien de groupes sont présents dans ce fichier ?
 
-    1️⃣ `len(dico)` : Affiche le nombre de groupes présents.  
+    2. Quel est le nom du groupe en 812
 
-    2️⃣ `dico[811]` : Affiche le groupe en **812e position** (indexation commence à 0).  
+    
+
+
+!!! tip "encodage"
+    Ici on utilise encoding='ISO-8859-1' car l'encoding est différent car les données sont anglo-saxonnes donc la virgule correspond à la convention internationale.
 
 ### <H3 STYLE="COLOR:GREEN;">**3.3. Recherche de groupes par année</h3>** 
 
 ???+ question "**Activité n°5**" 
 
     📌 **Compter les groupes formés en 1981**
-    ```python
-    groupes_1981 = [band for band in dico if band['formed'] == '1981']
-    print(f"Nombre de groupes formés en 1981 : {len(groupes_1981)}")
-    ```
+
+    
     📌 **Explication** :
 
     - On **filtre** les groupes avec `formed == '1981'`.
 
     - On affiche la **taille** de la liste filtrée.
 
-### <H3 STYLE="COLOR:GREEN;">**3.4. Liste des groupes de "Melodic Death</h3>** 
+### <H3 STYLE="COLOR:GREEN;">**3.4. Liste des groupes de "Melodic Death"</h3>** 
 
 ???+ question "**Activité n°6 :**" 
 
-    📌 **Lister les groupes en supprimant les doublons**
-    ```python
-    genres = set()  # Utilisation d'un ensemble pour éviter les doublons
-    for band in dico:
-        if "melodic death" in band['genre'].lower():
-            genres.add(band['band_name'])  
+    📌 **Donner la liste des groupes dont le genre est du ‘Melodic death’**. 
+    **Aide** : il y a 275 groupe
 
-    print(genres)
-    ```
-    📌 **Explication** :
+    📌 **Attention** :
 
-    - `band['genre'].lower()` convertit en **minuscule** pour éviter les erreurs de casse.
+    - il faut convertit en **minuscule** pour éviter les erreurs de casse.
 
     - `set()` supprime automatiquement les doublons.
 
@@ -251,28 +242,18 @@ plt.show()
 
 ???+ question "**Activité n°7 :**"
 
-    📌 **Tracer le nombre de fans en fonction de l'année de formation**
-    ```python
-    import matplotlib.pyplot as plt
+    📌 **Afficher sur un graphique tous les groupes de métal, en mettant l’année de formation en abscisse et le nombre de fans en ordonnée.**
 
-    X = []  # Années
-    Y = []  # Nombre de fans
+    Attention à convertir les nombres en entier.
+    Cela peut prendre un peu de temps
 
-    for band in dico:
-        if band['formed'].isdigit() and band['fans'].isdigit():
-            X.append(int(band['formed']))  
-            Y.append(int(band['fans']))  
+    📌 Faire apparaitre ensuite (par-dessus) les groupes de ‘Melodic death’ en bleu (‘bo’) et les groupes de Heavy en vert (‘go’). 
 
-    plt.plot(X, Y, 'ro', label="Tous les groupes")  # Points rouges
-    plt.xlabel("Année de formation")
-    plt.ylabel("Nombre de fans")
-    plt.title("Évolution du nombre de fans des groupes de métal")
-    plt.legend()
-    plt.show()
-    ```
+    **Attention** aux majuscules, minuscules => pensez à tout mettre en minuscule
+    
 
 
-## <H2 STYLE="COLOR:BLUE;">**4.Tri des données<a name="_page7"></a></h2>**
+## <H2 STYLE="COLOR:BLUE;">**4.Filtre et Tri des données<a name="_page7"></a></h2>**
 
 L’exploitation des données passe souvent par un **tri** afin de faciliter la recherche et l’analyse des informations.
 
@@ -286,7 +267,9 @@ L’exploitation des données passe souvent par un **tri** afin de faciliter la 
 
 ### <H3 STYLE="COLOR:GREEN;">**4.1. Fonction filtre : rechercher un groupe selon son genre<a name="_page7_x"></a></h3>** 
 
-???+ question "**Activité n°8 : Développer une fonction `groupeGenre()` qui filtre les groupes par genre musical.**:" 
+???+ question "**Activité n°8 : fonction filtre**"
+    on travaillera avec le fichier metalbands.csv. 
+    Créer une fonction `groupeGenre()` qui renvoie une liste contenant les fiches de tous les groupes de métal d’un genre passée en paramètre. 
 
     **Exemple d'utilisation :**
     ```python
@@ -297,21 +280,14 @@ L’exploitation des données passe souvent par un **tri** afin de faciliter la 
     ```
     📌 **Attention** : Vérifier les majuscules/minuscules pour éviter les erreurs.
 
-    🔹 **Implémentation de la fonction `groupeGenre()`**
-    ```python
-    def groupeGenre(genre_recherche):
-        """Retourne la liste des groupes appartenant au genre donné."""
-        genre_recherche = genre_recherche.lower()  # Normalisation en minuscules
-        groupes = [band for band in dico if band['style'].lower() == genre_recherche]
-        return groupes
-
-    # Exemple d'utilisation
-    print(groupeGenre('Extreme folk'))
-    ```
+    
 
 
 
 ### <H3 STYLE="COLOR:GREEN;">**4.2. Fonction de tri<a name="_page7_x40.00_y"></a></h3>** 
+
+On ne peut pas directement trier le tableau précédent… car cela ne veut rien dire. Il faut indiquer selon quels critères on veut effectuer ce tri.
+Pour cela, on appelle la fonction **sorted()**  ou la méthode **.sort()** , avec l’argument supplémentaire **key** qui est une fonction renvoyant la valeur utilisée pour le tri.
 
 Le tri permet d'ordonner les données selon un critère donné.  
 
@@ -321,19 +297,9 @@ Le tri permet d'ordonner les données selon un critère donné.
 
 
 
-La méthode **.sort()**  trie la liste en place, alors que la fonction **sorted()** renvoie une **nouvelle liste** correspondant la liste triée, la liste initiale étant laissée intacte.
 
-Un exemple de tri de dictionnaire
-```python
-Simpsons = [{"Prenom" : "Bart", "age estimé": "10"},
-           {"Prenom" : "Lisa", "age estimé": "8"},
-           {"Prenom" : "Maggie", "age estimé": "1"},
-           {"Prenom" : "Homer", "age estimé": "38"},
-           {"Prenom" : "Marge", "age estimé": "37"}]
 
-def age(personnage):
-    return int(personnage["age estimé"])
-```
+
 
 🔹 **Exemple de tri d'un dictionnaire**  
 ```python
@@ -356,57 +322,81 @@ triSimpsonsDesc = sorted(Simpsons, key=age, reverse=True)
 
 ???+ question "**Activité n°9 : Trier les groupes par nombre de fans (ordre décroissant)**"
 
-    🎯 **Objectif** : Afficher les groupes ayant **plus de 2000 fans**, sans doublon.
+    🎯 Trier les noms des groupes par nombre de fans decroissants et afficher les groupes qui ont plus de 2000 fans. 
 
-    ```python
-    def tri_par_fans(dico):
-        """Trie les groupes par nombre de fans en ordre décroissant et affiche ceux avec +2000 fans."""
-        fans_sorted = sorted(dico, key=lambda x: int(x['fans']), reverse=True)  # Tri décroissant
-        groupes_uniques = set()  # Pour éviter les doublons
-
-        for band in fans_sorted:
-            if int(band['fans']) > 2000 and band['band_name'] not in groupes_uniques:
-                print(f"{band['band_name']} - {band['fans']} fans")
-                groupes_uniques.add(band['band_name'])  # Ajout dans l'ensemble
-
-    # Exécution
-    tri_par_fans(dico)
-    ```
     📌 **Aide** : Il y a **13 groupes** ayant plus de 2000 fans.
 
 
 
 ???+ question "**Activité n°10 : Trier les groupes par année de formation (1980-1985)**"
 
-    🎯 **Objectif** : Afficher les groupes créés entre **1980 et 1985**, sans doublon.
+    🎯 Trier les noms des groupes par année de formation et afficher les groupes qui se sont formés entre 1980 compris et 1985 compris.
 
-    ```python
-    def groupes_1980_1985(dico):
-        """Retourne la liste des groupes formés entre 1980 et 1985."""
-        groupes_sorted = sorted(dico, key=lambda x: int(x['formed']))  # Tri par année croissante
-        groupes_uniques = set()
-
-        for band in groupes_sorted:
-            if 1980 <= int(band['formed']) <= 1985 and band['band_name'] not in groupes_uniques:
-                print(f"{band['band_name']} - {band['formed']}")
-                groupes_uniques.add(band['band_name'])  # Évite les doublons
-
-    # Exécution
-    groupes_1980_1985(dico)
-    ```
+    
     📌 **Aide** : Il y a **240 groupes** correspondant à ces critères.
 
 
 
 ## <H2 STYLE="COLOR:BLUE;">**5.Fusion de tables : Croisement des données CSV<a name="_page12"></a></h2>**
 
-Nous disposons de **trois fichiers CSV** contenant des informations sur les pays, langues et villes :
+On considère dans ce sujet les trois fichiers csv décrits ci-dessous :
+countries.csv contient des informations décrivant les pays :
 
-1. **countries.csv** (pays) 
+-   CountryCode : le code du pays (texte, clé primaire)
 
-2. **languages.csv** (langues parlées)  
+-	Name : le nom du pays (texte)
 
-3. **cities.csv** (villes)  
+-	Continent : le continent du pays (texte)
+
+-	SurfaceArea : la surface du pays (nombre décimal)
+
+-	Population : la population du pays (entier)
+
+-	Capital : la capitale du pays (nombre entier correspondant à un ID dans le fichier cities.csv)
+
+-	d'autres descripteurs qui ne nous intéressent pas ici...
+
+languages.csv contient les informations sur les langues parlées dans chaque pays :
+
+-	CountryCode : le code du pays (texte)
+
+-	Language : la langue concernée par cette entrée (texte)
+
+-	IsOfficial : cette langue est-elle officielle dans ce pays ? (texte, T pour True, F pour False)
+
+-	Percentage : le pourcentage de locuteurs dans le pays (nombre décimal)
+
+cities.csv contient des informations décrivant des villes :
+
+-	ID : l'identifiant de la ville (entier)
+
+-	Name : le nom de la ville (texte)
+
+-	code : le code du pays dans lequel est situé la ville (texte)
+
+-	District : la région d'appartenance de la ville (texte)
+
+-	Population : la population de la ville (entier)
+
+```python
+pays = [
+    {"CountryCode": "ABW", "Name": "Aruba", "Continent": "North America", ...},
+    {"CountryCode": "AFG", "Name": "Afghanistan", "Continent": "Asia", ...},
+    ...
+]
+
+langues = [
+    {"CountryCode" : "ABW", "Language": "Dutch", "IsOfficial": True, "Percentage": 5.3},
+    {"CountryCode" : "ABW", "Language": "English", "IsOfficial": False, "Percentage": 9.5},
+    ...
+]
+
+villes = [
+    {"ID": 1, "Name": "Kabul", "code": "AFG",, "District": "Kabol", "Population": 1780000},
+    {"ID": 2, "Name": "Qandahar", "code": "AFG",, "District": "Qandahar", "Population": 237500},
+    ...
+]
+```
 
 
 
@@ -421,6 +411,7 @@ Nous disposons de **trois fichiers CSV** contenant des informations sur les pays
         donnees = csv.DictReader(f, delimiter=',')
         for row in donnees:
             pays.append(row)
+    print(pays)
 
     # Chargement du fichier languages.csv
     langues = []
@@ -428,6 +419,7 @@ Nous disposons de **trois fichiers CSV** contenant des informations sur les pays
         donnees = csv.DictReader(f, delimiter=',')
         for row in donnees:
             langues.append(row)
+    print(langues)
 
     # Chargement du fichier cities.csv
     villes = []
@@ -435,55 +427,102 @@ Nous disposons de **trois fichiers CSV** contenant des informations sur les pays
         donnees = csv.DictReader(f, delimiter=',')
         for row in donnees:
             villes.append(row)
+    print(villes)
     ```
 
 
 ???+ question "**Activité n°12 : Rechercher les langues parlées en Haïti**"  
 
-    🎯 **Objectif** : Trouver les langues parlées en Haïti à partir du code pays.
+    🎯 Quelles sont les langues parlées en Haïti ? Pour le savoir il faut :
+
+    - parcourir la liste pays jusqu'à trouver le code de Haïti (orthographié Haiti dans la liste pays),
+
+    - parcourir la liste langues et en extraire les valeurs correspondant à ce code.
+
+    **Langues parlées en Haïti**
+
+    Compléter le code ci-dessous permettant de déterminer les langues parlées en Haïti.
 
     ```python
-    # Trouver le code de Haïti
+    i_haiti = 0
+    while pays[i_haiti]["Name"]... "Haiti":
+        i_haiti = ...
+
+    code = pays[i_haiti][...]
+
+    langues_haiti = []
+    for entree in langues:
+        if entree[...] == code:
+            langues_haiti.append(entree)
+
+    for langue in langues_haiti:
+        print(langue)
+    ```
+    
+???+ question "**Activité n°13 : Trouver la langue parlée d’un pays**" 
+
+    Le descripteur CountryCode permet donc de faire le lien entre les deux listes pays et langues.
+    Utilisons cette relation afin de déterminer les langues parlées dans un pays quelconque.
+
+    **Langues parlées dans un pays**
+
+    On demande d'écrire deux fonctions :
+
+    - code_pays prend en argument la liste des pays ainsi que le nom d'un pays et renvoie son code ;
+
+    - langues_parlees prend en argument les listes des données des pays et celle des langues (arguments pays et langues) ainsi que le nom d'un pays (nom) et renvoie la liste des noms des langues parlées dans ce pays.
+
+    Exemples :
+    ```
+    >>> code_pays(pays, "Haiti")
+    "HTI"
+    >>> langues_parlees(pays, langues, "Haiti")
+    ['French', 'Haiti Creole']
+    ```
+
+    ```python
     def code_pays(pays, nom):
-        """Renvoie le code du pays donné."""
-        for country in pays:
-            if country["Name"] == nom:
-                return country["CountryCode"]
-        return None  # Si le pays n'est pas trouvé
+        """Renvoie le code d'un pays"""
+        ...
 
-    # Trouver les langues parlées
+
     def langues_parlees(pays, langues, nom):
-        """Renvoie la liste des langues parlées dans un pays donné."""
-        code = code_pays(pays, nom)
-        return [langue["Language"] for langue in langues if langue["CountryCode"] == code]
+        """Renvoie la liste des noms des langues parlées dans le pays indiqué par son nom"""
+        ...
 
-    # Exécution
-    print(langues_parlees(pays, langues, "Haiti"))
+    assert sorted(langues_parlees(pays, langues, "Haiti")) == ['French', 'Haiti Creole']
     ```
-    📌 **Exemple de sortie** : `['French', 'Haiti Creole']`
 
+???+ question "**Activité n°14 : Trouver la capitale d’un pays**"
 
-???+ question "**Activité n°13 : Trouver la capitale d’un pays**"
+    🎯 Quelle est la capitale d'Haïti ? Là encore, il faut :
 
-    🎯 **Objectif** : Associer chaque pays à sa capitale.  
+    - parcourir la liste des pays jusqu'à trouver l'entrée correspondant à Haïti,
+
+    - repérer le code de la capitale correspondante,
+
+    - parcourir la liste des villes jusqu'à trouver le code cherché.
+
+    Nous allons effectuer ces actions pour chacun des pays présents dans la liste. La capitale étant trouvée, nous ajouterons une nouvelle clé CapitalName au dictionnaire du pays. La valeur associée sera le nom de la capitale obtenu.
+
+    Certains des « pays » listés n'en sont pas vraiment et n'ont donc pas de capitale. C'est par exemple le cas de l'Antarctique.
+    Lors de l'import des données, on leur a associé la valeur -1 à la clé Capital.
+
+    Associer les capitales aux pays
+    Compléter le code ci-dessous afin d'ajouter à chaque dictionnaire correspondant à un pays une nouvelle entrée CapitalName contenant le nom de sa capitale.
+    On utilisera la chaîne vide "" comme valeur pour les « pays » sans capitale.
+
+    Ainsi :
+
+    - le dictionnaire correspondant à la France contiendra un nouveau couple "CapitalName": "Paris",
+
+    - celui de l'Antarctique "CapitalName": "".
 
     ```python
-    # Associer les capitales aux pays
-    for country in pays:
-        capital_id = country["Capital"]
-        capital_name = ""
-
-        for city in villes:
-            if city["ID"] == capital_id:
-                capital_name = city["Name"]
-                break  # Dès qu'on trouve la capitale, on arrête
-
-        country["CapitalName"] = capital_name  # Ajout au dictionnaire
-
-    # Exécution pour Haïti
-    print(f"La capitale de {pays[72]['Name']} est {pays[72]['CapitalName']}.")
+    # a compléter
+    print(f"La capitale de la {pays[72]['Name']} est {pays[72]['CapitalName']}.")
     ```
-    📌 **Cas particulier** : Certains pays comme l'**Antarctique** n'ont pas de capitale.
+    
 
 
 
@@ -524,7 +563,7 @@ Merci à Nicolas Revéret
 
 
 
-    5 on va travailler avec ville_virgule.csv (pour Thonny : du dossier Ressources) 
+    5 on va travailler avec villes_virgule.csv (pour Thonny : du dossier Ressources) 
 
     On obtient 12 colonnes (et 36700 lignes si on ne compte pas l'entête !), voici la signification de ces colonnes : 
 
@@ -828,11 +867,11 @@ Merci à Nicolas Revéret
 
     3 Le tableau précédent ne contient pas de ligne d’entêtes. On va donc la rajouter  L’idée est de mettre une condition qui ne fonctionne qu’une seule fois pour la première ligne que l’on ajoutera à la liste puis la condition n’étant plus respectée on ajoute les autres lignes à la liste. 
 
-    7 Documenter la fonction 
+    4 Documenter la fonction 
 
     **Création d’une liste de valeurs classées par heures, sur une journée** 
 
-    8 ★** ★** ★**  On veut écrire une fonction qui renvoie une liste de mesures pour chaque heure. Chaque liste contient les valeurs mesurées correspondant à une colonne (un type de mesure) pour l’heure concernée. Le prototype de la fonction est le suivant : 
+    5 ★** ★** ★**  On veut écrire une fonction qui renvoie une liste de mesures pour chaque heure. Chaque liste contient les valeurs mesurées correspondant à une colonne (un type de mesure) pour l’heure concernée. Le prototype de la fonction est le suivant : 
 
     ```create_hourly_values_list(output_file : str, colunm : str) -> list```
     - ```output_file``` -- fichier en sortie (fonction précédente fichier CSV déjà sélectionné par jour) 
@@ -860,7 +899,7 @@ Merci à Nicolas Revéret
 
     On souhaite obtenir la valeurs moyenne des mesures heure par heure. Pour cela, on va écrire une fonction qui prend en paramètre la liste retournée par la fonction create_hourly_values_list. Pour rappel, cette liste contient 24 listes, chacune des listes contient les valeurs de mesures pour une heure donnée. 
 
-    9 ★** ★** Écrire la fonction dont on donne le prototype : 
+    6 ★** ★** Écrire la fonction dont on donne le prototype : 
 
     ```create_hourly_averages_list(hourly_values_list : list) -> list```
 
@@ -873,15 +912,15 @@ Merci à Nicolas Revéret
     - Pour limiter l’impact des erreurs de mesures, on souhaite supprimer au préalable la valeur min et la valeur max de la liste des mesures effectuées chaque heure. 
     - on pourra appeler une fonction interne qui effectue ce calcul avec les fonctions built_in de Python (sum, max et min). 
 
-    10 Documenter la fonction 
+    7 Documenter la fonction 
 
     **Affichage des données** 
 
-    11 Ecrire un script qui permet de demander à l’utilisateur une date et qui retourne la moyenne par heure de cette date de « TEMPERATURE » en combinant les fonctions précédentes 
+    8 Ecrire un script qui permet de demander à l’utilisateur une date et qui retourne la moyenne par heure de cette date de « TEMPERATURE » en combinant les fonctions précédentes 
 
     On  veut  afficher  l’évolution  des  valeurs  journalières  sous  forme  de  graphe  avec  matlibplot. [https://matplotlib.org/3.1.0/tutorials/index.html ](https://matplotlib.org/3.1.0/tutorials/index.html)
 
-    12 Appeler la fonction ```show_plot()``` pour afficher les valeurs moyennes des températures sur 24 h.  
+    9 Appeler la fonction ```show_plot()``` pour afficher les valeurs moyennes des températures sur 24 h.  
 
 
 

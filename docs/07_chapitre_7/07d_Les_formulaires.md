@@ -1,5 +1,5 @@
 ---
-author: ELP
+author: Elisabeth Le Prettre (LePrettre)
 title: 07d Les formulaires et le protocole HTTP
 ---
 
@@ -11,6 +11,7 @@ title: 07d Les formulaires et le protocole HTTP
 4. [Exercices](#exercices)
 
 ---
+
 
 Dans les chapitres précédents, nous avons appris à créer des pages web avec HTML, CSS et JavaScript. Mais comment une page web **envoie-t-elle des données** à un serveur ? C'est le rôle des **formulaires HTML**, qui s'appuient sur le **protocole HTTP** pour transmettre les informations saisies par l'utilisateur.
 
@@ -182,6 +183,9 @@ user=dupont&password=azerty
 💡 **Bonne pratique** : toujours utiliser **`POST`** pour transmettre des mots de passe ou des données personnelles.
 
 ---
+
+!!! info "🧠 Capytale : Utiliser le code du chapitre 07a"
+
 
 ## 2. Les éléments d'un formulaire HTML { #elements }
 

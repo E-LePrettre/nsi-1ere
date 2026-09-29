@@ -1,6 +1,6 @@
 ﻿---
-author: ELP
-title: 02b Fiche Méthode Les bases
+author: Elisabeth Le Prettre (LePrettre)
+title: 02b 🎒Trousse à outils - Les bases
 ---
 
 
