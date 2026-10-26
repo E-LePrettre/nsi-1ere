@@ -1,4 +1,8 @@
-# 04a Codage de l'information
+---
+author: Elisabeth Le Prettre (LePrettre)
+title: 04 Codage de l'information
+---
+
 
 !!! abstract "Dans ce chapitre, tu vas apprendre à…"
     - passer d'une base à l'autre : **décimal ↔ binaire ↔ hexadécimal** ;
@@ -281,7 +285,7 @@ retenues   1 1 1 1
 !!! success "🎞️ Revoir en vidéo"
     [Complément à 2](04g_complement_video.md) · [Addition en complément à 2](04h_addittion_video.md)
 
-!!! example "🧠 Exercices dans Capytale => 2d68-3798299"
+!!! example "🧠 Exercices dans Capytale => cf votre professeur"
 
 ---
 

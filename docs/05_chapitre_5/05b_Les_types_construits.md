@@ -63,7 +63,7 @@ Python permet de **convertir une liste** en tuple grâce à la fonction `tuple()
     print(a)  
     ```
 
-    ❗ **Attention** : La fonction `tuple()` peut ne pas fonctionner sur certaines versions de Python sur Basthon.
+    💡 Inversement, `list(t)` transforme un tuple `t` en liste.
 
     ??? success "Python"
         {{ IDE() }}
@@ -277,7 +277,7 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
 
 !!! abstract "Exercice 7 : Test d’appartenance :"
 
-    En utilisant un parcours de tuple avec la présence d'un indice, écrire une fonction `est_dans(element,tple)` qui en argument reçoit un entiers ( élément) et un tuple d'entier ( tple) qui renvoie un booleen indiquant la présence de élément dans tuple. On testera la fonction sur les scripts suivants : 
+    Écrire une fonction `est_dans(element, tple)` qui reçoit en argument un entier `element` et un tuple d'entiers `tple`, et qui renvoie un booléen indiquant si `element` est présent dans `tple`. On testera la fonction sur les scripts suivants :
 
     Par exemple:
     ```python
@@ -286,14 +286,11 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
     assert est_dans(9,(1,2,3,4,5,6)) == False
     ```
 
-    En Python, une fonction qui renvoie plusieurs éléments ( ex : return a,b,c ) renvoie un tuple.
-    
+    **Remarque** : on codera la fonction `est_dans(element, tple)` de 2 manières :
 
-    **Remarque** : on codera la fonction `est_dans(element,tple)` de 2 manières
+    - avec un parcours du tuple par les indices (`for i in range(len(tple))`) ;
 
-    - classiquement
-
-    - à l'aide du fonction lambda 
+    - avec l'opérateur `in`.
 
 
 
@@ -325,7 +322,7 @@ Une liste est une **collection d’éléments** séparés par des virgules et en
     ```python
     liste_vide = []  # Une liste vide
     liste1 = 10 * [0]  # Liste contenant dix zéros
-    liste2 = list(range(2, 10, 3))  # Liste contenant les nombres de 2 à 10 avec un pas de 3
+    liste2 = list(range(2, 10, 3))  # Nombres de 2 à 10 (exclu) avec un pas de 3 : [2, 5, 8]
 
     print(liste_vide)
     print(liste1)
@@ -359,16 +356,14 @@ Python permet de créer des listes de manière **optimisée et élégante** grâ
 
 📌 **Pourquoi utiliser cette méthode ?** 
 
-✅ Plus **rapide** et **plus lisible** qu'une boucle classique.  
+✅ Plus **courte** et souvent **plus lisible** qu'une boucle classique.  
 
-✅ Évite d’utiliser `.append()` pour ajouter des éléments.  
-
-❌ **Ne pas faire** :
+✅ Elle produit exactement la même liste que la boucle avec `.append()` ci-dessous : les deux écritures sont correctes et il faut savoir lire les deux.  
 
 ```python
 carres = []
 for i in range(11):
-    carres.append(i * i)  # Ajout manuel (moins optimal)
+    carres.append(i * i)  # Même résultat, écrit avec une boucle
 ```
 
 #### **<H4 STYLE="COLOR:MAGENTA;">1.3.3. Exemples avancés de compréhension de liste</h4>**
@@ -430,6 +425,17 @@ En Python, copier une liste **correctement** est important pour éviter les erre
 📌 **ATTENTION ⚠️** :  
 
 Si on fait `liste6 = liste5`, on ne crée **pas une nouvelle liste**, mais un **lien** entre `liste6` et `liste5`. Toute modification sur l’une **affectera l’autre** !  
+
+```python
+a = [1, 2, 3]
+b = a          # b désigne la MÊME liste que a
+b[0] = 99
+print(a)       # [99, 2, 3] : a a aussi été modifiée !
+
+c = a[:]       # c est une vraie copie
+c[1] = 0
+print(a)       # [99, 2, 3] : a n'a pas changé
+```
 
 #### **<H4 STYLE="COLOR:MAGENTA;">1.3.5. Ajouter et supprimer des éléments d'une liste</h4>**
 
@@ -571,7 +577,7 @@ for x in liste:
 
 ???+ question "Activité n°16 : Fonction qui calcule la somme des éléments"
 
-    Écrire une **fonction** `somme_liste(L)` qui prend une liste en paramètre et affiche la somme de ses éléments **en utilisant un parcours de liste** (donc sans `sum()`).
+    Écrire une **fonction** `somme_liste(L)` qui prend une liste en paramètre et renvoie la somme de ses éléments **en utilisant un parcours de liste** (donc sans `sum()`).
 
     🔹 **Tester :**
 
@@ -582,8 +588,8 @@ for x in liste:
             total += element
         return total
 
-    somme_liste([5, 10, 3])
-    somme_liste([])
+    print(somme_liste([5, 10, 3]))  # 18
+    print(somme_liste([]))          # 0
     ```
 
     ??? success "Python"
@@ -605,8 +611,8 @@ for x in liste:
                 compteur += 1
         return compteur
 
-    nb_occurrences([1, 5, 1, 3, 1, 7], 1)
-    nb_occurrences([10, 20, 30], 5)
+    print(nb_occurrences([1, 5, 1, 3, 1, 7], 1))  # 3
+    print(nb_occurrences([10, 20, 30], 5))        # 0
     ```
 
     ??? success "Python"
@@ -614,7 +620,7 @@ for x in liste:
 
 ???+ question "Activité n°18 : Parcours avec les indices"
 
-    Écrire une fonction affiche_positions(L, val) qui affiche toutes les positions où la valeur val apparaît dans la liste L.
+    Écrire une fonction `affiche_positions(L, val)` qui affiche toutes les positions où la valeur `val` apparaît dans la liste `L`.
 
     🔹 Tester :
     ```python
@@ -623,8 +629,8 @@ for x in liste:
             if L[i] == val:                # Test sur l'élément
                 print(f"Valeur trouvée à l’indice {i}")
 
-    print(affiche_positions([3, 7, 3, 9, 3, 2], 3))
-    print(affiche_positions([10, 20, 30], 5))
+    affiche_positions([3, 7, 3, 9, 3, 2], 3)   # indices 0, 2 et 4
+    affiche_positions([10, 20, 30], 5)         # n'affiche rien
     ```
 
     ??? success "Python"
@@ -665,7 +671,7 @@ for x in liste:
 
 !!! abstract "Exercice 9 : Appartenance :"
 
-    Écrire fonction `dansTab` de paramètres T : un tableau et a : un élèment, qui indique si l’élément donné a appartient à un tableau T ou pas. 
+    Écrire une fonction `dansTab(T, a)` de paramètres `T` (un tableau) et `a` (un élément), qui renvoie `True` si `a` appartient au tableau `T` et `False` sinon.
 
     **Exemple** :
     ```python
@@ -675,28 +681,28 @@ for x in liste:
 
 !!! abstract "Exercice 10 : Liste aléatoire :"
     
-    Ecrire une fonction `list_alea(n)` qui prend en paramètre n et qui renvoie une liste de nombre aléatoire compris entre 0 et 9 de taille n
+    Écrire une fonction `list_alea(n)` qui prend en paramètre `n` et qui renvoie une liste de `n` nombres aléatoires compris entre 0 et 9.
 
     **Exemple** :
     ```python
     print(list_alea(3))
     ```
-    renvoie
+    affiche par exemple (le résultat change à chaque exécution)
     ```
-    [2,4,9]
+    [2, 4, 9]
     ```
 !!! abstract "Exercice 11 : Somme :"
 
     Compléter le code python de la fonction `somme` qui prend en paramètre une liste L de flottants et qui renvoie la somme des éléments de cette liste. 
 
-    **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
+    **Attention** : ne pas utiliser la fonction intégrée (*built-in*) de Python `sum()`.
 
     ```python
-    def somme (L) : 
-    s=0 
-    …………. 
-        ………… 
-    return s
+    def somme(L):
+        s = 0
+        for ...:
+            ...
+        return s
     ```
     **Exemple** :
     ```python
@@ -708,7 +714,7 @@ for x in liste:
 
     En faisant appel à la fonction `somme` précédente, écrire la fonction `moyenne` qui prend en paramètre une liste L et qui renvoie la moyenne m des éléments de cette liste. 
 
-    **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : sum()
+    **Attention** : ne pas utiliser la fonction intégrée (*built-in*) de Python `sum()`.
 
     **Exemple** :
     ```python
@@ -731,7 +737,7 @@ for x in liste:
 
     Écrire une fonction `maximum` qui prend en argument un tableau T d’entiers non vide et renvoie le plus grand élément de ce tableau. 
 
-    **Attention** ne pas utiliser la fonction, sans utiliser la fonction built-in (intégrée) de Python : max()
+    **Attention** : ne pas utiliser la fonction intégrée (*built-in*) de Python `max()`.
 
     **Exemple** :
     ```python
@@ -756,15 +762,19 @@ for x in liste:
 
     **Exemple** :
     ```python
-    assert nbre_de_fois([1,5,9,6],5) == 2
+    assert nbre_de_fois([1,5,9,6],5) == 1
+    assert nbre_de_fois([5,1,5,5],5) == 3
     assert nbre_de_fois([-1,-5,-9,-6,-2], 5) == 0
     ```
 
 !!! abstract "Exercice 17 : Renversement de tableau :"
 
-    Écrire une fonction `renverse(tab)` qui renverse un tableau tab(la première valeur devient la dernière, la deuxième l’avant dernière, etc) **de deux manières différentes**.
+    Écrire une fonction `renverse(tab)` qui renvoie un **nouveau** tableau contenant les éléments de `tab` dans l’ordre inverse (la première valeur devient la dernière, la deuxième l’avant-dernière, etc.), **sans utiliser** `reverse()`, `reversed()` ni `[::-1]`.
 
-    Par exemple, si le tableau est trié en ordre croissant au début de la fonction il doit être trié en ordre décroissant par l’algorithme. 
+    On proposera **deux versions** :
+
+    1. un parcours de `tab` **par indices**, du dernier au premier, en ajoutant chaque élément à la fin du nouveau tableau ;
+    2. un parcours de `tab` **par éléments**, en ajoutant chaque élément **au début** du nouveau tableau.
 
     **Exemple** :
     ```python
@@ -790,14 +800,16 @@ Ce type de structure est appelé une **matrice** et est utilisé dans de nombreu
 
 On appelle **matrice** un **tableau de tableaux**, où chaque tableau **a la même longueur**.  
 
-📌 **Représentation d’une matrice de taille `(n, m)` en mathématiques :**  
+📌 **Représentation d’une matrice en mathématiques** (ici 3 lignes et 3 colonnes) :  
 
 
-$A = \begin{bmatrix}
-a_{1,1} & a_{1,2} & a_{1,3} \\
-a_{2,1} & a_{2,2} & a_{2,3} \\
-a_{3,1} & a_{3,2} & a_{3,3}
-\end{bmatrix}$
+```
+    | a11  a12  a13 |
+A = | a21  a22  a23 |
+    | a31  a32  a33 |
+```
+
+`aij` désigne l’élément situé sur la ligne `i` et la colonne `j` (en mathématiques, on numérote à partir de 1).
 
 
 📌 **Notation en Python :**  
@@ -860,7 +872,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
          [7, 8, 15]]
 
     nb_lignes = len(m)  # Nombre de lignes
-    nb_colonnes = len(m[0])  # Nombre de colonnes (assumant que toutes les lignes ont la même longueur)
+    nb_colonnes = len(m[0])  # Nombre de colonnes (toutes les lignes ont la même longueur)
 
     for i in range(nb_lignes):  # Parcours des lignes
         for j in range(nb_colonnes):  # Parcours des colonnes
@@ -874,7 +886,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 ✅ `len(m)` donne **le nombre de lignes**.  
 
-✅ `len(m[0])` donne **le nombre de colonnes** (assumant une matrice régulière). 
+✅ `len(m[0])` donne **le nombre de colonnes** (toutes les lignes ont la même longueur). 
 
 ✅ La **double boucle** parcourt chaque élément **ligne par ligne** et **colonne par colonne**.  
 
@@ -899,7 +911,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
         [5, 6, 8], 
         [2, 1, 3], 
         [7, 8, 15]]
-    print(affichage(m))
+    affichage(m)
     ```
     On obtient:
     ```
@@ -911,14 +923,14 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 !!! abstract "Exercice 19 : Affichage de coefficient de matrice :"
 
-    Ecrire la fonction `affichagecoeff(M)` qui prend en paramètre une matrice de taille quelconque et **affiche** tous ces coefficients dans le sens de la lecture
+    Ecrire la fonction `affichagecoeff(M)` qui prend en paramètre une matrice de taille quelconque et **affiche** tous ses coefficients dans le sens de la lecture
 
     **Exemple** :
     ```python
     m = [[1, 3], 
         [5, 6], 
         [2, 1], ]
-    print(affichagecoeff(m))
+    affichagecoeff(m)
     ```
     On obtient:
     ```
@@ -940,7 +952,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
         [5, 6, 8], 
         [2, 1, 3], 
         [7, 8, 15]]
-    print(affichage_ligne(m, 1))
+    affichage_ligne(m, 1)
     ```
     On obtient:
     ```
@@ -957,7 +969,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
         [5, 6, 8], 
         [2, 1, 3], 
         [7, 8, 15]]
-    print(affichage_colonne(m, 1))
+    affichage_colonne(m, 1)
     ```
     On obtient:
     ```
@@ -969,7 +981,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 !!! abstract "Exercice 22 : Croix :"
 
-    Ecrire la fonction `croix(n,i,j)` qui crée et renvoie la matrice de taille n×n remplie de 0 et dont la ligne i et la colonne j sont remplie de 1.
+    Ecrire la fonction `croix(n,i,j)` qui crée et renvoie la matrice de taille n×n remplie de 0 et dont la ligne `i` et la colonne `j` sont remplies de 1.
 
     **Exemple** :
     ```python
@@ -977,7 +989,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
     ```
 
 !!! abstract "Exercice 23 :Nombre de zéros :"
-    Ecrire la fonction `nbzéros(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le 
+    Écrire la fonction `nb_zeros(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le 
     nombre de zéros qu’elle contient
 
     **Exemple** :
@@ -986,7 +998,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
         [5, 0, 0], 
         [0, 1, 3], 
         [0, 8, 15]]
-    assert nbzéros(m) == 4
+    assert nb_zeros(m) == 4
     ```
 
 !!! abstract "Exercice 24 : Maximum d'une matrice :"
@@ -1002,7 +1014,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
     assert maxi(m) == 16
     ```
 
-!!! abstract "Exercice 25 : Maximum de la plus grand somme d'une ligne d'une matrice :"
+!!! abstract "Exercice 25 : Ligne de plus grande somme :"
 
     Ecrire la fonction `maxi2(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la ligne qui a la plus grande somme 
 
@@ -1015,7 +1027,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
     assert maxi2(m) == 3
     ```
 
-!!! abstract "Exercice 26 : Maximum de la plus grand somme d'une colonne d'une matrice :"
+!!! abstract "Exercice 26 : Colonne de plus grande somme :"
 
     Ecrire la fonction `maxi3(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la colonne qui a la plus grande somme 
 
@@ -1044,7 +1056,11 @@ En Python, un **dictionnaire** est une structure de données qui permet de stock
 
 ✅ Un **dictionnaire** stocke des valeurs associées **à des clés** (**chaînes de caractères, nombres, tuples...**).  
 
-✅ **Les clés ne sont pas ordonnées** contrairement aux listes.  
+✅ On n’accède **pas** aux valeurs par un indice `0, 1, 2…` mais **par leur clé**. (Depuis Python 3.7, le dictionnaire garde l’ordre dans lequel les clés ont été ajoutées.)  
+
+✅ Les **clés** doivent être **non modifiables** (chaînes, nombres, tuples…) : une liste ne peut pas être une clé.  
+
+💡 **p-uplet nommé** : un dictionnaire permet de représenter un p-uplet dont chaque élément porte un **nom**, par exemple `eleve = {"nom": "Alice", "age": 17}`. On écrit `eleve["age"]` au lieu de `eleve[1]`.
 
 📌 **Exemple de dictionnaire :**  
 
@@ -1106,7 +1122,7 @@ Python permet de **créer un dictionnaire rapidement** grâce à une syntaxe **e
 
 📌 **Remarque :**  
 
-✅ **Compréhension de dictionnaire** = une manière rapide de **générer des dictionnaires** sans boucle.  
+✅ **Compréhension de dictionnaire** = une manière rapide de **générer un dictionnaire** en une seule ligne (la boucle `for` est écrite à l’intérieur des accolades).  
 
 ✅ **Syntaxe** : `{clé: valeur for élément in séquence}`  
 
@@ -1190,7 +1206,7 @@ On peut parcourir un dictionnaire **clé par clé** ou **avec `items()`** pour o
 
 📌 **Remarque :**  
 
-✅ `.items()` renvoie **un tuple** `(clé, valeur)`.  
+✅ `.items()` donne **des tuples** `(clé, valeur)`, un par entrée du dictionnaire.  
 
 ✅ Permet un **parcours rapide** du dictionnaire.  
 
@@ -1316,9 +1332,9 @@ print(d["E"])  # 🔴 ERREUR : KeyError: 'E'
 
 
 
-### **<H3 STYLE="COLOR:GREEN;">2.10. Supprimer un Élément avec `del()`</h3>** 
+### **<H3 STYLE="COLOR:GREEN;">2.10. Supprimer un Élément avec `del`</h3>** 
 
-???+ question "Activité n°30 : Suppression d'un Élément avec `del()`"
+???+ question "Activité n°30 : Suppression d'un Élément avec `del`"
 
     🔹 **Tester :**  
 
@@ -1379,8 +1395,8 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 | **Vérifier une clé** | `"clé" in d` | Renvoie `True` si la clé existe, `False` sinon |
 | **Accéder à une valeur** | `d["clé"]` | Renvoie la valeur associée à la clé (Erreur si absente !) |
 | **Accéder à une valeur sans erreur** | `d.get("clé")` | Renvoie la valeur ou `None` si absente |
-| **Récupérer toutes les clés** | `d.keys()` | Retourne une liste des clés |
-| **Récupérer toutes les valeurs** | `d.values()` | Retourne une liste des valeurs |
+| **Récupérer toutes les clés** | `d.keys()` | Donne toutes les clés (à parcourir avec `for`) |
+| **Récupérer toutes les valeurs** | `d.values()` | Donne toutes les valeurs (à parcourir avec `for`) |
 | **Parcourir le dictionnaire** | `for clé, valeur in d.items():` | Permet d’itérer sur les clés et valeurs |
 | **Parcourir le dictionnaire** | `for clé in d.keys():` | Permet d’itérer sur les clés |
 | **Parcourir le dictionnaire** | `for valeur in d.values():` | Permet d’itérer sur valeurs |
@@ -1540,7 +1556,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     **Test** :
 
     ```python
-    assert creer_dico() == {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
+    assert creer_dico("Alice", 17, "1ère NSI") == {"nom": "Alice", "âge": 17, "classe": "1ère NSI"}
     ```
 
 
@@ -1651,7 +1667,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     **4**  Implémenter la fonction suivante `moyenne_generale(d)`
 
-    Renvoie la **moyenne générale** de toutes les notes (arrondie à 2 décimales si tu veux).
+    Renvoie la **moyenne générale** de toutes les notes, arrondie à 2 décimales (avec `round(..., 2)`).
 
     **Test** :
 
@@ -1711,11 +1727,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     '9s'
     ```
 
-    **2** Tirage de N cartes différentes : Écrire une fonction `tirage_n_cartes(n)` qui retourne une **liste de `n` cartes différentes**, tirées au hasard **sans doublon**.
-
-    > ⚠️ Le tirage doit respecter la règle du Poker : **on ne peut pas avoir deux fois la même carte**.
-
-    > 💡 On pourra copier la liste `ListeCartes`, tirer une carte aléatoire, la retirer de la liste, et recommencer.
+    **2** Tirage de N cartes : Écrire une fonction `tirage_n_cartes(n)` qui retourne une **liste de `n` cartes**, tirées au hasard.
 
     Exemple attendu :
 
@@ -1723,6 +1735,17 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     >>> tirage_n_cartes(3)
     ['8c', 'Qs', '3h']
     ```
+
+    **Problème** : le tirage peut donner plusieurs fois la même carte.
+
+    **Nouvelle règle** :
+
+    > ⚠️ Le tirage doit respecter la règle du Poker : **on ne peut pas avoir deux fois la même carte**.
+
+    > 💡 On pourra copier la liste `ListeCartes`, tirer une carte aléatoire, la retirer de la liste, et recommencer.
+
+    Modifier la fonction précédente pour qu'elle respecte cette nouvelle règle.
+
     **3** Version optimisée avec `sample()` : Python propose la fonction `random.sample(liste, n)` qui renvoie directement `n` éléments **différents** pris au hasard dans `liste`.
 
     Réécrire la fonction précédente sous le nom `tirage_n_cartes_v2(n)` en utilisant cette fonction.
@@ -1796,7 +1819,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     {'A': 'H', 'B': 'I', ..., 'Y': 'F', 'Z': 'G'}
     ```
 
-    🔹 **Partie 3 – Une fonction de codage
+    🔹 **Partie 3 – Une fonction de codage**
 
     3.a.  Tester le dictionnaire obtenu :
 
@@ -1845,7 +1868,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.060.png)
 
 
-    **1** Implémenter la fonction qui crée un jeu de 32 cartes par compréhesion 
+    **1** Implémenter la fonction qui crée un jeu de 32 cartes par compréhension 
 
     ```python
     def creation_jeu32(couleur: tuple, valeur32: tuple) -> list:
@@ -1911,7 +1934,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     c = carte_hasard(jeu32)
     print("Carte tirée :", c)
     assert isinstance(c, tuple)
-    assert len(jeu) == 31
+    assert len(jeu32) == 31
     ```
     **4** Implémenter la fonction qui crée une main
 
@@ -1931,7 +1954,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     main5 = main(5, jeu32)
     print("Main de 5 cartes :", main5)
     assert len(main5) == 5
-    assert len(jeu) == 27
+    assert len(jeu32) == 27
     ```
 
     **5** Implémenter la fonction qui calcule la force d'une carte
@@ -1995,7 +2018,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     assert compare((9, 'pique'), (7, 'pique'), forces) == (9, 'pique')
     ```
 
-    **8** Implémenter la fonction qui calcule la distance entre deux cartes</h3>
+    **8** Implémenter la fonction qui calcule la distance entre deux cartes
 
     ```python
     def distance(carte1: tuple, carte2: tuple) -> int:
@@ -2032,7 +2055,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     # Tests
     assert abs(f(0) - (-4)) < 1e-6
     assert abs(f(1) - (-2)) < 1e-6
-    assert abs(f(-2) - (-6)) < 1e-6
+    assert abs(f(-2) - (-2)) < 1e-6
     ```
 
     **3** Générer les données de la courbe
@@ -2066,7 +2089,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     # Tests
     assert abs(f2(0) - 2) < 1e-6
     assert abs(f2(1) - 0) < 1e-6
-    assert abs(f2(-1) - ( -1 + 3 + 2)) < 1e-**6**  # = 4
+    assert abs(f2(-1) - 4) < 1e-6  # (-1)³ - 3×(-1) + 2 = 4
     ```
 
     **6** Tracer les deux courbes ensemble
@@ -2086,7 +2109,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     ![](Aimg021.png)
 
 
-!!! abstract "Exercice 43 : ★★★ format EXIF Introduction" 
+!!! abstract "Exercice 44 : ★★★ format EXIF" 
 
 
     L’Exchangeable  Image  File  Format  ou  EXIF  est  une  spécification  de  format  de  fichier  pour  les  images  utilisées  par  les  appareils  photographiques  numériques.  Il  a  été  établi  par  le  Japan  Electronic  Industry Development Association (JEIDA). Cette spécification repose sur  des formats existants tels que JPEG, TIFF version 6.0 et RIFF format de  fichier audio WAVE, en y ajoutant des balises de métadonnées.  
@@ -2231,7 +2254,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
             return None
         except KeyError:
             return None
-    print(GPS_read('mountain.jpg'))
+    print(GPS_read('valley.jpg'))
     ```
 
     Les coordonnées géographiques sont habituellement exprimées dans le système sexagésimal, ou DMS pour degrés (°), minutes (′) et secondes (″). L’unité est le degré d’angle (1 tour = 360°), puis la minute d’angle (1° = 60′), puis la seconde d’angle (1° = 3 600″). 
@@ -2240,7 +2263,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     Remarque : pour obtenir un traitement automatisé des données géographiques, un format décimal est souvent plus pratique. On divise les minutes par 60 et les secondes par 3600 et on additionne le tout. La latitude est négative dans l’hémisphère Sud (S), et à l’Ouest du méridien de Greenwich (W). 
 
-    **4** A partir des données GPS récupérées précédemment, écrire une fonction qui indique les coordonnées GPS[^1]. On donne le prototype de la fonction : 
+    **4** A partir des données GPS récupérées précédemment, écrire une fonction qui indique les coordonnées GPS. On donne le prototype de la fonction : 
 
     ```get_coordinates(GPSinfo : dict) -> list ```
 
@@ -2250,7 +2273,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     **Aide** : 
 
-    - Pour connaitre les données à utiliser reportez vous à la ligne 3 et la ligne 4 du tableau ci-dessus 
+    - Pour connaître les données à utiliser, reportez-vous au dictionnaire GPS obtenu à la question 3. 
 
     - Le  dictionnaire  précédent  renvoie  les  clés :   'GPSLatitudeRef',  'GPSLatitude', 'GPSLongitudeRef' et 'GPSLongitude' 
 
@@ -2353,7 +2376,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     On appelle modulo d’un nombre x par N, l’opérateur qui renvoie le reste de la division entière de x par N. 
 
-    **Exemple** : 11 modulo 5 = 1 (en Python, le modulo est notée %). 
+    **Exemple** : 11 modulo 5 = 1 (en Python, le modulo est noté `%`). 
 
     **1** Écrire une fonction qui utilise la méthode de César pour crypter un message. 
 
@@ -2373,7 +2396,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     🎟️ **Fonction à compléter** :
     ```python
-    def caesar_encode(text : str, key : str = 1) -> str:
+    def caesar_encode(text : str, key : int = 1) -> str:
         """
         fonction qui utilise la méthode de César pour crypter
         :param text: str
@@ -2398,7 +2421,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     🎟️ **Fonction à compléter**
     ```python
-    def caesar_decode(code : str, key : str = 1) -> str:
+    def caesar_decode(code : str, key : int = 1) -> str:
         """
         fonction qui utilise la méthode de César pour décrypter
         :param code: str
@@ -2407,7 +2430,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
         """
         # à compléter
 
-    assert caesar_encode('BUUBRVFA EFNBJO')== 'ATTAQUEZ DEMAIN'
+    assert caesar_decode('BUUBRVFA EFNBJO')== 'ATTAQUEZ DEMAIN'
     ```
 
     **3** Factoriser le code des deux fonctions précédentes pour obtenir une fonction qui chiffre ou déchiffre. Le prototype de la fonction est : ```caesar(str_in : str, key : int) -> str```
@@ -2615,7 +2638,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     - ouvrir le fichier avec la fonction open() et l’attribut ‘r’, ne pas oublier l’encodage du fichier 
 
-    - On utilisera la méthode rstrip("\n") pour enlever le symbole.  [https://www.w3schools.com/python/ref_string_rstrip.asp ](https://www.w3schools.com/python/ref_string_rstrip.asp)![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.010.png)
+    - On utilisera la méthode `rstrip("\n")` pour enlever le retour à la ligne en fin de ligne : [https://www.w3schools.com/python/ref_string_rstrip.asp](https://www.w3schools.com/python/ref_string_rstrip.asp)
 
     🎟️ **Fonctions à compléter**:
     ```python
@@ -2666,7 +2689,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     **Aide :** 
 
-    - la liste renvoyée par la fonction letter_count() est déjà triées par ordre décroissant  ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.105.png)
+    - la liste renvoyée par la fonction `letter_count()` est déjà triée par ordre décroissant
 
     - modifier la fonction count_in_file() pour qu’elle renvoie la liste de lettres triées par ordre décroissant de fréquence d’apparition en combinant les fonctions 
 
@@ -2709,17 +2732,17 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     NB : les espaces sont purement indicatifs, dans la première phrase ils séparent les mots, dans la seconde ils séparent les blocs. 
 
-    Si k est la longueur d’un bloc, alors on choisit une clé constituée de k nombres de 0 à 25 : (n 1 ,n 2 ,...,n k ).
+    Si k est la longueur d’un bloc, alors on choisit une clé constituée de k nombres de 0 à 25 : (n₁, n₂, ..., nₖ).
 
     Le chiffrement consiste à effectuer un chiffrement de César, dont le décalage dépend du rang de la lettre dans le bloc: 
 
-    - un décalage de n 1 pour la première lettre de chaque bloc, 
+    - un décalage de n₁ pour la première lettre de chaque bloc, 
 
-    - un décalage de n 2 pour la deuxième lettre de chaque bloc, 
+    - un décalage de n₂ pour la deuxième lettre de chaque bloc, 
 
     - ... 
 
-    - un décalage de n k pour la k-ème et dernière lettre de chaque bloc. 
+    - un décalage de nₖ pour la k-ème et dernière lettre de chaque bloc. 
 
     Pour notre exemple, si on choisit comme clé (3,1,5,2) alors pour le premier bloc "CETT" : 
 
@@ -2735,7 +2758,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     **Espace des clés et attaque** 
 
-    Il y a 26 k choix possibles de clés, lorsque les blocs sont de longueur k. Pour des blocs de longueur k = 4 cela en donne déjà 456 976, et même si un ordinateur teste toutes les combinaisons possibles sans problème, il n’est pas question de parcourir cette liste pour trouver le message en clair, c’est-à-dire celui qui est compréhensible ! 
+    Il y a 26ᵏ choix possibles de clés, lorsque les blocs sont de longueur k. Pour des blocs de longueur k = 4 cela en donne déjà 456 976, et même si un ordinateur teste toutes les combinaisons possibles sans problème, il n’est pas question de parcourir cette liste pour trouver le message en clair, c’est-à-dire celui qui est compréhensible ! 
 
     Il persiste tout de même une faiblesse du même ordre que celle rencontrée dans le chiffrement mono- alphabétique : la lettre A n’est pas toujours cryptée par la même lettre, mais si deux lettres A sont situées à la même position dans deux blocs différents (comme par exemple "ALPH ABET") alors elles seront cryptées par la même lettre. 
 
@@ -2761,7 +2784,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
                                 index := (index + 1) modulo taille(clef)
     ````
 
-    **Chiffrement mono-alphabétique (**★★★★)** 
+    **Chiffrement mono-alphabétique** (★★★★) 
 
     Le texte (en français) suivant a été chiffré par un code mono alphabétique. Déterminer l’auteur de ce texte. eposal, epg r’sjnp, s r’upjdp cj nrsliuaq rs isohsmlp, vp hsdqadsa. bcag-qj, vp gsag tjp qj o’sqqpleg. 
 
@@ -2872,7 +2895,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.116.png)
     ![](Aimg023.png)
 
-    La  **séquence**  d'un [ acide  nucléique ](https://fr.wikipedia.org/wiki/Acide_nuclÃ©ique) — [ ADN ](https://fr.wikipedia.org/wiki/Acide_dÃ©soxyribonuclÃ©ique) ou [ ARN ](https://fr.wikipedia.org/wiki/Acide_ribonuclÃ©ique) —  est  la  succession  des [ nucléotides ](https://fr.wikipedia.org/wiki/NuclÃ©otide) qui  le  constituent.  Cette  succession  contient l['information génétique ](https://fr.wikipedia.org/wiki/Information_gÃ©nÃ©tique)portée par ces[ polynucléotides,](https://fr.wikipedia.org/wiki/PolynuclÃ©otide) de  sorte qu'on la qualifie également de **séquence génétique**. Elle peut  être déterminée par des méthodes de[ séquençage de l'ADN.](https://fr.wikipedia.org/wiki/SÃ©quenÃ§age_de_l%27ADN)  
+    La  **séquence**  d'un [ acide  nucléique ](https://fr.wikipedia.org/wiki/Acide_nucléique) — [ ADN ](https://fr.wikipedia.org/wiki/Acide_désoxyribonucléique) ou [ ARN ](https://fr.wikipedia.org/wiki/Acide_ribonucléique) —  est  la  succession  des [ nucléotides ](https://fr.wikipedia.org/wiki/Nucléotide) qui  le  constituent.  Cette  succession  contient l['information génétique ](https://fr.wikipedia.org/wiki/Information_génétique)portée par ces[ polynucléotides,](https://fr.wikipedia.org/wiki/Polynucléotide) de  sorte qu'on la qualifie également de **séquence génétique**. Elle peut  être déterminée par des méthodes de[ séquençage de l'ADN.](https://fr.wikipedia.org/wiki/Séquençage_de_l%27ADN)  
 
     Les molécules représentées dans ce schéma sont :  
 
@@ -2948,7 +2971,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     **3** Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
 
-    ```complementary_base(base : str, type : str) -> st```
+    ```complementary_base(base : str, type : str) -> str```
 
     - base : nucléotide (A, T, G ou C) 
 
@@ -2994,7 +3017,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     - strand : brin d’ADN 
 
-    - start : position de départ dans la séquence du brin d’ADN
+    - start : position de départ dans la séquence du brin d’ADN (les positions sont numérotées **à partir de 1**)
 
     - end : position de fin dans la séquence du brin d’ADN 
 
@@ -3135,13 +3158,13 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
     De  simples  chaînes  de  caractères  permettent  de  représenter  les  séquences  biologiques  et  les  fonctions programmées vont reproduire les processus. 
 
-    **7** Écrire une fonction qui renvoie la base complémentaire. Le prototype de la fonction est le suivant : 
+    **7** Écrire une fonction qui renvoie le brin complémentaire et inversé (réplication). Le prototype de la fonction est le suivant : 
 
     ```replication(strand : str) -> str``` 
 
     - strand : brin d’ADN 
 
-    - la fonction renvoie la séquence ADN complémentaire et inversée (A et C sont complémentaires, T et G sont complémentaires), ou None si erreur 
+    - la fonction renvoie la séquence ADN complémentaire et inversée (A et T sont complémentaires, C et G sont complémentaires), ou None si erreur 
 
     🎟️ **Fonction à compléter** :
     ```python
@@ -3153,7 +3176,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
         """
         replication_adn = ''
         nucleotide = ['A', 'T', 'C', 'G']
-        replication = ['C', 'G', 'A', 'T']
+        replication = ['T', 'A', 'G', 'C']
         if strand =='':
             return None
         try :
