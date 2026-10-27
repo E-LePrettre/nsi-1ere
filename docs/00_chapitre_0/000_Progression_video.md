@@ -23,6 +23,7 @@ title: 🟦 Capsules vidéo
 - **02h** — Affecter (`=`) vs tester (`==`) ★
 - **02i** — L'indentation
 - **02j** — Boucles : compteur et accumulateur
+- **02k** — Les opérateurs logiques (ET, OU, NON)
 
 
 ## Ch. 03 — Mise au point des programmes
@@ -41,17 +42,17 @@ title: 🟦 Capsules vidéo
 - **04i** — Les flottants
 - **04j** — Le codage des caractères
 - **04k** — Le codage des images
+- **04l** — Construire une table de vérité
+- **04m** — XOR, NAND, NOR
+- **04n** — Les booléens en Python
 
-## Ch. 05 — Booléens et types construits
-- **05h** — Les opérateurs logiques
-- **05i** — XOR, NAND, NOR
-- **05j** — Construire une table de vérité
-- **05k** — Liste vs tuple
-- **05l** — Indexation et tranches (slicing)
-- **05m** — La copie de liste ★
-- **05n** — La compréhension de liste
-- **05o** — Les tableaux de tableaux
-- **05p** — Le dictionnaire
+## Ch. 05 — Les types construits
+- **05f** — Liste vs tuple
+- **05g** — Indexation et tranches (slicing)
+- **05h** — La copie de liste ★
+- **05i** — La compréhension de liste
+- **05j** — Les tableaux de tableaux
+- **05k** — Le dictionnaire
 
 ## Ch. 06 — Algorithmique (tris, dichotomie)
 - **06j** — La complexité : compter les opérations
@@ -72,8 +73,8 @@ title: 🟦 Capsules vidéo
 - **08e** — Adresse IP et masque
 - **08f** — Le protocole TCP
 - **08g** — L'encapsulation
-- **08h** — Le routeur
-- **08i** — Le DNS
+- **08h** — Le DNS
+- **08i** — Le routeur
 - **08j** — Le bit alterné
 
 ## Ch. 09 — Algorithmes gloutons

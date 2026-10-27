@@ -1,6 +1,6 @@
 ---
 author: Elisabeth Le Prettre (LePrettre)
-title: 02 📜 Fiche Méthode - Les bases de Python
+title: 02a 📜 Fiche Méthode - Les bases de Python
 ---
 
 # Les bases de Python

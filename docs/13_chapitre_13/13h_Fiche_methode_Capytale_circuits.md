@@ -1,6 +1,6 @@
 ---
 author: Elisabeth Le Prettre (LePrettre)
-title: 05a Fiche méthode Capytale
+title: 13h 📜 Fiche méthode Capytale - circuits
 ---
 
 # 🧭 **FICHE MÉTHODE – Créer et tester un circuit logique sur Capytale**

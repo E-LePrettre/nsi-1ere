@@ -1,11 +1,11 @@
 ---
 author: Elisabeth Le Prettre (LePrettre)
-title: 05a 📜 Fiche Méthode - Les booléens
+title: 13i 📜 Fiche Méthode - Booléens et circuits
 ---
 
 # Booléens, portes logiques et circuits
 
-!!! abstract "Fiche méthode & révision — Première NSI · Chapitre 5"
+!!! abstract "Fiche méthode & révision — Première NSI · Chapitres 04 et 13"
     Fiche **compacte** pour **refaire seul les exercices** : expressions booléennes,
     **portes logiques**, **tables de vérité**, circuits combinatoires (MUX,
     additionneurs) et lois de **De Morgan**.

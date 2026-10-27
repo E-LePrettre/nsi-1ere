@@ -6,6 +6,7 @@ title: 04 Codage de l'information
 
 !!! abstract "Dans ce chapitre, tu vas apprendre à…"
     - passer d'une base à l'autre : **décimal ↔ binaire ↔ hexadécimal** ;
+    - dresser la **table de vérité** d'une expression booléenne et utiliser le **OU exclusif (XOR)** ;
     - coder un **entier négatif** en binaire (complément à 2) ;
     - comprendre pourquoi `0.1 + 0.2` ne vaut **pas** `0.3` en Python ;
     - expliquer comment l'ordinateur stocke du **texte** et des **images**.
@@ -217,7 +218,251 @@ retenues   1 1 1 1
 
 ---
 
-## <span style="color:#1565C0">3. Les entiers négatifs : le complément à 2</span>
+## <span style="color:#1565C0">3. Logique booléenne : tables de vérité et XOR</span>
+
+!!! info "Des bits aux valeurs logiques"
+    L'**algèbre de Boole**, développée par **George Boole** (1815-1864), calcule sur deux valeurs :
+    `0` représente **FAUX** et `1` représente **VRAI**.
+    En Python, ce sont `False` et `True` ; dans un calcul, `True` vaut `1` et `False` vaut `0`
+    (`True + True` donne `2`). C'est pourquoi on écrit les tables de vérité avec des `0` et des `1`.
+
+### <span style="color:#2E7D32">3.1 Les trois opérations de base</span>
+
+| Opération | Vraie quand… | Notations | Python |
+|---|---|---|---|
+| **ET** | les **deux** sont vrais | `a · b`, `a ∧ b` | `a and b` |
+| **OU** | **au moins un** est vrai | `a + b`, `a ∨ b` | `a or b` |
+| **NON** | `a` est faux | `a̅`, `¬a` | `not a` |
+
+Dans d'autres langages (C, Java, JavaScript), on écrit `&&` pour ET, `||` pour OU et `!` pour NON.
+
+Priorité : **NON**, puis **ET**, puis **OU** (voir le [chapitre 02a](../02_chapitre_2/02a_Les_bases_de_Python.md)) : `A + B · C` se lit `A + (B · C)`.
+
+### <span style="color:#2E7D32">3.2 Les tables de vérité</span>
+
+!!! abstract "À retenir"
+    Une **table de vérité** donne la sortie pour **toutes** les combinaisons possibles des entrées.
+    Avec **n** entrées, il y a **2ⁿ** lignes (4 lignes pour 2 entrées, 8 pour 3, 16 pour 4),
+    écrites dans l'ordre où l'on compte en binaire : `00`, `01`, `10`, `11`…
+
+| A | B | A ET B | A OU B | NON A |
+|:-:|:-:|:-:|:-:|:-:|
+| 0 | 0 | 0 | 0 | 1 |
+| 0 | 1 | 0 | 1 | 1 |
+| 1 | 0 | 0 | 1 | 0 |
+| 1 | 1 | 1 | 1 | 0 |
+
+**Méthode pour une expression composée :** prévoir **une colonne par calcul intermédiaire**.
+Exemple avec `(A ET B) OU (NON A)` :
+
+| A | B | A ET B | NON A | (A ET B) OU (NON A) |
+|:-:|:-:|:-:|:-:|:-:|
+| 0 | 0 | 0 | 1 | 1 |
+| 0 | 1 | 0 | 1 | 1 |
+| 1 | 0 | 0 | 0 | 0 |
+| 1 | 1 | 1 | 0 | 1 |
+
+??? question "À toi : tables de A · B̅, A + B · C et A · B + (C ⊕ D)"
+    **A · B̅**
+
+    | A | B | B̅ | A · B̅ |
+    |:-:|:-:|:-:|:-:|
+    | 0 | 0 | 1 | 0 |
+    | 0 | 1 | 0 | 0 |
+    | 1 | 0 | 1 | 1 |
+    | 1 | 1 | 0 | 0 |
+
+    **A + B · C** (le ET passe avant le OU)
+
+    | A | B | C | B · C | A + (B · C) |
+    |:-:|:-:|:-:|:-:|:-:|
+    | 0 | 0 | 0 | 0 | 0 |
+    | 0 | 0 | 1 | 0 | 0 |
+    | 0 | 1 | 0 | 0 | 0 |
+    | 0 | 1 | 1 | 1 | 1 |
+    | 1 | 0 | 0 | 0 | 1 |
+    | 1 | 0 | 1 | 0 | 1 |
+    | 1 | 1 | 0 | 0 | 1 |
+    | 1 | 1 | 1 | 1 | 1 |
+
+    **A · B + (C ⊕ D)** (le XOR est défini au 3.3) : 16 lignes. La sortie vaut 1 dès que
+    `A = B = 1`, ou bien dès que `C` et `D` sont différents.
+
+    | A | B | C | D | C ⊕ D | A · B | A · B + (C ⊕ D) |
+    |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+    | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 0 | 0 | 0 | 1 | 1 | 0 | 1 |
+    | 0 | 0 | 1 | 0 | 1 | 0 | 1 |
+    | 0 | 0 | 1 | 1 | 0 | 0 | 0 |
+    | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+    | 0 | 1 | 0 | 1 | 1 | 0 | 1 |
+    | 0 | 1 | 1 | 0 | 1 | 0 | 1 |
+    | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
+    | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 1 | 0 | 0 | 1 | 1 | 0 | 1 |
+    | 1 | 0 | 1 | 0 | 1 | 0 | 1 |
+    | 1 | 0 | 1 | 1 | 0 | 0 | 0 |
+    | 1 | 1 | 0 | 0 | 0 | 1 | 1 |
+    | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
+    | 1 | 1 | 1 | 0 | 1 | 1 | 1 |
+    | 1 | 1 | 1 | 1 | 0 | 1 | 1 |
+
+!!! note "🐍 En Python : faire écrire la table par Python"
+    Une double boucle parcourt toutes les combinaisons de deux entrées, dans l'ordre binaire.
+
+    ```python
+    def table_et():
+        print("a b | a and b")
+        for a in (0, 1):
+            for b in (0, 1):
+                print(a, b, "|", int(a and b))
+
+    table_et()
+    ```
+
+    `int(...)` convertit le résultat en `0` ou `1` pour obtenir un affichage homogène.
+
+    ??? success "Python"
+        {{ IDE() }}
+
+??? question "À toi : écrire `table_A_ou_B_et_C()` qui affiche la table de A + B · C"
+    Trois boucles imbriquées, une par entrée :
+
+    ```python
+    def table_A_ou_B_et_C():
+        print("A B C | A + B.C")
+        for A in (0, 1):
+            for B in (0, 1):
+                for C in (0, 1):
+                    print(A, B, C, "|", int(A or (B and C)))
+    ```
+
+    On retrouve bien la table du « À toi » précédent.
+
+### <span style="color:#2E7D32">3.3 Le OU exclusif : XOR</span>
+
+Le **OU exclusif**, noté **XOR** ou `⊕`, vaut `1` **si les deux bits sont différents**, et `0` s'ils sont identiques.
+
+| A | B | A OU B | A XOR B |
+|:-:|:-:|:-:|:-:|
+| 0 | 0 | 0 | 0 |
+| 0 | 1 | 1 | 1 |
+| 1 | 0 | 1 | 1 |
+| 1 | 1 | **1** | **0** |
+
+!!! warning "Piège : OU ou XOR ?"
+    `1 OU 1 = 1`, mais `1 XOR 1 = 0`. Le XOR, c'est « l'un **ou** l'autre, **mais pas les deux** ».
+    Avec les trois opérations de base : `A ⊕ B = A · B̅ + A̅ · B`.
+
+!!! note "🐍 En Python"
+    `^` est le **XOR bit à bit** : il fonctionne sur `0` et `1`, et sur des entiers bit par bit.
+    Pour des booléens, on peut aussi écrire `a != b`.
+
+    ```python
+    print(0 ^ 0, 0 ^ 1, 1 ^ 0, 1 ^ 1)   # 0 1 1 0
+    print(True != True)                 # False
+    ```
+
+??? question "À toi : calcule `1 XOR 0`, `0 XOR 0`, `1 XOR 1`, puis vérifie avec `^`"
+    `1 XOR 0 = 1`, `0 XOR 0 = 0`, `1 XOR 1 = 0` : `print(1 ^ 0, 0 ^ 0, 1 ^ 1)` affiche `1 0 0`.
+
+### <span style="color:#2E7D32">3.4 Application : additionner deux bits</span>
+
+On retrouve l'addition binaire du 2.7. Pour additionner deux bits `A` et `B` :
+
+- le **bit de somme** est `S = A XOR B` ;
+- la **retenue** est `R = A ET B`.
+
+| A | B | Retenue R | Somme S | A + B en binaire |
+|:-:|:-:|:-:|:-:|:-:|
+| 0 | 0 | 0 | 0 | `00` |
+| 0 | 1 | 0 | 1 | `01` |
+| 1 | 0 | 0 | 1 | `01` |
+| 1 | 1 | 1 | 0 | `10` |
+
+Ainsi `1 + 1 = 10₂` : j'écris `0` (le XOR), je retiens `1` (le ET).
+Ce petit calcul s'appelle un **demi-additionneur** : on le construira avec des portes logiques au [chapitre 13](../13_chapitre_13/13_Archi_ordinateur.md).
+
+```python
+for a in (0, 1):
+    for b in (0, 1):
+        print(a, "+", b, "→ retenue", a & b, "somme", a ^ b)
+```
+
+(`&` est le ET bit à bit, comme `^` est le XOR bit à bit.)
+
+### <span style="color:#2E7D32">3.5 Les lois de De Morgan</span>
+
+!!! abstract "À retenir"
+    - `NON (A OU B) = (NON A) ET (NON B)`
+    - `NON (A ET B) = (NON A) OU (NON B)`
+
+    En Python : `not (a or b) == (not a and not b)` et `not (a and b) == (not a or not b)`.
+    Elles permettent de « faire entrer » une négation dans une parenthèse, en échangeant ET et OU.
+
+Deux expressions sont **équivalentes** quand elles ont **la même table de vérité** : pour le prouver, on compare **toutes** les lignes.
+
+??? question "À toi : vérifier les lois de De Morgan avec Python"
+    ```python
+    def de_morgan_1(a, b):
+        return (not (a or b)) == (not a and not b)
+
+    def de_morgan_2(a, b):
+        return (not (a and b)) == (not a or not b)
+
+    for a in (False, True):
+        for b in (False, True):
+            print(a, b, de_morgan_1(a, b), de_morgan_2(a, b))
+    ```
+
+    1. Les deux lois sont-elles vraies pour toutes les combinaisons ?
+    2. Retirer les parenthèses autour de `not (a or b)` dans `de_morgan_1` et réexécuter. Le résultat est toujours `True`… mais pour une mauvaise raison ! Pourquoi ?
+
+    **Réponses.**
+
+    1. Oui : la fonction renvoie `True` pour les quatre combinaisons, donc sur **toute** la table de vérité.
+    2. `not` est **moins prioritaire** que `==`. Sans parenthèses, Python lit `not ((a or b) == (not a and not b))`. Or `a or b` et `not a and not b` sont toujours contraires, donc la comparaison vaut toujours `False`, et `not False` donne `True` : le programme ne vérifie plus du tout la loi.
+
+### <span style="color:#2E7D32">3.6 Pour la Terminale : XOR et chiffrement</span>
+
+Le XOR a une propriété remarquable : appliqué **deux fois avec la même valeur**, il redonne la valeur de départ.
+
+!!! abstract "À retenir"
+    `(A XOR K) XOR K = A`, car `K XOR K = 0` et `A XOR 0 = A`.
+
+```text
+Message M : 1 0 1 1
+Clé K     : 0 1 1 0
+            ------- XOR
+Chiffré C : 1 1 0 1
+Clé K     : 0 1 1 0
+            ------- XOR
+Message M : 1 0 1 1
+```
+
+```python
+message = 0b10110110
+cle = 0b01101001
+chiffre = message ^ cle
+dechiffre = chiffre ^ cle
+print(bin(chiffre), bin(dechiffre), dechiffre == message)   # 0b11011111 0b10110110 True
+```
+
+!!! tip "Lien avec la Terminale"
+    Cette propriété est le **principe** du chiffrement symétrique étudié en Terminale : on chiffre et on déchiffre avec la **même clé**.
+    Attention : ce n'est qu'une **illustration**. Réutiliser la même clé courte pour tout un message n'est pas sûr.
+
+??? question "À toi : M = 1101 et K = 1010. Calcule C = M XOR K, puis C XOR K"
+    `C = 1101 XOR 1010 = 0111`, puis `C XOR K = 0111 XOR 1010 = 1101` : on retrouve **M**.
+
+!!! success "🎞️ Revoir en vidéo"
+    [ET, OU, NON](../02_chapitre_2/02k_et_ou_non_video.md) · [Table de vérité](04l_Table_de_verite_video.md) · [XOR, NAND, NOR](04m_xor_nand_nor_video.md) · [Les booléens](04n_Les_booleens_video.md) · [📜 Fiche méthode : booléens et circuits](../13_chapitre_13/13i_Booleens_circuits_fiche.md)
+
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant7"
+
+---
+
+## <span style="color:#1565C0">4. Les entiers négatifs : le complément à 2</span>
 
 !!! question "Pourquoi ne pas simplement réserver un bit pour le signe ?"
     Essayons : 1 bit de signe (0 = +, 1 = −) puis la valeur sur 7 bits.
@@ -285,11 +530,11 @@ retenues   1 1 1 1
 !!! success "🎞️ Revoir en vidéo"
     [Complément à 2](04g_complement_video.md) · [Addition en complément à 2](04h_addittion_video.md)
 
-!!! example "🧠 Exercices dans Capytale => cf votre professeur"
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
 
 ---
 
-## <span style="color:#1565C0">4. Les nombres réels : les flottants</span>
+## <span style="color:#1565C0">5. Les nombres réels : les flottants</span>
 
 !!! question "Teste dans la console Python"
     ```python
@@ -300,7 +545,7 @@ retenues   1 1 1 1
     ```
     Python ne s'est pas trompé : il **ne peut pas** stocker 0,1 exactement. Voyons pourquoi.
 
-### <span style="color:#2E7D32">4.1 La virgule en binaire</span>
+### <span style="color:#2E7D32">5.1 La virgule en binaire</span>
 
 Après la virgule, les positions valent ½, ¼, ⅛… c'est-à-dire 2⁻¹, 2⁻², 2⁻³ :
 
@@ -354,18 +599,18 @@ Après la virgule, les positions valent ½, ¼, ⅛… c'est-à-dire 2⁻¹, 2�
 !!! success "🎞️ Revoir en vidéo"
     [Les flottants](04i_flottant_video.md)
 
-!!! example "🧠 Exercices dans Capytale => 0c6e-3798599"
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
 
 ---
 
-## <span style="color:#1565C0">5. Le texte : de l'ASCII à l'Unicode</span>
+## <span style="color:#1565C0">6. Le texte : de l'ASCII à l'Unicode</span>
 
 !!! question "Tu as déjà vu ça ?"
     > Ã©crit en UTF-8
 
     Au lieu de « écrit en UTF-8 ». Ce bug d'affichage s'explique en trois étapes historiques.
 
-### <span style="color:#2E7D32">5.1 ASCII (1963) : 128 caractères</span>
+### <span style="color:#2E7D32">6.1 ASCII (1963) : 128 caractères</span>
 
 Chaque caractère reçoit un numéro codé sur **7 bits** : lettres non accentuées, chiffres,
 ponctuation et caractères de contrôle (retour à la ligne…).
@@ -379,13 +624,13 @@ ponctuation et caractères de contrôle (retour à la ligne…).
 !!! tip "Astuce"
     Une minuscule = sa majuscule **+ 32** (`a` = 65 + 32 = 97).
 
-### <span style="color:#2E7D32">5.2 ISO-8859-1, dit « latin-1 » : 256 caractères</span>
+### <span style="color:#2E7D32">6.2 ISO-8859-1, dit « latin-1 » : 256 caractères</span>
 
 En passant à **8 bits**, on gagne 128 places pour les accents (é, à, ç, ñ…).
 Mais chaque famille de langues a sa propre table (latin, cyrillique, grec…) :
 un même octet ne représente pas le même caractère d'un pays à l'autre. 😵
 
-### <span style="color:#2E7D32">5.3 Unicode et UTF-8 : un seul code pour toutes les langues</span>
+### <span style="color:#2E7D32">6.3 Unicode et UTF-8 : un seul code pour toutes les langues</span>
 
 **Unicode** donne un numéro unique à chaque caractère du monde : plus de 150 000, emojis compris.
 **UTF-8** est la façon la plus courante de les écrire en octets :
@@ -411,7 +656,7 @@ un même octet ne représente pas le même caractère d'un pays à l'autre. 😵
 
 ---
 
-## <span style="color:#1565C0">6. Les images : des pixels et des couleurs</span>
+## <span style="color:#1565C0">7. Les images : des pixels et des couleurs</span>
 
 Une image numérique est une **grille de pixels**. Chaque pixel mélange trois couleurs :
 **Rouge, Vert, Bleu (RVB)**, chacune codée sur **1 octet (0 à 255)**.
@@ -438,11 +683,11 @@ Une image numérique est une **grille de pixels**. Chaque pixel mélange trois c
 !!! success "🎞️ Revoir en vidéo"
     [Codage d'une image](04k_image_video.md)
 
-!!! example "🧠 Exercices dans Capytale => fbf2-4915274"
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
 
 ---
 
-## <span style="color:#1565C0">7. À retenir absolument</span>
+## <span style="color:#1565C0">8. À retenir absolument</span>
 
 !!! abstract "L'essentiel du chapitre"
     1. 1 octet = 8 bits = 256 valeurs ; n bits = 2ⁿ valeurs.
@@ -450,9 +695,10 @@ Une image numérique est une **grille de pixels**. Chaque pixel mélange trois c
     3. Décimal → binaire : on retire les puissances de 2, ou on divise par 2 (restes lus de bas en haut).
     4. 1 chiffre hexa = 4 bits : on convertit binaire ↔ hexa par paquets de 4.
     5. Complément à 2 : inverser les bits, ajouter 1. Sur 8 bits : de −128 à 127.
-    6. Les flottants sont des **approximations** : jamais de `==` entre deux flottants.
-    7. ASCII (7 bits) → latin-1 (8 bits) → Unicode / UTF-8 (1 à 4 octets, compatible ASCII).
-    8. Une image = des pixels RVB, 3 octets chacun ; on compresse avec ou sans perte.
+    6. Table de vérité : 2ⁿ lignes ; XOR = 1 si les bits diffèrent ; 1 bit + 1 bit : somme = XOR, retenue = ET ; (A XOR K) XOR K = A.
+    7. Les flottants sont des **approximations** : jamais de `==` entre deux flottants.
+    8. ASCII (7 bits) → latin-1 (8 bits) → Unicode / UTF-8 (1 à 4 octets, compatible ASCII).
+    9. Une image = des pixels RVB, 3 octets chacun ; on compresse avec ou sans perte.
 
 👉 Pour réviser : la [📜 Fiche méthode](04d_Codage_de_l_information_fiche.md) et la [🎞️ vidéo du chapitre](04c_Codage_de_l_information_video.md).
 

@@ -1,6 +1,6 @@
 ---
 author: Elisabeth Le Prettre (LePrettre)
-title: 05a 🎞️ Video - Les booléens
+title: 04m 🎞️ Video - XOR, NAND, NOR
 ---
 
 
@@ -8,7 +8,7 @@ title: 05a 🎞️ Video - Les booléens
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe
-    src="https://www.youtube.com/embed/vSp91TerOs8"
+    src="https://www.youtube.com/embed/1z4b2--XM1g"
     title="Vidéo YouTube"
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
     allowfullscreen>

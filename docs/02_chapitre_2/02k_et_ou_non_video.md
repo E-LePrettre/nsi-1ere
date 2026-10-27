@@ -1,6 +1,6 @@
 ---
 author: Elisabeth Le Prettre (LePrettre)
-title: 05i 🎞️ Video - XOR, NAND,NOR
+title: 02k 🎞️ Video - AND, OR, NOT
 ---
 
 
@@ -8,7 +8,7 @@ title: 05i 🎞️ Video - XOR, NAND,NOR
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe
-    src="https://www.youtube.com/embed/1z4b2--XM1g"
+    src="https://www.youtube.com/embed/c3mglH4elHk"
     title="Vidéo YouTube"
     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
     allowfullscreen>

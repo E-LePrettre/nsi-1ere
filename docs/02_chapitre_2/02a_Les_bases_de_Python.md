@@ -1,4 +1,4 @@
-﻿---
+---
 author: Elisabeth Le Prettre (LePrettre)
 title: 02a Les bases de Python
 ---
@@ -368,6 +368,96 @@ Python permet d’utiliser des expressions **booléennes**, qui ne peuvent être
 
 
 
+#### **<H4 STYLE="COLOR:MAGENTA;">2.2.3. Priorité des opérateurs</h4>**
+
+Comme en arithmétique (où la multiplication passe avant l'addition), les opérateurs logiques ont un ordre de priorité :
+
+1. **`not`** (le plus prioritaire) ;
+2. **`and`** ;
+3. **`or`** (le moins prioritaire).
+
+Ainsi `not a or b and c` se lit `(not a) or (b and c)`.
+
+💡 En cas de doute, **mettre des parenthèses** : c'est plus lisible et cela évite les erreurs.
+
+???+ question "Activité n°10 bis : priorité des opérateurs"
+
+    Prévoir ce qu'affiche chaque ligne, **puis** vérifier dans l'éditeur.
+
+    ```python
+    a, b, c = True, False, True
+    print(not a or b and c)
+    print(not (a or b) and c)
+    print(a or b and not c)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        - `not a or b and c` se lit `(not a) or (b and c)` = `False or False` → `False`
+        - `not (a or b) and c` = `not True and True` = `False and True` → `False`
+        - `a or b and not c` se lit `a or (b and (not c))` = `True or …` → `True`
+
+
+#### **<H4 STYLE="COLOR:MAGENTA;">2.2.4. L'évaluation séquentielle (paresseuse)</h4>**
+
+Python évalue `and` et `or` **de gauche à droite** et **s'arrête dès que le résultat est connu** :
+
+- `a and b` : si `a` est faux, le résultat est forcément faux, donc `b` **n'est pas évalué** ;
+- `a or b` : si `a` est vrai, le résultat est forcément vrai, donc `b` **n'est pas évalué**.
+
+Cela permet d'écrire des tests qui seraient sinon impossibles :
+
+```python
+x = 0
+if x != 0 and 10 / x > 2:   # 10 / x n'est jamais calculé : pas d'erreur
+    print("grand")
+```
+
+Si on inverse les deux conditions (`10 / x > 2 and x != 0`), Python calcule `10 / 0` en premier et lève une `ZeroDivisionError`.
+
+Même idée pour vérifier un indice avant de lire une case :
+
+```python
+tab = [4, 8, 15]
+i = 5
+if i < len(tab) and tab[i] == 15:   # tab[5] n'est jamais lu : pas d'IndexError
+    print("trouvé")
+```
+
+🚨 **Attention** : avec des nombres, `and` et `or` ne renvoient pas `True`/`False` mais **la dernière valeur évaluée** : `0 or 5` vaut `5`, `3 and 7` vaut `7`, `0 and 7` vaut `0`. Seul `not` renvoie toujours un booléen.
+
+???+ question "Activité n°10 ter : prévoir avant d'exécuter"
+
+    Prévoir ce qu'affiche chaque ligne, **puis** vérifier dans l'éditeur.
+
+    ```python
+    print(5 > 3 and 2 > 4)
+    print(not (5 > 3))
+    print(0 or 5)
+    print(3 and 7)
+    print(not 1)
+    x = 0
+    print(x == 0 or 10 / x > 1)
+    print(x != 0 and 10 / x > 1)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        `False` · `False` · `5` · `7` · `False` · `True` · `False`
+
+        Les deux dernières lignes ne provoquent **aucune erreur** : la division `10 / x` n'est jamais calculée grâce à l'évaluation séquentielle.
+
+!!! abstract "À retenir"
+    - Priorité : `not`, puis `and`, puis `or`.
+    - `and` et `or` sont évalués **de gauche à droite**, et Python s'arrête dès que le résultat est connu : **l'ordre des tests compte**.
+    - Les tables de vérité de `and`, `or`, `not` et du OU exclusif (XOR) sont étudiées au [chapitre 04](../04_chapitre_4/04a_Codage_de_l_information.md).
+
 ### **<H3 STYLE="COLOR:GREEN;">2.3. Exercices<a name="_page5_x40.00_y36.92"></a></h3>** 
 
 => **CAPYTALE Le code vous sera donné par votre enseignant**
@@ -543,6 +633,20 @@ Python permet d’utiliser des expressions **booléennes**, qui ne peuvent être
     'Il y a une solution : 3.0'
     ```
 
+
+!!! abstract "Exercice 8 ★ (évaluation séquentielle)"
+
+    On considère la fonction suivante :
+
+    ```python
+    def test(a, b):
+        return a != 0 and b / a > 2
+    ```
+
+    1. Prévoir, **puis** vérifier, la valeur renvoyée par `test(0, 10)`, `test(2, 10)` et `test(5, 8)`.
+    2. Expliquer pourquoi `test(0, 10)` ne provoque pas de division par zéro.
+    3. Que se passe-t-il si l'on écrit `return b / a > 2 and a != 0` ? Tester avec `test(0, 10)`.
+    4. Expliquer pourquoi `True or (1 / 0 > 2)` ne provoque pas d'erreur.
 
 ## **<H2 STYLE="COLOR:BLUE;">3. Les<a name="_page7_x40.00_y36.92"></a> boucles</h2>** 
 ### **<H3 STYLE="COLOR:GREEN;">3.1. L’instruction<a name="_page7_x40.00_y58.92"></a> for…in</h3>**

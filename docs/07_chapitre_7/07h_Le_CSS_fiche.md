@@ -1,6 +1,6 @@
 ---
 author: Elisabeth Le Prettre (LePrettre)
-title: 076b 📜 Fiche Méthode - Le CSS
+title: 07b 📜 Fiche Méthode - Le CSS
 ---
 
 # CSS : mise en forme des pages

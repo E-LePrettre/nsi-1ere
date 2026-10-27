@@ -1,6 +1,6 @@
 ---
 author: Elisabeth Le Prettre (LePrettre)
-title: 05b 📜 Fiche Méthode - Types construits
+title: 05a 📜 Fiche Méthode - Types construits
 ---
 
 # Les types construits

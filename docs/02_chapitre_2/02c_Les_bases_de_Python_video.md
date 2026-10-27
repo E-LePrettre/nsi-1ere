@@ -1,6 +1,6 @@
 ---
 author: Elisabeth Le Prettre (LePrettre)
-title: 02 🎞️ Video - Les bases de python
+title: 02a 🎞️ Video - Les bases de Python
 ---
 
 

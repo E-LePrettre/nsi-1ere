@@ -1,4 +1,4 @@
-﻿---
+---
 author: Elisabeth Le Prettre (LePrettre)
 title: 13 Architecture de l’ordinateur
 ---
@@ -10,6 +10,8 @@ title: 13 Architecture de l’ordinateur
 3. [**Architecture de Von Neumann**](#_page4_x40.00_y536.92)
 4. [**Langage assembleur**](#_page8_x40.00_y390.92)
 5. [**Simulation CPU**](#_page11_x40.00_y36.92)
+6. [**Des booléens aux circuits logiques**](#circuits)
+7. [**Exercices sur les circuits**](#exercices_circuits)
 
 
 
@@ -609,5 +611,280 @@ Une fois la simulation terminée, on constate que la cellule mémoire d'adresse 
     STR R0, 23
     HALT
     ```
-    ✅ **Analysez** le comportement du programme.  
+    ✅ **Analysez** le comportement du programme.
 
+## <H2 STYLE="COLOR:BLUE;"> **6. Des booléens aux circuits logiques<a name="circuits"></a>** </H2>
+
+Au chapitre 04, on a calculé des **tables de vérité** et additionné deux bits avec le XOR et le ET. Dans le processeur, ces calculs sont réalisés **physiquement** par des **circuits logiques** : c'est ainsi que l'**UAL** (unité arithmétique et logique, voir 3.2) effectue additions et comparaisons.
+
+### <H3 STYLE="COLOR:GREEN;"> **6.1. Du transistor à la porte logique** </H3>
+
+💡 Un **transistor** fonctionne comme un **interrupteur** :
+
+- `1` : le courant passe (**état haut**) ;
+- `0` : le courant ne passe pas (**état bas**).
+
+En assemblant quelques transistors, on obtient une **porte logique** : un composant qui réalise une opération booléenne sur un ou plusieurs signaux binaires.
+
+🔹 Deux types de circuits logiques :
+
+1. **Circuits combinatoires** : la sortie dépend **uniquement des entrées** (portes, additionneurs, multiplexeurs) ;
+2. **Circuits séquentiels** : la sortie dépend des entrées **et des états précédents** (mémoires, registres).
+
+!!! example "Exemple concret"
+    Une lampe ne doit s'allumer que si l'interrupteur de sécurité est activé **et** que le bouton de commande est enfoncé : c'est une porte **ET**.
+
+### <H3 STYLE="COLOR:GREEN;"> **6.2. Les portes logiques** </H3>
+
+| Porte | Sortie à 1 quand… | Python | Symbole | Autre symbole |
+|---|---|---|---|---|
+| **NON** (NOT) | l'entrée vaut 0 | `not a` | ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.010.png) | ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.011.png) |
+| **OU** (OR) | au moins une entrée vaut 1 | `a or b` | ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.012.png) | ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.013.png) |
+| **ET** (AND) | les deux entrées valent 1 | `a and b` | ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.014.png) | ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.015.png) |
+| **OU EXCLUSIF** (XOR) | les entrées sont différentes | `a ^ b` ou `a != b` | ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.016.png) | ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.017.png) |
+| **NON ET** (NAND) | pas les deux à 1 | `not (a and b)` | ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.018.png) | |
+| **NON OU** (NOR) | aucune entrée à 1 | `not (a or b)` | ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.019.png) | |
+
+| A | B | ET | OU | XOR | NAND | NOR |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| 0 | 0 | 0 | 0 | 0 | 1 | 1 |
+| 0 | 1 | 0 | 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 1 | 1 | 1 | 1 | 0 | 0 | 0 |
+
+💡 Les portes NAND et NOR sont dites **universelles** : avec des portes NAND seulement (ou NOR seulement), on peut construire toutes les autres.
+
+???+ question "**Activité n°15 : un simulateur de circuits en Python**"
+
+    Chaque porte devient une fonction qui renvoie `0` ou `1` ; un circuit est une **composition** de fonctions.
+
+    ```python
+    def NON(a):
+        return int(not a)
+
+    def ET(a, b):
+        return int(a and b)
+
+    def OU(a, b):
+        return int(a or b)
+
+    def XOR(a, b):
+        return a ^ b
+
+    def circuit(A, B, C):
+        """S = (A ET B) OU (NON C)"""
+        return OU(ET(A, B), NON(C))
+
+    print("A B C | S")
+    for A in (0, 1):
+        for B in (0, 1):
+            for C in (0, 1):
+                print(A, B, C, "|", circuit(A, B, C))
+    ```
+
+    1. Prévoir `circuit(1, 0, 0)` et `circuit(1, 1, 1)`, puis vérifier.
+    2. Écrire une fonction `NAND(a, b)`, puis `NON_bis(a)` qui n'utilise **que** `NAND` (indice : brancher `a` sur les deux entrées). Vérifier que `NON_bis` et `NON` ont la même table.
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **1.** `circuit(1, 0, 0)` = `OU(0, 1)` = **1** ; `circuit(1, 1, 1)` = `OU(1, 0)` = **1**.
+
+        **2.**
+
+        ```python
+        def NAND(a, b):
+            return NON(ET(a, b))
+
+        def NON_bis(a):
+            return NAND(a, a)
+
+        for a in (0, 1):
+            print(a, NON(a), NON_bis(a))   # mêmes colonnes : 0 1 1 / 1 0 0
+        ```
+
+???+ question "**Activité n°16 : le multiplexeur**"
+
+    La fonction multiplexeur `mux` est définie par : `mux(x, y, z) = (not(x) and y) or (x and z)`.
+
+    1. Compléter sa table de vérité, avec les colonnes intermédiaires `not(x)`, `not(x) and y` et `x and z` (8 lignes).
+    2. Que remarque-t-on quand `x = 0` ? quand `x = 1` ?
+    3. Trouver l'expression de la fonction `ssi(x, y)` (« si et seulement si »), qui vaut 1 quand `x` et `y` ont la même valeur.
+
+    ??? success "Solution"
+
+        | x | y | z | not(x) | not(x) and y | x and z | mux(x,y,z) |
+        |---|---|---|---|---|---|---|
+        | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
+        | 0 | 0 | 1 | 1 | 0 | 0 | 0 |
+        | 0 | 1 | 0 | 1 | 1 | 0 | 1 |
+        | 0 | 1 | 1 | 1 | 1 | 0 | 1 |
+        | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+        | 1 | 0 | 1 | 0 | 0 | 1 | 1 |
+        | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+        | 1 | 1 | 1 | 0 | 0 | 1 | 1 |
+
+        Si **x = 0, mux recopie y** ; si **x = 1, mux recopie z** : x joue le rôle d'un **aiguillage**.
+
+        `ssi(x, y) = (x and y) or (not(x) and not(y))` : c'est le contraire du XOR, `ssi(x, y) = not (x xor y)`.
+
+### <H3 STYLE="COLOR:GREEN;"> **6.3. Simplifier une expression** </H3>
+
+Les règles de l'algèbre de Boole permettent de **simplifier** un circuit (donc d'économiser des portes) :
+
+| Propriété | Avec OU (`+`) | Avec ET (`·`) |
+|---|---|---|
+| Élément neutre | `a + 0 = a` | `a · 1 = a` |
+| Élément absorbant | `a + 1 = 1` | `a · 0 = 0` |
+| Idempotence | `a + a = a` | `a · a = a` |
+| Complément | `a + a̅ = 1` | `a · a̅ = 0` |
+| Distributivité | `a + (b · c) = (a + b) · (a + c)` | `a · (b + c) = a · b + a · c` |
+
+Avec la double négation (`NON (NON a) = a`) et les **lois de De Morgan** (chapitre 04).
+
+💡 Exemple : `A + B + B · C = A + B · (1 + C) = A + B · 1 = A + B`.
+
+### <H3 STYLE="COLOR:GREEN;"> **6.4. Du demi-additionneur à l'UAL** </H3>
+
+- Le **demi-additionneur** additionne deux bits : une porte **XOR** donne la somme `S = A ⊕ B`, une porte **ET** donne la retenue `C = A · B` (C pour *carry*).
+- L'**additionneur complet** additionne deux bits **et la retenue** du rang précédent.
+- En enchaînant 8 additionneurs complets, on additionne deux octets : c'est le cœur de l'**UAL** du processeur.
+
+## <H2 STYLE="COLOR:BLUE;"> **7. Exercices sur les circuits<a name="exercices_circuits"></a>** </H2>
+
+=> **CAPYTALE Le code vous sera donné par votre enseignant** · Pour dessiner et tester un circuit : [📜 Fiche méthode Capytale](13h_Fiche_methode_Capytale_circuits.md)
+
+!!! abstract "Exercice n°1 ★"
+
+    On considère le circuit logique suivant.
+
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.022.png)
+
+    1. Réaliser le circuit.
+    2. Donner l'expression booléenne de S en fonction des variables A et B.
+    3. Compléter la table de vérité ci-dessous.
+
+        ![](Aimg013.png)
+
+    4. Par quel circuit comprenant seulement deux portes peut-on remplacer le circuit étudié ?
+
+!!! abstract "Exercice n°2 ★"
+
+    On considère le circuit logique ci-dessous.
+
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.024.png)
+
+    1. Donner l'expression booléenne de S en fonction des variables A, B et C.
+    2. Compléter la table de vérité ci-dessous.
+
+        ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.025.jpeg)
+
+    3. En déduire une formule pour S qui ne dépend que des variables A et B.
+
+!!! abstract "Exercice n°3 ★"
+
+    On considère les circuits logiques ci-dessous.
+
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.026.png)
+
+    1. Donner les expressions booléennes de U et V en fonction des variables A, B et C.
+    2. Compléter les tables de vérité ci-dessous.
+
+        ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.028.jpeg)
+
+    3. Les expressions booléennes U et V sont-elles équivalentes ?
+
+!!! abstract "Exercice n°4 ★ (circuit MUX-2)"
+
+    On considère le circuit logique suivant.
+
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.029.png)
+
+    1. Donner l'expression de Out en fonction de C, E1 et E2.
+    2. Compléter la table de vérité de ce circuit.
+
+        ![](Aimg014.png)
+
+    Le circuit étudié est appelé multiplexeur à 2 entrées. Selon la valeur de la commande (C), il permet de reproduire en sortie (Out) :
+
+    - le signal E1 si C est à 0 ;
+    - le signal E2 si C est à 1.
+
+    **3.** Vérifier ce fonctionnement sur la table de vérité. Quel lien avec la fonction `mux` de l'activité n°16 ?
+
+!!! abstract "Exercice n°5 FACULTATIF ★★★ (circuit MUX-4)"
+
+    On considère un multiplexeur à 4 entrées, dont le circuit est représenté ci-dessous.
+
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.035.jpeg)
+
+    1. Par analyse du circuit, déterminer l'expression booléenne de Out en fonction des entrées E1, E2, E3, E4 et des commandes C0 et C1.
+    2. Quelles sont les valeurs des commandes C0 et C1 qui permettent de sélectionner en sortie (Out) :
+
+        - l'entrée E1 ?
+        - l'entrée E2 ?
+        - l'entrée E3 ?
+        - l'entrée E4 ?
+
+!!! abstract "Exercice n°6 ★★ (Half adder)"
+
+    Le circuit étudié, appelé demi-additionneur, permet d'additionner deux bits A et B. Il comporte deux sorties C et S qui représentent deux expressions booléennes.
+
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.037.png)
+
+    1. Donner les expressions booléennes de C et S en fonction de A et B.
+    2. Compléter la table de vérité de C et S.
+
+        ![](Aimg015.png)
+
+    3. Quel est le rôle des sorties C et S dans la fonction du circuit ? On pourra comparer avec l'addition binaire `1 + 1 = 10` vue au chapitre 04.
+
+    Le choix de la lettre C vient du fait qu'en anglais, « retenue » se dit « carry ».
+
+!!! abstract "Exercice n°7 FACULTATIF ★★ (Full adder)"
+
+    Le circuit étudié dans cet exercice permet d'additionner deux bits A et B en tenant compte d'une retenue d'entrée Cin. Il produit la somme S et une retenue de sortie Cout.
+
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.053.jpeg)
+
+    1. Réaliser ce circuit et compléter la table de vérité ci-dessous.
+
+        ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.054.jpeg)
+
+    2. Vérifier sur deux lignes de la table que `Cout S` (lu comme un nombre binaire) est bien la somme `Cin + A + B`.
+
+!!! abstract "Exercice n°8 FACULTATIF ★★"
+
+    Soit le circuit ci-dessous :
+
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.055.png)
+
+    1. Écrivez l'équation de ce circuit.
+    2. Établissez la table de vérité de ce circuit.
+
+!!! abstract "Exercice n°9 FACULTATIF ★★★"
+
+    Un pont peut supporter 10 tonnes au maximum. La route menant au pont est strictement interdite aux véhicules de plus de 10 tonnes. À chaque extrémité du pont se trouve une barrière et une bascule pour mesurer le poids (a ou b) des véhicules.
+
+    ![](Aspose.Words.097e3465-a1f8-4dd1-8604-dd29d3a73091.056.jpeg)
+
+    Si un seul véhicule attend devant le pont, la barrière devant lui (A ou B) s'ouvre (étape initiale). Sinon :
+
+    - si a + b ≤ 10 tonnes, les barrières A et B s'ouvrent ;
+    - si a + b > 10 tonnes, seule la barrière correspondant au véhicule le plus léger s'ouvre ;
+    - si a = b, la barrière A s'ouvre en priorité.
+
+    L'autre véhicule attend que le premier ait franchi le pont, puis le protocole d'ouverture des barrières recommence à l'étape initiale.
+
+    Indication : a et b n'étant pas des variables binaires, il convient de créer deux variables binaires x et y et de reformuler l'énoncé du problème.
+
+    Aide : on posera `x = (a + b <= 10)` et `y = (a > b)`.
+
+    1. Écrivez la table de vérité pour l'ouverture des barrières A et B (cas où deux véhicules attendent).
+    2. Donnez les équations logiques pour l'ouverture de la barrière A, puis pour l'ouverture de la barrière B.
+    3. Dessinez le circuit logique déterminant l'ouverture des barrières.
+
+!!! success "🎞️ Revoir en vidéo et réviser"
+    [XOR, NAND, NOR](../04_chapitre_4/04m_xor_nand_nor_video.md) · [📜 Fiche méthode : booléens et circuits](13i_Booleens_circuits_fiche.md)
