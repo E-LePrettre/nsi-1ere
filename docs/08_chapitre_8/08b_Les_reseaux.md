@@ -696,7 +696,8 @@ Ce protocole utilise un **bit de séquence** (0 ou 1) pour marquer chaque trame 
 
 
 
-!!! abstract "CAPYTALE Le code vous sera donné par votre enseignant"
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 ## 8. Simulation d'un réseau avec Filius { #filius }
 

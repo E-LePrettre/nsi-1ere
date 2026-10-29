@@ -280,7 +280,8 @@ L’algorithme **ne peut pas entrer dans une boucle infinie** et **s'arrête tou
 
 ## <H2 STYLE="COLOR:BLUE;">6. Implémentation<a name="_page6_x40.00_y408.92"></a> en Python</H2>
 
-=> CAPYTALE Le code vous sera donné par votre enseignant
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 ???+ question "Activité n°1 :" 
 
@@ -348,7 +349,8 @@ L’algorithme **ne peut pas entrer dans une boucle infinie** et **s'arrête tou
 
 ## <H2 STYLE="COLOR:BLUE;">7. Exercices<a name="_page7_x40.00_y407.92"></a></H2>
 
-=> CAPYTALE Le code vous sera donné par votre enseignant
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 !!! abstract "Exercice 1 : Recherche d’un maximum dans une liste de n éléments :" 
 

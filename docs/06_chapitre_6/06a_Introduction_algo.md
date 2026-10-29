@@ -583,7 +583,8 @@ RESSOURCES :
 
 ## **<H2 STYLE="COLOR:BLUE;">5. Exercices<a name="_page7_x40.00_y36.92"></a></H2>**
 
-=> CAPYTALE Le code vous sera donné par votre enseignant
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 !!! abstract "Exercice 1 :" 
 

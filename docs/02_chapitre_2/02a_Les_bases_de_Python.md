@@ -460,7 +460,8 @@ if i < len(tab) and tab[i] == 15:   # tab[5] n'est jamais lu : pas d'IndexError
 
 ### **<H3 STYLE="COLOR:GREEN;">2.3. Exercices<a name="_page5_x40.00_y36.92"></a></h3>** 
 
-=> **CAPYTALE Le code vous sera donné par votre enseignant**
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 
 !!! abstract "Exercice 1 ★"  
@@ -919,7 +920,8 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
 ### **<H3 STYLE="COLOR:GREEN;">3.6. Exercices<a name="_page10_x40.00_y36.92"></a></h3>** 
 
-=> **CAPYTALE Le code vous sera donné par votre enseignant**
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 
 
@@ -1314,7 +1316,8 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
 
 ## **<H2 STYLE="COLOR:BLUE;">8. Exercices<a name="_page15_x40.00_y36.92"></a></h2>**
-=> **CAPYTALE Le code vous sera donné par votre enseignant**
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 
 !!! abstract "Exercice 15 ☆"   

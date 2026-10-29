@@ -76,7 +76,8 @@ Cependant, cette efficacité a un prix : **la solution obtenue n’est pas toujo
 
 
 
-=> **CAPYTALE Le code vous sera donné par votre enseignant**
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 ???+ question "Activité n°1" 
 
@@ -488,7 +489,8 @@ On n'ajoute un objet **que si** `poids_total + poids ≤ capacité`, donc la con
 
 ## <H2 STYLE="COLOR:BLUE;"> **2. Exercice<a name="_page7_x51.00_y32.00"></a>**</H2>  
 
-=> **CAPYTALE Le code vous sera donné par votre enseignant**
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 !!! abstract "**Exercice n°1  ★ : Le voyageur**"
 

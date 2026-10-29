@@ -828,7 +828,8 @@ Les **événements** en JavaScript permettent de réagir aux actions de l'utilis
 
 ## 11. Exercices { #exercices }
 
-=> CAPYTALE — Le code vous sera donné par votre enseignant
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 > 💡 **Rappel** : dans les exercices 1 à 3 vous travaillez avec les fichiers du site des **passoires** créé en HTML (07a) et mis en forme en CSS (07b). C'est l'aboutissement du projet web : on y ajoute maintenant de l'interactivité avec JavaScript.
 

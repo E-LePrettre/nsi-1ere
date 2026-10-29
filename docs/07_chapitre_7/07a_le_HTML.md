@@ -98,7 +98,8 @@ Un site web est **construit avec trois langages** principaux :
 
 ### 3.1. Page web en HTML
 
-**=> CAPYTALE — Le code vous sera donné par votre enseignant**
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 <p style="color:red;">=> seules les activités sont à faire sur Capytale (pas les exemples)</p>
 

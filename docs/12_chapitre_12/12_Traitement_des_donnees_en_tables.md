@@ -62,7 +62,8 @@ L'équivalent en JSON du fichier précédent :
 
 ### <H3 STYLE="COLOR:GREEN;">**2.1. Lecture d'un fichier CSV en liste simple<a name="_page1_x40.00_y36.92"></a></h3>** 
 
-=> **CAPYTALE Le code vous sera donné par votre enseignant**
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 
 ???+ question "**Activité n°1 : Lire un fichier CSV avec `csv.reader`**" 
@@ -533,7 +534,8 @@ Merci à Nicolas Revéret
 
 !!! abstract "**projet 1 : ★ pandy pandas pas à pas**"
 
-    => **CAPYTALE Le code vous sera donné par votre enseignant**
+    !!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+        
 
     On trouve énormément de données au format CSV sur internet. Une partie de ces données sont publiques, par exemple le site[ data.gouv.fr ](https://www.data.gouv.fr/fr/)récence un grand nombre de données publiques. Ces données sont librement réutilisables. 
 
@@ -807,7 +809,8 @@ Merci à Nicolas Revéret
 
 !!! abstract "**projet 2 :★★  Qualité de l’air** "
 
-    => **CAPYTALE Le code vous sera donné par votre enseignant**
+    !!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+        
 
     La ville de Digne, en association avec[ les petits débrouillards du 04 ](https://www.lespetitsdebrouillardspaca.org/-04-Alpes-de-Hautes-Provence-.html)a initié une campagne de  mesures de la qualité de l’air. Ces mesures sont issues des[ 4 stations ](http://umap.openstreetmap.fr/fr/map/capteurs-datadigne_131379#17/44.09167/6.23628)répartis dans le centre-ville de Digne-les-Bains. 
 
@@ -926,4 +929,5 @@ Merci à Nicolas Revéret
 
 !!! abstract "**projet 3 : ★ Pokémon**"
 
-    => **CAPYTALE Le code vous sera donné par votre enseignant**
+    !!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+        

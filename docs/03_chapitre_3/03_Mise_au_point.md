@@ -703,7 +703,8 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
 
     
 ## **<H2 STYLE="COLOR:BLUE;">6. Exercices<a name="_page13_x40.00_y375.92"></a></h2>** 
-=> **CAPYTALE Le code vous sera donné par votre enseignant**
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 !!! abstract "Exercice 1"  
     On considère la fonction multiplier_par_deux(x) qui prend en paramètre x et qui renvoie son double. Ecrire un script de cette fonction avec : 

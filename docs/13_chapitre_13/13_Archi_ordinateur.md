@@ -127,7 +127,8 @@ APPLE MACINTOSH
 Actuellement, les principaux systèmes d’exploitation sont **Windows, macOS et GNU/Linux**.
 
 
-=> **CAPYTALE Le code vous sera donné par votre enseignant**
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 ???+ question "**Activité n°1**"
 
@@ -754,7 +755,8 @@ Avec la double négation (`NON (NON a) = a`) et les **lois de De Morgan** (chapi
 
 ## <H2 STYLE="COLOR:BLUE;"> **7. Exercices sur les circuits<a name="exercices_circuits"></a>** </H2>
 
-=> **CAPYTALE Le code vous sera donné par votre enseignant** · Pour dessiner et tester un circuit : [📜 Fiche méthode Capytale](13h_Fiche_methode_Capytale_circuits.md)
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    Pour dessiner et tester un circuit : [📜 Fiche méthode Capytale](13h_Fiche_methode_Capytale_circuits.md)
 
 !!! abstract "Exercice n°1 ★"
 

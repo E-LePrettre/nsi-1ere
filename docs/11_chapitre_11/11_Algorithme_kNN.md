@@ -69,7 +69,8 @@ $k$-NN est un algorithme **d'apprentissage supervisé** servant à **classer** u
 !!! success "Principe en une phrase"
     Pour classer un nouvel élément, on regarde **les $k$ exemples connus qui lui ressemblent le plus**, et on lui attribue la **classe majoritaire** parmi ces voisins.
 
-!!! abstract => **CAPYTALE : le code vous sera fourni par votre enseignant.**
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 ## <span style="color:blue;">2. L'intuition avant le code — activité débranchée</span>
 
@@ -835,6 +836,7 @@ Si le jeu d'exemples est :
 
 !!! abstract "Problème — Analyse de texte avec $k$-NN"
 
-    => **CAPYTALE : le code vous sera fourni par votre enseignant.**
+    !!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+        
 
     Suivez les indications du fichier `knn_analyse_texte_eleve.py`.

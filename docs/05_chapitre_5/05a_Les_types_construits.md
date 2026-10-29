@@ -204,7 +204,8 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
 
 #### **<H4 STYLE="COLOR:MAGENTA;">1.2.   Exercices</h4>** 
 
-=> **CAPYTALE Le code vous sera donné par votre enseignant**
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 !!! abstract "Exercice 1 : Accès aux éléments"
 

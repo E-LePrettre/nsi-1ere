@@ -298,7 +298,8 @@ On veut prouver que l’algorithme **s’arrête toujours**.
 
 ### **<H3 STYLE="COLOR:GREEN;">2.8. Implémentation<a name="_page3_x40.00_y497.92"></a> en Python</H3>**
 
-=> CAPYTALE Le code vous sera donné par votre enseignant
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 ???+ question "Activité n°2 : Générer des données aléatoires"
 
@@ -511,7 +512,8 @@ L’algorithme **ne peut pas boucler indéfiniment** et **s’arrête toujours**
 
 ### **<H3 STYLE="COLOR:GREEN;">3.7. Implémentation<a name="_page7_x40.00_y36.92"></a> en Python</H3>**
 
-=> CAPYTALE Le code vous sera donné par votre enseignant
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 Nous allons maintenant **coder** le tri par insertion.
 
@@ -596,7 +598,8 @@ On mesure **le temps de tri** en fonction de la taille du tableau.
 
 ## **<H2 STYLE="COLOR:BLUE;">4. Exercices<a name="_page9_x40.00_y511.92"></a></h2>**
 
-=> CAPYTALE Le code vous sera donné par votre enseignant
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+    
 
 !!! abstract "Exercice n°1 :"
 

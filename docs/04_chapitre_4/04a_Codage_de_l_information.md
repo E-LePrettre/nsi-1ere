@@ -458,7 +458,7 @@ print(bin(chiffre), bin(dechiffre), dechiffre == message)   # 0b11011111 0b10110
 !!! success "🎞️ Revoir en vidéo"
     [ET, OU, NON](../02_chapitre_2/02k_et_ou_non_video.md) · [Table de vérité](04l_Table_de_verite_video.md) · [XOR, NAND, NOR](04m_xor_nand_nor_video.md) · [Les booléens](04n_Les_booleens_video.md) · [📜 Fiche méthode : booléens et circuits](../13_chapitre_13/13i_Booleens_circuits_fiche.md)
 
-!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant7"
+!!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
 
 ---
 
