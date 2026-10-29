@@ -20,7 +20,20 @@ jobs:
         with:
           fetch-depth: 1
       - name: Retrieve current Forge source
-        run: git clone --depth 1 https://forge.apps.education.fr/eleprettre/nsi-1ere.git "$RUNNER_TEMP/forge-source"
+        timeout-minutes: 6
+        run: |
+          for attempt in 1 2 3 4; do
+            if timeout 60s git clone --depth 1 https://forge.apps.education.fr/eleprettre/nsi-1ere.git "$RUNNER_TEMP/forge-source"; then
+              exit 0
+            fi
+            rm -rf "$RUNNER_TEMP/forge-source"
+            if [ "$attempt" -eq 4 ]; then
+              echo "::error::Unable to retrieve Forge source after four attempts; the GitHub mirror was left unchanged."
+              exit 1
+            fi
+            echo "::warning::Forge retrieval failed (attempt $attempt/4); retrying."
+            sleep $((attempt * 10))
+          done
       - name: Synchronize files and preserve GitHub workflows
         run: |
           source_revision=$(git -C "$RUNNER_TEMP/forge-source" rev-parse HEAD)
