@@ -6,15 +6,15 @@ title: 02a 📜 Fiche Méthode - Les bases de Python
 # Les bases de Python
 
 !!! abstract "Fiche méthode & révision — Première NSI · Chapitre 2"
-Fiche compacte pour refaire seul les exercices : fonctions, conditions,
-booléens, chaînes, boucles et portée des variables. Les points marqués
-« Approfondissement » ne sont pas indispensables.
+    Fiche compacte pour refaire seul les exercices : fonctions, conditions,
+    booléens, chaînes, boucles et portée des variables. Les points marqués
+    « Approfondissement » ne sont pas indispensables.
 
 ---
 
 ## 1. Objectifs
 
-À la fin du chapitre, vous devez savoir :
+À la fin du chapitre, tu dois savoir :
 
 - **écrire** une fonction avec des **paramètres** et un **`return`** ;
 - utiliser **conditions** (`if` / `elif` / `else`) et **booléens** (`and`, `or`, `not`) ;

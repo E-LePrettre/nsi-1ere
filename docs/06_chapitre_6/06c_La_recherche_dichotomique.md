@@ -1,4 +1,4 @@
-﻿---
+---
 author: Elisabeth Le Prettre (LePrettre)
 title: 06c La recherche dichotomique
 ---
@@ -45,11 +45,11 @@ Les algorithmes de la famille **"Diviser pour régner"** suivent une stratégie 
 
 💡 **Fait historique** :  
 
-- La **recherche dichotomique** a été formalisée en 1946 par **John Mauchly**, mais son principe remonte à **Babylone (-220 av. J.-C.)**.  
+- La **recherche dichotomique** a été formalisée en 1946 par **John Mauchly**, mais son principe remonte à **Babylone (vers 200 av. J.-C.)**.  
 
 - **John von Neumann** a inventé le **tri fusion** en 1945.  
 
-- L’algorithme d’**Euclide**, découvert en **-300 av. J.-C.**, peut être vu comme un exemple d’algorithme **Diviser pour régner**.
+- L’algorithme d’**Euclide**, décrit vers **300 av. J.-C.**, peut être vu comme un exemple d’algorithme **Diviser pour régner**.
 
 
 ## <H2 STYLE="COLOR:BLUE;">2. TP<a name="_page0_x40.00_y599.92"></a></H2>
@@ -85,7 +85,7 @@ L'idée de base est simple :
 
 Animation : [https://www.infoforall.fr/art/algo/animation-de-la-recherche-dichotomique/](https://www.infoforall.fr/art/algo/animation-de-la-recherche-dichotomique/)
 
-### <H3 STYLE="COLOR:GREEN;">2.2. Application<a name="_page2_x40.00_y511.92"></a> de l’algorithme à un exemple</H3>
+### <H3 STYLE="COLOR:GREEN;">2.3. Application<a name="_page2_x40.00_y511.92"></a> de l’algorithme à un exemple</H3>
 
 🔍 **Problème**
 Imaginons que nous avons une liste triée de nombres et que nous devons **trouver rapidement** la position d’un nombre donné.
@@ -158,7 +158,7 @@ On ajuste les indices :
 
 **Le nombre 35 se trouve à l’indice 6 !**  
 
-🎯 **Résultat final :** Nombre trouvé en **4 étapes seulement**, au lieu de **16** avec une recherche classique !
+🎯 **Résultat final :** Nombre trouvé en **4 étapes seulement**, au lieu de **7** avec une recherche séquentielle (et jusqu'à **16** dans le pire des cas) !
 
 
 ## <H2 STYLE="COLOR:BLUE;">3. Le<a name="_page4_x40.00_y332.92"></a> pseudo-code (version itérative)</H2>
@@ -170,14 +170,14 @@ ALGORITHME recherche_dichotomique
         droite ← taille du tableau - 1
         TANT QUE gauche <= droite FAIRE
             milieu ← (gauche + droite) // 2   # on cherche l'élément central
-            SI T[milieu] < x ALORS
-                gauche = milieu + 1  # Cherche à droite
-            SINON SI T[milieu] > x ALORS
-                droite = milieu - 1  # Cherche à gauche
+            SI tableau[milieu] < x ALORS
+                gauche ← milieu + 1  # Cherche à droite
+            SINON SI tableau[milieu] > x ALORS
+                droite ← milieu - 1  # Cherche à gauche
             SINON
-                renvoyer milieu  # On a trouvé l'élément iy True selon l'énoncé
+                renvoyer milieu  # On a trouvé l'élément (ou True selon l'énoncé)
         FIN TANT QUE
-        renvoyer None  # L'élément n'est pas présent ou False selon l'énoncé
+        renvoyer None  # L'élément n'est pas présent (ou False selon l'énoncé)
 ```
 
 ## <H2 STYLE="COLOR:BLUE;">4. Complexité<a name="_page4_x40.00_y600.92"></a></H2>
@@ -188,25 +188,13 @@ ALGORITHME recherche_dichotomique
 
 🔹 On cherche donc **combien de fois** on peut diviser **n** par **2** avant d’atteindre **1 élément**.
 
-📌 **Formule mathématique** :  
-$n = 2^a$  
-$a = log_2(n)$ 
+📌 **Autrement dit** : combien de fois faut-il diviser n par 2 pour obtenir 1 ?
 
-Autrement dit, combien de fois faut-il diviser n par 2 pour obtenir 1?
+Si on note a ce nombre de divisions, on cherche a tel que n / 2<sup>a</sup> = 1, c'est-à-dire n = 2<sup>a</sup>.
 
-Mathématiquement cela se traduit par l'équation  $\frac {n }{ 2^a}  =1$ avec a le nombre de fois qu'il faut diviser n par 2 pour obtenir 1. Il faut donc trouver a.
+Par définition du logarithme en base 2 : a = log<sub>2</sub>(n).
 
-
-
-$\frac {n }{ 2^a}  =1$
-
-n = 2<sup>a</sup>
-
-log<sub>2</sub>(n) = log<sub>2</sub>(2<sup>a</sup>)
-
-log<sub>2</sub>(n) = a
-
-nous avons donc  a = log<sub>2</sub>(n)
+Exemple : pour n = 1 024 = 2<sup>10</sup>, il suffit d'environ 10 étapes ; pour n = 1 000 000, environ 20 étapes.
 
 
 🎯 **Complexité de l’algorithme** : **O(log₂(n))**  
@@ -254,7 +242,7 @@ Il faut montrer que la boucle **while** ne tourne pas indéfiniment.
 
 ✔ **Définition du variant** :  
 
-Le **variant** est la longueur de l’intervalle `droite - gauche`, qui représente la zone de recherche.
+Le **variant** est la taille de la zone de recherche : `droite - gauche + 1`.
 
 ✔ **Diminution stricte**  
 
@@ -264,11 +252,11 @@ Le **variant** est la longueur de l’intervalle `droite - gauche`, qui représe
 
   - Si `T[milieu] > x`, alors `droite = milieu - 1` ⬅ Réduction de l'intervalle.
 
-Dans **tous les cas**, `droite - gauche` **diminue strictement**.
+Dans **tous les cas**, `droite - gauche + 1` **diminue strictement** (au moins de 1).
 
 ✔ **Borne inférieure** : 
 
-- `droite - gauche` est toujours positif ou nul.
+- Tant que la boucle tourne, `droite - gauche + 1` est un entier strictement positif : il ne peut pas diminuer indéfiniment.
 
 - Quand `gauche > droite`, la boucle s'arrête.
 
@@ -285,7 +273,7 @@ L’algorithme **ne peut pas entrer dans une boucle infinie** et **s'arrête tou
 
 ???+ question "Activité n°1 :" 
 
-    Complétez l’algorithme de recherche dichotomique
+    Complète l’algorithme de recherche dichotomique
 
     ```python
     def recherche_dichotomique(T, x):
@@ -305,9 +293,9 @@ L’algorithme **ne peut pas entrer dans une boucle infinie** et **s'arrête tou
 
 
 
-???+ question "Activité n°2.: Observation de durées"
+???+ question "Activité n°2 : Observation de durées"
 
-    On peut mesurer les durées pour trouver une valeur dans un tableau déjà trié. Comme les temps d’exécution sont très faibles, et que la fonction time est peu précise il faut avoir recours à la fonction magique %timeit de iPython. Voilà un exemple de script pour mesurer les durées sur des tableaux de longueurs différentes :
+    On peut mesurer les durées pour trouver une valeur dans un tableau déjà trié. Comme les temps d’exécution sont très faibles, et que le module time est peu précise il faut avoir recours à la fonction magique %timeit de iPython. Voilà un exemple de script pour mesurer les durées sur des tableaux de longueurs différentes :
 
     ```python
     # construction d'un tableau par compréhension
@@ -331,19 +319,19 @@ L’algorithme **ne peut pas entrer dans une boucle infinie** et **s'arrête tou
     Observer et commenter
 
     ```
-    %timeit rechercheDichotomique(t1, 0)
+    %timeit recherche_dichotomique(t1, 0)
     2.69 µs ± 144 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
-    %timeit rechercheDichotomique(t2, 0)
+    %timeit recherche_dichotomique(t2, 0)
     2.9 µs ± 105 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
-    %timeit rechercheDichotomique(t3, 0)
+    %timeit recherche_dichotomique(t3, 0)
     4.02 µs ± 425 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
-    %timeit rechercheDichotomique(t4, 0)
+    %timeit recherche_dichotomique(t4, 0)
     4.37 µs ± 457 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
-    %timeit rechercheDichotomique(t5, 0)
+    %timeit recherche_dichotomique(t5, 0)
     4.64 µs ± 256 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
     ```
 
@@ -354,18 +342,18 @@ L’algorithme **ne peut pas entrer dans une boucle infinie** et **s'arrête tou
 
 !!! abstract "Exercice 1 : Recherche d’un maximum dans une liste de n éléments :" 
 
-    1. Ecrire l’algorithme en pseudo – code
+    1. Écrire l’algorithme en pseudo – code
     2. Calculer la complexité de cet algorithme
     3. L’implémenter en Python
-    4. Modifier le programme pour créer une fonction ```maximum(T :list) -> int```
+    4. Modifier le programme pour créer une fonction ```maximum(T: list) -> int```
     5. Tester la fonction avec une liste aléatoire de 20 valeurs
 
 !!! abstract "Exercice 2 : Recherche de la moyenne des éléments d’une liste de n éléments:"
 
-    1. Ecrire l’algorithme en pseudo – code
+    1. Écrire l’algorithme en pseudo – code
     2. Calculer la complexité de cet algorithme
     3. L’implémenter en Python
-    4. Modifier le programme pour créer une fonction ```moyenne(T :list) -> int```
+    4. Modifier le programme pour créer une fonction ```moyenne(T: list) -> float```
     5. Tester la fonction avec une liste aléatoire de 20 valeurs
 
 !!! abstract "Exercice 3 : Recherche en table"
@@ -384,9 +372,9 @@ L’algorithme **ne peut pas entrer dans une boucle infinie** et **s'arrête tou
 
     2. En déduire le temps de recherche dans le pire des cas et conclure.
 
-    On appelle logarithme à base 2, log<sub>2</sub>(x) d’un nombre x ≥ 1, le nombre de fois qu’il faut le diviser x par 2 pour obtenir un nombre inférieur ou égal à 1.
+    On appelle logarithme à base 2, log<sub>2</sub>(x) d’un nombre x ≥ 1, le nombre de fois qu’il faut diviser x par 2 pour obtenir un nombre inférieur ou égal à 1.
 
-    Sur la calculatrice, log<sub>2</sub>(x) = $\frac{ln(x)}{ln(2)}$
+    Sur la calculatrice, log<sub>2</sub>(x) = ln(x) / ln(2)
 
-    3. A partir du logarithme à base 2, retrouver le résultat obtenu à la question 1.
+    3. À partir du logarithme à base 2, retrouver le résultat obtenu à la question 1.
     4. Calculer le temps nécessaire pour rechercher un nom dans l’annuaire français pour n = 60 millions d’entrées.

@@ -1,4 +1,4 @@
-﻿---
+---
 author: Elisabeth Le Prettre (LePrettre)
 title: 01a Révision Les bases
 ---
@@ -375,7 +375,7 @@ On s’est arrêté car 29 est plus petit que 99 et qu’on ne souhaitait pas al
         prenom = "Alphonse"
         nom = "Dansletas"
         age = 358
-        print("Bonjour je m'appelle ",prenom, nom, "j'ai" ,age, "ans.")
+        print("Bonjour je m'appelle", prenom, nom + ",", "j'ai", age, "ans.")
         ```
 
         **Résultat :**
@@ -430,7 +430,7 @@ L'information récupérée grâce à un `input` est une **chaîne de caractères
         nom = input("Quel est votre nom ? ")
         age = input("Quel est votre âge ? ")
 
-        print("Bonjour je m'appelle, prenom, nom", j'ai", age, "ans.")
+        print("Bonjour je m'appelle", prenom, nom + ",", "j'ai", age, "ans.")
         ```
 
         **Résultat (si vous entrez Alain, Térieur et 217) :**
@@ -870,10 +870,12 @@ NB : si pas < 0, la liste est parcourue dans le sens inverse.
     ```python
     texte = "Il est important de construire"
     
-    liste1 = ' '.join(texte)  # Séparé par un espace
+    mots = texte.split(' ')   # Découpe la phrase en une liste de mots
+
+    liste1 = ' '.join(mots)  # Recolle les mots, séparés par un espace
     print(liste1) 
 
-    liste2 = ','.join(texte)  # Séparé par une virgule
+    liste2 = ','.join(mots)  # Recolle les mots, séparés par une virgule
     print(liste2)
     ```
     ??? success "Python"

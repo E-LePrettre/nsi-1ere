@@ -5,7 +5,7 @@ title: 06c 📜 Fiche Méthode - La recherche dichotomique
 
 # La recherche dichotomique
 
-!!! abstract "Fiche méthode & révision — Première NSI · Chapitre 8"
+!!! abstract "Fiche méthode & révision — Première NSI · Chapitre 6"
     Fiche **compacte** pour **refaire seul les exercices** : principe de la recherche
     dichotomique, code, traces, **complexité `O(log n)`**, invariant et terminaison.
 
@@ -16,7 +16,7 @@ title: 06c 📜 Fiche Méthode - La recherche dichotomique
 
 ## 1. Objectifs
 
-À la fin du chapitre, vous devez savoir :
+À la fin du chapitre, tu dois savoir :
 
 - **connaître** le principe de la recherche dichotomique ;
 - **expliquer** pourquoi le tableau doit être **trié** ;

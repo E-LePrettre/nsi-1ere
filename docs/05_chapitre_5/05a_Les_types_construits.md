@@ -266,7 +266,7 @@ Une **fonction en Python** peut retourner **plusieurs valeurs** grâce aux tuple
     anglais
     ```
 
-!!! abstract "Exercice 6 : Tuple et boucle"
+!!! abstract "Exercice 6 : Tuple et boucle (facultatif)"
 
     Écrire une fonction `moyenne(t)` qui renvoie la **moyenne** des nombres contenus dans un tuple `t`.
 
@@ -662,7 +662,7 @@ for x in liste:
 
 !!! abstract "Exercice 8 : Longueur d'une liste :"
 
-    Ecrire une fonction `longueur(tab)` qui prend un tableau tab en paramètre et qui renvoie la longueur de ce tableau
+    Écrire une fonction `longueur(tab)` qui prend un tableau tab en paramètre et qui renvoie la longueur de ce tableau
 
     **Exemple** :
     ```python
@@ -723,7 +723,7 @@ for x in liste:
     assert moyenne([2,4,6]) == 4
     ```
 
-!!! abstract "Exercice 13 : Produit :"
+!!! abstract "Exercice 13 : Produit (facultatif)"
 
     Écrire une fonction `produit(T)` qui prend en argument  un tableau  T d’entiers et renvoie le produit des éléments de T. 
 
@@ -746,7 +746,7 @@ for x in liste:
     assert maximum([-1,-5,-9,-6,-2]) == -1
     ```
 
-!!! abstract "Exercice 15 : Le plus petit élément :"
+!!! abstract "Exercice 15 : Le plus petit élément (facultatif)"
 
     Écrire une fonction `minimum` qui recherche la valeur minimum d’un tableau T d’entiers non vide et renvoie également son indice comme valeur de retour.
 
@@ -904,7 +904,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 ### **<H3 STYLE="COLOR:GREEN;">1.6.  Exercices</h3>** 
 
 !!! abstract "Exercice 18 : Affichage de matrice :"
-    Ecrire la fonction `affichage(M)` qui prend en paramètre une matrice de taille quelconque et **l’affiche** ligne par ligne
+    Écrire la fonction `affichage(M)` qui prend en paramètre une matrice de taille quelconque et **l’affiche** ligne par ligne
 
     **Exemple** :
     ```python
@@ -924,7 +924,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 !!! abstract "Exercice 19 : Affichage de coefficient de matrice :"
 
-    Ecrire la fonction `affichagecoeff(M)` qui prend en paramètre une matrice de taille quelconque et **affiche** tous ses coefficients dans le sens de la lecture
+    Écrire la fonction `affichagecoeff(M)` qui prend en paramètre une matrice de taille quelconque et **affiche** tous ses coefficients dans le sens de la lecture
 
     **Exemple** :
     ```python
@@ -945,7 +945,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 !!! abstract "Exercice 20 : Affichage d'une ligne de matrice :"
 
-    Ecrire la fonction `affichage_ligne(M,i)` qui prend en paramètre une matrice de taille quelconque et **affiche**, lorsque cela est possible la ligne i de cette matrice 
+    Écrire la fonction `affichage_ligne(M,i)` qui prend en paramètre une matrice de taille quelconque et **affiche**, lorsque cela est possible la ligne i de cette matrice 
 
     **Exemple** :
     ```python
@@ -962,7 +962,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 !!! abstract "Exercice 21 : Affichage d'une colonne de matrice :"
 
-    Ecrire la fonction `affichage_colonne(M,j)` qui prend en paramètre une matrice de taille quelconque et **affiche** en colonne, lorsque cela est possible, la colonne j de cette matrice
+    Écrire la fonction `affichage_colonne(M,j)` qui prend en paramètre une matrice de taille quelconque et **affiche** en colonne, lorsque cela est possible, la colonne j de cette matrice
 
     **Exemple** :
     ```python
@@ -980,9 +980,9 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
     8
     ```
 
-!!! abstract "Exercice 22 : Croix :"
+!!! abstract "Exercice 22 : Croix (facultatif)"
 
-    Ecrire la fonction `croix(n,i,j)` qui crée et renvoie la matrice de taille n×n remplie de 0 et dont la ligne `i` et la colonne `j` sont remplies de 1.
+    Écrire la fonction `croix(n,i,j)` qui crée et renvoie la matrice de taille n×n remplie de 0 et dont la ligne `i` et la colonne `j` sont remplies de 1.
 
     **Exemple** :
     ```python
@@ -1004,7 +1004,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 !!! abstract "Exercice 24 : Maximum d'une matrice :"
 
-    Ecrire la fonction `maxi(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le plus grand de ses éléments 
+    Écrire la fonction `maxi(M)` qui prend en paramètre une matrice de taille quelconque et renvoie le plus grand de ses éléments 
 
     **Exemple** :
     ```python
@@ -1017,7 +1017,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 !!! abstract "Exercice 25 : Ligne de plus grande somme :"
 
-    Ecrire la fonction `maxi2(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la ligne qui a la plus grande somme 
+    Écrire la fonction `maxi2(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la ligne qui a la plus grande somme 
 
     **Exemple** :
     ```python
@@ -1028,9 +1028,9 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
     assert maxi2(m) == 3
     ```
 
-!!! abstract "Exercice 26 : Colonne de plus grande somme :"
+!!! abstract "Exercice 26 : Colonne de plus grande somme (facultatif)"
 
-    Ecrire la fonction `maxi3(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la colonne qui a la plus grande somme 
+    Écrire la fonction `maxi3(M)` qui prend en paramètre une matrice de taille quelconque et renvoie l’indice de la colonne qui a la plus grande somme 
 
     **Exemple** :
     ```python
@@ -1043,7 +1043,7 @@ En Python, on peut parcourir tous les éléments d'une matrice **grâce à une d
 
 !!! abstract "Exercice 27 : ★ Création de matrice  :"
 
-    Ecrire une fonction ```matriceAlea(n:int,m:int)->list``` Python qui renvoie une matrice à n lignes et m colonnes d'entiers aléatoires entre 0 et 100. Créer la fonction qui utilise la création en compréhension 
+    Écrire une fonction ```matriceAlea(n:int,m:int)->list``` Python qui renvoie une matrice à n lignes et m colonnes d'entiers aléatoires entre 0 et 100. Créer la fonction qui utilise la création en compréhension 
 
     **Aide** : ne pas oublier d’importer le module random 
 
@@ -1365,7 +1365,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     🔹 **Tester :**  
 
     ```python
-    mon_dico = {"nom": "Durand", "prenom": "Christophe", "date de naissance": "29/02/1981"}
+    mon_dico = {"nom": "Durand", "prenom": "Christophe", "date de naissance": "28/02/1981"}
 
     print(f'Bonjour, je suis {mon_dico["prenom"]} {mon_dico["nom"]}, je suis né le {mon_dico["date de naissance"]}')
 
@@ -1466,9 +1466,9 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     **Résultat attendu** :
 
     ```
-    nom : Alice
-    âge : 17
-    classe : 1ère NSI
+    ('nom', 'Alice')
+    ('âge', 17)
+    ('classe', '1ère NSI')
     ```
 
 
@@ -1494,7 +1494,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     assert ajouter_email(d) == {"nom": "Alice", "âge": 17, "classe": "1ère NSI", "email": "alice@nsi.fr"}
     ```
 
-!!! abstract "Exercice 33 : Compter les éléments d'un dictionnaire:"
+!!! abstract "Exercice 33 : Compter les éléments d'un dictionnaire (facultatif)"
 
     Écrire une fonction `taille_dico(d)` qui renvoie **le nombre d’éléments** (paires clé-valeur) contenus dans le dictionnaire.
 
@@ -1854,7 +1854,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     > 💡 Utiliser le dictionnaire `d` créé plus tôt.
 
 
-!!! abstract "Exercice 42 : ★★ Jeu de cartes :"
+!!! abstract "Exercice 42 : ★★ Jeu de cartes (facultatif)"
 
     **Partie 1 – Modélisation et construction du jeu de 32 cartes**
 
@@ -2036,7 +2036,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     assert distance((1, "trèfle"), ('Roi', "trèfle")) == 1
     ```
 
-!!! abstract "Exercice 43 ★★ Tracé graphique" 
+!!! abstract "Exercice 43 ★★ Tracé graphique (facultatif)" 
 
     **1** Importation 
 
@@ -2110,7 +2110,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     ![](Aimg021.png)
 
 
-!!! abstract "Exercice 44 : ★★★ format EXIF" 
+!!! abstract "Exercice 44 : ★★★ format EXIF (facultatif)" 
 
 
     L’Exchangeable  Image  File  Format  ou  EXIF  est  une  spécification  de  format  de  fichier  pour  les  images  utilisées  par  les  appareils  photographiques  numériques.  Il  a  été  établi  par  le  Japan  Electronic  Industry Development Association (JEIDA). Cette spécification repose sur  des formats existants tels que JPEG, TIFF version 6.0 et RIFF format de  fichier audio WAVE, en y ajoutant des balises de métadonnées.  
@@ -2339,7 +2339,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
 
 
 
-!!! abstract "Exercice 45 : ★★★ Le chiffrement de Caesar"
+!!! abstract "Exercice 45 : ★★★ Le chiffrement de Caesar (facultatif)"
 
     ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.089.png)
 
@@ -2492,7 +2492,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
     **Aide :**  
     - La clef de chiffrement étant inconnue, il faut faire une boucle qui les teste toutes (technique de l’attaque par force brute). 
 
-!!! abstract "Exercice 46 : ★★★ Le chiffrement de Vigenère"
+!!! abstract "Exercice 46 : ★★★ Le chiffrement de Vigenère (facultatif)"
 
     Le chiffre de Vigenère est un système de chiffrement polyalphabétique, c’est un chiffrement par substitution, mais une même lettre du message clair peut, suivant sa position dans celui-ci, être remplacée par des lettres différentes, contrairement à un système de chiffrement mono alphabétique comme le chiffre de César (qu'il utilise cependant comme composant). Cette méthode résiste ainsi à l'analyse de fréquences, ce qui est un avantage décisif sur les chiffrements mono alphabétiques. Cependant le chiffre de Vigenère a été percé par le major prussien Friedrich Kasiski qui a publié sa méthode en 1863. Depuis cette époque, il n‘offre plus aucune sécurité. 
 
@@ -2891,7 +2891,7 @@ Python permet d’insérer **directement** des valeurs d’un dictionnaire dans 
                 print()
     ```
 
-!!! abstract "Exercice 47 : ★★★ Séquences nucléiques  Acide nucléique"
+!!! abstract "Exercice 47 : ★★★ Séquences nucléiques  Acide nucléique (facultatif)"
 
     ![](Aspose.Words.27dc2d78-26ce-4ee4-872c-63e471312ff5.116.png)
     ![](Aimg023.png)

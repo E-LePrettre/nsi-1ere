@@ -1,4 +1,4 @@
-﻿---
+---
 author: Elisabeth Le Prettre (LePrettre)
 title: 06b Algorithmes de tri
 ---
@@ -99,7 +99,7 @@ L'idée du **tri par sélection** est simple :
 
 
   
-On cherche le plus grand entier puis on permute. Le plus grand est bien placé. On recommence 
+Sur cette illustration, on applique la variante « par la fin » : on cherche le plus grand entier et on le permute avec le dernier élément. Le plus grand est alors bien placé, et on recommence sur le reste du tableau (même principe qu’au 2.1, en partant de la fin).
 
 ![Tri par sélection](selection.png)
 
@@ -177,7 +177,7 @@ Analysons le nombre d’opérations effectuées :
 
 ➡️ Cela nous donne une **complexité de O(N²)**.
 
-Cela signifie que **si on double la taille du tableau, le temps d’exécution est multiplié par 4**. Pour **N = 10 000**, le tri est encore rapide, mais pour **N = 1 000 000**, il devient lent.
+Cela signifie que **si on double la taille du tableau, le temps d’exécution est multiplié par 4**. Pour **N = 1 000**, le tri est quasi instantané ; pour **N = 10 000**, il prend déjà plusieurs secondes en Python ; pour **N = 1 000 000**, il faudrait des heures.
 
 ---
 
@@ -264,7 +264,7 @@ Avant chaque itération `i`, les `i` premiers éléments sont **triés et contie
 
 - À l’itération suivante, on cherche **le plus petit élément parmi `T[i:n]`** et on l’échange avec `T[i]`.  
 
-- Comme `T[0:i]` était trié, **`T[0:i+1]` reste trié**.  
+- Comme `T[0:i]` contient les `i` plus petits éléments, ce minimum est supérieur ou égal à `T[i-1]` : **`T[0:i+1]` est trié** et contient les `i+1` plus petits éléments.  
 
 3️⃣ **Terminaison (`i = n-1`)** :  
 
@@ -324,7 +324,7 @@ On veut prouver que l’algorithme **s’arrête toujours**.
 
 ???+ question "Activité n°3 : Implémenter le tri par sélection"
 
-    **Tester le code suivant :**
+    **Compléter le code suivant :**
 
     ```python
     def swap(T: list, i: int, j: int) -> None:
@@ -358,7 +358,7 @@ On veut prouver que l’algorithme **s’arrête toujours**.
     ```python
     import time
 
-    tailles = [1_000, 2_000, 10_000]
+    tailles = [1_000, 2_000, 4_000]
 
     for taille in tailles:
         somme_des_durees = 0
@@ -373,7 +373,7 @@ On veut prouver que l’algorithme **s’arrête toujours**.
 
     ??? success "Explication"
 
-        - On **génère des listes aléatoires** de **1 000, 2 000 et 10 000 éléments**.
+        - On **génère des listes aléatoires** de **1 000, 2 000 et 4 000 éléments**.
 
         - On **mesure le temps d’exécution moyen** du tri sur 5 exécutions.
 
@@ -440,11 +440,11 @@ A chaque étape on insère un nouvel élément dans la partie triée
 ```
 ALGORITHME tri_insertion
     PROCEDURE insere(T, i)  
-        tmp = T[i]  # Valeur à insérer
+        tmp <- T[i]  # Valeur à insérer
         j <- i-1  # Position précédente  
         
-        TANT QUE j >= 0 et T[j] > tmp ALORS  
-            T[j+1] <- T [j]  # Décale les éléments  
+        TANT QUE j >= 0 et T[j] > tmp FAIRE  
+            T[j+1] <- T[j]  # Décale les éléments  
             j <- j - 1  
         FIN TANT QUE  
         
@@ -465,8 +465,8 @@ Le **nombre d'itérations** dépend de la situation initiale du tableau.
 
 | Cas | Nombre d'itérations | Complexité |
 |------|-----------------|--------------|
-| ✅ **Meilleur cas** (tableau déjà trié) | **N** | O(N) |
-| ❌ **Pire cas** (tableau trié à l'envers) | **N²** | O(N²) |
+| ✅ **Meilleur cas** (tableau déjà trié) | **N − 1** comparaisons | O(N) |
+| ❌ **Pire cas** (tableau trié à l'envers) | **≈ N²/2** comparaisons | O(N²) |
 
 📌 **Conclusion :**  
 
@@ -570,7 +570,7 @@ On mesure **le temps de tri** en fonction de la taille du tableau.
     ```python
     import time
 
-    tailles = [1_000, 2_000, 10_000]
+    tailles = [1_000, 2_000, 4_000]
     for taille in tailles:
         somme_des_durees = 0
         for _ in range(5):
@@ -603,11 +603,11 @@ On mesure **le temps de tri** en fonction de la taille du tableau.
 
 !!! abstract "Exercice n°1 :"
 
-    Créer une fonction selection_sort_desc() qui permet trier avec l’algorithme de tri par sélection une liste aléatoire par valeurs décroissantes.
+    Créer une fonction selection_sort_desc() qui permet de trier avec l’algorithme de tri par sélection une liste aléatoire par valeurs décroissantes.
 
 !!! abstract "Exercice n°2 :" 
 
-    Créer une fonction selection\_sort\_asc\_partir\_fin() qui permet trier avec l’algorithme de tri par sélection une liste aléatoire par valeurs croissantes de manière à compléter l’algorithme suivant :
+    Créer une fonction `selection_sort_asc_partir_fin()` qui permet de trier avec l’algorithme de tri par sélection une liste aléatoire par valeurs croissantes de manière à compléter l’algorithme suivant :
 
     ```python
     def selection_sort_asc_partir_fin(T):
@@ -623,6 +623,6 @@ On mesure **le temps de tri** en fonction de la taille du tableau.
 
 !!! abstract "Exercice n°3 :" 
 
-    Créer une fonction selection_sort_desc_partir_fin() qui permet trier avec l’algorithme de tri par sélection et l’algorithme de l’exercice 2, une liste aléatoire par valeurs décroissantes.
+    Créer une fonction selection_sort_desc_partir_fin() qui permet de trier avec l’algorithme de tri par sélection et l’algorithme de l’exercice 2, une liste aléatoire par valeurs décroissantes.
 
 

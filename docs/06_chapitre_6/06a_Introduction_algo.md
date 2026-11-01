@@ -1,4 +1,4 @@
-﻿---
+---
 author: Elisabeth Le Prettre (LePrettre)
 title: 06a Introduction à l’algorithmique
 ---
@@ -344,7 +344,7 @@ La complexité étant constante, on note **O(1)** en notation de Landau.
 
     
 
-#### **<H4 STYLE="COLOR:MAGENTA;">4.1.3. Algorithmes sans structure conditionnelle</H4>**
+#### **<H4 STYLE="COLOR:MAGENTA;">4.1.3. Algorithmes avec structure conditionnelle</H4>**
 
 ???+ question "Activité n°2 : Calcul du coût T(n) d'un algorithme"
 
@@ -533,7 +533,7 @@ La complexité étant constante, on note **O(1)** en notation de Landau.
             = 2 + n + 7nm
 
 
-        Cas particulier : si m ≈ n, alors T(n) = = 2 + n + 7n²
+        Cas particulier : si m ≈ n, alors T(n) = 2 + n + 7n²
         ```
 
     La complexité de cet algorithme est dite **quadratique**.  
@@ -546,7 +546,7 @@ La complexité étant constante, on note **O(1)** en notation de Landau.
 
 La complexité en espace est une mesure de l'espace utilisé par un algorithme, exprimé comme fonction de la taille de l'entrée. L'espace compte le nombre maximum de cases mémoire utilisées simultanément pendant un calcul. 
 
-### **<H3 STYLE="COLOR:GREEN;">4.3. Echelle<a name="_page5_x40.00_y386.92"></a> de comparaisons</H3>**
+### **<H3 STYLE="COLOR:GREEN;">4.3. Échelle<a name="_page5_x40.00_y386.92"></a> de comparaisons</H3>**
 
 L'étude des différents algorithmes proposés dans la suite des activités (Tris, Recherche, Knn,...) permettra de mettre en évidence les différents ordres de grandeur suivants.  
 
@@ -562,8 +562,8 @@ L'étude des différents algorithmes proposés dans la suite des activités (Tri
 
 Comparaison des temps d’exécution d’algorithmes de différentes complexités 
 
-| **Taille**  | **Complexité** | **1** | **log₂(n)** | **n** | **n log₂(n)** | **n²** | **n³** | **2ⁿ** |
-|------------|-------------|--------|------------|--------|------------|--------|--------|------|
+| **Taille** | **1** | **log₂(n)** | **n** | **n log₂(n)** | **n²** | **n³** | **2ⁿ** |
+|------------|--------|------------|--------|------------|--------|--------|------|
 | **n = 10²**  | ≃ 1µs | 6,6µs | 0,1ms | 0,6ms | 10ms | 1s | 4 × 10¹⁶a |
 | **n = 10³**  | ≃ 1µs | 9,9µs | 1ms | 9,9ms | 1s | 16,6mn | ∞ |
 | **n = 10⁴**  | ≃ 1µs | 13,3µs | 10ms | 0,1s | 100s | 11,5j | ∞ |
@@ -574,7 +574,7 @@ Si on double la taille d’un tableau :
 
 - Pour un algorithme de complexité n, le temps d’exécution est doublé 
 - Pour un algorithme de complexité n², le temps d’exécution est quadruplé 
-- Pour un algorithme de complexité log<sub>2</sub>(n), le temps d’exécution prend une unité car log<sub>2</sub>(2n). = log<sub>2</sub>(n) + 1
+- Pour un algorithme de complexité log<sub>2</sub>(n), le temps d’exécution prend une unité car log<sub>2</sub>(2n) = log<sub>2</sub>(n) + 1
 
 RESSOURCES : 
 
@@ -623,7 +623,7 @@ RESSOURCES :
         X <- X + 1 
     ```
 
-!!! abstract "Exercice 4 :" 
+!!! abstract "Exercice 4 (facultatif)" 
 
     Calculer le coût de cet algorithme
 
@@ -650,7 +650,7 @@ RESSOURCES :
     Afficher total 
     ```
 
-!!! abstract "Exercice 6 :" 
+!!! abstract "Exercice 6 (facultatif)" 
 
     Calculer le coût de cet algorithme
 
@@ -668,16 +668,16 @@ RESSOURCES :
     Calculer le coût de cet algorithme
 
     ```
-    taille <- LireEntier()			1
-    X <- 0						    2
-    Tant que X < taille				3
-    Y <- 0					    4
-    Tant que Y < taille			5
-        Si X = Y					6
-            Afficher "X"			7
-        Sinon					    8
-            Afficher "."			9		
-        Y <- Y + 1				10
-    Retour à la ligne			11
-    X <- X + 1		            12
+    taille <- LireEntier()
+    X <- 0
+    Tant que X < taille
+        Y <- 0
+        Tant que Y < taille
+            Si X = Y
+                Afficher "X"
+            Sinon
+                Afficher "."
+            Y <- Y + 1
+        Retour à la ligne
+        X <- X + 1
     ```

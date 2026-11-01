@@ -5,7 +5,7 @@ title: 06b 📜 Fiche Méthode - Algorithmes de tri
 
 # Les tris : sélection et insertion
 
-!!! abstract "Fiche méthode & révision — Première NSI · Chapitre 7"
+!!! abstract "Fiche méthode & révision — Première NSI · Chapitre 6"
     Fiche **compacte** pour **dérouler et programmer** le **tri par sélection** et le
     **tri par insertion** : principe, code, traces, complexités, stabilité,
     invariant et terminaison.
@@ -17,7 +17,7 @@ title: 06b 📜 Fiche Méthode - Algorithmes de tri
 
 ## 1. Objectifs
 
-À la fin du chapitre, vous devez savoir :
+À la fin du chapitre, tu dois savoir :
 
 - **connaître** les algorithmes de tri par **sélection** et par **insertion** ;
 - **expliquer** le rôle de la partie triée / non triée ;

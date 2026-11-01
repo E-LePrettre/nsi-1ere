@@ -1,4 +1,4 @@
-﻿---
+---
 author: Elisabeth Le Prettre (LePrettre)
 title: 01b Révision Les conditions et les boucles
 ---
@@ -193,7 +193,7 @@ _Remarque : Attention à ne pas confondre :_
 
     - Si elle est supérieure ou égale à 16, on affichera "Tu es un dieu/déesse en info".
     - Sinon si elle est comprise entre 12 inclus et 16 exclus, on affichera "C’est bien".
-    - Sinon si elle est inférieure à 12, on affichera "Il faut travailler".
+    - Sinon si elle est strictement comprise entre 0 et 12, on affichera "Il faut travailler".
     - Sinon si elle est égale à 0, on affichera "OH LA LA".
 
     **Tester avec :** 17, 16, 14, 7, 0.
@@ -209,7 +209,7 @@ _Remarque : Attention à ne pas confondre :_
             print("Tu es un dieu/deesse en info")
         elif 12 <= note < 16: 
             print("C’est bien")
-        elif 0 < note < 12>:
+        elif 0 < note < 12:
             print("Il faut travailler")
         elif note == 0:
             print("OH LA LA")
@@ -242,7 +242,7 @@ _Remarque : Attention à ne pas confondre :_
 
     
 
-???+ question "Activité n°6 : Condiions"
+???+ question "Activité n°6 : Conditions"
 
     **Écrire un script** qui demande une couleur à l’utilisateur.
 
@@ -719,6 +719,8 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
 
         - La boucle s'arrête dès que la hauteur est inférieure ou égale à 1,5 mètre.
 
+        **Résultat :** `3` sauts (2 → 1,8 → 1,62 → 1,458). Avec un départ à 3 m et un seuil de 2 m, on obtient `4` sauts.
+
         
 
 ???+ question "Activité n°12 : Boucle while"
@@ -756,7 +758,7 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
 
 !!! abstract "Exercice 1 : Riche comme Crésus"
 
-    À la naissance de Crésus, son grand-père Midas lui ouvre un compte bancaire. Ensuite, à chaque anniversaire, son grand-père verse sur son compte 100 €, auxquels il ajoute le double de l’âge de Crésus.
+    À la naissance de Crésus, son grand-père Midas lui ouvre un compte bancaire sur lequel il dépose 100 €. Ensuite, à chaque anniversaire, son grand-père verse sur son compte 100 €, auxquels il ajoute le double de l’âge de Crésus.
 
     Par exemple, lorsqu’il a deux ans, son grand-père lui verse 104 € (100 + 2*2), ce qui fait un total de 306 € à la deuxième année.
 
@@ -856,8 +858,10 @@ _Remarque :_ Attention avec les boucles `while` à ne pas tourner infiniment :
         while epaisseur <= 400:
             epaisseur = epaisseur * 2
             pliage = pliage + 1
-        print("pliage")
+        print(pliage)
         ```
+
+        **Résultat :** `12` pliages (0,1 × 2¹² = 409,6 mm, alors que 0,1 × 2¹¹ = 204,8 mm).
 
 
         **Explication :**

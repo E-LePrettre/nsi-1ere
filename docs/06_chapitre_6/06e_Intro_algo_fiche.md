@@ -14,7 +14,7 @@ title: 06a 📜 Fiche Méthode - Introduction à l’algorithmique
 
 ## 1. Objectifs
 
-À la fin du chapitre, vous devez savoir :
+À la fin du chapitre, tu dois savoir :
 
 - **connaître** : pseudo-code, correction (partielle / totale), terminaison, complexité ;
 - **expliquer** le rôle d'une variable, d'une boucle, d'une condition d'arrêt ;
@@ -127,27 +127,46 @@ title: 06a 📜 Fiche Méthode - Introduction à l’algorithmique
 ## 5. Exemples étudiés
 
 !!! info "Note"
-    Les programmes exacts de tes notebooks ne sont pas joints : les versions
-    ci-dessous suivent la **logique du chapitre**. Les **complexités** sont stables ;
-    le détail des coûts peut varier selon la rédaction exacte.
+    Les deux premiers programmes sont ceux des **activités 3 et 2 du cours** (même modèle de coût).
+    Les deux derniers sont des **exemples complémentaires**. Le détail des coûts peut varier
+    légèrement selon la façon de compter, mais la **complexité** reste la même.
 
-??? example "`sommeEntiers(n)` — somme de 1 à n"
+??? example "`sommeEntiers(n)` — somme de 0 à n (activité 3)"
     ```python
     def sommeEntiers(n):
-        s = 0
-        for i in range(1, n + 1):
-            s = s + i
-        return s
+        somme = 0
+        for i in range(n + 1):
+            somme += i
+        return somme
     ```
     | Instruction | Coût unitaire | Fréquence | Coût total |
     |---|---|---|---|
-    | `s = 0` | 1 | 1 | 1 |
-    | `s = s + i` | 4 | `n` | `4n` |
-    | `return s` | 1 | 1 | 1 |
+    | `somme = 0` | 1 | 1 | 1 |
+    | calcul de `n + 1` | 2 | 1 | 2 |
+    | mise à jour de `i` | 1 | `n + 1` | `n + 1` |
+    | `somme += i` | 4 | `n + 1` | `4(n + 1)` |
+    | `return somme` | 1 | 1 | 1 |
 
-    `T(n) = 4n + 2` → **`O(n)`**.
+    `T(n) = 1 + 2 + 5(n + 1) + 1 = 5n + 9` → **`O(n)`**.
 
-??? example "`conversion(n)` — décimal → binaire"
+??? example "`puissanceMoinsUn(n)` — calcule (−1)ⁿ avec un test (activité 2)"
+    ```python
+    def puissanceMoinsUn(n):
+        if n % 2 == 0:
+            res = 1
+        else:
+            res = -1
+        return res
+    ```
+    | Instruction | Coût | Fréquence | Coût total |
+    |---|---|---|---|
+    | `n % 2 == 0` | 3 | 1 | 3 |
+    | `res = 1` (ou `res = -1`) | 1 | 1 | 1 |
+    | `return res` | 1 | 1 | 1 |
+
+    `T(n) = 5`, quel que soit `n` → **`O(1)`**.
+
+??? example "`conversion(n)` — décimal → binaire (exemple complémentaire)"
     ```python
     def conversion(n):
         b = ""
@@ -162,27 +181,11 @@ title: 06a 📜 Fiche Méthode - Introduction à l’algorithmique
     | corps de boucle | `c` | `≈ log₂(n)` | `c · log₂(n)` |
     | `return b` | 1 | 1 | 1 |
 
-    Le nombre d'itérations est `≈ log₂(n)` → **`O(log n)`**.
+    Le nombre d'itérations est `≈ log₂(n)` (on divise `n` par 2 à chaque tour) → **`O(log n)`**.
 
-??? example "`puissanceMoinsUn(n)` — calcule (−1)^n par une boucle"
+??? example "`recherche(mot, liste)` — recherche séquentielle (exemple complémentaire)"
     ```python
-    def puissanceMoinsUn(n):
-        r = 1
-        for i in range(n):
-            r = -r
-        return r
-    ```
-    | Instruction | Coût | Fréquence | Coût total |
-    |---|---|---|---|
-    | `r = 1` | 1 | 1 | 1 |
-    | `r = -r` | 3 | `n` | `3n` |
-    | `return r` | 1 | 1 | 1 |
-
-    `T(n) = 3n + 2` → **`O(n)`**.
-
-??? example "`trouvemot(mot, liste)` — recherche"
-    ```python
-    def trouvemot(mot, liste):
+    def recherche(mot, liste):
         for m in liste:
             if m == mot:
                 return True
@@ -194,6 +197,7 @@ title: 06a 📜 Fiche Méthode - Introduction à l’algorithmique
     | `return` | 1 | 1 | 1 |
 
     **Pire cas** : mot **absent** → `n` comparaisons → **`O(n)`**.
+    (À ne pas confondre avec `trouvemot` de l'activité 4, qui a **deux** boucles imbriquées : `O(n²)`.)
 
 ---
 
@@ -300,17 +304,17 @@ title: 06a 📜 Fiche Méthode - Introduction à l’algorithmique
 
 ### Lecture de code
 
-??? question "16. (N1) Dans `sommeEntiers`, combien de fois s'exécute `s = s + i` ?"
-    `n` fois.
+??? question "16. (N1) Dans `sommeEntiers`, combien de fois s'exécute `somme += i` ?"
+    `n + 1` fois (pour `i` allant de 0 à `n`).
 
-??? question "17. (N2) Dans `trouvemot`, quel est le pire cas ?"
+??? question "17. (N2) Dans `recherche(mot, liste)`, quel est le pire cas ?"
     Le mot est **absent** : `n` comparaisons.
 
 ??? question "18. (N2) `conversion(n)` : combien d'itérations environ ?"
     `≈ log₂(n)`.
 
 ??? question "19. (N3) `puissanceMoinsUn(n)` : quelle complexité ?"
-    `O(n)`.
+    `O(1)` : un seul test, quel que soit `n`.
 
 ??? question "20. (N2) Une boucle `while` dont la variable n'évolue jamais : que se passe-t-il ?"
     **Boucle infinie** (pas de terminaison).

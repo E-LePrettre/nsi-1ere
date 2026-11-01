@@ -469,15 +469,15 @@ if i < len(tab) and tab[i] == 15:   # tab[5] n'est jamais lu : pas d'IndexError
     Écrire une fonction maximum(x,y) qui renvoie le maximum de deux nombres x et y. Attention : vous n'avez pas le droit d'utiliser la fonction built-in max().  
 
 
-!!! abstract "Exercice 2 ★" 
+!!! abstract "Exercice 2 ★ (facultatif)" 
 
-    Ecrire et tester une fonction compare(a,b) qui retourne :  
+    Écrire et tester une fonction compare(a,b) qui retourne :  
 
-        - -1 si a < b,  
+    - -1 si a < b,  
 
-        - 0 si a = b,  
+    - 0 si a = b,  
 
-        - 1 si a > b.  
+    - 1 si a > b.  
 
 !!! abstract "Exercice 3 ★" 
 
@@ -487,7 +487,7 @@ if i < len(tab) and tab[i] == 15:   # tab[5] n'est jamais lu : pas d'IndexError
 
 !!! abstract "Exercice 4 ★"  
 
-    Ecrire une fonction mention(note) qui affichera la mention correspondante à la note obtenue.  Les mentions sont obtenues 
+    Écrire une fonction mention(note) qui affichera la mention correspondante à la note obtenue.  Les mentions sont obtenues 
 
     - Une mention "assez bien" si sa moyenne est égale ou supérieure à 12/20 et inférieure à 14/20. 
 
@@ -507,9 +507,9 @@ if i < len(tab) and tab[i] == 15:   # tab[5] n'est jamais lu : pas d'IndexError
     'recalé'
     ```
 
-!!! abstract "Exercice 5 ★" 
+!!! abstract "Exercice 5 ★ (facultatif)" 
 
-    Ecrire une fonction IMC(poids, taille) qui calcule l’indice de masse corporelle (IMC) d’un adulte et qui en donne l’interprétation (corpulence normale, surpoids…). 
+    Écrire une fonction IMC(poids, taille) qui calcule l’indice de masse corporelle (IMC) d’un adulte et qui en donne l’interprétation (corpulence normale, surpoids…). 
 
     Il se calcule simplement en divisant le poids (en kg) par le carré de la taille (m). Indice de masse corporelle (IMC) Interprétation (d'après l'OMS) 
 
@@ -531,7 +531,7 @@ if i < len(tab) and tab[i] == 15:   # tab[5] n'est jamais lu : pas d'IndexError
 
 !!! abstract "Exercice 6 ★★"  
 
-    Ecrire une fonction annee\_bissextile(annee) qui indique qu’il s’agit d’une année bissextile. On rappelle qu’une année est bissextile si elle est multiple de 4 mais pas multiple de 100, ou si elle est multiple de 400. 
+    Écrire une fonction annee\_bissextile(annee) qui indique qu’il s’agit d’une année bissextile. On rappelle qu’une année est bissextile si elle est multiple de 4 mais pas multiple de 100, ou si elle est multiple de 400. 
 
     Exemple : 
     ```
@@ -541,11 +541,11 @@ if i < len(tab) and tab[i] == 15:   # tab[5] n'est jamais lu : pas d'IndexError
     "L'année 2000 est bissextile"
     ```
 
-!!! abstract "Exercice 7 ★★" 
+!!! abstract "Exercice 7 ★★ (facultatif)" 
 
     - Niveau première en mathématiques 
     
-    - Ecrire un script qui résout l'équation du second degré : ax² + bx + c = 0  
+    - Écrire un script qui résout l'équation du second degré : ax² + bx + c = 0  
 
     Pour revoir les formules à appliquer :[ https://www.maths-et-tiques.fr/telech/Secondegre2.pdf ](https://www.maths-et-tiques.fr/telech/Secondegre2.pdf)
 
@@ -571,12 +571,10 @@ if i < len(tab) and tab[i] == 15:   # tab[5] n'est jamais lu : pas d'IndexError
 
     * Si **Δ < 0** : l'équation *ax² + bx + c = 0* n'a **pas de solution réelle**.
     * Si **Δ = 0** : l'équation *ax² + bx + c = 0* a **une unique solution** :
-    *x₀ = -b / 2a*
+    *x₀ = -b / (2a)*
     * Si **Δ > 0** : l'équation *ax² + bx + c = 0* a **deux solutions distinctes** :
 
-    $$
-    x_1 = \frac{-b - \sqrt{\Delta}}{2a} \quad \text{et} \quad x_2 = \frac{-b + \sqrt{\Delta}}{2a}
-    $$
+    *x₁ = (-b - √Δ) / (2a)*   et   *x₂ = (-b + √Δ) / (2a)*
 
 
 
@@ -590,13 +588,9 @@ if i < len(tab) and tab[i] == 15:   # tab[5] n'est jamais lu : pas d'IndexError
 
     > Comme **Δ > 0**, l'équation possède **deux solutions distinctes** :
 
-    $$
-    x_1 = \frac{-(-1) - \sqrt{49}}{2 \times 2} = \frac{1 - 7}{4} = \frac{-6}{4} = \frac{-3}{2}
-    $$
+    *x₁ = (-(-1) - √49) / (2 × 2) = (1 - 7) / 4 = -6 / 4 = -3/2*
 
-    $$
-    x_2 = \frac{-(-1) + \sqrt{49}}{2 \times 2} = \frac{1 + 7}{4} = \frac{8}{4} = 2
-    $$
+    *x₂ = (-(-1) + √49) / (2 × 2) = (1 + 7) / 4 = 8 / 4 = 2*
 
 
     Aide : Il faut importer la fonction racine 
@@ -635,7 +629,7 @@ if i < len(tab) and tab[i] == 15:   # tab[5] n'est jamais lu : pas d'IndexError
     ```
 
 
-!!! abstract "Exercice 8 ★ (évaluation séquentielle)"
+!!! abstract "Exercice 7 bis ★ (évaluation séquentielle)"
 
     On considère la fonction suivante :
 
@@ -840,7 +834,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
         while compt < 5:
             print(compt)
             compt += 1  # Incrémentation
-        return "Le compteur vaut", compt, "à la fin de la boucle."
+        return "Le compteur vaut " + str(compt) + " à la fin de la boucle."
     ```
 
     **Exécuter :**
@@ -934,7 +928,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
     2
     ```
 
-    2  Ecrire une fonction nombre_de_z2(chaine) qui fait la même chose, directement avec la 
+    2  Écrire une fonction nombre_de_z2(chaine) qui fait la même chose, directement avec la 
     méthode count() de la classe str. Pour obtenir de l’aide sur cette méthode : 
     ```
     help(str.count)
@@ -942,7 +936,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
 !!! abstract "Exercice 9 ★★" 
 
-    1  Ecrire la fonction devinette(proposition) du jeu de devinette suivant : 
+    1  Écrire la fonction devinette(proposition) du jeu de devinette suivant : 
 
     ```
     >>> 
@@ -955,7 +949,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
     trop grand
     choisir un nombre>? 66
     Gagné 
-    en 3 coups !
+    en 4 coups !
     ```
 
     2  Quelle est la stratégie la plus efficace ? 
@@ -993,7 +987,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
             break
     ``` 
 
-!!! abstract "Exercice 10 ★★ : Code César" 
+!!! abstract "Exercice 10 ★★ : Code César (facultatif)" 
 
     En cryptographie, le code César est une technique de chiffrement élémentaire qui consiste à décaler une lettre de 3 rangs vers la droite : 
 
@@ -1005,7 +999,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
     Z → C 
 
-    1 Ecrire une fonction message_a_coder(message) qui permet de coder un message passé en argument.Par exemple : 
+    1 Écrire une fonction message_a_coder(message) qui permet de coder un message passé en argument.Par exemple : 
 
     ```
     >>> message_a_coder('abcdefghijklmnopqrstuvwxyz')
@@ -1022,10 +1016,10 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
     ```
 
 
-    2 Ecrire la fonction message_a_decoder(message) qui permet le décodage. Par exemple : 
+    2 Écrire la fonction message_a_decoder(message) qui permet le décodage. Par exemple : 
 
     ```
-    >> message_a_decoder('obfhh mhdq fdvvdljqh fodvvh gh qvl')
+    >>> message_a_decoder('obfhh mhdq fdvvdljqh fodvvh gh qvl')
     'lycee jean cassaigne classe de nsi'
     ```
 
@@ -1038,14 +1032,15 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
 **Les exercices suivants nécessitent quelques (peu quand même) aptitudes en mathématiques…** 
 
-!!! abstract "Exercice 12 ★★"  
-    Ecrire une méthode heron(U, n) qui donne la valeur de la suite pour un rang n (méthode de Héron) : La méthode de Héron permet d’approcher la valeur de la racine carrée d’un nombre. Nous allons l’appliquer pour déterminer la valeur approchée de la racine de 2. Elle est définie par la suite : 
+!!! abstract "Exercice 12 ★★ (facultatif)"  
+    Écrire une méthode heron(U, n) qui donne la valeur de la suite pour un rang n (méthode de Héron) : La méthode de Héron permet d’approcher la valeur de la racine carrée d’un nombre. Nous allons l’appliquer pour déterminer la valeur approchée de la racine de 2. Elle est définie par la suite : 
 
 
-    $U_0=k$, k étant une valeur initiale
-    Et $\forall n\in\mathbb{N}$, $U_{n+1}=\frac{1}{2}\left(U_n+\frac{2}{U_n}\right)$
-    Donc cela signifie :
-    $U_1=\frac{1}{2}\left(U_0+\frac{2}{U_0}\right)$, 	 $U_2=\frac{1}{2}\left(U_1+\frac{2}{U_1}\right)$, 	$U_3=\frac{1}{2}\left(U_2+\frac{2}{U_2}\right)$,	$U_4=\frac{1}{2}\left(U_3+\frac{2}{U_3}\right)$, etc
+    - U₀ = k, k étant une valeur initiale ;
+    - et, pour tout entier naturel n : U(n+1) = 1/2 × (U(n) + 2 / U(n)).
+
+    Cela signifie :
+    U₁ = 1/2 × (U₀ + 2/U₀),  U₂ = 1/2 × (U₁ + 2/U₁),  U₃ = 1/2 × (U₂ + 2/U₂),  U₄ = 1/2 × (U₃ + 2/U₃), etc.
 
     n étant le rang que l’on veut calculer la suite 
 
@@ -1065,20 +1060,26 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
     - Utiliser seulement  n et U comme variable, 
 
 
-!!! abstract "Exercice 13 ★★ : Fraction continue infinie"   
+!!! abstract "Exercice 13 ★★ : Fraction continue infinie (facultatif)"   
     
     ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.086.jpeg)
 
     Le nombre d’or est un célèbre nombre irrationnel :[ Wikipédia.](https://fr.wikipedia.org/wiki/Nombre_d%27or)  
     Il a été étudié par de nombreux mathématiciens au cours du temps.  
-    Il vaut $\phi$ =$\frac{1+√5}{2}$  et vaut approximativement 1,61803. On peut  estimer la valeur numérique de la fraction continue suivante :  
+    Il vaut φ = (1 + √5) / 2 et vaut approximativement 1,61803. On peut  estimer la valeur numérique de la fraction continue suivante :  
 
-    $\varphi=1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{\ldots}}}}}$
-    Cela signifie que pour le rang 3, on aura :
-    $\varphi=1$,		$\varphi=1+\frac{1}{1}$		$\varphi=1+\frac{1}{1+\frac{1}{1}}$,		$\varphi=1+\frac{1}{1+\frac{1}{1+\frac{1}{1}}}$, 	$\varphi=1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\frac{1}{1}}}}$, 
+    φ = 1 + 1 / (1 + 1 / (1 + 1 / (1 + 1 / (1 + …))))
+
+    Cela signifie que, pour les rangs 0, 1, 2, 3 et 4, on aura :
+
+    - rang 0 : φ ≈ 1
+    - rang 1 : φ ≈ 1 + 1/1
+    - rang 2 : φ ≈ 1 + 1/(1 + 1/1)
+    - rang 3 : φ ≈ 1 + 1/(1 + 1/(1 + 1/1))
+    - rang 4 : φ ≈ 1 + 1/(1 + 1/(1 + 1/(1 + 1/1)))
 
 
-    Ecrire une fonction nombre_dor(n) qui détermine la valeur approchée du nombre d’or (seulement la valeur 
+    Écrire une fonction nombre_dor(n) qui détermine la valeur approchée du nombre d’or (seulement la valeur 
     Par exemple : 
 
     ```
@@ -1095,7 +1096,7 @@ Une boucle `while` répète une instruction **tant qu'une condition est vraie**.
 
 !!! abstract "Exercice 14 ★★"  
 
-    Ecrire une fonction premier(nombre) qui détermine si un nombre entier est premier ou pas. 
+    Écrire une fonction premier(nombre) qui détermine si un nombre entier est premier ou pas. 
 
     **Rappel :** un nombre **premier** est un entier naturel qui n’a que deux diviseurs : 1 et lui-même. Ex : 3 est premier mais 6 ne l’est pas car 2\*3=6. Par exemple : 
 
@@ -1265,7 +1266,7 @@ Il est parfois utile de donner **une valeur par défaut** aux paramètres.
 
     ```python
     def vetement(couleur_pull='rouge', couleur_pantalon='bleu'): 
-        return "Le pull est", couleur_pull, "et le pantalon est",couleur_pantalon
+        return "Le pull est " + couleur_pull + " et le pantalon est " + couleur_pantalon
     ```
 
     **Exécuter :**
@@ -1298,7 +1299,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
 📌 **Exemple : une fonction qui calcule le carré d’un nombre entier** :
 
-???+ question "Activité n°23 : Valeurs par défaut"
+???+ question "Activité n°23 : Prototype d'une fonction"
     ```python
     def carre(nombre: int) -> int:
         return nombre ** 2
@@ -1322,7 +1323,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
 !!! abstract "Exercice 15 ☆"   
 
-    1.Ecrire une fonction carre() qui retourne le carré d’un nombre : 
+    1.Écrire une fonction carre() qui retourne le carré d’un nombre : 
 
     ```
     >>> carre(11.11111)
@@ -1347,7 +1348,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
 !!! abstract "Exercice 16 ☆"
 
-    Ecrire une fonction qui retourne l’aire de la surface d’un disque de rayon R. Exemple : 
+    Écrire une fonction qui retourne l’aire de la surface d’un disque de rayon R. Exemple : 
 
     ```
     >>> airedisque(2.5)
@@ -1356,7 +1357,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
 !!! abstract "Exercice 17 ★" 
 
-    1.Ecrire une fonction qui retourne la factorielle d’un nombre entier N. On rappelle que : factorielle de N est noté N! 
+    1.Écrire une fonction qui retourne la factorielle d’un nombre entier N. On rappelle que : factorielle de N est noté N! 
 
     N!=1×2×…×(N−1)×N 
 
@@ -1378,7 +1379,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
 !!! abstract "Exercice 18 ★" 
 
-    1.A l’aide de la fonction randint() du module random, écrire une fonction qui retourne un mot de passe de longueur N (chiffres, lettres minuscules ou majuscules).  
+    1.À l’aide de la fonction randint() du module random, écrire une fonction qui retourne un mot de passe de longueur N (chiffres, lettres minuscules ou majuscules).  
 
     [https://www.w3schools.com/python/ref_random_randint.asp ](https://www.w3schools.com/python/ref_random_randint.asp) 
 
@@ -1406,19 +1407,21 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
 
 
-!!! abstract "Exercice 19 ★★" 
+!!! abstract "Exercice 19 ★★ (facultatif)" 
 
-    Ecrire une fonction qui retourne une grille de numéros du jeu  Euro Millions. On utilisera la fonction sample() du module random.  
+    Une grille d'**Euro Millions** comporte **5 numéros** distincts choisis entre **1 et 50**, et **2 étoiles** distinctes choisies entre **1 et 12**.
+
+    Écrire une fonction `euromillions()` qui **renvoie** une grille au hasard. On utilisera la fonction `sample()` du module `random`, qui tire plusieurs éléments **distincts** dans une séquence.  
     ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.114.png)
 
     ```
     >>> euromillions()  
-    '43 31 35 41 39 22 14 ' 
+    'Numéros : 43 31 35 41 9 - Étoiles : 2 11 ' 
     ```
 
-!!! abstract "Exercice 20"  
+!!! abstract "Exercice 20 (facultatif)"  
 
-    1.★ Ecrire une fonction qui retourne la valeur de la fonction  mathématique f(x)= $27x^3 - 27x^2 - 18x + 8$ :  
+    1.★ Écrire une fonction qui retourne la valeur de la fonction  mathématique f(x) = 27x³ - 27x² - 18x + 8 :  
 
     ```
     >>> f(0), f(1), f(0.5), f(0.25), f(0.375)  
@@ -1428,8 +1431,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
     2.★★ On se propose de chercher les zéros de cette fonction par la (Wikipédia)[ méthode de dichotomie.](https://fr.wikipedia.org/wiki/M%C3%A9thode_de_dichotomie) 
 
-    Ecrire le script correspondant. On recherche d’un zéro dans l’intervalle [a, b] avec une précision de 
-    $10^{-12}$ (noté sur Python : 1e-12)
+    Écrire le script correspondant. On recherche d’un zéro dans l’intervalle [a, b] avec une précision de  10⁻¹² (noté sur Python : 1e-12)
 
     ```
     >>> fonction(0,1)
@@ -1440,7 +1442,7 @@ En Python, on peut **prototyper** une fonction en indiquant le type de ses **par
 
     ![](Aspose.Words.f2199d1c-8d1a-44f2-a36d-ef25b61e0a7d.122.jpeg)
 
-    Annexe  :  représentation graphique  de  la  fonction f(x)= $27x^3 - 27x^2 - 18x  + 8$ (graphique  réalisé  avec  la  librairie[ matplotlib ](http://matplotlib.org/examples/pylab_examples/axes_props.html)de  Python)  
+    Annexe  :  représentation graphique  de  la  fonction f(x) = 27x³ - 27x² - 18x + 8 (graphique  réalisé  avec  la  librairie[ matplotlib ](http://matplotlib.org/examples/pylab_examples/axes_props.html)de  Python)  
 
 
 

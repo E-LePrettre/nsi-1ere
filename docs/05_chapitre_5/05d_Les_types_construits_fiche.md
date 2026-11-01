@@ -5,7 +5,7 @@ title: 05a 📜 Fiche Méthode - Types construits
 
 # Les types construits
 
-!!! abstract "Fiche méthode & révision — Première NSI · Chapitre 6"
+!!! abstract "Fiche méthode & révision — Première NSI · Chapitre 5"
     Fiche **compacte** pour **refaire seul les exercices** : **tuples**, **listes**,
     **matrices** et **dictionnaires** — création, accès, parcours, compréhensions,
     copie et opérations essentielles. Les points marqués **« Approfondissement »**
@@ -15,7 +15,7 @@ title: 05a 📜 Fiche Méthode - Types construits
 
 ## 1. Objectifs
 
-À la fin du chapitre, vous devez savoir :
+À la fin du chapitre, tu dois savoir :
 
 - **connaître** tuples, listes, matrices, dictionnaires et leurs différences ;
 - **lire** un accès par indice, un slice, une compréhension, un parcours ;
@@ -406,10 +406,11 @@ title: 05a 📜 Fiche Méthode - Types construits
 ---
 
 !!! info "Approfondissements (hors essentiel)"
-    Les exercices de **graphiques**, lecture **EXIF**, chiffrement de **Vigenère** et
-    **séquences nucléiques** sont des **approfondissements**. Les exercices de base
-    (tuples, listes, matrices, **carnet de notes**, **carré magique**, **cartes**,
-    **César**, **jeu de 32 cartes**) suffisent pour maîtriser le chapitre.
+    Les exercices **facultatifs** (jeu de 32 cartes, **graphiques**, lecture **EXIF**,
+    chiffrement de **César** et de **Vigenère**, **séquences nucléiques**) sont des
+    **approfondissements**. Les exercices de base (tuples, listes, matrices,
+    **carnet de notes**, **carré magique**, **tirage de cartes**, **César version light**)
+    suffisent pour maîtriser le chapitre.
 
 ---
 

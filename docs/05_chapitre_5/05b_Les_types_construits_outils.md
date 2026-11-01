@@ -380,7 +380,7 @@ title: 05b 🎒Trousse à outils - Types construits
 
         ```python
         couleurs = ("rouge", "vert", "bleu")
-        for i in in range(len(couleurs)):
+        for i in range(len(couleurs)):
             print(couleurs[i])
         ```
         *Affiche :*

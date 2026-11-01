@@ -1,4 +1,4 @@
-﻿---
+---
 author: Elisabeth Le Prettre (LePrettre)
 title: 03 Mise au point des scripts et gestion des exceptions
 ---
@@ -605,7 +605,7 @@ On peut **éviter l'arrêt brutal** d'un programme en capturant les erreurs avec
 
 
 
-#### **<H4 STYLE="COLOR:MAGENTA;">5.2.2. Interception<a name="_page10_x40.00_y547.92"></a> d’exceptions particulières</h4> Dans le cas d’une division :** 
+#### **<H4 STYLE="COLOR:MAGENTA;">5.2.2. Interception<a name="_page10_x40.00_y547.92"></a> d’exceptions particulières (cas d’une division)</h4>** 
 
 On peut capturer **différents types d’erreurs** séparément.
 
@@ -707,7 +707,7 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
     
 
 !!! abstract "Exercice 1"  
-    On considère la fonction multiplier_par_deux(x) qui prend en paramètre x et qui renvoie son double. Ecrire un script de cette fonction avec : 
+    On considère la fonction multiplier_par_deux(x) qui prend en paramètre x et qui renvoie son double. Écrire un script de cette fonction avec : 
 
 
     - Sa documentation dans le docstring comme dans le cours. Ne pas mettre d’exemples 
@@ -720,7 +720,7 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
 
     On considère une fonction somme_carres(x) qui prend en paramètre x (entier strictement positif) et renvoie la somme des x premiers carrés non nuls.  
 
-    Ecrire un script de cette fonction avec : 
+    Écrire un script de cette fonction avec : 
 
 
     - Sa documentation dans le docstring comme dans l’activité 1. Ne pas mettre d’exemples 
@@ -730,7 +730,7 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
 
 !!! abstract "Exercice 3" 
 
-    La fonction précédente à pour condition d’utilisation : x doit être strictement positif. Déclencher une exception et capturer là si le nombre entrée est 0 ou négatif. 
+    La fonction précédente a pour condition d’utilisation : x doit être strictement positif. Déclencher une exception et la capturer si le nombre entré est 0 ou négatif. 
 
     Exemple : 
     ```
@@ -784,7 +784,7 @@ On peut **déclencher une exception volontairement** si une valeur est incorrect
 
 !!! abstract "Exercice 5" 
 
-    Ecrire un script qui calcule la racine carrée d’un nombre, avec gestion des exceptions. Utiliser la fonction sqrt() du module math.  
+    Écrire un script qui calcule la racine carrée d’un nombre, avec gestion des exceptions. Utiliser la fonction sqrt() du module math.  
 
     Par exemple : 
     ``` 

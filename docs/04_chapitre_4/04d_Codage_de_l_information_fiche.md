@@ -5,16 +5,16 @@ title: 04 📜 Fiche Méthode - Codage
 # Codage de l'information
 
 !!! abstract "Fiche méthode & révision — Première NSI · Chapitre 4"
-Fiche compacte mais complète pour refaire seul les exercices : bases de
-numération, entiers signés (complément à 2), réels (IEEE 754), caractères
-(ASCII / Unicode) et images (RVB). Les points marqués « Approfondissement »
-ne sont pas indispensables.
+    Fiche compacte mais complète pour refaire seul les exercices : bases de
+    numération, entiers signés (complément à 2), réels (IEEE 754), caractères
+    (ASCII / Unicode) et images (RVB). Les points marqués « Approfondissement »
+    ne sont pas indispensables.
 
 ---
 
 ## 1. Objectifs
 
-À la fin du chapitre, vous devez savoir :
+À la fin du chapitre, tu dois savoir :
 
 - **connaître** : bit, octet, bases (2, 10, 16), complément à 2, ASCII/Unicode, RVB ;
 - **comprendre** : pourquoi l'ordinateur travaille en binaire ;
@@ -158,17 +158,15 @@ ne sont pas indispensables.
 | `chr(n)` | code → caractère | `chr(65)` → `'A'` |
 | `split(',')` | découper une chaîne | `"255,0,0".split(',')` → `['255','0','0']` |
 
-!!! note "Fonctions des sources"
-    | Fonction | Objectif (param → retour) |
+!!! note "Fonctions des exercices"
+    | Fonction | Objectif (paramètre → résultat) |
     |---|---|
-    | `complement_a_2(n, bits)` | code l'entier négatif `n` en complément à 2 → chaîne binaire |
-    | `binaire_vers_decimal(b)` | chaîne binaire → entier décimal |
-    | `dec2bin(n)` | décimal positif → chaîne binaire |
-    | `dec2bin_negatif(n, bits)` | décimal négatif → complément à 2 |
-    | `conversion(...)` | conversion d'une base vers une autre |
-    | `decimal(...)` | partie / nombre → valeur décimale |
-    | `entiere(...)` | extrait / convertit la **partie entière** |
-    | `bin2float(...)` | binaire → **flottant** (approfondissement) |
+    | `dec2bin(nombre)` | entier positif → chaîne binaire (au moins 7 caractères) |
+    | `dec2bin_negatif(nombre)` | entier de −128 à −1 → complément à 2 sur 8 bits |
+    | `conversion(nombre)` | entier de −128 à 127 → code sur 8 bits (appelle l'une des deux précédentes) |
+    | `decimal(nombre)` | binaire à virgule (chaîne) → valeur de la partie **après la virgule** |
+    | `entiere(nombre)` | binaire à virgule (chaîne) → valeur de la **partie entière** |
+    | `bin2float(nombre)` | binaire à virgule (chaîne) → **flottant** (approfondissement) |
 
     *Pour chacune : penser aux **tests** (cas ordinaire, valeur nulle, négative, limite)
     et aux **cas incorrects** (mauvaise base, bits insuffisants).*
@@ -355,8 +353,8 @@ ne sont pas indispensables.
 ??? question "28. (N2) `-3` codé `10000011` : erreur ?"
     Ce n'est pas du complément à 2 : `-3 = 11111101`.
 
-??? question "29. (N1) `sqrt`… non, `hex(255)` attendu `0xff` mais on écrit `255` : pourquoi ?"
-    Oubli de la fonction : `hex(255)` renvoie `'0xff'`, pas `255`.
+??? question "29. (N1) On veut l'écriture hexadécimale de 255 et on obtient `255` : quelle erreur ?"
+    Oubli de la fonction `hex` : `hex(255)` renvoie `'0xff'`.
 
 ??? question "30. (N3) Couleur `(300, 0, 0)` : erreur ?"
     `300 > 255` : chaque composante RVB doit rester **entre 0 et 255**.

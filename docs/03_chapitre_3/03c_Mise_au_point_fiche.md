@@ -15,7 +15,7 @@ title: 03 📜 Fiche Méthode - Mise au point
 
 ## 1. Objectifs
 
-À la fin du chapitre, vous devez savoir :
+À la fin du chapitre, tu dois savoir :
 
 - **connaître** : prototype, spécification, docstrings, `help`, `assert`, `doctest`, **jeux de tests**, pré/postconditions, modules, exceptions ;
 - **comprendre** : à quoi sert un test, pourquoi **le succès d'un jeu de tests ne garantit pas la correction d'un programme**, quand une exception est levée ;
@@ -65,7 +65,7 @@ title: 03 📜 Fiche Méthode - Mise au point
       ```python
       def factorielle(n: int) -> int:
       ```
-    - **Règle :** une spécification **rapide mais précise** suffit pour vos programmes.
+    - **Règle :** une spécification **rapide mais précise** suffit pour tes programmes.
     - **Erreurs :** croire que Python **vérifie** les annotations (elles sont indicatives).
 
 ??? note "B. Rédiger une docstring"
