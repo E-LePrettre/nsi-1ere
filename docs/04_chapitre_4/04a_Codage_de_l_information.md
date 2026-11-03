@@ -4,17 +4,33 @@ title: 04 Codage de l'information
 ---
 
 
-!!! abstract "Dans ce chapitre, tu vas apprendre à…"
-    - passer d'une base à l'autre : **décimal ↔ binaire ↔ hexadécimal** ;
-    - dresser la **table de vérité** d'une expression booléenne et utiliser le **OU exclusif (XOR)** ;
-    - coder un **entier négatif** en binaire (complément à 2) ;
-    - comprendre pourquoi `0.1 + 0.2` ne vaut **pas** `0.3` en Python ;
-    - expliquer comment l'ordinateur stocke du **texte** et des **images**.
 
-!!! info "L'idée qui résume tout le chapitre"
-    Un ordinateur ne connaît que deux états : **pas de courant (0)** ou **du courant (1)**.
-    Nombres, lettres, emojis, photos, musique : **tout** finit en suites de 0 et de 1.
-    Ce chapitre explique *comment* on fabrique ces suites.
+
+**Table des matières**
+
+1. [Bits et octets](#1-bits-et-octets)
+2. [Écrire un entier dans une base](#2-ecrire-un-entier-dans-une-base)
+3. [Logique booléenne : tables de vérité et XOR](#3-logique-booleenne-tables-de-verite-et-xor)
+4. [Les entiers négatifs : le complément à 2](#4-les-entiers-negatifs-le-complement-a-2)
+5. [Les nombres réels : les flottants](#5-les-nombres-reels-les-flottants)
+6. [Le texte : de l'ASCII à l'Unicode](#6-le-texte-de-lascii-a-lunicode)
+7. [Les images : des pixels et des couleurs](#7-les-images-des-pixels-et-des-couleurs)
+8. [À retenir absolument](#8-a-retenir-absolument)
+
+!!! info "🎯 Ce que dit le programme officiel de Première NSI"
+
+    **Représentation des données : types et valeurs de base** — capacités attendues :
+
+    - **Écriture d'un entier positif dans une base b ⩾ 2** : passer de la représentation d'une base dans une autre.
+      *Les bases 2, 10 et 16 sont privilégiées.*
+    - **Représentation binaire d'un entier relatif** : évaluer le nombre de bits nécessaires à l'écriture en base 2 d'un entier, de la somme ou du produit de deux nombres entiers ; utiliser le **complément à 2**.
+      *Il s'agit de décrire les tailles courantes des entiers (8, 16, 32 ou 64 bits). Il est possible d'évoquer la représentation des entiers de taille arbitraire de Python.*
+    - **Représentation approximative des nombres réels : notion de nombre flottant** : calculer sur quelques exemples la représentation de nombres réels : 0.1, 0.25 ou 1/3.
+      *0.2 + 0.1 n'est pas égal à 0.3. Il faut éviter de tester l'égalité de deux flottants. Aucune connaissance précise de la norme IEEE-754 n'est exigible.*
+    - **Valeurs booléennes : 0, 1. Opérateurs booléens : and, or, not. Expressions booléennes** : dresser la table d'une expression booléenne.
+      *Le ou exclusif (xor) est évoqué. Quelques applications directes comme l'addition binaire sont présentées. L'attention des élèves est attirée sur le caractère séquentiel de certains opérateurs booléens.*
+    - **Représentation d'un texte en machine. Exemples des encodages ASCII, ISO-8859-1, Unicode** : identifier l'intérêt des différents systèmes d'encodage ; convertir un fichier texte dans différents formats d'encodage.
+      *Aucune connaissance précise des normes d'encodage n'est exigible.*
 
 ---
 
@@ -39,8 +55,13 @@ title: 04 Codage de l'information
     Windows affiche « Ko » mais calcule en Kio : c'est pour ça qu'un disque de « 1 To »
     n'affiche que 931 Go environ.
 
-??? question "Défi rapide : combien de valeurs avec 4 bits ? avec 16 bits ?"
-    2⁴ = **16** valeurs (de 0 à 15) et 2¹⁶ = **65 536** valeurs.
+???+ question "Activité n°1 : Combien de valeurs ?"
+
+    Combien de valeurs différentes peut-on coder avec 4 bits ? avec 16 bits ?
+
+    ??? success "Solution"
+
+        2⁴ = **16** valeurs (de 0 à 15) et 2¹⁶ = **65 536** valeurs.
 
 ---
 
@@ -86,12 +107,17 @@ En base 2, c'est exactement pareil avec des **puissances de 2**, et en base 16 a
 
     1011₂ = 8 + 2 + 1 = **11**
 
-??? question "À toi : écris 1110010₂ en décimal"
-    | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
-    |---|---|---|---|---|---|---|
-    | 1 | 1 | 1 | 0 | 0 | 1 | 0 |
+???+ question "Activité n°2 : Binaire → décimal"
 
-    64 + 32 + 16 + 2 = **114**
+    Écris 1110010₂ en décimal.
+
+    ??? success "Solution"
+
+        | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+        |---|---|---|---|---|---|---|
+        | 1 | 1 | 1 | 0 | 0 | 1 | 0 |
+
+        64 + 32 + 16 + 2 = **114**
 
 ### <span style="color:#2E7D32">2.4 Décimal → binaire : deux méthodes au choix</span>
 
@@ -117,18 +143,40 @@ En base 2, c'est exactement pareil avec des **puissances de 2**, et en base 16 a
 
     **23 = 10111₂**
 
-??? question "À toi : écris 234 en binaire"
-    234 − 128 = 106 ; 106 − 64 = 42 ; 42 − 32 = 10 ; 10 − 8 = 2 ; 2 − 2 = 0.
+???+ question "Activité n°3 : Décimal → binaire"
 
-    **234 = 1110 1010₂**
+    Écris 234 en binaire.
 
-!!! note "🐍 En Python"
+    ??? success "Solution"
+
+        234 − 128 = 106 ; 106 − 64 = 42 ; 42 − 32 = 10 ; 10 − 8 = 2 ; 2 − 2 = 0.
+
+        **234 = 1110 1010₂**
+
+???+ question "Activité n°4 : Les conversions binaires en Python"
+
+    **Tester :**
+
     ```python
     print(bin(57))           # 0b111001  : décimal → binaire (chaîne de caractères)
     print(int("1011", 2))    # 11        : binaire → décimal
     print(0b1011 + 1)        # 12        : on peut écrire un entier directement en binaire
     print(format(57, "08b")) # 00111001  : binaire sur 8 bits
     ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+
+        ```text
+        0b111001
+        11
+        12
+        00111001
+        ```
 
 ### <span style="color:#2E7D32">2.5 L'hexadécimal (base 16)</span>
 
@@ -157,24 +205,52 @@ La base 16 utilise 16 symboles : `0 1 2 3 4 5 6 7 8 9 A B C D E F` (A = 10 … F
 
     Restes lus de bas en haut : **10217 = 27E9₁₆**
 
-??? question "À toi : quel nombre hexadécimal suit FF ? Et 2FFF ?"
-    Comme 99 + 1 = 100 en décimal : **FF + 1 = 100₁₆** (= 256) et **2FFF + 1 = 3000₁₆**.
+???+ question "Activité n°5 : Compter en hexadécimal"
 
-??? question "À toi : écris AB5₁₆ en binaire, puis 1111 0100 1010₂ en hexa"
-    - A = 1010, B = 1011, 5 = 0101 → **1010 1011 0101₂**
-    - 1111 = F, 0100 = 4, 1010 = A → **F4A₁₆**
+    Quel nombre hexadécimal suit FF ? Et 2FFF ?
 
-!!! note "🐍 En Python"
+    ??? success "Solution"
+
+        Comme 99 + 1 = 100 en décimal : **FF + 1 = 100₁₆** (= 256) et **2FFF + 1 = 3000₁₆**.
+
+???+ question "Activité n°6 : Binaire ↔ hexadécimal"
+
+    Écris AB5₁₆ en binaire, puis 1111 0100 1010₂ en hexadécimal.
+
+    ??? success "Solution"
+
+        - A = 1010, B = 1011, 5 = 0101 → **1010 1011 0101₂**
+        - 1111 = F, 0100 = 4, 1010 = A → **F4A₁₆**
+
+???+ question "Activité n°7 : L'hexadécimal en Python"
+
+    **Tester :**
+
     ```python
     print(hex(10217))        # 0x27e9  (Python écrit les lettres en minuscules)
     print(int("12B7", 16))   # 4791
     print(0xFF)              # 255
     ```
 
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+
+        ```text
+        0x27e9
+        4791
+        255
+        ```
+
 ### <span style="color:#2E7D32">2.6 Et dans une base quelconque ?</span>
 
 Même principe dans **n'importe quelle base b** : divisions successives par b pour y aller,
 puissances de b pour revenir.
+
+![base 5](Aimg7.png)
 
 > 58 = 2 × 5² + 1 × 5 + 3, donc **58 = 213₅**
 
@@ -262,52 +338,58 @@ Exemple avec `(A ET B) OU (NON A)` :
 | 1 | 0 | 0 | 0 | 0 |
 | 1 | 1 | 1 | 0 | 1 |
 
-??? question "À toi : tables de A · B̅, A + B · C et A · B + (C ⊕ D)"
-    **A · B̅**
+???+ question "Activité n°8 : Tables de vérité"
 
-    | A | B | B̅ | A · B̅ |
-    |:-:|:-:|:-:|:-:|
-    | 0 | 0 | 1 | 0 |
-    | 0 | 1 | 0 | 0 |
-    | 1 | 0 | 1 | 1 |
-    | 1 | 1 | 0 | 0 |
+    Dresse les tables de vérité de A · B̅, de A + B · C et de A · B + (C ⊕ D).
 
-    **A + B · C** (le ET passe avant le OU)
+    ??? success "Solution"
 
-    | A | B | C | B · C | A + (B · C) |
-    |:-:|:-:|:-:|:-:|:-:|
-    | 0 | 0 | 0 | 0 | 0 |
-    | 0 | 0 | 1 | 0 | 0 |
-    | 0 | 1 | 0 | 0 | 0 |
-    | 0 | 1 | 1 | 1 | 1 |
-    | 1 | 0 | 0 | 0 | 1 |
-    | 1 | 0 | 1 | 0 | 1 |
-    | 1 | 1 | 0 | 0 | 1 |
-    | 1 | 1 | 1 | 1 | 1 |
+        **A · B̅**
 
-    **A · B + (C ⊕ D)** (le XOR est défini au 3.3) : 16 lignes. La sortie vaut 1 dès que
-    `A = B = 1`, ou bien dès que `C` et `D` sont différents.
+        | A | B | B̅ | A · B̅ |
+        |:-:|:-:|:-:|:-:|
+        | 0 | 0 | 1 | 0 |
+        | 0 | 1 | 0 | 0 |
+        | 1 | 0 | 1 | 1 |
+        | 1 | 1 | 0 | 0 |
 
-    | A | B | C | D | C ⊕ D | A · B | A · B + (C ⊕ D) |
-    |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-    | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-    | 0 | 0 | 0 | 1 | 1 | 0 | 1 |
-    | 0 | 0 | 1 | 0 | 1 | 0 | 1 |
-    | 0 | 0 | 1 | 1 | 0 | 0 | 0 |
-    | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
-    | 0 | 1 | 0 | 1 | 1 | 0 | 1 |
-    | 0 | 1 | 1 | 0 | 1 | 0 | 1 |
-    | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
-    | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
-    | 1 | 0 | 0 | 1 | 1 | 0 | 1 |
-    | 1 | 0 | 1 | 0 | 1 | 0 | 1 |
-    | 1 | 0 | 1 | 1 | 0 | 0 | 0 |
-    | 1 | 1 | 0 | 0 | 0 | 1 | 1 |
-    | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
-    | 1 | 1 | 1 | 0 | 1 | 1 | 1 |
-    | 1 | 1 | 1 | 1 | 0 | 1 | 1 |
+        **A + B · C** (le ET passe avant le OU)
 
-!!! note "🐍 En Python : faire écrire la table par Python"
+        | A | B | C | B · C | A + (B · C) |
+        |:-:|:-:|:-:|:-:|:-:|
+        | 0 | 0 | 0 | 0 | 0 |
+        | 0 | 0 | 1 | 0 | 0 |
+        | 0 | 1 | 0 | 0 | 0 |
+        | 0 | 1 | 1 | 1 | 1 |
+        | 1 | 0 | 0 | 0 | 1 |
+        | 1 | 0 | 1 | 0 | 1 |
+        | 1 | 1 | 0 | 0 | 1 |
+        | 1 | 1 | 1 | 1 | 1 |
+
+        **A · B + (C ⊕ D)** (le XOR est défini au 3.3) : 16 lignes. La sortie vaut 1 dès que
+        `A = B = 1`, ou bien dès que `C` et `D` sont différents.
+
+        | A | B | C | D | C ⊕ D | A · B | A · B + (C ⊕ D) |
+        |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+        | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+        | 0 | 0 | 0 | 1 | 1 | 0 | 1 |
+        | 0 | 0 | 1 | 0 | 1 | 0 | 1 |
+        | 0 | 0 | 1 | 1 | 0 | 0 | 0 |
+        | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+        | 0 | 1 | 0 | 1 | 1 | 0 | 1 |
+        | 0 | 1 | 1 | 0 | 1 | 0 | 1 |
+        | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
+        | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+        | 1 | 0 | 0 | 1 | 1 | 0 | 1 |
+        | 1 | 0 | 1 | 0 | 1 | 0 | 1 |
+        | 1 | 0 | 1 | 1 | 0 | 0 | 0 |
+        | 1 | 1 | 0 | 0 | 0 | 1 | 1 |
+        | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
+        | 1 | 1 | 1 | 0 | 1 | 1 | 1 |
+        | 1 | 1 | 1 | 1 | 0 | 1 | 1 |
+
+???+ question "Activité n°9 : Faire écrire une table de vérité par Python"
+
     Une double boucle parcourt toutes les combinaisons de deux entrées, dans l'ordre binaire.
 
     ```python
@@ -325,19 +407,39 @@ Exemple avec `(A ET B) OU (NON A)` :
     ??? success "Python"
         {{ IDE() }}
 
-??? question "À toi : écrire `table_A_ou_B_et_C()` qui affiche la table de A + B · C"
-    Trois boucles imbriquées, une par entrée :
+    ??? success "Solution"
 
-    ```python
-    def table_A_ou_B_et_C():
-        print("A B C | A + B.C")
-        for A in (0, 1):
-            for B in (0, 1):
-                for C in (0, 1):
-                    print(A, B, C, "|", int(A or (B and C)))
-    ```
+        **Résultat :**
 
-    On retrouve bien la table du « À toi » précédent.
+        ```text
+        a b | a and b
+        0 0 | 0
+        0 1 | 0
+        1 0 | 0
+        1 1 | 1
+        ```
+
+???+ question "Activité n°10 : La table de A + B · C en Python"
+
+    Écris une fonction `table_A_ou_B_et_C()` qui affiche la table de vérité de A + B · C.
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        Trois boucles imbriquées, une par entrée :
+
+        ```python
+        def table_A_ou_B_et_C():
+            print("A B C | A + B.C")
+            for A in (0, 1):
+                for B in (0, 1):
+                    for C in (0, 1):
+                        print(A, B, C, "|", int(A or (B and C)))
+        ```
+
+        On retrouve bien la table de l'activité 8.
 
 ### <span style="color:#2E7D32">3.3 Le OU exclusif : XOR</span>
 
@@ -354,7 +456,10 @@ Le **OU exclusif**, noté **XOR** ou `⊕`, vaut `1` **si les deux bits sont dif
     `1 OU 1 = 1`, mais `1 XOR 1 = 0`. Le XOR, c'est « l'un **ou** l'autre, **mais pas les deux** ».
     Avec les trois opérations de base : `A ⊕ B = A · B̅ + A̅ · B`.
 
-!!! note "🐍 En Python"
+???+ question "Activité n°11 : Le XOR en Python"
+
+    **Tester :**
+
     `^` est le **XOR bit à bit** : il fonctionne sur `0` et `1`, et sur des entiers bit par bit.
     Pour des booléens, on peut aussi écrire `a != b`.
 
@@ -363,8 +468,28 @@ Le **OU exclusif**, noté **XOR** ou `⊕`, vaut `1` **si les deux bits sont dif
     print(True != True)                 # False
     ```
 
-??? question "À toi : calcule `1 XOR 0`, `0 XOR 0`, `1 XOR 1`, puis vérifie avec `^`"
-    `1 XOR 0 = 1`, `0 XOR 0 = 0`, `1 XOR 1 = 0` : `print(1 ^ 0, 0 ^ 0, 1 ^ 1)` affiche `1 0 0`.
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+
+        ```text
+        0 1 1 0
+        False
+        ```
+
+???+ question "Activité n°12 : Calculer des XOR"
+
+    Calcule `1 XOR 0`, `0 XOR 0` et `1 XOR 1`, puis vérifie avec `^`.
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        `1 XOR 0 = 1`, `0 XOR 0 = 0`, `1 XOR 1 = 0` : `print(1 ^ 0, 0 ^ 0, 1 ^ 1)` affiche `1 0 0`.
 
 ### <span style="color:#2E7D32">3.4 Application : additionner deux bits</span>
 
@@ -383,13 +508,31 @@ On retrouve l'addition binaire du 2.7. Pour additionner deux bits `A` et `B` :
 Ainsi `1 + 1 = 10₂` : j'écris `0` (le XOR), je retiens `1` (le ET).
 Ce petit calcul s'appelle un **demi-additionneur** : on le construira avec des portes logiques au [chapitre 13](../13_chapitre_13/13_Archi_ordinateur.md).
 
-```python
-for a in (0, 1):
-    for b in (0, 1):
-        print(a, "+", b, "→ retenue", a & b, "somme", a ^ b)
-```
+???+ question "Activité n°13 : Additionner deux bits en Python"
 
-(`&` est le ET bit à bit, comme `^` est le XOR bit à bit.)
+    **Tester :**
+
+    ```python
+    for a in (0, 1):
+        for b in (0, 1):
+            print(a, "+", b, "→ retenue", a & b, "somme", a ^ b)
+    ```
+
+    (`&` est le ET bit à bit, comme `^` est le XOR bit à bit.)
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+
+        ```text
+        0 + 0 → retenue 0 somme 0
+        0 + 1 → retenue 0 somme 1
+        1 + 0 → retenue 0 somme 1
+        1 + 1 → retenue 1 somme 0
+        ```
 
 ### <span style="color:#2E7D32">3.5 Les lois de De Morgan</span>
 
@@ -402,7 +545,10 @@ for a in (0, 1):
 
 Deux expressions sont **équivalentes** quand elles ont **la même table de vérité** : pour le prouver, on compare **toutes** les lignes.
 
-??? question "À toi : vérifier les lois de De Morgan avec Python"
+???+ question "Activité n°14 : Vérifier les lois de De Morgan avec Python"
+
+    **Tester :**
+
     ```python
     def de_morgan_1(a, b):
         return (not (a or b)) == (not a and not b)
@@ -416,12 +562,15 @@ Deux expressions sont **équivalentes** quand elles ont **la même table de vér
     ```
 
     1. Les deux lois sont-elles vraies pour toutes les combinaisons ?
-    2. Retirer les parenthèses autour de `not (a or b)` dans `de_morgan_1` et réexécuter. Le résultat est toujours `True`… mais pour une mauvaise raison ! Pourquoi ?
+    2. Retire les parenthèses autour de `not (a or b)` dans `de_morgan_1` et réexécute. Le résultat est toujours `True`… mais pour une mauvaise raison ! Pourquoi ?
 
-    **Réponses.**
+    ??? success "Python"
+        {{ IDE() }}
 
-    1. Oui : la fonction renvoie `True` pour les quatre combinaisons, donc sur **toute** la table de vérité.
-    2. `not` est **moins prioritaire** que `==`. Sans parenthèses, Python lit `not ((a or b) == (not a and not b))`. Or `a or b` et `not a and not b` sont toujours contraires, donc la comparaison vaut toujours `False`, et `not False` donne `True` : le programme ne vérifie plus du tout la loi.
+    ??? success "Solution"
+
+        1. Oui : la fonction renvoie `True` pour les quatre combinaisons, donc sur **toute** la table de vérité.
+        2. `not` est **moins prioritaire** que `==`. Sans parenthèses, Python lit `not ((a or b) == (not a and not b))`. Or `a or b` et `not a and not b` sont toujours contraires, donc la comparaison vaut toujours `False`, et `not False` donne `True` : le programme ne vérifie plus du tout la loi.
 
 ### <span style="color:#2E7D32">3.6 Pour la Terminale : XOR et chiffrement</span>
 
@@ -440,25 +589,80 @@ Clé K     : 0 1 1 0
 Message M : 1 0 1 1
 ```
 
-```python
-message = 0b10110110
-cle = 0b01101001
-chiffre = message ^ cle
-dechiffre = chiffre ^ cle
-print(bin(chiffre), bin(dechiffre), dechiffre == message)   # 0b11011111 0b10110110 True
-```
+???+ question "Activité n°15 : Chiffrer et déchiffrer avec le XOR"
+
+    **Tester :**
+
+    ```python
+    message = 0b10110110
+    cle = 0b01101001
+    chiffre = message ^ cle
+    dechiffre = chiffre ^ cle
+    print(bin(chiffre), bin(dechiffre), dechiffre == message)
+    ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+
+        ```text
+        0b11011111 0b10110110 True
+        ```
 
 !!! tip "Lien avec la Terminale"
     Cette propriété est le **principe** du chiffrement symétrique étudié en Terminale : on chiffre et on déchiffre avec la **même clé**.
     Attention : ce n'est qu'une **illustration**. Réutiliser la même clé courte pour tout un message n'est pas sûr.
 
-??? question "À toi : M = 1101 et K = 1010. Calcule C = M XOR K, puis C XOR K"
-    `C = 1101 XOR 1010 = 0111`, puis `C XOR K = 0111 XOR 1010 = 1101` : on retrouve **M**.
+???+ question "Activité n°16 : Chiffrer à la main"
+
+    M = 1101 et K = 1010. Calcule C = M XOR K, puis C XOR K. Que constates-tu ?
+
+    ??? success "Solution"
+
+        `C = 1101 XOR 1010 = 0111`, puis `C XOR K = 0111 XOR 1010 = 1101` : on retrouve **M**.
 
 !!! success "🎞️ Revoir en vidéo"
     [ET, OU, NON](../02_chapitre_2/02k_et_ou_non_video.md) · [Table de vérité](04l_Table_de_verite_video.md) · [XOR, NAND, NOR](04m_xor_nand_nor_video.md) · [Les booléens](04n_Les_booleens_video.md) · [📜 Fiche méthode : booléens et circuits](../13_chapitre_13/13i_Booleens_circuits_fiche.md)
 
 !!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
+
+!!! abstract "Exercice 11 ★ : Tables de vérité"
+
+    1. Complète, **à la main**, la table de vérité de l'expression `(A or B) and (not A)`, avec les colonnes intermédiaires. Par quelle expression plus simple peut-on la remplacer ?
+    2. Écris une fonction `table_3(f)` qui affiche la table de vérité d'une fonction `f(A, B, C)` à **trois** entrées (8 lignes, dans l'ordre binaire). Utilise-la pour afficher la table de `A or B and C`.
+    3. Dans la table obtenue, combien de lignes donnent `S = 1` ? Pourquoi `A or B and C` ne se lit-il **pas** `(A or B) and C` ?
+
+!!! abstract "Exercice 12 ★ : Le OU exclusif (XOR)"
+
+    1. Quelle différence y a-t-il entre `A or B` et `A XOR B` lorsque `A = B = 1` ? Calcule `1 XOR 0`, `0 XOR 0` et `1 XOR 1`.
+    2. Écris une fonction `xor(a, b)` qui renvoie le XOR de deux bits (`0` ou `1`) **sans utiliser** l'opérateur `^` ni `!=` : seulement `and`, `or`, `not`.
+
+!!! abstract "Exercice 13 ★★ : Additionner deux bits"
+
+    Quand on additionne deux bits `a` et `b`, on obtient un **bit de somme** et une **retenue** : `1 + 1 = 10₂` (j'écris 0, je retiens 1).
+
+    1. Complète la table ci-dessous, puis indique quelle opération donne la somme et quelle opération donne la retenue.
+
+        | a | b | retenue | somme |
+        |:-:|:-:|:-:|:-:|
+        | 0 | 0 | | |
+        | 0 | 1 | | |
+        | 1 | 0 | | |
+        | 1 | 1 | | |
+
+    2. Écris une fonction `demi_additionneur(a, b)` qui renvoie le couple `(retenue, somme)`. Tu peux réutiliser `xor`.
+    3. Pourquoi le résultat de `1 + 1` nécessite-t-il **deux** bits ?
+
+!!! abstract "Exercice 14 ★★ : XOR et chiffrement (facultatif)"
+
+    On considère le message `M = 1101` et la clé `K = 1010`.
+
+    1. Calcule **à la main**, bit par bit, `C = M XOR K`, puis `C XOR K`. Que constates-tu ?
+    2. Explique pourquoi `(A XOR K) XOR K = A` pour n'importe quel bit `A` et n'importe quelle clé `K`.
+    3. **Bonus** : écris une fonction `chiffrer(texte, cle)` qui renvoie le texte obtenu en remplaçant chaque caractère `c` par `chr(ord(c) ^ cle)`. Vérifie qu'appliquer deux fois `chiffrer` avec la même clé redonne le texte de départ.
 
 ---
 
@@ -504,16 +708,29 @@ print(bin(chiffre), bin(dechiffre), dechiffre == message)   # 0b11011111 0b10110
 
     (La méthode « inverser + ajouter 1 » marche aussi dans ce sens : 0000 1000 + 1 = 0000 1001 = 9, donc −9.)
 
-??? question "À toi : code −36 et −75 sur 8 bits"
-    - 36 = 0010 0100 → inversion 1101 1011 → +1 → **1101 1100**
-    - 75 = 0100 1011 → inversion 1011 0100 → +1 → **1011 0101**
+???+ question "Activité n°17 : Coder des entiers négatifs"
 
-??? question "À toi : que valent 1111 1111, 1000 0000 et 0111 1111 ?"
-    - 1111 1111 = 255 − 256 = **−1**
-    - 1000 0000 = 128 − 256 = **−128** (le plus petit)
-    - 0111 1111 commence par 0 : **127** (le plus grand)
+    Code −36 et −75 sur 8 bits en complément à 2.
 
-!!! note "🐍 En Python"
+    ??? success "Solution"
+
+        - 36 = 0010 0100 → inversion 1101 1011 → +1 → **1101 1100**
+        - 75 = 0100 1011 → inversion 1011 0100 → +1 → **1011 0101**
+
+???+ question "Activité n°18 : Décoder des octets signés"
+
+    En complément à 2 sur 8 bits, que valent 1111 1111, 1000 0000 et 0111 1111 ?
+
+    ??? success "Solution"
+
+        - 1111 1111 = 255 − 256 = **−1**
+        - 1000 0000 = 128 − 256 = **−128** (le plus petit)
+        - 0111 1111 commence par 0 : **127** (le plus grand)
+
+???+ question "Activité n°19 : Le complément à 2 en Python"
+
+    **Tester :**
+
     ```python
     print(format(-9 % 256, "08b"))   # 11110111 : −9 en complément à 2 sur 8 bits
 
@@ -527,23 +744,121 @@ print(bin(chiffre), bin(dechiffre), dechiffre == message)   # 0b11011111 0b10110
     print(lire_signe("11110111"))   # -9
     ```
 
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+
+        ```text
+        11110111
+        -9
+        ```
+
 !!! success "🎞️ Revoir en vidéo"
     [Complément à 2](04g_complement_video.md) · [Addition en complément à 2](04h_addittion_video.md)
 
 !!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
 
+!!! abstract "Exercice 1 ★ : Addition binaire"
+
+    On code les entiers sur **un octet**.
+
+    1. Donne la représentation binaire de 12, 100 et 88.
+    2. Pose l'**addition binaire** de ces trois nombres (avec les retenues), puis vérifie en décimal.
+
+!!! abstract "Exercice 2 ★ : Complément à 2"
+
+    Sur un octet, donne les compléments à 2 de **−12**, **−100** et **−88**.
+    Utilise la méthode « inverser + 1 » pour l'un et la méthode « 256 − n » pour un autre : tu dois trouver la même chose !
+
+!!! abstract "Exercice 3 ★ : Addition avec un nombre négatif (facultatif)"
+
+    1. Pose l'addition binaire des compléments à 2 de **12** et de **−100**.
+    2. Vérifie qu'on retrouve bien le code de **−88** trouvé à l'exercice 2. Que montre cet exercice ?
+
+!!! abstract "Exercice 4 ★ : Décoder un binaire signé"
+
+    Donne l'écriture décimale des entiers **signés** sur un octet suivants :
+
+    | a) `0b1111 1111` | b) `0b1000 0000` | c) `0b0111 1111` | d) `0b1010 0011` |
+    |:-:|:-:|:-:|:-:|
+
+!!! abstract "Exercice 5 ★ / ★★ : Programmer les conversions"
+
+    1. ★ Écris une fonction `dec2bin(nombre)` qui convertit un entier **positif** en binaire (chaîne de caractères d'au moins 7 caractères), en suivant l'algorithme :
+
+        ```text
+        fonction dec2bin(nombre : entier) renvoie une chaîne
+            binaire ← nombre modulo 2                   # binaire est une chaîne
+            tant que nombre ≥ 2 faire
+                nombre ← quotient de nombre par 2
+                binaire ← (nombre modulo 2) ajouté devant binaire
+            tant que longueur(binaire) < 7 faire
+                binaire ← "0" ajouté devant binaire
+            renvoyer binaire
+        ```
+
+    2. Vérifie les conversions suivantes :
+
+        ```python
+        assert dec2bin(1843) == '11100110011'
+        assert dec2bin(43) == '0101011'
+        assert dec2bin(0) == '0000000'
+        ```
+
+    3. Convertis −2. Que constates-tu ? Est-ce plus grave qu'un message d'erreur ?
+    4. ★★ Écris une fonction `dec2bin_negatif(nombre: int) -> str` qui renvoie le complément à 2, **sur 8 bits**, d'un entier négatif compris entre −128 et −1.
+    5. Vérifie les conversions suivantes :
+
+        ```python
+        assert dec2bin_negatif(-2) == '11111110'
+        assert dec2bin_negatif(-1) == '11111111'
+        assert dec2bin_negatif(-88) == '10101000'
+        assert dec2bin_negatif(-128) == '10000000'
+        ```
+
+    6. Écris une fonction `conversion(nombre: int) -> str` qui renvoie le code sur **8 bits** de n'importe quel entier de −128 à 127, en appelant `dec2bin` ou `dec2bin_negatif` selon le signe.
+    7. Vérifie les conversions suivantes :
+
+        ```python
+        assert conversion(88) == '01011000'
+        assert conversion(-88) == '10101000'
+        assert conversion(0) == '00000000'
+        assert conversion(127) == '01111111'
+        assert conversion(-128) == '10000000'
+        ```
+
+    8. Convertis −1.1 et conclus.
+    9. ★★ Ajoute à `conversion` une assertion qui vérifie que `nombre` est un entier (`assert isinstance(nombre, int), "..."`), puis teste l'appel `conversion(-1.1)` **protégé** par `try` / `except AssertionError`.
+
 ---
 
 ## <span style="color:#1565C0">5. Les nombres réels : les flottants</span>
 
-!!! question "Teste dans la console Python"
+???+ question "Activité n°20 : 0.1 + 0.2 en Python"
+
+    **Tester :**
+
     ```python
-    >>> 0.1 + 0.2
-    0.30000000000000004
-    >>> 0.1 + 0.2 == 0.3
-    False
+    print(0.1 + 0.2)
+    print(0.1 + 0.2 == 0.3)
     ```
-    Python ne s'est pas trompé : il **ne peut pas** stocker 0,1 exactement. Voyons pourquoi.
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+
+        ```text
+        0.30000000000000004
+        False
+        ```
+
+        Python ne s'est pas trompé : il **ne peut pas** stocker 0,1 exactement. Voyons pourquoi.
 
 ### <span style="color:#2E7D32">5.1 La virgule en binaire</span>
 
@@ -601,12 +916,61 @@ Après la virgule, les positions valent ½, ¼, ⅛… c'est-à-dire 2⁻¹, 2�
 
 !!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
 
+!!! abstract "Exercice 6 ★ : Binaire à virgule → décimal"
+
+    Convertis en base 10 :
+
+    1. 0,0101010101₂
+    2. 11100,10001₂
+
+!!! abstract "Exercice 7 ★★ : Décimal → binaire → IEEE-754"
+
+    1. Convertis en binaire, puis au format IEEE-754 simple précision (1 bit de signe, 8 bits d'exposant **e + 127**, 23 bits de mantisse) :
+
+        | a) 5,1875 | b) 4,3125 | c) 0,3125 |
+        |:-:|:-:|:-:|
+
+    2. Convertis **0,1** en binaire (une dizaine de chiffres après la virgule). Que remarques-tu ? Quel lien avec `0.1 + 0.2 == 0.3` qui vaut `False` en Python ?
+
+!!! abstract "Exercice 8 ★ : Programmer la conversion binaire → décimal (facultatif)"
+
+    On veut transformer un nombre **binaire à virgule**, donné sous forme de chaîne comme `'11100,10001'`, en nombre décimal.
+
+    1. Écris une fonction `decimal(nombre: str) -> float` qui renvoie la valeur en base 10 de la partie **après la virgule** du nombre binaire.
+
+        ```python
+        assert decimal('0,0101010101') == 0.3330078125
+        assert decimal('11100,10001') == 0.53125
+        assert decimal('0,1') == 0.5
+        ```
+
+    2. Écris une fonction `entiere(nombre: str) -> int` qui renvoie la valeur en base 10 de la **partie entière** du binaire.
+
+        ```python
+        assert entiere('11100,10001') == 28
+        assert entiere('0,1') == 0
+        assert entiere('101,0011') == 5
+        ```
+
+    3. En appelant les deux fonctions précédentes, écris `bin2float(nombre: str) -> float` qui renvoie la valeur en base 10 du binaire à virgule.
+
+        ```python
+        assert bin2float('11100,10001') == 28.53125
+        assert bin2float('101,0011') == 5.1875
+        assert bin2float('100,0101') == 4.3125
+        assert bin2float('0,0101') == 0.3125
+        ```
+
+    *Aide : `'11100,10001'.split(',')` renvoie la liste `['11100', '10001']`.*
+
 ---
 
 ## <span style="color:#1565C0">6. Le texte : de l'ASCII à l'Unicode</span>
 
 !!! question "Tu as déjà vu ça ?"
     > Ã©crit en UTF-8
+
+    ![martine](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.106.jpeg)
 
     Au lieu de « écrit en UTF-8 ». Ce bug d'affichage s'explique en trois étapes historiques.
 
@@ -643,13 +1007,30 @@ un même octet ne représente pas le même caractère d'un pays à l'autre. 😵
     En UTF-8, `é` occupe deux octets : `C3 A9`. Un logiciel qui lit le fichier en latin-1
     affiche chaque octet séparément : `C3` → **Ã** et `A9` → **©**.
 
-!!! note "🐍 En Python"
+???+ question "Activité n°21 : Caractères et encodage en Python"
+
+    **Tester :**
+
     ```python
     print(ord("A"))               # 65   : caractère → code
     print(chr(97))                # a    : code → caractère
     print("é".encode("utf-8"))    # b'\xc3\xa9' : 2 octets
     print(len("😀".encode("utf-8")))  # 4
     ```
+
+    ??? success "Python"
+        {{ IDE() }}
+
+    ??? success "Solution"
+
+        **Résultat :**
+
+        ```text
+        65
+        a
+        b'\xc3\xa9'
+        4
+        ```
 
 !!! success "🎞️ Revoir en vidéo"
     [Codage des caractères](04j_caractere_video.md)
@@ -685,6 +1066,56 @@ Une image numérique est une **grille de pixels**. Chaque pixel mélange trois c
 
 !!! example "🧠 Exercices dans Capytale => le code vous sera donné par votre enseignant"
 
+!!! abstract "Exercice 9 ★ : Image matricielle"
+
+    On veut dessiner une image de **8 × 8** pixels grâce à tes réponses à des questions de conversion. Chaque case correspond à un **bit** : une ligne de 8 cases est donc un **octet**. Un bit à **1** donne une case **noire**, un bit à **0** une case **blanche**. Pour chaque question, il faut donc passer par la valeur **binaire**, même si la réponse demandée est en décimal ou en hexadécimal.
+
+    Exemple :
+
+    ![exemple de ligne coloriée](Aimg13.png)
+
+    Quadrillage de l'image :
+
+    ![quadrillage 8 x 8](Aimg14.png)
+
+    Chaque question permet de colorier **une ligne** de l'image :
+
+    1. Convertis la valeur binaire de la **ligne 1** en décimal.
+    2. Convertis la valeur hexadécimale `0x66` en binaire.
+    3. Convertis la valeur hexadécimale `0x3C` en décimal, puis en binaire.
+    4. Convertis la valeur binaire de la **ligne 4** en hexadécimal.
+    5. Convertis la valeur décimale 24 en binaire.
+    6. Convertis la valeur décimale 60 en hexadécimal, puis en binaire.
+    7. Colorie la ligne 7 avec la valeur binaire `0b01100110`.
+    8. Convertis la valeur binaire `0b11111111` en hexadécimal.
+
+    Que représente l'image ?
+
+    *Rappels : un binaire s'écrit 1011₍₂₎, `0b1011`, `%1011` ou `1011b` ; un hexadécimal 9A₍₁₆₎, `0x9A`, `$9A` ou `9Ah`.*
+
+!!! abstract "Exercice 10 ★★ : L'heure en binaire (facultatif)"
+
+    ![montre binaire](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.109.png)
+
+    Cette montre affiche l'heure en binaire : une ligne de LED affiche les **minutes**, l'autre les **heures**. Une LED allumée vaut 1, une LED éteinte vaut 0.
+
+    1. Quelle est la valeur maximale que peut afficher la ligne du **haut**, en décimal ? en binaire ? en hexadécimal ?
+    2. Mêmes questions pour la ligne du **bas**.
+    3. Déduis-en quelle ligne indique les minutes et laquelle indique les heures.
+    4. Les heures sont-elles données au format 12 h ou 24 h ? *(Observe les nombres gravés autour du cadran.)*
+    5. Quelle valeur maximale sera **réellement** affichée sur la ligne des heures ? En binaire ? En hexadécimal ?
+    6. Même question pour la ligne des minutes.
+    7. Quelle heure indiquent les montres ci-dessous ?
+
+        ![trois montres binaires](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.110.png)
+
+    8. Complète les cadrans suivants pour 0h23, 7h33, 9h39 et 11h59 (colorie les LED allumées) :
+
+        ![cadrans à compléter](Aspose.Words.764b7a7a-9a22-42aa-a7aa-fadf25e6a13d.111.png)
+
+    9. Quelle modification faudrait-il faire pour afficher les heures au format 24 h ?
+    10. Quelle modification faudrait-il faire pour afficher aussi les secondes ?
+
 ---
 
 ## <span style="color:#1565C0">8. À retenir absolument</span>
@@ -702,4 +1133,4 @@ Une image numérique est une **grille de pixels**. Chaque pixel mélange trois c
 
 👉 Pour réviser : la [📜 Fiche méthode](04d_Codage_de_l_information_fiche.md) et la [🎞️ vidéo du chapitre](04c_Codage_de_l_information_video.md).
 
-✅ **Termine par le QCM Evalbox du chapitre.**
+
