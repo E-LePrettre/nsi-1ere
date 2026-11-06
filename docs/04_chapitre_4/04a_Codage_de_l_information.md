@@ -491,6 +491,37 @@ Le **OU exclusif**, noté **XOR** ou `⊕`, vaut `1` **si les deux bits sont dif
 
         `1 XOR 0 = 1`, `0 XOR 0 = 0`, `1 XOR 1 = 0` : `print(1 ^ 0, 0 ^ 0, 1 ^ 1)` affiche `1 0 0`.
 
+
+???+ question "Activité n°12bis : Tables de vérité"
+
+    Dresse la table de vérité de  A · B + (C ⊕ D).
+
+    ??? success "Solution"
+
+
+
+        **A · B + (C ⊕ D)**  : 16 lignes. La sortie vaut 1 dès que
+        `A = B = 1`, ou bien dès que `C` et `D` sont différents.
+
+        | A | B | C | D | C ⊕ D | A · B | A · B + (C ⊕ D) |
+        |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+        | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+        | 0 | 0 | 0 | 1 | 1 | 0 | 1 |
+        | 0 | 0 | 1 | 0 | 1 | 0 | 1 |
+        | 0 | 0 | 1 | 1 | 0 | 0 | 0 |
+        | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+        | 0 | 1 | 0 | 1 | 1 | 0 | 1 |
+        | 0 | 1 | 1 | 0 | 1 | 0 | 1 |
+        | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
+        | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+        | 1 | 0 | 0 | 1 | 1 | 0 | 1 |
+        | 1 | 0 | 1 | 0 | 1 | 0 | 1 |
+        | 1 | 0 | 1 | 1 | 0 | 0 | 0 |
+        | 1 | 1 | 0 | 0 | 0 | 1 | 1 |
+        | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
+        | 1 | 1 | 1 | 0 | 1 | 1 | 1 |
+        | 1 | 1 | 1 | 1 | 0 | 1 | 1 |
+
 ### <span style="color:#2E7D32">3.4 Application : additionner deux bits</span>
 
 On retrouve l'addition binaire du 2.7. Pour additionner deux bits `A` et `B` :
