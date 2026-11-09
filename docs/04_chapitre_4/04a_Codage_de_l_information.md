@@ -340,7 +340,7 @@ Exemple avec `(A ET B) OU (NON A)` :
 
 ???+ question "Activité n°8 : Tables de vérité"
 
-    Dresse les tables de vérité de A · B̅, de A + B · C et de A · B + (C ⊕ D).
+    Dresse les tables de vérité de A · B̅, de A + B · C 
 
     ??? success "Solution"
 
@@ -366,27 +366,7 @@ Exemple avec `(A ET B) OU (NON A)` :
         | 1 | 1 | 0 | 0 | 1 |
         | 1 | 1 | 1 | 1 | 1 |
 
-        **A · B + (C ⊕ D)** (le XOR est défini au 3.3) : 16 lignes. La sortie vaut 1 dès que
-        `A = B = 1`, ou bien dès que `C` et `D` sont différents.
 
-        | A | B | C | D | C ⊕ D | A · B | A · B + (C ⊕ D) |
-        |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-        | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-        | 0 | 0 | 0 | 1 | 1 | 0 | 1 |
-        | 0 | 0 | 1 | 0 | 1 | 0 | 1 |
-        | 0 | 0 | 1 | 1 | 0 | 0 | 0 |
-        | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
-        | 0 | 1 | 0 | 1 | 1 | 0 | 1 |
-        | 0 | 1 | 1 | 0 | 1 | 0 | 1 |
-        | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
-        | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
-        | 1 | 0 | 0 | 1 | 1 | 0 | 1 |
-        | 1 | 0 | 1 | 0 | 1 | 0 | 1 |
-        | 1 | 0 | 1 | 1 | 0 | 0 | 0 |
-        | 1 | 1 | 0 | 0 | 0 | 1 | 1 |
-        | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
-        | 1 | 1 | 1 | 0 | 1 | 1 | 1 |
-        | 1 | 1 | 1 | 1 | 0 | 1 | 1 |
 
 ???+ question "Activité n°9 : Faire écrire une table de vérité par Python"
 
